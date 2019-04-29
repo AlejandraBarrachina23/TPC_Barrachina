@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class CabeceraCompra
+    class DetalleCompra
     {
-        public Proveedor Proveedor { get; set; }
-        
+        decimal Descuento;
     }
 }
