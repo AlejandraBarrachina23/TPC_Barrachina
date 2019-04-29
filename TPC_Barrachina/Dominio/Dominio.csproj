@@ -48,12 +48,15 @@
     <Compile Include="CuentaCorriente.cs" />
     <Compile Include="DetalleCompra.cs" />
     <Compile Include="DetalleDocumento.cs" />
+    <Compile Include="DetalleNotaCredito.cs" />
     <Compile Include="DetalleVenta.cs" />
     <Compile Include="Direccion.cs" />
     <Compile Include="CabeceraDocumento.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="FormaPago.cs" />
     <Compile Include="Impuesto.cs" />
+    <Compile Include="CabeceraNotaCredito.cs" />
+    <Compile Include="MotivoDevolucion.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="PersonaFisica.cs" />
     <Compile Include="PersonaJuridica.cs" />
