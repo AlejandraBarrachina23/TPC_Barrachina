@@ -13,8 +13,8 @@ namespace Dominio
         public TipoProducto TipoProducto { get;set;}
         public int Stock { get; set; }
         public int StockCritico { get; set; }
-        public float precioCosto { get; set; }
-        public float precioVenta { get; set; }
+        public float PrecioCosto { get; set; }
+        public float PrecioVenta { get; set; }
         public Proveedor Proveedor { get; set; }
         public Rubro Rubro { get; set; }
         public Sucursal Sucursal { get; set; }
