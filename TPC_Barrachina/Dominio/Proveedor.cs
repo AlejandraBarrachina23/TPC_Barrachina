@@ -9,7 +9,7 @@ namespace Dominio
     class Proveedor
     {
         public Persona TipoProveedor { get; set; }
-        public private int CodigoProveedor { get; set; }
+        public int CodigoProveedor { get; set; }
         public Vendedor Vendedor { get; set; }
         public Impuesto Impuesto { get; set; }
 
