@@ -12,5 +12,6 @@ namespace Dominio
         public Persona TipoCliente { get; set; }
         public CuentaCorriente CuentaCorriente { get; set; }
         public Descuento Descuento { get; set; }
+        public bool Estado { get; set; }
     }
 }

@@ -10,5 +10,6 @@ namespace Dominio
     {
         public int CodigoCondicionIVA { get; set; }
         public string Nombre { get; set; }
+        public bool Estado { get; set; }
     }
 }

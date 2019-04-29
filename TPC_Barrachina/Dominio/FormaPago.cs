@@ -11,6 +11,7 @@ namespace Dominio
         public int CodigoFormaPago { get; set; }
         public string Nombre { get; set; }
         public decimal Porcentaje { get; set; }
+        public bool Estado { get; set; }
     }
 
 }
