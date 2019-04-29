@@ -13,6 +13,6 @@ namespace Dominio
         public string Horario { get; set; }
         public decimal Remuneracion { get; set; }
         public Persona Tipo { get; set; }
-
+        
     }
 }

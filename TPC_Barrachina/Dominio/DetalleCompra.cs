@@ -9,5 +9,6 @@ namespace Dominio
     class DetalleCompra
     {
         decimal Descuento;
+
     }
 }

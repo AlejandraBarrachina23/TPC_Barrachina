@@ -40,12 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CabeceraCompra.cs" />
+    <Compile Include="CabeceraVenta.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="CondicionIVA.cs" />
     <Compile Include="Contacto.cs" />
     <Compile Include="CuentaCorriente.cs" />
+    <Compile Include="DetalleCompra.cs" />
+    <Compile Include="DetalleDocumento.cs" />
+    <Compile Include="DetalleVenta.cs" />
     <Compile Include="Direccion.cs" />
-    <Compile Include="Documento.cs" />
+    <Compile Include="CabeceraDocumento.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="FormaPago.cs" />
     <Compile Include="Impuesto.cs" />
@@ -57,6 +62,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="Rubro.cs" />
     <Compile Include="Sucursal.cs" />
+    <Compile Include="TipoDescuento.cs" />
     <Compile Include="TipoProducto.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
