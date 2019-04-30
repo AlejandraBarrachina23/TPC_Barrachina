@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class DetalleNotaCredito
+    class CabeceraMermaMercaderia
     {
-        
-        MotivoDevolucion MotivoDevolucion { get; set; }
+
     }
 }
