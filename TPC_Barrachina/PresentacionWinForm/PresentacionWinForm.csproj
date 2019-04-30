@@ -51,6 +51,12 @@
     <Compile Include="FormularioVenta.Designer.cs">
       <DependentUpon>FormularioVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="InicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioSesion.Designer.cs">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormularioVenta.resx">
