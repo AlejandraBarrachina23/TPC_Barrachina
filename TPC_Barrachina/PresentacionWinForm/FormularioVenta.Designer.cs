@@ -47,7 +47,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnConfiguracion = new System.Windows.Forms.Button();
-            this.btnCuentaCorriente = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnOferta = new System.Windows.Forms.Button();
             this.btnDevolucion = new System.Windows.Forms.Button();
@@ -265,7 +264,6 @@
             this.pnlOpciones.Controls.Add(this.btnCancelar);
             this.pnlOpciones.Controls.Add(this.btnAceptar);
             this.pnlOpciones.Controls.Add(this.btnConfiguracion);
-            this.pnlOpciones.Controls.Add(this.btnCuentaCorriente);
             this.pnlOpciones.Controls.Add(this.btnAgregarCliente);
             this.pnlOpciones.Controls.Add(this.btnOferta);
             this.pnlOpciones.Controls.Add(this.btnDevolucion);
@@ -295,21 +293,12 @@
             // 
             // btnConfiguracion
             // 
-            this.btnConfiguracion.Location = new System.Drawing.Point(40, 71);
+            this.btnConfiguracion.Location = new System.Drawing.Point(60, 71);
             this.btnConfiguracion.Name = "btnConfiguracion";
             this.btnConfiguracion.Size = new System.Drawing.Size(45, 45);
             this.btnConfiguracion.TabIndex = 9;
             this.btnConfiguracion.Text = "CNF";
             this.btnConfiguracion.UseVisualStyleBackColor = true;
-            // 
-            // btnCuentaCorriente
-            // 
-            this.btnCuentaCorriente.Location = new System.Drawing.Point(142, 20);
-            this.btnCuentaCorriente.Name = "btnCuentaCorriente";
-            this.btnCuentaCorriente.Size = new System.Drawing.Size(45, 45);
-            this.btnCuentaCorriente.TabIndex = 9;
-            this.btnCuentaCorriente.Text = "CTA";
-            this.btnCuentaCorriente.UseVisualStyleBackColor = true;
             // 
             // btnAgregarCliente
             // 
@@ -323,7 +312,7 @@
             // btnOferta
             // 
             this.btnOferta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOferta.Location = new System.Drawing.Point(142, 71);
+            this.btnOferta.Location = new System.Drawing.Point(111, 71);
             this.btnOferta.Name = "btnOferta";
             this.btnOferta.Size = new System.Drawing.Size(45, 45);
             this.btnOferta.TabIndex = 9;
@@ -333,7 +322,7 @@
             // btnDevolucion
             // 
             this.btnDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevolucion.Location = new System.Drawing.Point(91, 71);
+            this.btnDevolucion.Location = new System.Drawing.Point(142, 20);
             this.btnDevolucion.Name = "btnDevolucion";
             this.btnDevolucion.Size = new System.Drawing.Size(45, 45);
             this.btnDevolucion.TabIndex = 9;
@@ -924,7 +913,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnConfiguracion;
-        private System.Windows.Forms.Button btnCuentaCorriente;
         private System.Windows.Forms.Button btnAgregarCliente;
         private System.Windows.Forms.Button btnOferta;
         private System.Windows.Forms.Button btnDevolucion;
