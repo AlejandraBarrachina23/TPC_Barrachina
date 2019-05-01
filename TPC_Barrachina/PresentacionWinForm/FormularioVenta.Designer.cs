@@ -99,6 +99,7 @@
             this.btnCalculadoraBorrarUno = new System.Windows.Forms.Button();
             this.btnCalculadora9 = new System.Windows.Forms.Button();
             this.btnCalculadora8 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnlDatosProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenProducto)).BeginInit();
             this.pnlBarraPrincipal.SuspendLayout();
@@ -202,6 +203,7 @@
             // 
             this.pnlCabecera.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnlCabecera.Controls.Add(this.lblDatosOperacion);
+            this.pnlCabecera.Controls.Add(this.label6);
             this.pnlCabecera.Controls.Add(this.lblSaldo);
             this.pnlCabecera.Controls.Add(this.lblUsuario);
             this.pnlCabecera.Controls.Add(this.lblCliente);
@@ -828,6 +830,15 @@
             this.btnCalculadora8.Text = "8";
             this.btnCalculadora8.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(29, 156);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "METODO PAGO:";
+            // 
             // FormularioVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -935,6 +946,7 @@
         private System.Windows.Forms.Label lbNombrePrograma;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
     }
 }
 
