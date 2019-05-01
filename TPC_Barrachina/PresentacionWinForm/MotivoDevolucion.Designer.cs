@@ -30,8 +30,8 @@
         {
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
             this.lbMotivoDevolucion = new System.Windows.Forms.Label();
-            this.tboxObservaciones = new System.Windows.Forms.TextBox();
-            this.lblObservaciones = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.rbtnMercaderiaVencida = new System.Windows.Forms.RadioButton();
             this.rbtnMercaderiaMalEstado = new System.Windows.Forms.RadioButton();
             this.rbtnDisconformidadPrecio = new System.Windows.Forms.RadioButton();
@@ -39,8 +39,8 @@
             this.rbtnOtros = new System.Windows.Forms.RadioButton();
             this.gboxOpciones = new System.Windows.Forms.GroupBox();
             this.rbtnEquivocacionUsuario = new System.Windows.Forms.RadioButton();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
             this.gboxOpciones.SuspendLayout();
             this.SuspendLayout();
@@ -65,22 +65,22 @@
             this.lbMotivoDevolucion.TabIndex = 8;
             this.lbMotivoDevolucion.Text = "MOTIVO DEVOLUCION";
             // 
-            // tboxObservaciones
+            // textBox1
             // 
-            this.tboxObservaciones.Location = new System.Drawing.Point(24, 250);
-            this.tboxObservaciones.Multiline = true;
-            this.tboxObservaciones.Name = "tboxObservaciones";
-            this.tboxObservaciones.Size = new System.Drawing.Size(334, 107);
-            this.tboxObservaciones.TabIndex = 4;
+            this.textBox1.Location = new System.Drawing.Point(24, 244);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(334, 107);
+            this.textBox1.TabIndex = 4;
             // 
-            // lblObservaciones
+            // label1
             // 
-            this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(21, 228);
-            this.lblObservaciones.Name = "lblObservaciones";
-            this.lblObservaciones.Size = new System.Drawing.Size(81, 13);
-            this.lblObservaciones.TabIndex = 5;
-            this.lblObservaciones.Text = "Observaciones:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Observaciones:";
             // 
             // rbtnMercaderiaVencida
             // 
@@ -163,34 +163,34 @@
             this.rbtnEquivocacionUsuario.Text = "Equivocación de usuario";
             this.rbtnEquivocacionUsuario.UseVisualStyleBackColor = true;
             // 
-            // btnAceptar
+            // button1
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(86, 372);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(102, 35);
-            this.btnAceptar.TabIndex = 9;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(86, 371);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(102, 35);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Aceptar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // button2
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(204, 372);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(102, 35);
-            this.btnCancelar.TabIndex = 9;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(204, 371);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(102, 35);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Cancelar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // MotivoDevolucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 442);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.gboxOpciones);
-            this.Controls.Add(this.lblObservaciones);
-            this.Controls.Add(this.tboxObservaciones);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MotivoDevolucion";
@@ -209,16 +209,16 @@
 
         private System.Windows.Forms.Panel pnlBarraPrincipal;
         private System.Windows.Forms.Label lbMotivoDevolucion;
-        private System.Windows.Forms.TextBox tboxObservaciones;
-        private System.Windows.Forms.Label lblObservaciones;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rbtnMercaderiaVencida;
         private System.Windows.Forms.RadioButton rbtnMercaderiaMalEstado;
         private System.Windows.Forms.RadioButton rbtnDisconformidadPrecio;
         private System.Windows.Forms.RadioButton rbtnEquivocacionCliente;
         private System.Windows.Forms.RadioButton rbtnOtros;
         private System.Windows.Forms.GroupBox gboxOpciones;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RadioButton rbtnEquivocacionUsuario;
     }
 }

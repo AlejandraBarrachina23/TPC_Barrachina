@@ -39,6 +39,7 @@
             this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.pnlCabecera = new System.Windows.Forms.Panel();
             this.lblDatosOperacion = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
@@ -46,11 +47,7 @@
             this.pnlOpciones = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnConfiguracion = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
-            this.btnOferta = new System.Windows.Forms.Button();
-            this.btnDevolucion = new System.Windows.Forms.Button();
-            this.btnMetodoPago = new System.Windows.Forms.Button();
             this.pnlDetalleVenta = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlLineaVenta = new System.Windows.Forms.Panel();
@@ -98,7 +95,12 @@
             this.btnCalculadoraBorrarUno = new System.Windows.Forms.Button();
             this.btnCalculadora9 = new System.Windows.Forms.Button();
             this.btnCalculadora8 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnMetodoPago = new System.Windows.Forms.Button();
+            this.btnDevolucion = new System.Windows.Forms.Button();
+            this.btnOferta = new System.Windows.Forms.Button();
+            this.btnConfiguracion = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.pnlDatosProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenProducto)).BeginInit();
             this.pnlBarraPrincipal.SuspendLayout();
@@ -117,7 +119,7 @@
             this.pnlDatosProducto.Controls.Add(this.label3);
             this.pnlDatosProducto.Controls.Add(this.label2);
             this.pnlDatosProducto.Controls.Add(this.pboxImagenProducto);
-            this.pnlDatosProducto.Location = new System.Drawing.Point(12, 66);
+            this.pnlDatosProducto.Location = new System.Drawing.Point(12, 57);
             this.pnlDatosProducto.Name = "pnlDatosProducto";
             this.pnlDatosProducto.Size = new System.Drawing.Size(245, 233);
             this.pnlDatosProducto.TabIndex = 0;
@@ -167,7 +169,7 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(1187, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(1200, 41);
             this.pnlBarraPrincipal.TabIndex = 1;
             // 
             // btnUsuario
@@ -206,8 +208,10 @@
             this.pnlCabecera.Controls.Add(this.lblSaldo);
             this.pnlCabecera.Controls.Add(this.lblUsuario);
             this.pnlCabecera.Controls.Add(this.lblCliente);
+            this.pnlCabecera.Controls.Add(this.label8);
+            this.pnlCabecera.Controls.Add(this.label7);
             this.pnlCabecera.Controls.Add(this.lblNumeroOperacion);
-            this.pnlCabecera.Location = new System.Drawing.Point(953, 66);
+            this.pnlCabecera.Location = new System.Drawing.Point(953, 57);
             this.pnlCabecera.Name = "pnlCabecera";
             this.pnlCabecera.Size = new System.Drawing.Size(222, 233);
             this.pnlCabecera.TabIndex = 0;
@@ -216,16 +220,25 @@
             // 
             this.lblDatosOperacion.AutoSize = true;
             this.lblDatosOperacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosOperacion.Location = new System.Drawing.Point(27, 18);
+            this.lblDatosOperacion.Location = new System.Drawing.Point(44, 18);
             this.lblDatosOperacion.Name = "lblDatosOperacion";
-            this.lblDatosOperacion.Size = new System.Drawing.Size(167, 18);
+            this.lblDatosOperacion.Size = new System.Drawing.Size(122, 18);
             this.lblDatosOperacion.TabIndex = 9;
-            this.lblDatosOperacion.Text = "DATOS OPERACIÓN";
+            this.lblDatosOperacion.Text = "DATOS VENTA";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(29, 194);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "METODO PAGO:";
             // 
             // lblSaldo
             // 
             this.lblSaldo.AutoSize = true;
-            this.lblSaldo.Location = new System.Drawing.Point(29, 132);
+            this.lblSaldo.Location = new System.Drawing.Point(29, 170);
             this.lblSaldo.Name = "lblSaldo";
             this.lblSaldo.Size = new System.Drawing.Size(76, 13);
             this.lblSaldo.TabIndex = 8;
@@ -234,7 +247,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(27, 108);
+            this.lblUsuario.Location = new System.Drawing.Point(27, 146);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(118, 13);
             this.lblUsuario.TabIndex = 8;
@@ -243,7 +256,7 @@
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(27, 84);
+            this.lblCliente.Location = new System.Drawing.Point(27, 122);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(107, 13);
             this.lblCliente.TabIndex = 8;
@@ -252,7 +265,7 @@
             // lblNumeroOperacion
             // 
             this.lblNumeroOperacion.AutoSize = true;
-            this.lblNumeroOperacion.Location = new System.Drawing.Point(27, 61);
+            this.lblNumeroOperacion.Location = new System.Drawing.Point(29, 55);
             this.lblNumeroOperacion.Name = "lblNumeroOperacion";
             this.lblNumeroOperacion.Size = new System.Drawing.Size(166, 13);
             this.lblNumeroOperacion.TabIndex = 8;
@@ -268,7 +281,7 @@
             this.pnlOpciones.Controls.Add(this.btnOferta);
             this.pnlOpciones.Controls.Add(this.btnDevolucion);
             this.pnlOpciones.Controls.Add(this.btnMetodoPago);
-            this.pnlOpciones.Location = new System.Drawing.Point(953, 315);
+            this.pnlOpciones.Location = new System.Drawing.Point(953, 306);
             this.pnlOpciones.Name = "pnlOpciones";
             this.pnlOpciones.Size = new System.Drawing.Size(222, 233);
             this.pnlOpciones.TabIndex = 1;
@@ -291,15 +304,6 @@
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // btnConfiguracion
-            // 
-            this.btnConfiguracion.Location = new System.Drawing.Point(60, 71);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(45, 45);
-            this.btnConfiguracion.TabIndex = 9;
-            this.btnConfiguracion.Text = "CNF";
-            this.btnConfiguracion.UseVisualStyleBackColor = true;
-            // 
             // btnAgregarCliente
             // 
             this.btnAgregarCliente.Location = new System.Drawing.Point(40, 20);
@@ -308,36 +312,6 @@
             this.btnAgregarCliente.TabIndex = 9;
             this.btnAgregarCliente.Text = "BCLI";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
-            // 
-            // btnOferta
-            // 
-            this.btnOferta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOferta.Location = new System.Drawing.Point(111, 71);
-            this.btnOferta.Name = "btnOferta";
-            this.btnOferta.Size = new System.Drawing.Size(45, 45);
-            this.btnOferta.TabIndex = 9;
-            this.btnOferta.Text = "OF";
-            this.btnOferta.UseVisualStyleBackColor = true;
-            // 
-            // btnDevolucion
-            // 
-            this.btnDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevolucion.Location = new System.Drawing.Point(142, 20);
-            this.btnDevolucion.Name = "btnDevolucion";
-            this.btnDevolucion.Size = new System.Drawing.Size(45, 45);
-            this.btnDevolucion.TabIndex = 9;
-            this.btnDevolucion.Text = "DEV";
-            this.btnDevolucion.UseVisualStyleBackColor = true;
-            // 
-            // btnMetodoPago
-            // 
-            this.btnMetodoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMetodoPago.Location = new System.Drawing.Point(91, 20);
-            this.btnMetodoPago.Name = "btnMetodoPago";
-            this.btnMetodoPago.Size = new System.Drawing.Size(45, 45);
-            this.btnMetodoPago.TabIndex = 9;
-            this.btnMetodoPago.Text = "MP";
-            this.btnMetodoPago.UseVisualStyleBackColor = true;
             // 
             // pnlDetalleVenta
             // 
@@ -353,7 +327,7 @@
             this.pnlDetalleVenta.Controls.Add(this.lblNombre);
             this.pnlDetalleVenta.Controls.Add(this.btnBusqueda);
             this.pnlDetalleVenta.Controls.Add(this.tboxCodigoBarra);
-            this.pnlDetalleVenta.Location = new System.Drawing.Point(272, 66);
+            this.pnlDetalleVenta.Location = new System.Drawing.Point(272, 57);
             this.pnlDetalleVenta.Name = "pnlDetalleVenta";
             this.pnlDetalleVenta.Size = new System.Drawing.Size(662, 347);
             this.pnlDetalleVenta.TabIndex = 2;
@@ -586,7 +560,7 @@
             this.panel7.Controls.Add(this.lblTotalFactura);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Location = new System.Drawing.Point(272, 419);
+            this.panel7.Location = new System.Drawing.Point(272, 410);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(662, 129);
             this.panel7.TabIndex = 3;
@@ -697,7 +671,7 @@
             this.pnlCalculadora.Controls.Add(this.btnCalculadora9);
             this.pnlCalculadora.Controls.Add(this.btnCalculadora8);
             this.pnlCalculadora.Controls.Add(this.btnCalculadora7);
-            this.pnlCalculadora.Location = new System.Drawing.Point(12, 315);
+            this.pnlCalculadora.Location = new System.Drawing.Point(12, 306);
             this.pnlCalculadora.Name = "pnlCalculadora";
             this.pnlCalculadora.Size = new System.Drawing.Size(245, 233);
             this.pnlCalculadora.TabIndex = 1;
@@ -819,20 +793,68 @@
             this.btnCalculadora8.Text = "8";
             this.btnCalculadora8.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // btnMetodoPago
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 156);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "METODO PAGO:";
+            this.btnMetodoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMetodoPago.Location = new System.Drawing.Point(91, 20);
+            this.btnMetodoPago.Name = "btnMetodoPago";
+            this.btnMetodoPago.Size = new System.Drawing.Size(45, 45);
+            this.btnMetodoPago.TabIndex = 9;
+            this.btnMetodoPago.Text = "MP";
+            this.btnMetodoPago.UseVisualStyleBackColor = true;
+            // 
+            // btnDevolucion
+            // 
+            this.btnDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevolucion.Location = new System.Drawing.Point(142, 20);
+            this.btnDevolucion.Name = "btnDevolucion";
+            this.btnDevolucion.Size = new System.Drawing.Size(45, 45);
+            this.btnDevolucion.TabIndex = 9;
+            this.btnDevolucion.Text = "DEV";
+            this.btnDevolucion.UseVisualStyleBackColor = true;
+            // 
+            // btnOferta
+            // 
+            this.btnOferta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOferta.Location = new System.Drawing.Point(111, 71);
+            this.btnOferta.Name = "btnOferta";
+            this.btnOferta.Size = new System.Drawing.Size(45, 45);
+            this.btnOferta.TabIndex = 9;
+            this.btnOferta.Text = "OF";
+            this.btnOferta.UseVisualStyleBackColor = true;
+            // 
+            // btnConfiguracion
+            // 
+            this.btnConfiguracion.Location = new System.Drawing.Point(60, 71);
+            this.btnConfiguracion.Name = "btnConfiguracion";
+            this.btnConfiguracion.Size = new System.Drawing.Size(45, 45);
+            this.btnConfiguracion.TabIndex = 9;
+            this.btnConfiguracion.Text = "CNF";
+            this.btnConfiguracion.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 77);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "FECHA:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 99);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "HORA:";
             // 
             // FormularioVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1187, 576);
+            this.ClientSize = new System.Drawing.Size(1200, 560);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.pnlDetalleVenta);
             this.Controls.Add(this.pnlOpciones);
@@ -912,11 +934,7 @@
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnConfiguracion;
         private System.Windows.Forms.Button btnAgregarCliente;
-        private System.Windows.Forms.Button btnOferta;
-        private System.Windows.Forms.Button btnDevolucion;
-        private System.Windows.Forms.Button btnMetodoPago;
         private System.Windows.Forms.Label lblSaldo;
         private System.Windows.Forms.TextBox tboxCantidad;
         private System.Windows.Forms.Label label26;
@@ -935,6 +953,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnConfiguracion;
+        private System.Windows.Forms.Button btnOferta;
+        private System.Windows.Forms.Button btnDevolucion;
+        private System.Windows.Forms.Button btnMetodoPago;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
 
