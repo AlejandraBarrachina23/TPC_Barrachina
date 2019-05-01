@@ -100,8 +100,8 @@
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnUltimasActualizaciones = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRetiroDinero = new System.Windows.Forms.Button();
+            this.btnCierreCaja = new System.Windows.Forms.Button();
             this.pnlDatosProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenProducto)).BeginInit();
             this.pnlBarraPrincipal.SuspendLayout();
@@ -275,8 +275,8 @@
             // pnlOpciones
             // 
             this.pnlOpciones.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pnlOpciones.Controls.Add(this.button2);
-            this.pnlOpciones.Controls.Add(this.button1);
+            this.pnlOpciones.Controls.Add(this.btnCierreCaja);
+            this.pnlOpciones.Controls.Add(this.btnRetiroDinero);
             this.pnlOpciones.Controls.Add(this.btnCancelar);
             this.pnlOpciones.Controls.Add(this.btnAceptar);
             this.pnlOpciones.Controls.Add(this.btnUltimasActualizaciones);
@@ -842,25 +842,25 @@
             this.btnUltimasActualizaciones.Text = "ACT";
             this.btnUltimasActualizaciones.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnRetiroDinero
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(134, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 45);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "RET";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRetiroDinero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetiroDinero.Location = new System.Drawing.Point(134, 20);
+            this.btnRetiroDinero.Name = "btnRetiroDinero";
+            this.btnRetiroDinero.Size = new System.Drawing.Size(45, 45);
+            this.btnRetiroDinero.TabIndex = 12;
+            this.btnRetiroDinero.Text = "RET";
+            this.btnRetiroDinero.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCierreCaja
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(134, 71);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 45);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "CIE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCierreCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCierreCaja.Location = new System.Drawing.Point(134, 71);
+            this.btnCierreCaja.Name = "btnCierreCaja";
+            this.btnCierreCaja.Size = new System.Drawing.Size(45, 45);
+            this.btnCierreCaja.TabIndex = 13;
+            this.btnCierreCaja.Text = "CIE";
+            this.btnCierreCaja.UseVisualStyleBackColor = true;
             // 
             // FormularioVenta
             // 
@@ -970,8 +970,8 @@
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnUltimasActualizaciones;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCierreCaja;
+        private System.Windows.Forms.Button btnRetiroDinero;
     }
 }
 
