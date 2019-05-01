@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusquedaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusquedaCliente.Designer.cs">
+      <DependentUpon>BusquedaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BusquedaCliente.resx">
+      <DependentUpon>BusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioVenta.resx">
       <DependentUpon>FormularioVenta.cs</DependentUpon>
     </EmbeddedResource>
