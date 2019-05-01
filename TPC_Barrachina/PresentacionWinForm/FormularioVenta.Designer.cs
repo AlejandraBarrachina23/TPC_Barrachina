@@ -315,7 +315,7 @@
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(45, 45);
             this.btnAgregarCliente.TabIndex = 9;
-            this.btnAgregarCliente.Text = "CLI+";
+            this.btnAgregarCliente.Text = "BCLI";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
             // 
             // btnOferta

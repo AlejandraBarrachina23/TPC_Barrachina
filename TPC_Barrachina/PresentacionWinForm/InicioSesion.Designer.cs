@@ -29,26 +29,27 @@
         private void InitializeComponent()
         {
             this.pnlSlider = new System.Windows.Forms.Panel();
-            this.pnlLogin = new System.Windows.Forms.Panel();
-            this.pboxLogin = new System.Windows.Forms.PictureBox();
-            this.pboxImagenes = new System.Windows.Forms.PictureBox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.tboxUsuario = new System.Windows.Forms.TextBox();
-            this.pboxUsuario = new System.Windows.Forms.PictureBox();
-            this.tboxContrasenia = new System.Windows.Forms.TextBox();
-            this.pboxConstrasenia = new System.Windows.Forms.PictureBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblContrasenia = new System.Windows.Forms.Label();
-            this.lblProblemasInicio = new System.Windows.Forms.Label();
-            this.btnIzquierda = new System.Windows.Forms.Button();
             this.btnDerecha = new System.Windows.Forms.Button();
+            this.btnIzquierda = new System.Windows.Forms.Button();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.pboxImagenes = new System.Windows.Forms.PictureBox();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.lblProblemasInicio = new System.Windows.Forms.Label();
+            this.lblContrasenia = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.pboxConstrasenia = new System.Windows.Forms.PictureBox();
+            this.tboxContrasenia = new System.Windows.Forms.TextBox();
+            this.pboxUsuario = new System.Windows.Forms.PictureBox();
+            this.tboxUsuario = new System.Windows.Forms.TextBox();
+            this.pboxLogin = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlSlider.SuspendLayout();
-            this.pnlLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxUsuario)).BeginInit();
+            this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxConstrasenia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSlider
@@ -63,8 +64,44 @@
             this.pnlSlider.Size = new System.Drawing.Size(329, 450);
             this.pnlSlider.TabIndex = 0;
             // 
+            // btnDerecha
+            // 
+            this.btnDerecha.Location = new System.Drawing.Point(279, 190);
+            this.btnDerecha.Name = "btnDerecha";
+            this.btnDerecha.Size = new System.Drawing.Size(34, 32);
+            this.btnDerecha.TabIndex = 3;
+            this.btnDerecha.Text = ">";
+            this.btnDerecha.UseVisualStyleBackColor = true;
+            // 
+            // btnIzquierda
+            // 
+            this.btnIzquierda.Location = new System.Drawing.Point(25, 190);
+            this.btnIzquierda.Name = "btnIzquierda";
+            this.btnIzquierda.Size = new System.Drawing.Size(34, 32);
+            this.btnIzquierda.TabIndex = 2;
+            this.btnIzquierda.Text = "<";
+            this.btnIzquierda.UseVisualStyleBackColor = true;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(136, 335);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.TabIndex = 1;
+            this.lblDescripcion.Text = "Descripcion";
+            // 
+            // pboxImagenes
+            // 
+            this.pboxImagenes.Location = new System.Drawing.Point(65, 99);
+            this.pboxImagenes.Name = "pboxImagenes";
+            this.pboxImagenes.Size = new System.Drawing.Size(208, 212);
+            this.pboxImagenes.TabIndex = 0;
+            this.pboxImagenes.TabStop = false;
+            // 
             // pnlLogin
             // 
+            this.pnlLogin.Controls.Add(this.button1);
             this.pnlLogin.Controls.Add(this.lblProblemasInicio);
             this.pnlLogin.Controls.Add(this.lblContrasenia);
             this.pnlLogin.Controls.Add(this.lblUsuario);
@@ -80,80 +117,14 @@
             this.pnlLogin.Size = new System.Drawing.Size(329, 450);
             this.pnlLogin.TabIndex = 1;
             // 
-            // pboxLogin
+            // lblProblemasInicio
             // 
-            this.pboxLogin.Location = new System.Drawing.Point(114, 75);
-            this.pboxLogin.Name = "pboxLogin";
-            this.pboxLogin.Size = new System.Drawing.Size(107, 100);
-            this.pboxLogin.TabIndex = 0;
-            this.pboxLogin.TabStop = false;
-            // 
-            // pboxImagenes
-            // 
-            this.pboxImagenes.Location = new System.Drawing.Point(65, 99);
-            this.pboxImagenes.Name = "pboxImagenes";
-            this.pboxImagenes.Size = new System.Drawing.Size(208, 212);
-            this.pboxImagenes.TabIndex = 0;
-            this.pboxImagenes.TabStop = false;
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(136, 335);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.lblDescripcion.TabIndex = 1;
-            this.lblDescripcion.Text = "Descripcion";
-            // 
-            // tboxUsuario
-            // 
-            this.tboxUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxUsuario.Location = new System.Drawing.Point(99, 217);
-            this.tboxUsuario.Name = "tboxUsuario";
-            this.tboxUsuario.Size = new System.Drawing.Size(155, 31);
-            this.tboxUsuario.TabIndex = 1;
-            // 
-            // pboxUsuario
-            // 
-            this.pboxUsuario.Location = new System.Drawing.Point(70, 217);
-            this.pboxUsuario.Name = "pboxUsuario";
-            this.pboxUsuario.Size = new System.Drawing.Size(31, 31);
-            this.pboxUsuario.TabIndex = 2;
-            this.pboxUsuario.TabStop = false;
-            // 
-            // tboxContrasenia
-            // 
-            this.tboxContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxContrasenia.Location = new System.Drawing.Point(99, 280);
-            this.tboxContrasenia.Name = "tboxContrasenia";
-            this.tboxContrasenia.Size = new System.Drawing.Size(155, 31);
-            this.tboxContrasenia.TabIndex = 1;
-            // 
-            // pboxConstrasenia
-            // 
-            this.pboxConstrasenia.Location = new System.Drawing.Point(70, 280);
-            this.pboxConstrasenia.Name = "pboxConstrasenia";
-            this.pboxConstrasenia.Size = new System.Drawing.Size(31, 31);
-            this.pboxConstrasenia.TabIndex = 2;
-            this.pboxConstrasenia.TabStop = false;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(70, 332);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(184, 37);
-            this.btnAceptar.TabIndex = 3;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(134, 197);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
-            this.lblUsuario.TabIndex = 4;
-            this.lblUsuario.Text = "Usuario";
+            this.lblProblemasInicio.AutoSize = true;
+            this.lblProblemasInicio.Location = new System.Drawing.Point(111, 392);
+            this.lblProblemasInicio.Name = "lblProblemasInicio";
+            this.lblProblemasInicio.Size = new System.Drawing.Size(99, 13);
+            this.lblProblemasInicio.TabIndex = 4;
+            this.lblProblemasInicio.Text = "Problemas de Inicio";
             // 
             // lblContrasenia
             // 
@@ -164,32 +135,72 @@
             this.lblContrasenia.TabIndex = 4;
             this.lblContrasenia.Text = "Contraseña";
             // 
-            // lblProblemasInicio
+            // lblUsuario
             // 
-            this.lblProblemasInicio.AutoSize = true;
-            this.lblProblemasInicio.Location = new System.Drawing.Point(111, 392);
-            this.lblProblemasInicio.Name = "lblProblemasInicio";
-            this.lblProblemasInicio.Size = new System.Drawing.Size(99, 13);
-            this.lblProblemasInicio.TabIndex = 4;
-            this.lblProblemasInicio.Text = "Problemas de Inicio";
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(134, 197);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.TabIndex = 4;
+            this.lblUsuario.Text = "Usuario";
             // 
-            // btnIzquierda
+            // btnAceptar
             // 
-            this.btnIzquierda.Location = new System.Drawing.Point(25, 190);
-            this.btnIzquierda.Name = "btnIzquierda";
-            this.btnIzquierda.Size = new System.Drawing.Size(34, 32);
-            this.btnIzquierda.TabIndex = 2;
-            this.btnIzquierda.Text = "<";
-            this.btnIzquierda.UseVisualStyleBackColor = true;
+            this.btnAceptar.Location = new System.Drawing.Point(70, 332);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(184, 37);
+            this.btnAceptar.TabIndex = 3;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // btnDerecha
+            // pboxConstrasenia
             // 
-            this.btnDerecha.Location = new System.Drawing.Point(279, 190);
-            this.btnDerecha.Name = "btnDerecha";
-            this.btnDerecha.Size = new System.Drawing.Size(34, 32);
-            this.btnDerecha.TabIndex = 3;
-            this.btnDerecha.Text = ">";
-            this.btnDerecha.UseVisualStyleBackColor = true;
+            this.pboxConstrasenia.Location = new System.Drawing.Point(70, 280);
+            this.pboxConstrasenia.Name = "pboxConstrasenia";
+            this.pboxConstrasenia.Size = new System.Drawing.Size(31, 31);
+            this.pboxConstrasenia.TabIndex = 2;
+            this.pboxConstrasenia.TabStop = false;
+            // 
+            // tboxContrasenia
+            // 
+            this.tboxContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxContrasenia.Location = new System.Drawing.Point(99, 280);
+            this.tboxContrasenia.Name = "tboxContrasenia";
+            this.tboxContrasenia.Size = new System.Drawing.Size(155, 31);
+            this.tboxContrasenia.TabIndex = 1;
+            // 
+            // pboxUsuario
+            // 
+            this.pboxUsuario.Location = new System.Drawing.Point(70, 217);
+            this.pboxUsuario.Name = "pboxUsuario";
+            this.pboxUsuario.Size = new System.Drawing.Size(31, 31);
+            this.pboxUsuario.TabIndex = 2;
+            this.pboxUsuario.TabStop = false;
+            // 
+            // tboxUsuario
+            // 
+            this.tboxUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxUsuario.Location = new System.Drawing.Point(99, 217);
+            this.tboxUsuario.Name = "tboxUsuario";
+            this.tboxUsuario.Size = new System.Drawing.Size(155, 31);
+            this.tboxUsuario.TabIndex = 1;
+            // 
+            // pboxLogin
+            // 
+            this.pboxLogin.Location = new System.Drawing.Point(114, 75);
+            this.pboxLogin.Name = "pboxLogin";
+            this.pboxLogin.Size = new System.Drawing.Size(107, 100);
+            this.pboxLogin.TabIndex = 0;
+            this.pboxLogin.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(295, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 27);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // InicioSesion
             // 
@@ -203,12 +214,12 @@
             this.Text = "InicioSesion";
             this.pnlSlider.ResumeLayout(false);
             this.pnlSlider.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxImagenes)).EndInit();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxLogin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxImagenes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxConstrasenia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxLogin)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,5 +241,6 @@
         private System.Windows.Forms.TextBox tboxContrasenia;
         private System.Windows.Forms.PictureBox pboxUsuario;
         private System.Windows.Forms.TextBox tboxUsuario;
+        private System.Windows.Forms.Button button1;
     }
 }
