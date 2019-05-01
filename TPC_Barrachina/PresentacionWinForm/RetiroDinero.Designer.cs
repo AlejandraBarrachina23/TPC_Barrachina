@@ -29,157 +29,157 @@
         private void InitializeComponent()
         {
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.lbMotivoDevolucion = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblRetiroDinero = new System.Windows.Forms.Label();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.tboxImporteRetirar = new System.Windows.Forms.TextBox();
+            this.lblImporteRetirar = new System.Windows.Forms.Label();
+            this.rbtnArqueoCaja = new System.Windows.Forms.RadioButton();
+            this.rbtnPagoProveedor = new System.Windows.Forms.RadioButton();
+            this.rbtnOtros = new System.Windows.Forms.RadioButton();
+            this.gboxConcepto = new System.Windows.Forms.GroupBox();
+            this.lblObservaciones = new System.Windows.Forms.Label();
+            this.tboxObservaciones = new System.Windows.Forms.TextBox();
             this.pnlBarraPrincipal.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gboxConcepto.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBarraPrincipal
             // 
             this.pnlBarraPrincipal.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlBarraPrincipal.Controls.Add(this.lbMotivoDevolucion);
+            this.pnlBarraPrincipal.Controls.Add(this.lblRetiroDinero);
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(380, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(381, 41);
             this.pnlBarraPrincipal.TabIndex = 5;
             // 
-            // lbMotivoDevolucion
+            // lblRetiroDinero
             // 
-            this.lbMotivoDevolucion.AutoSize = true;
-            this.lbMotivoDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMotivoDevolucion.Location = new System.Drawing.Point(131, 15);
-            this.lbMotivoDevolucion.Name = "lbMotivoDevolucion";
-            this.lbMotivoDevolucion.Size = new System.Drawing.Size(127, 13);
-            this.lbMotivoDevolucion.TabIndex = 8;
-            this.lbMotivoDevolucion.Text = "RETIRO DE DINERO";
+            this.lblRetiroDinero.AutoSize = true;
+            this.lblRetiroDinero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRetiroDinero.Location = new System.Drawing.Point(131, 15);
+            this.lblRetiroDinero.Name = "lblRetiroDinero";
+            this.lblRetiroDinero.Size = new System.Drawing.Size(127, 13);
+            this.lblRetiroDinero.TabIndex = 8;
+            this.lblRetiroDinero.Text = "RETIRO DE DINERO";
             // 
-            // button1
+            // btnAceptar
             // 
-            this.button1.Location = new System.Drawing.Point(109, 270);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 36);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAceptar.Location = new System.Drawing.Point(132, 273);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 36);
+            this.btnAceptar.TabIndex = 6;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(194, 270);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 36);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(217, 273);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 36);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tboxImporteRetirar
             // 
-            this.textBox1.Location = new System.Drawing.Point(183, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.tboxImporteRetirar.Location = new System.Drawing.Point(183, 67);
+            this.tboxImporteRetirar.Name = "tboxImporteRetirar";
+            this.tboxImporteRetirar.Size = new System.Drawing.Size(100, 20);
+            this.tboxImporteRetirar.TabIndex = 8;
             // 
-            // label1
+            // lblImporteRetirar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Importe a retirar";
+            this.lblImporteRetirar.AutoSize = true;
+            this.lblImporteRetirar.Location = new System.Drawing.Point(93, 70);
+            this.lblImporteRetirar.Name = "lblImporteRetirar";
+            this.lblImporteRetirar.Size = new System.Drawing.Size(80, 13);
+            this.lblImporteRetirar.TabIndex = 9;
+            this.lblImporteRetirar.Text = "Importe a retirar";
             // 
-            // radioButton1
+            // rbtnArqueoCaja
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(33, 21);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(98, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Arqueo de Caja";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnArqueoCaja.AutoSize = true;
+            this.rbtnArqueoCaja.Location = new System.Drawing.Point(33, 21);
+            this.rbtnArqueoCaja.Name = "rbtnArqueoCaja";
+            this.rbtnArqueoCaja.Size = new System.Drawing.Size(98, 17);
+            this.rbtnArqueoCaja.TabIndex = 10;
+            this.rbtnArqueoCaja.TabStop = true;
+            this.rbtnArqueoCaja.Text = "Arqueo de Caja";
+            this.rbtnArqueoCaja.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbtnPagoProveedor
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(140, 21);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(111, 17);
-            this.radioButton2.TabIndex = 10;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Pago a Proveedor";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnPagoProveedor.AutoSize = true;
+            this.rbtnPagoProveedor.Location = new System.Drawing.Point(140, 21);
+            this.rbtnPagoProveedor.Name = "rbtnPagoProveedor";
+            this.rbtnPagoProveedor.Size = new System.Drawing.Size(111, 17);
+            this.rbtnPagoProveedor.TabIndex = 10;
+            this.rbtnPagoProveedor.TabStop = true;
+            this.rbtnPagoProveedor.Text = "Pago a Proveedor";
+            this.rbtnPagoProveedor.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbtnOtros
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(269, 21);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(46, 17);
-            this.radioButton3.TabIndex = 10;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Vale";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtnOtros.AutoSize = true;
+            this.rbtnOtros.Location = new System.Drawing.Point(269, 21);
+            this.rbtnOtros.Name = "rbtnOtros";
+            this.rbtnOtros.Size = new System.Drawing.Size(50, 17);
+            this.rbtnOtros.TabIndex = 10;
+            this.rbtnOtros.TabStop = true;
+            this.rbtnOtros.Text = "Otros";
+            this.rbtnOtros.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // gboxConcepto
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 107);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(356, 52);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Concepto";
+            this.gboxConcepto.Controls.Add(this.rbtnArqueoCaja);
+            this.gboxConcepto.Controls.Add(this.rbtnOtros);
+            this.gboxConcepto.Controls.Add(this.rbtnPagoProveedor);
+            this.gboxConcepto.Location = new System.Drawing.Point(12, 107);
+            this.gboxConcepto.Name = "gboxConcepto";
+            this.gboxConcepto.Size = new System.Drawing.Size(356, 52);
+            this.gboxConcepto.TabIndex = 11;
+            this.gboxConcepto.TabStop = false;
+            this.gboxConcepto.Text = "Concepto";
             // 
-            // label2
+            // lblObservaciones
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 173);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Importe a retirar";
+            this.lblObservaciones.AutoSize = true;
+            this.lblObservaciones.Location = new System.Drawing.Point(12, 173);
+            this.lblObservaciones.Name = "lblObservaciones";
+            this.lblObservaciones.Size = new System.Drawing.Size(78, 13);
+            this.lblObservaciones.TabIndex = 9;
+            this.lblObservaciones.Text = "Observaciones";
             // 
-            // textBox2
+            // tboxObservaciones
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 194);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(356, 67);
-            this.textBox2.TabIndex = 12;
+            this.tboxObservaciones.Location = new System.Drawing.Point(12, 194);
+            this.tboxObservaciones.Multiline = true;
+            this.tboxObservaciones.Name = "tboxObservaciones";
+            this.tboxObservaciones.Size = new System.Drawing.Size(356, 67);
+            this.tboxObservaciones.TabIndex = 12;
             // 
             // RetiroDinero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 322);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(381, 331);
+            this.Controls.Add(this.tboxObservaciones);
+            this.Controls.Add(this.gboxConcepto);
+            this.Controls.Add(this.lblObservaciones);
+            this.Controls.Add(this.lblImporteRetirar);
+            this.Controls.Add(this.tboxImporteRetirar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RetiroDinero";
             this.Text = "RetiroDinero";
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gboxConcepto.ResumeLayout(false);
+            this.gboxConcepto.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,16 +188,16 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlBarraPrincipal;
-        private System.Windows.Forms.Label lbMotivoDevolucion;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblRetiroDinero;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox tboxImporteRetirar;
+        private System.Windows.Forms.Label lblImporteRetirar;
+        private System.Windows.Forms.RadioButton rbtnArqueoCaja;
+        private System.Windows.Forms.RadioButton rbtnPagoProveedor;
+        private System.Windows.Forms.RadioButton rbtnOtros;
+        private System.Windows.Forms.GroupBox gboxConcepto;
+        private System.Windows.Forms.Label lblObservaciones;
+        private System.Windows.Forms.TextBox tboxObservaciones;
     }
 }
