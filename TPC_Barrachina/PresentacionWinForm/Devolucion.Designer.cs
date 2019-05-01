@@ -87,6 +87,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pboxImagenProducto = new System.Windows.Forms.PictureBox();
             this.pnlOpciones = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlCabecera = new System.Windows.Forms.Panel();
             this.lblDatosOperacion = new System.Windows.Forms.Label();
@@ -95,8 +97,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblNumeroOperacion = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.pnlDetalleVenta.SuspendLayout();
             this.pnlLineaVenta.SuspendLayout();
@@ -442,7 +442,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(51, 52);
+            this.btnAceptar.Location = new System.Drawing.Point(51, 74);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(133, 42);
             this.btnAceptar.TabIndex = 10;
@@ -706,9 +706,28 @@
             this.pnlOpciones.Size = new System.Drawing.Size(222, 233);
             this.pnlOpciones.TabIndex = 6;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(28, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(177, 18);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "DATOS DEVOLUCION";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(51, 171);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(133, 43);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "CANCELAR";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(51, 100);
+            this.button1.Location = new System.Drawing.Point(51, 122);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 43);
             this.button1.TabIndex = 10;
@@ -784,25 +803,6 @@
             this.lblNumeroOperacion.Size = new System.Drawing.Size(166, 13);
             this.lblNumeroOperacion.TabIndex = 8;
             this.lblNumeroOperacion.Text = "OPERACION:  XXXXXX-XXXXXX";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(51, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 43);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "CANCELAR";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(28, 20);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(177, 18);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "DATOS DEVOLUCION";
             // 
             // Devolucion
             // 

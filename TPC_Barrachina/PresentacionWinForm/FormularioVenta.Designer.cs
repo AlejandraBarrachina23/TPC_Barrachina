@@ -34,8 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pboxImagenProducto = new System.Windows.Forms.PictureBox();
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.btnUsuario = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.pnlCabecera = new System.Windows.Forms.Panel();
             this.lblDatosOperacion = new System.Windows.Forms.Label();
@@ -43,11 +41,15 @@
             this.lblSaldo = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.pnlOpciones = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
+            this.btnDevolucion = new System.Windows.Forms.Button();
+            this.btnMetodoPago = new System.Windows.Forms.Button();
             this.pnlDetalleVenta = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlLineaVenta = new System.Windows.Forms.Panel();
@@ -95,12 +97,11 @@
             this.btnCalculadoraBorrarUno = new System.Windows.Forms.Button();
             this.btnCalculadora9 = new System.Windows.Forms.Button();
             this.btnCalculadora8 = new System.Windows.Forms.Button();
-            this.btnMetodoPago = new System.Windows.Forms.Button();
-            this.btnDevolucion = new System.Windows.Forms.Button();
-            this.btnOferta = new System.Windows.Forms.Button();
-            this.btnConfiguracion = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnUsuario = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnUltimasActualizaciones = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlDatosProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenProducto)).BeginInit();
             this.pnlBarraPrincipal.SuspendLayout();
@@ -171,24 +172,6 @@
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(1200, 41);
             this.pnlBarraPrincipal.TabIndex = 1;
-            // 
-            // btnUsuario
-            // 
-            this.btnUsuario.Location = new System.Drawing.Point(7, 3);
-            this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(54, 35);
-            this.btnUsuario.TabIndex = 1;
-            this.btnUsuario.Text = "USER";
-            this.btnUsuario.UseVisualStyleBackColor = true;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(67, 3);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(67, 35);
-            this.btnLogout.TabIndex = 0;
-            this.btnLogout.Text = "LOGOUT";
-            this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // lbNombrePrograma
             // 
@@ -262,6 +245,24 @@
             this.lblCliente.TabIndex = 8;
             this.lblCliente.Text = "CLIENTE: XXXXXXX";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 99);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "HORA:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(27, 77);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "FECHA:";
+            // 
             // lblNumeroOperacion
             // 
             this.lblNumeroOperacion.AutoSize = true;
@@ -274,11 +275,12 @@
             // pnlOpciones
             // 
             this.pnlOpciones.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnlOpciones.Controls.Add(this.button2);
+            this.pnlOpciones.Controls.Add(this.button1);
             this.pnlOpciones.Controls.Add(this.btnCancelar);
             this.pnlOpciones.Controls.Add(this.btnAceptar);
-            this.pnlOpciones.Controls.Add(this.btnConfiguracion);
+            this.pnlOpciones.Controls.Add(this.btnUltimasActualizaciones);
             this.pnlOpciones.Controls.Add(this.btnAgregarCliente);
-            this.pnlOpciones.Controls.Add(this.btnOferta);
             this.pnlOpciones.Controls.Add(this.btnDevolucion);
             this.pnlOpciones.Controls.Add(this.btnMetodoPago);
             this.pnlOpciones.Location = new System.Drawing.Point(953, 306);
@@ -306,12 +308,32 @@
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.Location = new System.Drawing.Point(40, 20);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(32, 20);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(45, 45);
             this.btnAgregarCliente.TabIndex = 9;
-            this.btnAgregarCliente.Text = "BCLI";
+            this.btnAgregarCliente.Text = "CLI";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            // 
+            // btnDevolucion
+            // 
+            this.btnDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDevolucion.Location = new System.Drawing.Point(83, 71);
+            this.btnDevolucion.Name = "btnDevolucion";
+            this.btnDevolucion.Size = new System.Drawing.Size(45, 45);
+            this.btnDevolucion.TabIndex = 9;
+            this.btnDevolucion.Text = "DEV";
+            this.btnDevolucion.UseVisualStyleBackColor = true;
+            // 
+            // btnMetodoPago
+            // 
+            this.btnMetodoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMetodoPago.Location = new System.Drawing.Point(83, 20);
+            this.btnMetodoPago.Name = "btnMetodoPago";
+            this.btnMetodoPago.Size = new System.Drawing.Size(45, 45);
+            this.btnMetodoPago.TabIndex = 9;
+            this.btnMetodoPago.Text = "MP";
+            this.btnMetodoPago.UseVisualStyleBackColor = true;
             // 
             // pnlDetalleVenta
             // 
@@ -793,62 +815,52 @@
             this.btnCalculadora8.Text = "8";
             this.btnCalculadora8.UseVisualStyleBackColor = true;
             // 
-            // btnMetodoPago
+            // btnUsuario
             // 
-            this.btnMetodoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMetodoPago.Location = new System.Drawing.Point(91, 20);
-            this.btnMetodoPago.Name = "btnMetodoPago";
-            this.btnMetodoPago.Size = new System.Drawing.Size(45, 45);
-            this.btnMetodoPago.TabIndex = 9;
-            this.btnMetodoPago.Text = "MP";
-            this.btnMetodoPago.UseVisualStyleBackColor = true;
+            this.btnUsuario.Location = new System.Drawing.Point(7, 3);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Size = new System.Drawing.Size(54, 35);
+            this.btnUsuario.TabIndex = 1;
+            this.btnUsuario.Text = "USER";
+            this.btnUsuario.UseVisualStyleBackColor = true;
             // 
-            // btnDevolucion
+            // btnLogout
             // 
-            this.btnDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevolucion.Location = new System.Drawing.Point(142, 20);
-            this.btnDevolucion.Name = "btnDevolucion";
-            this.btnDevolucion.Size = new System.Drawing.Size(45, 45);
-            this.btnDevolucion.TabIndex = 9;
-            this.btnDevolucion.Text = "DEV";
-            this.btnDevolucion.UseVisualStyleBackColor = true;
+            this.btnLogout.Location = new System.Drawing.Point(67, 3);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(67, 35);
+            this.btnLogout.TabIndex = 0;
+            this.btnLogout.Text = "LOGOUT";
+            this.btnLogout.UseVisualStyleBackColor = true;
             // 
-            // btnOferta
+            // btnUltimasActualizaciones
             // 
-            this.btnOferta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOferta.Location = new System.Drawing.Point(111, 71);
-            this.btnOferta.Name = "btnOferta";
-            this.btnOferta.Size = new System.Drawing.Size(45, 45);
-            this.btnOferta.TabIndex = 9;
-            this.btnOferta.Text = "OF";
-            this.btnOferta.UseVisualStyleBackColor = true;
+            this.btnUltimasActualizaciones.Location = new System.Drawing.Point(32, 71);
+            this.btnUltimasActualizaciones.Name = "btnUltimasActualizaciones";
+            this.btnUltimasActualizaciones.Size = new System.Drawing.Size(45, 45);
+            this.btnUltimasActualizaciones.TabIndex = 9;
+            this.btnUltimasActualizaciones.Text = "ACT";
+            this.btnUltimasActualizaciones.UseVisualStyleBackColor = true;
             // 
-            // btnConfiguracion
+            // button1
             // 
-            this.btnConfiguracion.Location = new System.Drawing.Point(60, 71);
-            this.btnConfiguracion.Name = "btnConfiguracion";
-            this.btnConfiguracion.Size = new System.Drawing.Size(45, 45);
-            this.btnConfiguracion.TabIndex = 9;
-            this.btnConfiguracion.Text = "CNF";
-            this.btnConfiguracion.UseVisualStyleBackColor = true;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(134, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 45);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "RET";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // label7
+            // button2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 77);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "FECHA:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 99);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "HORA:";
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(134, 71);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(45, 45);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "CIE";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FormularioVenta
             // 
@@ -921,7 +933,6 @@
         private System.Windows.Forms.Button btnBusqueda;
         private System.Windows.Forms.TextBox tboxCodigoBarra;
         private System.Windows.Forms.Panel pnlLineaVenta;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lblNumeroOperacion;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -929,7 +940,6 @@
         private System.Windows.Forms.Label lblTotalFactura;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Button btnCancelar;
@@ -953,12 +963,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnConfiguracion;
-        private System.Windows.Forms.Button btnOferta;
         private System.Windows.Forms.Button btnDevolucion;
         private System.Windows.Forms.Button btnMetodoPago;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnUsuario;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnUltimasActualizaciones;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
