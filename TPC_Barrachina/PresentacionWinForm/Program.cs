@@ -16,7 +16,7 @@ namespace PresentacionWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UltimasActualizaciones());
+            Application.Run(new CierreCaja());
         }
     }
 }
