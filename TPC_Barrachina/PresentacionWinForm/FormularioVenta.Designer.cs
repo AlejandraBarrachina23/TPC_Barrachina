@@ -33,10 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pboxImagenProducto = new System.Windows.Forms.PictureBox();
-            this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.btnUsuario = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.pnlCabecera = new System.Windows.Forms.Panel();
             this.lblDatosOperacion = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -104,7 +100,6 @@
             this.btnCalculadora8 = new System.Windows.Forms.Button();
             this.pnlDatosProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenProducto)).BeginInit();
-            this.pnlBarraPrincipal.SuspendLayout();
             this.pnlCabecera.SuspendLayout();
             this.pnlOpciones.SuspendLayout();
             this.pnlDetalleVenta.SuspendLayout();
@@ -120,7 +115,7 @@
             this.pnlDatosProducto.Controls.Add(this.label3);
             this.pnlDatosProducto.Controls.Add(this.label2);
             this.pnlDatosProducto.Controls.Add(this.pboxImagenProducto);
-            this.pnlDatosProducto.Location = new System.Drawing.Point(12, 57);
+            this.pnlDatosProducto.Location = new System.Drawing.Point(12, 12);
             this.pnlDatosProducto.Name = "pnlDatosProducto";
             this.pnlDatosProducto.Size = new System.Drawing.Size(220, 233);
             this.pnlDatosProducto.TabIndex = 0;
@@ -161,46 +156,6 @@
             this.pboxImagenProducto.TabIndex = 4;
             this.pboxImagenProducto.TabStop = false;
             // 
-            // pnlBarraPrincipal
-            // 
-            this.pnlBarraPrincipal.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlBarraPrincipal.Controls.Add(this.btnUsuario);
-            this.pnlBarraPrincipal.Controls.Add(this.btnLogout);
-            this.pnlBarraPrincipal.Controls.Add(this.lbNombrePrograma);
-            this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(1140, 41);
-            this.pnlBarraPrincipal.TabIndex = 1;
-            // 
-            // btnUsuario
-            // 
-            this.btnUsuario.Location = new System.Drawing.Point(7, 3);
-            this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(54, 35);
-            this.btnUsuario.TabIndex = 1;
-            this.btnUsuario.Text = "USER";
-            this.btnUsuario.UseVisualStyleBackColor = true;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(67, 3);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(67, 35);
-            this.btnLogout.TabIndex = 0;
-            this.btnLogout.Text = "LOGOUT";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            // 
-            // lbNombrePrograma
-            // 
-            this.lbNombrePrograma.AutoSize = true;
-            this.lbNombrePrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombrePrograma.Location = new System.Drawing.Point(485, 14);
-            this.lbNombrePrograma.Name = "lbNombrePrograma";
-            this.lbNombrePrograma.Size = new System.Drawing.Size(134, 13);
-            this.lbNombrePrograma.TabIndex = 8;
-            this.lbNombrePrograma.Text = "NOMBRE PROGRAMA";
-            // 
             // pnlCabecera
             // 
             this.pnlCabecera.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -212,9 +167,9 @@
             this.pnlCabecera.Controls.Add(this.label8);
             this.pnlCabecera.Controls.Add(this.label7);
             this.pnlCabecera.Controls.Add(this.lblNumeroOperacion);
-            this.pnlCabecera.Location = new System.Drawing.Point(910, 57);
+            this.pnlCabecera.Location = new System.Drawing.Point(910, 12);
             this.pnlCabecera.Name = "pnlCabecera";
-            this.pnlCabecera.Size = new System.Drawing.Size(222, 233);
+            this.pnlCabecera.Size = new System.Drawing.Size(220, 233);
             this.pnlCabecera.TabIndex = 0;
             // 
             // lblDatosOperacion
@@ -301,9 +256,9 @@
             this.pnlOpciones.Controls.Add(this.btnAgregarCliente);
             this.pnlOpciones.Controls.Add(this.btnDevolucion);
             this.pnlOpciones.Controls.Add(this.btnMetodoPago);
-            this.pnlOpciones.Location = new System.Drawing.Point(910, 306);
+            this.pnlOpciones.Location = new System.Drawing.Point(910, 261);
             this.pnlOpciones.Name = "pnlOpciones";
-            this.pnlOpciones.Size = new System.Drawing.Size(222, 233);
+            this.pnlOpciones.Size = new System.Drawing.Size(220, 233);
             this.pnlOpciones.TabIndex = 1;
             // 
             // btnCierreCaja
@@ -396,7 +351,7 @@
             this.pnlDetalleVenta.Controls.Add(this.lblNombre);
             this.pnlDetalleVenta.Controls.Add(this.btnBusqueda);
             this.pnlDetalleVenta.Controls.Add(this.tboxCodigoBarra);
-            this.pnlDetalleVenta.Location = new System.Drawing.Point(239, 57);
+            this.pnlDetalleVenta.Location = new System.Drawing.Point(239, 12);
             this.pnlDetalleVenta.Name = "pnlDetalleVenta";
             this.pnlDetalleVenta.Size = new System.Drawing.Size(662, 347);
             this.pnlDetalleVenta.TabIndex = 2;
@@ -629,7 +584,7 @@
             this.panel7.Controls.Add(this.lblTotalFactura);
             this.panel7.Controls.Add(this.label12);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Location = new System.Drawing.Point(239, 410);
+            this.panel7.Location = new System.Drawing.Point(239, 365);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(662, 129);
             this.panel7.TabIndex = 3;
@@ -740,7 +695,7 @@
             this.pnlCalculadora.Controls.Add(this.btnCalculadora9);
             this.pnlCalculadora.Controls.Add(this.btnCalculadora8);
             this.pnlCalculadora.Controls.Add(this.btnCalculadora7);
-            this.pnlCalculadora.Location = new System.Drawing.Point(12, 306);
+            this.pnlCalculadora.Location = new System.Drawing.Point(12, 261);
             this.pnlCalculadora.Name = "pnlCalculadora";
             this.pnlCalculadora.Size = new System.Drawing.Size(220, 233);
             this.pnlCalculadora.TabIndex = 1;
@@ -866,12 +821,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1140, 550);
+            this.ClientSize = new System.Drawing.Size(1137, 520);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.pnlDetalleVenta);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlCalculadora);
-            this.Controls.Add(this.pnlBarraPrincipal);
             this.Controls.Add(this.pnlCabecera);
             this.Controls.Add(this.pnlDatosProducto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -880,8 +834,6 @@
             this.pnlDatosProducto.ResumeLayout(false);
             this.pnlDatosProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenProducto)).EndInit();
-            this.pnlBarraPrincipal.ResumeLayout(false);
-            this.pnlBarraPrincipal.PerformLayout();
             this.pnlCabecera.ResumeLayout(false);
             this.pnlCabecera.PerformLayout();
             this.pnlOpciones.ResumeLayout(false);
@@ -899,7 +851,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlDatosProducto;
-        private System.Windows.Forms.Panel pnlBarraPrincipal;
         private System.Windows.Forms.Panel pnlCabecera;
         private System.Windows.Forms.Panel pnlOpciones;
         private System.Windows.Forms.Panel pnlDetalleVenta;
@@ -959,7 +910,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label lblDatosOperacion;
-        private System.Windows.Forms.Label lbNombrePrograma;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
@@ -967,8 +917,6 @@
         private System.Windows.Forms.Button btnMetodoPago;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnUsuario;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnUltimasActualizaciones;
         private System.Windows.Forms.Button btnCierreCaja;
         private System.Windows.Forms.Button btnRetiroDinero;
