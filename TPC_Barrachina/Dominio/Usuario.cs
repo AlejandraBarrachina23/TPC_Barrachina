@@ -11,6 +11,7 @@ namespace Dominio
         public int CodigoUsuario { get; set; }
         public string Nombre { get; set; }
         public string Constrasenia { get; set; }
+        public Sector SectorDesignado { get; set; }
         public bool Estado { get; set; }
     }
 }
