@@ -116,7 +116,7 @@
             this.gboxMusica.Controls.Add(this.label4);
             this.gboxMusica.Controls.Add(this.label2);
             this.gboxMusica.Controls.Add(this.label1);
-            this.gboxMusica.Location = new System.Drawing.Point(17, 225);
+            this.gboxMusica.Location = new System.Drawing.Point(17, 231);
             this.gboxMusica.Name = "gboxMusica";
             this.gboxMusica.Size = new System.Drawing.Size(425, 124);
             this.gboxMusica.TabIndex = 21;
@@ -235,9 +235,9 @@
             this.gboxSexo.Controls.Add(this.rbtnOtros);
             this.gboxSexo.Controls.Add(this.rbtnMasculino);
             this.gboxSexo.Controls.Add(this.rbtnFemenino);
-            this.gboxSexo.Location = new System.Drawing.Point(18, 150);
+            this.gboxSexo.Location = new System.Drawing.Point(18, 166);
             this.gboxSexo.Name = "gboxSexo";
-            this.gboxSexo.Size = new System.Drawing.Size(425, 59);
+            this.gboxSexo.Size = new System.Drawing.Size(424, 59);
             this.gboxSexo.TabIndex = 20;
             this.gboxSexo.TabStop = false;
             this.gboxSexo.Text = "Sexo";
