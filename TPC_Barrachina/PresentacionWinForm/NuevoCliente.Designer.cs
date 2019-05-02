@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
+            this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.gboxMusica = new System.Windows.Forms.GroupBox();
@@ -59,7 +60,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal.SuspendLayout();
             this.gboxMusica.SuspendLayout();
             this.gboxSexo.SuspendLayout();
@@ -73,12 +73,22 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(461, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(460, 41);
             this.pnlBarraPrincipal.TabIndex = 3;
+            // 
+            // lbNombrePrograma
+            // 
+            this.lbNombrePrograma.AutoSize = true;
+            this.lbNombrePrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombrePrograma.Location = new System.Drawing.Point(190, 13);
+            this.lbNombrePrograma.Name = "lbNombrePrograma";
+            this.lbNombrePrograma.Size = new System.Drawing.Size(106, 13);
+            this.lbNombrePrograma.TabIndex = 9;
+            this.lbNombrePrograma.Text = "NUEVO CLIENTE";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(250, 509);
+            this.btnCancelar.Location = new System.Drawing.Point(244, 509);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(111, 44);
             this.btnCancelar.TabIndex = 22;
@@ -87,7 +97,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(130, 509);
+            this.btnAceptar.Location = new System.Drawing.Point(124, 509);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(113, 44);
             this.btnAceptar.TabIndex = 23;
@@ -106,7 +116,7 @@
             this.gboxMusica.Controls.Add(this.label4);
             this.gboxMusica.Controls.Add(this.label2);
             this.gboxMusica.Controls.Add(this.label1);
-            this.gboxMusica.Location = new System.Drawing.Point(23, 227);
+            this.gboxMusica.Location = new System.Drawing.Point(17, 225);
             this.gboxMusica.Name = "gboxMusica";
             this.gboxMusica.Size = new System.Drawing.Size(425, 124);
             this.gboxMusica.TabIndex = 21;
@@ -196,7 +206,7 @@
             // lbNacimiento
             // 
             this.lbNacimiento.AutoSize = true;
-            this.lbNacimiento.Location = new System.Drawing.Point(94, 131);
+            this.lbNacimiento.Location = new System.Drawing.Point(104, 120);
             this.lbNacimiento.Name = "lbNacimiento";
             this.lbNacimiento.Size = new System.Drawing.Size(37, 13);
             this.lbNacimiento.TabIndex = 16;
@@ -205,7 +215,7 @@
             // lbApellido
             // 
             this.lbApellido.AutoSize = true;
-            this.lbApellido.Location = new System.Drawing.Point(94, 105);
+            this.lbApellido.Location = new System.Drawing.Point(104, 94);
             this.lbApellido.Name = "lbApellido";
             this.lbApellido.Size = new System.Drawing.Size(44, 13);
             this.lbApellido.TabIndex = 17;
@@ -214,7 +224,7 @@
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(94, 79);
+            this.lbNombre.Location = new System.Drawing.Point(104, 68);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(44, 13);
             this.lbNombre.TabIndex = 19;
@@ -225,7 +235,7 @@
             this.gboxSexo.Controls.Add(this.rbtnOtros);
             this.gboxSexo.Controls.Add(this.rbtnMasculino);
             this.gboxSexo.Controls.Add(this.rbtnFemenino);
-            this.gboxSexo.Location = new System.Drawing.Point(23, 162);
+            this.gboxSexo.Location = new System.Drawing.Point(18, 150);
             this.gboxSexo.Name = "gboxSexo";
             this.gboxSexo.Size = new System.Drawing.Size(425, 59);
             this.gboxSexo.TabIndex = 20;
@@ -267,21 +277,21 @@
             // 
             // dtpFechaNacimiento
             // 
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(156, 124);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(166, 113);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(173, 20);
             this.dtpFechaNacimiento.TabIndex = 14;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(156, 98);
+            this.txtApellido.Location = new System.Drawing.Point(166, 87);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(173, 20);
             this.txtApellido.TabIndex = 12;
             // 
             // txtbNombre
             // 
-            this.txtbNombre.Location = new System.Drawing.Point(156, 72);
+            this.txtbNombre.Location = new System.Drawing.Point(166, 61);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(173, 20);
             this.txtbNombre.TabIndex = 13;
@@ -294,7 +304,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Location = new System.Drawing.Point(23, 367);
+            this.groupBox1.Location = new System.Drawing.Point(17, 367);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(425, 124);
             this.groupBox1.TabIndex = 24;
@@ -349,21 +359,11 @@
             this.label10.TabIndex = 19;
             this.label10.Text = "Teléfono";
             // 
-            // lbNombrePrograma
-            // 
-            this.lbNombrePrograma.AutoSize = true;
-            this.lbNombrePrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombrePrograma.Location = new System.Drawing.Point(189, 15);
-            this.lbNombrePrograma.Name = "lbNombrePrograma";
-            this.lbNombrePrograma.Size = new System.Drawing.Size(106, 13);
-            this.lbNombrePrograma.TabIndex = 9;
-            this.lbNombrePrograma.Text = "NUEVO CLIENTE";
-            // 
             // NuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 574);
+            this.ClientSize = new System.Drawing.Size(460, 570);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
