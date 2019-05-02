@@ -310,7 +310,7 @@
             // 
             this.lbNombrePrograma.AutoSize = true;
             this.lbNombrePrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombrePrograma.Location = new System.Drawing.Point(171, 14);
+            this.lbNombrePrograma.Location = new System.Drawing.Point(175, 15);
             this.lbNombrePrograma.Name = "lbNombrePrograma";
             this.lbNombrePrograma.Size = new System.Drawing.Size(131, 13);
             this.lbNombrePrograma.TabIndex = 9;
