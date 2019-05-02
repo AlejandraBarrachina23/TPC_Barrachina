@@ -63,6 +63,12 @@
     <Compile Include="Devolucion.Designer.cs">
       <DependentUpon>Devolucion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioCompra.Designer.cs">
+      <DependentUpon>FormularioCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Devolucion.resx">
       <DependentUpon>Devolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioCompra.resx">
+      <DependentUpon>FormularioCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioVenta.resx">
       <DependentUpon>FormularioVenta.cs</DependentUpon>
