@@ -10,7 +10,7 @@ namespace Dominio
     {
         public int CodigoDescuento { get; set; }
         public string Nombre { get; set; }
-        public int Porcentaje { get; set; }
+        public decimal Porcentaje { get; set; }
         public bool Estado { get; set; }
 
     }

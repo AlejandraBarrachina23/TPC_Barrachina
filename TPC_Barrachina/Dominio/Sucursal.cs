@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class Sucursal
     {
-        public int CodigoSucursal { get; set; }
+        public string CodigoSucursal { get; set; }
         public string Nombre { get; set; }
         public bool Estado { get; set; }
     }
