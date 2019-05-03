@@ -129,6 +129,12 @@
     <Compile Include="NuevoRubro.Designer.cs">
       <DependentUpon>NuevoRubro.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuevoSector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoSector.Designer.cs">
+      <DependentUpon>NuevoSector.cs</DependentUpon>
+    </Compile>
     <Compile Include="NuevoTipoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoRubro.resx">
       <DependentUpon>NuevoRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoSector.resx">
+      <DependentUpon>NuevoSector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoTipoProducto.resx">
       <DependentUpon>NuevoTipoProducto.cs</DependentUpon>
