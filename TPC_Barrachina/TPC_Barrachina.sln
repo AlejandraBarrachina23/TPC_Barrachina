@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentacionWinForm", "PresentacionWinForm\PresentacionWinForm.csproj", "{39CFF3C9-8822-4F19-A06E-C80FB7C78908}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{7199EAAF-7CB2-40ED-A726-A375B1900AFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{39CFF3C9-8822-4F19-A06E-C80FB7C78908}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39CFF3C9-8822-4F19-A06E-C80FB7C78908}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39CFF3C9-8822-4F19-A06E-C80FB7C78908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7199EAAF-7CB2-40ED-A726-A375B1900AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7199EAAF-7CB2-40ED-A726-A375B1900AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7199EAAF-7CB2-40ED-A726-A375B1900AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7199EAAF-7CB2-40ED-A726-A375B1900AFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
