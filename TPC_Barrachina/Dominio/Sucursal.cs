@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    class Sucursal
+    public class Sucursal
     {
         public int CodigoSucursal { get; set; }
         public string Nombre { get; set; }

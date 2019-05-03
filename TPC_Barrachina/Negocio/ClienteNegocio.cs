@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dominio;
+using AccesoDatos;
 
-namespace Dominio
+namespace Negocio
 {
-    public class CabeceraVenta
+    class ClienteNegocio
     {
-        public Cliente Cliente { get; set; }
+        
     }
 }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentacionWinForm", "Pres
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{7199EAAF-7CB2-40ED-A726-A375B1900AFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{333DB46B-3716-42FD-9481-5E0882FEB824}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7199EAAF-7CB2-40ED-A726-A375B1900AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7199EAAF-7CB2-40ED-A726-A375B1900AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7199EAAF-7CB2-40ED-A726-A375B1900AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{333DB46B-3716-42FD-9481-5E0882FEB824}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{333DB46B-3716-42FD-9481-5E0882FEB824}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{333DB46B-3716-42FD-9481-5E0882FEB824}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{333DB46B-3716-42FD-9481-5E0882FEB824}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
