@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.lbNombrePrograma = new System.Windows.Forms.Label();
+            this.lblNombreFormulario = new System.Windows.Forms.Label();
             this.lblCodigoCliente = new System.Windows.Forms.Label();
             this.pboxCodigoCliente = new System.Windows.Forms.PictureBox();
             this.tboxCodigoCliente = new System.Windows.Forms.TextBox();
             this.tboxNombreCliente = new System.Windows.Forms.TextBox();
             this.pboxNombreCliente = new System.Windows.Forms.PictureBox();
             this.lblNombreCliente = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListadoClientes = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombreCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlBarraPrincipal
             // 
             this.pnlBarraPrincipal.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlBarraPrincipal.Controls.Add(this.lbNombrePrograma);
+            this.pnlBarraPrincipal.Controls.Add(this.lblNombreFormulario);
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(720, 41);
             this.pnlBarraPrincipal.TabIndex = 2;
             // 
-            // lbNombrePrograma
+            // lblNombreFormulario
             // 
-            this.lbNombrePrograma.AutoSize = true;
-            this.lbNombrePrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombrePrograma.Location = new System.Drawing.Point(313, 14);
-            this.lbNombrePrograma.Name = "lbNombrePrograma";
-            this.lbNombrePrograma.Size = new System.Drawing.Size(131, 13);
-            this.lbNombrePrograma.TabIndex = 8;
-            this.lbNombrePrograma.Text = "BUSQUEDA CLIENTE";
+            this.lblNombreFormulario.AutoSize = true;
+            this.lblNombreFormulario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreFormulario.Location = new System.Drawing.Point(281, 13);
+            this.lblNombreFormulario.Name = "lblNombreFormulario";
+            this.lblNombreFormulario.Size = new System.Drawing.Size(131, 13);
+            this.lblNombreFormulario.TabIndex = 8;
+            this.lblNombreFormulario.Text = "BUSQUEDA CLIENTE";
             // 
             // lblCodigoCliente
             // 
@@ -116,13 +116,13 @@
             this.lblNombreCliente.TabIndex = 7;
             this.lblNombreCliente.Text = "Nombre";
             // 
-            // dataGridView1
+            // dgvListadoClientes
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(656, 194);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvListadoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoClientes.Location = new System.Drawing.Point(34, 120);
+            this.dgvListadoClientes.Name = "dgvListadoClientes";
+            this.dgvListadoClientes.Size = new System.Drawing.Size(656, 194);
+            this.dgvListadoClientes.TabIndex = 8;
             // 
             // btnBuscar
             // 
@@ -160,7 +160,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvListadoClientes);
             this.Controls.Add(this.lblNombreCliente);
             this.Controls.Add(this.lblCodigoCliente);
             this.Controls.Add(this.pboxNombreCliente);
@@ -175,7 +175,7 @@
             this.pnlBarraPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombreCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,14 +184,14 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlBarraPrincipal;
-        private System.Windows.Forms.Label lbNombrePrograma;
+        private System.Windows.Forms.Label lblNombreFormulario;
         private System.Windows.Forms.Label lblCodigoCliente;
         private System.Windows.Forms.PictureBox pboxCodigoCliente;
         private System.Windows.Forms.TextBox tboxCodigoCliente;
         private System.Windows.Forms.TextBox tboxNombreCliente;
         private System.Windows.Forms.PictureBox pboxNombreCliente;
         private System.Windows.Forms.Label lblNombreCliente;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListadoClientes;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
