@@ -30,12 +30,12 @@
         {
             this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.txtbNombre = new System.Windows.Forms.TextBox();
-            this.lbNombre = new System.Windows.Forms.Label();
+            this.tboxNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.tboxCodigoRubro = new System.Windows.Forms.TextBox();
+            this.lblCodigoRubro = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,21 +59,21 @@
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(407, 41);
             this.pnlBarraPrincipal.TabIndex = 40;
             // 
-            // txtbNombre
+            // tboxNombre
             // 
-            this.txtbNombre.Location = new System.Drawing.Point(154, 83);
-            this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.Size = new System.Drawing.Size(173, 20);
-            this.txtbNombre.TabIndex = 43;
+            this.tboxNombre.Location = new System.Drawing.Point(154, 83);
+            this.tboxNombre.Name = "tboxNombre";
+            this.tboxNombre.Size = new System.Drawing.Size(173, 20);
+            this.tboxNombre.TabIndex = 43;
             // 
-            // lbNombre
+            // lblNombre
             // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(56, 86);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(44, 13);
-            this.lbNombre.TabIndex = 47;
-            this.lbNombre.Text = "Nombre";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(56, 86);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 47;
+            this.lblNombre.Text = "Nombre";
             // 
             // btnAceptar
             // 
@@ -93,33 +93,33 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // textBox14
+            // tboxCodigoRubro
             // 
-            this.textBox14.Location = new System.Drawing.Point(154, 59);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(173, 20);
-            this.textBox14.TabIndex = 53;
+            this.tboxCodigoRubro.Location = new System.Drawing.Point(154, 59);
+            this.tboxCodigoRubro.Name = "tboxCodigoRubro";
+            this.tboxCodigoRubro.Size = new System.Drawing.Size(173, 20);
+            this.tboxCodigoRubro.TabIndex = 53;
             // 
-            // label14
+            // lblCodigoRubro
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(56, 62);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 13);
-            this.label14.TabIndex = 54;
-            this.label14.Text = "Código Rubro";
+            this.lblCodigoRubro.AutoSize = true;
+            this.lblCodigoRubro.Location = new System.Drawing.Point(56, 62);
+            this.lblCodigoRubro.Name = "lblCodigoRubro";
+            this.lblCodigoRubro.Size = new System.Drawing.Size(72, 13);
+            this.lblCodigoRubro.TabIndex = 54;
+            this.lblCodigoRubro.Text = "Código Rubro";
             // 
             // NuevoRubro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(407, 174);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.lblCodigoRubro);
+            this.Controls.Add(this.tboxCodigoRubro);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.lbNombre);
-            this.Controls.Add(this.txtbNombre);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.tboxNombre);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NuevoRubro";
@@ -135,11 +135,11 @@
 
         private System.Windows.Forms.Label lbNombrePrograma;
         private System.Windows.Forms.Panel pnlBarraPrincipal;
-        private System.Windows.Forms.TextBox txtbNombre;
-        private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.TextBox tboxNombre;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tboxCodigoRubro;
+        private System.Windows.Forms.Label lblCodigoRubro;
     }
 }

@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.lblCodigoTipo = new System.Windows.Forms.Label();
+            this.tboxCodigoTipo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.lbApellido = new System.Windows.Forms.Label();
-            this.lbNombre = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtbNombre = new System.Windows.Forms.TextBox();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.tboxDescripcion = new System.Windows.Forms.TextBox();
+            this.tboxNombre = new System.Windows.Forms.TextBox();
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
             this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label14
+            // lblCodigoTipo
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(42, 60);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(64, 13);
-            this.label14.TabIndex = 72;
-            this.label14.Text = "Código Tipo";
+            this.lblCodigoTipo.AutoSize = true;
+            this.lblCodigoTipo.Location = new System.Drawing.Point(42, 60);
+            this.lblCodigoTipo.Name = "lblCodigoTipo";
+            this.lblCodigoTipo.Size = new System.Drawing.Size(64, 13);
+            this.lblCodigoTipo.TabIndex = 72;
+            this.lblCodigoTipo.Text = "Código Tipo";
             // 
-            // textBox14
+            // tboxCodigoTipo
             // 
-            this.textBox14.Location = new System.Drawing.Point(140, 57);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(173, 20);
-            this.textBox14.TabIndex = 71;
+            this.tboxCodigoTipo.Location = new System.Drawing.Point(140, 57);
+            this.tboxCodigoTipo.Name = "tboxCodigoTipo";
+            this.tboxCodigoTipo.Size = new System.Drawing.Size(173, 20);
+            this.tboxCodigoTipo.TabIndex = 71;
             // 
             // btnCancelar
             // 
@@ -75,38 +75,38 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // lbApellido
+            // lblDescripcion
             // 
-            this.lbApellido.AutoSize = true;
-            this.lbApellido.Location = new System.Drawing.Point(42, 111);
-            this.lbApellido.Name = "lbApellido";
-            this.lbApellido.Size = new System.Drawing.Size(63, 13);
-            this.lbApellido.TabIndex = 67;
-            this.lbApellido.Text = "Descripción";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(42, 111);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.TabIndex = 67;
+            this.lblDescripcion.Text = "Descripción";
             // 
-            // lbNombre
+            // lblNombre
             // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(42, 84);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(44, 13);
-            this.lbNombre.TabIndex = 68;
-            this.lbNombre.Text = "Nombre";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(42, 84);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 68;
+            this.lblNombre.Text = "Nombre";
             // 
-            // txtApellido
+            // tboxDescripcion
             // 
-            this.txtApellido.Location = new System.Drawing.Point(140, 107);
-            this.txtApellido.Multiline = true;
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(173, 40);
-            this.txtApellido.TabIndex = 65;
+            this.tboxDescripcion.Location = new System.Drawing.Point(140, 107);
+            this.tboxDescripcion.Multiline = true;
+            this.tboxDescripcion.Name = "tboxDescripcion";
+            this.tboxDescripcion.Size = new System.Drawing.Size(173, 40);
+            this.tboxDescripcion.TabIndex = 65;
             // 
-            // txtbNombre
+            // tboxNombre
             // 
-            this.txtbNombre.Location = new System.Drawing.Point(140, 81);
-            this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.Size = new System.Drawing.Size(173, 20);
-            this.txtbNombre.TabIndex = 66;
+            this.tboxNombre.Location = new System.Drawing.Point(140, 81);
+            this.tboxNombre.Name = "tboxNombre";
+            this.tboxNombre.Size = new System.Drawing.Size(173, 20);
+            this.tboxNombre.TabIndex = 66;
             // 
             // pnlBarraPrincipal
             // 
@@ -133,14 +133,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 217);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.lblCodigoTipo);
+            this.Controls.Add(this.tboxCodigoTipo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.lbApellido);
-            this.Controls.Add(this.lbNombre);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.txtbNombre);
+            this.Controls.Add(this.lblDescripcion);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.tboxDescripcion);
+            this.Controls.Add(this.tboxNombre);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NuevoTipoProducto";
@@ -154,14 +154,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.Label lblCodigoTipo;
+        private System.Windows.Forms.TextBox tboxCodigoTipo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label lbApellido;
-        private System.Windows.Forms.Label lbNombre;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtbNombre;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox tboxDescripcion;
+        private System.Windows.Forms.TextBox tboxNombre;
         private System.Windows.Forms.Panel pnlBarraPrincipal;
         private System.Windows.Forms.Label lbNombrePrograma;
     }

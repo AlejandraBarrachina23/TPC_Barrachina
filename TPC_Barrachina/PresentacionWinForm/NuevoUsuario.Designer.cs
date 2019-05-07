@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblCodigoUsuario = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.lbApellido = new System.Windows.Forms.Label();
-            this.lbNombre = new System.Windows.Forms.Label();
+            this.lblConstrasenia = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
             this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.gboxSectorDesignado = new System.Windows.Forms.GroupBox();
+            this.lblDeposito = new System.Windows.Forms.CheckBox();
+            this.lblAdministracion = new System.Windows.Forms.CheckBox();
+            this.lblVentas = new System.Windows.Forms.CheckBox();
+            this.lblCompra = new System.Windows.Forms.CheckBox();
+            this.lblNombreEmpleado = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.pnlBarraPrincipal.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gboxSectorDesignado.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label14
+            // lblCodigoUsuario
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(30, 89);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(79, 13);
-            this.label14.TabIndex = 72;
-            this.label14.Text = "Código Usuario";
+            this.lblCodigoUsuario.AutoSize = true;
+            this.lblCodigoUsuario.Location = new System.Drawing.Point(30, 89);
+            this.lblCodigoUsuario.Name = "lblCodigoUsuario";
+            this.lblCodigoUsuario.Size = new System.Drawing.Size(79, 13);
+            this.lblCodigoUsuario.TabIndex = 72;
+            this.lblCodigoUsuario.Text = "Código Usuario";
             // 
             // textBox14
             // 
@@ -83,23 +83,23 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
-            // lbApellido
+            // lblConstrasenia
             // 
-            this.lbApellido.AutoSize = true;
-            this.lbApellido.Location = new System.Drawing.Point(30, 140);
-            this.lbApellido.Name = "lbApellido";
-            this.lbApellido.Size = new System.Drawing.Size(66, 13);
-            this.lbApellido.TabIndex = 67;
-            this.lbApellido.Text = "Constraseña";
+            this.lblConstrasenia.AutoSize = true;
+            this.lblConstrasenia.Location = new System.Drawing.Point(30, 140);
+            this.lblConstrasenia.Name = "lblConstrasenia";
+            this.lblConstrasenia.Size = new System.Drawing.Size(66, 13);
+            this.lblConstrasenia.TabIndex = 67;
+            this.lblConstrasenia.Text = "Constraseña";
             // 
-            // lbNombre
+            // lblNombre
             // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(30, 113);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(44, 13);
-            this.lbNombre.TabIndex = 68;
-            this.lbNombre.Text = "Nombre";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(30, 113);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 68;
+            this.lblNombre.Text = "Nombre";
             // 
             // txtbNombre
             // 
@@ -135,67 +135,67 @@
             this.textBox1.Size = new System.Drawing.Size(173, 20);
             this.textBox1.TabIndex = 66;
             // 
-            // groupBox1
+            // gboxSectorDesignado
             // 
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(30, 179);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(287, 87);
-            this.groupBox1.TabIndex = 73;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sector Designado";
+            this.gboxSectorDesignado.Controls.Add(this.lblDeposito);
+            this.gboxSectorDesignado.Controls.Add(this.lblAdministracion);
+            this.gboxSectorDesignado.Controls.Add(this.lblVentas);
+            this.gboxSectorDesignado.Controls.Add(this.lblCompra);
+            this.gboxSectorDesignado.Location = new System.Drawing.Point(30, 179);
+            this.gboxSectorDesignado.Name = "gboxSectorDesignado";
+            this.gboxSectorDesignado.Size = new System.Drawing.Size(287, 87);
+            this.gboxSectorDesignado.TabIndex = 73;
+            this.gboxSectorDesignado.TabStop = false;
+            this.gboxSectorDesignado.Text = "Sector Designado";
             // 
-            // checkBox1
+            // lblDeposito
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(46, 28);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(62, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Compra";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.lblDeposito.AutoSize = true;
+            this.lblDeposito.Location = new System.Drawing.Point(152, 54);
+            this.lblDeposito.Name = "lblDeposito";
+            this.lblDeposito.Size = new System.Drawing.Size(68, 17);
+            this.lblDeposito.TabIndex = 0;
+            this.lblDeposito.Text = "Depósito";
+            this.lblDeposito.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // lblAdministracion
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(152, 28);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(59, 17);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "Ventas";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.lblAdministracion.AutoSize = true;
+            this.lblAdministracion.Location = new System.Drawing.Point(46, 54);
+            this.lblAdministracion.Name = "lblAdministracion";
+            this.lblAdministracion.Size = new System.Drawing.Size(94, 17);
+            this.lblAdministracion.TabIndex = 0;
+            this.lblAdministracion.Text = "Administración";
+            this.lblAdministracion.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // lblVentas
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(46, 54);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(94, 17);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "Administración";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.lblVentas.AutoSize = true;
+            this.lblVentas.Location = new System.Drawing.Point(152, 28);
+            this.lblVentas.Name = "lblVentas";
+            this.lblVentas.Size = new System.Drawing.Size(59, 17);
+            this.lblVentas.TabIndex = 0;
+            this.lblVentas.Text = "Ventas";
+            this.lblVentas.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // lblCompra
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(152, 54);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(68, 17);
-            this.checkBox4.TabIndex = 0;
-            this.checkBox4.Text = "Depósito";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.lblCompra.AutoSize = true;
+            this.lblCompra.Location = new System.Drawing.Point(46, 28);
+            this.lblCompra.Name = "lblCompra";
+            this.lblCompra.Size = new System.Drawing.Size(62, 17);
+            this.lblCompra.TabIndex = 0;
+            this.lblCompra.Text = "Compra";
+            this.lblCompra.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblNombreEmpleado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 72;
-            this.label1.Text = "Nombre Empleado";
+            this.lblNombreEmpleado.AutoSize = true;
+            this.lblNombreEmpleado.Location = new System.Drawing.Point(29, 63);
+            this.lblNombreEmpleado.Name = "lblNombreEmpleado";
+            this.lblNombreEmpleado.Size = new System.Drawing.Size(94, 13);
+            this.lblNombreEmpleado.TabIndex = 72;
+            this.lblNombreEmpleado.Text = "Nombre Empleado";
             // 
             // comboBox1
             // 
@@ -211,14 +211,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 359);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.gboxSectorDesignado);
+            this.Controls.Add(this.lblNombreEmpleado);
+            this.Controls.Add(this.lblCodigoUsuario);
             this.Controls.Add(this.textBox14);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.lbApellido);
-            this.Controls.Add(this.lbNombre);
+            this.Controls.Add(this.lblConstrasenia);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtbNombre);
             this.Controls.Add(this.pnlBarraPrincipal);
@@ -227,8 +227,8 @@
             this.Text = "NuevoUsuario";
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gboxSectorDesignado.ResumeLayout(false);
+            this.gboxSectorDesignado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,22 +236,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblCodigoUsuario;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label lbApellido;
-        private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.Label lblConstrasenia;
+        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtbNombre;
         private System.Windows.Forms.Panel pnlBarraPrincipal;
         private System.Windows.Forms.Label lbNombrePrograma;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox gboxSectorDesignado;
+        private System.Windows.Forms.CheckBox lblDeposito;
+        private System.Windows.Forms.CheckBox lblAdministracion;
+        private System.Windows.Forms.CheckBox lblVentas;
+        private System.Windows.Forms.CheckBox lblCompra;
+        private System.Windows.Forms.Label lblNombreEmpleado;
         private System.Windows.Forms.ComboBox comboBox1;
     }
 }
