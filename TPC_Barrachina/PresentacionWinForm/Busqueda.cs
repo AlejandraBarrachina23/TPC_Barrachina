@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+
 
 namespace PresentacionWinForm
 {
-    public partial class NuevoCliente : Form
+    public partial class Busqueda : Form
     {
-        public NuevoCliente()
+        public Busqueda()
         {
             InitializeComponent();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

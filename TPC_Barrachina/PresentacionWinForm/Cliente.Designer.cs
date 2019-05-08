@@ -1,6 +1,6 @@
 ﻿namespace PresentacionWinForm
 {
-    partial class NuevoCliente
+    partial class Cliente
     {
         /// <summary>
         /// Required designer variable.

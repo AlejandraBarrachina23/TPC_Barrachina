@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusquedaCliente.cs">
+    <Compile Include="Busqueda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BusquedaCliente.Designer.cs">
-      <DependentUpon>BusquedaCliente.cs</DependentUpon>
+    <Compile Include="Busqueda.Designer.cs">
+      <DependentUpon>Busqueda.cs</DependentUpon>
     </Compile>
     <Compile Include="CierreCaja.cs">
       <SubType>Form</SubType>
@@ -105,35 +105,35 @@
     <Compile Include="MotivoDevolucion.Designer.cs">
       <DependentUpon>MotivoDevolucion.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuevoCliente.cs">
+    <Compile Include="Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoCliente.Designer.cs">
-      <DependentUpon>NuevoCliente.cs</DependentUpon>
+    <Compile Include="Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuevoImpuesto.cs">
+    <Compile Include="Impuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoImpuesto.Designer.cs">
-      <DependentUpon>NuevoImpuesto.cs</DependentUpon>
+    <Compile Include="Impuesto.Designer.cs">
+      <DependentUpon>Impuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuevoProveedor.cs">
+    <Compile Include="Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoProveedor.Designer.cs">
-      <DependentUpon>NuevoProveedor.cs</DependentUpon>
+    <Compile Include="Proveedor.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuevoRubro.cs">
+    <Compile Include="Rubro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoRubro.Designer.cs">
-      <DependentUpon>NuevoRubro.cs</DependentUpon>
+    <Compile Include="Rubro.Designer.cs">
+      <DependentUpon>Rubro.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuevoSector.cs">
+    <Compile Include="Sector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoSector.Designer.cs">
-      <DependentUpon>NuevoSector.cs</DependentUpon>
+    <Compile Include="Sector.Designer.cs">
+      <DependentUpon>Sector.cs</DependentUpon>
     </Compile>
     <Compile Include="NuevoTipoProducto.cs">
       <SubType>Form</SubType>
@@ -155,11 +155,11 @@
     <Compile Include="RetiroDinero.Designer.cs">
       <DependentUpon>RetiroDinero.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuevoDescuento.cs">
+    <Compile Include="Descuento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoDescuento.Designer.cs">
-      <DependentUpon>NuevoDescuento.cs</DependentUpon>
+    <Compile Include="Descuento.Designer.cs">
+      <DependentUpon>Descuento.cs</DependentUpon>
     </Compile>
     <Compile Include="UltimasActualizaciones.cs">
       <SubType>Form</SubType>
@@ -167,8 +167,8 @@
     <Compile Include="UltimasActualizaciones.Designer.cs">
       <DependentUpon>UltimasActualizaciones.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BusquedaCliente.resx">
-      <DependentUpon>BusquedaCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Busqueda.resx">
+      <DependentUpon>Busqueda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CierreCaja.resx">
       <DependentUpon>CierreCaja.cs</DependentUpon>
@@ -200,20 +200,20 @@
     <EmbeddedResource Include="MotivoDevolucion.resx">
       <DependentUpon>MotivoDevolucion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoCliente.resx">
-      <DependentUpon>NuevoCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoImpuesto.resx">
-      <DependentUpon>NuevoImpuesto.cs</DependentUpon>
+    <EmbeddedResource Include="Impuesto.resx">
+      <DependentUpon>Impuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoProveedor.resx">
-      <DependentUpon>NuevoProveedor.cs</DependentUpon>
+    <EmbeddedResource Include="Proveedor.resx">
+      <DependentUpon>Proveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoRubro.resx">
-      <DependentUpon>NuevoRubro.cs</DependentUpon>
+    <EmbeddedResource Include="Rubro.resx">
+      <DependentUpon>Rubro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoSector.resx">
-      <DependentUpon>NuevoSector.cs</DependentUpon>
+    <EmbeddedResource Include="Sector.resx">
+      <DependentUpon>Sector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NuevoTipoProducto.resx">
       <DependentUpon>NuevoTipoProducto.cs</DependentUpon>
@@ -233,8 +233,8 @@
     <EmbeddedResource Include="RetiroDinero.resx">
       <DependentUpon>RetiroDinero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoDescuento.resx">
-      <DependentUpon>NuevoDescuento.cs</DependentUpon>
+    <EmbeddedResource Include="Descuento.resx">
+      <DependentUpon>Descuento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UltimasActualizaciones.resx">
       <DependentUpon>UltimasActualizaciones.cs</DependentUpon>

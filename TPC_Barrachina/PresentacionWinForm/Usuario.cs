@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PresentacionWinForm
 {
-    public partial class NuevoUsuario : Form
+    public partial class Usuario : Form
     {
-        public NuevoUsuario()
+        public Usuario()
         {
             InitializeComponent();
         }

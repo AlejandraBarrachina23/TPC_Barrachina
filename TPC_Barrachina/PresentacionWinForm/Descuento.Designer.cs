@@ -1,6 +1,6 @@
 ﻿namespace PresentacionWinForm
 {
-    partial class NuevoSector
+    partial class Descuento
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCodigoSector = new System.Windows.Forms.Label();
-            this.tboxCodigoSector = new System.Windows.Forms.TextBox();
+            this.lblCodigoDescuento = new System.Windows.Forms.Label();
+            this.tboxCodigoDescuento = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -38,75 +38,77 @@
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
             this.lbNombrePrograma = new System.Windows.Forms.Label();
+            this.tboxPorcentaje = new System.Windows.Forms.TextBox();
+            this.lblPorcentaje = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblCodigoSector
+            // lblCodigoDescuento
             // 
-            this.lblCodigoSector.AutoSize = true;
-            this.lblCodigoSector.Location = new System.Drawing.Point(18, 59);
-            this.lblCodigoSector.Name = "lblCodigoSector";
-            this.lblCodigoSector.Size = new System.Drawing.Size(74, 13);
-            this.lblCodigoSector.TabIndex = 83;
-            this.lblCodigoSector.Text = "Código Sector";
+            this.lblCodigoDescuento.AutoSize = true;
+            this.lblCodigoDescuento.Location = new System.Drawing.Point(22, 60);
+            this.lblCodigoDescuento.Name = "lblCodigoDescuento";
+            this.lblCodigoDescuento.Size = new System.Drawing.Size(95, 13);
+            this.lblCodigoDescuento.TabIndex = 72;
+            this.lblCodigoDescuento.Text = "Código Descuento";
             // 
-            // tboxCodigoSector
+            // tboxCodigoDescuento
             // 
-            this.tboxCodigoSector.Location = new System.Drawing.Point(121, 56);
-            this.tboxCodigoSector.Name = "tboxCodigoSector";
-            this.tboxCodigoSector.Size = new System.Drawing.Size(173, 20);
-            this.tboxCodigoSector.TabIndex = 82;
+            this.tboxCodigoDescuento.Location = new System.Drawing.Point(125, 57);
+            this.tboxCodigoDescuento.Name = "tboxCodigoDescuento";
+            this.tboxCodigoDescuento.Size = new System.Drawing.Size(173, 20);
+            this.tboxCodigoDescuento.TabIndex = 71;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(166, 172);
+            this.btnCancelar.Location = new System.Drawing.Point(181, 191);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(97, 29);
-            this.btnCancelar.TabIndex = 80;
+            this.btnCancelar.TabIndex = 69;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(50, 172);
+            this.btnAceptar.Location = new System.Drawing.Point(65, 191);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 29);
-            this.btnAceptar.TabIndex = 81;
+            this.btnAceptar.TabIndex = 70;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(18, 109);
+            this.lblDescripcion.Location = new System.Drawing.Point(22, 132);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.lblDescripcion.TabIndex = 77;
+            this.lblDescripcion.TabIndex = 67;
             this.lblDescripcion.Text = "Descripción";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(18, 83);
+            this.lblNombre.Location = new System.Drawing.Point(22, 84);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 79;
+            this.lblNombre.TabIndex = 68;
             this.lblNombre.Text = "Nombre";
             // 
             // tboxDescripcion
             // 
-            this.tboxDescripcion.Location = new System.Drawing.Point(121, 109);
+            this.tboxDescripcion.Location = new System.Drawing.Point(125, 132);
             this.tboxDescripcion.Multiline = true;
             this.tboxDescripcion.Name = "tboxDescripcion";
             this.tboxDescripcion.Size = new System.Drawing.Size(173, 40);
-            this.tboxDescripcion.TabIndex = 75;
+            this.tboxDescripcion.TabIndex = 65;
             // 
             // txtbNombre
             // 
-            this.txtbNombre.Location = new System.Drawing.Point(121, 80);
+            this.txtbNombre.Location = new System.Drawing.Point(125, 81);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(173, 20);
-            this.txtbNombre.TabIndex = 76;
+            this.txtbNombre.TabIndex = 66;
             // 
             // pnlBarraPrincipal
             // 
@@ -115,36 +117,54 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(365, 41);
-            this.pnlBarraPrincipal.TabIndex = 74;
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(354, 41);
+            this.pnlBarraPrincipal.TabIndex = 64;
             // 
             // lbNombrePrograma
             // 
             this.lbNombrePrograma.AutoSize = true;
             this.lbNombrePrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombrePrograma.Location = new System.Drawing.Point(122, 16);
+            this.lbNombrePrograma.Location = new System.Drawing.Point(110, 15);
             this.lbNombrePrograma.Name = "lbNombrePrograma";
-            this.lbNombrePrograma.Size = new System.Drawing.Size(104, 13);
+            this.lbNombrePrograma.Size = new System.Drawing.Size(130, 13);
             this.lbNombrePrograma.TabIndex = 9;
-            this.lbNombrePrograma.Text = "NUEVO SECTOR";
+            this.lbNombrePrograma.Text = "NUEVO DESCUENTO";
             // 
-            // NuevoSector
+            // tboxPorcentaje
+            // 
+            this.tboxPorcentaje.Location = new System.Drawing.Point(125, 107);
+            this.tboxPorcentaje.Name = "tboxPorcentaje";
+            this.tboxPorcentaje.Size = new System.Drawing.Size(173, 20);
+            this.tboxPorcentaje.TabIndex = 73;
+            // 
+            // lblPorcentaje
+            // 
+            this.lblPorcentaje.AutoSize = true;
+            this.lblPorcentaje.Location = new System.Drawing.Point(22, 110);
+            this.lblPorcentaje.Name = "lblPorcentaje";
+            this.lblPorcentaje.Size = new System.Drawing.Size(58, 13);
+            this.lblPorcentaje.TabIndex = 68;
+            this.lblPorcentaje.Text = "Porcentaje";
+            // 
+            // NuevoDescuento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 217);
-            this.Controls.Add(this.lblCodigoSector);
-            this.Controls.Add(this.tboxCodigoSector);
+            this.ClientSize = new System.Drawing.Size(354, 232);
+            this.Controls.Add(this.tboxPorcentaje);
+            this.Controls.Add(this.lblCodigoDescuento);
+            this.Controls.Add(this.tboxCodigoDescuento);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblDescripcion);
+            this.Controls.Add(this.lblPorcentaje);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.tboxDescripcion);
             this.Controls.Add(this.txtbNombre);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NuevoSector";
-            this.Text = "NuevoSector";
+            this.Name = "NuevoDescuento";
+            this.Text = "TipoDescuento";
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
             this.ResumeLayout(false);
@@ -153,8 +173,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblCodigoSector;
-        private System.Windows.Forms.TextBox tboxCodigoSector;
+
+        private System.Windows.Forms.Label lblCodigoDescuento;
+        private System.Windows.Forms.TextBox tboxCodigoDescuento;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblDescripcion;
@@ -163,5 +184,7 @@
         private System.Windows.Forms.TextBox txtbNombre;
         private System.Windows.Forms.Panel pnlBarraPrincipal;
         private System.Windows.Forms.Label lbNombrePrograma;
+        private System.Windows.Forms.TextBox tboxPorcentaje;
+        private System.Windows.Forms.Label lblPorcentaje;
     }
 }
