@@ -22,5 +22,10 @@ namespace PresentacionWinForm
             btnCreditoUnaCuota.Visible = true;
             btnCreditoTresCuotas.Visible = true;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
