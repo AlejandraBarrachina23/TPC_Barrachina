@@ -16,5 +16,11 @@ namespace PresentacionWinForm
         {
             InitializeComponent();
         }
+
+        private void btnCredito_Click(object sender, EventArgs e)
+        {
+            btnCreditoUnaCuota.Visible = true;
+            btnCreditoTresCuotas.Visible = true;
+        }
     }
 }
