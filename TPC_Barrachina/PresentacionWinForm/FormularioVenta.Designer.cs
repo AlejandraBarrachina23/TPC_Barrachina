@@ -58,17 +58,18 @@
             this.pnlDetalleVenta = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlLineaVenta = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnBorrarLinea = new System.Windows.Forms.Button();
+            this.pnlLinea = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.btnAumentaCantidad = new System.Windows.Forms.Button();
-            this.btnDisminuyeCantidad = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.tboxCantidad = new System.Windows.Forms.TextBox();
+            this.btnBorrarLinea = new System.Windows.Forms.Button();
+            this.btnDisminuyeCantidad = new System.Windows.Forms.Button();
+            this.btnAumentaCantidad = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.lblPrecioTotal = new System.Windows.Forms.Label();
             this.lblPrecioxMenor = new System.Windows.Forms.Label();
             this.lblPrecioxMayor = new System.Windows.Forms.Label();
@@ -100,16 +101,15 @@
             this.btnCalculadoraBorrarUno = new System.Windows.Forms.Button();
             this.btnCalculadora9 = new System.Windows.Forms.Button();
             this.btnCalculadora8 = new System.Windows.Forms.Button();
-            this.pnlLinea = new System.Windows.Forms.Panel();
             this.pnlDatosProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenProducto)).BeginInit();
             this.pnlCabecera.SuspendLayout();
             this.pnlOpciones.SuspendLayout();
             this.pnlDetalleVenta.SuspendLayout();
             this.pnlLineaVenta.SuspendLayout();
+            this.pnlLinea.SuspendLayout();
             this.panel7.SuspendLayout();
             this.pnlCalculadora.SuspendLayout();
-            this.pnlLinea.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDatosProducto
@@ -128,7 +128,7 @@
             // 
             this.lblPanelNombre.AutoSize = true;
             this.lblPanelNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPanelNombre.Location = new System.Drawing.Point(26, 167);
+            this.lblPanelNombre.Location = new System.Drawing.Point(26, 169);
             this.lblPanelNombre.Name = "lblPanelNombre";
             this.lblPanelNombre.Size = new System.Drawing.Size(56, 17);
             this.lblPanelNombre.TabIndex = 7;
@@ -138,7 +138,7 @@
             // 
             this.lblPanelPrecioMayorista.AutoSize = true;
             this.lblPanelPrecioMayorista.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPanelPrecioMayorista.Location = new System.Drawing.Point(26, 205);
+            this.lblPanelPrecioMayorista.Location = new System.Drawing.Point(26, 207);
             this.lblPanelPrecioMayorista.Name = "lblPanelPrecioMayorista";
             this.lblPanelPrecioMayorista.Size = new System.Drawing.Size(104, 17);
             this.lblPanelPrecioMayorista.TabIndex = 6;
@@ -148,7 +148,7 @@
             // 
             this.lblDatosPrecioMinorista.AutoSize = true;
             this.lblDatosPrecioMinorista.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosPrecioMinorista.Location = new System.Drawing.Point(26, 186);
+            this.lblDatosPrecioMinorista.Location = new System.Drawing.Point(26, 188);
             this.lblDatosPrecioMinorista.Name = "lblDatosPrecioMinorista";
             this.lblDatosPrecioMinorista.Size = new System.Drawing.Size(102, 17);
             this.lblDatosPrecioMinorista.TabIndex = 5;
@@ -451,6 +451,33 @@
             this.pnlLineaVenta.Size = new System.Drawing.Size(630, 292);
             this.pnlLineaVenta.TabIndex = 9;
             // 
+            // pnlLinea
+            // 
+            this.pnlLinea.Controls.Add(this.label31);
+            this.pnlLinea.Controls.Add(this.label4);
+            this.pnlLinea.Controls.Add(this.tboxCantidad);
+            this.pnlLinea.Controls.Add(this.btnBorrarLinea);
+            this.pnlLinea.Controls.Add(this.btnDisminuyeCantidad);
+            this.pnlLinea.Controls.Add(this.btnAumentaCantidad);
+            this.pnlLinea.Controls.Add(this.label30);
+            this.pnlLinea.Controls.Add(this.label26);
+            this.pnlLinea.Controls.Add(this.label29);
+            this.pnlLinea.Controls.Add(this.label27);
+            this.pnlLinea.Controls.Add(this.label28);
+            this.pnlLinea.Location = new System.Drawing.Point(10, 8);
+            this.pnlLinea.Name = "pnlLinea";
+            this.pnlLinea.Size = new System.Drawing.Size(607, 35);
+            this.pnlLinea.TabIndex = 15;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(507, 12);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(28, 13);
+            this.label31.TabIndex = 12;
+            this.label31.Text = "0.00";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -459,6 +486,15 @@
             this.label4.Size = new System.Drawing.Size(13, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "1";
+            // 
+            // tboxCantidad
+            // 
+            this.tboxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxCantidad.Location = new System.Drawing.Point(125, 5);
+            this.tboxCantidad.Name = "tboxCantidad";
+            this.tboxCantidad.Size = new System.Drawing.Size(35, 26);
+            this.tboxCantidad.TabIndex = 0;
+            this.tboxCantidad.Text = "1";
             // 
             // btnBorrarLinea
             // 
@@ -472,59 +508,17 @@
             this.btnBorrarLinea.TabIndex = 13;
             this.btnBorrarLinea.UseVisualStyleBackColor = true;
             // 
-            // label31
+            // btnDisminuyeCantidad
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(507, 12);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(28, 13);
-            this.label31.TabIndex = 12;
-            this.label31.Text = "0.00";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(436, 12);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(28, 13);
-            this.label30.TabIndex = 12;
-            this.label30.Text = "0.00";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(351, 12);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(28, 13);
-            this.label29.TabIndex = 12;
-            this.label29.Text = "0.00";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(269, 12);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(28, 13);
-            this.label28.TabIndex = 12;
-            this.label28.Text = "0.00";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(208, 12);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(28, 13);
-            this.label27.TabIndex = 12;
-            this.label27.Text = "0.00";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(23, 11);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(56, 13);
-            this.label26.TabIndex = 12;
-            this.label26.Text = "Coca Lata";
+            this.btnDisminuyeCantidad.FlatAppearance.BorderSize = 0;
+            this.btnDisminuyeCantidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDisminuyeCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDisminuyeCantidad.Image = ((System.Drawing.Image)(resources.GetObject("btnDisminuyeCantidad.Image")));
+            this.btnDisminuyeCantidad.Location = new System.Drawing.Point(100, 5);
+            this.btnDisminuyeCantidad.Name = "btnDisminuyeCantidad";
+            this.btnDisminuyeCantidad.Size = new System.Drawing.Size(25, 26);
+            this.btnDisminuyeCantidad.TabIndex = 10;
+            this.btnDisminuyeCantidad.UseVisualStyleBackColor = true;
             // 
             // btnAumentaCantidad
             // 
@@ -539,26 +533,50 @@
             this.btnAumentaCantidad.TabIndex = 11;
             this.btnAumentaCantidad.UseVisualStyleBackColor = true;
             // 
-            // btnDisminuyeCantidad
+            // label30
             // 
-            this.btnDisminuyeCantidad.FlatAppearance.BorderSize = 0;
-            this.btnDisminuyeCantidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisminuyeCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisminuyeCantidad.Image = ((System.Drawing.Image)(resources.GetObject("btnDisminuyeCantidad.Image")));
-            this.btnDisminuyeCantidad.Location = new System.Drawing.Point(100, 5);
-            this.btnDisminuyeCantidad.Name = "btnDisminuyeCantidad";
-            this.btnDisminuyeCantidad.Size = new System.Drawing.Size(25, 26);
-            this.btnDisminuyeCantidad.TabIndex = 10;
-            this.btnDisminuyeCantidad.UseVisualStyleBackColor = true;
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(436, 12);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(28, 13);
+            this.label30.TabIndex = 12;
+            this.label30.Text = "0.00";
             // 
-            // tboxCantidad
+            // label26
             // 
-            this.tboxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCantidad.Location = new System.Drawing.Point(125, 5);
-            this.tboxCantidad.Name = "tboxCantidad";
-            this.tboxCantidad.Size = new System.Drawing.Size(35, 26);
-            this.tboxCantidad.TabIndex = 0;
-            this.tboxCantidad.Text = "1";
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(23, 11);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(56, 13);
+            this.label26.TabIndex = 12;
+            this.label26.Text = "Coca Lata";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(351, 12);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(28, 13);
+            this.label29.TabIndex = 12;
+            this.label29.Text = "0.00";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(208, 12);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(28, 13);
+            this.label27.TabIndex = 12;
+            this.label27.Text = "0.00";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(269, 12);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(28, 13);
+            this.label28.TabIndex = 12;
+            this.label28.Text = "0.00";
             // 
             // lblPrecioTotal
             // 
@@ -901,24 +919,6 @@
             this.btnCalculadora8.TabIndex = 1;
             this.btnCalculadora8.UseVisualStyleBackColor = true;
             // 
-            // pnlLinea
-            // 
-            this.pnlLinea.Controls.Add(this.label31);
-            this.pnlLinea.Controls.Add(this.label4);
-            this.pnlLinea.Controls.Add(this.tboxCantidad);
-            this.pnlLinea.Controls.Add(this.btnBorrarLinea);
-            this.pnlLinea.Controls.Add(this.btnDisminuyeCantidad);
-            this.pnlLinea.Controls.Add(this.btnAumentaCantidad);
-            this.pnlLinea.Controls.Add(this.label30);
-            this.pnlLinea.Controls.Add(this.label26);
-            this.pnlLinea.Controls.Add(this.label29);
-            this.pnlLinea.Controls.Add(this.label27);
-            this.pnlLinea.Controls.Add(this.label28);
-            this.pnlLinea.Location = new System.Drawing.Point(10, 8);
-            this.pnlLinea.Name = "pnlLinea";
-            this.pnlLinea.Size = new System.Drawing.Size(607, 35);
-            this.pnlLinea.TabIndex = 15;
-            // 
             // FormularioVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -943,11 +943,11 @@
             this.pnlDetalleVenta.ResumeLayout(false);
             this.pnlDetalleVenta.PerformLayout();
             this.pnlLineaVenta.ResumeLayout(false);
+            this.pnlLinea.ResumeLayout(false);
+            this.pnlLinea.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.pnlCalculadora.ResumeLayout(false);
-            this.pnlLinea.ResumeLayout(false);
-            this.pnlLinea.PerformLayout();
             this.ResumeLayout(false);
 
         }
