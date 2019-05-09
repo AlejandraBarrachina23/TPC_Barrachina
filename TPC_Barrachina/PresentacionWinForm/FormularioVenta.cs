@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace PresentacionWinForm
 {
-    public partial class lbl : Form
+    public partial class FormularioVenta : Form
     {
-        public lbl()
+       
+
+        public FormularioVenta()
         {
             InitializeComponent();
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            string NombreFormulario = "Cliente";
+            Busqueda BusquedaCliente = new Busqueda(NombreFormulario);
+            BusquedaCliente.Show();
+            
         }
     }
 }

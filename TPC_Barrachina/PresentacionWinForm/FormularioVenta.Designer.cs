@@ -1,6 +1,6 @@
 ﻿namespace PresentacionWinForm
 {
-    partial class lbl
+    partial class FormularioVenta
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -167,7 +167,7 @@
             this.pnlCabecera.Controls.Add(this.lblNumeroOperacion);
             this.pnlCabecera.Location = new System.Drawing.Point(910, 12);
             this.pnlCabecera.Name = "pnlCabecera";
-            this.pnlCabecera.Size = new System.Drawing.Size(178, 233);
+            this.pnlCabecera.Size = new System.Drawing.Size(220, 233);
             this.pnlCabecera.TabIndex = 0;
             // 
             // lblDatosOperacion
@@ -256,13 +256,13 @@
             this.pnlOpciones.Controls.Add(this.btnMetodoPago);
             this.pnlOpciones.Location = new System.Drawing.Point(910, 261);
             this.pnlOpciones.Name = "pnlOpciones";
-            this.pnlOpciones.Size = new System.Drawing.Size(178, 233);
+            this.pnlOpciones.Size = new System.Drawing.Size(220, 233);
             this.pnlOpciones.TabIndex = 1;
             // 
             // btnCierreCaja
             // 
             this.btnCierreCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCierreCaja.Location = new System.Drawing.Point(123, 60);
+            this.btnCierreCaja.Location = new System.Drawing.Point(148, 73);
             this.btnCierreCaja.Name = "btnCierreCaja";
             this.btnCierreCaja.Size = new System.Drawing.Size(45, 45);
             this.btnCierreCaja.TabIndex = 13;
@@ -272,7 +272,7 @@
             // btnRetiroDinero
             // 
             this.btnRetiroDinero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetiroDinero.Location = new System.Drawing.Point(69, 60);
+            this.btnRetiroDinero.Location = new System.Drawing.Point(94, 73);
             this.btnRetiroDinero.Name = "btnRetiroDinero";
             this.btnRetiroDinero.Size = new System.Drawing.Size(45, 45);
             this.btnRetiroDinero.TabIndex = 12;
@@ -281,7 +281,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(38, 163);
+            this.btnCancelar.Location = new System.Drawing.Point(69, 165);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(96, 35);
             this.btnCancelar.TabIndex = 11;
@@ -290,7 +290,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(38, 122);
+            this.btnAceptar.Location = new System.Drawing.Point(69, 124);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(96, 35);
             this.btnAceptar.TabIndex = 10;
@@ -299,7 +299,7 @@
             // 
             // btnUltimasActualizaciones
             // 
-            this.btnUltimasActualizaciones.Location = new System.Drawing.Point(18, 60);
+            this.btnUltimasActualizaciones.Location = new System.Drawing.Point(43, 73);
             this.btnUltimasActualizaciones.Name = "btnUltimasActualizaciones";
             this.btnUltimasActualizaciones.Size = new System.Drawing.Size(45, 45);
             this.btnUltimasActualizaciones.TabIndex = 9;
@@ -308,17 +308,18 @@
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.Location = new System.Drawing.Point(18, 9);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(43, 22);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(45, 45);
             this.btnAgregarCliente.TabIndex = 9;
             this.btnAgregarCliente.Text = "CLI";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // btnDevolucion
             // 
             this.btnDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDevolucion.Location = new System.Drawing.Point(123, 9);
+            this.btnDevolucion.Location = new System.Drawing.Point(148, 22);
             this.btnDevolucion.Name = "btnDevolucion";
             this.btnDevolucion.Size = new System.Drawing.Size(45, 45);
             this.btnDevolucion.TabIndex = 9;
@@ -328,7 +329,7 @@
             // btnMetodoPago
             // 
             this.btnMetodoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMetodoPago.Location = new System.Drawing.Point(69, 9);
+            this.btnMetodoPago.Location = new System.Drawing.Point(94, 22);
             this.btnMetodoPago.Name = "btnMetodoPago";
             this.btnMetodoPago.Size = new System.Drawing.Size(45, 45);
             this.btnMetodoPago.TabIndex = 9;
@@ -793,11 +794,11 @@
             this.btnCalculadora8.Text = "8";
             this.btnCalculadora8.UseVisualStyleBackColor = true;
             // 
-            // lbl
+            // FormularioVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 520);
+            this.ClientSize = new System.Drawing.Size(1154, 519);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.pnlDetalleVenta);
             this.Controls.Add(this.pnlOpciones);
@@ -805,7 +806,7 @@
             this.Controls.Add(this.pnlCabecera);
             this.Controls.Add(this.pnlDatosProducto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "lbl";
+            this.Name = "FormularioVenta";
             this.Text = "Detalle:";
             this.pnlDatosProducto.ResumeLayout(false);
             this.pnlDatosProducto.PerformLayout();

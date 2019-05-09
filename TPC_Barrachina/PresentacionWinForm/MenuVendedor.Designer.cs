@@ -44,7 +44,7 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(1139, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(1195, 41);
             this.pnlBarraPrincipal.TabIndex = 2;
             // 
             // btnUsuario
@@ -79,11 +79,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1139, 539);
+            this.ClientSize = new System.Drawing.Size(1195, 588);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "MenuVendedor";
             this.Text = "MenuVendedor";
+            this.Load += new System.EventHandler(this.MenuVendedor_Load);
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
             this.ResumeLayout(false);

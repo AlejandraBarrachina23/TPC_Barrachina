@@ -53,23 +53,23 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(720, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(730, 41);
             this.pnlBarraPrincipal.TabIndex = 2;
             // 
             // lblNombreFormulario
             // 
             this.lblNombreFormulario.AutoSize = true;
             this.lblNombreFormulario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreFormulario.Location = new System.Drawing.Point(281, 13);
+            this.lblNombreFormulario.Location = new System.Drawing.Point(300, 14);
             this.lblNombreFormulario.Name = "lblNombreFormulario";
-            this.lblNombreFormulario.Size = new System.Drawing.Size(131, 13);
+            this.lblNombreFormulario.Size = new System.Drawing.Size(79, 13);
             this.lblNombreFormulario.TabIndex = 8;
-            this.lblNombreFormulario.Text = "BUSQUEDA CLIENTE";
+            this.lblNombreFormulario.Text = "BUSQUEDA ";
             // 
             // lblCodigoCliente
             // 
             this.lblCodigoCliente.AutoSize = true;
-            this.lblCodigoCliente.Location = new System.Drawing.Point(54, 80);
+            this.lblCodigoCliente.Location = new System.Drawing.Point(56, 66);
             this.lblCodigoCliente.Name = "lblCodigoCliente";
             this.lblCodigoCliente.Size = new System.Drawing.Size(40, 13);
             this.lblCodigoCliente.TabIndex = 7;
@@ -77,7 +77,7 @@
             // 
             // pboxCodigoCliente
             // 
-            this.pboxCodigoCliente.Location = new System.Drawing.Point(103, 72);
+            this.pboxCodigoCliente.Location = new System.Drawing.Point(105, 58);
             this.pboxCodigoCliente.Name = "pboxCodigoCliente";
             this.pboxCodigoCliente.Size = new System.Drawing.Size(31, 31);
             this.pboxCodigoCliente.TabIndex = 6;
@@ -86,7 +86,7 @@
             // tboxCodigoCliente
             // 
             this.tboxCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCodigoCliente.Location = new System.Drawing.Point(132, 72);
+            this.tboxCodigoCliente.Location = new System.Drawing.Point(134, 58);
             this.tboxCodigoCliente.Name = "tboxCodigoCliente";
             this.tboxCodigoCliente.Size = new System.Drawing.Size(155, 31);
             this.tboxCodigoCliente.TabIndex = 5;
@@ -94,14 +94,14 @@
             // tboxNombreCliente
             // 
             this.tboxNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNombreCliente.Location = new System.Drawing.Point(378, 72);
+            this.tboxNombreCliente.Location = new System.Drawing.Point(380, 58);
             this.tboxNombreCliente.Name = "tboxNombreCliente";
             this.tboxNombreCliente.Size = new System.Drawing.Size(155, 31);
             this.tboxNombreCliente.TabIndex = 5;
             // 
             // pboxNombreCliente
             // 
-            this.pboxNombreCliente.Location = new System.Drawing.Point(349, 72);
+            this.pboxNombreCliente.Location = new System.Drawing.Point(351, 58);
             this.pboxNombreCliente.Name = "pboxNombreCliente";
             this.pboxNombreCliente.Size = new System.Drawing.Size(31, 31);
             this.pboxNombreCliente.TabIndex = 6;
@@ -110,7 +110,7 @@
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(300, 80);
+            this.lblNombreCliente.Location = new System.Drawing.Point(302, 66);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(44, 13);
             this.lblNombreCliente.TabIndex = 7;
@@ -119,14 +119,14 @@
             // dgvListadoClientes
             // 
             this.dgvListadoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoClientes.Location = new System.Drawing.Point(34, 120);
+            this.dgvListadoClientes.Location = new System.Drawing.Point(36, 106);
             this.dgvListadoClientes.Name = "dgvListadoClientes";
-            this.dgvListadoClientes.Size = new System.Drawing.Size(656, 194);
+            this.dgvListadoClientes.Size = new System.Drawing.Size(656, 169);
             this.dgvListadoClientes.TabIndex = 8;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(551, 72);
+            this.btnBuscar.Location = new System.Drawing.Point(553, 58);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(110, 31);
             this.btnBuscar.TabIndex = 9;
@@ -136,7 +136,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(270, 335);
+            this.btnAceptar.Location = new System.Drawing.Point(264, 293);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(110, 31);
             this.btnAceptar.TabIndex = 9;
@@ -145,18 +145,18 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(386, 335);
+            this.btnCancelar.Location = new System.Drawing.Point(380, 293);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(110, 31);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // BusquedaCliente
+            // Busqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 390);
+            this.ClientSize = new System.Drawing.Size(730, 340);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnBuscar);
@@ -169,8 +169,9 @@
             this.Controls.Add(this.tboxCodigoCliente);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "BusquedaCliente";
+            this.Name = "Busqueda";
             this.Text = "BusquedaCliente";
+            this.Load += new System.EventHandler(this.Busqueda_Load);
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoCliente)).EndInit();

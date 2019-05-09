@@ -16,7 +16,7 @@ namespace PresentacionWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormularioCompra());
+            Application.Run(new MenuVendedor());
         }
     }
 }
