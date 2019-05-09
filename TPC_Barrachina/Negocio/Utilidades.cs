@@ -10,9 +10,15 @@ namespace Negocio
     {
         public string AsignarNombreFormulario(string Nombre) {
 
-            if (Nombre == "Cliente") {
+            if (Nombre == "Cliente")
+            {
 
                 return "BusquedaCliente";
+            }
+
+            else if (Nombre == "Productos") {
+
+                return "Busqueda Productos";
             }
 
             return "Nada";

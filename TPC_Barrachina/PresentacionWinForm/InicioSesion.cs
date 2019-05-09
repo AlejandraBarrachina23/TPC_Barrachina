@@ -16,5 +16,17 @@ namespace PresentacionWinForm
         {
             InitializeComponent();
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            MenuVendedor menuVendedor = new MenuVendedor();
+            menuVendedor.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MenuAdministrador menuAdministrador = new MenuAdministrador();
+            menuAdministrador.Show();
+        }
     }
 }

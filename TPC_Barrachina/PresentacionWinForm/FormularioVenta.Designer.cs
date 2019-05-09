@@ -268,6 +268,7 @@
             this.btnCierreCaja.TabIndex = 13;
             this.btnCierreCaja.Text = "CIE";
             this.btnCierreCaja.UseVisualStyleBackColor = true;
+            this.btnCierreCaja.Click += new System.EventHandler(this.btnCierreCaja_Click);
             // 
             // btnRetiroDinero
             // 
@@ -278,19 +279,21 @@
             this.btnRetiroDinero.TabIndex = 12;
             this.btnRetiroDinero.Text = "RET";
             this.btnRetiroDinero.UseVisualStyleBackColor = true;
+            this.btnRetiroDinero.Click += new System.EventHandler(this.btnRetiroDinero_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(69, 165);
+            this.btnCancelar.Location = new System.Drawing.Point(71, 177);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(96, 35);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(69, 124);
+            this.btnAceptar.Location = new System.Drawing.Point(71, 136);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(96, 35);
             this.btnAceptar.TabIndex = 10;
@@ -305,6 +308,7 @@
             this.btnUltimasActualizaciones.TabIndex = 9;
             this.btnUltimasActualizaciones.Text = "ACT";
             this.btnUltimasActualizaciones.UseVisualStyleBackColor = true;
+            this.btnUltimasActualizaciones.Click += new System.EventHandler(this.btnUltimasActualizaciones_Click);
             // 
             // btnAgregarCliente
             // 
@@ -325,6 +329,7 @@
             this.btnDevolucion.TabIndex = 9;
             this.btnDevolucion.Text = "DEV";
             this.btnDevolucion.UseVisualStyleBackColor = true;
+            this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click);
             // 
             // btnMetodoPago
             // 
@@ -335,6 +340,7 @@
             this.btnMetodoPago.TabIndex = 9;
             this.btnMetodoPago.Text = "MP";
             this.btnMetodoPago.UseVisualStyleBackColor = true;
+            this.btnMetodoPago.Click += new System.EventHandler(this.btnMetodoPago_Click);
             // 
             // pnlDetalleVenta
             // 
@@ -484,6 +490,7 @@
             this.tboxCantidad.Name = "tboxCantidad";
             this.tboxCantidad.Size = new System.Drawing.Size(35, 26);
             this.tboxCantidad.TabIndex = 0;
+            this.tboxCantidad.Text = "1";
             // 
             // lblPrecioTotal
             // 
@@ -563,6 +570,7 @@
             this.btnBusqueda.TabIndex = 1;
             this.btnBusqueda.Text = "BUS";
             this.btnBusqueda.UseVisualStyleBackColor = true;
+            this.btnBusqueda.Click += new System.EventHandler(this.btnBusqueda_Click);
             // 
             // tboxCodigoBarra
             // 

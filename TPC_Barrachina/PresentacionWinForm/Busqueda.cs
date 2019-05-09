@@ -15,14 +15,12 @@ namespace PresentacionWinForm
 {
     public partial class Busqueda : Form
     {
-        private string resultado = "Normal";
-
         public Busqueda(string NombreFormulario)
         {
             InitializeComponent();
             Utilidades utilidades = new Utilidades();
-            resultado = utilidades.AsignarNombreFormulario(NombreFormulario);
-            lblNombreFormulario.Text = resultado;
+            lblNombreFormulario.Text = utilidades.AsignarNombreFormulario(NombreFormulario);
+           
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

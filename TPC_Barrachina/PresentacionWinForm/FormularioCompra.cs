@@ -16,5 +16,12 @@ namespace PresentacionWinForm
         {
             InitializeComponent();
         }
+
+        private void btnBusqueda_Click(object sender, EventArgs e)
+        {
+            string NombreFormulario = "Productos";
+            Busqueda BusquedaProducto = new Busqueda(NombreFormulario);
+            BusquedaProducto.Show();
+        }
     }
 }

@@ -459,6 +459,7 @@
             this.btnBusqueda.TabIndex = 1;
             this.btnBusqueda.Text = "Busqueda";
             this.btnBusqueda.UseVisualStyleBackColor = true;
+            this.btnBusqueda.Click += new System.EventHandler(this.btnBusqueda_Click);
             // 
             // tboxCodigoBarra
             // 
