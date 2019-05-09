@@ -13,7 +13,7 @@ namespace Negocio
             if (Nombre == "Cliente")
             {
 
-                return "BusquedaCliente";
+                return "Busqueda Cliente";
             }
 
             else if (Nombre == "Productos") {

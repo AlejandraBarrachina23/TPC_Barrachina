@@ -44,6 +44,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.pnlOpciones = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.btnCierreCaja = new System.Windows.Forms.Button();
             this.btnRetiroDinero = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -97,9 +100,7 @@
             this.btnCalculadoraBorrarUno = new System.Windows.Forms.Button();
             this.btnCalculadora9 = new System.Windows.Forms.Button();
             this.btnCalculadora8 = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlLinea = new System.Windows.Forms.Panel();
             this.pnlDatosProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenProducto)).BeginInit();
             this.pnlCabecera.SuspendLayout();
@@ -108,6 +109,7 @@
             this.pnlLineaVenta.SuspendLayout();
             this.panel7.SuspendLayout();
             this.pnlCalculadora.SuspendLayout();
+            this.pnlLinea.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDatosProducto
@@ -277,6 +279,30 @@
             this.pnlOpciones.Size = new System.Drawing.Size(220, 233);
             this.pnlOpciones.TabIndex = 1;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
+            this.panel2.Location = new System.Drawing.Point(143, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(4, 50);
+            this.panel2.TabIndex = 53;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
+            this.panel1.Location = new System.Drawing.Point(80, 15);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(4, 50);
+            this.panel1.TabIndex = 53;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
+            this.panel12.Location = new System.Drawing.Point(18, 17);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(4, 50);
+            this.panel12.TabIndex = 53;
+            // 
             // btnCierreCaja
             // 
             this.btnCierreCaja.FlatAppearance.BorderSize = 0;
@@ -419,17 +445,7 @@
             // pnlLineaVenta
             // 
             this.pnlLineaVenta.AutoScroll = true;
-            this.pnlLineaVenta.Controls.Add(this.label4);
-            this.pnlLineaVenta.Controls.Add(this.btnBorrarLinea);
-            this.pnlLineaVenta.Controls.Add(this.label31);
-            this.pnlLineaVenta.Controls.Add(this.label30);
-            this.pnlLineaVenta.Controls.Add(this.label29);
-            this.pnlLineaVenta.Controls.Add(this.label28);
-            this.pnlLineaVenta.Controls.Add(this.label27);
-            this.pnlLineaVenta.Controls.Add(this.label26);
-            this.pnlLineaVenta.Controls.Add(this.btnAumentaCantidad);
-            this.pnlLineaVenta.Controls.Add(this.btnDisminuyeCantidad);
-            this.pnlLineaVenta.Controls.Add(this.tboxCantidad);
+            this.pnlLineaVenta.Controls.Add(this.pnlLinea);
             this.pnlLineaVenta.Location = new System.Drawing.Point(16, 91);
             this.pnlLineaVenta.Name = "pnlLineaVenta";
             this.pnlLineaVenta.Size = new System.Drawing.Size(630, 292);
@@ -438,7 +454,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 23);
+            this.label4.Location = new System.Drawing.Point(4, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(13, 13);
             this.label4.TabIndex = 14;
@@ -450,16 +466,16 @@
             this.btnBorrarLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarLinea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarLinea.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrarLinea.Image")));
-            this.btnBorrarLinea.Location = new System.Drawing.Point(570, 8);
+            this.btnBorrarLinea.Location = new System.Drawing.Point(563, 1);
             this.btnBorrarLinea.Name = "btnBorrarLinea";
-            this.btnBorrarLinea.Size = new System.Drawing.Size(32, 37);
+            this.btnBorrarLinea.Size = new System.Drawing.Size(32, 32);
             this.btnBorrarLinea.TabIndex = 13;
             this.btnBorrarLinea.UseVisualStyleBackColor = true;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(514, 21);
+            this.label31.Location = new System.Drawing.Point(507, 12);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(28, 13);
             this.label31.TabIndex = 12;
@@ -468,7 +484,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(443, 21);
+            this.label30.Location = new System.Drawing.Point(436, 12);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(28, 13);
             this.label30.TabIndex = 12;
@@ -477,7 +493,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(358, 21);
+            this.label29.Location = new System.Drawing.Point(351, 12);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(28, 13);
             this.label29.TabIndex = 12;
@@ -486,7 +502,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(276, 21);
+            this.label28.Location = new System.Drawing.Point(269, 12);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(28, 13);
             this.label28.TabIndex = 12;
@@ -495,7 +511,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(215, 21);
+            this.label27.Location = new System.Drawing.Point(208, 12);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(28, 13);
             this.label27.TabIndex = 12;
@@ -504,7 +520,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(30, 23);
+            this.label26.Location = new System.Drawing.Point(23, 11);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(56, 13);
             this.label26.TabIndex = 12;
@@ -517,7 +533,7 @@
             this.btnAumentaCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAumentaCantidad.Image = ((System.Drawing.Image)(resources.GetObject("btnAumentaCantidad.Image")));
             this.btnAumentaCantidad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAumentaCantidad.Location = new System.Drawing.Point(167, 13);
+            this.btnAumentaCantidad.Location = new System.Drawing.Point(160, 5);
             this.btnAumentaCantidad.Name = "btnAumentaCantidad";
             this.btnAumentaCantidad.Size = new System.Drawing.Size(25, 26);
             this.btnAumentaCantidad.TabIndex = 11;
@@ -529,7 +545,7 @@
             this.btnDisminuyeCantidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisminuyeCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDisminuyeCantidad.Image = ((System.Drawing.Image)(resources.GetObject("btnDisminuyeCantidad.Image")));
-            this.btnDisminuyeCantidad.Location = new System.Drawing.Point(107, 13);
+            this.btnDisminuyeCantidad.Location = new System.Drawing.Point(100, 5);
             this.btnDisminuyeCantidad.Name = "btnDisminuyeCantidad";
             this.btnDisminuyeCantidad.Size = new System.Drawing.Size(25, 26);
             this.btnDisminuyeCantidad.TabIndex = 10;
@@ -538,7 +554,7 @@
             // tboxCantidad
             // 
             this.tboxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCantidad.Location = new System.Drawing.Point(132, 13);
+            this.tboxCantidad.Location = new System.Drawing.Point(125, 5);
             this.tboxCantidad.Name = "tboxCantidad";
             this.tboxCantidad.Size = new System.Drawing.Size(35, 26);
             this.tboxCantidad.TabIndex = 0;
@@ -619,7 +635,7 @@
             this.btnBusqueda.FlatAppearance.BorderSize = 0;
             this.btnBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBusqueda.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqueda.Image")));
-            this.btnBusqueda.Location = new System.Drawing.Point(589, 20);
+            this.btnBusqueda.Location = new System.Drawing.Point(589, 21);
             this.btnBusqueda.Name = "btnBusqueda";
             this.btnBusqueda.Size = new System.Drawing.Size(44, 38);
             this.btnBusqueda.TabIndex = 1;
@@ -885,29 +901,23 @@
             this.btnCalculadora8.TabIndex = 1;
             this.btnCalculadora8.UseVisualStyleBackColor = true;
             // 
-            // panel12
+            // pnlLinea
             // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
-            this.panel12.Location = new System.Drawing.Point(18, 17);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(4, 50);
-            this.panel12.TabIndex = 53;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
-            this.panel1.Location = new System.Drawing.Point(80, 15);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(4, 50);
-            this.panel1.TabIndex = 53;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
-            this.panel2.Location = new System.Drawing.Point(143, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(4, 50);
-            this.panel2.TabIndex = 53;
+            this.pnlLinea.Controls.Add(this.label31);
+            this.pnlLinea.Controls.Add(this.label4);
+            this.pnlLinea.Controls.Add(this.tboxCantidad);
+            this.pnlLinea.Controls.Add(this.btnBorrarLinea);
+            this.pnlLinea.Controls.Add(this.btnDisminuyeCantidad);
+            this.pnlLinea.Controls.Add(this.btnAumentaCantidad);
+            this.pnlLinea.Controls.Add(this.label30);
+            this.pnlLinea.Controls.Add(this.label26);
+            this.pnlLinea.Controls.Add(this.label29);
+            this.pnlLinea.Controls.Add(this.label27);
+            this.pnlLinea.Controls.Add(this.label28);
+            this.pnlLinea.Location = new System.Drawing.Point(10, 8);
+            this.pnlLinea.Name = "pnlLinea";
+            this.pnlLinea.Size = new System.Drawing.Size(607, 35);
+            this.pnlLinea.TabIndex = 15;
             // 
             // FormularioVenta
             // 
@@ -933,10 +943,11 @@
             this.pnlDetalleVenta.ResumeLayout(false);
             this.pnlDetalleVenta.PerformLayout();
             this.pnlLineaVenta.ResumeLayout(false);
-            this.pnlLineaVenta.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.pnlCalculadora.ResumeLayout(false);
+            this.pnlLinea.ResumeLayout(false);
+            this.pnlLinea.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1014,6 +1025,7 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlLinea;
     }
 }
 

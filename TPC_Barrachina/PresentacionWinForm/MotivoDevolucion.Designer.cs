@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MotivoDevolucion));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.lbMotivoDevolucion = new System.Windows.Forms.Label();
             this.tboxObservaciones = new System.Windows.Forms.TextBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.rbtnMercaderiaVencida = new System.Windows.Forms.RadioButton();
@@ -41,33 +41,24 @@
             this.rbtnEquivocacionUsuario = new System.Windows.Forms.RadioButton();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal.SuspendLayout();
             this.gboxOpciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBarraPrincipal
             // 
-            this.pnlBarraPrincipal.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlBarraPrincipal.Controls.Add(this.lbMotivoDevolucion);
+            this.pnlBarraPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.pnlBarraPrincipal.Controls.Add(this.lbNombrePrograma);
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(380, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(376, 41);
             this.pnlBarraPrincipal.TabIndex = 3;
-            // 
-            // lbMotivoDevolucion
-            // 
-            this.lbMotivoDevolucion.AutoSize = true;
-            this.lbMotivoDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMotivoDevolucion.Location = new System.Drawing.Point(127, 15);
-            this.lbMotivoDevolucion.Name = "lbMotivoDevolucion";
-            this.lbMotivoDevolucion.Size = new System.Drawing.Size(139, 13);
-            this.lbMotivoDevolucion.TabIndex = 8;
-            this.lbMotivoDevolucion.Text = "MOTIVO DEVOLUCION";
             // 
             // tboxObservaciones
             // 
-            this.tboxObservaciones.Location = new System.Drawing.Point(24, 244);
+            this.tboxObservaciones.Location = new System.Drawing.Point(25, 232);
             this.tboxObservaciones.Multiline = true;
             this.tboxObservaciones.Name = "tboxObservaciones";
             this.tboxObservaciones.Size = new System.Drawing.Size(334, 107);
@@ -76,9 +67,10 @@
             // lblObservaciones
             // 
             this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(25, 221);
+            this.lblObservaciones.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObservaciones.Location = new System.Drawing.Point(26, 209);
             this.lblObservaciones.Name = "lblObservaciones";
-            this.lblObservaciones.Size = new System.Drawing.Size(81, 13);
+            this.lblObservaciones.Size = new System.Drawing.Size(77, 17);
             this.lblObservaciones.TabIndex = 5;
             this.lblObservaciones.Text = "Observaciones:";
             // 
@@ -87,7 +79,7 @@
             this.rbtnMercaderiaVencida.AutoSize = true;
             this.rbtnMercaderiaVencida.Location = new System.Drawing.Point(12, 25);
             this.rbtnMercaderiaVencida.Name = "rbtnMercaderiaVencida";
-            this.rbtnMercaderiaVencida.Size = new System.Drawing.Size(122, 17);
+            this.rbtnMercaderiaVencida.Size = new System.Drawing.Size(117, 21);
             this.rbtnMercaderiaVencida.TabIndex = 6;
             this.rbtnMercaderiaVencida.TabStop = true;
             this.rbtnMercaderiaVencida.Text = "Mercadería Vencida";
@@ -98,7 +90,7 @@
             this.rbtnMercaderiaMalEstado.AutoSize = true;
             this.rbtnMercaderiaMalEstado.Location = new System.Drawing.Point(172, 25);
             this.rbtnMercaderiaMalEstado.Name = "rbtnMercaderiaMalEstado";
-            this.rbtnMercaderiaMalEstado.Size = new System.Drawing.Size(147, 17);
+            this.rbtnMercaderiaMalEstado.Size = new System.Drawing.Size(144, 21);
             this.rbtnMercaderiaMalEstado.TabIndex = 6;
             this.rbtnMercaderiaMalEstado.TabStop = true;
             this.rbtnMercaderiaMalEstado.Text = "Mercaderia en mal estado";
@@ -109,7 +101,7 @@
             this.rbtnDisconformidadPrecio.AutoSize = true;
             this.rbtnDisconformidadPrecio.Location = new System.Drawing.Point(12, 97);
             this.rbtnDisconformidadPrecio.Name = "rbtnDisconformidadPrecio";
-            this.rbtnDisconformidadPrecio.Size = new System.Drawing.Size(152, 17);
+            this.rbtnDisconformidadPrecio.Size = new System.Drawing.Size(149, 21);
             this.rbtnDisconformidadPrecio.TabIndex = 6;
             this.rbtnDisconformidadPrecio.TabStop = true;
             this.rbtnDisconformidadPrecio.Text = "Disconformidad con Precio";
@@ -120,7 +112,7 @@
             this.rbtnEquivocacionCliente.AutoSize = true;
             this.rbtnEquivocacionCliente.Location = new System.Drawing.Point(12, 61);
             this.rbtnEquivocacionCliente.Name = "rbtnEquivocacionCliente";
-            this.rbtnEquivocacionCliente.Size = new System.Drawing.Size(139, 17);
+            this.rbtnEquivocacionCliente.Size = new System.Drawing.Size(133, 21);
             this.rbtnEquivocacionCliente.TabIndex = 6;
             this.rbtnEquivocacionCliente.TabStop = true;
             this.rbtnEquivocacionCliente.Text = "Equivocación de cliente";
@@ -131,7 +123,7 @@
             this.rbtnOtros.AutoSize = true;
             this.rbtnOtros.Location = new System.Drawing.Point(172, 97);
             this.rbtnOtros.Name = "rbtnOtros";
-            this.rbtnOtros.Size = new System.Drawing.Size(50, 17);
+            this.rbtnOtros.Size = new System.Drawing.Size(51, 21);
             this.rbtnOtros.TabIndex = 7;
             this.rbtnOtros.TabStop = true;
             this.rbtnOtros.Text = "Otros";
@@ -145,7 +137,8 @@
             this.gboxOpciones.Controls.Add(this.rbtnDisconformidadPrecio);
             this.gboxOpciones.Controls.Add(this.rbtnMercaderiaMalEstado);
             this.gboxOpciones.Controls.Add(this.rbtnMercaderiaVencida);
-            this.gboxOpciones.Location = new System.Drawing.Point(24, 74);
+            this.gboxOpciones.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxOpciones.Location = new System.Drawing.Point(25, 62);
             this.gboxOpciones.Name = "gboxOpciones";
             this.gboxOpciones.Size = new System.Drawing.Size(334, 134);
             this.gboxOpciones.TabIndex = 8;
@@ -157,7 +150,7 @@
             this.rbtnEquivocacionUsuario.AutoSize = true;
             this.rbtnEquivocacionUsuario.Location = new System.Drawing.Point(172, 61);
             this.rbtnEquivocacionUsuario.Name = "rbtnEquivocacionUsuario";
-            this.rbtnEquivocacionUsuario.Size = new System.Drawing.Size(142, 17);
+            this.rbtnEquivocacionUsuario.Size = new System.Drawing.Size(136, 21);
             this.rbtnEquivocacionUsuario.TabIndex = 6;
             this.rbtnEquivocacionUsuario.TabStop = true;
             this.rbtnEquivocacionUsuario.Text = "Equivocación de usuario";
@@ -165,27 +158,54 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(86, 371);
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(92, 357);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(102, 35);
-            this.btnAceptar.TabIndex = 9;
+            this.btnAceptar.Size = new System.Drawing.Size(94, 37);
+            this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(204, 371);
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(192, 357);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(102, 35);
-            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.Size = new System.Drawing.Size(94, 37);
+            this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // lbNombrePrograma
+            // 
+            this.lbNombrePrograma.AutoSize = true;
+            this.lbNombrePrograma.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombrePrograma.ForeColor = System.Drawing.Color.White;
+            this.lbNombrePrograma.Location = new System.Drawing.Point(116, 9);
+            this.lbNombrePrograma.Name = "lbNombrePrograma";
+            this.lbNombrePrograma.Size = new System.Drawing.Size(152, 23);
+            this.lbNombrePrograma.TabIndex = 9;
+            this.lbNombrePrograma.Text = "MOTIVO DEVOLUCION";
             // 
             // MotivoDevolucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 434);
+            this.ClientSize = new System.Drawing.Size(376, 427);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.gboxOpciones);
@@ -208,7 +228,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlBarraPrincipal;
-        private System.Windows.Forms.Label lbMotivoDevolucion;
         private System.Windows.Forms.TextBox tboxObservaciones;
         private System.Windows.Forms.Label lblObservaciones;
         private System.Windows.Forms.RadioButton rbtnMercaderiaVencida;
@@ -217,8 +236,9 @@
         private System.Windows.Forms.RadioButton rbtnEquivocacionCliente;
         private System.Windows.Forms.RadioButton rbtnOtros;
         private System.Windows.Forms.GroupBox gboxOpciones;
+        private System.Windows.Forms.RadioButton rbtnEquivocacionUsuario;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.RadioButton rbtnEquivocacionUsuario;
+        private System.Windows.Forms.Label lbNombrePrograma;
     }
 }
