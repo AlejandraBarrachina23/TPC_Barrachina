@@ -190,6 +190,3 @@ CREATE TABLE Clientes (
         Estado bit DEFAULT 1
 )
 
-   
-        
-    

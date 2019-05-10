@@ -35,6 +35,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtbNombre = new System.Windows.Forms.TextBox();
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.gboxSectorDesignado = new System.Windows.Forms.GroupBox();
             this.lblDeposito = new System.Windows.Forms.CheckBox();
@@ -43,7 +44,6 @@
             this.lblCompra = new System.Windows.Forms.CheckBox();
             this.lblNombreEmpleado = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
@@ -93,13 +93,24 @@
             // 
             // pnlBarraPrincipal
             // 
-            this.pnlBarraPrincipal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlBarraPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
             this.pnlBarraPrincipal.Controls.Add(this.label1);
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(340, 41);
             this.pnlBarraPrincipal.TabIndex = 64;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(138, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 23);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "USUARIO";
             // 
             // textBox1
             // 
@@ -114,6 +125,7 @@
             this.gboxSectorDesignado.Controls.Add(this.lblAdministracion);
             this.gboxSectorDesignado.Controls.Add(this.lblVentas);
             this.gboxSectorDesignado.Controls.Add(this.lblCompra);
+            this.gboxSectorDesignado.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxSectorDesignado.Location = new System.Drawing.Point(30, 179);
             this.gboxSectorDesignado.Name = "gboxSectorDesignado";
             this.gboxSectorDesignado.Size = new System.Drawing.Size(287, 87);
@@ -126,7 +138,7 @@
             this.lblDeposito.AutoSize = true;
             this.lblDeposito.Location = new System.Drawing.Point(152, 54);
             this.lblDeposito.Name = "lblDeposito";
-            this.lblDeposito.Size = new System.Drawing.Size(68, 17);
+            this.lblDeposito.Size = new System.Drawing.Size(69, 21);
             this.lblDeposito.TabIndex = 0;
             this.lblDeposito.Text = "Depósito";
             this.lblDeposito.UseVisualStyleBackColor = true;
@@ -136,7 +148,7 @@
             this.lblAdministracion.AutoSize = true;
             this.lblAdministracion.Location = new System.Drawing.Point(46, 54);
             this.lblAdministracion.Name = "lblAdministracion";
-            this.lblAdministracion.Size = new System.Drawing.Size(94, 17);
+            this.lblAdministracion.Size = new System.Drawing.Size(99, 21);
             this.lblAdministracion.TabIndex = 0;
             this.lblAdministracion.Text = "Administración";
             this.lblAdministracion.UseVisualStyleBackColor = true;
@@ -146,7 +158,7 @@
             this.lblVentas.AutoSize = true;
             this.lblVentas.Location = new System.Drawing.Point(152, 28);
             this.lblVentas.Name = "lblVentas";
-            this.lblVentas.Size = new System.Drawing.Size(59, 17);
+            this.lblVentas.Size = new System.Drawing.Size(60, 21);
             this.lblVentas.TabIndex = 0;
             this.lblVentas.Text = "Ventas";
             this.lblVentas.UseVisualStyleBackColor = true;
@@ -156,7 +168,7 @@
             this.lblCompra.AutoSize = true;
             this.lblCompra.Location = new System.Drawing.Point(46, 28);
             this.lblCompra.Name = "lblCompra";
-            this.lblCompra.Size = new System.Drawing.Size(62, 17);
+            this.lblCompra.Size = new System.Drawing.Size(65, 21);
             this.lblCompra.TabIndex = 0;
             this.lblCompra.Text = "Compra";
             this.lblCompra.UseVisualStyleBackColor = true;
@@ -177,17 +189,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(173, 21);
             this.comboBox1.TabIndex = 74;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(138, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 23);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "USUARIO";
             // 
             // button1
             // 

@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.lbNombrePrograma = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblCliente = new System.Windows.Forms.Label();
             this.lblNacimiento = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -60,74 +59,64 @@
             this.lblCorreoElectronico = new System.Windows.Forms.Label();
             this.lblCelular = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlBarraPrincipal.SuspendLayout();
             this.gboxSexo.SuspendLayout();
             this.gboxDireccion.SuspendLayout();
             this.gboxContacto.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBarraPrincipal
             // 
-            this.pnlBarraPrincipal.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pnlBarraPrincipal.Controls.Add(this.lbNombrePrograma);
+            this.pnlBarraPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.pnlBarraPrincipal.Controls.Add(this.lblCliente);
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(460, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(448, 41);
             this.pnlBarraPrincipal.TabIndex = 3;
             // 
-            // lbNombrePrograma
+            // lblCliente
             // 
-            this.lbNombrePrograma.AutoSize = true;
-            this.lbNombrePrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombrePrograma.Location = new System.Drawing.Point(190, 14);
-            this.lbNombrePrograma.Name = "lbNombrePrograma";
-            this.lbNombrePrograma.Size = new System.Drawing.Size(106, 13);
-            this.lbNombrePrograma.TabIndex = 9;
-            this.lbNombrePrograma.Text = "NUEVO CLIENTE";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(244, 474);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(111, 44);
-            this.btnCancelar.TabIndex = 22;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(124, 474);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(113, 44);
-            this.btnAceptar.TabIndex = 23;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.ForeColor = System.Drawing.Color.White;
+            this.lblCliente.Location = new System.Drawing.Point(197, 7);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(66, 23);
+            this.lblCliente.TabIndex = 10;
+            this.lblCliente.Text = "Cliente";
             // 
             // lblNacimiento
             // 
             this.lblNacimiento.AutoSize = true;
-            this.lblNacimiento.Location = new System.Drawing.Point(104, 120);
+            this.lblNacimiento.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNacimiento.Location = new System.Drawing.Point(93, 93);
             this.lblNacimiento.Name = "lblNacimiento";
-            this.lblNacimiento.Size = new System.Drawing.Size(37, 13);
+            this.lblNacimiento.Size = new System.Drawing.Size(35, 17);
             this.lblNacimiento.TabIndex = 16;
             this.lblNacimiento.Text = "Fecha";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(104, 94);
+            this.lblApellido.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.Location = new System.Drawing.Point(93, 64);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(44, 13);
+            this.lblApellido.Size = new System.Drawing.Size(46, 17);
             this.lblApellido.TabIndex = 17;
             this.lblApellido.Text = "Apellido";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(104, 68);
+            this.lblNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(93, 36);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(45, 17);
             this.lblNombre.TabIndex = 19;
             this.lblNombre.Text = "Nombre";
             // 
@@ -136,7 +125,8 @@
             this.gboxSexo.Controls.Add(this.rbtnOtros);
             this.gboxSexo.Controls.Add(this.rbtnMasculino);
             this.gboxSexo.Controls.Add(this.rbtnFemenino);
-            this.gboxSexo.Location = new System.Drawing.Point(18, 166);
+            this.gboxSexo.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxSexo.Location = new System.Drawing.Point(13, 136);
             this.gboxSexo.Name = "gboxSexo";
             this.gboxSexo.Size = new System.Drawing.Size(424, 59);
             this.gboxSexo.TabIndex = 20;
@@ -148,7 +138,7 @@
             this.rbtnOtros.AutoSize = true;
             this.rbtnOtros.Location = new System.Drawing.Point(307, 22);
             this.rbtnOtros.Name = "rbtnOtros";
-            this.rbtnOtros.Size = new System.Drawing.Size(50, 17);
+            this.rbtnOtros.Size = new System.Drawing.Size(52, 21);
             this.rbtnOtros.TabIndex = 2;
             this.rbtnOtros.TabStop = true;
             this.rbtnOtros.Text = "Otros";
@@ -159,7 +149,7 @@
             this.rbtnMasculino.AutoSize = true;
             this.rbtnMasculino.Location = new System.Drawing.Point(183, 22);
             this.rbtnMasculino.Name = "rbtnMasculino";
-            this.rbtnMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbtnMasculino.Size = new System.Drawing.Size(75, 21);
             this.rbtnMasculino.TabIndex = 2;
             this.rbtnMasculino.TabStop = true;
             this.rbtnMasculino.Text = "Masculino";
@@ -170,7 +160,7 @@
             this.rbtnFemenino.AutoSize = true;
             this.rbtnFemenino.Location = new System.Drawing.Point(74, 22);
             this.rbtnFemenino.Name = "rbtnFemenino";
-            this.rbtnFemenino.Size = new System.Drawing.Size(71, 17);
+            this.rbtnFemenino.Size = new System.Drawing.Size(71, 21);
             this.rbtnFemenino.TabIndex = 2;
             this.rbtnFemenino.TabStop = true;
             this.rbtnFemenino.Text = "Femenino";
@@ -178,23 +168,26 @@
             // 
             // dtpFechaNacimiento
             // 
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(166, 113);
+            this.dtpFechaNacimiento.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(155, 86);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(173, 20);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(173, 25);
             this.dtpFechaNacimiento.TabIndex = 14;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(166, 87);
+            this.txtApellido.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(155, 57);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(173, 20);
+            this.txtApellido.Size = new System.Drawing.Size(173, 25);
             this.txtApellido.TabIndex = 12;
             // 
             // txtbNombre
             // 
-            this.txtbNombre.Location = new System.Drawing.Point(166, 61);
+            this.txtbNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbNombre.Location = new System.Drawing.Point(155, 29);
             this.txtbNombre.Name = "txtbNombre";
-            this.txtbNombre.Size = new System.Drawing.Size(173, 20);
+            this.txtbNombre.Size = new System.Drawing.Size(173, 25);
             this.txtbNombre.TabIndex = 13;
             // 
             // gboxDireccion
@@ -209,7 +202,8 @@
             this.gboxDireccion.Controls.Add(this.lblProvincia);
             this.gboxDireccion.Controls.Add(this.lblNumero);
             this.gboxDireccion.Controls.Add(this.lblCalle);
-            this.gboxDireccion.Location = new System.Drawing.Point(18, 231);
+            this.gboxDireccion.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxDireccion.Location = new System.Drawing.Point(12, 201);
             this.gboxDireccion.Name = "gboxDireccion";
             this.gboxDireccion.Size = new System.Drawing.Size(425, 105);
             this.gboxDireccion.TabIndex = 34;
@@ -220,35 +214,35 @@
             // 
             this.tboxCP.Location = new System.Drawing.Point(362, 23);
             this.tboxCP.Name = "tboxCP";
-            this.tboxCP.Size = new System.Drawing.Size(43, 20);
+            this.tboxCP.Size = new System.Drawing.Size(43, 25);
             this.tboxCP.TabIndex = 13;
             // 
             // tboxNumero
             // 
             this.tboxNumero.Location = new System.Drawing.Point(279, 23);
             this.tboxNumero.Name = "tboxNumero";
-            this.tboxNumero.Size = new System.Drawing.Size(43, 20);
+            this.tboxNumero.Size = new System.Drawing.Size(43, 25);
             this.tboxNumero.TabIndex = 13;
             // 
             // tboxLocalidad
             // 
             this.tboxLocalidad.Location = new System.Drawing.Point(262, 60);
             this.tboxLocalidad.Name = "tboxLocalidad";
-            this.tboxLocalidad.Size = new System.Drawing.Size(143, 20);
+            this.tboxLocalidad.Size = new System.Drawing.Size(143, 25);
             this.tboxLocalidad.TabIndex = 13;
             // 
             // tboxProvincia
             // 
             this.tboxProvincia.Location = new System.Drawing.Point(68, 60);
             this.tboxProvincia.Name = "tboxProvincia";
-            this.tboxProvincia.Size = new System.Drawing.Size(124, 20);
+            this.tboxProvincia.Size = new System.Drawing.Size(124, 25);
             this.tboxProvincia.TabIndex = 13;
             // 
             // tboxCalle
             // 
             this.tboxCalle.Location = new System.Drawing.Point(47, 23);
             this.tboxCalle.Name = "tboxCalle";
-            this.tboxCalle.Size = new System.Drawing.Size(173, 20);
+            this.tboxCalle.Size = new System.Drawing.Size(173, 25);
             this.tboxCalle.TabIndex = 13;
             // 
             // lblCP
@@ -256,7 +250,7 @@
             this.lblCP.AutoSize = true;
             this.lblCP.Location = new System.Drawing.Point(338, 26);
             this.lblCP.Name = "lblCP";
-            this.lblCP.Size = new System.Drawing.Size(21, 13);
+            this.lblCP.Size = new System.Drawing.Size(21, 17);
             this.lblCP.TabIndex = 19;
             this.lblCP.Text = "CP";
             // 
@@ -265,7 +259,7 @@
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.Location = new System.Drawing.Point(206, 63);
             this.lblLocalidad.Name = "lblLocalidad";
-            this.lblLocalidad.Size = new System.Drawing.Size(53, 13);
+            this.lblLocalidad.Size = new System.Drawing.Size(54, 17);
             this.lblLocalidad.TabIndex = 19;
             this.lblLocalidad.Text = "Localidad";
             // 
@@ -274,7 +268,7 @@
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.Location = new System.Drawing.Point(11, 63);
             this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(51, 13);
+            this.lblProvincia.Size = new System.Drawing.Size(52, 17);
             this.lblProvincia.TabIndex = 19;
             this.lblProvincia.Text = "Provincia";
             // 
@@ -283,7 +277,7 @@
             this.lblNumero.AutoSize = true;
             this.lblNumero.Location = new System.Drawing.Point(231, 27);
             this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(44, 13);
+            this.lblNumero.Size = new System.Drawing.Size(45, 17);
             this.lblNumero.TabIndex = 19;
             this.lblNumero.Text = "Número";
             // 
@@ -292,7 +286,7 @@
             this.lblCalle.AutoSize = true;
             this.lblCalle.Location = new System.Drawing.Point(11, 27);
             this.lblCalle.Name = "lblCalle";
-            this.lblCalle.Size = new System.Drawing.Size(30, 13);
+            this.lblCalle.Size = new System.Drawing.Size(32, 17);
             this.lblCalle.TabIndex = 19;
             this.lblCalle.Text = "Calle";
             // 
@@ -304,7 +298,8 @@
             this.gboxContacto.Controls.Add(this.lblCorreoElectronico);
             this.gboxContacto.Controls.Add(this.lblCelular);
             this.gboxContacto.Controls.Add(this.lblTelefono);
-            this.gboxContacto.Location = new System.Drawing.Point(18, 347);
+            this.gboxContacto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxContacto.Location = new System.Drawing.Point(12, 312);
             this.gboxContacto.Name = "gboxContacto";
             this.gboxContacto.Size = new System.Drawing.Size(425, 110);
             this.gboxContacto.TabIndex = 37;
@@ -315,21 +310,21 @@
             // 
             this.tboxCelular.Location = new System.Drawing.Point(256, 37);
             this.tboxCelular.Name = "tboxCelular";
-            this.tboxCelular.Size = new System.Drawing.Size(149, 20);
+            this.tboxCelular.Size = new System.Drawing.Size(149, 25);
             this.tboxCelular.TabIndex = 13;
             // 
             // tboxCorreoElectronico
             // 
             this.tboxCorreoElectronico.Location = new System.Drawing.Point(115, 74);
             this.tboxCorreoElectronico.Name = "tboxCorreoElectronico";
-            this.tboxCorreoElectronico.Size = new System.Drawing.Size(290, 20);
+            this.tboxCorreoElectronico.Size = new System.Drawing.Size(290, 25);
             this.tboxCorreoElectronico.TabIndex = 13;
             // 
             // tboxTelefono
             // 
             this.tboxTelefono.Location = new System.Drawing.Point(66, 37);
             this.tboxTelefono.Name = "tboxTelefono";
-            this.tboxTelefono.Size = new System.Drawing.Size(129, 20);
+            this.tboxTelefono.Size = new System.Drawing.Size(129, 25);
             this.tboxTelefono.TabIndex = 13;
             // 
             // lblCorreoElectronico
@@ -337,7 +332,7 @@
             this.lblCorreoElectronico.AutoSize = true;
             this.lblCorreoElectronico.Location = new System.Drawing.Point(15, 77);
             this.lblCorreoElectronico.Name = "lblCorreoElectronico";
-            this.lblCorreoElectronico.Size = new System.Drawing.Size(94, 13);
+            this.lblCorreoElectronico.Size = new System.Drawing.Size(95, 17);
             this.lblCorreoElectronico.TabIndex = 19;
             this.lblCorreoElectronico.Text = "Correo Electrónico";
             // 
@@ -346,7 +341,7 @@
             this.lblCelular.AutoSize = true;
             this.lblCelular.Location = new System.Drawing.Point(206, 40);
             this.lblCelular.Name = "lblCelular";
-            this.lblCelular.Size = new System.Drawing.Size(39, 13);
+            this.lblCelular.Size = new System.Drawing.Size(42, 17);
             this.lblCelular.TabIndex = 19;
             this.lblCelular.Text = "Celular";
             // 
@@ -355,29 +350,71 @@
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Location = new System.Drawing.Point(11, 40);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.Size = new System.Drawing.Size(48, 17);
             this.lblTelefono.TabIndex = 19;
             this.lblTelefono.Text = "Teléfono";
             // 
-            // NuevoCliente
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(240, 460);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 37);
+            this.btnCancelar.TabIndex = 38;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(129, 460);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(94, 37);
+            this.btnAceptar.TabIndex = 39;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblNombre);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.txtbNombre);
+            this.panel1.Controls.Add(this.btnAceptar);
+            this.panel1.Controls.Add(this.txtApellido);
+            this.panel1.Controls.Add(this.gboxContacto);
+            this.panel1.Controls.Add(this.dtpFechaNacimiento);
+            this.panel1.Controls.Add(this.gboxDireccion);
+            this.panel1.Controls.Add(this.lblApellido);
+            this.panel1.Controls.Add(this.gboxSexo);
+            this.panel1.Controls.Add(this.lblNacimiento);
+            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(448, 510);
+            this.panel1.TabIndex = 40;
+            // 
+            // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 544);
-            this.Controls.Add(this.gboxContacto);
-            this.Controls.Add(this.gboxDireccion);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.lblNacimiento);
-            this.Controls.Add(this.lblApellido);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.gboxSexo);
-            this.Controls.Add(this.dtpFechaNacimiento);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.txtbNombre);
+            this.ClientSize = new System.Drawing.Size(448, 544);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NuevoCliente";
+            this.Name = "Cliente";
             this.Text = "NuevoCliente";
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
@@ -387,16 +424,15 @@
             this.gboxDireccion.PerformLayout();
             this.gboxContacto.ResumeLayout(false);
             this.gboxContacto.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel pnlBarraPrincipal;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblNacimiento;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre;
@@ -407,7 +443,6 @@
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtbNombre;
-        private System.Windows.Forms.Label lbNombrePrograma;
         private System.Windows.Forms.GroupBox gboxDireccion;
         private System.Windows.Forms.TextBox tboxCP;
         private System.Windows.Forms.TextBox tboxNumero;
@@ -426,5 +461,9 @@
         private System.Windows.Forms.Label lblCorreoElectronico;
         private System.Windows.Forms.Label lblCelular;
         private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Panel panel1;
     }
 }
