@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Negocio
 {
     public class Utilidades
@@ -23,5 +24,21 @@ namespace Negocio
 
             return "Nada";
         }
+
+        public object DefinirTipoBusqueda(string NombreFormulario,string CodigoEntidad,string NombreEntidad) {
+
+            if (NombreFormulario == "Busqueda Cliente") {
+                Console.WriteLine("paso");
+                ClienteNegocio unCliente = new ClienteNegocio();
+                return unCliente.BusquedaCliente(CodigoEntidad,NombreEntidad);
+                
+
+            }
+
+            return null;
+        }
+
+
+
     }
 }

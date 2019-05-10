@@ -33,11 +33,11 @@
             this.lblNombreFormulario = new System.Windows.Forms.Label();
             this.lblCodigoCliente = new System.Windows.Forms.Label();
             this.pboxCodigoCliente = new System.Windows.Forms.PictureBox();
-            this.tboxCodigoCliente = new System.Windows.Forms.TextBox();
-            this.tboxNombreCliente = new System.Windows.Forms.TextBox();
+            this.tboxCodigo = new System.Windows.Forms.TextBox();
+            this.tboxNombre = new System.Windows.Forms.TextBox();
             this.pboxNombreCliente = new System.Windows.Forms.PictureBox();
             this.lblNombreCliente = new System.Windows.Forms.Label();
-            this.dgvListadoClientes = new System.Windows.Forms.DataGridView();
+            this.dgvListadoBusqueda = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -45,7 +45,7 @@
             this.pnlBarraPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombreCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,21 +89,23 @@
             this.pboxCodigoCliente.TabIndex = 6;
             this.pboxCodigoCliente.TabStop = false;
             // 
-            // tboxCodigoCliente
+            // tboxCodigo
             // 
-            this.tboxCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCodigoCliente.Location = new System.Drawing.Point(168, 14);
-            this.tboxCodigoCliente.Name = "tboxCodigoCliente";
-            this.tboxCodigoCliente.Size = new System.Drawing.Size(155, 31);
-            this.tboxCodigoCliente.TabIndex = 5;
+            this.tboxCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxCodigo.Location = new System.Drawing.Point(168, 14);
+            this.tboxCodigo.Name = "tboxCodigo";
+            this.tboxCodigo.Size = new System.Drawing.Size(155, 31);
+            this.tboxCodigo.TabIndex = 5;
+            this.tboxCodigo.Click += new System.EventHandler(this.tboxCodigo_Click);
+            this.tboxCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigo_KeyPress);
             // 
-            // tboxNombreCliente
+            // tboxNombre
             // 
-            this.tboxNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNombreCliente.Location = new System.Drawing.Point(418, 14);
-            this.tboxNombreCliente.Name = "tboxNombreCliente";
-            this.tboxNombreCliente.Size = new System.Drawing.Size(155, 31);
-            this.tboxNombreCliente.TabIndex = 5;
+            this.tboxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxNombre.Location = new System.Drawing.Point(418, 14);
+            this.tboxNombre.Name = "tboxNombre";
+            this.tboxNombre.Size = new System.Drawing.Size(155, 31);
+            this.tboxNombre.TabIndex = 5;
             // 
             // pboxNombreCliente
             // 
@@ -123,13 +125,13 @@
             this.lblNombreCliente.TabIndex = 7;
             this.lblNombreCliente.Text = "Nombre";
             // 
-            // dgvListadoClientes
+            // dgvListadoBusqueda
             // 
-            this.dgvListadoClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoClientes.Location = new System.Drawing.Point(21, 56);
-            this.dgvListadoClientes.Name = "dgvListadoClientes";
-            this.dgvListadoClientes.Size = new System.Drawing.Size(656, 186);
-            this.dgvListadoClientes.TabIndex = 8;
+            this.dgvListadoBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoBusqueda.Location = new System.Drawing.Point(21, 56);
+            this.dgvListadoBusqueda.Name = "dgvListadoBusqueda";
+            this.dgvListadoBusqueda.Size = new System.Drawing.Size(656, 186);
+            this.dgvListadoBusqueda.TabIndex = 8;
             // 
             // btnBuscar
             // 
@@ -175,16 +177,17 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pboxCodigoCliente);
             this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.tboxCodigoCliente);
+            this.panel1.Controls.Add(this.tboxCodigo);
             this.panel1.Controls.Add(this.btnAceptar);
-            this.panel1.Controls.Add(this.tboxNombreCliente);
-            this.panel1.Controls.Add(this.dgvListadoClientes);
+            this.panel1.Controls.Add(this.tboxNombre);
+            this.panel1.Controls.Add(this.dgvListadoBusqueda);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.pboxNombreCliente);
             this.panel1.Controls.Add(this.lblCodigoCliente);
@@ -210,7 +213,7 @@
             this.pnlBarraPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombreCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -223,11 +226,11 @@
         private System.Windows.Forms.Label lblNombreFormulario;
         private System.Windows.Forms.Label lblCodigoCliente;
         private System.Windows.Forms.PictureBox pboxCodigoCliente;
-        private System.Windows.Forms.TextBox tboxCodigoCliente;
-        private System.Windows.Forms.TextBox tboxNombreCliente;
+        private System.Windows.Forms.TextBox tboxCodigo;
+        private System.Windows.Forms.TextBox tboxNombre;
         private System.Windows.Forms.PictureBox pboxNombreCliente;
         private System.Windows.Forms.Label lblNombreCliente;
-        private System.Windows.Forms.DataGridView dgvListadoClientes;
+        private System.Windows.Forms.DataGridView dgvListadoBusqueda;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
