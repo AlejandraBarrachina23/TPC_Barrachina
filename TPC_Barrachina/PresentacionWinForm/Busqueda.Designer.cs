@@ -31,22 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Busqueda));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
             this.lblNombreFormulario = new System.Windows.Forms.Label();
-            this.lblCodigoCliente = new System.Windows.Forms.Label();
-            this.pboxCodigoCliente = new System.Windows.Forms.PictureBox();
-            this.tboxCodigo = new System.Windows.Forms.TextBox();
-            this.tboxNombre = new System.Windows.Forms.TextBox();
-            this.pboxNombreCliente = new System.Windows.Forms.PictureBox();
             this.lblNombreCliente = new System.Windows.Forms.Label();
-            this.dgvListadoBusqueda = new System.Windows.Forms.DataGridView();
+            this.lblCodigoCliente = new System.Windows.Forms.Label();
+            this.pboxNombreCliente = new System.Windows.Forms.PictureBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.dgvListadoBusqueda = new System.Windows.Forms.DataGridView();
+            this.tboxNombre = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tboxCodigo = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.pboxCodigoCliente = new System.Windows.Forms.PictureBox();
+            this.panelContenedor = new System.Windows.Forms.Panel();
             this.pnlBarraPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombreCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoCliente)).BeginInit();
+            this.panelContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBarraPrincipal
@@ -71,51 +71,6 @@
             this.lblNombreFormulario.TabIndex = 8;
             this.lblNombreFormulario.Text = "BUSQUEDA ";
             // 
-            // lblCodigoCliente
-            // 
-            this.lblCodigoCliente.AutoSize = true;
-            this.lblCodigoCliente.Location = new System.Drawing.Point(90, 22);
-            this.lblCodigoCliente.Name = "lblCodigoCliente";
-            this.lblCodigoCliente.Size = new System.Drawing.Size(40, 13);
-            this.lblCodigoCliente.TabIndex = 7;
-            this.lblCodigoCliente.Text = "Codigo";
-            // 
-            // pboxCodigoCliente
-            // 
-            this.pboxCodigoCliente.Image = ((System.Drawing.Image)(resources.GetObject("pboxCodigoCliente.Image")));
-            this.pboxCodigoCliente.Location = new System.Drawing.Point(134, 14);
-            this.pboxCodigoCliente.Name = "pboxCodigoCliente";
-            this.pboxCodigoCliente.Size = new System.Drawing.Size(31, 31);
-            this.pboxCodigoCliente.TabIndex = 6;
-            this.pboxCodigoCliente.TabStop = false;
-            // 
-            // tboxCodigo
-            // 
-            this.tboxCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCodigo.Location = new System.Drawing.Point(168, 14);
-            this.tboxCodigo.Name = "tboxCodigo";
-            this.tboxCodigo.Size = new System.Drawing.Size(155, 31);
-            this.tboxCodigo.TabIndex = 5;
-            this.tboxCodigo.Click += new System.EventHandler(this.tboxCodigo_Click);
-            this.tboxCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigo_KeyPress);
-            // 
-            // tboxNombre
-            // 
-            this.tboxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNombre.Location = new System.Drawing.Point(418, 14);
-            this.tboxNombre.Name = "tboxNombre";
-            this.tboxNombre.Size = new System.Drawing.Size(155, 31);
-            this.tboxNombre.TabIndex = 5;
-            // 
-            // pboxNombreCliente
-            // 
-            this.pboxNombreCliente.Image = ((System.Drawing.Image)(resources.GetObject("pboxNombreCliente.Image")));
-            this.pboxNombreCliente.Location = new System.Drawing.Point(383, 14);
-            this.pboxNombreCliente.Name = "pboxNombreCliente";
-            this.pboxNombreCliente.Size = new System.Drawing.Size(31, 31);
-            this.pboxNombreCliente.TabIndex = 6;
-            this.pboxNombreCliente.TabStop = false;
-            // 
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
@@ -125,13 +80,23 @@
             this.lblNombreCliente.TabIndex = 7;
             this.lblNombreCliente.Text = "Nombre";
             // 
-            // dgvListadoBusqueda
+            // lblCodigoCliente
             // 
-            this.dgvListadoBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoBusqueda.Location = new System.Drawing.Point(21, 56);
-            this.dgvListadoBusqueda.Name = "dgvListadoBusqueda";
-            this.dgvListadoBusqueda.Size = new System.Drawing.Size(656, 186);
-            this.dgvListadoBusqueda.TabIndex = 8;
+            this.lblCodigoCliente.AutoSize = true;
+            this.lblCodigoCliente.Location = new System.Drawing.Point(90, 22);
+            this.lblCodigoCliente.Name = "lblCodigoCliente";
+            this.lblCodigoCliente.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigoCliente.TabIndex = 7;
+            this.lblCodigoCliente.Text = "Codigo";
+            // 
+            // pboxNombreCliente
+            // 
+            this.pboxNombreCliente.Image = ((System.Drawing.Image)(resources.GetObject("pboxNombreCliente.Image")));
+            this.pboxNombreCliente.Location = new System.Drawing.Point(383, 14);
+            this.pboxNombreCliente.Name = "pboxNombreCliente";
+            this.pboxNombreCliente.Size = new System.Drawing.Size(31, 31);
+            this.pboxNombreCliente.TabIndex = 6;
+            this.pboxNombreCliente.TabStop = false;
             // 
             // btnBuscar
             // 
@@ -143,23 +108,22 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // btnCancelar
+            // dgvListadoBusqueda
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(362, 256);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 37);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.dgvListadoBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoBusqueda.Location = new System.Drawing.Point(21, 56);
+            this.dgvListadoBusqueda.Name = "dgvListadoBusqueda";
+            this.dgvListadoBusqueda.Size = new System.Drawing.Size(656, 186);
+            this.dgvListadoBusqueda.TabIndex = 8;
+            // 
+            // tboxNombre
+            // 
+            this.tboxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxNombre.Location = new System.Drawing.Point(418, 14);
+            this.tboxNombre.Name = "tboxNombre";
+            this.tboxNombre.Size = new System.Drawing.Size(155, 31);
+            this.tboxNombre.TabIndex = 5;
+            this.tboxNombre.Click += new System.EventHandler(this.tboxNombre_Click);
             // 
             // btnAceptar
             // 
@@ -179,31 +143,68 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // panel1
+            // tboxCodigo
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pboxCodigoCliente);
-            this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.tboxCodigo);
-            this.panel1.Controls.Add(this.btnAceptar);
-            this.panel1.Controls.Add(this.tboxNombre);
-            this.panel1.Controls.Add(this.dgvListadoBusqueda);
-            this.panel1.Controls.Add(this.btnBuscar);
-            this.panel1.Controls.Add(this.pboxNombreCliente);
-            this.panel1.Controls.Add(this.lblCodigoCliente);
-            this.panel1.Controls.Add(this.lblNombreCliente);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 35);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(730, 305);
-            this.panel1.TabIndex = 12;
+            this.tboxCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxCodigo.Location = new System.Drawing.Point(168, 14);
+            this.tboxCodigo.Name = "tboxCodigo";
+            this.tboxCodigo.Size = new System.Drawing.Size(155, 31);
+            this.tboxCodigo.TabIndex = 5;
+            this.tboxCodigo.Click += new System.EventHandler(this.tboxCodigo_Click);
+            this.tboxCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigo_KeyPress);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(362, 256);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(94, 37);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // pboxCodigoCliente
+            // 
+            this.pboxCodigoCliente.Image = ((System.Drawing.Image)(resources.GetObject("pboxCodigoCliente.Image")));
+            this.pboxCodigoCliente.Location = new System.Drawing.Point(134, 14);
+            this.pboxCodigoCliente.Name = "pboxCodigoCliente";
+            this.pboxCodigoCliente.Size = new System.Drawing.Size(31, 31);
+            this.pboxCodigoCliente.TabIndex = 6;
+            this.pboxCodigoCliente.TabStop = false;
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelContenedor.Controls.Add(this.pboxCodigoCliente);
+            this.panelContenedor.Controls.Add(this.btnCancelar);
+            this.panelContenedor.Controls.Add(this.tboxCodigo);
+            this.panelContenedor.Controls.Add(this.btnAceptar);
+            this.panelContenedor.Controls.Add(this.tboxNombre);
+            this.panelContenedor.Controls.Add(this.dgvListadoBusqueda);
+            this.panelContenedor.Controls.Add(this.btnBuscar);
+            this.panelContenedor.Controls.Add(this.pboxNombreCliente);
+            this.panelContenedor.Controls.Add(this.lblCodigoCliente);
+            this.panelContenedor.Controls.Add(this.lblNombreCliente);
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Location = new System.Drawing.Point(0, 41);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(730, 299);
+            this.panelContenedor.TabIndex = 12;
             // 
             // Busqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 340);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Busqueda";
@@ -211,11 +212,11 @@
             this.Load += new System.EventHandler(this.Busqueda_Load);
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombreCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoCliente)).EndInit();
+            this.panelContenedor.ResumeLayout(false);
+            this.panelContenedor.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -224,16 +225,16 @@
 
         private System.Windows.Forms.Panel pnlBarraPrincipal;
         private System.Windows.Forms.Label lblNombreFormulario;
-        private System.Windows.Forms.Label lblCodigoCliente;
-        private System.Windows.Forms.PictureBox pboxCodigoCliente;
-        private System.Windows.Forms.TextBox tboxCodigo;
-        private System.Windows.Forms.TextBox tboxNombre;
-        private System.Windows.Forms.PictureBox pboxNombreCliente;
         private System.Windows.Forms.Label lblNombreCliente;
-        private System.Windows.Forms.DataGridView dgvListadoBusqueda;
+        private System.Windows.Forms.Label lblCodigoCliente;
+        private System.Windows.Forms.PictureBox pboxNombreCliente;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridView dgvListadoBusqueda;
+        private System.Windows.Forms.TextBox tboxNombre;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tboxCodigo;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.PictureBox pboxCodigoCliente;
+        private System.Windows.Forms.Panel panelContenedor;
     }
 }

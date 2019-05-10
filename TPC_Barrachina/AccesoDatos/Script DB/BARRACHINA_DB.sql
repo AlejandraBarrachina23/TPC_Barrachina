@@ -190,3 +190,9 @@ CREATE TABLE Clientes (
         Estado bit DEFAULT 1
 )
 
+
+INSERT INTO Clientes (IdCliente,IdPersona,IdCuentaCorriente,IdDescuento,Estado) VALUES (1,1,1,1,1),
+(2,1,2,1,1),(3,1,3,1,1),(4,2,1,2,1)
+
+INSERT INTO PersonaFisicas(IdPersonaFisica,IdPersona,Nombre,Apellido,FechaNacimiento,Sexo,IdContacto) VALUES (1,1,'Maria','Barrachina',1989,'Femenino',1)
+INSERT INTO PersonaJuridicas(IdPersonaJuridica, RazonSocial, NumeroCUIT, NombreFantasia,IdContacto,IdCondicionIVA) VALUES (1,'Alejandra Barrachina','2-34521771-7','Joaco',5,1)

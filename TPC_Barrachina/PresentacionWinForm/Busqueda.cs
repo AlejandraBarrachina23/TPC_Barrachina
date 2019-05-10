@@ -27,9 +27,11 @@ namespace PresentacionWinForm
         {
             try
             {
-                Utilidades utilidades = new Utilidades();
-                MessageBox.Show(lblNombreFormulario.Text);
-                dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text, tboxCodigo.Text,tboxNombre.Text);
+              var ContenidoTextBox = Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != " ");
+              
+
+              Utilidades utilidades = new Utilidades();
+              dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text, tboxCodigo.Text,tboxNombre.Text);
 
             }
             catch (Exception)
@@ -53,7 +55,7 @@ namespace PresentacionWinForm
 
         private void tboxCodigo_Click(object sender, EventArgs e)
         {
-           
+            tboxNombre.Clear();
         }
 
         private void tboxCodigo_KeyPress(object sender, KeyPressEventArgs e)
@@ -67,7 +69,25 @@ namespace PresentacionWinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            //var ContenidoTextBox = Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != "");
+            //REVISAR PANNNNEELLLL
+            string ContenidoTextBox = "";
 
+            foreach (var textBox in Controls.OfType<TextBox>())
+            {
+                MessageBox.Show(ContenidoTextBox);
+                if (textBox.Text != string.Empty) {
+
+                    
+                    ContenidoTextBox = textBox.Text; }
+                
+            }
+
+        }
+
+        private void tboxNombre_Click(object sender, EventArgs e)
+        {
+            tboxCodigo.Clear();
         }
     }
 }
