@@ -157,6 +157,7 @@
             // pboxImagenProducto
             // 
             this.pboxImagenProducto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pboxImagenProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pboxImagenProducto.Image = ((System.Drawing.Image)(resources.GetObject("pboxImagenProducto.Image")));
             this.pboxImagenProducto.Location = new System.Drawing.Point(29, 14);
             this.pboxImagenProducto.Name = "pboxImagenProducto";
@@ -376,7 +377,7 @@
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.FlatAppearance.BorderSize = 0;
+            this.btnAgregarCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
             this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
             this.btnAgregarCliente.Location = new System.Drawing.Point(22, 17);
@@ -923,7 +924,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(51)))), ((int)(((byte)(60)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1154, 519);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.pnlDetalleVenta);

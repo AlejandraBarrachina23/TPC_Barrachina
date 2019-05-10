@@ -65,7 +65,7 @@
             this.lblNombreFormulario.AutoSize = true;
             this.lblNombreFormulario.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreFormulario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreFormulario.Location = new System.Drawing.Point(282, 6);
+            this.lblNombreFormulario.Location = new System.Drawing.Point(282, 5);
             this.lblNombreFormulario.Name = "lblNombreFormulario";
             this.lblNombreFormulario.Size = new System.Drawing.Size(77, 23);
             this.lblNombreFormulario.TabIndex = 8;
