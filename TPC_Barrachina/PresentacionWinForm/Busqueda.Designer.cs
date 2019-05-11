@@ -65,7 +65,7 @@
             this.lblNombreFormulario.AutoSize = true;
             this.lblNombreFormulario.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreFormulario.ForeColor = System.Drawing.Color.White;
-            this.lblNombreFormulario.Location = new System.Drawing.Point(282, 5);
+            this.lblNombreFormulario.Location = new System.Drawing.Point(279, 8);
             this.lblNombreFormulario.Name = "lblNombreFormulario";
             this.lblNombreFormulario.Size = new System.Drawing.Size(77, 23);
             this.lblNombreFormulario.TabIndex = 8;
@@ -134,7 +134,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(251, 256);
+            this.btnAceptar.Location = new System.Drawing.Point(251, 250);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
             this.btnAceptar.TabIndex = 11;
@@ -162,7 +162,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(362, 256);
+            this.btnCancelar.Location = new System.Drawing.Point(362, 250);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 37);
             this.btnCancelar.TabIndex = 10;
