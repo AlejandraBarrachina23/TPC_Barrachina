@@ -94,7 +94,7 @@
             // 
             this.lblNacimiento.AutoSize = true;
             this.lblNacimiento.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNacimiento.Location = new System.Drawing.Point(93, 93);
+            this.lblNacimiento.Location = new System.Drawing.Point(93, 86);
             this.lblNacimiento.Name = "lblNacimiento";
             this.lblNacimiento.Size = new System.Drawing.Size(35, 17);
             this.lblNacimiento.TabIndex = 16;
@@ -104,7 +104,7 @@
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(93, 64);
+            this.lblApellido.Location = new System.Drawing.Point(93, 57);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(46, 17);
             this.lblApellido.TabIndex = 17;
@@ -114,7 +114,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(93, 36);
+            this.lblNombre.Location = new System.Drawing.Point(93, 29);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(45, 17);
             this.lblNombre.TabIndex = 19;
@@ -126,7 +126,7 @@
             this.gboxSexo.Controls.Add(this.rbtnMasculino);
             this.gboxSexo.Controls.Add(this.rbtnFemenino);
             this.gboxSexo.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxSexo.Location = new System.Drawing.Point(13, 136);
+            this.gboxSexo.Location = new System.Drawing.Point(13, 129);
             this.gboxSexo.Name = "gboxSexo";
             this.gboxSexo.Size = new System.Drawing.Size(424, 59);
             this.gboxSexo.TabIndex = 20;
@@ -169,7 +169,7 @@
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(155, 86);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(155, 79);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(173, 25);
             this.dtpFechaNacimiento.TabIndex = 14;
@@ -177,7 +177,7 @@
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(155, 57);
+            this.txtApellido.Location = new System.Drawing.Point(155, 50);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(173, 25);
             this.txtApellido.TabIndex = 12;
@@ -185,7 +185,7 @@
             // txtbNombre
             // 
             this.txtbNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbNombre.Location = new System.Drawing.Point(155, 29);
+            this.txtbNombre.Location = new System.Drawing.Point(155, 22);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(173, 25);
             this.txtbNombre.TabIndex = 13;
@@ -203,7 +203,7 @@
             this.gboxDireccion.Controls.Add(this.lblNumero);
             this.gboxDireccion.Controls.Add(this.lblCalle);
             this.gboxDireccion.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxDireccion.Location = new System.Drawing.Point(12, 201);
+            this.gboxDireccion.Location = new System.Drawing.Point(12, 194);
             this.gboxDireccion.Name = "gboxDireccion";
             this.gboxDireccion.Size = new System.Drawing.Size(425, 105);
             this.gboxDireccion.TabIndex = 34;
@@ -299,7 +299,7 @@
             this.gboxContacto.Controls.Add(this.lblCelular);
             this.gboxContacto.Controls.Add(this.lblTelefono);
             this.gboxContacto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxContacto.Location = new System.Drawing.Point(12, 312);
+            this.gboxContacto.Location = new System.Drawing.Point(12, 305);
             this.gboxContacto.Name = "gboxContacto";
             this.gboxContacto.Size = new System.Drawing.Size(425, 110);
             this.gboxContacto.TabIndex = 37;
@@ -363,7 +363,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(240, 460);
+            this.btnCancelar.Location = new System.Drawing.Point(240, 437);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 37);
             this.btnCancelar.TabIndex = 38;
@@ -380,7 +380,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(129, 460);
+            this.btnAceptar.Location = new System.Drawing.Point(129, 437);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
             this.btnAceptar.TabIndex = 39;
@@ -403,14 +403,14 @@
             this.panel1.Controls.Add(this.lblNacimiento);
             this.panel1.Location = new System.Drawing.Point(0, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(448, 510);
+            this.panel1.Size = new System.Drawing.Size(448, 497);
             this.panel1.TabIndex = 40;
             // 
             // Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 544);
+            this.ClientSize = new System.Drawing.Size(448, 533);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

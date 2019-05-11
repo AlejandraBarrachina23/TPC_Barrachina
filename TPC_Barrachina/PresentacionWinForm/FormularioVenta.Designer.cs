@@ -44,9 +44,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.pnlOpciones = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.btnCierreCaja = new System.Windows.Forms.Button();
             this.btnRetiroDinero = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -264,9 +261,6 @@
             // pnlOpciones
             // 
             this.pnlOpciones.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pnlOpciones.Controls.Add(this.panel2);
-            this.pnlOpciones.Controls.Add(this.panel1);
-            this.pnlOpciones.Controls.Add(this.panel12);
             this.pnlOpciones.Controls.Add(this.btnCierreCaja);
             this.pnlOpciones.Controls.Add(this.btnRetiroDinero);
             this.pnlOpciones.Controls.Add(this.btnCancelar);
@@ -280,54 +274,32 @@
             this.pnlOpciones.Size = new System.Drawing.Size(220, 233);
             this.pnlOpciones.TabIndex = 1;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
-            this.panel2.Location = new System.Drawing.Point(143, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(4, 50);
-            this.panel2.TabIndex = 53;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
-            this.panel1.Location = new System.Drawing.Point(80, 15);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(4, 50);
-            this.panel1.TabIndex = 53;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
-            this.panel12.Location = new System.Drawing.Point(18, 17);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(4, 50);
-            this.panel12.TabIndex = 53;
-            // 
             // btnCierreCaja
             // 
+            this.btnCierreCaja.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnCierreCaja.FlatAppearance.BorderSize = 0;
             this.btnCierreCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCierreCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCierreCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCierreCaja.Image")));
-            this.btnCierreCaja.Location = new System.Drawing.Point(143, 71);
+            this.btnCierreCaja.Location = new System.Drawing.Point(147, 75);
             this.btnCierreCaja.Name = "btnCierreCaja";
             this.btnCierreCaja.Size = new System.Drawing.Size(50, 50);
             this.btnCierreCaja.TabIndex = 13;
-            this.btnCierreCaja.UseVisualStyleBackColor = true;
+            this.btnCierreCaja.UseVisualStyleBackColor = false;
             this.btnCierreCaja.Click += new System.EventHandler(this.btnCierreCaja_Click);
             // 
             // btnRetiroDinero
             // 
+            this.btnRetiroDinero.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnRetiroDinero.FlatAppearance.BorderSize = 0;
             this.btnRetiroDinero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRetiroDinero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetiroDinero.Image = ((System.Drawing.Image)(resources.GetObject("btnRetiroDinero.Image")));
-            this.btnRetiroDinero.Location = new System.Drawing.Point(84, 71);
+            this.btnRetiroDinero.Location = new System.Drawing.Point(91, 75);
             this.btnRetiroDinero.Name = "btnRetiroDinero";
             this.btnRetiroDinero.Size = new System.Drawing.Size(50, 50);
             this.btnRetiroDinero.TabIndex = 12;
-            this.btnRetiroDinero.UseVisualStyleBackColor = true;
+            this.btnRetiroDinero.UseVisualStyleBackColor = false;
             this.btnRetiroDinero.Click += new System.EventHandler(this.btnRetiroDinero_Click);
             // 
             // btnCancelar
@@ -365,53 +337,59 @@
             // 
             // btnUltimasActualizaciones
             // 
+            this.btnUltimasActualizaciones.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnUltimasActualizaciones.FlatAppearance.BorderSize = 0;
             this.btnUltimasActualizaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUltimasActualizaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnUltimasActualizaciones.Image")));
-            this.btnUltimasActualizaciones.Location = new System.Drawing.Point(23, 71);
+            this.btnUltimasActualizaciones.Location = new System.Drawing.Point(35, 75);
             this.btnUltimasActualizaciones.Name = "btnUltimasActualizaciones";
             this.btnUltimasActualizaciones.Size = new System.Drawing.Size(50, 50);
             this.btnUltimasActualizaciones.TabIndex = 9;
-            this.btnUltimasActualizaciones.UseVisualStyleBackColor = true;
+            this.btnUltimasActualizaciones.UseVisualStyleBackColor = false;
             this.btnUltimasActualizaciones.Click += new System.EventHandler(this.btnUltimasActualizaciones_Click);
             // 
             // btnAgregarCliente
             // 
-            this.btnAgregarCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
+            this.btnAgregarCliente.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAgregarCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAgregarCliente.FlatAppearance.BorderSize = 0;
             this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
-            this.btnAgregarCliente.Location = new System.Drawing.Point(22, 17);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(35, 19);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(50, 50);
             this.btnAgregarCliente.TabIndex = 9;
-            this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente.UseVisualStyleBackColor = false;
             this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // btnDevolucion
             // 
+            this.btnDevolucion.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnDevolucion.FlatAppearance.BorderSize = 0;
             this.btnDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevolucion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevolucion.Image = ((System.Drawing.Image)(resources.GetObject("btnDevolucion.Image")));
-            this.btnDevolucion.Location = new System.Drawing.Point(148, 15);
+            this.btnDevolucion.Location = new System.Drawing.Point(147, 19);
             this.btnDevolucion.Name = "btnDevolucion";
             this.btnDevolucion.Size = new System.Drawing.Size(50, 50);
             this.btnDevolucion.TabIndex = 9;
-            this.btnDevolucion.UseVisualStyleBackColor = true;
+            this.btnDevolucion.UseVisualStyleBackColor = false;
             this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click);
             // 
             // btnMetodoPago
             // 
+            this.btnMetodoPago.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnMetodoPago.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnMetodoPago.FlatAppearance.BorderSize = 0;
             this.btnMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMetodoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMetodoPago.Image = ((System.Drawing.Image)(resources.GetObject("btnMetodoPago.Image")));
-            this.btnMetodoPago.Location = new System.Drawing.Point(84, 14);
+            this.btnMetodoPago.Location = new System.Drawing.Point(91, 19);
             this.btnMetodoPago.Name = "btnMetodoPago";
             this.btnMetodoPago.Size = new System.Drawing.Size(50, 50);
             this.btnMetodoPago.TabIndex = 9;
             this.btnMetodoPago.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnMetodoPago.UseVisualStyleBackColor = true;
+            this.btnMetodoPago.UseVisualStyleBackColor = false;
             this.btnMetodoPago.Click += new System.EventHandler(this.btnMetodoPago_Click);
             // 
             // pnlDetalleVenta
@@ -1023,9 +1001,6 @@
         private System.Windows.Forms.Button btnRetiroDinero;
         private System.Windows.Forms.Button btnBorrarLinea;
         private System.Windows.Forms.Button btnAumentaCantidad;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlLinea;
     }
 }
