@@ -35,6 +35,13 @@ namespace Negocio
                 return unCliente.BusquedaCliente(CodigoEntidad, NombreEntidad);
             }
 
+            if (NombreFormulario == "Busqueda Productos") {
+
+                ProductoNegocio unProducto = new ProductoNegocio();
+                return unProducto.BusquedaProducto(CodigoEntidad, NombreEntidad);
+
+            }
+
             return null;
         }
 

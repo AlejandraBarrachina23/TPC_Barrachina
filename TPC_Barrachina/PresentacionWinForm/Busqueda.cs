@@ -29,7 +29,6 @@ namespace PresentacionWinForm
             {
               var ContenidoTextBox = Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != " ");
               
-
               Utilidades utilidades = new Utilidades();
               dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text, tboxCodigo.Text,tboxNombre.Text);
 

@@ -24,7 +24,6 @@ namespace PresentacionWinForm
             string NombreFormulario = "Cliente";
             Busqueda BusquedaCliente = new Busqueda(NombreFormulario);
             BusquedaCliente.Show();
-            
         }
 
         private void btnMetodoPago_Click(object sender, EventArgs e)
