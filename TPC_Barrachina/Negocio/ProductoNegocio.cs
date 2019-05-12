@@ -11,13 +11,13 @@ namespace Negocio
     class ProductoNegocio
     {
 
-        public List<Producto> BusquedaProducto(string Codigo, string Nombre)
+        public List<Producto> BusquedaProducto(string ParametroBusqueda, string NombreColumna)
         {
 
             List<Producto> ListadoProductos = new List<Producto>();
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
 
-            string Consulta = "select * from Productos where CodigoProducto = " + Codigo;
+            string Consulta = "select * from Productos where " + NombreColumna + " = " + ParametroBusqueda;
             AccederDatos.DefinirTipoComando(Consulta);
             AccederDatos.AbrirConexion();
             AccederDatos.EjecutarConsulta();
@@ -25,7 +25,7 @@ namespace Negocio
             while (AccederDatos.LectorDatos.Read())
             {
                 Producto unNuevoProducto = new Producto();
-                unNuevoProducto.CodigoProducto = (int)AccederDatos.LectorDatos["CodigoProducto"];
+                unNuevoProducto.CodigoProducto = (int)AccederDatos.LectorDatos["Codigo"];
                 unNuevoProducto.Nombre = (string)AccederDatos.LectorDatos["Nombre"];
                 unNuevoProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
                 unNuevoProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];

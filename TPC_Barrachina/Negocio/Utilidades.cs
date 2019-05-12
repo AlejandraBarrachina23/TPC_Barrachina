@@ -26,19 +26,19 @@ namespace Negocio
             return null;
         }
 
-        public object DefinirTipoBusqueda(string NombreFormulario, string CodigoEntidad, string NombreEntidad)
+        public object DefinirTipoBusqueda(string NombreFormulario, string ParametroBusqueda, string NombreColumna)
         {
 
             if (NombreFormulario == "Busqueda Cliente")
             {
                 ClienteNegocio unCliente = new ClienteNegocio();
-                return unCliente.BusquedaCliente(CodigoEntidad, NombreEntidad);
+                return unCliente.BusquedaCliente(ParametroBusqueda, NombreColumna);
             }
 
             if (NombreFormulario == "Busqueda Productos") {
 
                 ProductoNegocio unProducto = new ProductoNegocio();
-                return unProducto.BusquedaProducto(CodigoEntidad, NombreEntidad);
+                return unProducto.BusquedaProducto(ParametroBusqueda, NombreColumna);
 
             }
 
