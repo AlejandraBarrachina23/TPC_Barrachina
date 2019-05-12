@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PresentacionWinForm
 {
     public partial class FormularioVenta : Form
     {
-       
 
         public FormularioVenta()
         {
             InitializeComponent();
         }
 
-        private void btnAgregarCliente_Click(object sender, EventArgs e)
+         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
             string NombreFormulario = "Cliente";
             Busqueda BusquedaCliente = new Busqueda(NombreFormulario);
@@ -67,6 +67,11 @@ namespace PresentacionWinForm
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnCalculadora8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

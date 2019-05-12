@@ -897,6 +897,7 @@
             this.btnCalculadora8.Size = new System.Drawing.Size(45, 45);
             this.btnCalculadora8.TabIndex = 1;
             this.btnCalculadora8.UseVisualStyleBackColor = true;
+            this.btnCalculadora8.Click += new System.EventHandler(this.btnCalculadora8_Click);
             // 
             // FormularioVenta
             // 

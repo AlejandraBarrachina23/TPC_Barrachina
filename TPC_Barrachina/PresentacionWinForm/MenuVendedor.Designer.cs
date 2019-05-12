@@ -47,6 +47,7 @@
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(1195, 41);
             this.pnlBarraPrincipal.TabIndex = 2;
+            this.pnlBarraPrincipal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarraPrincipal_MouseDown);
             // 
             // btnUsuario
             // 
