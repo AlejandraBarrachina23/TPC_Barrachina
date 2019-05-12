@@ -24,23 +24,32 @@ namespace PresentacionWinForm
            
         }
 
+        public Busqueda(string NombreFormulario, string NombreFormularioQueLlamo) {
+
+            InitializeComponent();
+            Utilidades utilidades = new Utilidades();
+            lblNombreFormulario.Text = utilidades.AsignarNombreFormulario(NombreFormulario);
+            btnAceptar.Visible = false;
+            btnAgregar.Visible = true;
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
             {
-              TextBox TextBoxSeleccionado = panelContenedor.Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != " ");
-              string NombreTextBox = TextBoxSeleccionado.Name.Remove(0,4);            
-              Utilidades utilidades = new Utilidades();
-              dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text, TextBoxSeleccionado.Text, NombreTextBox);
+                TextBox TextBoxSeleccionado = panelContenedor.Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != "");
+                string NombreTextBox = TextBoxSeleccionado.Name.Remove(0,4);
+                Utilidades utilidades = new Utilidades();
+                dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text, TextBoxSeleccionado.Text, NombreTextBox);
 
             }
+
             catch (Exception)
             {
 
                 throw;
             }
            
-
         }
 
         private void Busqueda_Load(object sender, EventArgs e)

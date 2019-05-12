@@ -13,11 +13,10 @@ namespace Negocio
 
         public List<Producto> BusquedaProducto(string ParametroBusqueda, string NombreColumna)
         {
-
+            ParametroBusqueda.ToUpper();
             List<Producto> ListadoProductos = new List<Producto>();
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
-
-            string Consulta = "select * from Productos where " + NombreColumna + " = " + ParametroBusqueda;
+            string Consulta = "select * from Productos where " + NombreColumna + " LIKE " + "'"+ ParametroBusqueda +"%'";
             AccederDatos.DefinirTipoComando(Consulta);
             AccederDatos.AbrirConexion();
             AccederDatos.EjecutarConsulta();
