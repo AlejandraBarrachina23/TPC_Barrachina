@@ -63,5 +63,10 @@ namespace PresentacionWinForm
             pnlMenuDesplegable.Location = new Point(109, 414);
       
         }
+
+        private void pnlBarraPrincipal_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
     }
 }

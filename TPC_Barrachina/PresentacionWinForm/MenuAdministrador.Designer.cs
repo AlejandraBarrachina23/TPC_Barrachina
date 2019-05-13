@@ -65,14 +65,18 @@
             // pnlBarraPrincipal
             // 
             this.pnlBarraPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.pnlBarraPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnlBarraPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlBarraPrincipal.Controls.Add(this.btnUsuario);
             this.pnlBarraPrincipal.Controls.Add(this.btnLogout);
             this.pnlBarraPrincipal.Controls.Add(this.lbNombrePrograma);
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBarraPrincipal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(1278, 41);
             this.pnlBarraPrincipal.TabIndex = 2;
+            this.pnlBarraPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarraPrincipal_Paint);
             // 
             // btnUsuario
             // 
@@ -102,7 +106,7 @@
             this.lbNombrePrograma.AutoSize = true;
             this.lbNombrePrograma.Font = new System.Drawing.Font("Bebas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNombrePrograma.ForeColor = System.Drawing.Color.White;
-            this.lbNombrePrograma.Location = new System.Drawing.Point(555, 9);
+            this.lbNombrePrograma.Location = new System.Drawing.Point(555, 4);
             this.lbNombrePrograma.Name = "lbNombrePrograma";
             this.lbNombrePrograma.Size = new System.Drawing.Size(165, 25);
             this.lbNombrePrograma.TabIndex = 9;
@@ -239,7 +243,7 @@
             this.btnProveedor.ForeColor = System.Drawing.Color.White;
             this.btnProveedor.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedor.Image")));
             this.btnProveedor.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProveedor.Location = new System.Drawing.Point(2, 318);
+            this.btnProveedor.Location = new System.Drawing.Point(2, 316);
             this.btnProveedor.Name = "btnProveedor";
             this.btnProveedor.Size = new System.Drawing.Size(100, 60);
             this.btnProveedor.TabIndex = 0;
@@ -271,7 +275,7 @@
             this.btnCompras.ForeColor = System.Drawing.Color.White;
             this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
             this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCompras.Location = new System.Drawing.Point(2, 252);
+            this.btnCompras.Location = new System.Drawing.Point(2, 250);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(100, 60);
             this.btnCompras.TabIndex = 0;
@@ -287,7 +291,7 @@
             this.btnProductos.ForeColor = System.Drawing.Color.White;
             this.btnProductos.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.Image")));
             this.btnProductos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProductos.Location = new System.Drawing.Point(5, 385);
+            this.btnProductos.Location = new System.Drawing.Point(5, 383);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(100, 60);
             this.btnProductos.TabIndex = 0;
@@ -321,7 +325,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(121)))), ((int)(((byte)(116)))));
-            this.panel5.Location = new System.Drawing.Point(2, 252);
+            this.panel5.Location = new System.Drawing.Point(2, 250);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 60);
             this.panel5.TabIndex = 6;
@@ -329,7 +333,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
-            this.panel2.Location = new System.Drawing.Point(2, 385);
+            this.panel2.Location = new System.Drawing.Point(2, 383);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 60);
             this.panel2.TabIndex = 7;
@@ -345,7 +349,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(122)))), ((int)(((byte)(203)))));
-            this.panel6.Location = new System.Drawing.Point(2, 318);
+            this.panel6.Location = new System.Drawing.Point(2, 316);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 60);
             this.panel6.TabIndex = 9;
@@ -377,7 +381,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelMenu.Controls.Add(this.panel9);
             this.panelMenu.Controls.Add(this.panel8);
             this.panelMenu.Controls.Add(this.panel7);
