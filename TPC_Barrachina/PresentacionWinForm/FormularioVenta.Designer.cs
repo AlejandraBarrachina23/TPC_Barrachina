@@ -83,21 +83,21 @@
             this.lblTotalFactura = new System.Windows.Forms.Label();
             this.lblDescuento = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
-            this.btnCalculadora7 = new System.Windows.Forms.Button();
             this.pnlCalculadora = new System.Windows.Forms.Panel();
-            this.btnCalculadoraComa = new System.Windows.Forms.Button();
             this.btnCalculadora0 = new System.Windows.Forms.Button();
             this.btnCalculadora1 = new System.Windows.Forms.Button();
-            this.btnCalculadora2 = new System.Windows.Forms.Button();
             this.btnCalculadoraEnter = new System.Windows.Forms.Button();
-            this.btnCalculadora3 = new System.Windows.Forms.Button();
+            this.btnCalculadoraComa = new System.Windows.Forms.Button();
             this.btnCalculadoraBorrarTodo = new System.Windows.Forms.Button();
-            this.btnCalculadora6 = new System.Windows.Forms.Button();
-            this.btnCalculadora5 = new System.Windows.Forms.Button();
-            this.btnCalculadora4 = new System.Windows.Forms.Button();
             this.btnCalculadoraBorrarUno = new System.Windows.Forms.Button();
             this.btnCalculadora9 = new System.Windows.Forms.Button();
             this.btnCalculadora8 = new System.Windows.Forms.Button();
+            this.btnCalculadora7 = new System.Windows.Forms.Button();
+            this.btnCalculadora4 = new System.Windows.Forms.Button();
+            this.btnCalculadora5 = new System.Windows.Forms.Button();
+            this.btnCalculadora6 = new System.Windows.Forms.Button();
+            this.btnCalculadora3 = new System.Windows.Forms.Button();
+            this.btnCalculadora2 = new System.Windows.Forms.Button();
             this.pnlDatosProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxImagenProducto)).BeginInit();
             this.pnlCabecera.SuspendLayout();
@@ -721,18 +721,6 @@
             this.lblSubtotal.TabIndex = 10;
             this.lblSubtotal.Text = "SUBTOTAL";
             // 
-            // btnCalculadora7
-            // 
-            this.btnCalculadora7.FlatAppearance.BorderSize = 0;
-            this.btnCalculadora7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculadora7.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora7.Image")));
-            this.btnCalculadora7.Location = new System.Drawing.Point(11, 15);
-            this.btnCalculadora7.Name = "btnCalculadora7";
-            this.btnCalculadora7.Size = new System.Drawing.Size(45, 45);
-            this.btnCalculadora7.TabIndex = 0;
-            this.btnCalculadora7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalculadora7.UseVisualStyleBackColor = true;
-            // 
             // pnlCalculadora
             // 
             this.pnlCalculadora.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -754,17 +742,6 @@
             this.pnlCalculadora.Name = "pnlCalculadora";
             this.pnlCalculadora.Size = new System.Drawing.Size(220, 233);
             this.pnlCalculadora.TabIndex = 1;
-            // 
-            // btnCalculadoraComa
-            // 
-            this.btnCalculadoraComa.FlatAppearance.BorderSize = 0;
-            this.btnCalculadoraComa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculadoraComa.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadoraComa.Image")));
-            this.btnCalculadoraComa.Location = new System.Drawing.Point(113, 168);
-            this.btnCalculadoraComa.Name = "btnCalculadoraComa";
-            this.btnCalculadoraComa.Size = new System.Drawing.Size(45, 45);
-            this.btnCalculadoraComa.TabIndex = 14;
-            this.btnCalculadoraComa.UseVisualStyleBackColor = true;
             // 
             // btnCalculadora0
             // 
@@ -788,17 +765,6 @@
             this.btnCalculadora1.TabIndex = 11;
             this.btnCalculadora1.UseVisualStyleBackColor = true;
             // 
-            // btnCalculadora2
-            // 
-            this.btnCalculadora2.FlatAppearance.BorderSize = 0;
-            this.btnCalculadora2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculadora2.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora2.Image")));
-            this.btnCalculadora2.Location = new System.Drawing.Point(62, 117);
-            this.btnCalculadora2.Name = "btnCalculadora2";
-            this.btnCalculadora2.Size = new System.Drawing.Size(45, 45);
-            this.btnCalculadora2.TabIndex = 10;
-            this.btnCalculadora2.UseVisualStyleBackColor = true;
-            // 
             // btnCalculadoraEnter
             // 
             this.btnCalculadoraEnter.FlatAppearance.BorderSize = 0;
@@ -810,16 +776,16 @@
             this.btnCalculadoraEnter.Text = "Int";
             this.btnCalculadoraEnter.UseVisualStyleBackColor = true;
             // 
-            // btnCalculadora3
+            // btnCalculadoraComa
             // 
-            this.btnCalculadora3.FlatAppearance.BorderSize = 0;
-            this.btnCalculadora3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculadora3.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora3.Image")));
-            this.btnCalculadora3.Location = new System.Drawing.Point(113, 117);
-            this.btnCalculadora3.Name = "btnCalculadora3";
-            this.btnCalculadora3.Size = new System.Drawing.Size(45, 45);
-            this.btnCalculadora3.TabIndex = 8;
-            this.btnCalculadora3.UseVisualStyleBackColor = true;
+            this.btnCalculadoraComa.FlatAppearance.BorderSize = 0;
+            this.btnCalculadoraComa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculadoraComa.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadoraComa.Image")));
+            this.btnCalculadoraComa.Location = new System.Drawing.Point(113, 168);
+            this.btnCalculadoraComa.Name = "btnCalculadoraComa";
+            this.btnCalculadoraComa.Size = new System.Drawing.Size(45, 45);
+            this.btnCalculadoraComa.TabIndex = 14;
+            this.btnCalculadoraComa.UseVisualStyleBackColor = true;
             // 
             // btnCalculadoraBorrarTodo
             // 
@@ -831,39 +797,6 @@
             this.btnCalculadoraBorrarTodo.Size = new System.Drawing.Size(45, 45);
             this.btnCalculadoraBorrarTodo.TabIndex = 7;
             this.btnCalculadoraBorrarTodo.UseVisualStyleBackColor = true;
-            // 
-            // btnCalculadora6
-            // 
-            this.btnCalculadora6.FlatAppearance.BorderSize = 0;
-            this.btnCalculadora6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculadora6.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora6.Image")));
-            this.btnCalculadora6.Location = new System.Drawing.Point(113, 66);
-            this.btnCalculadora6.Name = "btnCalculadora6";
-            this.btnCalculadora6.Size = new System.Drawing.Size(45, 45);
-            this.btnCalculadora6.TabIndex = 6;
-            this.btnCalculadora6.UseVisualStyleBackColor = true;
-            // 
-            // btnCalculadora5
-            // 
-            this.btnCalculadora5.FlatAppearance.BorderSize = 0;
-            this.btnCalculadora5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculadora5.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora5.Image")));
-            this.btnCalculadora5.Location = new System.Drawing.Point(62, 66);
-            this.btnCalculadora5.Name = "btnCalculadora5";
-            this.btnCalculadora5.Size = new System.Drawing.Size(45, 45);
-            this.btnCalculadora5.TabIndex = 5;
-            this.btnCalculadora5.UseVisualStyleBackColor = true;
-            // 
-            // btnCalculadora4
-            // 
-            this.btnCalculadora4.FlatAppearance.BorderSize = 0;
-            this.btnCalculadora4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculadora4.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora4.Image")));
-            this.btnCalculadora4.Location = new System.Drawing.Point(11, 66);
-            this.btnCalculadora4.Name = "btnCalculadora4";
-            this.btnCalculadora4.Size = new System.Drawing.Size(45, 45);
-            this.btnCalculadora4.TabIndex = 4;
-            this.btnCalculadora4.UseVisualStyleBackColor = true;
             // 
             // btnCalculadoraBorrarUno
             // 
@@ -898,6 +831,73 @@
             this.btnCalculadora8.TabIndex = 1;
             this.btnCalculadora8.UseVisualStyleBackColor = true;
             this.btnCalculadora8.Click += new System.EventHandler(this.btnCalculadora8_Click);
+            // 
+            // btnCalculadora7
+            // 
+            this.btnCalculadora7.FlatAppearance.BorderSize = 0;
+            this.btnCalculadora7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculadora7.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora7.Image")));
+            this.btnCalculadora7.Location = new System.Drawing.Point(11, 15);
+            this.btnCalculadora7.Name = "btnCalculadora7";
+            this.btnCalculadora7.Size = new System.Drawing.Size(45, 45);
+            this.btnCalculadora7.TabIndex = 0;
+            this.btnCalculadora7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCalculadora7.UseVisualStyleBackColor = true;
+            // 
+            // btnCalculadora4
+            // 
+            this.btnCalculadora4.FlatAppearance.BorderSize = 0;
+            this.btnCalculadora4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculadora4.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora4.Image")));
+            this.btnCalculadora4.Location = new System.Drawing.Point(11, 66);
+            this.btnCalculadora4.Name = "btnCalculadora4";
+            this.btnCalculadora4.Size = new System.Drawing.Size(45, 45);
+            this.btnCalculadora4.TabIndex = 4;
+            this.btnCalculadora4.UseVisualStyleBackColor = true;
+            // 
+            // btnCalculadora5
+            // 
+            this.btnCalculadora5.FlatAppearance.BorderSize = 0;
+            this.btnCalculadora5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculadora5.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora5.Image")));
+            this.btnCalculadora5.Location = new System.Drawing.Point(62, 66);
+            this.btnCalculadora5.Name = "btnCalculadora5";
+            this.btnCalculadora5.Size = new System.Drawing.Size(45, 45);
+            this.btnCalculadora5.TabIndex = 5;
+            this.btnCalculadora5.UseVisualStyleBackColor = true;
+            // 
+            // btnCalculadora6
+            // 
+            this.btnCalculadora6.FlatAppearance.BorderSize = 0;
+            this.btnCalculadora6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculadora6.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora6.Image")));
+            this.btnCalculadora6.Location = new System.Drawing.Point(113, 66);
+            this.btnCalculadora6.Name = "btnCalculadora6";
+            this.btnCalculadora6.Size = new System.Drawing.Size(45, 45);
+            this.btnCalculadora6.TabIndex = 6;
+            this.btnCalculadora6.UseVisualStyleBackColor = true;
+            // 
+            // btnCalculadora3
+            // 
+            this.btnCalculadora3.FlatAppearance.BorderSize = 0;
+            this.btnCalculadora3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculadora3.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora3.Image")));
+            this.btnCalculadora3.Location = new System.Drawing.Point(113, 117);
+            this.btnCalculadora3.Name = "btnCalculadora3";
+            this.btnCalculadora3.Size = new System.Drawing.Size(45, 45);
+            this.btnCalculadora3.TabIndex = 8;
+            this.btnCalculadora3.UseVisualStyleBackColor = true;
+            // 
+            // btnCalculadora2
+            // 
+            this.btnCalculadora2.FlatAppearance.BorderSize = 0;
+            this.btnCalculadora2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculadora2.Image = ((System.Drawing.Image)(resources.GetObject("btnCalculadora2.Image")));
+            this.btnCalculadora2.Location = new System.Drawing.Point(62, 117);
+            this.btnCalculadora2.Name = "btnCalculadora2";
+            this.btnCalculadora2.Size = new System.Drawing.Size(45, 45);
+            this.btnCalculadora2.TabIndex = 10;
+            this.btnCalculadora2.UseVisualStyleBackColor = true;
             // 
             // FormularioVenta
             // 
@@ -940,21 +940,10 @@
         private System.Windows.Forms.Panel pnlDetalleVenta;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pboxImagenProducto;
-        private System.Windows.Forms.Button btnCalculadora7;
         private System.Windows.Forms.Panel pnlCalculadora;
-        private System.Windows.Forms.Button btnCalculadoraComa;
         private System.Windows.Forms.Button btnCalculadora0;
         private System.Windows.Forms.Button btnCalculadora1;
-        private System.Windows.Forms.Button btnCalculadora2;
         private System.Windows.Forms.Button btnCalculadoraEnter;
-        private System.Windows.Forms.Button btnCalculadora3;
-        private System.Windows.Forms.Button btnCalculadoraBorrarTodo;
-        private System.Windows.Forms.Button btnCalculadora6;
-        private System.Windows.Forms.Button btnCalculadora5;
-        private System.Windows.Forms.Button btnCalculadora4;
-        private System.Windows.Forms.Button btnCalculadoraBorrarUno;
-        private System.Windows.Forms.Button btnCalculadora9;
-        private System.Windows.Forms.Button btnCalculadora8;
         private System.Windows.Forms.Label lblPanelNombre;
         private System.Windows.Forms.Label lblPanelPrecioMayorista;
         private System.Windows.Forms.Label lblDatosPrecioMinorista;
@@ -1003,6 +992,17 @@
         private System.Windows.Forms.Button btnBorrarLinea;
         private System.Windows.Forms.Button btnAumentaCantidad;
         private System.Windows.Forms.Panel pnlLinea;
+        private System.Windows.Forms.Button btnCalculadoraComa;
+        private System.Windows.Forms.Button btnCalculadora2;
+        private System.Windows.Forms.Button btnCalculadora3;
+        private System.Windows.Forms.Button btnCalculadoraBorrarTodo;
+        private System.Windows.Forms.Button btnCalculadora6;
+        private System.Windows.Forms.Button btnCalculadora5;
+        private System.Windows.Forms.Button btnCalculadora4;
+        private System.Windows.Forms.Button btnCalculadoraBorrarUno;
+        private System.Windows.Forms.Button btnCalculadora9;
+        private System.Windows.Forms.Button btnCalculadora8;
+        private System.Windows.Forms.Button btnCalculadora7;
     }
 }
 

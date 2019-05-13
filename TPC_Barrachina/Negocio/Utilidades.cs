@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 namespace Negocio
 {
@@ -12,7 +12,7 @@ namespace Negocio
         public string AsignarNombreFormulario(string Nombre)
         {
 
-            if (Nombre == "Cliente")
+            if (Nombre == "Clientes")
             {
                 return "Busqueda Cliente";
             }
@@ -21,6 +21,12 @@ namespace Negocio
             {
 
                 return "Busqueda Productos";
+            }
+
+            else if (Nombre == "Proveedores") {
+
+                return "Busqueda Proveedores";
+
             }
 
             return null;
@@ -35,7 +41,8 @@ namespace Negocio
                 return unCliente.BusquedaCliente(ParametroBusqueda, NombreColumna);
             }
 
-            if (NombreFormulario == "Busqueda Productos") {
+            if (NombreFormulario == "Busqueda Productos")
+            {
 
                 ProductoNegocio unProducto = new ProductoNegocio();
                 return unProducto.BusquedaProducto(ParametroBusqueda, NombreColumna);
@@ -46,5 +53,14 @@ namespace Negocio
         }
 
 
+
+        //public void DefinirFormularioActivos(Form FormularioActual)
+        //{
+        //    if (FormularioActual.ActiveMdiChild != null)
+        //    {
+        //        throw new Exception("La ventana ya se encuentra activa");
+        //    }
+
+        //}
     }
 }

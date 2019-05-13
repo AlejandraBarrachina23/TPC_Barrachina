@@ -26,7 +26,6 @@ namespace PresentacionWinForm
         
         private void MenuVendedor_Load(object sender, EventArgs e)
         {
-
             Form FormularioVentas = new FormularioVenta();
             FormularioVentas.MdiParent = this;
             FormularioVentas.Show();

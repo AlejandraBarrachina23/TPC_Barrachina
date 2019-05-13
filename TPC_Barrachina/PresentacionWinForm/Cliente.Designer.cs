@@ -62,6 +62,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
             this.gboxSexo.SuspendLayout();
             this.gboxDireccion.SuspendLayout();
@@ -393,6 +394,7 @@
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.txtbNombre);
+            this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Controls.Add(this.btnAceptar);
             this.panel1.Controls.Add(this.txtApellido);
             this.panel1.Controls.Add(this.gboxContacto);
@@ -405,6 +407,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(448, 497);
             this.panel1.TabIndex = 40;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(127, 437);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(100, 37);
+            this.btnModificar.TabIndex = 39;
+            this.btnModificar.Text = "  Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Visible = false;
             // 
             // Cliente
             // 
@@ -465,5 +485,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

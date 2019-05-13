@@ -594,28 +594,6 @@
         c91jcnbja+o5KuLwAuQLJvei7wPF35uWD9AvWczENuj/g5X8BZu1LKLln1CTAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnCalculadora7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        +QAAAPkBHYYEgQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOTSURBVFhHtZdN
-        TBNBFMc3ejJ6MtGrNxM18e7Fgx68a7jQFj8otKVo1HjwoqJR0YQbIRqDB9stSL+IMRo0aGoiGjyQgGLb
-        XboLBQGBIFKggX6Mb7bbdju8fi31Jb9+7My8/5ud2TdvOUJISercIwcaeyP1zV6p0+aTA3bf5HRr/+Sa
-        3T8ZBxJ2v5Ro8cnwW14F5q0++YvFIz8x90lGk3/0IOZTC3qx0T2+v9kTedril5dBjFzWCR1r80mLBl40
-        mhyjezGtbRcsXvluq19OYQ71YuQFyozJJZ5h9Qr+WD1SAHOwU9QAMrjEO1rN3A9YYzs2uBaYXJoAeCHV
-        0COeKAigzk12w23fxAbXggaXqA2A8rOtjezKBWBxR65jA7OMza7rIjv+fM+2AIjJETqVCwAer7BWkEWv
-        0bGtfmYPZAPgxWfQhVNv/2TJXa/X6FiLR0IDAJaoNmfukY6zgix6bCuZVsY2vpzAxBXqXdIhzuyO2FhB
-        FtbY9ufDC2pL3j5FVpU22PGoOKXeJZykG7CbdcjCGtse/bOptmQsmUqT2wMzBFIzKpzDGW7grF7pM+uQ
-        5W1wpQBtW9fQvCqbtyE5prSZ+yK4cBancIs+AVNah9UiLMZV2YzB5Enbe5i9r8zsKc5wNwcdNzDHldAR
-        mFNl8/Ytuqa0Xewtvvk0DHKwTlus40oZhWSjtTTM/v7gLwLLiolhiByc5bpOPioEegU2MpPJfljmK0IM
-        ApASrPNKGJ6KqbIZo8G0f5gtv/EKWeJsXjmOCZSCPmL0UdPa2NwGaXJXJQ7pWIhCAFIMEylFYGJVlc3b
-        g8EZVKQMIc4KJRMmUoybb6JkE9Ks1n7A7BHnlfCVVkEhTKgYA6EVVTZv995NY87LQ/NAs0f2YUIYN15H
-        yfpWSpXNWPC37tkTKFavcnBaWTAxjP7vy6ps3tr1rb2CgQ+fhnpgYR+Uz2lMUMu1V1NkJZ5UZTMmQhrG
-        HFfISp17eo9SEVm9chATzQLJSpkpW3I93MHscxUR/WjyRAysKOQHJalUkdWqIlsZKwFQLvWJgQtwgJQq
-        IGoFrL0jq5sLgL46QeM42/k/MK59TcsFQKmDd0IjH+6CTklmUC1IwFtRJ9XQahYEkAXW/Rhskg4YJDJO
-        9BCCyueRySEcwbS2XWCBZHEUHJyD16srBl54DHfIaeLDHxXHcJwCf+FQCcL3IF1baGuHDNcK/c82vAge
-        xnzmIdw/QQ0UdqODh8sAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnCalculadoraComa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -866,6 +844,28 @@
         SKULRLWAtW+3dO0A6KcTNI7ynf8HRtnPNDsASg18E9aL0cvQqcgNqgYF+Cq6RDVYzZIALGDdP4Qk+QEG
         yZyT7RCBm88FV3tsH6bleMEDxeIDcHAYPq+O14mx72GGOlxitE93DMcpsAiHyhj87qVrC21tUOF80P+T
         hptjezGfGxDhDfbwUQmGPDTtAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnCalculadora7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        +QAAAPkBHYYEgQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOTSURBVFhHtZdN
+        TBNBFMc3ejJ6MtGrNxM18e7Fgx68a7jQFj8otKVo1HjwoqJR0YQbIRqDB9stSL+IMRo0aGoiGjyQgGLb
+        XboLBQGBIFKggX6Mb7bbdju8fi31Jb9+7My8/5ud2TdvOUJISercIwcaeyP1zV6p0+aTA3bf5HRr/+Sa
+        3T8ZBxJ2v5Ro8cnwW14F5q0++YvFIz8x90lGk3/0IOZTC3qx0T2+v9kTedril5dBjFzWCR1r80mLBl40
+        mhyjezGtbRcsXvluq19OYQ71YuQFyozJJZ5h9Qr+WD1SAHOwU9QAMrjEO1rN3A9YYzs2uBaYXJoAeCHV
+        0COeKAigzk12w23fxAbXggaXqA2A8rOtjezKBWBxR65jA7OMza7rIjv+fM+2AIjJETqVCwAer7BWkEWv
+        0bGtfmYPZAPgxWfQhVNv/2TJXa/X6FiLR0IDAJaoNmfukY6zgix6bCuZVsY2vpzAxBXqXdIhzuyO2FhB
+        FtbY9ufDC2pL3j5FVpU22PGoOKXeJZykG7CbdcjCGtse/bOptmQsmUqT2wMzBFIzKpzDGW7grF7pM+uQ
+        5W1wpQBtW9fQvCqbtyE5prSZ+yK4cBancIs+AVNah9UiLMZV2YzB5Enbe5i9r8zsKc5wNwcdNzDHldAR
+        mFNl8/Ytuqa0Xewtvvk0DHKwTlus40oZhWSjtTTM/v7gLwLLiolhiByc5bpOPioEegU2MpPJfljmK0IM
+        ApASrPNKGJ6KqbIZo8G0f5gtv/EKWeJsXjmOCZSCPmL0UdPa2NwGaXJXJQ7pWIhCAFIMEylFYGJVlc3b
+        g8EZVKQMIc4KJRMmUoybb6JkE9Ks1n7A7BHnlfCVVkEhTKgYA6EVVTZv995NY87LQ/NAs0f2YUIYN15H
+        yfpWSpXNWPC37tkTKFavcnBaWTAxjP7vy6ps3tr1rb2CgQ+fhnpgYR+Uz2lMUMu1V1NkJZ5UZTMmQhrG
+        HFfISp17eo9SEVm9chATzQLJSpkpW3I93MHscxUR/WjyRAysKOQHJalUkdWqIlsZKwFQLvWJgQtwgJQq
+        IGoFrL0jq5sLgL46QeM42/k/MK59TcsFQKmDd0IjH+6CTklmUC1IwFtRJ9XQahYEkAXW/Rhskg4YJDJO
+        9BCCyueRySEcwbS2XWCBZHEUHJyD16srBl54DHfIaeLDHxXHcJwCf+FQCcL3IF1baGuHDNcK/c82vAge
+        xnzmIdw/QQ0UdqODh8sAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

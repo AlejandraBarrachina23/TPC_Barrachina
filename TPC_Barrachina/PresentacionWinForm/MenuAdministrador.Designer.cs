@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdministrador));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.btnUsuario = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lbNombrePrograma = new System.Windows.Forms.Label();
+            this.btnUsuario = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
@@ -67,35 +67,22 @@
             this.pnlBarraPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
             this.pnlBarraPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlBarraPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlBarraPrincipal.Controls.Add(this.btnUsuario);
             this.pnlBarraPrincipal.Controls.Add(this.btnLogout);
             this.pnlBarraPrincipal.Controls.Add(this.lbNombrePrograma);
+            this.pnlBarraPrincipal.Controls.Add(this.btnUsuario);
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(1278, 41);
             this.pnlBarraPrincipal.TabIndex = 2;
-            this.pnlBarraPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBarraPrincipal_Paint);
-            // 
-            // btnUsuario
-            // 
-            this.btnUsuario.FlatAppearance.BorderSize = 0;
-            this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
-            this.btnUsuario.Location = new System.Drawing.Point(1156, 1);
-            this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(50, 40);
-            this.btnUsuario.TabIndex = 11;
-            this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUsuario.UseVisualStyleBackColor = true;
             // 
             // btnLogout
             // 
             this.btnLogout.FlatAppearance.BorderSize = 0;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(1202, 1);
+            this.btnLogout.Location = new System.Drawing.Point(1199, -2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(50, 40);
             this.btnLogout.TabIndex = 10;
@@ -112,6 +99,18 @@
             this.lbNombrePrograma.TabIndex = 9;
             this.lbNombrePrograma.Text = "NOMBRE PROGRAMA";
             // 
+            // btnUsuario
+            // 
+            this.btnUsuario.FlatAppearance.BorderSize = 0;
+            this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
+            this.btnUsuario.Location = new System.Drawing.Point(1153, -2);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Size = new System.Drawing.Size(50, 40);
+            this.btnUsuario.TabIndex = 11;
+            this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUsuario.UseVisualStyleBackColor = true;
+            // 
             // btnAgregar
             // 
             this.btnAgregar.FlatAppearance.BorderSize = 0;
@@ -125,6 +124,7 @@
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "        Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -140,6 +140,7 @@
             this.btnModificar.Text = "        Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnBorrar
             // 
@@ -154,6 +155,7 @@
             this.btnBorrar.TabIndex = 0;
             this.btnBorrar.Text = "       Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnListar
             // 
@@ -168,10 +170,12 @@
             this.btnListar.TabIndex = 0;
             this.btnListar.Text = "     Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // pnlMenuDesplegable
             // 
             this.pnlMenuDesplegable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.pnlMenuDesplegable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlMenuDesplegable.Controls.Add(this.panel13);
             this.pnlMenuDesplegable.Controls.Add(this.panel14);
             this.pnlMenuDesplegable.Controls.Add(this.panel12);
@@ -181,7 +185,7 @@
             this.pnlMenuDesplegable.Controls.Add(this.btnBorrar);
             this.pnlMenuDesplegable.Controls.Add(this.btnModificar);
             this.pnlMenuDesplegable.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlMenuDesplegable.Location = new System.Drawing.Point(109, 414);
+            this.pnlMenuDesplegable.Location = new System.Drawing.Point(105, 414);
             this.pnlMenuDesplegable.Name = "pnlMenuDesplegable";
             this.pnlMenuDesplegable.Size = new System.Drawing.Size(105, 183);
             this.pnlMenuDesplegable.TabIndex = 5;
@@ -373,7 +377,7 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.White;
-            this.panel9.Location = new System.Drawing.Point(2, 64);
+            this.panel9.Location = new System.Drawing.Point(1, 64);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(105, 2);
             this.panel9.TabIndex = 11;
