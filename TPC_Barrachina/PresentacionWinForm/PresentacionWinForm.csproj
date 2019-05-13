@@ -117,11 +117,11 @@
     <Compile Include="Impuesto.Designer.cs">
       <DependentUpon>Impuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proveedor.cs">
+    <Compile Include="Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proveedor.Designer.cs">
-      <DependentUpon>Proveedor.cs</DependentUpon>
+    <Compile Include="Proveedores.Designer.cs">
+      <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Rubro.cs">
       <SubType>Form</SubType>
@@ -206,8 +206,8 @@
     <EmbeddedResource Include="Impuesto.resx">
       <DependentUpon>Impuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Proveedor.resx">
-      <DependentUpon>Proveedor.cs</DependentUpon>
+    <EmbeddedResource Include="Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rubro.resx">
       <DependentUpon>Rubro.cs</DependentUpon>

@@ -52,7 +52,26 @@ namespace Negocio
             return null;
         }
 
+        public DataGridView OcultarColumnasDataGridView(DataGridView Grilla, string NombreTabla) {
 
+            if (NombreTabla == "Productos") {
+
+                Grilla.Columns[1].Visible = false;
+                Grilla.Columns[3].Visible = false;
+                Grilla.Columns[5].Visible = false;
+                Grilla.Columns[6].Visible = false;
+                Grilla.Columns[7].Visible = false;
+                Grilla.Columns[11].Visible = false;
+                Grilla.Columns[12].Visible = false;
+                Grilla.Columns[13].Visible = false;
+                Grilla.Columns[14].Visible = false;
+                return Grilla;
+
+            }
+
+            return null;
+
+        }
 
         //public void DefinirFormularioActivos(Form FormularioActual)
         //{

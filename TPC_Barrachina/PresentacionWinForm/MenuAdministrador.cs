@@ -31,7 +31,6 @@ namespace PresentacionWinForm
         {
             try
             {
-                
                 OpcionSeleccionada = "Ventas";
                 pnlMenuDesplegable.Visible = false;
                 FormularioVenta FormularioVenta = new FormularioVenta();
@@ -89,7 +88,7 @@ namespace PresentacionWinForm
 
             else if (OpcionSeleccionada == "Proveedores")
             {
-                Proveedor FormularioProveedor = new Proveedor();
+                Proveedores FormularioProveedor = new Proveedores();
                 FormularioProveedor.Show();
             }
 

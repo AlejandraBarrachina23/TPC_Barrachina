@@ -16,10 +16,11 @@ namespace PresentacionWinForm
     public partial class Busqueda : Form
 
     {
+        private Utilidades utilidades = new Utilidades();
         public Busqueda(string NombreFormulario)
         {
             InitializeComponent();
-            Utilidades utilidades = new Utilidades();
+            
             lblNombreFormulario.Text = utilidades.AsignarNombreFormulario(NombreFormulario);
            
         }
@@ -27,7 +28,6 @@ namespace PresentacionWinForm
         public Busqueda(string NombreFormulario, string NombreFormularioQueLlamo) {
 
             InitializeComponent();
-            Utilidades utilidades = new Utilidades();
             lblNombreFormulario.Text = utilidades.AsignarNombreFormulario(NombreFormulario);
             btnAceptar.Visible = false;
             btnAgregar.Visible = true;
@@ -39,9 +39,9 @@ namespace PresentacionWinForm
             {
                 TextBox TextBoxSeleccionado = panelContenedor.Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != "");
                 string NombreTextBox = TextBoxSeleccionado.Name.Remove(0,4);
-                Utilidades utilidades = new Utilidades();
+                string NombreFormulario = lblNombreFormulario.Text.Remove(0, 9);
                 dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text, TextBoxSeleccionado.Text, NombreTextBox);
-
+                dgvListadoBusqueda = utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, NombreFormulario);
             }
 
             catch (Exception)
