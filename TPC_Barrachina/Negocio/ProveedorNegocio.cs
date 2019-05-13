@@ -23,13 +23,28 @@ namespace Negocio
 
         }
 
-        public void NuevoProveedor() {
+        public List<Proveedor> BusquedaProveedores(string ParametroBusqueda, string NombreColumna) {
 
+            List<Proveedor> ListadoProveedores = new List<Proveedor>();
+            AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT * FROM Proveedores WHERE " + NombreColumna + " LIKE '" + ParametroBusqueda + "'");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.EjecutarConsulta();
 
+            while (AccederDatos.LectorDatos.Read()) {
+
+                Proveedor unProveedor = new Proveedor();
+                unProveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["Codigo"];
+                unProveedor.Estado = (bool)AccederDatos.LectorDatos["Estado"];
+                ListadoProveedores.Add(unProveedor);
+            }
+            
+            AccederDatos.CerrarConexion();
+            AccederDatos.CerrarReader();
+            return ListadoProveedores;        
 
         }
         
-
-
     }
 }

@@ -49,6 +49,13 @@ namespace Negocio
 
             }
 
+            if (NombreFormulario == "Busqueda Proveedores") {
+
+                ProveedorNegocio unProveedor = new ProveedorNegocio();
+                return unProveedor.BusquedaProveedores(ParametroBusqueda, NombreColumna);
+
+            }
+
             return null;
         }
 
