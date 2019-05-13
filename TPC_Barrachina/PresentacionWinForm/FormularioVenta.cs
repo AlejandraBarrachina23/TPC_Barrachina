@@ -21,8 +21,7 @@ namespace PresentacionWinForm
 
          private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-            string NombreFormulario = "Cliente";
-            Busqueda BusquedaCliente = new Busqueda(NombreFormulario);
+            Busqueda BusquedaCliente = new Busqueda("Cliente", "Formulario Venta");
             BusquedaCliente.Show();
         }
 
@@ -58,8 +57,8 @@ namespace PresentacionWinForm
 
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
-            string NombreFormulario = "Productos";
-            Busqueda BusquedaProducto = new Busqueda(NombreFormulario, "Formulario Venta");
+            
+            Busqueda BusquedaProducto = new Busqueda("Productos", "Formulario Venta");
             BusquedaProducto.Show();
         }
 

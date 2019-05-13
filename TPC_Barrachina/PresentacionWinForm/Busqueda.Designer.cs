@@ -114,6 +114,7 @@
             this.dgvListadoBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListadoBusqueda.Location = new System.Drawing.Point(21, 56);
             this.dgvListadoBusqueda.Name = "dgvListadoBusqueda";
+            this.dgvListadoBusqueda.ReadOnly = true;
             this.dgvListadoBusqueda.Size = new System.Drawing.Size(656, 186);
             this.dgvListadoBusqueda.TabIndex = 8;
             // 

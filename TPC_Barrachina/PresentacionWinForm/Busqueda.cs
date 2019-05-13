@@ -46,7 +46,6 @@ namespace PresentacionWinForm
 
             catch (Exception)
             {
-
                 throw;
             }
            
@@ -79,8 +78,7 @@ namespace PresentacionWinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string ContenidoTextBox1 = panelContenedor.Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != "").Text;
-            MessageBox.Show(ContenidoTextBox1);
+
         }
 
         private void tboxNombre_Click(object sender, EventArgs e)

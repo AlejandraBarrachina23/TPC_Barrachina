@@ -10,12 +10,13 @@ namespace Negocio
 {
     class ClienteNegocio
     {
-        public List<Cliente> BusquedaCliente(string Codigo, string Nombre) {
+        public List<Cliente> BusquedaCliente(string ParametroBusqueda, string NombreColumna) {
 
+            ParametroBusqueda.ToUpper();
             List<Cliente> ListadoClientes = new List<Cliente>();
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
 
-            string Consulta = "select * from Clientes where IdCliente = " + Codigo;
+            string Consulta = "select * from Clientes where " + NombreColumna + " LIKE '" + ParametroBusqueda +"'";
             AccederDatos.DefinirTipoComando(Consulta);
             AccederDatos.AbrirConexion();
             AccederDatos.EjecutarConsulta();
@@ -23,7 +24,7 @@ namespace Negocio
             while (AccederDatos.LectorDatos.Read())
             {
                 Cliente unNuevoCliente = new Cliente();
-                unNuevoCliente.CodigoCliente = (int) AccederDatos.LectorDatos["IdCliente"];
+                unNuevoCliente.CodigoCliente = (int) AccederDatos.LectorDatos["Codigo"];
                 unNuevoCliente.Estado = (bool)AccederDatos.LectorDatos["Estado"];
                 ListadoClientes.Add(unNuevoCliente);
             }

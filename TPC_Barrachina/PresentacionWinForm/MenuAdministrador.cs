@@ -21,5 +21,12 @@ namespace PresentacionWinForm
         {
 
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            FormularioVenta FormularioVenta = new FormularioVenta();
+            FormularioVenta.MdiParent = this;
+            FormularioVenta.Show();
+        }
     }
 }
