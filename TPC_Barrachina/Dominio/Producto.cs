@@ -21,7 +21,6 @@ namespace Dominio
         public int CantidadxBulto { get; set; }
         public Proveedor Proveedor { get; set; }
         public Rubro Rubro { get; set; }
-        public Sucursal Sucursal { get; set; }
         public bool Estado { get; set; }
 
     }

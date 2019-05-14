@@ -71,7 +71,7 @@ namespace Negocio
                 Grilla.Columns[11].Visible = false;
                 Grilla.Columns[12].Visible = false;
                 Grilla.Columns[13].Visible = false;
-                Grilla.Columns[14].Visible = false;
+
                 return Grilla;
 
             }
