@@ -45,17 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Busqueda.cs">
+    <Compile Include="FormularioBusqueda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Busqueda.Designer.cs">
-      <DependentUpon>Busqueda.cs</DependentUpon>
+    <Compile Include="FormularioBusqueda.Designer.cs">
+      <DependentUpon>FormularioBusqueda.cs</DependentUpon>
     </Compile>
-    <Compile Include="CierreCaja.cs">
+    <Compile Include="FormularioCierreCaja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CierreCaja.Designer.cs">
-      <DependentUpon>CierreCaja.cs</DependentUpon>
+    <Compile Include="FormularioCierreCaja.Designer.cs">
+      <DependentUpon>FormularioCierreCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Devolucion.cs">
       <SubType>Form</SubType>
@@ -105,17 +105,23 @@
     <Compile Include="MotivoDevolucion.Designer.cs">
       <DependentUpon>MotivoDevolucion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente.cs">
+    <Compile Include="Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente.Designer.cs">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Impuesto.cs">
+    <Compile Include="FormularioImpuestos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Impuesto.Designer.cs">
-      <DependentUpon>Impuesto.cs</DependentUpon>
+    <Compile Include="FormularioImpuestos.Designer.cs">
+      <DependentUpon>FormularioImpuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
     <Compile Include="Proveedores.cs">
       <SubType>Form</SubType>
@@ -123,11 +129,11 @@
     <Compile Include="Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rubro.cs">
+    <Compile Include="Rubros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rubro.Designer.cs">
-      <DependentUpon>Rubro.cs</DependentUpon>
+    <Compile Include="Rubros.Designer.cs">
+      <DependentUpon>Rubros.cs</DependentUpon>
     </Compile>
     <Compile Include="Sector.cs">
       <SubType>Form</SubType>
@@ -155,11 +161,11 @@
     <Compile Include="RetiroDinero.Designer.cs">
       <DependentUpon>RetiroDinero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Descuento.cs">
+    <Compile Include="Descuentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Descuento.Designer.cs">
-      <DependentUpon>Descuento.cs</DependentUpon>
+    <Compile Include="Descuentos.Designer.cs">
+      <DependentUpon>Descuentos.cs</DependentUpon>
     </Compile>
     <Compile Include="UltimasActualizaciones.cs">
       <SubType>Form</SubType>
@@ -167,11 +173,11 @@
     <Compile Include="UltimasActualizaciones.Designer.cs">
       <DependentUpon>UltimasActualizaciones.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Busqueda.resx">
-      <DependentUpon>Busqueda.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioBusqueda.resx">
+      <DependentUpon>FormularioBusqueda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CierreCaja.resx">
-      <DependentUpon>CierreCaja.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioCierreCaja.resx">
+      <DependentUpon>FormularioCierreCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Devolucion.resx">
       <DependentUpon>Devolucion.cs</DependentUpon>
@@ -200,17 +206,17 @@
     <EmbeddedResource Include="MotivoDevolucion.resx">
       <DependentUpon>MotivoDevolucion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cliente.resx">
-      <DependentUpon>Cliente.cs</DependentUpon>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Impuesto.resx">
-      <DependentUpon>Impuesto.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioImpuestos.resx">
+      <DependentUpon>FormularioImpuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rubro.resx">
-      <DependentUpon>Rubro.cs</DependentUpon>
+    <EmbeddedResource Include="Rubros.resx">
+      <DependentUpon>Rubros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sector.resx">
       <DependentUpon>Sector.cs</DependentUpon>
@@ -233,8 +239,8 @@
     <EmbeddedResource Include="RetiroDinero.resx">
       <DependentUpon>RetiroDinero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Descuento.resx">
-      <DependentUpon>Descuento.cs</DependentUpon>
+    <EmbeddedResource Include="Descuentos.resx">
+      <DependentUpon>Descuentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UltimasActualizaciones.resx">
       <DependentUpon>UltimasActualizaciones.cs</DependentUpon>

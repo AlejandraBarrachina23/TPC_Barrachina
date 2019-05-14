@@ -1,6 +1,6 @@
 ﻿namespace PresentacionWinForm
 {
-    partial class Impuesto
+    partial class FormularioImpuestos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Impuesto));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioImpuestos));
             this.lblCodigoImpuesto = new System.Windows.Forms.Label();
             this.tboxCodigoImpuesto = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();

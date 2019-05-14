@@ -1,6 +1,6 @@
 ﻿namespace PresentacionWinForm
 {
-    partial class Busqueda
+    partial class FormularioBusqueda
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Busqueda));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioBusqueda));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
             this.lblNombreFormulario = new System.Windows.Forms.Label();
             this.lblNombreCliente = new System.Windows.Forms.Label();

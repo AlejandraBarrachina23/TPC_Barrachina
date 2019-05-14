@@ -59,7 +59,6 @@
     <Compile Include="Impuesto.cs" />
     <Compile Include="CabeceraNotaCredito.cs" />
     <Compile Include="MotivoDevolucion.cs" />
-    <Compile Include="Persona.cs" />
     <Compile Include="PersonaFisica.cs" />
     <Compile Include="PersonaJuridica.cs" />
     <Compile Include="Producto.cs" />
@@ -67,8 +66,7 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="Rubro.cs" />
     <Compile Include="Sector.cs" />
-    <Compile Include="Sucursal.cs" />
-    <Compile Include="TipoDescuento.cs" />
+    <Compile Include="Descuento.cs" />
     <Compile Include="TipoProducto.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>

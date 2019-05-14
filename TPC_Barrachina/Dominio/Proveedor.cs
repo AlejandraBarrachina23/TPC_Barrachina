@@ -8,8 +8,8 @@ namespace Dominio
 {
     public class Proveedor
     {
-        public Persona TipoProveedor { get; set; }
         public int CodigoProveedor { get; set; }
+        public PersonaFisica DatosFiscales { get; set; }
         public Impuesto Impuesto { get; set; }
         public bool Estado { get; set; }
     }

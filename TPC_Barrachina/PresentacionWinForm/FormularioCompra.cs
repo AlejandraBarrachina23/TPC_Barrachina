@@ -20,7 +20,7 @@ namespace PresentacionWinForm
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
             string NombreFormulario = "Productos";
-            Busqueda BusquedaProducto = new Busqueda(NombreFormulario);
+            FormularioBusqueda BusquedaProducto = new FormularioBusqueda(NombreFormulario);
             BusquedaProducto.Show();
         }
     }

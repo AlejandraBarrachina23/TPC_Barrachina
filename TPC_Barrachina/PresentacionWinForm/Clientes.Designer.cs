@@ -1,6 +1,6 @@
 ﻿namespace PresentacionWinForm
 {
-    partial class Cliente
+    partial class Clientes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblNacimiento = new System.Windows.Forms.Label();
@@ -85,7 +85,7 @@
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCliente.ForeColor = System.Drawing.Color.White;
-            this.lblCliente.Location = new System.Drawing.Point(197, 7);
+            this.lblCliente.Location = new System.Drawing.Point(197, 5);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(66, 23);
             this.lblCliente.TabIndex = 10;
@@ -371,6 +371,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -388,6 +389,7 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // panel1
             // 
@@ -403,9 +405,9 @@
             this.panel1.Controls.Add(this.lblApellido);
             this.panel1.Controls.Add(this.gboxSexo);
             this.panel1.Controls.Add(this.lblNacimiento);
-            this.panel1.Location = new System.Drawing.Point(0, 35);
+            this.panel1.Location = new System.Drawing.Point(0, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(448, 497);
+            this.panel1.Size = new System.Drawing.Size(448, 500);
             this.panel1.TabIndex = 40;
             // 
             // btnModificar
@@ -417,7 +419,7 @@
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(127, 437);
+            this.btnModificar.Location = new System.Drawing.Point(123, 437);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 37);
             this.btnModificar.TabIndex = 39;

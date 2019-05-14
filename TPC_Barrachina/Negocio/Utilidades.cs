@@ -38,7 +38,7 @@ namespace Negocio
             if (NombreFormulario == "Busqueda Cliente")
             {
                 ClienteNegocio unCliente = new ClienteNegocio();
-                return unCliente.BusquedaCliente(ParametroBusqueda, NombreColumna);
+                //return unCliente.BusquedaCliente(ParametroBusqueda, NombreColumna);
             }
 
             if (NombreFormulario == "Busqueda Productos")
@@ -52,7 +52,7 @@ namespace Negocio
             if (NombreFormulario == "Busqueda Proveedores") {
 
                 ProveedorNegocio unProveedor = new ProveedorNegocio();
-                return unProveedor.BusquedaProveedores(ParametroBusqueda, NombreColumna);
+                //return unProveedor.BusquedaProveedores(ParametroBusqueda, NombreColumna);
 
             }
 

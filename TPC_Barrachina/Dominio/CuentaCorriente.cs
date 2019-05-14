@@ -8,11 +8,11 @@ namespace Dominio
 {
     public class CuentaCorriente
     {
-        public int CodigoCuentaCorriente { get; set; }
-        public DateTime Fecha { get; set; }
-        public decimal Debe { get; set; }
-        public decimal Haber { get; set; }
+        public int CodigoCuentaCorriente { get; set; }      
         public decimal Saldo { get; set; }
         public decimal LimiteCuenta { get; set; }
+
     }
+
+   
 }

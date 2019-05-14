@@ -1,6 +1,6 @@
 ﻿namespace PresentacionWinForm
 {
-    partial class Descuento
+    partial class Descuentos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Descuento));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Descuentos));
             this.lblCodigoDescuento = new System.Windows.Forms.Label();
             this.tboxCodigoDescuento = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();

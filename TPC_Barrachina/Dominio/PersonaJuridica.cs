@@ -8,6 +8,7 @@ namespace Dominio
 {
     public class PersonaJuridica
     {
+        public int CodigoPersonaJuridica { get; set; }
         public string RazonSocial { get; set; }
         public string NumeroCUIT { get; set; }
         public string NombreFantasia { get; set; }

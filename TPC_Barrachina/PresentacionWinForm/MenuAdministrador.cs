@@ -84,37 +84,44 @@ namespace PresentacionWinForm
             {
                 Sector Sector = new Sector();
                 Sector.Show();
+                Sector.MdiParent = this;
             }
 
             else if (OpcionSeleccionada == "Proveedores")
             {
                 Proveedores FormularioProveedor = new Proveedores();
                 FormularioProveedor.Show();
+                FormularioProveedor.MdiParent = this;
             }
 
             else if (OpcionSeleccionada == "Clientes")
             {
-                Cliente FormularioCliente = new Cliente();
+                Clientes FormularioCliente = new Clientes();
                 FormularioCliente.Show();
+                FormularioCliente.MdiParent = this;
             }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            Busqueda FormularioBusqueda = new Busqueda(OpcionSeleccionada);
+            FormularioBusqueda FormularioBusqueda = new FormularioBusqueda(OpcionSeleccionada);
             FormularioBusqueda.Show();
+            FormularioBusqueda.MdiParent = this;
 
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Busqueda FormularioBusqueda = new Busqueda(OpcionSeleccionada);
+            FormularioBusqueda FormularioBusqueda = new FormularioBusqueda(OpcionSeleccionada);
             FormularioBusqueda.Show();
+            FormularioBusqueda.MdiParent = this;
+
         }
 
         private void btnListar_Click(object sender, EventArgs e)
         {
-            Busqueda FormularioBusqueda = new Busqueda(OpcionSeleccionada);
+            FormularioBusqueda FormularioBusqueda = new FormularioBusqueda(OpcionSeleccionada);
             FormularioBusqueda.Show();
+            FormularioBusqueda.MdiParent = this;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace PresentacionWinForm
 
          private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-            Busqueda BusquedaCliente = new Busqueda("Cliente", "Formulario Venta");
+            FormularioBusqueda BusquedaCliente = new FormularioBusqueda("Cliente", "Formulario Venta");
             BusquedaCliente.Show();
         }
 
@@ -51,14 +51,14 @@ namespace PresentacionWinForm
 
         private void btnCierreCaja_Click(object sender, EventArgs e)
         {
-            CierreCaja FormularioCierreCaja = new CierreCaja();
+            FormularioCierreCaja FormularioCierreCaja = new FormularioCierreCaja();
             FormularioCierreCaja.Show();
         }
 
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
             
-            Busqueda BusquedaProducto = new Busqueda("Productos", "Formulario Venta");
+            FormularioBusqueda BusquedaProducto = new FormularioBusqueda("Productos", "Formulario Venta");
             BusquedaProducto.Show();
         }
 

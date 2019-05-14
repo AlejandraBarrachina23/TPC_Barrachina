@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PresentacionWinForm
 {
-    public partial class Rubro : Form
+    public partial class Descuentos : Form
     {
-        public Rubro()
+        public Descuentos()
         {
             InitializeComponent();
         }

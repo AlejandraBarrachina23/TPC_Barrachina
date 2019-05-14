@@ -1,6 +1,6 @@
 ﻿namespace PresentacionWinForm
 {
-    partial class CierreCaja
+    partial class FormularioCierreCaja
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CierreCaja));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioCierreCaja));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
             this.lblSaldoInicial = new System.Windows.Forms.Label();
             this.tboxSaldoInicial = new System.Windows.Forms.TextBox();

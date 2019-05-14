@@ -10,9 +10,7 @@ namespace Dominio
     {
         public int CodigoEmpleado { get; set; }
         public string Cargo { get; set; }
-        public string Horario { get; set; }
-        public decimal Remuneracion { get; set; }
-        public Persona Tipo { get; set; }
+        public PersonaFisica DatosPersonales { get; set; }
         public bool Estado { get; set; }
     }
 }

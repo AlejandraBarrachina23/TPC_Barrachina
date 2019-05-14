@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PresentacionWinForm
 {
-    public partial class CierreCaja : Form
+    public partial class Rubros : Form
     {
-        public CierreCaja()
+        public Rubros()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
