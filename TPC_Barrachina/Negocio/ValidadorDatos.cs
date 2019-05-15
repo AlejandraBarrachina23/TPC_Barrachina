@@ -38,5 +38,16 @@ namespace Negocio
 
             else { return false; }
         }
+
+        public bool ContenidoComboBox(string Contenido) {
+
+            if (Contenido == string.Empty)
+            {
+                return true;
+            }
+
+            else { return false; }
+        }
     }
+    
 }

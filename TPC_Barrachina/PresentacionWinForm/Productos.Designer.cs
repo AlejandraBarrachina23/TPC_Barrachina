@@ -112,7 +112,6 @@
             this.tboxCodigoProducto.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoProducto.TabIndex = 1;
             this.tboxCodigoProducto.TextChanged += new System.EventHandler(this.tboxCodigoProducto_TextChanged);
-            this.tboxCodigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigoProducto_KeyPress);
             // 
             // btnAceptar
             // 
@@ -192,12 +191,14 @@
             // 
             // cboxTipoProducto
             // 
+            this.cboxTipoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxTipoProducto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoProducto.FormattingEnabled = true;
             this.cboxTipoProducto.Location = new System.Drawing.Point(412, 113);
             this.cboxTipoProducto.Name = "cboxTipoProducto";
             this.cboxTipoProducto.Size = new System.Drawing.Size(173, 25);
             this.cboxTipoProducto.TabIndex = 4;
+            this.cboxTipoProducto.Leave += new System.EventHandler(this.cboxTipoProducto_Leave);
             // 
             // lblTipoProducto
             // 
@@ -267,6 +268,7 @@
             // 
             // cboxRubro
             // 
+            this.cboxRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxRubro.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxRubro.FormattingEnabled = true;
             this.cboxRubro.Location = new System.Drawing.Point(412, 217);
@@ -276,6 +278,7 @@
             // 
             // cboxProveedor
             // 
+            this.cboxProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxProveedor.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxProveedor.FormattingEnabled = true;
             this.cboxProveedor.Location = new System.Drawing.Point(118, 218);

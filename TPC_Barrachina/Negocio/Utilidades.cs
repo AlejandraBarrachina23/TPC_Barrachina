@@ -91,7 +91,7 @@ namespace Negocio
             {
                 Combo.Items.Add(AccederDatos.LectorDatos[NombreColumna].ToString());
             }
-
+            Combo.Sorted = true;
             AccederDatos.CerrarConexion();
             AccederDatos.CerrarReader();
 
