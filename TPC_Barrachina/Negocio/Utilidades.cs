@@ -99,7 +99,6 @@ namespace Negocio
         }
 
 
-
         //public void DefinirFormularioActivos(Form FormularioActual)
         //{
         //    if (FormularioActual.ActiveMdiChild != null)

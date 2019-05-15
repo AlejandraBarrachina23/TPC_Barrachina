@@ -11,14 +11,14 @@ namespace Negocio
 {
     public class ValidadorDatos
     {
-        public bool ValidarExistenciaDeDato(string NombreColumna , string NombreTabla, string Parametro) {
+        public bool ExistenciaDeDatoDB(string NombreColumna , string NombreTabla, string Parametro) {
 
             string Consulta = "SELECT " + NombreColumna + " FROM " + NombreTabla + " WHERE " + NombreColumna + " = '" + Parametro + "'";
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
             AccederDatos.LecturaBaseDatos(Consulta);
             while (AccederDatos.LectorDatos.Read()) {
 
-                if (AccederDatos.LectorDatos[NombreColumna].ToString() == Parametro)
+                if (AccederDatos.LectorDatos[NombreColumna].ToString().ToUpper() == Parametro.ToUpper())
                 {
                     AccederDatos.CerrarConexion();
                     AccederDatos.CerrarReader();
@@ -26,7 +26,17 @@ namespace Negocio
                 }
 
             }
-             return false;
+            return false;
+        }
+
+        public bool ContenidoTextBox(string Contenido) {
+
+            if (Contenido == string.Empty)
+            {
+                return true;
+            }
+
+            else { return false; }
         }
     }
 }

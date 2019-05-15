@@ -57,6 +57,14 @@
             this.pboxProveedor = new System.Windows.Forms.PictureBox();
             this.pboxStockCritico = new System.Windows.Forms.PictureBox();
             this.pboxRubro = new System.Windows.Forms.PictureBox();
+            this.lblErrorCodigoProducto = new System.Windows.Forms.Label();
+            this.lblErrorCodigoBulto = new System.Windows.Forms.Label();
+            this.lblErrorCantidadxBulto = new System.Windows.Forms.Label();
+            this.lblErrorStockCritico = new System.Windows.Forms.Label();
+            this.lblErrorNombre = new System.Windows.Forms.Label();
+            this.lblErrorTipo = new System.Windows.Forms.Label();
+            this.lblErrorProveedor = new System.Windows.Forms.Label();
+            this.lblErrorRubro = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoBulto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxTipo)).BeginInit();
@@ -87,10 +95,10 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(335, 243);
+            this.btnCancelar.Location = new System.Drawing.Point(338, 277);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 37);
-            this.btnCancelar.TabIndex = 49;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -103,6 +111,7 @@
             this.tboxCodigoProducto.Name = "tboxCodigoProducto";
             this.tboxCodigoProducto.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoProducto.TabIndex = 1;
+            this.tboxCodigoProducto.TextChanged += new System.EventHandler(this.tboxCodigoProducto_TextChanged);
             this.tboxCodigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigoProducto_KeyPress);
             // 
             // btnAceptar
@@ -114,10 +123,10 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(224, 243);
+            this.btnAceptar.Location = new System.Drawing.Point(227, 277);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
-            this.btnAceptar.TabIndex = 51;
+            this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -129,6 +138,7 @@
             this.tboxCodigoBulto.Name = "tboxCodigoBulto";
             this.tboxCodigoBulto.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoBulto.TabIndex = 2;
+            this.tboxCodigoBulto.TextChanged += new System.EventHandler(this.tboxCodigoBulto_TextChanged);
             // 
             // lblCodigoBulto
             // 
@@ -144,7 +154,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(67, 107);
+            this.lblNombre.Location = new System.Drawing.Point(67, 114);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(45, 17);
             this.lblNombre.TabIndex = 43;
@@ -157,7 +167,7 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(630, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(637, 41);
             this.pnlBarraPrincipal.TabIndex = 52;
             // 
             // lblCliente
@@ -174,16 +184,17 @@
             // tboxNombre
             // 
             this.tboxNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNombre.Location = new System.Drawing.Point(118, 104);
+            this.tboxNombre.Location = new System.Drawing.Point(118, 111);
             this.tboxNombre.Name = "tboxNombre";
             this.tboxNombre.Size = new System.Drawing.Size(173, 25);
             this.tboxNombre.TabIndex = 3;
+            this.tboxNombre.TextChanged += new System.EventHandler(this.tboxNombre_TextChanged);
             // 
             // cboxTipoProducto
             // 
             this.cboxTipoProducto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoProducto.FormattingEnabled = true;
-            this.cboxTipoProducto.Location = new System.Drawing.Point(412, 106);
+            this.cboxTipoProducto.Location = new System.Drawing.Point(412, 113);
             this.cboxTipoProducto.Name = "cboxTipoProducto";
             this.cboxTipoProducto.Size = new System.Drawing.Size(173, 25);
             this.cboxTipoProducto.TabIndex = 4;
@@ -192,7 +203,7 @@
             // 
             this.lblTipoProducto.AutoSize = true;
             this.lblTipoProducto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoProducto.Location = new System.Drawing.Point(378, 109);
+            this.lblTipoProducto.Location = new System.Drawing.Point(378, 116);
             this.lblTipoProducto.Name = "lblTipoProducto";
             this.lblTipoProducto.Size = new System.Drawing.Size(28, 17);
             this.lblTipoProducto.TabIndex = 43;
@@ -202,7 +213,7 @@
             // 
             this.lblStockCritico.AutoSize = true;
             this.lblStockCritico.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStockCritico.Location = new System.Drawing.Point(336, 145);
+            this.lblStockCritico.Location = new System.Drawing.Point(336, 160);
             this.lblStockCritico.Name = "lblStockCritico";
             this.lblStockCritico.Size = new System.Drawing.Size(70, 17);
             this.lblStockCritico.TabIndex = 43;
@@ -211,7 +222,7 @@
             // tboxStockCritico
             // 
             this.tboxStockCritico.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxStockCritico.Location = new System.Drawing.Point(413, 142);
+            this.tboxStockCritico.Location = new System.Drawing.Point(413, 161);
             this.tboxStockCritico.Name = "tboxStockCritico";
             this.tboxStockCritico.Size = new System.Drawing.Size(173, 25);
             this.tboxStockCritico.TabIndex = 6;
@@ -220,7 +231,7 @@
             // 
             this.lblCantidadBulto.AutoSize = true;
             this.lblCantidadBulto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadBulto.Location = new System.Drawing.Point(12, 149);
+            this.lblCantidadBulto.Location = new System.Drawing.Point(12, 164);
             this.lblCantidadBulto.Name = "lblCantidadBulto";
             this.lblCantidadBulto.Size = new System.Drawing.Size(100, 17);
             this.lblCantidadBulto.TabIndex = 43;
@@ -229,7 +240,7 @@
             // tboxCantidadBulto
             // 
             this.tboxCantidadBulto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCantidadBulto.Location = new System.Drawing.Point(118, 145);
+            this.tboxCantidadBulto.Location = new System.Drawing.Point(118, 160);
             this.tboxCantidadBulto.Name = "tboxCantidadBulto";
             this.tboxCantidadBulto.Size = new System.Drawing.Size(173, 25);
             this.tboxCantidadBulto.TabIndex = 5;
@@ -238,7 +249,7 @@
             // 
             this.lblProveedor.AutoSize = true;
             this.lblProveedor.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedor.Location = new System.Drawing.Point(57, 190);
+            this.lblProveedor.Location = new System.Drawing.Point(57, 222);
             this.lblProveedor.Name = "lblProveedor";
             this.lblProveedor.Size = new System.Drawing.Size(55, 17);
             this.lblProveedor.TabIndex = 43;
@@ -248,7 +259,7 @@
             // 
             this.lblRubro.AutoSize = true;
             this.lblRubro.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRubro.Location = new System.Drawing.Point(369, 190);
+            this.lblRubro.Location = new System.Drawing.Point(369, 222);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(37, 17);
             this.lblRubro.TabIndex = 43;
@@ -258,7 +269,7 @@
             // 
             this.cboxRubro.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxRubro.FormattingEnabled = true;
-            this.cboxRubro.Location = new System.Drawing.Point(412, 185);
+            this.cboxRubro.Location = new System.Drawing.Point(412, 217);
             this.cboxRubro.Name = "cboxRubro";
             this.cboxRubro.Size = new System.Drawing.Size(173, 25);
             this.cboxRubro.TabIndex = 8;
@@ -267,7 +278,7 @@
             // 
             this.cboxProveedor.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxProveedor.FormattingEnabled = true;
-            this.cboxProveedor.Location = new System.Drawing.Point(118, 186);
+            this.cboxProveedor.Location = new System.Drawing.Point(118, 218);
             this.cboxProveedor.Name = "cboxProveedor";
             this.cboxProveedor.Size = new System.Drawing.Size(173, 25);
             this.cboxProveedor.TabIndex = 7;
@@ -282,7 +293,7 @@
             // 
             // pboxTipo
             // 
-            this.pboxTipo.Location = new System.Drawing.Point(592, 111);
+            this.pboxTipo.Location = new System.Drawing.Point(592, 117);
             this.pboxTipo.Name = "pboxTipo";
             this.pboxTipo.Size = new System.Drawing.Size(16, 19);
             this.pboxTipo.TabIndex = 56;
@@ -298,7 +309,7 @@
             // 
             // pboxNombre
             // 
-            this.pboxNombre.Location = new System.Drawing.Point(302, 110);
+            this.pboxNombre.Location = new System.Drawing.Point(302, 117);
             this.pboxNombre.Name = "pboxNombre";
             this.pboxNombre.Size = new System.Drawing.Size(16, 19);
             this.pboxNombre.TabIndex = 56;
@@ -306,7 +317,7 @@
             // 
             // pboxCantidadBulto
             // 
-            this.pboxCantidadBulto.Location = new System.Drawing.Point(302, 148);
+            this.pboxCantidadBulto.Location = new System.Drawing.Point(302, 163);
             this.pboxCantidadBulto.Name = "pboxCantidadBulto";
             this.pboxCantidadBulto.Size = new System.Drawing.Size(16, 19);
             this.pboxCantidadBulto.TabIndex = 56;
@@ -314,7 +325,7 @@
             // 
             // pboxProveedor
             // 
-            this.pboxProveedor.Location = new System.Drawing.Point(302, 192);
+            this.pboxProveedor.Location = new System.Drawing.Point(302, 224);
             this.pboxProveedor.Name = "pboxProveedor";
             this.pboxProveedor.Size = new System.Drawing.Size(16, 19);
             this.pboxProveedor.TabIndex = 56;
@@ -322,7 +333,7 @@
             // 
             // pboxStockCritico
             // 
-            this.pboxStockCritico.Location = new System.Drawing.Point(592, 149);
+            this.pboxStockCritico.Location = new System.Drawing.Point(591, 164);
             this.pboxStockCritico.Name = "pboxStockCritico";
             this.pboxStockCritico.Size = new System.Drawing.Size(16, 19);
             this.pboxStockCritico.TabIndex = 56;
@@ -330,17 +341,97 @@
             // 
             // pboxRubro
             // 
-            this.pboxRubro.Location = new System.Drawing.Point(592, 190);
+            this.pboxRubro.Location = new System.Drawing.Point(591, 224);
             this.pboxRubro.Name = "pboxRubro";
             this.pboxRubro.Size = new System.Drawing.Size(16, 19);
             this.pboxRubro.TabIndex = 56;
             this.pboxRubro.TabStop = false;
             // 
+            // lblErrorCodigoProducto
+            // 
+            this.lblErrorCodigoProducto.AutoSize = true;
+            this.lblErrorCodigoProducto.Font = new System.Drawing.Font("Oswald", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCodigoProducto.Location = new System.Drawing.Point(115, 92);
+            this.lblErrorCodigoProducto.Name = "lblErrorCodigoProducto";
+            this.lblErrorCodigoProducto.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorCodigoProducto.TabIndex = 57;
+            // 
+            // lblErrorCodigoBulto
+            // 
+            this.lblErrorCodigoBulto.AutoSize = true;
+            this.lblErrorCodigoBulto.Font = new System.Drawing.Font("Oswald", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCodigoBulto.Location = new System.Drawing.Point(409, 91);
+            this.lblErrorCodigoBulto.Name = "lblErrorCodigoBulto";
+            this.lblErrorCodigoBulto.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorCodigoBulto.TabIndex = 57;
+            // 
+            // lblErrorCantidadxBulto
+            // 
+            this.lblErrorCantidadxBulto.AutoSize = true;
+            this.lblErrorCantidadxBulto.Font = new System.Drawing.Font("Oswald", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCantidadxBulto.Location = new System.Drawing.Point(116, 193);
+            this.lblErrorCantidadxBulto.Name = "lblErrorCantidadxBulto";
+            this.lblErrorCantidadxBulto.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorCantidadxBulto.TabIndex = 57;
+            // 
+            // lblErrorStockCritico
+            // 
+            this.lblErrorStockCritico.AutoSize = true;
+            this.lblErrorStockCritico.Font = new System.Drawing.Font("Oswald", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorStockCritico.Location = new System.Drawing.Point(410, 194);
+            this.lblErrorStockCritico.Name = "lblErrorStockCritico";
+            this.lblErrorStockCritico.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorStockCritico.TabIndex = 57;
+            // 
+            // lblErrorNombre
+            // 
+            this.lblErrorNombre.AutoSize = true;
+            this.lblErrorNombre.Font = new System.Drawing.Font("Oswald", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorNombre.Location = new System.Drawing.Point(116, 140);
+            this.lblErrorNombre.Name = "lblErrorNombre";
+            this.lblErrorNombre.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorNombre.TabIndex = 57;
+            // 
+            // lblErrorTipo
+            // 
+            this.lblErrorTipo.AutoSize = true;
+            this.lblErrorTipo.Font = new System.Drawing.Font("Oswald", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorTipo.Location = new System.Drawing.Point(410, 141);
+            this.lblErrorTipo.Name = "lblErrorTipo";
+            this.lblErrorTipo.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorTipo.TabIndex = 57;
+            // 
+            // lblErrorProveedor
+            // 
+            this.lblErrorProveedor.AutoSize = true;
+            this.lblErrorProveedor.Font = new System.Drawing.Font("Oswald", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorProveedor.Location = new System.Drawing.Point(116, 244);
+            this.lblErrorProveedor.Name = "lblErrorProveedor";
+            this.lblErrorProveedor.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorProveedor.TabIndex = 57;
+            // 
+            // lblErrorRubro
+            // 
+            this.lblErrorRubro.AutoSize = true;
+            this.lblErrorRubro.Font = new System.Drawing.Font("Oswald", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorRubro.Location = new System.Drawing.Point(410, 245);
+            this.lblErrorRubro.Name = "lblErrorRubro";
+            this.lblErrorRubro.Size = new System.Drawing.Size(0, 15);
+            this.lblErrorRubro.TabIndex = 57;
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 305);
+            this.ClientSize = new System.Drawing.Size(637, 339);
+            this.Controls.Add(this.lblErrorTipo);
+            this.Controls.Add(this.lblErrorNombre);
+            this.Controls.Add(this.lblErrorRubro);
+            this.Controls.Add(this.lblErrorProveedor);
+            this.Controls.Add(this.lblErrorStockCritico);
+            this.Controls.Add(this.lblErrorCantidadxBulto);
+            this.Controls.Add(this.lblErrorCodigoBulto);
+            this.Controls.Add(this.lblErrorCodigoProducto);
             this.Controls.Add(this.pboxProveedor);
             this.Controls.Add(this.pboxCantidadBulto);
             this.Controls.Add(this.pboxNombre);
@@ -417,5 +508,13 @@
         private System.Windows.Forms.PictureBox pboxProveedor;
         private System.Windows.Forms.PictureBox pboxStockCritico;
         private System.Windows.Forms.PictureBox pboxRubro;
+        private System.Windows.Forms.Label lblErrorCodigoProducto;
+        private System.Windows.Forms.Label lblErrorCodigoBulto;
+        private System.Windows.Forms.Label lblErrorCantidadxBulto;
+        private System.Windows.Forms.Label lblErrorStockCritico;
+        private System.Windows.Forms.Label lblErrorNombre;
+        private System.Windows.Forms.Label lblErrorTipo;
+        private System.Windows.Forms.Label lblErrorProveedor;
+        private System.Windows.Forms.Label lblErrorRubro;
     }
 }
