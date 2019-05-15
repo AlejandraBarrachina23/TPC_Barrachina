@@ -36,5 +36,12 @@ namespace Negocio
             AccederDatos.CerrarConexion();
             return ListadoProductos;
         }
+
+        public void AgregarProducto() {
+
+          
+
+
+        }
     }
 }

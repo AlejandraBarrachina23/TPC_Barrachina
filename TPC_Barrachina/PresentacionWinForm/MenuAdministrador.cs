@@ -82,9 +82,9 @@ namespace PresentacionWinForm
         {
             if (OpcionSeleccionada == "Productos")
             {
-                Sector Sector = new Sector();
-                Sector.Show();
-                Sector.MdiParent = this;
+                Productos FormularioProductos = new Productos();
+                FormularioProductos.Show();
+                FormularioProductos.MdiParent = this;
             }
 
             else if (OpcionSeleccionada == "Proveedores")

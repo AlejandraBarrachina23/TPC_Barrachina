@@ -77,7 +77,7 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(448, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(448, 49);
             this.pnlBarraPrincipal.TabIndex = 3;
             // 
             // lblCliente
@@ -85,7 +85,7 @@
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCliente.ForeColor = System.Drawing.Color.White;
-            this.lblCliente.Location = new System.Drawing.Point(197, 5);
+            this.lblCliente.Location = new System.Drawing.Point(188, 12);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(66, 23);
             this.lblCliente.TabIndex = 10;
@@ -405,9 +405,9 @@
             this.panel1.Controls.Add(this.lblApellido);
             this.panel1.Controls.Add(this.gboxSexo);
             this.panel1.Controls.Add(this.lblNacimiento);
-            this.panel1.Location = new System.Drawing.Point(0, 33);
+            this.panel1.Location = new System.Drawing.Point(0, 47);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(448, 500);
+            this.panel1.Size = new System.Drawing.Size(448, 486);
             this.panel1.TabIndex = 40;
             // 
             // btnModificar
@@ -428,7 +428,7 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Visible = false;
             // 
-            // Cliente
+            // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -436,7 +436,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Cliente";
+            this.Name = "Clientes";
             this.Text = "NuevoCliente";
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();

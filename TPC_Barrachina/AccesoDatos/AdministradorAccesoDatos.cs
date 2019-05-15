@@ -70,6 +70,8 @@ namespace AccesoDatos
 
             lectorDatos.Close();
         }
+
+        
     }
 }
 

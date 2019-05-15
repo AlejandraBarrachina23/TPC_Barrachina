@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AccesoDatos;
 
 namespace Negocio
 {
@@ -78,6 +79,23 @@ namespace Negocio
 
             return null;
 
+        }
+
+        public ComboBox CargaComboBox(ComboBox Combo, string Consulta, string NombreColumna)
+        {
+
+            AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando(Consulta);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.EjecutarConsulta();
+
+            while (AccederDatos.LectorDatos.Read())
+            {
+                Combo.Items.Add(AccederDatos.LectorDatos[NombreColumna].ToString());
+            }
+
+            return Combo;
         }
 
         //public void DefinirFormularioActivos(Form FormularioActual)
