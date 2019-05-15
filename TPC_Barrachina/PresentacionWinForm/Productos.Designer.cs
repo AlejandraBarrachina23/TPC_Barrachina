@@ -95,7 +95,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(338, 277);
+            this.btnCancelar.Location = new System.Drawing.Point(339, 254);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 37);
             this.btnCancelar.TabIndex = 10;
@@ -122,13 +122,14 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(227, 277);
+            this.btnAceptar.Location = new System.Drawing.Point(228, 254);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // tboxCodigoBulto
             // 
@@ -166,7 +167,7 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(637, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(635, 41);
             this.pnlBarraPrincipal.TabIndex = 52;
             // 
             // lblCliente
@@ -250,7 +251,7 @@
             // 
             this.lblProveedor.AutoSize = true;
             this.lblProveedor.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedor.Location = new System.Drawing.Point(57, 222);
+            this.lblProveedor.Location = new System.Drawing.Point(57, 213);
             this.lblProveedor.Name = "lblProveedor";
             this.lblProveedor.Size = new System.Drawing.Size(55, 17);
             this.lblProveedor.TabIndex = 43;
@@ -260,7 +261,7 @@
             // 
             this.lblRubro.AutoSize = true;
             this.lblRubro.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRubro.Location = new System.Drawing.Point(369, 222);
+            this.lblRubro.Location = new System.Drawing.Point(369, 213);
             this.lblRubro.Name = "lblRubro";
             this.lblRubro.Size = new System.Drawing.Size(37, 17);
             this.lblRubro.TabIndex = 43;
@@ -271,20 +272,22 @@
             this.cboxRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxRubro.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxRubro.FormattingEnabled = true;
-            this.cboxRubro.Location = new System.Drawing.Point(412, 217);
+            this.cboxRubro.Location = new System.Drawing.Point(412, 208);
             this.cboxRubro.Name = "cboxRubro";
             this.cboxRubro.Size = new System.Drawing.Size(173, 25);
             this.cboxRubro.TabIndex = 8;
+            this.cboxRubro.Leave += new System.EventHandler(this.cboxRubro_Leave);
             // 
             // cboxProveedor
             // 
             this.cboxProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxProveedor.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxProveedor.FormattingEnabled = true;
-            this.cboxProveedor.Location = new System.Drawing.Point(118, 218);
+            this.cboxProveedor.Location = new System.Drawing.Point(118, 209);
             this.cboxProveedor.Name = "cboxProveedor";
             this.cboxProveedor.Size = new System.Drawing.Size(173, 25);
             this.cboxProveedor.TabIndex = 7;
+            this.cboxProveedor.Leave += new System.EventHandler(this.cboxProveedor_Leave);
             // 
             // pboxCodigoBulto
             // 
@@ -328,7 +331,7 @@
             // 
             // pboxProveedor
             // 
-            this.pboxProveedor.Location = new System.Drawing.Point(302, 224);
+            this.pboxProveedor.Location = new System.Drawing.Point(302, 215);
             this.pboxProveedor.Name = "pboxProveedor";
             this.pboxProveedor.Size = new System.Drawing.Size(16, 19);
             this.pboxProveedor.TabIndex = 56;
@@ -344,7 +347,7 @@
             // 
             // pboxRubro
             // 
-            this.pboxRubro.Location = new System.Drawing.Point(591, 224);
+            this.pboxRubro.Location = new System.Drawing.Point(591, 215);
             this.pboxRubro.Name = "pboxRubro";
             this.pboxRubro.Size = new System.Drawing.Size(16, 19);
             this.pboxRubro.TabIndex = 56;
@@ -408,7 +411,7 @@
             // 
             this.lblErrorProveedor.AutoSize = true;
             this.lblErrorProveedor.Font = new System.Drawing.Font("Oswald", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorProveedor.Location = new System.Drawing.Point(116, 244);
+            this.lblErrorProveedor.Location = new System.Drawing.Point(116, 235);
             this.lblErrorProveedor.Name = "lblErrorProveedor";
             this.lblErrorProveedor.Size = new System.Drawing.Size(0, 15);
             this.lblErrorProveedor.TabIndex = 57;
@@ -417,7 +420,7 @@
             // 
             this.lblErrorRubro.AutoSize = true;
             this.lblErrorRubro.Font = new System.Drawing.Font("Oswald", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorRubro.Location = new System.Drawing.Point(410, 245);
+            this.lblErrorRubro.Location = new System.Drawing.Point(410, 236);
             this.lblErrorRubro.Name = "lblErrorRubro";
             this.lblErrorRubro.Size = new System.Drawing.Size(0, 15);
             this.lblErrorRubro.TabIndex = 57;
@@ -426,7 +429,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 339);
+            this.ClientSize = new System.Drawing.Size(635, 312);
             this.Controls.Add(this.lblErrorTipo);
             this.Controls.Add(this.lblErrorNombre);
             this.Controls.Add(this.lblErrorRubro);

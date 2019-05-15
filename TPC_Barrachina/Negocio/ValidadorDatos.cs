@@ -29,24 +29,23 @@ namespace Negocio
             return false;
         }
 
-        public bool ContenidoTextBox(string Contenido) {
-
-            if (Contenido == string.Empty)
+        public bool ContenidoTextBox(TextBox texto)
+        {
+            if (texto.Text.Trim() == "")
             {
                 return true;
             }
-
-            else { return false; }
+            return false;
         }
 
-        public bool ContenidoComboBox(string Contenido) {
+        public bool SeleccionComboBox(ComboBox opciones)
+        {
 
-            if (Contenido == string.Empty)
+            if (opciones.SelectedIndex == -1)
             {
                 return true;
             }
-
-            else { return false; }
+            return false;
         }
     }
     

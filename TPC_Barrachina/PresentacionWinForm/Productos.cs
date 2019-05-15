@@ -56,7 +56,7 @@ namespace PresentacionWinForm
         private void tboxCodigoProducto_TextChanged(object sender, EventArgs e)
         {
             
-            if (ValidarDatos.ContenidoTextBox(tboxCodigoProducto.Text)) {
+            if (ValidarDatos.ContenidoTextBox(tboxCodigoProducto)) {
 
                 pboxProducto.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
                 lblErrorCodigoProducto.Text = "Código Vacío.";
@@ -65,68 +65,103 @@ namespace PresentacionWinForm
             else if (ValidarDatos.ExistenciaDeDatoDB("Codigo", "Productos", tboxCodigoProducto.Text))
             {
                 pboxProducto.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
-                lblErrorCodigoProducto.Text = "El código esta repetido.";
+                lblErrorCodigoProducto.Text = "Repetido"; ;
             }
             else {
                 pboxProducto.Image = Image.FromFile(RutaIconosOpcionCorrecta);
-                lblErrorCodigoProducto.Text = "Ok";
+                lblErrorCodigoProducto.Text = "Correcto";
             }
                         
         }
 
         private void tboxCodigoBulto_TextChanged(object sender, EventArgs e)
         {
-            if (ValidarDatos.ContenidoTextBox(tboxCodigoBulto.Text))
+            if (ValidarDatos.ContenidoTextBox(tboxCodigoBulto))
             {
-                pboxCodigoBulto.Image = Image.FromFile(Application.StartupPath + "/Iconos/OpcionIncorrecta.png");
+                pboxCodigoBulto.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
                 lblErrorCodigoBulto.Text = "Vacío.";
             }
 
             else if (ValidarDatos.ExistenciaDeDatoDB("CodigoBulto", "Productos", tboxCodigoBulto.Text))
             {
-                pboxCodigoBulto.Image = Image.FromFile(Application.StartupPath + "/Iconos/OpcionIncorrecta.png");
-                lblErrorCodigoBulto.Text = "El código esta repetido.";
+                pboxCodigoBulto.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
+                lblErrorCodigoBulto.Text = "Repetido";
             }
             else
             {
-                pboxCodigoBulto.Image = Image.FromFile(Application.StartupPath + "/Iconos/OpcionCorrecta.png");
-                lblErrorCodigoBulto.Text = "Ok";
+                pboxCodigoBulto.Image = Image.FromFile(RutaIconosOpcionCorrecta);
+                lblErrorCodigoBulto.Text = "Correcto";
             }
         }
 
         private void tboxNombre_TextChanged(object sender, EventArgs e)
         {
-            if (ValidarDatos.ContenidoTextBox(tboxNombre.Text))
+            if (ValidarDatos.ContenidoTextBox(tboxNombre))
             {
-                pboxNombre.Image = Image.FromFile(Application.StartupPath + "/Iconos/OpcionIncorrecta.png");
+                pboxNombre.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
                 lblErrorNombre.Text = "Vacío.";
             }
 
             else if (ValidarDatos.ExistenciaDeDatoDB("Nombre", "Productos", tboxNombre.Text))
             {
-                pboxNombre.Image = Image.FromFile(Application.StartupPath + "/Iconos/OpcionIncorrecta.png");
-                lblErrorNombre.Text = "El código esta repetido.";
+                pboxNombre.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
+                lblErrorNombre.Text = "Repetido"; 
             }
             else
             {
-                pboxNombre.Image = Image.FromFile(Application.StartupPath + "/Iconos/OpcionCorrecta.png");
-                lblErrorNombre.Text = "Ok";
+                pboxNombre.Image = Image.FromFile(RutaIconosOpcionCorrecta);
+                lblErrorNombre.Text = "Correcto";
             }
         }
 
         private void cboxTipoProducto_Leave(object sender, EventArgs e)
         {
             
-            if (ValidarDatos.ContenidoComboBox(cboxTipoProducto.Text)){
+            if (ValidarDatos.SeleccionComboBox(cboxTipoProducto)){
 
-                pboxTipo.Image = Image.FromFile(Application.StartupPath + "/Iconos/OpcionIncorrecta.png");
+                pboxTipo.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
                 lblErrorTipo.Text = "Seleccione una opción";
             }
             else
             {
-                pboxTipo.Image = Image.FromFile(Application.StartupPath + "/Iconos/OpcionCorrecta.png");
-                lblErrorTipo.Text = "Ok";
+                pboxTipo.Image = Image.FromFile(RutaIconosOpcionCorrecta);
+                lblErrorTipo.Text = "Correcto";
             }
+        }
+
+        private void cboxProveedor_Leave(object sender, EventArgs e)
+        {
+            if (ValidarDatos.SeleccionComboBox(cboxProveedor))
+            {
+
+                pboxProveedor.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
+                lblErrorProveedor.Text = "Seleccione una opción";
+            }
+            else
+            {
+                pboxProveedor.Image = Image.FromFile(RutaIconosOpcionCorrecta);
+                lblErrorProveedor.Text = "Correcto";
+            }
+        }
+
+        private void cboxRubro_Leave(object sender, EventArgs e)
+        {
+            if (ValidarDatos.SeleccionComboBox(cboxRubro))
+            {
+
+                pboxRubro.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
+                lblErrorRubro.Text = "Seleccione una opción";
+            }
+            else
+            {
+                pboxRubro.Image = Image.FromFile(RutaIconosOpcionCorrecta);
+                lblErrorRubro.Text = "Correcto";
+            }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 }
