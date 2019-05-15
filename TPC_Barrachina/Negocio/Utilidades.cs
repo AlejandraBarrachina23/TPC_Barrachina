@@ -85,18 +85,20 @@ namespace Negocio
         {
 
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
-            AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando(Consulta);
-            AccederDatos.EjecutarAccion();
-            AccederDatos.EjecutarConsulta();
+            AccederDatos.LecturaBaseDatos(Consulta);
 
             while (AccederDatos.LectorDatos.Read())
             {
                 Combo.Items.Add(AccederDatos.LectorDatos[NombreColumna].ToString());
             }
 
+            AccederDatos.CerrarConexion();
+            AccederDatos.CerrarReader();
+
             return Combo;
         }
+
+
 
         //public void DefinirFormularioActivos(Form FormularioActual)
         //{

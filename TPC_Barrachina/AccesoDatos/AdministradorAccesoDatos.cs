@@ -71,7 +71,13 @@ namespace AccesoDatos
             lectorDatos.Close();
         }
 
-        
+        public void LecturaBaseDatos(string Consulta) {
+
+            AbrirConexion();
+            DefinirTipoComando(Consulta);
+            EjecutarAccion();
+            EjecutarConsulta();
+        }
     }
 }
 
