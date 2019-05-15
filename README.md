@@ -1,2 +1,3 @@
 # TPC_Barrachina
-Trabajo Práctico cuatrimestral
+TRABAJO PRACTICO CUATRIMESTRAL
+AGREGAR FUENTES: BEBAS-OSWALD
