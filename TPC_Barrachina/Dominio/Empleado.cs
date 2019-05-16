@@ -9,8 +9,9 @@ namespace Dominio
     public class Empleado
     {
         public int CodigoEmpleado { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
         public string Cargo { get; set; }
-        public PersonaFisica DatosPersonales { get; set; }
         public bool Estado { get; set; }
     }
 }

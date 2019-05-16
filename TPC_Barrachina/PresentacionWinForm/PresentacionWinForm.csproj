@@ -147,11 +147,11 @@
     <Compile Include="Sector.Designer.cs">
       <DependentUpon>Sector.cs</DependentUpon>
     </Compile>
-    <Compile Include="TipoProducto.cs">
+    <Compile Include="TipoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TipoProducto.Designer.cs">
-      <DependentUpon>TipoProducto.cs</DependentUpon>
+    <Compile Include="TipoProductos.Designer.cs">
+      <DependentUpon>TipoProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
       <SubType>Form</SubType>
@@ -230,8 +230,8 @@
     <EmbeddedResource Include="Sector.resx">
       <DependentUpon>Sector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TipoProducto.resx">
-      <DependentUpon>TipoProducto.cs</DependentUpon>
+    <EmbeddedResource Include="TipoProductos.resx">
+      <DependentUpon>TipoProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>

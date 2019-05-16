@@ -9,8 +9,13 @@ namespace Dominio
     public class Proveedor
     {
         public int CodigoProveedor { get; set; }
-        public PersonaFisica DatosFiscales { get; set; }
+        public string RazonSocial { get; set; }
+        public string NumeroCUIT { get; set; }
+        public string NombreFantasia { get; set; }
+        public Contacto Contacto { get; set; }
+        public CondicionIVA CondicionIVA { get; set; }
         public Impuesto Impuesto { get; set; }
         public bool Estado { get; set; }
+
     }
 }

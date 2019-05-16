@@ -10,7 +10,8 @@ namespace Dominio
     public class Cliente
     {
         public int CodigoCliente { get; set; }
-        public PersonaFisica DatosPersonales { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
         public CuentaCorriente CuentaCorriente { get; set; }
         public Descuento Descuento { get; set; }
         public bool Estado { get; set; }

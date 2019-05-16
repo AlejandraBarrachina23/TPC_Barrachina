@@ -10,6 +10,7 @@ namespace Negocio
 {
     public class ProveedorNegocio
     {
+        AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
         //public Proveedor CrearProveedor(Proveedor unNuevoProveedor) {
 
         //    AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
@@ -23,28 +24,24 @@ namespace Negocio
 
         //}
 
-        //public List<Proveedor> BusquedaProveedores(string ParametroBusqueda, string NombreColumna) {
+        public List<Proveedor> ListarProveedores()
+        {
 
-        //    List<Proveedor> ListadoProveedores = new List<Proveedor>();
-        //    AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
-        //    AccederDatos.AbrirConexion();
-        //    AccederDatos.DefinirTipoComando("SELECT * FROM Proveedores WHERE " + NombreColumna + " LIKE '" + ParametroBusqueda + "'");
-        //    AccederDatos.EjecutarAccion();
-        //    AccederDatos.EjecutarConsulta();
+            List<Proveedor> ListadoProveedores = new List<Proveedor>();
+            AccederDatos.LecturaBaseDatos("select CodigoProveedor, NombreFantasia FROM Proveedores INNER JOIN PersonaJuridicas ON CodigoPersonaJuridica = CodigoInformacionEmpresa");
 
-        //    while (AccederDatos.LectorDatos.Read()) {
+            while (AccederDatos.LectorDatos.Read())
+            {
+                Proveedor unProveedor = new Proveedor();
+                unProveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["CodigoProveedor"];
+                ListadoProveedores.Add(unProveedor);
+            }
 
-        //        Proveedor unProveedor = new Proveedor();
-        //        unProveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["Codigo"];
-        //        unProveedor.Estado = (bool)AccederDatos.LectorDatos["Estado"];
-        //        ListadoProveedores.Add(unProveedor);
-        //    }
-            
-        //    AccederDatos.CerrarConexion();
-        //    AccederDatos.CerrarReader();
-        //    return ListadoProveedores;        
+            AccederDatos.CerrarConexion();
+            AccederDatos.CerrarReader();
+            return ListadoProveedores;
 
-        //}
-        
+        }
+
     }
 }

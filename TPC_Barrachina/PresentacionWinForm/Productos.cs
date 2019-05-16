@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using Dominio;
 
 
 namespace PresentacionWinForm
@@ -16,6 +17,7 @@ namespace PresentacionWinForm
     {
         ValidadorDatos ValidarDatos = new ValidadorDatos();
         Utilidades Utilidades = new Utilidades();
+        
         private string RutaIconosOpcionCorrecta = Application.StartupPath + "/Iconos/OpcionCorrecta.png";
         private string RutaIconosOpcionIncorrecta = Application.StartupPath + "/Iconos/OpcionIncorrecta.png";
 
@@ -42,9 +44,12 @@ namespace PresentacionWinForm
 
         private void Productos_Load(object sender, EventArgs e)
         {
-            cboxTipoProducto = Utilidades.CargaComboBox(cboxTipoProducto, "SELECT Nombre FROM TipoProductos", "Nombre");
-            cboxRubro = Utilidades.CargaComboBox(cboxRubro, "SELECT Nombre FROM Rubros", "Nombre");
-            cboxProveedor = Utilidades.CargaComboBox(cboxProveedor, "SELECT PersonaJuridicas.NombreFantasia FROM PersonaJuridicas INNER JOIN Proveedores ON CodigoInformacionEmpresa = PersonaJuridicas.CodigoPersonaJuridica", "NombreFantasia");
+            TipoProductoNegocio unTipoProducto = new TipoProductoNegocio();
+            RubroNegocio unRubro = new RubroNegocio();
+            ProveedorNegocio unProveedor = new ProveedorNegocio();
+            cboxTipoProducto.DataSource = unTipoProducto.ListarTipoProducto();
+            cboxRubro.DataSource = unRubro.ListarRubros();
+            cboxProveedor.DataSource = unProveedor.ListarProveedores();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -148,7 +153,6 @@ namespace PresentacionWinForm
         {
             if (ValidarDatos.SeleccionComboBox(cboxRubro))
             {
-
                 pboxRubro.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
                 lblErrorRubro.Text = "Seleccione una opción";
             }
@@ -161,7 +165,17 @@ namespace PresentacionWinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-          
+            Producto unProducto = new Producto();
+            ProductoNegocio unProductoNegocio = new ProductoNegocio();
+            unProducto.CodigoProducto = Convert.ToInt32(tboxCodigoProducto.Text);
+            unProducto.CodigoBulto = Convert.ToInt32(tboxCodigoBulto.Text);
+            unProducto.Nombre = tboxNombre.Text;
+            unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
+            unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);
+            unProducto.StockCritico = Convert.ToInt32(tboxStockCritico.Text);
+            //unProducto.Proveedor = (Proveedor)cboxProveedor.SelectedItem;
+            unProducto.Rubro = (Rubro)cboxRubro.SelectedItem;
+            unProductoNegocio.AgregarProducto(unProducto);
         }
     }
 }

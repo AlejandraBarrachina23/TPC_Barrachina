@@ -81,24 +81,6 @@ namespace Negocio
 
         }
 
-        public ComboBox CargaComboBox(ComboBox Combo, string Consulta, string NombreColumna)
-        {
-
-            AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
-            AccederDatos.LecturaBaseDatos(Consulta);
-
-            while (AccederDatos.LectorDatos.Read())
-            {
-                Combo.Items.Add(AccederDatos.LectorDatos[NombreColumna].ToString());
-            }
-            Combo.Sorted = true;
-            AccederDatos.CerrarConexion();
-            AccederDatos.CerrarReader();
-
-            return Combo;
-        }
-
-
         //public void DefinirFormularioActivos(Form FormularioActual)
         //{
         //    if (FormularioActual.ActiveMdiChild != null)

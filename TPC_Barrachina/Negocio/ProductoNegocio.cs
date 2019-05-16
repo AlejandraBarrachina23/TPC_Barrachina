@@ -8,14 +8,15 @@ using AccesoDatos;
 
 namespace Negocio
 {
-    class ProductoNegocio
+    public class ProductoNegocio
     {
+        private AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
 
         public List<Producto> BusquedaProducto(string ParametroBusqueda, string NombreColumna)
         {
             ParametroBusqueda.ToUpper();
             List<Producto> ListadoProductos = new List<Producto>();
-            AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
+            
             string Consulta = "select * from Productos where " + NombreColumna + " LIKE " + "'"+ ParametroBusqueda +"%'";
             AccederDatos.DefinirTipoComando(Consulta);
             AccederDatos.AbrirConexion();
@@ -37,11 +38,13 @@ namespace Negocio
             return ListadoProductos;
         }
 
-        public void AgregarProducto() {
+        public void AgregarProducto(Producto unProducto) {
 
-          
-
-
+            AccederDatos.LecturaBaseDatos("INSERT INTO Productos (Codigo,CodigoBulto,Nombre,CodigoTipoProducto,CantidadxBulto,StockCritico,CodigoProveedor,CodigoRubro)" +
+                 "VALUES (" + unProducto.CodigoProducto + unProducto.CodigoBulto + unProducto.Nombre + unProducto.TipoProducto + unProducto.StockCritico + unProducto.Proveedor +
+                 unProducto.Rubro + ")");
+            AccederDatos.CerrarReader();
+            AccederDatos.CerrarConexion();
         }
     }
 }
