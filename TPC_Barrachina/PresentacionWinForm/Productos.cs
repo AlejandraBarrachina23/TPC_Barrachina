@@ -40,6 +40,7 @@ namespace PresentacionWinForm
             tboxCodigoProducto.KeyPress += AsignarSoloNumeros;
             tboxStockCritico.KeyPress += AsignarSoloNumeros;
             tboxCantidadBulto.KeyPress += AsignarSoloNumeros;
+            
         }
 
         private void Productos_Load(object sender, EventArgs e)

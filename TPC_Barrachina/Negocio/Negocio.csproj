@@ -42,6 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteNegocio.cs" />
+    <Compile Include="CondicionIVANegocio.cs" />
+    <Compile Include="ContactoNegocio.cs" />
+    <Compile Include="DireccionNegocio.cs" />
+    <Compile Include="ImpuestoNegocio.cs" />
     <Compile Include="PersonaFisicaNegocio.cs" />
     <Compile Include="ProductoNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

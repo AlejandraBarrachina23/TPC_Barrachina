@@ -11,18 +11,19 @@ namespace Negocio
     public class ProveedorNegocio
     {
         AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
-        //public Proveedor CrearProveedor(Proveedor unNuevoProveedor) {
 
-        //    AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
-        //    AccederDatos.AbrirConexion();
-        //    AccederDatos.DefinirTipoComando("INSERT INTO Proveedores(CodigoProveedor,CodigoTipoProveedor,CodigoImpuesto VALUES (" + unNuevoProveedor.CodigoProveedor + "," + unNuevoProveedor.TipoProveedor + "," + unNuevoProveedor.Impuesto + ")");
-        //    AccederDatos.EjecutarAccion();
-        //    AccederDatos.EjecutarConsulta();
-        //    AccederDatos.CerrarConexion();
-        //    AccederDatos.CerrarReader();
-        //    return unNuevoProveedor;
+        public void AgregarProveedor(Proveedor unNuevoProveedor) {
 
-        //}
+            AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("INSERT INTO Proveedores(CodigoProveedor,RazonSocial,NumeroCUIT, NombreFantasia,CodigoCondicionIVA,CodigoImpuesto VALUES ("
+                + unNuevoProveedor.CodigoProveedor + "," + unNuevoProveedor.RazonSocial + "," + unNuevoProveedor.NumeroCUIT + "," + unNuevoProveedor.NombreFantasia + "," + unNuevoProveedor.CondicionIVA + ")");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+            AccederDatos.CerrarReader();
+       
+
+        }
 
         public List<Proveedor> ListarProveedores()
         {

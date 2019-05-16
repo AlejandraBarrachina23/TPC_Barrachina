@@ -13,5 +13,10 @@ namespace Dominio
         public string Descripcion { get; set; }
         public decimal Alicuota { get; set; }
         public bool Estado { get; set; }
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }
