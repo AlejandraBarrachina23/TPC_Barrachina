@@ -17,5 +17,11 @@ namespace Dominio
         public Impuesto Impuesto { get; set; }
         public bool Estado { get; set; }
 
+        public override string ToString()
+        {
+            return NombreFantasia;
+        }
     }
+
+   
 }

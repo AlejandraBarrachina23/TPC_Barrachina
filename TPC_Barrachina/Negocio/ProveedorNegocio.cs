@@ -28,12 +28,16 @@ namespace Negocio
         {
 
             List<Proveedor> ListadoProveedores = new List<Proveedor>();
-            AccederDatos.LecturaBaseDatos("select CodigoProveedor, NombreFantasia FROM Proveedores INNER JOIN PersonaJuridicas ON CodigoPersonaJuridica = CodigoInformacionEmpresa");
+            AccederDatos.LecturaBaseDatos("Select * from Proveedores");
 
             while (AccederDatos.LectorDatos.Read())
             {
                 Proveedor unProveedor = new Proveedor();
                 unProveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["CodigoProveedor"];
+                unProveedor.NombreFantasia = AccederDatos.LectorDatos["NombreFantasia"].ToString();
+                unProveedor.NumeroCUIT = AccederDatos.LectorDatos["NumeroCUIT"].ToString();
+                unProveedor.RazonSocial = AccederDatos.LectorDatos["RazonSocial"].ToString();
+              
                 ListadoProveedores.Add(unProveedor);
             }
 

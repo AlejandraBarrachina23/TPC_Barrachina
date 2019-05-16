@@ -67,7 +67,7 @@ namespace PresentacionWinForm
                 lblErrorCodigoProducto.Text = "Código Vacío.";
             }
 
-            else if (ValidarDatos.ExistenciaDeDatoDB("Codigo", "Productos", tboxCodigoProducto.Text))
+            else if (ValidarDatos.ExistenciaDeDatoDB("CodigoProducto", "Productos", tboxCodigoProducto.Text))
             {
                 pboxProducto.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
                 lblErrorCodigoProducto.Text = "Repetido"; ;
@@ -173,9 +173,10 @@ namespace PresentacionWinForm
             unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
             unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);
             unProducto.StockCritico = Convert.ToInt32(tboxStockCritico.Text);
-            //unProducto.Proveedor = (Proveedor)cboxProveedor.SelectedItem;
+            unProducto.Proveedor = (Proveedor)cboxProveedor.SelectedItem;
             unProducto.Rubro = (Rubro)cboxRubro.SelectedItem;
             unProductoNegocio.AgregarProducto(unProducto);
+
         }
     }
 }

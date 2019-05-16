@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dominio;
 using AccesoDatos;
+using System.Windows.Forms;
 
 namespace Negocio
 {
@@ -25,8 +26,9 @@ namespace Negocio
             while (AccederDatos.LectorDatos.Read())
             {
                 Producto unNuevoProducto = new Producto();
-                unNuevoProducto.CodigoProducto = (int)AccederDatos.LectorDatos["Codigo"];
-                unNuevoProducto.Nombre = (string)AccederDatos.LectorDatos["Nombre"];
+
+                unNuevoProducto.CodigoProducto = (int)AccederDatos.LectorDatos["CodigoProducto"];
+                unNuevoProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
                 unNuevoProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
                 unNuevoProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
                 unNuevoProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
@@ -40,9 +42,10 @@ namespace Negocio
 
         public void AgregarProducto(Producto unProducto) {
 
-            AccederDatos.LecturaBaseDatos("INSERT INTO Productos (Codigo,CodigoBulto,Nombre,CodigoTipoProducto,CantidadxBulto,StockCritico,CodigoProveedor,CodigoRubro)" +
-                 "VALUES (" + unProducto.CodigoProducto + unProducto.CodigoBulto + unProducto.Nombre + unProducto.TipoProducto + unProducto.StockCritico + unProducto.Proveedor +
-                 unProducto.Rubro + ")");
+            AccederDatos.LecturaBaseDatos("INSERT INTO Productos (CodigoProducto,CodigoBulto,Nombre,CodigoTipoProducto,CantidadxBulto,StockCritico,CodigoProveedor,CodigoRubro)" +
+                 "VALUES ('" + unProducto.CodigoProducto + "','" + unProducto.CodigoBulto + "','" + unProducto.Nombre.ToString() + "','" + unProducto.TipoProducto.CodigoTipoProducto.ToString() + "','" + unProducto.CantidadxBulto+ "','"+ unProducto.StockCritico + "','" + unProducto.Proveedor.CodigoProveedor + "','" +
+                 unProducto.Rubro.CodigoRubro + "')");
+          
             AccederDatos.CerrarReader();
             AccederDatos.CerrarConexion();
         }
