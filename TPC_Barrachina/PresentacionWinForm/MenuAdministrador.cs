@@ -80,11 +80,13 @@ namespace PresentacionWinForm
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            pnlMenuDesplegable.Visible = false;
+
             if (OpcionSeleccionada == "Productos")
             {
-                Productos FormularioProductos = new Productos();
-                FormularioProductos.Show();
-                FormularioProductos.MdiParent = this;
+                Productos AgregarFormularioProductos = new Productos();
+                AgregarFormularioProductos.Show();
+                AgregarFormularioProductos.MdiParent = this;
             }
 
             else if (OpcionSeleccionada == "Proveedores")
@@ -104,6 +106,7 @@ namespace PresentacionWinForm
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
+            pnlMenuDesplegable.Visible = false;
             FormularioBusqueda FormularioBusqueda = new FormularioBusqueda(OpcionSeleccionada);
             FormularioBusqueda.Show();
             FormularioBusqueda.MdiParent = this;
@@ -111,6 +114,7 @@ namespace PresentacionWinForm
         }
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            pnlMenuDesplegable.Visible = false;
             FormularioBusqueda FormularioBusqueda = new FormularioBusqueda(OpcionSeleccionada);
             FormularioBusqueda.Show();
             FormularioBusqueda.MdiParent = this;
@@ -119,6 +123,7 @@ namespace PresentacionWinForm
 
         private void btnListar_Click(object sender, EventArgs e)
         {
+            pnlMenuDesplegable.Visible = false;
             FormularioBusqueda FormularioBusqueda = new FormularioBusqueda(OpcionSeleccionada);
             FormularioBusqueda.Show();
             FormularioBusqueda.MdiParent = this;

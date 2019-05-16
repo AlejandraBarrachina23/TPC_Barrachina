@@ -12,18 +12,27 @@ namespace PresentacionWinForm
 {
     public partial class Avisos : Form
     {
+       
+
         public Avisos()
         {
             InitializeComponent();
+         
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void Avisos_Load(object sender, EventArgs e)
         {
-            this.Close();
+           
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
+            Form FormularioActivo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Productos);
+            if (FormularioActivo != null)
+            {
+                FormularioActivo.Close();
+                this.Close();
+            }
             this.Close();
         }
     }

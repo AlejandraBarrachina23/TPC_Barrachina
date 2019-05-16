@@ -45,11 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Avisos.cs">
+    <Compile Include="AvisoConOpcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvisoConOpcion.Designer.cs">
+      <DependentUpon>AvisoConOpcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AvisoVentana.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Avisos.Designer.cs">
-      <DependentUpon>Avisos.cs</DependentUpon>
+      <DependentUpon>AvisoVentana.cs</DependentUpon>
     </Compile>
     <Compile Include="FormularioBusqueda.cs">
       <SubType>Form</SubType>
@@ -179,8 +185,11 @@
     <Compile Include="UltimasActualizaciones.Designer.cs">
       <DependentUpon>UltimasActualizaciones.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Avisos.resx">
-      <DependentUpon>Avisos.cs</DependentUpon>
+    <EmbeddedResource Include="AvisoConOpcion.resx">
+      <DependentUpon>AvisoConOpcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvisoVentana.resx">
+      <DependentUpon>AvisoVentana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioBusqueda.resx">
       <DependentUpon>FormularioBusqueda.cs</DependentUpon>

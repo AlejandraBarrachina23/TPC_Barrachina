@@ -54,8 +54,8 @@ namespace PresentacionWinForm
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            //Avisos FormularioAviso = new Avisos();
-            //FormularioAviso.Show(this);
+            AvisoConOpcion FormularioAvisoConOpcion = new AvisoConOpcion();
+            FormularioAvisoConOpcion.Show(this);
         }
 
         private void tboxCodigoProducto_TextChanged(object sender, EventArgs e)
@@ -165,17 +165,19 @@ namespace PresentacionWinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Producto unProducto = new Producto();
-            ProductoNegocio unProductoNegocio = new ProductoNegocio();
-            unProducto.CodigoProducto = Convert.ToInt32(tboxCodigoProducto.Text);
-            unProducto.CodigoBulto = Convert.ToInt32(tboxCodigoBulto.Text);
-            unProducto.Nombre = tboxNombre.Text;
-            unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
-            unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);
-            unProducto.StockCritico = Convert.ToInt32(tboxStockCritico.Text);
-            unProducto.Proveedor = (Proveedor)cboxProveedor.SelectedItem;
-            unProducto.Rubro = (Rubro)cboxRubro.SelectedItem;
-            unProductoNegocio.AgregarProducto(unProducto);
+            //Producto unProducto = new Producto();
+            //ProductoNegocio unProductoNegocio = new ProductoNegocio();
+            //unProducto.CodigoProducto = Convert.ToInt32(tboxCodigoProducto.Text);
+            //unProducto.CodigoBulto = Convert.ToInt32(tboxCodigoBulto.Text);
+            //unProducto.Nombre = tboxNombre.Text;
+            //unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
+            //unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);
+            //unProducto.StockCritico = Convert.ToInt32(tboxStockCritico.Text);
+            //unProducto.Proveedor = (Proveedor)cboxProveedor.SelectedItem;
+            //unProducto.Rubro = (Rubro)cboxRubro.SelectedItem;
+            //unProductoNegocio.AgregarProducto(unProducto);
+            Avisos FormularioAviso = new Avisos();
+            FormularioAviso.Show();
 
         }
     }

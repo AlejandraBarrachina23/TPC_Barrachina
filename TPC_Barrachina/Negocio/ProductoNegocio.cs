@@ -42,10 +42,11 @@ namespace Negocio
 
         public void AgregarProducto(Producto unProducto) {
 
-            AccederDatos.LecturaBaseDatos("INSERT INTO Productos (CodigoProducto,CodigoBulto,Nombre,CodigoTipoProducto,CantidadxBulto,StockCritico,CodigoProveedor,CodigoRubro)" +
-                 "VALUES ('" + unProducto.CodigoProducto + "','" + unProducto.CodigoBulto + "','" + unProducto.Nombre.ToString() + "','" + unProducto.TipoProducto.CodigoTipoProducto.ToString() + "','" + unProducto.CantidadxBulto+ "','"+ unProducto.StockCritico + "','" + unProducto.Proveedor.CodigoProveedor + "','" +
-                 unProducto.Rubro.CodigoRubro + "')");
-          
+            AccederDatos.DefinirTipoComando(("INSERT INTO Productos (CodigoProducto,CodigoBulto,Nombre,CodigoTipoProducto,CantidadxBulto,StockCritico,CodigoProveedor,CodigoRubro)" +
+                 "VALUES ('" + unProducto.CodigoProducto + "','" + unProducto.CodigoBulto + "','" + unProducto.Nombre.ToString() + "','" + unProducto.TipoProducto.CodigoTipoProducto.ToString() + "','" + unProducto.CantidadxBulto + "','" + unProducto.StockCritico + "','" + unProducto.Proveedor.CodigoProveedor + "','" +
+                 unProducto.Rubro.CodigoRubro + "')"));
+            AccederDatos.AbrirConexion();
+            AccederDatos.EjecutarConsulta();
             AccederDatos.CerrarReader();
             AccederDatos.CerrarConexion();
         }
