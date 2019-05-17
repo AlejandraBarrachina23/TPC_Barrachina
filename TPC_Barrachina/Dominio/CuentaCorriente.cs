@@ -12,6 +12,11 @@ namespace Dominio
         public decimal Saldo { get; set; }
         public decimal LimiteCuenta { get; set; }
 
+        public override string ToString()
+        {
+            return Saldo.ToString();
+        }
+
     }
 
    

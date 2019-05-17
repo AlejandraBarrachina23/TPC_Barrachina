@@ -13,7 +13,13 @@ namespace Dominio
         public decimal Porcentaje { get; set; }
         public bool Estado { get; set; }
 
+        public override string ToString()
+        {
+            return Porcentaje.ToString();
+        }
+
     }
+
 
    
 }

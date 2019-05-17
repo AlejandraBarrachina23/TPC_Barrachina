@@ -50,5 +50,29 @@ namespace Negocio
             AccederDatos.CerrarReader();
             AccederDatos.CerrarConexion();
         }
+
+        public List<Producto> ListarProductos()
+        {
+
+            List<Producto> ListaProductos = new List<Producto>();
+            AccederDatos.LecturaBaseDatos("SELECT * FROM Productos");
+            while (AccederDatos.LectorDatos.Read())
+            {
+
+                Producto unProducto = new Producto();
+                unProducto.CodigoProducto = (int)AccederDatos.LectorDatos["CodigoProducto"];
+                unProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
+                unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
+                unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
+                ListaProductos.Add(unProducto);
+
+            }
+
+            AccederDatos.CerrarReader();
+            AccederDatos.CerrarConexion();
+            return ListaProductos;
+        }
+
     }
 }

@@ -15,45 +15,45 @@ namespace Negocio
 
             if (Nombre == "Clientes")
             {
-                return "Busqueda Cliente";
+                return "Listado Cliente";
             }
 
             else if (Nombre == "Productos")
             {
 
-                return "Busqueda Productos";
+                return "Listado Productos";
             }
 
             else if (Nombre == "Proveedores") {
 
-                return "Busqueda Proveedores";
+                return "Listado Proveedores";
 
             }
 
             return null;
         }
 
-        public object DefinirTipoBusqueda(string NombreFormulario, string ParametroBusqueda, string NombreColumna)
+        public object DefinirTipoBusqueda(string NombreFormulario)
         {
 
-            if (NombreFormulario == "Busqueda Cliente")
+            if (NombreFormulario == "Cliente")
             {
                 ClienteNegocio unCliente = new ClienteNegocio();
-                //return unCliente.BusquedaCliente(ParametroBusqueda, NombreColumna);
+                return unCliente.ListarClientes();
             }
 
-            if (NombreFormulario == "Busqueda Productos")
+            if (NombreFormulario == "Productos")
             {
 
                 ProductoNegocio unProducto = new ProductoNegocio();
-                return unProducto.BusquedaProducto(ParametroBusqueda, NombreColumna);
+                return unProducto.ListarProductos();
 
             }
 
-            if (NombreFormulario == "Busqueda Proveedores") {
+            if (NombreFormulario == "Proveedores") {
 
                 ProveedorNegocio unProveedor = new ProveedorNegocio();
-                //return unProveedor.BusquedaProveedores(ParametroBusqueda, NombreColumna);
+                return unProveedor.ListarProveedores();
 
             }
 

@@ -63,6 +63,12 @@
     <Compile Include="FormularioBusqueda.Designer.cs">
       <DependentUpon>FormularioBusqueda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioListado.Designer.cs">
+      <DependentUpon>FormularioListado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioCierreCaja.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioBusqueda.resx">
       <DependentUpon>FormularioBusqueda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioListado.resx">
+      <DependentUpon>FormularioListado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioCierreCaja.resx">
       <DependentUpon>FormularioCierreCaja.cs</DependentUpon>

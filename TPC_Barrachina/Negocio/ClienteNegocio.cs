@@ -10,6 +10,7 @@ namespace Negocio
 {
     public class ClienteNegocio
     {
+        AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
         //public List<Cliente> BusquedaCliente(string ParametroBusqueda, string NombreColumna) {
 
         //    //ParametroBusqueda.ToUpper();
@@ -20,7 +21,7 @@ namespace Negocio
         //    //    " FisicasXClientes ON FisicasXClientes.CodigoCliente = Clientes.Codigo INNER JOIN PersonaFisicas ON PersonaFisicas.CodigoPersonaFisica = " +
         //    //    "FisicasXClientes.CodigPersonaFisica INNER JOIN CuentaCorrientes ON CuentaCorrientes.CodigoCuentaCorriente = Clientes.CodigoCuentaCorriente " +
         //    //    "Where PersonaFisicas." + NombreColumna + " LIKE '" + ParametroBusqueda + "%'";
-                
+
         //    //    //"select * from Clientes where " + NombreColumna + " LIKE '" + ParametroBusqueda +"'";
 
         //    //AccederDatos.DefinirTipoComando(Consulta);
@@ -38,7 +39,7 @@ namespace Negocio
         //    //    unNuevoCliente.CuentaCorriente.Saldo = (decimal)AccederDatos.LectorDatos["Saldo"];
         //    //    unNuevoCliente.TipoCliente = unaNuevaPersonaFisica;
         //    //    ListadoClientes.Add(unNuevoCliente);
-                
+
         //    //}
 
         //    //AccederDatos.CerrarReader();
@@ -48,10 +49,33 @@ namespace Negocio
 
         public void NuevoCliente() {
 
-            AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
+         
             AccederDatos.AbrirConexion();
             //AccederDatos.DefinirTipoComando("INSERT INTO Cliente (Codigo,CodigoCuentaCorriente,CodigoDescuento) VALUES ;" + "(" +
                 
+        }
+
+        public List<Cliente> ListarClientes() {
+
+            List<Cliente> ListadoClientes = new List<Cliente>();
+
+            AccederDatos.LecturaBaseDatos("SELECT CodigoCliente, Clientes.Nombre, Apellido,CuentaCorrientes.Saldo, Porcentaje FROM Clientes INNER JOIN CuentaCorrientes on " +
+                "CuentaCorrientes.CodigoCuentaCorriente = Clientes.CodigoCuentaCorriente INNER JOIN Descuentos ON Descuentos.CodigoDescuento = Clientes.CodigoDescuento");
+
+            while (AccederDatos.LectorDatos.Read()) {
+
+                Cliente unCliente = new Cliente();
+                unCliente.CuentaCorriente = new CuentaCorriente();
+                unCliente.Descuento = new Descuento();
+                unCliente.CodigoCliente = (int)AccederDatos.LectorDatos["CodigoCliente"];
+                unCliente.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unCliente.Apellido = AccederDatos.LectorDatos["Apellido"].ToString();
+                unCliente.CuentaCorriente.Saldo= (decimal)AccederDatos.LectorDatos["Saldo"];
+                ListadoClientes.Add(unCliente);                
+            }
+
+            return ListadoClientes;
+            
         }
 
         

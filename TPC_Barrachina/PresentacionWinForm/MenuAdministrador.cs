@@ -50,6 +50,9 @@ namespace PresentacionWinForm
             OpcionSeleccionada = "Clientes";
             pnlMenuDesplegable.Location = new Point(105, 171);
             pnlMenuDesplegable.Visible = true;
+            FormularioListado FormularioBusquedaAmplio = new FormularioListado(OpcionSeleccionada);
+            FormularioBusquedaAmplio.MdiParent = this;
+            FormularioBusquedaAmplio.Show();
 
         }
 
@@ -67,7 +70,10 @@ namespace PresentacionWinForm
             OpcionSeleccionada = "Proveedores";
             pnlMenuDesplegable.Visible = true;
             pnlMenuDesplegable.Location = new Point(105, 360);
-      
+            FormularioListado FormularioBusquedaAmplio = new FormularioListado(OpcionSeleccionada);
+            FormularioBusquedaAmplio.MdiParent = this;
+            FormularioBusquedaAmplio.Show();
+
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -75,7 +81,11 @@ namespace PresentacionWinForm
             OpcionSeleccionada = "Productos";
             pnlMenuDesplegable.Visible = true;
             pnlMenuDesplegable.Location = new Point(105, 414);
-      
+            FormularioListado FormularioBusquedaAmplio = new FormularioListado(OpcionSeleccionada);
+            FormularioBusquedaAmplio.MdiParent = this;
+            FormularioBusquedaAmplio.Show();
+
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

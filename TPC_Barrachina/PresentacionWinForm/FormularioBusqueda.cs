@@ -33,20 +33,20 @@ namespace PresentacionWinForm
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //BUSQUEDA UNIVERSAL DE ENTIDADES
-                TextBox TextBoxSeleccionado = panelContenedor.Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != ""); //Tomo el primer valor del textbox que no este vacío, la busqueda se permite a través de Codigo o Nombre
-                string NombreTextBox = TextBoxSeleccionado.Name.Remove(0,4); //Defino el nombre del parametro para hacer la busqueda, lo extraigo del Name borrando el "tbox" -> tboxCodigo -> Codigo
-                string NombreFormulario = lblNombreFormulario.Text.Remove(0, 9); // Defino el nombre del Formulario a través del text del label borrando el "busqueda" -> busquedaCliente -> Cliente
-                dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text, TextBoxSeleccionado.Text, NombreTextBox); //Defino la busqueda según la entidad
-                dgvListadoBusqueda = utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, NombreFormulario);//Defino las columnas que van a ser visibles según la entidad que deseo mostrar
-            }
+            //try
+            ////{
+            ////    //BUSQUEDA UNIVERSAL DE ENTIDADES
+            ////    TextBox TextBoxSeleccionado = panelContenedor.Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != ""); //Tomo el primer valor del textbox que no este vacío, la busqueda se permite a través de Codigo o Nombre
+            ////    string NombreTextBox = TextBoxSeleccionado.Name.Remove(0,4); //Defino el nombre del parametro para hacer la busqueda, lo extraigo del Name borrando el "tbox" -> tboxCodigo -> Codigo
+            ////    string NombreFormulario = lblNombreFormulario.Text.Remove(0, 9); // Defino el nombre del Formulario a través del text del label borrando el "busqueda" -> busquedaCliente -> Cliente
+            ////    dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text, TextBoxSeleccionado.Text, NombreTextBox); //Defino la busqueda según la entidad
+            ////    dgvListadoBusqueda = utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, NombreFormulario);//Defino las columnas que van a ser visibles según la entidad que deseo mostrar
+            //}
 
-            catch (Exception)
-            {
-                throw;
-            }
+            //catch (Exception)
+            //{
+            //    throw;
+            //}
            
         }
 
