@@ -33,15 +33,6 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.btnUsuario = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnListar = new System.Windows.Forms.Button();
-            this.pnlMenuDesplegable = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
@@ -58,7 +49,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.pnlBarraPrincipal.SuspendLayout();
-            this.pnlMenuDesplegable.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,118 +100,6 @@
             this.btnUsuario.TabIndex = 11;
             this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnUsuario.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(5, 16);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(90, 35);
-            this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "        Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(5, 96);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(90, 35);
-            this.btnModificar.TabIndex = 0;
-            this.btnModificar.Text = "        Modificar";
-            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.FlatAppearance.BorderSize = 0;
-            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.ForeColor = System.Drawing.Color.White;
-            this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
-            this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBorrar.Location = new System.Drawing.Point(5, 56);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(90, 35);
-            this.btnBorrar.TabIndex = 0;
-            this.btnBorrar.Text = "       Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
-            // 
-            // btnListar
-            // 
-            this.btnListar.FlatAppearance.BorderSize = 0;
-            this.btnListar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListar.ForeColor = System.Drawing.Color.White;
-            this.btnListar.Image = ((System.Drawing.Image)(resources.GetObject("btnListar.Image")));
-            this.btnListar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListar.Location = new System.Drawing.Point(5, 136);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(90, 35);
-            this.btnListar.TabIndex = 0;
-            this.btnListar.Text = "     Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
-            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
-            // 
-            // pnlMenuDesplegable
-            // 
-            this.pnlMenuDesplegable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.pnlMenuDesplegable.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlMenuDesplegable.Controls.Add(this.panel13);
-            this.pnlMenuDesplegable.Controls.Add(this.panel14);
-            this.pnlMenuDesplegable.Controls.Add(this.panel12);
-            this.pnlMenuDesplegable.Controls.Add(this.panel11);
-            this.pnlMenuDesplegable.Controls.Add(this.btnAgregar);
-            this.pnlMenuDesplegable.Controls.Add(this.btnListar);
-            this.pnlMenuDesplegable.Controls.Add(this.btnBorrar);
-            this.pnlMenuDesplegable.Controls.Add(this.btnModificar);
-            this.pnlMenuDesplegable.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlMenuDesplegable.Location = new System.Drawing.Point(105, 414);
-            this.pnlMenuDesplegable.Name = "pnlMenuDesplegable";
-            this.pnlMenuDesplegable.Size = new System.Drawing.Size(105, 183);
-            this.pnlMenuDesplegable.TabIndex = 5;
-            this.pnlMenuDesplegable.Visible = false;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
-            this.panel13.Location = new System.Drawing.Point(0, 96);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(5, 35);
-            this.panel13.TabIndex = 11;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(220)))), ((int)(((byte)(70)))));
-            this.panel14.Location = new System.Drawing.Point(0, 136);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(5, 35);
-            this.panel14.TabIndex = 11;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(121)))), ((int)(((byte)(116)))));
-            this.panel12.Location = new System.Drawing.Point(0, 56);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(5, 35);
-            this.panel12.TabIndex = 7;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(198)))), ((int)(((byte)(46)))));
-            this.panel11.Location = new System.Drawing.Point(0, 16);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(5, 35);
-            this.panel11.TabIndex = 11;
             // 
             // btnVentas
             // 
@@ -412,7 +290,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1278, 597);
-            this.Controls.Add(this.pnlMenuDesplegable);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -421,7 +298,6 @@
             this.Text = "Reportes";
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
-            this.pnlMenuDesplegable.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -430,18 +306,9 @@
 
         #endregion
         private System.Windows.Forms.Panel pnlBarraPrincipal;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnBorrar;
-        private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.Panel pnlMenuDesplegable;
         private System.Windows.Forms.Label lbNombrePrograma;
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnProveedor;
         private System.Windows.Forms.Button btnClientes;

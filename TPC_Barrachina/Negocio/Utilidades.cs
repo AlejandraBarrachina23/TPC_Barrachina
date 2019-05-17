@@ -15,7 +15,7 @@ namespace Negocio
 
             if (Nombre == "Clientes")
             {
-                return "Listado Cliente";
+                return "Listado Clientes";
             }
 
             else if (Nombre == "Productos")
@@ -36,7 +36,7 @@ namespace Negocio
         public object DefinirTipoBusqueda(string NombreFormulario)
         {
 
-            if (NombreFormulario == "Cliente")
+            if (NombreFormulario == "Clientes")
             {
                 ClienteNegocio unCliente = new ClienteNegocio();
                 return unCliente.ListarClientes();
@@ -60,8 +60,10 @@ namespace Negocio
             return null;
         }
 
-        public DataGridView OcultarColumnasDataGridView(DataGridView Grilla, string NombreTabla) {
+      
+            public DataGridView OcultarColumnasDataGridView(DataGridView Grilla, string NombreTabla) {
 
+          
             if (NombreTabla == "Productos") {
 
                 Grilla.Columns[1].Visible = false;
@@ -74,6 +76,18 @@ namespace Negocio
                 Grilla.Columns[13].Visible = false;
 
                 return Grilla;
+
+            }
+
+            if (NombreTabla == "Proveedores") {
+
+                Grilla.Columns[4].Visible = false;
+                Grilla.Columns[5].Visible = false;
+                Grilla.Columns[6].Visible = false;
+                Grilla.Columns[7].Visible = false;
+
+                return Grilla;
+
 
             }
 

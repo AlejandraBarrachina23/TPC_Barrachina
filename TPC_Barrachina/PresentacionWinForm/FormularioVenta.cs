@@ -64,7 +64,7 @@ namespace PresentacionWinForm
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
 
         private void btnCalculadora8_Click(object sender, EventArgs e)

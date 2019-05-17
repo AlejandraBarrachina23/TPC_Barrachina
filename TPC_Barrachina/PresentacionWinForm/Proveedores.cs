@@ -44,39 +44,40 @@ namespace PresentacionWinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //Proveedor unNuevoProveedor = new Proveedor();
-            //ProveedorNegocio unProveedor = new ProveedorNegocio();
-            //Direccion unaNuevaDireccion = new Direccion();
-            //DireccionNegocio unaDireccion = new DireccionNegocio();
-            //Contacto unNuevoContacto = new Contacto();
-            //ContactoNegocio unContacto = new ContactoNegocio();
-            //ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
-            ////direccion
-            //unaNuevaDireccion.Calle = tboxCalle.Text;
-            //unaNuevaDireccion.Numero = Convert.ToInt32(tboxNumero.Text);
-            //unaNuevaDireccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
-            //unaNuevaDireccion.Localidad = tboxLocalidad.Text;
-            //unaNuevaDireccion.Provincia = tboxProvincia.Text;
-            //unaDireccion.AgregarDireccion(unaNuevaDireccion);
-            ////contacto
-            //unNuevoContacto = new Contacto();
-            //unNuevoContacto.CodigoContacto = unaDireccion.ContaFilasDireccion();
-            //unNuevoContacto.Telefono = tboxTelefono.Text;
-            //unNuevoContacto.Celular = tboxCelular.Text;
-            //unNuevoContacto.Mail = tboxCorreoElectronico.Text;
-            //unNuevoContacto.Direccion = unaNuevaDireccion;
-            //unContacto.AgregarContacto(unNuevoContacto);
-            ////proveedor
-            //unNuevoProveedor.CodigoProveedor = Convert.ToInt32(tboxCodigoProveedor.Text);
-            //unNuevoProveedor.RazonSocial = tboxRazonSocial.Text;
-            //unNuevoProveedor.NumeroCUIT = tboxNumeroCUIT.Text;
-            //unNuevoProveedor.NombreFantasia = tboxNombreFantasia.Text;
-            //unNuevoProveedor.CondicionIVA = (CondicionIVA)cboxCondicionIVA.SelectedItem;
-            //unNuevoProveedor.Contacto = unNuevoContacto;
-            //unProveedor.AgregarProveedor(unNuevoProveedor);
+            Proveedor unNuevoProveedor = new Proveedor();
+            ProveedorNegocio unProveedor = new ProveedorNegocio();
+            Direccion unaNuevaDireccion = new Direccion();
+            DireccionNegocio unaDireccion = new DireccionNegocio();
+            Contacto unNuevoContacto = new Contacto();
+            ContactoNegocio unContacto = new ContactoNegocio();
+            ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
+            //direccion
+            unaNuevaDireccion.Calle = tboxCalle.Text;
+            unaNuevaDireccion.Numero = Convert.ToInt32(tboxNumero.Text);
+            unaNuevaDireccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
+            unaNuevaDireccion.Localidad = tboxLocalidad.Text;
+            unaNuevaDireccion.Provincia = tboxProvincia.Text;
+            unaDireccion.AgregarDireccion(unaNuevaDireccion);
+            //contacto
+            unNuevoContacto = new Contacto();
+            unNuevoContacto.CodigoContacto = unaDireccion.ContaFilasDireccion();
+            unNuevoContacto.Telefono = tboxTelefono.Text;
+            unNuevoContacto.Celular = tboxCelular.Text;
+            unNuevoContacto.Mail = tboxCorreoElectronico.Text;
+            unNuevoContacto.Direccion = unaNuevaDireccion;
+            unContacto.AgregarContacto(unNuevoContacto);
+            //proveedor
+            unNuevoProveedor.CodigoProveedor = Convert.ToInt32(tboxCodigoProveedor.Text);
+            unNuevoProveedor.RazonSocial = tboxRazonSocial.Text;
+            unNuevoProveedor.NumeroCUIT = tboxNumeroCUIT.Text;
+            unNuevoProveedor.NombreFantasia = tboxNombreFantasia.Text;
+            unNuevoProveedor.CondicionIVA = (CondicionIVA)cboxCondicionIVA.SelectedItem;
+            unNuevoProveedor.Contacto = unNuevoContacto;
+            unProveedor.AgregarProveedor(unNuevoProveedor);
 
             Avisos FormularioAviso = new Avisos();
             FormularioAviso.Show();
+           
             /*<-----------------------------------------------------------------------------------------------------------------VALIDAR INGRESO DE CAMPOS*/
             //insert into ProveedorxImpuesto (CodigoProveedor,CodigoImpuesto,Alicuota) VALUES (unProveedor.CodigoProveedor,???,tbox.Impuesto)
 

@@ -12,6 +12,7 @@ namespace Dominio
         public int CodigoCliente { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public Contacto Contacto { get; set; }
         public CuentaCorriente CuentaCorriente { get; set; }
         public Descuento Descuento { get; set; }
         public bool Estado { get; set; }

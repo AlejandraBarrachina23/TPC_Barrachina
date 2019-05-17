@@ -47,12 +47,14 @@ namespace Negocio
         //    //return ListadoClientes;
         //}
 
-        public void NuevoCliente() {
+        public void AgregarCliente(Cliente unNuevoCliente) {
 
          
             AccederDatos.AbrirConexion();
-            //AccederDatos.DefinirTipoComando("INSERT INTO Cliente (Codigo,CodigoCuentaCorriente,CodigoDescuento) VALUES ;" + "(" +
-                
+            AccederDatos.DefinirTipoComando("INSERT INTO Clientes (CodigoCliente,Nombre,Apellido,CodigoDescuento,CodigoCuentaCorriente) VALUES ('" + unNuevoCliente.CodigoCliente + "','" + unNuevoCliente.Nombre + "','" + unNuevoCliente.Apellido + "','" + unNuevoCliente.Descuento.CodigoDescuento + "','" + unNuevoCliente.CuentaCorriente.CodigoCuentaCorriente +"')");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+
         }
 
         public List<Cliente> ListarClientes() {

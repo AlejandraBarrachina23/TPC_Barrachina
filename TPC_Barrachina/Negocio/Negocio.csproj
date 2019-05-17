@@ -44,6 +44,8 @@
     <Compile Include="ClienteNegocio.cs" />
     <Compile Include="CondicionIVANegocio.cs" />
     <Compile Include="ContactoNegocio.cs" />
+    <Compile Include="CuentaCorrienteNegocio.cs" />
+    <Compile Include="DescuentoNegocio.cs" />
     <Compile Include="DireccionNegocio.cs" />
     <Compile Include="ImpuestoNegocio.cs" />
     <Compile Include="PersonaFisicaNegocio.cs" />

@@ -46,6 +46,7 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombre)).BeginInit();
@@ -71,13 +72,14 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(696, 426);
+            this.btnCancelar.Location = new System.Drawing.Point(696, 403);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(94, 37);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 37);
             this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // tboxCodigo
             // 
@@ -101,7 +103,8 @@
             this.dgvListadoBusqueda.Location = new System.Drawing.Point(12, 88);
             this.dgvListadoBusqueda.Name = "dgvListadoBusqueda";
             this.dgvListadoBusqueda.ReadOnly = true;
-            this.dgvListadoBusqueda.Size = new System.Drawing.Size(656, 391);
+            this.dgvListadoBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListadoBusqueda.Size = new System.Drawing.Size(656, 359);
             this.dgvListadoBusqueda.TabIndex = 20;
             // 
             // pboxNombre
@@ -192,6 +195,7 @@
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "        Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnBorrar
             // 
@@ -228,6 +232,7 @@
             // 
             // panelContenedor
             // 
+            this.panelContenedor.Controls.Add(this.btnActualizar);
             this.panelContenedor.Controls.Add(this.lblCodigo);
             this.panelContenedor.Controls.Add(this.dgvListadoBusqueda);
             this.panelContenedor.Controls.Add(this.pboxCodigo);
@@ -246,6 +251,24 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(808, 482);
             this.panelContenedor.TabIndex = 23;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
+            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnActualizar.Location = new System.Drawing.Point(696, 360);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(100, 37);
+            this.btnActualizar.TabIndex = 23;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
             // 
             // FormularioListado
             // 
@@ -288,5 +311,6 @@
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

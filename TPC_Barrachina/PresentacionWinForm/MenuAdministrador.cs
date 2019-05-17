@@ -32,7 +32,6 @@ namespace PresentacionWinForm
             try
             {
                 OpcionSeleccionada = "Ventas";
-                pnlMenuDesplegable.Visible = false;
                 FormularioVenta FormularioVenta = new FormularioVenta();
                 FormularioVenta.MdiParent = this;
                 FormularioVenta.Show();
@@ -48,8 +47,6 @@ namespace PresentacionWinForm
         private void btnClientes_Click(object sender, EventArgs e)
         {
             OpcionSeleccionada = "Clientes";
-            pnlMenuDesplegable.Location = new Point(105, 171);
-            pnlMenuDesplegable.Visible = true;
             FormularioListado FormularioBusquedaAmplio = new FormularioListado(OpcionSeleccionada);
             FormularioBusquedaAmplio.MdiParent = this;
             FormularioBusquedaAmplio.Show();
@@ -59,7 +56,6 @@ namespace PresentacionWinForm
         private void btnCompras_Click(object sender, EventArgs e)
         {
             OpcionSeleccionada = "Compras";
-            pnlMenuDesplegable.Visible = false;
             FormularioCompra FormularioCompras = new FormularioCompra();
             FormularioCompras.MdiParent = this;
             FormularioCompras.Show();
@@ -68,8 +64,6 @@ namespace PresentacionWinForm
         private void btnProveedor_Click(object sender, EventArgs e)
         {
             OpcionSeleccionada = "Proveedores";
-            pnlMenuDesplegable.Visible = true;
-            pnlMenuDesplegable.Location = new Point(105, 360);
             FormularioListado FormularioBusquedaAmplio = new FormularioListado(OpcionSeleccionada);
             FormularioBusquedaAmplio.MdiParent = this;
             FormularioBusquedaAmplio.Show();
@@ -79,64 +73,11 @@ namespace PresentacionWinForm
         private void btnProductos_Click(object sender, EventArgs e)
         {
             OpcionSeleccionada = "Productos";
-            pnlMenuDesplegable.Visible = true;
-            pnlMenuDesplegable.Location = new Point(105, 414);
             FormularioListado FormularioBusquedaAmplio = new FormularioListado(OpcionSeleccionada);
             FormularioBusquedaAmplio.MdiParent = this;
             FormularioBusquedaAmplio.Show();
 
-
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            pnlMenuDesplegable.Visible = false;
-
-            if (OpcionSeleccionada == "Productos")
-            {
-                Productos AgregarFormularioProductos = new Productos();
-                AgregarFormularioProductos.Show();
-                AgregarFormularioProductos.MdiParent = this;
-            }
-
-            else if (OpcionSeleccionada == "Proveedores")
-            {
-                Proveedores FormularioProveedor = new Proveedores();
-                FormularioProveedor.Show();
-                FormularioProveedor.MdiParent = this;
-            }
-
-            else if (OpcionSeleccionada == "Clientes")
-            {
-                Clientes FormularioCliente = new Clientes();
-                FormularioCliente.Show();
-                FormularioCliente.MdiParent = this;
-            }
-        }
-
-        private void btnBorrar_Click(object sender, EventArgs e)
-        {
-            pnlMenuDesplegable.Visible = false;
-            FormularioBusqueda FormularioBusqueda = new FormularioBusqueda(OpcionSeleccionada);
-            FormularioBusqueda.Show();
-            FormularioBusqueda.MdiParent = this;
-
-        }
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            pnlMenuDesplegable.Visible = false;
-            FormularioBusqueda FormularioBusqueda = new FormularioBusqueda(OpcionSeleccionada);
-            FormularioBusqueda.Show();
-            FormularioBusqueda.MdiParent = this;
-
-        }
-
-        private void btnListar_Click(object sender, EventArgs e)
-        {
-            pnlMenuDesplegable.Visible = false;
-            FormularioBusqueda FormularioBusqueda = new FormularioBusqueda(OpcionSeleccionada);
-            FormularioBusqueda.Show();
-            FormularioBusqueda.MdiParent = this;
-        }
     }
 }
