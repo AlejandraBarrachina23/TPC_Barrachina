@@ -40,12 +40,20 @@ namespace Negocio
         public void AgregarDireccion(Direccion unaDireccion)
         {
 
-            AccederDatos.DefinirTipoComando(("INSERT INTO Direccion (Calle,Numero,CodigoPostal,Localidad,Provincia)" +
+            AccederDatos.DefinirTipoComando(("INSERT INTO Direcciones (Calle,Numero,CodigoPostal,Localidad,Provincia)" +
                  "VALUES ('" + unaDireccion.Calle + "','" + unaDireccion.Numero+ "','" + unaDireccion.CodigoPostal + "','" + unaDireccion.Localidad + "','" + unaDireccion.Provincia + "')"));
                 AccederDatos.AbrirConexion();
                 AccederDatos.EjecutarConsulta();
                 AccederDatos.CerrarReader();
                 AccederDatos.CerrarConexion();
         }
+
+        public int ContaFilasDireccion() {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT COUNT (CodigoDireccion) FROM Direcciones");
+            return AccederDatos.ejecutarAccionReturn();
+        
+}
     }
 }

@@ -16,13 +16,11 @@ namespace Negocio
 
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("INSERT INTO Proveedores(CodigoProveedor,RazonSocial,NumeroCUIT, NombreFantasia,CodigoCondicionIVA,CodigoImpuesto VALUES ("
-                + unNuevoProveedor.CodigoProveedor + "," + unNuevoProveedor.RazonSocial + "," + unNuevoProveedor.NumeroCUIT + "," + unNuevoProveedor.NombreFantasia + "," + unNuevoProveedor.CondicionIVA + ")");
+            AccederDatos.DefinirTipoComando("INSERT INTO Proveedores(CodigoProveedor,RazonSocial,NumeroCUIT, NombreFantasia,CodigoCondicionIVA,CodigoContacto) VALUES ('"
+                + unNuevoProveedor.CodigoProveedor + "','" + unNuevoProveedor.RazonSocial + "','" + unNuevoProveedor.NumeroCUIT + "','" + unNuevoProveedor.NombreFantasia + "','" + unNuevoProveedor.CondicionIVA.CodigoCondicionIVA + "','" + unNuevoProveedor.Contacto.CodigoContacto+ "')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
-            AccederDatos.CerrarReader();
-       
-
+          
         }
 
         public List<Proveedor> ListarProveedores()

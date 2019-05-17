@@ -5,11 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Dominio;
 using AccesoDatos;
-
+using System.Windows.Forms;
 namespace Negocio
 {
     
-
     public class ContactoNegocio
         
     {
@@ -24,8 +23,8 @@ namespace Negocio
             {
                 Contacto unContacto = new Contacto();
                 unContacto.CodigoContacto = (int) AccederDatos.LectorDatos["CodigoContacto"];
-                unContacto.Telefono = (int)AccederDatos.LectorDatos["Telefono"];
-                unContacto.Celular = (int)AccederDatos.LectorDatos["Celular"];
+                unContacto.Telefono = AccederDatos.LectorDatos["Telefono"].ToString();
+                unContacto.Celular = AccederDatos.LectorDatos["Celular"].ToString();
                 unContacto.Mail = AccederDatos.LectorDatos["Mail"].ToString();
                 unContacto.Direccion = (Direccion)AccederDatos.LectorDatos["Direccion"];
 
@@ -41,8 +40,10 @@ namespace Negocio
         public void AgregarContacto(Contacto unContacto)
         {
 
-            AccederDatos.DefinirTipoComando("INSERT INTO Contacto (Telefono,Celular,Mail)" +
-                 "VALUES ('"+ unContacto.Telefono + "','" + unContacto.Celular + "','" + unContacto.Mail + "')");
+            AccederDatos.DefinirTipoComando("INSERT INTO Contactos (Telefono,Celular,Mail,CodigoDireccion)" +
+                 "VALUES ('"+ unContacto.Telefono + "','" + unContacto.Celular + "','" + unContacto.Mail + "','" + unContacto.Direccion.CodigoDireccion+"')");
+ 
+
             AccederDatos.AbrirConexion();
             AccederDatos.EjecutarConsulta();
             AccederDatos.CerrarReader();

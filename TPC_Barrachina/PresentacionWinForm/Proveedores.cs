@@ -36,7 +36,7 @@ namespace PresentacionWinForm
             tboxCP.KeyPress += AsignarSoloNumeros;
             tboxTelefono.KeyPress += AsignarSoloNumeros;
             tboxCelular.KeyPress += AsignarSoloNumeros;
-            tboxIVA.KeyPress += AsignarSoloNumeros;
+            tboxIVA.KeyPress += AsignarSoloNumeros; 
             tboxIB.KeyPress += AsignarSoloNumeros;
             tboxImpuesto1.KeyPress += AsignarSoloNumeros;
             tboxImpuesto2.KeyPress += AsignarSoloNumeros;
@@ -51,36 +51,43 @@ namespace PresentacionWinForm
             Contacto unNuevoContacto = new Contacto();
             ContactoNegocio unContacto = new ContactoNegocio();
             ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
-
-            unNuevoProveedor.CodigoProveedor = Convert.ToInt32(tboxCodigoProveedor.Text);
-            unNuevoProveedor.RazonSocial = tboxRazonSocial.Text;
-            unNuevoProveedor.NumeroCUIT = tboxNumeroCUIT.Text;
-            unNuevoProveedor.NombreFantasia = tboxNombreFantasia.Text;
-
+            //direccion
             unaNuevaDireccion.Calle = tboxCalle.Text;
             unaNuevaDireccion.Numero = Convert.ToInt32(tboxNumero.Text);
             unaNuevaDireccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
             unaNuevaDireccion.Localidad = tboxLocalidad.Text;
             unaNuevaDireccion.Provincia = tboxProvincia.Text;
-
-            unNuevoContacto = new Contacto();
-            unNuevoContacto.Telefono = Convert.ToInt32(tboxTelefono.Text);
-            unNuevoContacto.Celular = Convert.ToInt32(tboxCelular.Text);
-            unNuevoContacto.Mail = tboxCorreoElectronico.Text;
-
             unaDireccion.AgregarDireccion(unaNuevaDireccion);
+            //contacto
+            unNuevoContacto = new Contacto();
+            unNuevoContacto.CodigoContacto = unaDireccion.ContaFilasDireccion();
+            unNuevoContacto.Telefono = tboxTelefono.Text;
+            unNuevoContacto.Celular = tboxCelular.Text;
+            unNuevoContacto.Mail = tboxCorreoElectronico.Text;
+            unNuevoContacto.Direccion = unaNuevaDireccion;
             unContacto.AgregarContacto(unNuevoContacto);
+            //proveedor
+            unNuevoProveedor.CodigoProveedor = Convert.ToInt32(tboxCodigoProveedor.Text);
+            unNuevoProveedor.RazonSocial = tboxRazonSocial.Text;
+            unNuevoProveedor.NumeroCUIT = tboxNumeroCUIT.Text;
+            unNuevoProveedor.NombreFantasia = tboxNombreFantasia.Text;
+            unNuevoProveedor.CondicionIVA = (CondicionIVA)cboxCondicionIVA.SelectedItem;
+            unNuevoProveedor.Contacto = unNuevoContacto;
             unProveedor.AgregarProveedor(unNuevoProveedor);
 
-            
             //insert into ProveedorxImpuesto (CodigoProveedor,CodigoImpuesto,Alicuota) VALUES (unProveedor.CodigoProveedor,???,tbox.Impuesto)
-                        
+
         }
 
         private void Proveedores_Load(object sender, EventArgs e)
         {
             CondicionIVANegocio unaCondicionIVA = new CondicionIVANegocio();
             cboxCondicionIVA.DataSource = unaCondicionIVA.ListarCondicionIVA();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

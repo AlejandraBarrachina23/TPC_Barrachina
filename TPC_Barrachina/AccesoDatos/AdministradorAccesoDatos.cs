@@ -71,6 +71,19 @@ namespace AccesoDatos
             lectorDatos.Close();
         }
 
+        public int ejecutarAccionReturn()
+        {
+            try
+            {
+                comandoSQL.Connection = conexionSQL;
+                return (int)comandoSQL.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void LecturaBaseDatos(string Consulta) {
 
             AbrirConexion();
