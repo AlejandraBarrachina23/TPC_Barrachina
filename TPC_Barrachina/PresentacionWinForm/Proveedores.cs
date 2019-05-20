@@ -52,10 +52,11 @@ namespace PresentacionWinForm
             Contacto unNuevoContacto = new Contacto();
             ContactoNegocio unContacto = new ContactoNegocio();
             ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
+            
             //direccion
             unaNuevaDireccion.Calle = tboxCalle.Text;
             unaNuevaDireccion.Numero = Convert.ToInt32(tboxNumero.Text);
-            unaNuevaDireccion.CodigoPostal = Convert.ToInt32(tboxPorcentaje.Text);
+            unaNuevaDireccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
             unaNuevaDireccion.Localidad = tboxLocalidad.Text;
             unaNuevaDireccion.Provincia = tboxProvincia.Text;
             unaDireccion.AgregarDireccion(unaNuevaDireccion);
@@ -75,6 +76,13 @@ namespace PresentacionWinForm
             unNuevoProveedor.CondicionIVA = (CondicionIVA)cboxCondicionIVA.SelectedItem;
             unNuevoProveedor.Contacto = unNuevoContacto;
             unProveedor.AgregarProveedor(unNuevoProveedor);
+            //impuestos
+
+            foreach (Impuesto unNuevoImpuesto in ListadoImpuestos)
+            {
+                unImpuesto.AgregarImpuesto(unNuevoImpuesto, unNuevoProveedor.CodigoProveedor);
+
+            }
 
             Avisos FormularioAviso = new Avisos();
             FormularioAviso.Show();
@@ -102,10 +110,10 @@ namespace PresentacionWinForm
         {
      
             Impuesto unNuevoImpuesto = new Impuesto();
+
             unNuevoImpuesto.Nombre = cboxImpuesto.SelectedItem.ToString();
+            unNuevoImpuesto.CodigoImpuesto = cboxImpuesto.FindString(unNuevoImpuesto.Nombre)+1;
             unNuevoImpuesto.Alicuota = Convert.ToDecimal(tboxPorcentaje.Text);
-
-
             listaBindeable = new BindingList<Impuesto>(ListadoImpuestos);
             dgvImpuestos.DataSource = listaBindeable;
             ListadoImpuestos.Add(unNuevoImpuesto);

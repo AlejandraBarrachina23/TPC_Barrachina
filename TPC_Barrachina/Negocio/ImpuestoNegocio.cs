@@ -29,18 +29,14 @@ namespace Negocio
 
         }
 
-        //public Proveedor AgregaImpuesto(Impuesto unImpuesto, Proveedor unProveedor, decimal alicuota)
-        //{
-
-        //    //AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
-        //    //AccederDatos.AbrirConexion();
-        //    //AccederDatos.DefinirTipoComando("INSERT INTO ProveedorXImpuesto(CodigoProveedor,CodigoImpuesto,Alicuota) VALUES ("
-        //    //    + unNuevoProveedor.CodigoProveedor + "," + unNuevoProveedor.RazonSocial + "," + unNuevoProveedor.NumeroCUIT + "," + unNuevoProveedor.NombreFantasia + "," + unNuevoProveedor.CondicionIVA + ")");
-        //    //AccederDatos.EjecutarAccion();
-        //    //AccederDatos.CerrarConexion();
-        //    //AccederDatos.CerrarReader();
-        //    //return unNuevoProveedor;
-
-        //}
+        public void AgregarImpuesto(Impuesto unImpuesto, int CodigoProveedor)
+        {
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("INSERT INTO ProveedorXImpuesto(CodigoProveedor,CodigoImpuesto,Alicuota) VALUES ("
+                + CodigoProveedor + "," + unImpuesto.CodigoImpuesto + "," + unImpuesto.Alicuota + ")");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+                 
+        }
     }
 }

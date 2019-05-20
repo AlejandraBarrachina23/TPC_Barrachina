@@ -233,6 +233,7 @@
             // 
             // panelContenedor
             // 
+            this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelContenedor.Controls.Add(this.btnActualizar);
             this.panelContenedor.Controls.Add(this.lblCodigo);
             this.panelContenedor.Controls.Add(this.dgvListadoBusqueda);
@@ -248,9 +249,9 @@
             this.panelContenedor.Controls.Add(this.btnBorrar);
             this.panelContenedor.Controls.Add(this.panel11);
             this.panelContenedor.Controls.Add(this.btnCancelar);
-            this.panelContenedor.Location = new System.Drawing.Point(0, 47);
+            this.panelContenedor.Location = new System.Drawing.Point(0, 35);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(808, 482);
+            this.panelContenedor.Size = new System.Drawing.Size(808, 467);
             this.panelContenedor.TabIndex = 23;
             // 
             // btnActualizar
@@ -275,7 +276,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 528);
+            this.ClientSize = new System.Drawing.Size(808, 501);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.Controls.Add(this.panelContenedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
