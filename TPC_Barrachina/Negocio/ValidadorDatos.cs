@@ -48,7 +48,13 @@ namespace Negocio
             return false;
         }
 
-        
+        public void SeleccionItemDataGridView(DataGridView grilla) {
+
+            if (grilla.SelectedRows == null) {
+
+                throw new Exception("Seleccione un item");
+            }
+        }
     }
     
 }

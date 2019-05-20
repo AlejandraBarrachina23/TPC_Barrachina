@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AccesoDatos;
+using Dominio;
 
 namespace Negocio
 {
@@ -58,6 +59,35 @@ namespace Negocio
             }
 
             return null;
+        }
+
+        public object DefinirTipoEliminacion(object Entidad) {
+
+
+            if (Entidad.GetType().Equals(typeof(Cliente)))
+            {
+                MessageBox.Show("Es un Cliente");
+                //ClienteNegocio unCliente = new ClienteNegocio();
+                //return unCliente.ListarClientes();
+            }
+
+            if (Entidad.GetType().Equals(typeof(Producto)))
+            {
+                ProductoNegocio unProducto = new ProductoNegocio();
+                unProducto.EliminarProducto((Producto)Entidad);
+                
+            }
+
+            if (Entidad.GetType().Equals(typeof(Proveedor)))
+            {
+                MessageBox.Show("Es un Proveedor");
+                //ProveedorNegocio unProveedor = new ProveedorNegocio();
+                //return unProveedor.ListarProveedores();
+
+            }
+
+            return null;
+
         }
 
       

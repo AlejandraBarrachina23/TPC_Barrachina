@@ -27,12 +27,15 @@ namespace Negocio
             {
                 Producto unNuevoProducto = new Producto();
 
+                if ((bool)AccederDatos.LectorDatos["Estado"]) { 
+
                 unNuevoProducto.CodigoProducto = (int)AccederDatos.LectorDatos["CodigoProducto"];
                 unNuevoProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
                 unNuevoProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
                 unNuevoProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
                 unNuevoProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
                 ListadoProductos.Add(unNuevoProducto);
+                }
             }
 
             AccederDatos.CerrarReader();
@@ -43,8 +46,8 @@ namespace Negocio
         public void AgregarProducto(Producto unProducto) {
 
             AccederDatos.DefinirTipoComando(("INSERT INTO Productos (CodigoProducto,CodigoBulto,Nombre,CodigoTipoProducto,CantidadxBulto,StockCritico,CodigoProveedor,CodigoRubro)" +
-                 "VALUES ('" + unProducto.CodigoProducto + "','" + unProducto.CodigoBulto + "','" + unProducto.Nombre.ToString() + "','" + unProducto.TipoProducto.CodigoTipoProducto.ToString() + "','" + unProducto.CantidadxBulto + "','" + unProducto.StockCritico + "','" + unProducto.Proveedor.CodigoProveedor + "','" +
-                 unProducto.Rubro.CodigoRubro + "')"));
+            "VALUES ('" + unProducto.CodigoProducto + "','" + unProducto.CodigoBulto + "','" + unProducto.Nombre.ToString() + "','" + unProducto.TipoProducto.CodigoTipoProducto.ToString() + "','" + unProducto.CantidadxBulto + "','" + unProducto.StockCritico + "','" + unProducto.Proveedor.CodigoProveedor + "','" +
+            unProducto.Rubro.CodigoRubro + "')"));
             AccederDatos.AbrirConexion();
             AccederDatos.EjecutarConsulta();
             AccederDatos.CerrarReader();
@@ -59,19 +62,29 @@ namespace Negocio
             while (AccederDatos.LectorDatos.Read())
             {
 
-                Producto unProducto = new Producto();
+                if ((bool)AccederDatos.LectorDatos["Estado"]){
+                    Producto unProducto = new Producto();
                 unProducto.CodigoProducto = (int)AccederDatos.LectorDatos["CodigoProducto"];
                 unProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
                 unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
                 unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
                 unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
                 ListaProductos.Add(unProducto);
+                }
 
             }
 
             AccederDatos.CerrarReader();
             AccederDatos.CerrarConexion();
             return ListaProductos;
+        }
+
+        public void EliminarProducto(Producto unProducto) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Productos SET Estado = 0 WHERE CodigoProducto =" + unProducto.CodigoProducto);
+            AccederDatos.EjecutarConsulta();
+
         }
 
     }

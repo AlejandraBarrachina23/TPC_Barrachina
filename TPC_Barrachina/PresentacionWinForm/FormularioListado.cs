@@ -14,6 +14,7 @@ namespace PresentacionWinForm
     public partial class FormularioListado : Form
     {
         private Utilidades utilidades = new Utilidades();
+        private ValidadorDatos validar = new ValidadorDatos();
 
         public FormularioListado(string NombreFormulario)
         {
@@ -29,6 +30,7 @@ namespace PresentacionWinForm
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+
             if (lblNombreFormulario.Text.Remove(0, 8) == "Clientes")
             {
                 Clientes FormularioCliente = new Clientes();
@@ -61,6 +63,23 @@ namespace PresentacionWinForm
         {
             dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text.Remove(0, 8));
             utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, lblNombreFormulario.Text.Remove(0, 8));
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                validar.SeleccionItemDataGridView(dgvListadoBusqueda);
+                object EntidadEliminar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
+                utilidades.DefinirTipoEliminacion(EntidadEliminar);
+   
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+   
         }
     }
 }
