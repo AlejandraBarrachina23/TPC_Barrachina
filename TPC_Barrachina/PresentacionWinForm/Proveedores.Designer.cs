@@ -37,12 +37,12 @@
             this.lblCelular = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.gboxDireccion = new System.Windows.Forms.GroupBox();
-            this.tboxCP = new System.Windows.Forms.TextBox();
+            this.tboxPorcentaje = new System.Windows.Forms.TextBox();
             this.tboxNumero = new System.Windows.Forms.TextBox();
             this.tboxLocalidad = new System.Windows.Forms.TextBox();
             this.tboxProvincia = new System.Windows.Forms.TextBox();
             this.tboxCalle = new System.Windows.Forms.TextBox();
-            this.lblCP = new System.Windows.Forms.Label();
+            this.lblPorcentaje = new System.Windows.Forms.Label();
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.lblNumero = new System.Windows.Forms.Label();
@@ -55,25 +55,22 @@
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
             this.lblNombreFormulario = new System.Windows.Forms.Label();
             this.tboxNombreFantasia = new System.Windows.Forms.TextBox();
-            this.lblCondicionIVA = new System.Windows.Forms.Label();
+            this.lblImpuestos = new System.Windows.Forms.Label();
             this.cboxCondicionIVA = new System.Windows.Forms.ComboBox();
             this.gboxImpuesto = new System.Windows.Forms.GroupBox();
-            this.lblImpuesto2 = new System.Windows.Forms.Label();
-            this.lblImpuesto1 = new System.Windows.Forms.Label();
-            this.lblIB = new System.Windows.Forms.Label();
-            this.tboxImpuesto2 = new System.Windows.Forms.TextBox();
-            this.tboxImpuesto1 = new System.Windows.Forms.TextBox();
-            this.tboxIB = new System.Windows.Forms.TextBox();
-            this.lblIVA = new System.Windows.Forms.Label();
-            this.tboxIVA = new System.Windows.Forms.TextBox();
             this.lblCodigoProveedor = new System.Windows.Forms.Label();
             this.tboxCodigoProveedor = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.dgvImpuestos = new System.Windows.Forms.DataGridView();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.cboxImpuesto = new System.Windows.Forms.ComboBox();
+            this.lblCondicionIVA = new System.Windows.Forms.Label();
             this.gboxContacto.SuspendLayout();
             this.gboxDireccion.SuspendLayout();
             this.pnlBarraPrincipal.SuspendLayout();
             this.gboxImpuesto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImpuestos)).BeginInit();
             this.SuspendLayout();
             // 
             // gboxContacto
@@ -85,9 +82,9 @@
             this.gboxContacto.Controls.Add(this.lblCelular);
             this.gboxContacto.Controls.Add(this.lblTelefono);
             this.gboxContacto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxContacto.Location = new System.Drawing.Point(18, 323);
+            this.gboxContacto.Location = new System.Drawing.Point(25, 325);
             this.gboxContacto.Name = "gboxContacto";
-            this.gboxContacto.Size = new System.Drawing.Size(425, 110);
+            this.gboxContacto.Size = new System.Drawing.Size(445, 110);
             this.gboxContacto.TabIndex = 11;
             this.gboxContacto.TabStop = false;
             this.gboxContacto.Text = "Contacto";
@@ -142,30 +139,28 @@
             // 
             // gboxDireccion
             // 
-            this.gboxDireccion.Controls.Add(this.tboxCP);
             this.gboxDireccion.Controls.Add(this.tboxNumero);
             this.gboxDireccion.Controls.Add(this.tboxLocalidad);
             this.gboxDireccion.Controls.Add(this.tboxProvincia);
             this.gboxDireccion.Controls.Add(this.tboxCalle);
-            this.gboxDireccion.Controls.Add(this.lblCP);
             this.gboxDireccion.Controls.Add(this.lblLocalidad);
             this.gboxDireccion.Controls.Add(this.lblProvincia);
             this.gboxDireccion.Controls.Add(this.lblNumero);
             this.gboxDireccion.Controls.Add(this.lblCalle);
             this.gboxDireccion.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxDireccion.Location = new System.Drawing.Point(18, 212);
+            this.gboxDireccion.Location = new System.Drawing.Point(25, 214);
             this.gboxDireccion.Name = "gboxDireccion";
-            this.gboxDireccion.Size = new System.Drawing.Size(425, 105);
+            this.gboxDireccion.Size = new System.Drawing.Size(445, 105);
             this.gboxDireccion.TabIndex = 6;
             this.gboxDireccion.TabStop = false;
             this.gboxDireccion.Text = "Dirección";
             // 
-            // tboxCP
+            // tboxPorcentaje
             // 
-            this.tboxCP.Location = new System.Drawing.Point(362, 23);
-            this.tboxCP.Name = "tboxCP";
-            this.tboxCP.Size = new System.Drawing.Size(43, 25);
-            this.tboxCP.TabIndex = 8;
+            this.tboxPorcentaje.Location = new System.Drawing.Point(328, 24);
+            this.tboxPorcentaje.Name = "tboxPorcentaje";
+            this.tboxPorcentaje.Size = new System.Drawing.Size(50, 25);
+            this.tboxPorcentaje.TabIndex = 8;
             // 
             // tboxNumero
             // 
@@ -195,14 +190,14 @@
             this.tboxCalle.Size = new System.Drawing.Size(173, 25);
             this.tboxCalle.TabIndex = 6;
             // 
-            // lblCP
+            // lblPorcentaje
             // 
-            this.lblCP.AutoSize = true;
-            this.lblCP.Location = new System.Drawing.Point(338, 26);
-            this.lblCP.Name = "lblCP";
-            this.lblCP.Size = new System.Drawing.Size(21, 17);
-            this.lblCP.TabIndex = 19;
-            this.lblCP.Text = "CP";
+            this.lblPorcentaje.AutoSize = true;
+            this.lblPorcentaje.Location = new System.Drawing.Point(264, 32);
+            this.lblPorcentaje.Name = "lblPorcentaje";
+            this.lblPorcentaje.Size = new System.Drawing.Size(58, 17);
+            this.lblPorcentaje.TabIndex = 19;
+            this.lblPorcentaje.Text = "Porcentaje";
             // 
             // lblLocalidad
             // 
@@ -244,7 +239,7 @@
             // 
             this.lblNombreFantasia.AutoSize = true;
             this.lblNombreFantasia.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreFantasia.Location = new System.Drawing.Point(81, 148);
+            this.lblNombreFantasia.Location = new System.Drawing.Point(104, 146);
             this.lblNombreFantasia.Name = "lblNombreFantasia";
             this.lblNombreFantasia.Size = new System.Drawing.Size(89, 17);
             this.lblNombreFantasia.TabIndex = 29;
@@ -254,7 +249,7 @@
             // 
             this.lbNumeroCUIT.AutoSize = true;
             this.lbNumeroCUIT.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumeroCUIT.Location = new System.Drawing.Point(81, 121);
+            this.lbNumeroCUIT.Location = new System.Drawing.Point(104, 119);
             this.lbNumeroCUIT.Name = "lbNumeroCUIT";
             this.lbNumeroCUIT.Size = new System.Drawing.Size(70, 17);
             this.lbNumeroCUIT.TabIndex = 30;
@@ -264,7 +259,7 @@
             // 
             this.lblRazonSocial.AutoSize = true;
             this.lblRazonSocial.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRazonSocial.Location = new System.Drawing.Point(81, 92);
+            this.lblRazonSocial.Location = new System.Drawing.Point(104, 90);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(70, 17);
             this.lblRazonSocial.TabIndex = 31;
@@ -273,7 +268,7 @@
             // tboxNumeroCUIT
             // 
             this.tboxNumeroCUIT.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNumeroCUIT.Location = new System.Drawing.Point(179, 117);
+            this.tboxNumeroCUIT.Location = new System.Drawing.Point(202, 115);
             this.tboxNumeroCUIT.Name = "tboxNumeroCUIT";
             this.tboxNumeroCUIT.Size = new System.Drawing.Size(173, 25);
             this.tboxNumeroCUIT.TabIndex = 3;
@@ -281,7 +276,7 @@
             // tboxRazonSocial
             // 
             this.tboxRazonSocial.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxRazonSocial.Location = new System.Drawing.Point(179, 89);
+            this.tboxRazonSocial.Location = new System.Drawing.Point(202, 87);
             this.tboxRazonSocial.Name = "tboxRazonSocial";
             this.tboxRazonSocial.Size = new System.Drawing.Size(173, 25);
             this.tboxRazonSocial.TabIndex = 2;
@@ -293,7 +288,7 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(455, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(482, 41);
             this.pnlBarraPrincipal.TabIndex = 25;
             // 
             // lblNombreFormulario
@@ -310,117 +305,51 @@
             // tboxNombreFantasia
             // 
             this.tboxNombreFantasia.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNombreFantasia.Location = new System.Drawing.Point(179, 145);
+            this.tboxNombreFantasia.Location = new System.Drawing.Point(202, 143);
             this.tboxNombreFantasia.Name = "tboxNombreFantasia";
             this.tboxNombreFantasia.Size = new System.Drawing.Size(173, 25);
             this.tboxNombreFantasia.TabIndex = 4;
             // 
-            // lblCondicionIVA
+            // lblImpuestos
             // 
-            this.lblCondicionIVA.AutoSize = true;
-            this.lblCondicionIVA.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCondicionIVA.Location = new System.Drawing.Point(81, 176);
-            this.lblCondicionIVA.Name = "lblCondicionIVA";
-            this.lblCondicionIVA.Size = new System.Drawing.Size(75, 17);
-            this.lblCondicionIVA.TabIndex = 29;
-            this.lblCondicionIVA.Text = "Condición IVA";
+            this.lblImpuestos.AutoSize = true;
+            this.lblImpuestos.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImpuestos.Location = new System.Drawing.Point(13, 32);
+            this.lblImpuestos.Name = "lblImpuestos";
+            this.lblImpuestos.Size = new System.Drawing.Size(57, 17);
+            this.lblImpuestos.TabIndex = 29;
+            this.lblImpuestos.Text = "Impuestos";
             // 
             // cboxCondicionIVA
             // 
             this.cboxCondicionIVA.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxCondicionIVA.FormattingEnabled = true;
-            this.cboxCondicionIVA.Location = new System.Drawing.Point(179, 173);
+            this.cboxCondicionIVA.Location = new System.Drawing.Point(202, 171);
             this.cboxCondicionIVA.Name = "cboxCondicionIVA";
             this.cboxCondicionIVA.Size = new System.Drawing.Size(173, 25);
             this.cboxCondicionIVA.TabIndex = 5;
             // 
             // gboxImpuesto
             // 
-            this.gboxImpuesto.Controls.Add(this.lblImpuesto2);
-            this.gboxImpuesto.Controls.Add(this.lblImpuesto1);
-            this.gboxImpuesto.Controls.Add(this.lblIB);
-            this.gboxImpuesto.Controls.Add(this.tboxImpuesto2);
-            this.gboxImpuesto.Controls.Add(this.tboxImpuesto1);
-            this.gboxImpuesto.Controls.Add(this.tboxIB);
-            this.gboxImpuesto.Controls.Add(this.lblIVA);
-            this.gboxImpuesto.Controls.Add(this.tboxIVA);
+            this.gboxImpuesto.Controls.Add(this.cboxImpuesto);
+            this.gboxImpuesto.Controls.Add(this.btnAgregar);
+            this.gboxImpuesto.Controls.Add(this.tboxPorcentaje);
+            this.gboxImpuesto.Controls.Add(this.dgvImpuestos);
+            this.gboxImpuesto.Controls.Add(this.lblImpuestos);
+            this.gboxImpuesto.Controls.Add(this.lblPorcentaje);
             this.gboxImpuesto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxImpuesto.Location = new System.Drawing.Point(18, 439);
+            this.gboxImpuesto.Location = new System.Drawing.Point(25, 441);
             this.gboxImpuesto.Name = "gboxImpuesto";
-            this.gboxImpuesto.Size = new System.Drawing.Size(425, 102);
+            this.gboxImpuesto.Size = new System.Drawing.Size(445, 174);
             this.gboxImpuesto.TabIndex = 14;
             this.gboxImpuesto.TabStop = false;
             this.gboxImpuesto.Text = "Impuesto";
-            // 
-            // lblImpuesto2
-            // 
-            this.lblImpuesto2.AutoSize = true;
-            this.lblImpuesto2.Location = new System.Drawing.Point(212, 69);
-            this.lblImpuesto2.Name = "lblImpuesto2";
-            this.lblImpuesto2.Size = new System.Drawing.Size(35, 17);
-            this.lblImpuesto2.TabIndex = 19;
-            this.lblImpuesto2.Text = "IMP 2";
-            // 
-            // lblImpuesto1
-            // 
-            this.lblImpuesto1.AutoSize = true;
-            this.lblImpuesto1.Location = new System.Drawing.Point(17, 69);
-            this.lblImpuesto1.Name = "lblImpuesto1";
-            this.lblImpuesto1.Size = new System.Drawing.Size(32, 17);
-            this.lblImpuesto1.TabIndex = 19;
-            this.lblImpuesto1.Text = "IMP1";
-            // 
-            // lblIB
-            // 
-            this.lblIB.AutoSize = true;
-            this.lblIB.Location = new System.Drawing.Point(212, 34);
-            this.lblIB.Name = "lblIB";
-            this.lblIB.Size = new System.Drawing.Size(18, 17);
-            this.lblIB.TabIndex = 19;
-            this.lblIB.Text = "IB";
-            // 
-            // tboxImpuesto2
-            // 
-            this.tboxImpuesto2.Location = new System.Drawing.Point(273, 66);
-            this.tboxImpuesto2.Name = "tboxImpuesto2";
-            this.tboxImpuesto2.Size = new System.Drawing.Size(129, 25);
-            this.tboxImpuesto2.TabIndex = 17;
-            // 
-            // tboxImpuesto1
-            // 
-            this.tboxImpuesto1.Location = new System.Drawing.Point(70, 66);
-            this.tboxImpuesto1.Name = "tboxImpuesto1";
-            this.tboxImpuesto1.Size = new System.Drawing.Size(129, 25);
-            this.tboxImpuesto1.TabIndex = 16;
-            // 
-            // tboxIB
-            // 
-            this.tboxIB.Location = new System.Drawing.Point(272, 31);
-            this.tboxIB.Name = "tboxIB";
-            this.tboxIB.Size = new System.Drawing.Size(129, 25);
-            this.tboxIB.TabIndex = 15;
-            // 
-            // lblIVA
-            // 
-            this.lblIVA.AutoSize = true;
-            this.lblIVA.Location = new System.Drawing.Point(17, 34);
-            this.lblIVA.Name = "lblIVA";
-            this.lblIVA.Size = new System.Drawing.Size(24, 17);
-            this.lblIVA.TabIndex = 19;
-            this.lblIVA.Text = "IVA";
-            // 
-            // tboxIVA
-            // 
-            this.tboxIVA.Location = new System.Drawing.Point(70, 31);
-            this.tboxIVA.Name = "tboxIVA";
-            this.tboxIVA.Size = new System.Drawing.Size(129, 25);
-            this.tboxIVA.TabIndex = 14;
             // 
             // lblCodigoProveedor
             // 
             this.lblCodigoProveedor.AutoSize = true;
             this.lblCodigoProveedor.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoProveedor.Location = new System.Drawing.Point(81, 64);
+            this.lblCodigoProveedor.Location = new System.Drawing.Point(104, 62);
             this.lblCodigoProveedor.Name = "lblCodigoProveedor";
             this.lblCodigoProveedor.Size = new System.Drawing.Size(92, 17);
             this.lblCodigoProveedor.TabIndex = 38;
@@ -429,7 +358,7 @@
             // tboxCodigoProveedor
             // 
             this.tboxCodigoProveedor.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCodigoProveedor.Location = new System.Drawing.Point(179, 61);
+            this.tboxCodigoProveedor.Location = new System.Drawing.Point(202, 59);
             this.tboxCodigoProveedor.Name = "tboxCodigoProveedor";
             this.tboxCodigoProveedor.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoProveedor.TabIndex = 1;
@@ -443,7 +372,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(252, 562);
+            this.btnCancelar.Location = new System.Drawing.Point(253, 621);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 37);
             this.btnCancelar.TabIndex = 19;
@@ -461,7 +390,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(141, 562);
+            this.btnAceptar.Location = new System.Drawing.Point(151, 621);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
             this.btnAceptar.TabIndex = 18;
@@ -470,16 +399,53 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // dgvImpuestos
+            // 
+            this.dgvImpuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvImpuestos.Location = new System.Drawing.Point(5, 69);
+            this.dgvImpuestos.Name = "dgvImpuestos";
+            this.dgvImpuestos.Size = new System.Drawing.Size(423, 92);
+            this.dgvImpuestos.TabIndex = 0;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.Location = new System.Drawing.Point(385, 24);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(30, 27);
+            this.btnAgregar.TabIndex = 30;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // cboxImpuesto
+            // 
+            this.cboxImpuesto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxImpuesto.FormattingEnabled = true;
+            this.cboxImpuesto.Location = new System.Drawing.Point(76, 24);
+            this.cboxImpuesto.Name = "cboxImpuesto";
+            this.cboxImpuesto.Size = new System.Drawing.Size(173, 25);
+            this.cboxImpuesto.TabIndex = 31;
+            // 
+            // lblCondicionIVA
+            // 
+            this.lblCondicionIVA.AutoSize = true;
+            this.lblCondicionIVA.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCondicionIVA.Location = new System.Drawing.Point(104, 174);
+            this.lblCondicionIVA.Name = "lblCondicionIVA";
+            this.lblCondicionIVA.Size = new System.Drawing.Size(75, 17);
+            this.lblCondicionIVA.TabIndex = 29;
+            this.lblCondicionIVA.Text = "Condición IVA";
+            // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 625);
+            this.ClientSize = new System.Drawing.Size(482, 695);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblCodigoProveedor);
-            this.Controls.Add(this.cboxCondicionIVA);
             this.Controls.Add(this.tboxCodigoProveedor);
+            this.Controls.Add(this.cboxCondicionIVA);
             this.Controls.Add(this.gboxImpuesto);
             this.Controls.Add(this.gboxContacto);
             this.Controls.Add(this.gboxDireccion);
@@ -503,6 +469,7 @@
             this.pnlBarraPrincipal.PerformLayout();
             this.gboxImpuesto.ResumeLayout(false);
             this.gboxImpuesto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImpuestos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -518,12 +485,12 @@
         private System.Windows.Forms.Label lblCelular;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.GroupBox gboxDireccion;
-        private System.Windows.Forms.TextBox tboxCP;
+        private System.Windows.Forms.TextBox tboxPorcentaje;
         private System.Windows.Forms.TextBox tboxNumero;
         private System.Windows.Forms.TextBox tboxLocalidad;
         private System.Windows.Forms.TextBox tboxProvincia;
         private System.Windows.Forms.TextBox tboxCalle;
-        private System.Windows.Forms.Label lblCP;
+        private System.Windows.Forms.Label lblPorcentaje;
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.Label lblNumero;
@@ -535,21 +502,17 @@
         private System.Windows.Forms.TextBox tboxRazonSocial;
         private System.Windows.Forms.Panel pnlBarraPrincipal;
         private System.Windows.Forms.TextBox tboxNombreFantasia;
-        private System.Windows.Forms.Label lblCondicionIVA;
+        private System.Windows.Forms.Label lblImpuestos;
         private System.Windows.Forms.ComboBox cboxCondicionIVA;
         private System.Windows.Forms.GroupBox gboxImpuesto;
-        private System.Windows.Forms.Label lblImpuesto2;
-        private System.Windows.Forms.Label lblImpuesto1;
-        private System.Windows.Forms.Label lblIB;
-        private System.Windows.Forms.TextBox tboxImpuesto2;
-        private System.Windows.Forms.TextBox tboxImpuesto1;
-        private System.Windows.Forms.TextBox tboxIB;
-        private System.Windows.Forms.Label lblIVA;
-        private System.Windows.Forms.TextBox tboxIVA;
         private System.Windows.Forms.Label lblCodigoProveedor;
         private System.Windows.Forms.TextBox tboxCodigoProveedor;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblNombreFormulario;
+        private System.Windows.Forms.DataGridView dgvImpuestos;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.ComboBox cboxImpuesto;
+        private System.Windows.Forms.Label lblCondicionIVA;
     }
 }

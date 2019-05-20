@@ -14,6 +14,10 @@ namespace PresentacionWinForm
 {
     public partial class Proveedores : Form
     {
+        ValidadorDatos validar = new ValidadorDatos();
+        Utilidades utilidades = new Utilidades();
+        List<Impuesto> ListadoImpuestos = new List<Impuesto>();
+        private BindingList<Impuesto> listaBindeable;
 
         public Proveedores()
         {
@@ -33,13 +37,10 @@ namespace PresentacionWinForm
             tboxCodigoProveedor.KeyPress += AsignarSoloNumeros;
             tboxNumeroCUIT.KeyPress += AsignarSoloNumeros;
             tboxNumero.KeyPress += AsignarSoloNumeros;
-            tboxCP.KeyPress += AsignarSoloNumeros;
+            tboxPorcentaje.KeyPress += AsignarSoloNumeros;
             tboxTelefono.KeyPress += AsignarSoloNumeros;
             tboxCelular.KeyPress += AsignarSoloNumeros;
-            tboxIVA.KeyPress += AsignarSoloNumeros; 
-            tboxIB.KeyPress += AsignarSoloNumeros;
-            tboxImpuesto1.KeyPress += AsignarSoloNumeros;
-            tboxImpuesto2.KeyPress += AsignarSoloNumeros;
+
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace PresentacionWinForm
             //direccion
             unaNuevaDireccion.Calle = tboxCalle.Text;
             unaNuevaDireccion.Numero = Convert.ToInt32(tboxNumero.Text);
-            unaNuevaDireccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
+            unaNuevaDireccion.CodigoPostal = Convert.ToInt32(tboxPorcentaje.Text);
             unaNuevaDireccion.Localidad = tboxLocalidad.Text;
             unaNuevaDireccion.Provincia = tboxProvincia.Text;
             unaDireccion.AgregarDireccion(unaNuevaDireccion);
@@ -86,12 +87,32 @@ namespace PresentacionWinForm
         private void Proveedores_Load(object sender, EventArgs e)
         {
             CondicionIVANegocio unaCondicionIVA = new CondicionIVANegocio();
+            ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
             cboxCondicionIVA.DataSource = unaCondicionIVA.ListarCondicionIVA();
+            cboxImpuesto.DataSource = unImpuesto.ListarImpuestos();
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+     
+            Impuesto unNuevoImpuesto = new Impuesto();
+            unNuevoImpuesto.Nombre = cboxImpuesto.SelectedItem.ToString();
+            unNuevoImpuesto.Alicuota = Convert.ToDecimal(tboxPorcentaje.Text);
+
+
+            listaBindeable = new BindingList<Impuesto>(ListadoImpuestos);
+            dgvImpuestos.DataSource = listaBindeable;
+            ListadoImpuestos.Add(unNuevoImpuesto);
+            listaBindeable.ResetBindings();
+            utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
+
+
         }
     }
 }

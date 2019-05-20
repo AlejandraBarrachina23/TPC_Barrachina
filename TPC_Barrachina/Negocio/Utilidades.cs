@@ -118,6 +118,13 @@ namespace Negocio
 
                 return Grilla;
 
+            }
+
+            if (NombreTabla == "Impuestos") {
+
+                Grilla.Columns[0].Visible = false;
+                Grilla.Columns[2].Visible = false;
+                Grilla.Columns[4].Visible = false;
 
             }
 

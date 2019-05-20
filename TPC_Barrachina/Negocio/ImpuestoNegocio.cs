@@ -12,7 +12,7 @@ namespace Negocio
     {
         private AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
 
-        public List<Impuesto> ListarRubros()
+        public List<Impuesto> ListarImpuestos()
         {
             List<Impuesto> ListadoImpuestos = new List<Impuesto>();
 
@@ -20,7 +20,7 @@ namespace Negocio
             while (AccederDatos.LectorDatos.Read())
             {
                 Impuesto unNuevoImpuesto = new Impuesto();
-                unNuevoImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoRubro"];
+                unNuevoImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoImpuesto"];
                 unNuevoImpuesto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
                 
                 ListadoImpuestos.Add(unNuevoImpuesto);
