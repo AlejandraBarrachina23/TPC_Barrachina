@@ -77,19 +77,15 @@ namespace PresentacionWinForm
             unNuevoProveedor.Contacto = unNuevoContacto;
             unProveedor.AgregarProveedor(unNuevoProveedor);
             //impuestos
-
             foreach (Impuesto unNuevoImpuesto in ListadoImpuestos)
             {
                 unImpuesto.AgregarImpuesto(unNuevoImpuesto, unNuevoProveedor.CodigoProveedor);
-
             }
 
             Avisos FormularioAviso = new Avisos();
             FormularioAviso.Show();
            
             /*<-----------------------------------------------------------------------------------------------------------------VALIDAR INGRESO DE CAMPOS*/
-            //insert into ProveedorxImpuesto (CodigoProveedor,CodigoImpuesto,Alicuota) VALUES (unProveedor.CodigoProveedor,???,tbox.Impuesto)
-
         }
 
         private void Proveedores_Load(object sender, EventArgs e)
@@ -119,7 +115,6 @@ namespace PresentacionWinForm
             ListadoImpuestos.Add(unNuevoImpuesto);
             listaBindeable.ResetBindings();
             utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
-
 
         }
     }

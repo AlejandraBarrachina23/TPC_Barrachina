@@ -43,10 +43,17 @@ namespace Negocio
             AccederDatos.DefinirTipoComando("INSERT INTO Contactos (Telefono,Celular,Mail,CodigoDireccion)" +
                  "VALUES ('"+ unContacto.Telefono + "','" + unContacto.Celular + "','" + unContacto.Mail + "','" + unContacto.Direccion.CodigoDireccion+"')");
  
-
             AccederDatos.AbrirConexion();
             AccederDatos.EjecutarConsulta();
             AccederDatos.CerrarReader();
+            AccederDatos.CerrarConexion();
+        }
+
+        public void EliminarContacto(int CodigoContacto)
+        {
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Contactos SET Estado = 0 WHERE CodigoContacto =" + CodigoContacto );
+            AccederDatos.EjecutarConsulta();
             AccederDatos.CerrarConexion();
         }
     }

@@ -12,7 +12,6 @@ namespace PresentacionWinForm
 {
     public partial class Avisos : Form
     {
-       
 
         public Avisos()
         {

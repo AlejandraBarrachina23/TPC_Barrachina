@@ -54,6 +54,15 @@ namespace Negocio
             AccederDatos.DefinirTipoComando("SELECT COUNT (CodigoDireccion) FROM Direcciones");
             return AccederDatos.ejecutarAccionReturn();
         
-}
+        }
+
+        public void EliminarDireccion(int CodigoDireccion)
+        {
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Direcciones SET Estado = 0 WHERE CodigoDireccion =" + CodigoDireccion);
+            AccederDatos.EjecutarConsulta();
+            AccederDatos.CerrarConexion();
+
+        }
     }
 }

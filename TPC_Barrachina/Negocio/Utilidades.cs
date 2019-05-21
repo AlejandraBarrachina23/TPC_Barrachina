@@ -67,15 +67,17 @@ namespace Negocio
             if (Entidad.GetType().Equals(typeof(Cliente)))
             {
                 MessageBox.Show("Es un Cliente");
-                //ClienteNegocio unCliente = new ClienteNegocio();
-                //return unCliente.ListarClientes();
+
+                ClienteNegocio unClienteNegocio = new ClienteNegocio();
+                unClienteNegocio.EliminarCliente((Cliente)Entidad);
+                
             }
 
             if (Entidad.GetType().Equals(typeof(Producto)))
             {
                 ProductoNegocio unProducto = new ProductoNegocio();
                 unProducto.EliminarProducto((Producto)Entidad);
-                
+
             }
 
             if (Entidad.GetType().Equals(typeof(Proveedor)))
@@ -125,6 +127,13 @@ namespace Negocio
                
                 Grilla.Columns[2].Visible = false;
                 Grilla.Columns[4].Visible = false;
+
+            }
+
+            if (NombreTabla == "Clientes") {
+
+                Grilla.Columns[3].Visible = false;
+                Grilla.Columns[6].Visible = false;
 
             }
 

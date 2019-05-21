@@ -58,7 +58,7 @@
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.tboxCodigo = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gboxCuentaCorriente = new System.Windows.Forms.GroupBox();
             this.cboxDescuento = new System.Windows.Forms.ComboBox();
             this.tboxLimitecuenta = new System.Windows.Forms.TextBox();
             this.lblCuentaCorriente = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.gboxDireccion.SuspendLayout();
             this.gboxContacto.SuspendLayout();
             this.pnlContenedor.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gboxCuentaCorriente.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBarraPrincipal
@@ -336,7 +336,7 @@
             this.pnlContenedor.Controls.Add(this.tboxNombre);
             this.pnlContenedor.Controls.Add(this.btnAceptar);
             this.pnlContenedor.Controls.Add(this.tboxApellido);
-            this.pnlContenedor.Controls.Add(this.groupBox1);
+            this.pnlContenedor.Controls.Add(this.gboxCuentaCorriente);
             this.pnlContenedor.Controls.Add(this.gboxContacto);
             this.pnlContenedor.Controls.Add(this.gboxDireccion);
             this.pnlContenedor.Controls.Add(this.lblApellido);
@@ -363,19 +363,19 @@
             this.tboxCodigo.Size = new System.Drawing.Size(158, 25);
             this.tboxCodigo.TabIndex = 1;
             // 
-            // groupBox1
+            // gboxCuentaCorriente
             // 
-            this.groupBox1.Controls.Add(this.cboxDescuento);
-            this.groupBox1.Controls.Add(this.tboxLimitecuenta);
-            this.groupBox1.Controls.Add(this.lblCuentaCorriente);
-            this.groupBox1.Controls.Add(this.lblDescuento);
-            this.groupBox1.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(55, 368);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 110);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Contacto";
+            this.gboxCuentaCorriente.Controls.Add(this.cboxDescuento);
+            this.gboxCuentaCorriente.Controls.Add(this.tboxLimitecuenta);
+            this.gboxCuentaCorriente.Controls.Add(this.lblCuentaCorriente);
+            this.gboxCuentaCorriente.Controls.Add(this.lblDescuento);
+            this.gboxCuentaCorriente.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxCuentaCorriente.Location = new System.Drawing.Point(55, 368);
+            this.gboxCuentaCorriente.Name = "gboxCuentaCorriente";
+            this.gboxCuentaCorriente.Size = new System.Drawing.Size(410, 110);
+            this.gboxCuentaCorriente.TabIndex = 16;
+            this.gboxCuentaCorriente.TabStop = false;
+            this.gboxCuentaCorriente.Text = "CuentaCorriente";
             // 
             // cboxDescuento
             // 
@@ -430,8 +430,8 @@
             this.gboxContacto.PerformLayout();
             this.pnlContenedor.ResumeLayout(false);
             this.pnlContenedor.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gboxCuentaCorriente.ResumeLayout(false);
+            this.gboxCuentaCorriente.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -467,7 +467,7 @@
         private System.Windows.Forms.Panel pnlContenedor;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox tboxCodigo;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gboxCuentaCorriente;
         private System.Windows.Forms.ComboBox cboxDescuento;
         private System.Windows.Forms.TextBox tboxLimitecuenta;
         private System.Windows.Forms.Label lblCuentaCorriente;

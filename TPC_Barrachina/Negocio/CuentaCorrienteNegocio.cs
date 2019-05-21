@@ -30,5 +30,14 @@ namespace Negocio
             AccederDatos.DefinirTipoComando("SELECT COUNT (CodigoCuentaCorriente) FROM CuentaCorrientes");
             return AccederDatos.ejecutarAccionReturn();
         }
+
+        public void EliminarCuentaCorriente(int CodigoCuentaCorriente)
+        {
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE CuentaCorrientes SET Estado = 0 WHERE CodigoCuentaCorriente =" + CodigoCuentaCorriente);
+            AccederDatos.EjecutarConsulta();
+            AccederDatos.CerrarConexion();
+
+        }
     }
 }

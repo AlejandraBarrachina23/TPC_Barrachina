@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dominio;
 using AccesoDatos;
+using System.Windows.Forms;
 
 namespace Negocio
 {
@@ -51,7 +52,7 @@ namespace Negocio
 
          
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("INSERT INTO Clientes (CodigoCliente,Nombre,Apellido,CodigoDescuento,CodigoCuentaCorriente) VALUES ('" + unNuevoCliente.CodigoCliente + "','" + unNuevoCliente.Nombre + "','" + unNuevoCliente.Apellido + "','" + unNuevoCliente.Descuento.CodigoDescuento + "','" + unNuevoCliente.CuentaCorriente.CodigoCuentaCorriente +"')");
+            AccederDatos.DefinirTipoComando("INSERT INTO Clientes (CodigoCliente,Nombre,Apellido,CodigoDescuento,CodigoCuentaCorriente,CodigoContacto) VALUES ('" + unNuevoCliente.CodigoCliente + "','" + unNuevoCliente.Nombre + "','" + unNuevoCliente.Apellido + "','" + unNuevoCliente.Descuento.CodigoDescuento + "','" + unNuevoCliente.CuentaCorriente.CodigoCuentaCorriente + "','" + unNuevoCliente.Contacto.CodigoContacto+ "')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
 
@@ -80,6 +81,27 @@ namespace Negocio
             
         }
 
-        
+        public void EliminarCliente(Cliente unCliente) {
+
+            DireccionNegocio unaDireccion = new DireccionNegocio();
+            ContactoNegocio unContacto = new ContactoNegocio();
+            CuentaCorrienteNegocio unaCuentaCorriente = new CuentaCorrienteNegocio();
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Clientes SET Estado = 0 WHERE CodigoCliente =" + unCliente.CodigoCliente);
+            AccederDatos.EjecutarConsulta();
+            AccederDatos.CerrarConexion();
+
+            unCliente.Contacto = new Contacto();
+            unCliente.CuentaCorriente = new CuentaCorriente();
+            unCliente.Contacto.Direccion = new Direccion();
+
+           
+            //unaDireccion.EliminarDireccion(unCliente.Contacto);
+            //unContacto.EliminarContacto(unCliente.Contacto.CodigoContacto);
+            //unaCuentaCorriente.EliminarCuentaCorriente(unCliente.CuentaCorriente.CodigoCuentaCorriente);
+            
+            
+        }
     }
 }
