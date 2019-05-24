@@ -13,5 +13,11 @@ namespace Dominio
         public string Celular { get; set; }
         public string Mail { get; set; }
         public Direccion Direccion { get; set; }
+
+        public override string ToString()
+        {
+            return CodigoContacto.ToString();
+        }
     }
+
 }

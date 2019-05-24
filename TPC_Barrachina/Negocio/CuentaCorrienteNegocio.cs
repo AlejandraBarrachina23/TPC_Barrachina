@@ -16,7 +16,7 @@ namespace Negocio
         public void AgregarCuentaCorriente(CuentaCorriente unaCuentaCorriente)
         {
 
-            AccederDatos.DefinirTipoComando(("INSERT INTO CuentaCorrientes (Saldo)" +
+            AccederDatos.DefinirTipoComando(("INSERT INTO CuentaCorrientes(Saldo)" +
                  "VALUES ('" +unaCuentaCorriente.Saldo+ "')"));
             AccederDatos.AbrirConexion();
             AccederDatos.EjecutarConsulta();
@@ -31,6 +31,8 @@ namespace Negocio
             return AccederDatos.ejecutarAccionReturn();
         }
 
+
+
         public void EliminarCuentaCorriente(int CodigoCuentaCorriente)
         {
             AccederDatos.AbrirConexion();
@@ -38,6 +40,28 @@ namespace Negocio
             AccederDatos.EjecutarConsulta();
             AccederDatos.CerrarConexion();
 
+        }
+
+        public CuentaCorriente BusquedaCuentaCorriente(string NombreColumna, string ParametroBusqueda) {
+
+            CuentaCorriente unaCuentaCorriente = new CuentaCorriente();
+            string Consulta = "select * from CuentaCorrientes where " + NombreColumna + " = " + ParametroBusqueda;
+            AccederDatos.DefinirTipoComando(Consulta);
+            AccederDatos.AbrirConexion();
+            AccederDatos.EjecutarConsulta();
+            
+            while (AccederDatos.LectorDatos.Read())
+            {
+               
+                unaCuentaCorriente.CodigoCuentaCorriente = (int)AccederDatos.LectorDatos["CodigoCuentaCorriente"];
+                unaCuentaCorriente.LimiteCuenta = (decimal)AccederDatos.LectorDatos["LimiteCuenta"];
+                unaCuentaCorriente.Saldo = (decimal)AccederDatos.LectorDatos["Saldo"];
+                unaCuentaCorriente.Estado = (bool)AccederDatos.LectorDatos["Estado"];
+            }
+
+            AccederDatos.CerrarReader();
+            AccederDatos.CerrarConexion();
+            return unaCuentaCorriente;
         }
     }
 }

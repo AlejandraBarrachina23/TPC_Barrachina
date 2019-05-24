@@ -11,6 +11,7 @@ namespace Dominio
         public int CodigoCuentaCorriente { get; set; }      
         public decimal Saldo { get; set; }
         public decimal LimiteCuenta { get; set; }
+        public bool Estado { get; set; }
 
         public override string ToString()
         {

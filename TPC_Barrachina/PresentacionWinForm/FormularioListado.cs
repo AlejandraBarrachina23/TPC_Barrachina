@@ -71,7 +71,9 @@ namespace PresentacionWinForm
             {
                 validar.SeleccionItemDataGridView(dgvListadoBusqueda);
                 object EntidadEliminar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
+
                 utilidades.DefinirTipoEliminacion(EntidadEliminar);
+                
    
             }
             catch (Exception ex)
