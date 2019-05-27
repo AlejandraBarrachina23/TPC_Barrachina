@@ -226,5 +226,21 @@ namespace PresentacionWinForm
             FormularioAviso.Show();
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Producto unProducto = new Producto();
+            ProductoNegocio unProductoNegocio = new ProductoNegocio();
+            unProducto.CodigoProducto = Convert.ToInt32(tboxCodigoProducto.Text);
+            unProducto.CodigoBulto = Convert.ToInt32(tboxCodigoBulto.Text);
+            unProducto.Nombre = tboxNombre.Text;
+            unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
+            unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);
+            unProducto.StockCritico = Convert.ToInt32(tboxStockCritico.Text);
+            unProducto.Proveedor = (Proveedor)cboxProveedor.SelectedItem;
+            unProducto.Rubro = (Rubro)cboxRubro.SelectedItem;
+            unProductoNegocio.ModificarProducto(unProducto);
+
+        }
     }
 }

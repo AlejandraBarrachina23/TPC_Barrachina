@@ -65,6 +65,7 @@ namespace Negocio
             {
 
                 if ((bool)AccederDatos.LectorDatos["Estado"]) {
+
                     Producto unProducto = new Producto();
                     unProducto.Proveedor = new Proveedor();
                     unProducto.Rubro = new Rubro();
@@ -99,6 +100,23 @@ namespace Negocio
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("UPDATE Productos SET Estado = 0 WHERE CodigoProducto =" + unProducto.CodigoProducto);
             AccederDatos.EjecutarConsulta();
+
+        }
+
+        public void ModificarProducto(Producto unProducto) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Productos Set CodigoBulto=@CodigoBulto, Nombre=@Nombre, CodigoTipoProducto=@CodigoTipoProducto, CantidadxBulto=@CantidadxBulto, StockCritico=@StockCritico, " +
+            "CodigoProveedor=@CodigoProveedor, CodigoRubro=@CodigoRubro WHERE CodigoProducto = " + unProducto.CodigoProducto);
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoBulto", unProducto.CodigoBulto);
+            AccederDatos.Comando.Parameters.AddWithValue("@Nombre", unProducto.Nombre);
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoTipoProducto", unProducto.TipoProducto.CodigoTipoProducto);
+            AccederDatos.Comando.Parameters.AddWithValue("@CantidadxBulto", unProducto.CantidadxBulto);
+            AccederDatos.Comando.Parameters.AddWithValue("@StockCritico", unProducto.StockCritico);
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoProveedor", unProducto.Proveedor.CodigoProveedor);
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoRubro", unProducto.Rubro.CodigoRubro);
+            AccederDatos.EjecutarAccion();
 
         }
 
