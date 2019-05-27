@@ -92,7 +92,7 @@ namespace Negocio
             ContactoNegocio unContacto = new ContactoNegocio();
             CuentaCorrienteNegocio unaCuentaCorriente = new CuentaCorrienteNegocio();
             Direccion DireccionEliminar = new Direccion();
-            MessageBox.Show(unCliente.Contacto.CodigoContacto.ToString());
+
             DireccionEliminar.CodigoDireccion = unCliente.Contacto.CodigoContacto;
             
             AccederDatos.AbrirConexion();

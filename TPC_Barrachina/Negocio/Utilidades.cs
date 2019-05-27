@@ -66,8 +66,6 @@ namespace Negocio
 
             if (Entidad.GetType().Equals(typeof(Cliente)))
             {
-                MessageBox.Show("Es un Cliente");
-
                 ClienteNegocio unClienteNegocio = new ClienteNegocio();
                 unClienteNegocio.EliminarCliente((Cliente)Entidad);
                 
@@ -82,10 +80,10 @@ namespace Negocio
 
             if (Entidad.GetType().Equals(typeof(Proveedor)))
             {
-                MessageBox.Show("Es un Proveedor");
-                //ProveedorNegocio unProveedor = new ProveedorNegocio();
-                //return unProveedor.ListarProveedores();
-
+     
+                ProveedorNegocio unProveedor = new ProveedorNegocio();
+                unProveedor.EliminarProveedor((Proveedor)Entidad);
+                
             }
 
             return null;
@@ -113,10 +111,10 @@ namespace Negocio
 
             if (NombreTabla == "Proveedores") {
 
-                Grilla.Columns[4].Visible = false;
-                Grilla.Columns[5].Visible = false;
-                Grilla.Columns[6].Visible = false;
-                Grilla.Columns[7].Visible = false;
+                //Grilla.Columns[4].Visible = false;
+                //Grilla.Columns[5].Visible = false;
+                //Grilla.Columns[6].Visible = false;
+                //Grilla.Columns[7].Visible = false;
 
                 return Grilla;
 
@@ -132,8 +130,8 @@ namespace Negocio
 
             if (NombreTabla == "Clientes") {
 
-                //Grilla.Columns[3].Visible = false;
-                //Grilla.Columns[6].Visible = false;
+                Grilla.Columns[3].Visible = false;
+                Grilla.Columns[6].Visible = false;
 
             }
 
