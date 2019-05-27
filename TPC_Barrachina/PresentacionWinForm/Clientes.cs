@@ -42,15 +42,19 @@ namespace PresentacionWinForm
                 unaNuevaDireccion.Provincia = tboxProvincia.Text;
                 unaDireccion.AgregarDireccion(unaNuevaDireccion);
                 
+                
                 //contacto
                 Contacto unNuevoContacto = new Contacto();
                 ContactoNegocio unContacto = new ContactoNegocio();
+                unNuevoContacto.Direccion = new Direccion();
                 unNuevoContacto.CodigoContacto = unaDireccion.ContaFilasDireccion();
                 unNuevoContacto.Telefono = tboxTelefono.Text;
                 unNuevoContacto.Celular = tboxCelular.Text;
                 unNuevoContacto.Mail = tboxCorreoElectronico.Text;
-                unNuevoContacto.Direccion = unaNuevaDireccion;
+                unNuevoContacto.Direccion.CodigoDireccion = unNuevoContacto.CodigoContacto;
+                
                 unContacto.AgregarContacto(unNuevoContacto);
+                
 
                 //cuentaCorriente
                 CuentaCorriente unaNuevaCuentaCorriente = new CuentaCorriente();

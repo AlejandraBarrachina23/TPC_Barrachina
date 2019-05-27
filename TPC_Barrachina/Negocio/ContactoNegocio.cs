@@ -49,10 +49,10 @@ namespace Negocio
             AccederDatos.CerrarConexion();
         }
 
-        public void EliminarContacto(int CodigoContacto)
+        public void EliminarContacto(Contacto unContacto)
         {
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("UPDATE Contactos SET Estado = 0 WHERE CodigoContacto =" + CodigoContacto );
+            AccederDatos.DefinirTipoComando("UPDATE Contactos SET Estado = 0 WHERE CodigoContacto =" + unContacto.CodigoContacto);
             AccederDatos.EjecutarConsulta();
             AccederDatos.CerrarConexion();
         }

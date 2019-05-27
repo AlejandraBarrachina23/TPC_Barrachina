@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dominio;
 using AccesoDatos;
+using System.Windows.Forms;
 
 namespace Negocio
 {
@@ -50,16 +51,19 @@ namespace Negocio
 
         public int ContaFilasDireccion() {
 
+            int total;
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("SELECT COUNT (CodigoDireccion) FROM Direcciones");
-            return AccederDatos.ejecutarAccionReturn();
+            total = AccederDatos.ejecutarAccionReturn();
+            AccederDatos.CerrarConexion();
+            return total;
         
         }
 
-        public void EliminarDireccion(int CodigoDireccion)
+        public void EliminarDireccion(Direccion unaDireccion)
         {
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("UPDATE Direcciones SET Estado = 0 WHERE CodigoDireccion =" + CodigoDireccion);
+            AccederDatos.DefinirTipoComando("UPDATE Direcciones SET Estado = 0 WHERE CodigoDireccion =" + unaDireccion.CodigoDireccion);
             AccederDatos.EjecutarConsulta();
             AccederDatos.CerrarConexion();
 

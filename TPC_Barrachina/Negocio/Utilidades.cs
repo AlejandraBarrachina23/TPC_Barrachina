@@ -132,8 +132,8 @@ namespace Negocio
 
             if (NombreTabla == "Clientes") {
 
-                Grilla.Columns[3].Visible = false;
-                Grilla.Columns[6].Visible = false;
+                //Grilla.Columns[3].Visible = false;
+                //Grilla.Columns[6].Visible = false;
 
             }
 
