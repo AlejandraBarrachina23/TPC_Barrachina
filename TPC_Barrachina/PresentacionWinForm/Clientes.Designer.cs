@@ -63,6 +63,7 @@
             this.tboxLimitecuenta = new System.Windows.Forms.TextBox();
             this.lblCuentaCorriente = new System.Windows.Forms.Label();
             this.lblDescuento = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
             this.gboxDireccion.SuspendLayout();
             this.gboxContacto.SuspendLayout();
@@ -300,7 +301,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(240, 513);
+            this.btnCancelar.Location = new System.Drawing.Point(259, 499);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(91, 37);
             this.btnCancelar.TabIndex = 15;
@@ -318,9 +319,9 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(140, 513);
+            this.btnAceptar.Location = new System.Drawing.Point(155, 499);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(92, 37);
+            this.btnAceptar.Size = new System.Drawing.Size(98, 37);
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -340,6 +341,7 @@
             this.pnlContenedor.Controls.Add(this.gboxContacto);
             this.pnlContenedor.Controls.Add(this.gboxDireccion);
             this.pnlContenedor.Controls.Add(this.lblApellido);
+            this.pnlContenedor.Controls.Add(this.btnModificar);
             this.pnlContenedor.Location = new System.Drawing.Point(0, 47);
             this.pnlContenedor.Name = "pnlContenedor";
             this.pnlContenedor.Size = new System.Drawing.Size(510, 570);
@@ -411,6 +413,24 @@
             this.lblDescuento.TabIndex = 19;
             this.lblDescuento.Text = "Descuento";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(155, 499);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(98, 37);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -472,5 +492,6 @@
         private System.Windows.Forms.TextBox tboxLimitecuenta;
         private System.Windows.Forms.Label lblCuentaCorriente;
         private System.Windows.Forms.Label lblDescuento;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

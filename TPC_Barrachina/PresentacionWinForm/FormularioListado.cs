@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using Dominio;
 
 namespace PresentacionWinForm
 {
@@ -71,7 +72,6 @@ namespace PresentacionWinForm
             {
                 validar.SeleccionItemDataGridView(dgvListadoBusqueda);
                 object EntidadEliminar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
-
                 utilidades.DefinirTipoEliminacion(EntidadEliminar);
                 
    
@@ -82,6 +82,20 @@ namespace PresentacionWinForm
                 MessageBox.Show(ex.Message);
             }
    
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            validar.SeleccionItemDataGridView(dgvListadoBusqueda);
+            object EntidadModificar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
+
+            if (EntidadModificar.GetType().Equals(typeof(Producto))) {
+                
+                Productos FormularioCliente = new Productos((Producto)EntidadModificar);
+                FormularioCliente.Show();
+            }
+
+
         }
     }
 }

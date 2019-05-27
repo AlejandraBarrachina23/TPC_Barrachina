@@ -16,10 +16,20 @@ namespace PresentacionWinForm
     public partial class Clientes : Form
     {
         Utilidades utilidades = new Utilidades();
+        Cliente unClienteModificarLocal = new Cliente();
 
         public Clientes()
         {
             InitializeComponent();
+        }
+
+        public Clientes(Cliente unClienteModificar) {
+
+            InitializeComponent();
+            unClienteModificarLocal = unClienteModificar;
+            btnAceptar.Visible = false;
+            btnModificar.Visible = true;
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -94,6 +104,7 @@ namespace PresentacionWinForm
         {
             DescuentoNegocio unDescuento = new DescuentoNegocio();
             cboxDescuento.DataSource = unDescuento.ListarDescuentos();
+            
         }
     }
 }

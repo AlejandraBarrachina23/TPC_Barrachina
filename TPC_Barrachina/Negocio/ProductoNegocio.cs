@@ -58,18 +58,33 @@ namespace Negocio
         {
 
             List<Producto> ListaProductos = new List<Producto>();
-            AccederDatos.LecturaBaseDatos("SELECT * FROM Productos");
+            AccederDatos.LecturaBaseDatos("SELECT * FROM Productos INNER JOIN Proveedores on Proveedores.CodigoProveedor = Productos.CodigoProveedor INNER JOIN Rubros ON Rubros.CodigoRubro = Productos.CodigoRubro" +
+                " inner join TipoProductos ON Productos.CodigoTipoProducto = TipoProductos.CodigoTipoProducto");
+
             while (AccederDatos.LectorDatos.Read())
             {
 
-                if ((bool)AccederDatos.LectorDatos["Estado"]){
+                if ((bool)AccederDatos.LectorDatos["Estado"]) {
                     Producto unProducto = new Producto();
-                unProducto.CodigoProducto = (int)AccederDatos.LectorDatos["CodigoProducto"];
-                unProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
-                unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
-                unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
-                unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
-                ListaProductos.Add(unProducto);
+                    unProducto.Proveedor = new Proveedor();
+                    unProducto.Rubro = new Rubro();
+                    unProducto.TipoProducto = new TipoProducto();
+                    unProducto.CodigoProducto = (int)AccederDatos.LectorDatos["CodigoProducto"];
+                    unProducto.CodigoBulto = (int)AccederDatos.LectorDatos["CodigoBulto"];
+                    unProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                    unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
+                    unProducto.StockCritico = (int)AccederDatos.LectorDatos["StockCritico"];
+                    unProducto.CantidadxBulto = (int)AccederDatos.LectorDatos["CantidadxBulto"];
+                    unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
+                    unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
+                    unProducto.Proveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["CodigoProveedor"];
+                    unProducto.Proveedor.NombreFantasia = AccederDatos.LectorDatos["NombreFantasia"].ToString();
+                    unProducto.Rubro.CodigoRubro = (int)AccederDatos.LectorDatos["CodigoRubro"];
+                    unProducto.Rubro.Nombre = AccederDatos.LectorDatos["NombreRubro"].ToString();
+                    unProducto.TipoProducto.CodigoTipoProducto = (int)AccederDatos.LectorDatos["CodigoTipoProducto"];
+                    unProducto.TipoProducto.Nombre = AccederDatos.LectorDatos["NombreTipoProducto"].ToString();
+
+                    ListaProductos.Add(unProducto);
                 }
 
             }

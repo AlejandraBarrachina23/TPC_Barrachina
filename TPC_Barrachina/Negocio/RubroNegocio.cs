@@ -21,7 +21,7 @@ namespace Negocio
 
                 Rubro unNuevoRubro = new Rubro();
                 unNuevoRubro.CodigoRubro = (int)AccederDatos.LectorDatos["CodigoRubro"];
-                unNuevoRubro.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unNuevoRubro.Nombre = AccederDatos.LectorDatos["NombreRubro"].ToString();
                 ListadoRubros.Add(unNuevoRubro);
             }
             return ListadoRubros;

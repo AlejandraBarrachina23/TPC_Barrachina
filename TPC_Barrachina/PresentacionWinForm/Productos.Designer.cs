@@ -66,6 +66,7 @@
             this.lblErrorRubro = new System.Windows.Forms.Label();
             this.lblCantidadBulto = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigoBulto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxTipo)).BeginInit();
@@ -126,7 +127,7 @@
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAceptar.Location = new System.Drawing.Point(231, 206);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(94, 37);
+            this.btnAceptar.Size = new System.Drawing.Size(87, 37);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -195,7 +196,6 @@
             // 
             // cboxTipoProducto
             // 
-            this.cboxTipoProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxTipoProducto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoProducto.FormattingEnabled = true;
             this.cboxTipoProducto.Location = new System.Drawing.Point(415, 65);
@@ -262,7 +262,6 @@
             // 
             // cboxRubro
             // 
-            this.cboxRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxRubro.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxRubro.FormattingEnabled = true;
             this.cboxRubro.Location = new System.Drawing.Point(415, 160);
@@ -273,7 +272,6 @@
             // 
             // cboxProveedor
             // 
-            this.cboxProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxProveedor.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxProveedor.FormattingEnabled = true;
             this.cboxProveedor.Location = new System.Drawing.Point(121, 161);
@@ -465,11 +463,29 @@
             this.panel1.Controls.Add(this.pboxCodigoBulto);
             this.panel1.Controls.Add(this.cboxRubro);
             this.panel1.Controls.Add(this.cboxProveedor);
+            this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(640, 263);
             this.panel1.TabIndex = 58;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(231, 206);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(94, 37);
+            this.btnModificar.TabIndex = 58;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
             // 
             // Productos
             // 
@@ -538,5 +554,6 @@
         private System.Windows.Forms.Label lblErrorRubro;
         private System.Windows.Forms.Label lblCantidadBulto;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

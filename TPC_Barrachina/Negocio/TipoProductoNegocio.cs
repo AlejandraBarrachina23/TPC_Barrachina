@@ -23,7 +23,7 @@ namespace Negocio
 
                 TipoProducto unTipoProducto = new TipoProducto();
                 unTipoProducto.CodigoTipoProducto = (int)AccederDatos.LectorDatos["CodigoTipoProducto"];
-                unTipoProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unTipoProducto.Nombre = AccederDatos.LectorDatos["NombreTipoProducto"].ToString();
                 ListaTipoProducto.Add(unTipoProducto);
                 
             }

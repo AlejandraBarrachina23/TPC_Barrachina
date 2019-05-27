@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using AccesoDatos;
 using Dominio;
 
+
+
 namespace Negocio
 {
     public class Utilidades
@@ -90,20 +92,20 @@ namespace Negocio
 
         }
 
-      
-            public DataGridView OcultarColumnasDataGridView(DataGridView Grilla, string NombreTabla) {
+        public DataGridView OcultarColumnasDataGridView(DataGridView Grilla, string NombreTabla) {
 
-          
-            if (NombreTabla == "Productos") {
 
-                Grilla.Columns[1].Visible = false;
-                Grilla.Columns[3].Visible = false;
-                Grilla.Columns[5].Visible = false;
-                Grilla.Columns[6].Visible = false;
-                Grilla.Columns[7].Visible = false;
-                Grilla.Columns[11].Visible = false;
-                Grilla.Columns[12].Visible = false;
-                Grilla.Columns[13].Visible = false;
+            if (NombreTabla == "Productos")
+            {
+
+                //Grilla.Columns[1].Visible = false;
+                //Grilla.Columns[3].Visible = false;
+                //Grilla.Columns[5].Visible = false;
+                //Grilla.Columns[6].Visible = false;
+                //Grilla.Columns[7].Visible = false;
+                //Grilla.Columns[11].Visible = false;
+                //Grilla.Columns[12].Visible = false;
+                //Grilla.Columns[13].Visible = false;
 
                 return Grilla;
 
@@ -130,8 +132,8 @@ namespace Negocio
 
             if (NombreTabla == "Clientes") {
 
-                Grilla.Columns[3].Visible = false;
-                Grilla.Columns[6].Visible = false;
+                //Grilla.Columns[3].Visible = false;
+                //Grilla.Columns[6].Visible = false;
 
             }
 
