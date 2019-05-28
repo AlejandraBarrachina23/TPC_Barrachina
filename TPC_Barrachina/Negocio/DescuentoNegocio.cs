@@ -23,7 +23,7 @@ namespace Negocio
                 Descuento unDescuento = new Descuento();
 
                 unDescuento.CodigoDescuento = (int)AccederDatos.LectorDatos["CodigoDescuento"];
-                unDescuento.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unDescuento.Nombre = AccederDatos.LectorDatos["NombreDescuento"].ToString();
                 unDescuento.Porcentaje = (decimal)AccederDatos.LectorDatos["Porcentaje"];
 
                 ListadoDescuentos.Add(unDescuento);

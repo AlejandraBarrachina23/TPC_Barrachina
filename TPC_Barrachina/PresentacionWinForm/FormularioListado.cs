@@ -95,6 +95,13 @@ namespace PresentacionWinForm
                 FormularioCliente.Show();
             }
 
+            if (EntidadModificar.GetType().Equals(typeof(Cliente))) {
+
+                Clientes FormularioCliente = new Clientes((Cliente)EntidadModificar);
+                FormularioCliente.Show();
+
+            }
+
 
         }
     }

@@ -62,28 +62,43 @@ namespace Negocio
 
             List<Cliente> ListadoClientes = new List<Cliente>();
 
-            AccederDatos.LecturaBaseDatos("SELECT CodigoCliente, Clientes.Nombre, Clientes.Estado, Apellido,CuentaCorrientes.Saldo, Porcentaje, Contactos.CodigoContacto FROM Clientes INNER JOIN CuentaCorrientes on " +
-            "CuentaCorrientes.CodigoCuentaCorriente = Clientes.CodigoCuentaCorriente INNER JOIN Descuentos ON Descuentos.CodigoDescuento = Clientes.CodigoDescuento INNER JOIN Contactos " + 
-            "ON Contactos.CodigoContacto = Clientes.CodigoContacto");
+            AccederDatos.LecturaBaseDatos("select * from Clientes inner join Contactos on Contactos.CodigoContacto = Clientes.CodigoContacto " +
+                "inner join Direcciones on Direcciones.CodigoDireccion = Contactos.CodigoDireccion inner join CuentaCorrientes on " +
+                "CuentaCorrientes.CodigoCuentaCorriente = Clientes.CodigoCuentaCorriente inner join Descuentos on Descuentos.CodigoDescuento = Clientes.CodigoDescuento");
 
             while (AccederDatos.LectorDatos.Read()) {
 
-                if ((bool)AccederDatos.LectorDatos["Estado"]) { 
-                Cliente unCliente = new Cliente();
-                unCliente.Contacto = new Contacto();
-                unCliente.CuentaCorriente = new CuentaCorriente();
-                unCliente.Descuento = new Descuento();
-                unCliente.CodigoCliente = (int)AccederDatos.LectorDatos["CodigoCliente"];
-                unCliente.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
-                unCliente.Apellido = AccederDatos.LectorDatos["Apellido"].ToString();
-                unCliente.CuentaCorriente.Saldo= (decimal)AccederDatos.LectorDatos["Saldo"];
-                unCliente.Contacto.CodigoContacto = (int) AccederDatos.LectorDatos["CodigoContacto"];
-                ListadoClientes.Add(unCliente);
+                if ((bool)AccederDatos.LectorDatos["Estado"]) {
+
+                    Cliente unCliente = new Cliente();
+                    unCliente.Contacto = new Contacto();
+                    unCliente.Contacto.Direccion = new Direccion();
+                    unCliente.CuentaCorriente = new CuentaCorriente();
+                    unCliente.Descuento = new Descuento();
+                    unCliente.CodigoCliente = (int)AccederDatos.LectorDatos["CodigoCliente"];
+                    unCliente.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                    unCliente.Apellido = AccederDatos.LectorDatos["Apellido"].ToString();
+                    unCliente.Contacto.CodigoContacto = (int)AccederDatos.LectorDatos["CodigoContacto"];
+                    unCliente.Contacto.Telefono = AccederDatos.LectorDatos["Telefono"].ToString();
+                    unCliente.Contacto.Celular = AccederDatos.LectorDatos["Celular"].ToString();
+                    unCliente.Contacto.Mail = AccederDatos.LectorDatos["Mail"].ToString();
+                    unCliente.Contacto.Direccion.Calle = AccederDatos.LectorDatos["Calle"].ToString();
+                    unCliente.Contacto.Direccion.Numero = (int)AccederDatos.LectorDatos["Numero"];
+                    unCliente.Contacto.Direccion.CodigoPostal = (int)AccederDatos.LectorDatos["CodigoPostal"];
+                    unCliente.Contacto.Direccion.Provincia = AccederDatos.LectorDatos["Provincia"].ToString();
+                    unCliente.Contacto.Direccion.Localidad = AccederDatos.LectorDatos["Localidad"].ToString();
+                    unCliente.CuentaCorriente.CodigoCuentaCorriente = (int)AccederDatos.LectorDatos["CodigoCuentaCorriente"];
+                    unCliente.CuentaCorriente.Saldo= (decimal)AccederDatos.LectorDatos["Saldo"];
+                    unCliente.CuentaCorriente.LimiteCuenta = (decimal)AccederDatos.LectorDatos["LimiteCuenta"];
+                    unCliente.Descuento.CodigoDescuento = (int)AccederDatos.LectorDatos["CodigoDescuento"];
+                    unCliente.Descuento.Nombre = AccederDatos.LectorDatos["NombreDescuento"].ToString();
+                    unCliente.Descuento.Porcentaje = (decimal)AccederDatos.LectorDatos["Porcentaje"];
+
+                    ListadoClientes.Add(unCliente);
                 }
             }
 
             return ListadoClientes;
-            
         }
 
         public void EliminarCliente(Cliente unCliente) {

@@ -16,7 +16,7 @@ namespace PresentacionWinForm
     public partial class Clientes : Form
     {
         Utilidades utilidades = new Utilidades();
-        Cliente unClienteModificarLocal = new Cliente();
+        Cliente ClienteModificar = null;
 
         public Clientes()
         {
@@ -26,9 +26,8 @@ namespace PresentacionWinForm
         public Clientes(Cliente unClienteModificar) {
 
             InitializeComponent();
-            unClienteModificarLocal = unClienteModificar;
-            btnAceptar.Visible = false;
-            btnModificar.Visible = true;
+            ClienteModificar = unClienteModificar;
+
 
         }
 
@@ -102,9 +101,34 @@ namespace PresentacionWinForm
 
         private void Clientes_Load(object sender, EventArgs e)
         {
+
             DescuentoNegocio unDescuento = new DescuentoNegocio();
             cboxDescuento.DataSource = unDescuento.ListarDescuentos();
-            
+
+            if (ClienteModificar != null){ 
+
+                btnAceptar.Visible = false;
+                btnModificar.Visible = true;
+                tboxNombre.Text = ClienteModificar.Nombre;
+                tboxApellido.Text = ClienteModificar.Apellido;
+                //Direccion
+                tboxCalle.Text = ClienteModificar.Contacto.Direccion.Calle;
+                tboxNumero.Text = ClienteModificar.Contacto.Direccion.Numero.ToString();
+                tboxCP.Text = ClienteModificar.Contacto.Direccion.CodigoPostal.ToString();
+                tboxLocalidad.Text = ClienteModificar.Contacto.Direccion.Localidad;
+                tboxLocalidad.Text = ClienteModificar.Contacto.Direccion.Localidad;
+                tboxProvincia.Text = ClienteModificar.Contacto.Direccion.Provincia;
+                //Contacto
+                tboxTelefono.Text = ClienteModificar.Contacto.Telefono;
+                tboxCelular.Text = ClienteModificar.Contacto.Celular;
+                tboxCorreoElectronico.Text = ClienteModificar.Contacto.Mail;
+                //Descuento
+                cboxDescuento.SelectedIndex = cboxDescuento.FindString(ClienteModificar.Descuento.Porcentaje+"%");
+                //Cuenta Corriente
+                tboxLimitecuenta.Text = ClienteModificar.CuentaCorriente.LimiteCuenta.ToString();
+                
+
+            }
         }
     }
 }

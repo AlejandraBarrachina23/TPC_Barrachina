@@ -86,7 +86,7 @@
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCliente.ForeColor = System.Drawing.Color.White;
-            this.lblCliente.Location = new System.Drawing.Point(227, 12);
+            this.lblCliente.Location = new System.Drawing.Point(227, 8);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(66, 23);
             this.lblCliente.TabIndex = 10;
@@ -246,21 +246,21 @@
             // 
             // tboxCelular
             // 
-            this.tboxCelular.Location = new System.Drawing.Point(256, 37);
+            this.tboxCelular.Location = new System.Drawing.Point(256, 31);
             this.tboxCelular.Name = "tboxCelular";
             this.tboxCelular.Size = new System.Drawing.Size(134, 25);
             this.tboxCelular.TabIndex = 5;
             // 
             // tboxCorreoElectronico
             // 
-            this.tboxCorreoElectronico.Location = new System.Drawing.Point(115, 74);
+            this.tboxCorreoElectronico.Location = new System.Drawing.Point(115, 68);
             this.tboxCorreoElectronico.Name = "tboxCorreoElectronico";
             this.tboxCorreoElectronico.Size = new System.Drawing.Size(275, 25);
             this.tboxCorreoElectronico.TabIndex = 6;
             // 
             // tboxTelefono
             // 
-            this.tboxTelefono.Location = new System.Drawing.Point(66, 37);
+            this.tboxTelefono.Location = new System.Drawing.Point(66, 31);
             this.tboxTelefono.Name = "tboxTelefono";
             this.tboxTelefono.Size = new System.Drawing.Size(114, 25);
             this.tboxTelefono.TabIndex = 4;
@@ -268,7 +268,7 @@
             // lblCorreoElectronico
             // 
             this.lblCorreoElectronico.AutoSize = true;
-            this.lblCorreoElectronico.Location = new System.Drawing.Point(15, 77);
+            this.lblCorreoElectronico.Location = new System.Drawing.Point(15, 71);
             this.lblCorreoElectronico.Name = "lblCorreoElectronico";
             this.lblCorreoElectronico.Size = new System.Drawing.Size(95, 17);
             this.lblCorreoElectronico.TabIndex = 19;
@@ -277,7 +277,7 @@
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
-            this.lblCelular.Location = new System.Drawing.Point(206, 40);
+            this.lblCelular.Location = new System.Drawing.Point(206, 34);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(42, 17);
             this.lblCelular.TabIndex = 19;
@@ -286,7 +286,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(11, 40);
+            this.lblTelefono.Location = new System.Drawing.Point(11, 34);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(48, 17);
             this.lblTelefono.TabIndex = 19;
@@ -342,9 +342,9 @@
             this.pnlContenedor.Controls.Add(this.gboxDireccion);
             this.pnlContenedor.Controls.Add(this.lblApellido);
             this.pnlContenedor.Controls.Add(this.btnModificar);
-            this.pnlContenedor.Location = new System.Drawing.Point(0, 47);
+            this.pnlContenedor.Location = new System.Drawing.Point(0, 38);
             this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(510, 570);
+            this.pnlContenedor.Size = new System.Drawing.Size(510, 579);
             this.pnlContenedor.TabIndex = 40;
             // 
             // lblCodigo
