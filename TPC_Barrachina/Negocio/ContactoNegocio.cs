@@ -56,5 +56,17 @@ namespace Negocio
             AccederDatos.EjecutarConsulta();
             AccederDatos.CerrarConexion();
         }
+
+        public void ModificarContacto(Contacto unContacto) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Contactos SET Telefono=@Telefono, Celular=@Celular, Mail=@Mail WHERE CodigoDireccion = " + unContacto.CodigoContacto);
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@Telefono", unContacto.Telefono);
+            AccederDatos.Comando.Parameters.AddWithValue("@Celular", unContacto.Celular);
+            AccederDatos.Comando.Parameters.AddWithValue("@Mail", unContacto.Mail);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+        }
     }
 }

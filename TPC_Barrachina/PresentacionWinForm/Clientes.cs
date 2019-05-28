@@ -101,7 +101,6 @@ namespace PresentacionWinForm
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-
             DescuentoNegocio unDescuento = new DescuentoNegocio();
             cboxDescuento.DataSource = unDescuento.ListarDescuentos();
 
@@ -112,6 +111,7 @@ namespace PresentacionWinForm
                 tboxNombre.Text = ClienteModificar.Nombre;
                 tboxApellido.Text = ClienteModificar.Apellido;
                 //Direccion
+
                 tboxCalle.Text = ClienteModificar.Contacto.Direccion.Calle;
                 tboxNumero.Text = ClienteModificar.Contacto.Direccion.Numero.ToString();
                 tboxCP.Text = ClienteModificar.Contacto.Direccion.CodigoPostal.ToString();
@@ -129,6 +129,39 @@ namespace PresentacionWinForm
                 
 
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ClienteNegocio unClienteNegocio = new ClienteNegocio();
+            DireccionNegocio unaDireccionNegocio = new DireccionNegocio();
+            CuentaCorrienteNegocio unaCuentaCorriente = new CuentaCorrienteNegocio();
+            ContactoNegocio unContactoNegocio = new ContactoNegocio();
+
+            ClienteModificar.Nombre = tboxNombre.Text;
+            ClienteModificar.Apellido = tboxApellido.Text;
+            //direccion
+            ClienteModificar.Contacto.Direccion.CodigoDireccion = ClienteModificar.Contacto.CodigoContacto;
+            ClienteModificar.Contacto.Direccion.Calle = tboxCalle.Text;
+            ClienteModificar.Contacto.Direccion.Numero = Convert.ToInt32(tboxNumero.Text);
+            ClienteModificar.Contacto.Direccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
+            ClienteModificar.Contacto.Direccion.Localidad = tboxLocalidad.Text;
+            ClienteModificar.Contacto.Direccion.Localidad = tboxLocalidad.Text;
+            ClienteModificar.Contacto.Direccion.Provincia = tboxProvincia.Text;
+            //Contacto
+            ClienteModificar.Contacto.Telefono = tboxTelefono.Text;
+            ClienteModificar.Contacto.Celular = tboxCelular.Text;
+            ClienteModificar.Contacto.Mail = tboxCorreoElectronico.Text;
+            //Descuento
+            ClienteModificar.Descuento = (Descuento)cboxDescuento.SelectedItem;
+            //Cuenta Corriente
+            ClienteModificar.CuentaCorriente.LimiteCuenta = Convert.ToInt32(tboxLimitecuenta.Text);
+            
+            unClienteNegocio.ModificarCliente(ClienteModificar);
+            unaDireccionNegocio.ModificarDireccion(ClienteModificar.Contacto.Direccion);
+            unaCuentaCorriente.ModificarCuentaCorriente(ClienteModificar.CuentaCorriente);
+            unContactoNegocio.ModificarContacto(ClienteModificar.Contacto);
+
         }
     }
 }

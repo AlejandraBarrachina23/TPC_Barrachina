@@ -64,9 +64,23 @@ namespace Negocio
         {
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("UPDATE Direcciones SET Estado = 0 WHERE CodigoDireccion =" + unaDireccion.CodigoDireccion);
-            AccederDatos.EjecutarConsulta();
+            AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
 
+        }
+
+        public void ModificarDireccion(Direccion unaDireccion) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Direcciones SET Calle=@Calle,Numero=@Numero,CodigoPostal=@CodigoPostal,Localidad=@Localidad,Provincia=@Provincia WHERE CodigoDireccion = " + unaDireccion.CodigoDireccion);
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@Calle", unaDireccion.Calle);
+            AccederDatos.Comando.Parameters.AddWithValue("@Numero", unaDireccion.Numero);
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoPostal", unaDireccion.CodigoPostal);
+            AccederDatos.Comando.Parameters.AddWithValue("@Localidad", unaDireccion.Localidad);
+            AccederDatos.Comando.Parameters.AddWithValue("@Provincia", unaDireccion.Provincia);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
         }
     }
 }

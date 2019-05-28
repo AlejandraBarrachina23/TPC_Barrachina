@@ -63,5 +63,15 @@ namespace Negocio
             AccederDatos.CerrarConexion();
             return unaCuentaCorriente;
         }
+
+        public void ModificarCuentaCorriente(CuentaCorriente unaCuentaCorriente) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE CuentaCorrientes SET LimiteCuenta=@LimiteCuenta WHERE CodigoCuentaCorriente = " + unaCuentaCorriente.CodigoCuentaCorriente);
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@LimiteCuenta", unaCuentaCorriente.LimiteCuenta);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+        }
     }
 }

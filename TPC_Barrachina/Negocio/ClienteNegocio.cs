@@ -126,5 +126,19 @@ namespace Negocio
             
             
         }
+
+        public void ModificarCliente(Cliente unCliente) {
+
+            MessageBox.Show(unCliente.CodigoCliente.ToString());
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Clientes Set Nombre=@Nombre, Apellido=@Apellido, CodigoDescuento=@CodigoDescuento WHERE CodigoCliente = " + unCliente.CodigoCliente);
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@Nombre", unCliente.Nombre);
+            AccederDatos.Comando.Parameters.AddWithValue("@Apellido", unCliente.Apellido);
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoDescuento", unCliente.Descuento.CodigoDescuento);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+
+        }
     }
 }
