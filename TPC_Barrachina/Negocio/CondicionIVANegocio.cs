@@ -24,9 +24,11 @@ namespace Negocio
                 CondicionIVA unaNuevaCondicionIVA = new CondicionIVA();
 
                 unaNuevaCondicionIVA.CodigoCondicionIVA = (int)AccederDatos.LectorDatos["CodigoCondicionIVA"];
-                unaNuevaCondicionIVA.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unaNuevaCondicionIVA.Nombre = AccederDatos.LectorDatos["NombreCondicionIVA"].ToString();
                 ListadoCondicionIVA.Add(unaNuevaCondicionIVA);
                 }
+
+                AccederDatos.CerrarConexion();
                 return ListadoCondicionIVA;
 
             }

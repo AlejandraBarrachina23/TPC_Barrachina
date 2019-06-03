@@ -22,9 +22,12 @@ namespace Negocio
                 Impuesto unNuevoImpuesto = new Impuesto();
                 unNuevoImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoImpuesto"];
                 unNuevoImpuesto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
-                
+
                 ListadoImpuestos.Add(unNuevoImpuesto);
             }
+
+            AccederDatos.CerrarReader();
+            AccederDatos.CerrarConexion();
             return ListadoImpuestos;
 
         }
@@ -36,7 +39,29 @@ namespace Negocio
                 + CodigoProveedor + "," + unImpuesto.CodigoImpuesto + "," + unImpuesto.Alicuota + ")");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
-                 
+
         }
+
+        public List<Impuesto> ListarImpuestosxProveedor(int CodigoProveedor){
+
+            List<Impuesto> ListadoImpuestos = new List<Impuesto>();
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT ProveedorXImpuesto.CodigoImpuesto, ProveedorXImpuesto.CodigoProveedor, ProveedorXImpuesto.Alicuota, Impuestos.Nombre FROM ProveedorXImpuesto INNER JOIN " +
+            "Impuestos ON ProveedorXImpuesto.CodigoImpuesto = Impuestos.CodigoImpuesto WHERE ProveedorXImpuesto.CodigoProveedor = '" + CodigoProveedor + "'");
+            AccederDatos.EjecutarConsulta();
+            while (AccederDatos.LectorDatos.Read()) {
+
+                Impuesto unImpuesto = new Impuesto();
+                unImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoImpuesto"];
+                unImpuesto.Alicuota = (decimal)AccederDatos.LectorDatos["Alicuota"];
+                unImpuesto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                ListadoImpuestos.Add(unImpuesto);
+            }
+
+            AccederDatos.CerrarReader();
+            AccederDatos.CerrarConexion();
+            return ListadoImpuestos;
+        }
+
     }
 }

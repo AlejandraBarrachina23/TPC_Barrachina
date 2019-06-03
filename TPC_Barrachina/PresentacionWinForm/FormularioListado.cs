@@ -53,8 +53,6 @@ namespace PresentacionWinForm
             }
         }
 
-  
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -89,16 +87,26 @@ namespace PresentacionWinForm
             validar.SeleccionItemDataGridView(dgvListadoBusqueda);
             object EntidadModificar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
 
-            if (EntidadModificar.GetType().Equals(typeof(Producto))) {
-                
+            if (EntidadModificar.GetType().Equals(typeof(Producto)))
+            {
+
                 Productos FormularioCliente = new Productos((Producto)EntidadModificar);
                 FormularioCliente.Show();
             }
 
-            if (EntidadModificar.GetType().Equals(typeof(Cliente))) {
+            else if (EntidadModificar.GetType().Equals(typeof(Cliente)))
+            {
 
                 Clientes FormularioCliente = new Clientes((Cliente)EntidadModificar);
                 FormularioCliente.Show();
+
+            }
+
+            else if (EntidadModificar.GetType().Equals(typeof(Proveedor))) {
+
+                Proveedores FormularioProveedor = new Proveedores((Proveedor)EntidadModificar);
+                FormularioProveedor.Show();
+
 
             }
 

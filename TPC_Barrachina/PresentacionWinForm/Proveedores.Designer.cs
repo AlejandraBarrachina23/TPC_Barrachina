@@ -388,10 +388,13 @@
             // dgvImpuestos
             // 
             this.dgvImpuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvImpuestos.Location = new System.Drawing.Point(5, 65);
+            this.dgvImpuestos.Location = new System.Drawing.Point(10, 66);
             this.dgvImpuestos.Name = "dgvImpuestos";
+            this.dgvImpuestos.ReadOnly = true;
+            this.dgvImpuestos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvImpuestos.Size = new System.Drawing.Size(423, 96);
             this.dgvImpuestos.TabIndex = 0;
+            this.dgvImpuestos.SelectionChanged += new System.EventHandler(this.dgvImpuestos_SelectionChanged);
             // 
             // lblCodigoProveedor
             // 

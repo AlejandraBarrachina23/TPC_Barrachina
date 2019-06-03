@@ -18,6 +18,7 @@ namespace PresentacionWinForm
         Utilidades utilidades = new Utilidades();
         List<Impuesto> ListadoImpuestos = new List<Impuesto>();
         private BindingList<Impuesto> listaBindeable;
+        private Proveedor ProveedorModificar = null;
 
         public Proveedores()
         {
@@ -40,6 +41,13 @@ namespace PresentacionWinForm
             tboxPorcentaje.KeyPress += AsignarSoloNumeros;
             tboxTelefono.KeyPress += AsignarSoloNumeros;
             tboxCelular.KeyPress += AsignarSoloNumeros;
+
+        }
+
+        public Proveedores(Proveedor unProveedorModificar) {
+
+            InitializeComponent();
+            ProveedorModificar = unProveedorModificar;
 
         }
 
@@ -95,6 +103,25 @@ namespace PresentacionWinForm
             cboxCondicionIVA.DataSource = unaCondicionIVA.ListarCondicionIVA();
             cboxImpuesto.DataSource = unImpuesto.ListarImpuestos();
 
+            if (ProveedorModificar != null) {
+
+                tboxRazonSocial.Text = ProveedorModificar.RazonSocial;
+                tboxNumeroCUIT.Text = ProveedorModificar.NumeroCUIT;
+                tboxNombreFantasia.Text = ProveedorModificar.NombreFantasia;
+                cboxCondicionIVA.SelectedIndex = cboxCondicionIVA.FindString(ProveedorModificar.CondicionIVA.Nombre);
+                tboxCalle.Text = ProveedorModificar.Contacto.Direccion.Calle;
+                tboxNumero.Text = ProveedorModificar.Contacto.Direccion.Numero.ToString();
+                tboxCP.Text = ProveedorModificar.Contacto.Direccion.CodigoPostal.ToString();
+                tboxLocalidad.Text = ProveedorModificar.Contacto.Direccion.Provincia;
+                tboxProvincia.Text = ProveedorModificar.Contacto.Direccion.Provincia;
+                tboxCelular.Text = ProveedorModificar.Contacto.Celular;
+                tboxTelefono.Text = ProveedorModificar.Contacto.Telefono;
+                tboxCorreoElectronico.Text = ProveedorModificar.Contacto.Mail;
+                dgvImpuestos.DataSource = unImpuesto.ListarImpuestosxProveedor(ProveedorModificar.CodigoProveedor);
+                utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
+
+            }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -116,6 +143,13 @@ namespace PresentacionWinForm
             listaBindeable.ResetBindings();
             utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
 
+        }
+
+        private void dgvImpuestos_SelectionChanged(object sender, EventArgs e)
+        {
+            Impuesto ImpuestoSeleccionado = (Impuesto)dgvImpuestos.CurrentRow.DataBoundItem;
+            cboxImpuesto.Text = ImpuestoSeleccionado.Nombre;
+            tboxPorcentaje.Text = ImpuestoSeleccionado.Alicuota.ToString();
         }
     }
 }
