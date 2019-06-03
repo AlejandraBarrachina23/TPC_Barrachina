@@ -66,8 +66,6 @@ namespace Negocio
 
         public void EliminarProveedor(Proveedor unProveedor) {
 
-            MessageBox.Show(unProveedor.Contacto.CodigoContacto.ToString());
-
             DireccionNegocio unaDireccion = new DireccionNegocio();
             ContactoNegocio unContacto = new ContactoNegocio();
             Direccion DireccionEliminar = new Direccion();
@@ -83,6 +81,19 @@ namespace Negocio
 
         }
 
+        public void ModificarProveedor(Proveedor unProveedor) {
 
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Proveedores SET RazonSocial=@RazonSocial, NumeroCUIT=@NumeroCUIT, NombreFantasia=@NombreFantasia, CodigoCondicionIVA=@CodigoCondicionIVA WHERE CodigoProveedor = '" 
+                + unProveedor.CodigoProveedor +"'");
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@RazonSocial", unProveedor.RazonSocial);
+            AccederDatos.Comando.Parameters.AddWithValue("@NumeroCUIT", unProveedor.NumeroCUIT);
+            AccederDatos.Comando.Parameters.AddWithValue("@NombreFantasia", unProveedor.NombreFantasia);
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoCondicionIVA", unProveedor.CondicionIVA.CodigoCondicionIVA);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+        }
+        
     }
 }

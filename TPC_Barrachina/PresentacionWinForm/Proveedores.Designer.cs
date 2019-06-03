@@ -68,6 +68,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblCondicionIVA = new System.Windows.Forms.Label();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.gboxContacto.SuspendLayout();
             this.gboxDireccion.SuspendLayout();
             this.pnlBarraPrincipal.SuspendLayout();
@@ -460,11 +461,31 @@
             this.lblCondicionIVA.TabIndex = 29;
             this.lblCondicionIVA.Text = "Condición IVA";
             // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
+            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificar.Location = new System.Drawing.Point(151, 605);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(94, 37);
+            this.btnModificar.TabIndex = 60;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Visible = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 655);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblCodigoProveedor);
@@ -540,5 +561,6 @@
         private System.Windows.Forms.Label lblCondicionIVA;
         private System.Windows.Forms.TextBox tboxCP;
         private System.Windows.Forms.Label lblCP;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

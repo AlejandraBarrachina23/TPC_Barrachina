@@ -112,13 +112,14 @@ namespace PresentacionWinForm
                 tboxCalle.Text = ProveedorModificar.Contacto.Direccion.Calle;
                 tboxNumero.Text = ProveedorModificar.Contacto.Direccion.Numero.ToString();
                 tboxCP.Text = ProveedorModificar.Contacto.Direccion.CodigoPostal.ToString();
-                tboxLocalidad.Text = ProveedorModificar.Contacto.Direccion.Provincia;
+                tboxLocalidad.Text = ProveedorModificar.Contacto.Direccion.Localidad;
                 tboxProvincia.Text = ProveedorModificar.Contacto.Direccion.Provincia;
                 tboxCelular.Text = ProveedorModificar.Contacto.Celular;
                 tboxTelefono.Text = ProveedorModificar.Contacto.Telefono;
                 tboxCorreoElectronico.Text = ProveedorModificar.Contacto.Mail;
                 dgvImpuestos.DataSource = unImpuesto.ListarImpuestosxProveedor(ProveedorModificar.CodigoProveedor);
                 utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
+                btnModificar.Visible = true;
 
             }
 
@@ -150,6 +151,29 @@ namespace PresentacionWinForm
             Impuesto ImpuestoSeleccionado = (Impuesto)dgvImpuestos.CurrentRow.DataBoundItem;
             cboxImpuesto.Text = ImpuestoSeleccionado.Nombre;
             tboxPorcentaje.Text = ImpuestoSeleccionado.Alicuota.ToString();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            ProveedorNegocio unProveedor = new ProveedorNegocio();
+            ContactoNegocio unContacto = new ContactoNegocio();
+            DireccionNegocio unaDireccion = new DireccionNegocio();
+            ProveedorModificar.RazonSocial = tboxRazonSocial.Text;
+            ProveedorModificar.NumeroCUIT = tboxNumeroCUIT.Text;
+            ProveedorModificar.NombreFantasia = tboxNombreFantasia.Text;
+            ProveedorModificar.CondicionIVA =(CondicionIVA)cboxCondicionIVA.SelectedItem;
+            ProveedorModificar.Contacto.Direccion.Calle = tboxCalle.Text;
+            ProveedorModificar.Contacto.Direccion.Numero = Convert.ToInt32(tboxNumero.Text);
+            ProveedorModificar.Contacto.Direccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
+            ProveedorModificar.Contacto.Direccion.Localidad = tboxLocalidad.Text;
+            ProveedorModificar.Contacto.Direccion.Provincia = tboxProvincia.Text;
+            ProveedorModificar.Contacto.Celular = tboxCelular.Text;
+            ProveedorModificar.Contacto.Telefono = tboxTelefono.Text;
+            ProveedorModificar.Contacto.Mail = tboxCorreoElectronico.Text;
+            unProveedor.ModificarProveedor(ProveedorModificar);
+            unContacto.ModificarContacto(ProveedorModificar.Contacto);
+            unaDireccion.ModificarDireccion(ProveedorModificar.Contacto.Direccion);
+            
         }
     }
 }
