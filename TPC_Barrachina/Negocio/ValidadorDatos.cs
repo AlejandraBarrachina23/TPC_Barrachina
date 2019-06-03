@@ -55,6 +55,28 @@ namespace Negocio
                 throw new Exception("Seleccione un item");
             }
         }
+
+        //public void ItemRepetidoGrid(DataGridView Grilla, string valorAgregar) {
+
+        //    //(Grilla.Rows.Cast<DataGridViewRow>().Any(x => x.Cells["Nombre"].Value.ToString() == item.ToString())) 
+
+           
+        //    foreach (DataGridViewRow fila in Grilla.Rows) {
+
+        //        string valorFila = fila.Cells["Nombre"].Value.ToString();
+        //        MessageBox.Show(valorFila);
+
+        //        if (valorAgregar == valorFila) {
+
+        //            throw new Exception("Repetido");
+                    
+        //        }
+                    
+        //    }
+
+        //    MessageBox.Show("paso");
+           
+        //}
     }
     
 }

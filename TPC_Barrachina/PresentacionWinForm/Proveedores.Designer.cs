@@ -61,6 +61,8 @@
             this.cboxCondicionIVA = new System.Windows.Forms.ComboBox();
             this.gboxImpuesto = new System.Windows.Forms.GroupBox();
             this.cboxImpuesto = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvImpuestos = new System.Windows.Forms.DataGridView();
             this.lblCodigoProveedor = new System.Windows.Forms.Label();
@@ -242,7 +244,7 @@
             // 
             // tboxPorcentaje
             // 
-            this.tboxPorcentaje.Location = new System.Drawing.Point(328, 24);
+            this.tboxPorcentaje.Location = new System.Drawing.Point(270, 24);
             this.tboxPorcentaje.Name = "tboxPorcentaje";
             this.tboxPorcentaje.Size = new System.Drawing.Size(50, 25);
             this.tboxPorcentaje.TabIndex = 8;
@@ -250,7 +252,7 @@
             // lblPorcentaje
             // 
             this.lblPorcentaje.AutoSize = true;
-            this.lblPorcentaje.Location = new System.Drawing.Point(267, 28);
+            this.lblPorcentaje.Location = new System.Drawing.Point(206, 28);
             this.lblPorcentaje.Name = "lblPorcentaje";
             this.lblPorcentaje.Size = new System.Drawing.Size(58, 17);
             this.lblPorcentaje.TabIndex = 19;
@@ -336,7 +338,7 @@
             // 
             this.lblImpuestos.AutoSize = true;
             this.lblImpuestos.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImpuestos.Location = new System.Drawing.Point(25, 27);
+            this.lblImpuestos.Location = new System.Drawing.Point(11, 27);
             this.lblImpuestos.Name = "lblImpuestos";
             this.lblImpuestos.Size = new System.Drawing.Size(57, 17);
             this.lblImpuestos.TabIndex = 29;
@@ -354,6 +356,8 @@
             // gboxImpuesto
             // 
             this.gboxImpuesto.Controls.Add(this.cboxImpuesto);
+            this.gboxImpuesto.Controls.Add(this.button2);
+            this.gboxImpuesto.Controls.Add(this.button1);
             this.gboxImpuesto.Controls.Add(this.btnAgregar);
             this.gboxImpuesto.Controls.Add(this.tboxPorcentaje);
             this.gboxImpuesto.Controls.Add(this.dgvImpuestos);
@@ -371,15 +375,33 @@
             // 
             this.cboxImpuesto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxImpuesto.FormattingEnabled = true;
-            this.cboxImpuesto.Location = new System.Drawing.Point(85, 23);
+            this.cboxImpuesto.Location = new System.Drawing.Point(71, 23);
             this.cboxImpuesto.Name = "cboxImpuesto";
-            this.cboxImpuesto.Size = new System.Drawing.Size(173, 25);
+            this.cboxImpuesto.Size = new System.Drawing.Size(124, 25);
             this.cboxImpuesto.TabIndex = 31;
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(393, 23);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 27);
+            this.button2.TabIndex = 30;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(359, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 27);
+            this.button1.TabIndex = 30;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(385, 23);
+            this.btnAgregar.Location = new System.Drawing.Point(326, 23);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(30, 27);
             this.btnAgregar.TabIndex = 30;
@@ -562,5 +584,7 @@
         private System.Windows.Forms.TextBox tboxCP;
         private System.Windows.Forms.Label lblCP;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

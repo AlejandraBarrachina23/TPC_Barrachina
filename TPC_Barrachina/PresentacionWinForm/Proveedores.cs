@@ -101,7 +101,7 @@ namespace PresentacionWinForm
             CondicionIVANegocio unaCondicionIVA = new CondicionIVANegocio();
             ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
             cboxCondicionIVA.DataSource = unaCondicionIVA.ListarCondicionIVA();
-            cboxImpuesto.DataSource = unImpuesto.ListarImpuestos();
+            cboxImpuesto.DataSource = unImpuesto.ListarImpuestos();          
 
             if (ProveedorModificar != null) {
 
@@ -117,7 +117,8 @@ namespace PresentacionWinForm
                 tboxCelular.Text = ProveedorModificar.Contacto.Celular;
                 tboxTelefono.Text = ProveedorModificar.Contacto.Telefono;
                 tboxCorreoElectronico.Text = ProveedorModificar.Contacto.Mail;
-                dgvImpuestos.DataSource = unImpuesto.ListarImpuestosxProveedor(ProveedorModificar.CodigoProveedor);
+                ListadoImpuestos = unImpuesto.ListarImpuestosxProveedor(ProveedorModificar.CodigoProveedor);
+                dgvImpuestos.DataSource = ListadoImpuestos;
                 utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
                 btnModificar.Visible = true;
 
@@ -132,18 +133,27 @@ namespace PresentacionWinForm
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+          
+            try
+            {
+               
+                Impuesto unNuevoImpuesto = new Impuesto();
+                unNuevoImpuesto.Nombre = cboxImpuesto.SelectedItem.ToString();
+                unNuevoImpuesto.CodigoImpuesto = cboxImpuesto.FindString(unNuevoImpuesto.Nombre) + 1;
+                unNuevoImpuesto.Alicuota = Convert.ToDecimal(tboxPorcentaje.Text);
+                listaBindeable = new BindingList<Impuesto>(ListadoImpuestos);
+                dgvImpuestos.DataSource = listaBindeable;
+                ListadoImpuestos.Add(unNuevoImpuesto);
+                listaBindeable.ResetBindings();
+                utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
      
-            Impuesto unNuevoImpuesto = new Impuesto();
-
-            unNuevoImpuesto.Nombre = cboxImpuesto.SelectedItem.ToString();
-            unNuevoImpuesto.CodigoImpuesto = cboxImpuesto.FindString(unNuevoImpuesto.Nombre)+1;
-            unNuevoImpuesto.Alicuota = Convert.ToDecimal(tboxPorcentaje.Text);
-            listaBindeable = new BindingList<Impuesto>(ListadoImpuestos);
-            dgvImpuestos.DataSource = listaBindeable;
-            ListadoImpuestos.Add(unNuevoImpuesto);
-            listaBindeable.ResetBindings();
-            utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
-
         }
 
         private void dgvImpuestos_SelectionChanged(object sender, EventArgs e)
@@ -158,6 +168,8 @@ namespace PresentacionWinForm
             ProveedorNegocio unProveedor = new ProveedorNegocio();
             ContactoNegocio unContacto = new ContactoNegocio();
             DireccionNegocio unaDireccion = new DireccionNegocio();
+            ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
+
             ProveedorModificar.RazonSocial = tboxRazonSocial.Text;
             ProveedorModificar.NumeroCUIT = tboxNumeroCUIT.Text;
             ProveedorModificar.NombreFantasia = tboxNombreFantasia.Text;
@@ -173,7 +185,7 @@ namespace PresentacionWinForm
             unProveedor.ModificarProveedor(ProveedorModificar);
             unContacto.ModificarContacto(ProveedorModificar.Contacto);
             unaDireccion.ModificarDireccion(ProveedorModificar.Contacto.Direccion);
-            
+
         }
     }
 }
