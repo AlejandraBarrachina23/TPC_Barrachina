@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioListado));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pboxCodigo = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tboxCodigo = new System.Windows.Forms.TextBox();
@@ -47,6 +48,10 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDescuento = new System.Windows.Forms.Button();
+            this.btnRubro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombre)).BeginInit();
@@ -100,11 +105,20 @@
             // dgvListadoBusqueda
             // 
             this.dgvListadoBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListadoBusqueda.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListadoBusqueda.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvListadoBusqueda.Location = new System.Drawing.Point(12, 88);
             this.dgvListadoBusqueda.Name = "dgvListadoBusqueda";
             this.dgvListadoBusqueda.ReadOnly = true;
             this.dgvListadoBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListadoBusqueda.Size = new System.Drawing.Size(656, 359);
+            this.dgvListadoBusqueda.Size = new System.Drawing.Size(656, 404);
             this.dgvListadoBusqueda.TabIndex = 20;
             // 
             // pboxNombre
@@ -119,18 +133,20 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.Location = new System.Drawing.Point(54, 42);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(42, 17);
             this.lblCodigo.TabIndex = 18;
             this.lblCodigo.Text = "Codigo";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(383, 40);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(45, 17);
             this.lblNombre.TabIndex = 19;
             this.lblNombre.Text = "Nombre";
             // 
@@ -239,12 +255,16 @@
             this.panelContenedor.Controls.Add(this.lblCodigo);
             this.panelContenedor.Controls.Add(this.dgvListadoBusqueda);
             this.panelContenedor.Controls.Add(this.pboxCodigo);
+            this.panelContenedor.Controls.Add(this.panel2);
+            this.panelContenedor.Controls.Add(this.panel1);
             this.panelContenedor.Controls.Add(this.panel13);
             this.panelContenedor.Controls.Add(this.tboxCodigo);
             this.panelContenedor.Controls.Add(this.btnAgregar);
             this.panelContenedor.Controls.Add(this.tboxNombre);
             this.panelContenedor.Controls.Add(this.panel12);
             this.panelContenedor.Controls.Add(this.pboxNombre);
+            this.panelContenedor.Controls.Add(this.btnDescuento);
+            this.panelContenedor.Controls.Add(this.btnRubro);
             this.panelContenedor.Controls.Add(this.btnModificar);
             this.panelContenedor.Controls.Add(this.lblNombre);
             this.panelContenedor.Controls.Add(this.btnBorrar);
@@ -252,7 +272,7 @@
             this.panelContenedor.Controls.Add(this.btnCancelar);
             this.panelContenedor.Location = new System.Drawing.Point(0, 35);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(808, 467);
+            this.panelContenedor.Size = new System.Drawing.Size(808, 506);
             this.panelContenedor.TabIndex = 23;
             // 
             // btnActualizar
@@ -273,11 +293,63 @@
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.OrangeRed;
+            this.panel2.Location = new System.Drawing.Point(691, 260);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 35);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gold;
+            this.panel1.Location = new System.Drawing.Point(691, 219);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 35);
+            this.panel1.TabIndex = 11;
+            // 
+            // btnDescuento
+            // 
+            this.btnDescuento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnDescuento.FlatAppearance.BorderSize = 0;
+            this.btnDescuento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescuento.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescuento.ForeColor = System.Drawing.Color.White;
+            this.btnDescuento.Image = ((System.Drawing.Image)(resources.GetObject("btnDescuento.Image")));
+            this.btnDescuento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDescuento.Location = new System.Drawing.Point(696, 260);
+            this.btnDescuento.Name = "btnDescuento";
+            this.btnDescuento.Size = new System.Drawing.Size(90, 35);
+            this.btnDescuento.TabIndex = 0;
+            this.btnDescuento.Text = "Descuento";
+            this.btnDescuento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDescuento.UseVisualStyleBackColor = false;
+            this.btnDescuento.Click += new System.EventHandler(this.btnDescuento_Click);
+            // 
+            // btnRubro
+            // 
+            this.btnRubro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnRubro.FlatAppearance.BorderSize = 0;
+            this.btnRubro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRubro.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRubro.ForeColor = System.Drawing.Color.White;
+            this.btnRubro.Image = ((System.Drawing.Image)(resources.GetObject("btnRubro.Image")));
+            this.btnRubro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRubro.Location = new System.Drawing.Point(696, 219);
+            this.btnRubro.Name = "btnRubro";
+            this.btnRubro.Size = new System.Drawing.Size(90, 35);
+            this.btnRubro.TabIndex = 0;
+            this.btnRubro.Text = "RUBRO";
+            this.btnRubro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRubro.UseVisualStyleBackColor = false;
+            this.btnRubro.Click += new System.EventHandler(this.btnRubro_Click);
+            // 
             // FormularioListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 501);
+            this.ClientSize = new System.Drawing.Size(808, 541);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.Controls.Add(this.panelContenedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -315,5 +387,9 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnDescuento;
+        private System.Windows.Forms.Button btnRubro;
     }
 }

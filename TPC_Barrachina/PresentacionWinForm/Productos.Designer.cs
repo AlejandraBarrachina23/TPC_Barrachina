@@ -179,7 +179,7 @@
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCliente.ForeColor = System.Drawing.Color.White;
-            this.lblCliente.Location = new System.Drawing.Point(263, 9);
+            this.lblCliente.Location = new System.Drawing.Point(276, 8);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(90, 23);
             this.lblCliente.TabIndex = 10;
@@ -338,7 +338,7 @@
             // 
             // pboxRubro
             // 
-            this.pboxRubro.Location = new System.Drawing.Point(594, 167);
+            this.pboxRubro.Location = new System.Drawing.Point(594, 164);
             this.pboxRubro.Name = "pboxRubro";
             this.pboxRubro.Size = new System.Drawing.Size(16, 19);
             this.pboxRubro.TabIndex = 56;

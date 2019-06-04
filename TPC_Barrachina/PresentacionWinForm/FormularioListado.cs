@@ -112,5 +112,18 @@ namespace PresentacionWinForm
 
 
         }
+
+        private void btnRubro_Click(object sender, EventArgs e)
+        {
+            Rubros FormularioRubro = new Rubros();
+            FormularioRubro.Show();
+                     
+        }
+
+        private void btnDescuento_Click(object sender, EventArgs e)
+        {
+            Descuentos FormularioDescuentos = new Descuentos();
+            FormularioDescuentos.Show();
+        }
     }
 }

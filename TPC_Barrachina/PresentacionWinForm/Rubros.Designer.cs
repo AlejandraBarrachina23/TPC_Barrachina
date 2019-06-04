@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rubros));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
+            this.lblRubro = new System.Windows.Forms.Label();
             this.tboxNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.tboxCodigoRubro = new System.Windows.Forms.TextBox();
             this.lblCodigoRubro = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.lblRubro = new System.Windows.Forms.Label();
+            this.cboxTipoProducto = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,13 +48,24 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(336, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(326, 41);
             this.pnlBarraPrincipal.TabIndex = 40;
+            // 
+            // lblRubro
+            // 
+            this.lblRubro.AutoSize = true;
+            this.lblRubro.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRubro.ForeColor = System.Drawing.Color.White;
+            this.lblRubro.Location = new System.Drawing.Point(145, 10);
+            this.lblRubro.Name = "lblRubro";
+            this.lblRubro.Size = new System.Drawing.Size(50, 23);
+            this.lblRubro.TabIndex = 10;
+            this.lblRubro.Text = "RUBRO";
             // 
             // tboxNombre
             // 
             this.tboxNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNombre.Location = new System.Drawing.Point(124, 85);
+            this.tboxNombre.Location = new System.Drawing.Point(114, 103);
             this.tboxNombre.Name = "tboxNombre";
             this.tboxNombre.Size = new System.Drawing.Size(173, 25);
             this.tboxNombre.TabIndex = 43;
@@ -62,25 +74,17 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(26, 88);
+            this.lblNombre.Location = new System.Drawing.Point(52, 109);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(45, 17);
             this.lblNombre.TabIndex = 47;
             this.lblNombre.Text = "Nombre";
             // 
-            // tboxCodigoRubro
-            // 
-            this.tboxCodigoRubro.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCodigoRubro.Location = new System.Drawing.Point(124, 55);
-            this.tboxCodigoRubro.Name = "tboxCodigoRubro";
-            this.tboxCodigoRubro.Size = new System.Drawing.Size(173, 25);
-            this.tboxCodigoRubro.TabIndex = 53;
-            // 
             // lblCodigoRubro
             // 
             this.lblCodigoRubro.AutoSize = true;
             this.lblCodigoRubro.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoRubro.Location = new System.Drawing.Point(26, 58);
+            this.lblCodigoRubro.Location = new System.Drawing.Point(23, 66);
             this.lblCodigoRubro.Name = "lblCodigoRubro";
             this.lblCodigoRubro.Size = new System.Drawing.Size(74, 17);
             this.lblCodigoRubro.TabIndex = 54;
@@ -95,7 +99,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(174, 125);
+            this.button1.Location = new System.Drawing.Point(220, 154);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 37);
             this.button1.TabIndex = 55;
@@ -112,39 +116,57 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(63, 125);
+            this.button2.Location = new System.Drawing.Point(120, 154);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 37);
             this.button2.TabIndex = 56;
-            this.button2.Text = "Aceptar";
+            this.button2.Text = "Borrar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // lblRubro
+            // cboxTipoProducto
             // 
-            this.lblRubro.AutoSize = true;
-            this.lblRubro.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRubro.ForeColor = System.Drawing.Color.White;
-            this.lblRubro.Location = new System.Drawing.Point(145, 11);
-            this.lblRubro.Name = "lblRubro";
-            this.lblRubro.Size = new System.Drawing.Size(50, 23);
-            this.lblRubro.TabIndex = 10;
-            this.lblRubro.Text = "RUBRO";
+            this.cboxTipoProducto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxTipoProducto.FormattingEnabled = true;
+            this.cboxTipoProducto.Location = new System.Drawing.Point(114, 61);
+            this.cboxTipoProducto.Name = "cboxTipoProducto";
+            this.cboxTipoProducto.Size = new System.Drawing.Size(173, 25);
+            this.cboxTipoProducto.TabIndex = 57;
             // 
-            // Rubro
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(20, 154);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(94, 37);
+            this.button3.TabIndex = 56;
+            this.button3.Text = "Modificar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // Rubros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(336, 174);
+            this.ClientSize = new System.Drawing.Size(326, 216);
+            this.Controls.Add(this.cboxTipoProducto);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblCodigoRubro);
-            this.Controls.Add(this.tboxCodigoRubro);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.tboxNombre);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Rubro";
+            this.Location = new System.Drawing.Point(1011, 195);
+            this.Name = "Rubros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "NuevoRubro";
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
@@ -157,10 +179,11 @@
         private System.Windows.Forms.Panel pnlBarraPrincipal;
         private System.Windows.Forms.TextBox tboxNombre;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox tboxCodigoRubro;
         private System.Windows.Forms.Label lblCodigoRubro;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblRubro;
+        private System.Windows.Forms.ComboBox cboxTipoProducto;
+        private System.Windows.Forms.Button button3;
     }
 }
