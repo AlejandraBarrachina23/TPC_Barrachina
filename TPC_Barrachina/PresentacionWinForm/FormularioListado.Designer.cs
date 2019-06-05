@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioListado));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pboxCodigo = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tboxCodigo = new System.Windows.Forms.TextBox();
@@ -40,20 +40,19 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblNombreFormulario = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.pnlModificar = new System.Windows.Forms.Panel();
+            this.pnlBorrar = new System.Windows.Forms.Panel();
+            this.pnlAgregar = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDescuento = new System.Windows.Forms.Panel();
+            this.pnlRubro = new System.Windows.Forms.Panel();
+            this.pnlDetalle = new System.Windows.Forms.Panel();
             this.btnDescuento = new System.Windows.Forms.Button();
             this.btnRubro = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombre)).BeginInit();
@@ -108,14 +107,14 @@
             // dgvListadoBusqueda
             // 
             this.dgvListadoBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListadoBusqueda.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListadoBusqueda.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListadoBusqueda.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvListadoBusqueda.Location = new System.Drawing.Point(12, 88);
             this.dgvListadoBusqueda.Name = "dgvListadoBusqueda";
@@ -175,29 +174,29 @@
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(808, 41);
             this.pnlBarraPrincipal.TabIndex = 13;
             // 
-            // panel13
+            // pnlModificar
             // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
-            this.panel13.Location = new System.Drawing.Point(691, 168);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(5, 35);
-            this.panel13.TabIndex = 11;
+            this.pnlModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(195)))), ((int)(((byte)(239)))));
+            this.pnlModificar.Location = new System.Drawing.Point(691, 168);
+            this.pnlModificar.Name = "pnlModificar";
+            this.pnlModificar.Size = new System.Drawing.Size(5, 35);
+            this.pnlModificar.TabIndex = 11;
             // 
-            // panel12
+            // pnlBorrar
             // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(121)))), ((int)(((byte)(116)))));
-            this.panel12.Location = new System.Drawing.Point(691, 128);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(5, 35);
-            this.panel12.TabIndex = 7;
+            this.pnlBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(121)))), ((int)(((byte)(116)))));
+            this.pnlBorrar.Location = new System.Drawing.Point(691, 128);
+            this.pnlBorrar.Name = "pnlBorrar";
+            this.pnlBorrar.Size = new System.Drawing.Size(5, 35);
+            this.pnlBorrar.TabIndex = 7;
             // 
-            // panel11
+            // pnlAgregar
             // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(198)))), ((int)(((byte)(46)))));
-            this.panel11.Location = new System.Drawing.Point(691, 88);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(5, 35);
-            this.panel11.TabIndex = 11;
+            this.pnlAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(198)))), ((int)(((byte)(46)))));
+            this.pnlAgregar.Location = new System.Drawing.Point(691, 88);
+            this.pnlAgregar.Name = "pnlAgregar";
+            this.pnlAgregar.Size = new System.Drawing.Size(5, 35);
+            this.pnlAgregar.TabIndex = 11;
             // 
             // btnAgregar
             // 
@@ -254,18 +253,17 @@
             // panelContenedor
             // 
             this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelContenedor.Controls.Add(this.btnActualizar);
             this.panelContenedor.Controls.Add(this.lblCodigo);
             this.panelContenedor.Controls.Add(this.dgvListadoBusqueda);
             this.panelContenedor.Controls.Add(this.pboxCodigo);
-            this.panelContenedor.Controls.Add(this.panel2);
-            this.panelContenedor.Controls.Add(this.panel1);
-            this.panelContenedor.Controls.Add(this.panel3);
-            this.panelContenedor.Controls.Add(this.panel13);
+            this.panelContenedor.Controls.Add(this.pnlDescuento);
+            this.panelContenedor.Controls.Add(this.pnlRubro);
+            this.panelContenedor.Controls.Add(this.pnlDetalle);
+            this.panelContenedor.Controls.Add(this.pnlModificar);
             this.panelContenedor.Controls.Add(this.tboxCodigo);
             this.panelContenedor.Controls.Add(this.btnAgregar);
             this.panelContenedor.Controls.Add(this.tboxNombre);
-            this.panelContenedor.Controls.Add(this.panel12);
+            this.panelContenedor.Controls.Add(this.pnlBorrar);
             this.panelContenedor.Controls.Add(this.pboxNombre);
             this.panelContenedor.Controls.Add(this.btnDescuento);
             this.panelContenedor.Controls.Add(this.btnRubro);
@@ -273,46 +271,38 @@
             this.panelContenedor.Controls.Add(this.btnModificar);
             this.panelContenedor.Controls.Add(this.lblNombre);
             this.panelContenedor.Controls.Add(this.btnBorrar);
-            this.panelContenedor.Controls.Add(this.panel11);
+            this.panelContenedor.Controls.Add(this.pnlAgregar);
             this.panelContenedor.Controls.Add(this.btnCancelar);
             this.panelContenedor.Location = new System.Drawing.Point(0, 35);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(808, 506);
             this.panelContenedor.TabIndex = 23;
             // 
-            // btnActualizar
+            // pnlDescuento
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
-            this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(691, 406);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 37);
-            this.btnActualizar.TabIndex = 23;
-            this.btnActualizar.Text = "ACTUALIZAR";
-            this.btnActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
+            this.pnlDescuento.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnlDescuento.Location = new System.Drawing.Point(691, 250);
+            this.pnlDescuento.Name = "pnlDescuento";
+            this.pnlDescuento.Size = new System.Drawing.Size(5, 35);
+            this.pnlDescuento.TabIndex = 11;
+            this.pnlDescuento.Visible = false;
             // 
-            // panel2
+            // pnlRubro
             // 
-            this.panel2.BackColor = System.Drawing.Color.OrangeRed;
-            this.panel2.Location = new System.Drawing.Point(691, 314);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 35);
-            this.panel2.TabIndex = 11;
+            this.pnlRubro.BackColor = System.Drawing.Color.Gold;
+            this.pnlRubro.Location = new System.Drawing.Point(691, 250);
+            this.pnlRubro.Name = "pnlRubro";
+            this.pnlRubro.Size = new System.Drawing.Size(5, 35);
+            this.pnlRubro.TabIndex = 11;
+            this.pnlRubro.Visible = false;
             // 
-            // panel1
+            // pnlDetalle
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gold;
-            this.panel1.Location = new System.Drawing.Point(691, 273);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 35);
-            this.panel1.TabIndex = 11;
+            this.pnlDetalle.BackColor = System.Drawing.Color.Orange;
+            this.pnlDetalle.Location = new System.Drawing.Point(691, 209);
+            this.pnlDetalle.Name = "pnlDetalle";
+            this.pnlDetalle.Size = new System.Drawing.Size(5, 35);
+            this.pnlDetalle.TabIndex = 11;
             // 
             // btnDescuento
             // 
@@ -323,13 +313,14 @@
             this.btnDescuento.ForeColor = System.Drawing.Color.White;
             this.btnDescuento.Image = ((System.Drawing.Image)(resources.GetObject("btnDescuento.Image")));
             this.btnDescuento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDescuento.Location = new System.Drawing.Point(696, 314);
+            this.btnDescuento.Location = new System.Drawing.Point(696, 250);
             this.btnDescuento.Name = "btnDescuento";
             this.btnDescuento.Size = new System.Drawing.Size(90, 35);
             this.btnDescuento.TabIndex = 0;
             this.btnDescuento.Text = "Descuento";
             this.btnDescuento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDescuento.UseVisualStyleBackColor = false;
+            this.btnDescuento.Visible = false;
             this.btnDescuento.Click += new System.EventHandler(this.btnDescuento_Click);
             // 
             // btnRubro
@@ -341,13 +332,14 @@
             this.btnRubro.ForeColor = System.Drawing.Color.White;
             this.btnRubro.Image = ((System.Drawing.Image)(resources.GetObject("btnRubro.Image")));
             this.btnRubro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRubro.Location = new System.Drawing.Point(696, 273);
+            this.btnRubro.Location = new System.Drawing.Point(696, 250);
             this.btnRubro.Name = "btnRubro";
             this.btnRubro.Size = new System.Drawing.Size(90, 35);
             this.btnRubro.TabIndex = 0;
             this.btnRubro.Text = "RUBRO";
             this.btnRubro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRubro.UseVisualStyleBackColor = false;
+            this.btnRubro.Visible = false;
             this.btnRubro.Click += new System.EventHandler(this.btnRubro_Click);
             // 
             // button1
@@ -367,14 +359,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Orange;
-            this.panel3.Location = new System.Drawing.Point(691, 209);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 35);
-            this.panel3.TabIndex = 11;
             // 
             // FormularioListado
             // 
@@ -410,19 +394,18 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblNombreFormulario;
         private System.Windows.Forms.Panel pnlBarraPrincipal;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel pnlModificar;
+        private System.Windows.Forms.Panel pnlBorrar;
+        private System.Windows.Forms.Panel pnlAgregar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Panel panelContenedor;
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDescuento;
+        private System.Windows.Forms.Panel pnlRubro;
         private System.Windows.Forms.Button btnDescuento;
         private System.Windows.Forms.Button btnRubro;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlDetalle;
         private System.Windows.Forms.Button button1;
     }
 }

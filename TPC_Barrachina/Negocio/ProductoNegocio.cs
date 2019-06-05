@@ -71,7 +71,7 @@ namespace Negocio
                     unProducto.Rubro = new Rubro();
                     unProducto.TipoProducto = new TipoProducto();
                     unProducto.CodigoProducto = AccederDatos.LectorDatos["CodigoProducto"].ToString();
-                    unProducto.CodigoBulto = (int)AccederDatos.LectorDatos["CodigoBulto"];
+                    unProducto.CodigoBulto = AccederDatos.LectorDatos["CodigoBulto"].ToString();
                     unProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
                     unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
                     unProducto.StockCritico = (int)AccederDatos.LectorDatos["StockCritico"];
@@ -98,7 +98,7 @@ namespace Negocio
         public void EliminarProducto(Producto unProducto) {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("UPDATE Productos SET Estado = 0 WHERE CodigoProducto =" + unProducto.CodigoProducto);
+            AccederDatos.DefinirTipoComando("UPDATE Productos SET Estado = 0 WHERE CodigoProducto ='" + unProducto.CodigoProducto+"'");
             AccederDatos.EjecutarConsulta();
 
         }
@@ -126,7 +126,7 @@ namespace Negocio
             Producto unProducto = new Producto();
 
             unProducto.CodigoProducto = tboxCodigoProducto.Text;
-            unProducto.CodigoBulto = Convert.ToInt32(tboxCodigoBulto.Text);
+            unProducto.CodigoBulto = tboxCodigoBulto.Text;
             unProducto.Nombre = tboxNombre.Text;
             unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
             unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);

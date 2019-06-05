@@ -9,7 +9,7 @@ namespace Dominio
     public class Producto
     {
         public string CodigoProducto { get; set; }
-        public int CodigoBulto { get; set; }
+        public string CodigoBulto { get; set; }
         public string Nombre { get; set; }
         public TipoProducto TipoProducto { get;set;}
         public int Stock { get; set; }

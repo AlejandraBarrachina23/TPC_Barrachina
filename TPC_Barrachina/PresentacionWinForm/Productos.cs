@@ -82,6 +82,7 @@ namespace PresentacionWinForm
 
                 btnAceptar.Visible = false;
                 btnModificar.Visible = true;
+                tboxCodigoProducto.Enabled = false;
 
                 tboxCodigoProducto.Text = ProductoModificar.CodigoProducto.ToString();
                 tboxCodigoBulto.Text = ProductoModificar.CodigoBulto.ToString();

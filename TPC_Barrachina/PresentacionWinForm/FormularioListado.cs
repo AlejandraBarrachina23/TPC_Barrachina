@@ -22,6 +22,9 @@ namespace PresentacionWinForm
             InitializeComponent();
             lblNombreFormulario.Text = utilidades.AsignarNombreFormulario(NombreFormulario);
             
+            if (NombreFormulario == "Clientes") { btnDescuento.Visible = true; pnlDescuento.Visible = true; }
+            else if (NombreFormulario == "Productos") { btnRubro.Visible = true; pnlRubro.Visible = true; }
+
         }
 
         private void FormularioListado_Load(object sender, EventArgs e)
@@ -60,12 +63,6 @@ namespace PresentacionWinForm
             this.Close();
         }
 
-        private void btnActualizar_Click_1(object sender, EventArgs e)
-        {
-            dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text.Remove(0, 8));
-            utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, lblNombreFormulario.Text.Remove(0, 8));
-        }
-
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             try
@@ -73,6 +70,9 @@ namespace PresentacionWinForm
                 validar.SeleccionItemDataGridView(dgvListadoBusqueda);
                 object EntidadEliminar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
                 utilidades.DefinirTipoEliminacion(EntidadEliminar);
+
+                dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text.Remove(0, 8));
+                utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, lblNombreFormulario.Text.Remove(0, 8));
                 
    
             }
@@ -91,9 +91,9 @@ namespace PresentacionWinForm
 
             if (EntidadModificar.GetType().Equals(typeof(Producto)))
             {
-
-                Productos FormularioCliente = new Productos((Producto)EntidadModificar);
-                FormularioCliente.Show();
+                Productos FormularioProducto = new Productos((Producto)EntidadModificar);
+                FormularioProducto.Show();
+                
             }
 
             else if (EntidadModificar.GetType().Equals(typeof(Cliente)))
