@@ -78,7 +78,7 @@ namespace Negocio
             }
         }
 
-        public void FormularioAgregarCliente(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, TextBox tboxCantidadBulto, TextBox tboxStockCritico, ComboBox cboxTipoProducto, ComboBox cboxRubro, ComboBox cboxProveedor)
+        public void FormularioProducto(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, TextBox tboxCantidadBulto, TextBox tboxStockCritico, ComboBox cboxTipoProducto, ComboBox cboxRubro, ComboBox cboxProveedor)
         {
             ContenidoTextBoxVacio(tboxCodigoProducto, "Código Producto");
             ExistenciaDeDatoDB("CodigoProducto", "Productos", tboxCodigoProducto.Text);
@@ -96,6 +96,7 @@ namespace Negocio
             SeleccionComboBox(cboxRubro, "Rubro");
         }
 
+        
         //public void ItemRepetidoGrid(DataGridView Grilla, string valorAgregar) {
 
         //    //(Grilla.Rows.Cast<DataGridViewRow>().Any(x => x.Cells["Nombre"].Value.ToString() == item.ToString())) 

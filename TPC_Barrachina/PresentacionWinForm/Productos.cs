@@ -110,7 +110,7 @@ namespace PresentacionWinForm
             try
             {
                 ProductoNegocio unProductoNegocio = new ProductoNegocio();
-                ValidarDatos.FormularioAgregarCliente(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor);
+                ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor);
                 unProductoNegocio.AgregarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, cboxProveedor, cboxRubro));
                 Avisos FormularioAviso = new Avisos();
                 FormularioAviso.Show();
@@ -128,7 +128,7 @@ namespace PresentacionWinForm
             try
             {
                 ProductoNegocio unProductoNegocio = new ProductoNegocio();
-                ValidarDatos.FormularioAgregarCliente(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor);
+                ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor);
                 unProductoNegocio.ModificarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, cboxProveedor, cboxRubro));
             }
             catch (Exception Excepcion)

@@ -107,7 +107,7 @@ namespace Negocio
 
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("UPDATE Productos Set CodigoBulto=@CodigoBulto, Nombre=@Nombre, CodigoTipoProducto=@CodigoTipoProducto, CantidadxBulto=@CantidadxBulto, StockCritico=@StockCritico, " +
-            "CodigoProveedor=@CodigoProveedor, CodigoRubro=@CodigoRubro WHERE CodigoProducto = " + unProducto.CodigoProducto);
+            "CodigoProveedor=@CodigoProveedor, CodigoRubro=@CodigoRubro WHERE CodigoProducto = '" + unProducto.CodigoProducto + "'");
             AccederDatos.Comando.Parameters.Clear();
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoBulto", unProducto.CodigoBulto);
             AccederDatos.Comando.Parameters.AddWithValue("@Nombre", unProducto.Nombre);
