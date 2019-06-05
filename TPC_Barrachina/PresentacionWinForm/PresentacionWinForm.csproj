@@ -57,11 +57,11 @@
     <Compile Include="Avisos.Designer.cs">
       <DependentUpon>AvisoVentana.cs</DependentUpon>
     </Compile>
-    <Compile Include="Detalle.cs">
+    <Compile Include="DetalleCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Detalle.Designer.cs">
-      <DependentUpon>Detalle.cs</DependentUpon>
+    <Compile Include="DetalleCliente.Designer.cs">
+      <DependentUpon>DetalleCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FormularioBusqueda.cs">
       <SubType>Form</SubType>
@@ -165,12 +165,6 @@
     <Compile Include="Sector.Designer.cs">
       <DependentUpon>Sector.cs</DependentUpon>
     </Compile>
-    <Compile Include="TipoProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TipoProductos.Designer.cs">
-      <DependentUpon>TipoProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,8 +197,8 @@
     <EmbeddedResource Include="AvisoVentana.resx">
       <DependentUpon>AvisoVentana.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Detalle.resx">
-      <DependentUpon>Detalle.cs</DependentUpon>
+    <EmbeddedResource Include="DetalleCliente.resx">
+      <DependentUpon>DetalleCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioBusqueda.resx">
       <DependentUpon>FormularioBusqueda.cs</DependentUpon>
@@ -256,9 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sector.resx">
       <DependentUpon>Sector.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TipoProductos.resx">
-      <DependentUpon>TipoProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>

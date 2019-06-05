@@ -18,8 +18,6 @@ namespace PresentacionWinForm
         ValidadorDatos ValidarDatos = new ValidadorDatos();
         Utilidades Utilidades = new Utilidades();
         private Producto ProductoModificar = null;
-        private string RutaIconosOpcionCorrecta = Application.StartupPath + "/Iconos/OpcionCorrecta.png";
-        private string RutaIconosOpcionIncorrecta = Application.StartupPath + "/Iconos/OpcionIncorrecta.png";
 
         //FORMULARIO CREAR
         public Productos()
@@ -44,6 +42,7 @@ namespace PresentacionWinForm
             tboxCantidadBulto.KeyPress += AsignarSoloNumeros;
             
         }
+        
         //FORMULARIO MODIFICAR
         public Productos(Producto unProductoModificar)
         {
@@ -77,6 +76,7 @@ namespace PresentacionWinForm
             cboxRubro.DataSource = unRubro.ListarRubros();
             cboxProveedor.DataSource = unProveedor.ListarProveedores();
 
+            //PRECARGA PARA MODIFICAR
             if (ProductoModificar != null)
             {
 
@@ -103,144 +103,38 @@ namespace PresentacionWinForm
             AvisoConOpcion FormularioAvisoConOpcion = new AvisoConOpcion();
             FormularioAvisoConOpcion.Show(this);
         }
-
-        private void tboxCodigoProducto_TextChanged(object sender, EventArgs e)
-        {
-            
-            if (ValidarDatos.ContenidoTextBox(tboxCodigoProducto)) {
-
-                pboxProducto.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
-                lblErrorCodigoProducto.Text = "Código Vacío.";
-            }
-
-            else if (ValidarDatos.ExistenciaDeDatoDB("CodigoProducto", "Productos", tboxCodigoProducto.Text))
-            {
-                pboxProducto.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
-                lblErrorCodigoProducto.Text = "Repetido"; ;
-            }
-            else {
-                pboxProducto.Image = Image.FromFile(RutaIconosOpcionCorrecta);
-                lblErrorCodigoProducto.Text = "Correcto";
-            }
-                        
-        }
-
-        private void tboxCodigoBulto_TextChanged(object sender, EventArgs e)
-        {
-            if (ValidarDatos.ContenidoTextBox(tboxCodigoBulto))
-            {
-                pboxCodigoBulto.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
-                lblErrorCodigoBulto.Text = "Vacío.";
-            }
-
-            else if (ValidarDatos.ExistenciaDeDatoDB("CodigoBulto", "Productos", tboxCodigoBulto.Text))
-            {
-                pboxCodigoBulto.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
-                lblErrorCodigoBulto.Text = "Repetido";
-            }
-            else
-            {
-                pboxCodigoBulto.Image = Image.FromFile(RutaIconosOpcionCorrecta);
-                lblErrorCodigoBulto.Text = "Correcto";
-            }
-        }
-
-        private void tboxNombre_TextChanged(object sender, EventArgs e)
-        {
-            if (ValidarDatos.ContenidoTextBox(tboxNombre))
-            {
-                pboxNombre.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
-                lblErrorNombre.Text = "Vacío.";
-            }
-
-            else if (ValidarDatos.ExistenciaDeDatoDB("Nombre", "Productos", tboxNombre.Text))
-            {
-                pboxNombre.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
-                lblErrorNombre.Text = "Repetido"; 
-            }
-            else
-            {
-                pboxNombre.Image = Image.FromFile(RutaIconosOpcionCorrecta);
-                lblErrorNombre.Text = "Correcto";
-            }
-        }
-
-        private void cboxTipoProducto_Leave(object sender, EventArgs e)
-        {
-            
-            if (ValidarDatos.SeleccionComboBox(cboxTipoProducto)){
-
-                pboxTipo.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
-                lblErrorTipo.Text = "Seleccione una opción";
-            }
-            else
-            {
-                pboxTipo.Image = Image.FromFile(RutaIconosOpcionCorrecta);
-                lblErrorTipo.Text = "Correcto";
-            }
-        }
-
-        private void cboxProveedor_Leave(object sender, EventArgs e)
-        {
-            if (ValidarDatos.SeleccionComboBox(cboxProveedor))
-            {
-
-                pboxProveedor.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
-                lblErrorProveedor.Text = "Seleccione una opción";
-            }
-            else
-            {
-                pboxProveedor.Image = Image.FromFile(RutaIconosOpcionCorrecta);
-                lblErrorProveedor.Text = "Correcto";
-            }
-        }
-
-        private void cboxRubro_Leave(object sender, EventArgs e)
-        {
-            if (ValidarDatos.SeleccionComboBox(cboxRubro))
-            {
-                pboxRubro.Image = Image.FromFile(RutaIconosOpcionIncorrecta);
-                lblErrorRubro.Text = "Seleccione una opción";
-            }
-            else
-            {
-                pboxRubro.Image = Image.FromFile(RutaIconosOpcionCorrecta);
-                lblErrorRubro.Text = "Correcto";
-            }
-        }
-
+              
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Producto unProducto = new Producto();
-            ProductoNegocio unProductoNegocio = new ProductoNegocio();
-            unProducto.CodigoProducto = Convert.ToInt32(tboxCodigoProducto.Text);
-            unProducto.CodigoBulto = Convert.ToInt32(tboxCodigoBulto.Text);
-            unProducto.Nombre = tboxNombre.Text;
-            unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
-            unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);
-            unProducto.StockCritico = Convert.ToInt32(tboxStockCritico.Text);
-            unProducto.Proveedor = (Proveedor)cboxProveedor.SelectedItem;
-            unProducto.Rubro = (Rubro)cboxRubro.SelectedItem;
-            unProductoNegocio.AgregarProducto(unProducto);
-            Avisos FormularioAviso = new Avisos();
-            FormularioAviso.Show();
+            try
+            {
+                ProductoNegocio unProductoNegocio = new ProductoNegocio();
+                ValidarDatos.FormularioAgregarCliente(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor);
+                unProductoNegocio.AgregarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, cboxProveedor, cboxRubro));
+                Avisos FormularioAviso = new Avisos();
+                FormularioAviso.Show();
+            }
+            catch (Exception Excepcion)
+            {
 
+                MessageBox.Show(Excepcion.Message);
+            }
+         
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Producto unProducto = new Producto();
-            ProductoNegocio unProductoNegocio = new ProductoNegocio();
-            unProducto.CodigoProducto = Convert.ToInt32(tboxCodigoProducto.Text);
-            unProducto.CodigoBulto = Convert.ToInt32(tboxCodigoBulto.Text);
-            unProducto.Nombre = tboxNombre.Text;
-            unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
-            unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);
-            unProducto.StockCritico = Convert.ToInt32(tboxStockCritico.Text);
-            unProducto.Proveedor = (Proveedor)cboxProveedor.SelectedItem;
-            unProducto.Rubro = (Rubro)cboxRubro.SelectedItem;
-            unProductoNegocio.ModificarProducto(unProducto);
-
+            try
+            {
+                ProductoNegocio unProductoNegocio = new ProductoNegocio();
+                ValidarDatos.FormularioAgregarCliente(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor);
+                unProductoNegocio.ModificarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, cboxProveedor, cboxRubro));
+            }
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+           
         }
     }
 }

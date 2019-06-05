@@ -7,8 +7,6 @@ using System.Windows.Forms;
 using AccesoDatos;
 using Dominio;
 
-
-
 namespace Negocio
 {
     public class Utilidades
@@ -94,7 +92,7 @@ namespace Negocio
 
         public DataGridView OcultarColumnasDataGridView(DataGridView Grilla, string NombreTabla) {
 
-
+            
             if (NombreTabla == "Productos")
             {
 

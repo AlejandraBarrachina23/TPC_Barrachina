@@ -177,7 +177,7 @@
             this.Controls.Add(this.txtbNombre);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(1011, 195);
+            this.Location = new System.Drawing.Point(809, 0);
             this.Name = "Descuentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TipoDescuento";

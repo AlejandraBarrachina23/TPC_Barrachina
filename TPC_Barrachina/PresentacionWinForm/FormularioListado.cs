@@ -21,12 +21,14 @@ namespace PresentacionWinForm
         {
             InitializeComponent();
             lblNombreFormulario.Text = utilidades.AsignarNombreFormulario(NombreFormulario);
+            
         }
 
         private void FormularioListado_Load(object sender, EventArgs e)
         {
             dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text.Remove(0, 8));
             utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, lblNombreFormulario.Text.Remove(0, 8));
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -107,15 +109,14 @@ namespace PresentacionWinForm
                 Proveedores FormularioProveedor = new Proveedores((Proveedor)EntidadModificar);
                 FormularioProveedor.Show();
 
-
             }
-
 
         }
 
         private void btnRubro_Click(object sender, EventArgs e)
         {
             Rubros FormularioRubro = new Rubros();
+            FormularioRubro.MdiParent = this.MdiParent;
             FormularioRubro.Show();
                      
         }
@@ -123,7 +124,20 @@ namespace PresentacionWinForm
         private void btnDescuento_Click(object sender, EventArgs e)
         {
             Descuentos FormularioDescuentos = new Descuentos();
+            FormularioDescuentos.MdiParent = this.MdiParent;
             FormularioDescuentos.Show();
+        }
+
+        private void tboxCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (tboxCodigo.Text == "")
+            {
+                dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text.Remove(0, 8));
+            }
+            else
+            {
+
+            }
         }
     }
 }

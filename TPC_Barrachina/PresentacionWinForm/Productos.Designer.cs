@@ -114,7 +114,6 @@
             this.tboxCodigoProducto.Name = "tboxCodigoProducto";
             this.tboxCodigoProducto.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoProducto.TabIndex = 1;
-            this.tboxCodigoProducto.TextChanged += new System.EventHandler(this.tboxCodigoProducto_TextChanged);
             // 
             // btnAceptar
             // 
@@ -141,7 +140,6 @@
             this.tboxCodigoBulto.Name = "tboxCodigoBulto";
             this.tboxCodigoBulto.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoBulto.TabIndex = 2;
-            this.tboxCodigoBulto.TextChanged += new System.EventHandler(this.tboxCodigoBulto_TextChanged);
             // 
             // lblCodigoBulto
             // 
@@ -192,7 +190,6 @@
             this.tboxNombre.Name = "tboxNombre";
             this.tboxNombre.Size = new System.Drawing.Size(173, 25);
             this.tboxNombre.TabIndex = 3;
-            this.tboxNombre.TextChanged += new System.EventHandler(this.tboxNombre_TextChanged);
             // 
             // cboxTipoProducto
             // 
@@ -202,7 +199,6 @@
             this.cboxTipoProducto.Name = "cboxTipoProducto";
             this.cboxTipoProducto.Size = new System.Drawing.Size(173, 25);
             this.cboxTipoProducto.TabIndex = 4;
-            this.cboxTipoProducto.Leave += new System.EventHandler(this.cboxTipoProducto_Leave);
             // 
             // lblTipoProducto
             // 
@@ -268,7 +264,6 @@
             this.cboxRubro.Name = "cboxRubro";
             this.cboxRubro.Size = new System.Drawing.Size(173, 25);
             this.cboxRubro.TabIndex = 8;
-            this.cboxRubro.Leave += new System.EventHandler(this.cboxRubro_Leave);
             // 
             // cboxProveedor
             // 
@@ -278,7 +273,6 @@
             this.cboxProveedor.Name = "cboxProveedor";
             this.cboxProveedor.Size = new System.Drawing.Size(173, 25);
             this.cboxProveedor.TabIndex = 7;
-            this.cboxProveedor.Leave += new System.EventHandler(this.cboxProveedor_Leave);
             // 
             // pboxCodigoBulto
             // 

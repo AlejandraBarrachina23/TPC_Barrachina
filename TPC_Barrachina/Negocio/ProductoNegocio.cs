@@ -27,9 +27,9 @@ namespace Negocio
             {
                 Producto unNuevoProducto = new Producto();
 
-                if ((bool)AccederDatos.LectorDatos["Estado"]) { 
+                if ((bool)AccederDatos.LectorDatos["Estado"]) {
 
-                unNuevoProducto.CodigoProducto = (int)AccederDatos.LectorDatos["CodigoProducto"];
+                unNuevoProducto.CodigoProducto = AccederDatos.LectorDatos["CodigoProducto"].ToString();
                 unNuevoProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
                 unNuevoProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
                 unNuevoProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
@@ -70,7 +70,7 @@ namespace Negocio
                     unProducto.Proveedor = new Proveedor();
                     unProducto.Rubro = new Rubro();
                     unProducto.TipoProducto = new TipoProducto();
-                    unProducto.CodigoProducto = (int)AccederDatos.LectorDatos["CodigoProducto"];
+                    unProducto.CodigoProducto = AccederDatos.LectorDatos["CodigoProducto"].ToString();
                     unProducto.CodigoBulto = (int)AccederDatos.LectorDatos["CodigoBulto"];
                     unProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
                     unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
@@ -120,5 +120,21 @@ namespace Negocio
 
         }
 
+        public Producto CargarProducto(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, ComboBox cboxTipoProducto, TextBox tboxCantidadBulto, TextBox tboxStockCritico, ComboBox cboxProveedor, ComboBox cboxRubro) {
+
+            
+            Producto unProducto = new Producto();
+
+            unProducto.CodigoProducto = tboxCodigoProducto.Text;
+            unProducto.CodigoBulto = Convert.ToInt32(tboxCodigoBulto.Text);
+            unProducto.Nombre = tboxNombre.Text;
+            unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
+            unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);
+            unProducto.StockCritico = Convert.ToInt32(tboxStockCritico.Text);
+            unProducto.Proveedor = (Proveedor)cboxProveedor.SelectedItem;
+            unProducto.Rubro = (Rubro)cboxRubro.SelectedItem;
+
+            return unProducto;
+        }
     }
 }

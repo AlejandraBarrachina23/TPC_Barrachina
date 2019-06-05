@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 216);
+            this.ClientSize = new System.Drawing.Size(326, 220);
             this.Controls.Add(this.cboxTipoProducto);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
@@ -164,7 +164,7 @@
             this.Controls.Add(this.tboxNombre);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(1011, 195);
+            this.Location = new System.Drawing.Point(809, 0);
             this.Name = "Rubros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "NuevoRubro";
