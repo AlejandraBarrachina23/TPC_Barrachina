@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
+using Negocio;
 
 namespace PresentacionWinForm
 {
@@ -35,6 +36,16 @@ namespace PresentacionWinForm
                 tboxDescripcion.Text = ImpuestoModificar.Descripcion;
             }
             
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Impuesto unImpuesto = new Impuesto();
+            ImpuestoNegocio unNegocioImpuesto = new ImpuestoNegocio();
+            unImpuesto.CodigoImpuesto = Convert.ToInt32(tboxCodigoImpuesto.Text);                
+            unImpuesto.Nombre = tboxNombre.Text;
+            unImpuesto.Descripcion = tboxDescripcion.Text;
+            unNegocioImpuesto.AgregarImpuesto(unImpuesto);
         }
     }
 }

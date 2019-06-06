@@ -87,7 +87,7 @@ namespace PresentacionWinForm
             //impuestos
             foreach (Impuesto unNuevoImpuesto in ListadoImpuestos)
             {
-                unImpuesto.AgregarImpuesto(unNuevoImpuesto, unNuevoProveedor.CodigoProveedor);
+                unImpuesto.AgregarImpuestoXProveedor(unNuevoImpuesto, unNuevoProveedor.CodigoProveedor);
             }
 
             Avisos FormularioAviso = new Avisos();

@@ -45,5 +45,15 @@ namespace Negocio
             AccederDatos.CerrarConexion();
 
         }
+
+        public void AgregarDescuento(Descuento unDescuento) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("INSERT INTO Descuentos (CodigoDescuento,NombreDescuento,Porcentaje) VALUES ('" + unDescuento.CodigoDescuento + "','" + unDescuento.Nombre + "','" + unDescuento.Porcentaje + "')");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+
+
+        }
     }
 }

@@ -48,5 +48,14 @@ namespace Negocio
 
         }
 
+        public void AgregarRubro(Rubro unRubro) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("INSERT INTO Rubros(CodigoRubro,NombreRubro)VALUES('"+unRubro.CodigoRubro+"','"+unRubro.Nombre+"')");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+
+        }
+
     }
 }

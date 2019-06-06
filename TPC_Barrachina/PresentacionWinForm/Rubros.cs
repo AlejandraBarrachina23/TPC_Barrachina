@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
+using Negocio;
 
 namespace PresentacionWinForm
 {
@@ -34,6 +35,16 @@ namespace PresentacionWinForm
                 tboxNombre.Text = RubroModificar.Nombre;
                 tboxCodigoRubro.Enabled = false;
             }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Rubro unRubro = new Rubro();
+            RubroNegocio unRubroNegocio = new RubroNegocio();
+
+            unRubro.CodigoRubro = Convert.ToInt32(tboxCodigoRubro.Text);
+            unRubro.Nombre = tboxNombre.Text;
+            unRubroNegocio.AgregarRubro(unRubro);
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dominio;
+using Negocio;
 
 namespace PresentacionWinForm
 {
@@ -33,6 +34,17 @@ namespace PresentacionWinForm
                 tboxNombre.Text = DescuentoModificar.Nombre;
                 tboxPorcentaje.Text = DescuentoModificar.Porcentaje.ToString();
             }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            Descuento unDescuento = new Descuento();
+            DescuentoNegocio unDescuentoNegocio = new DescuentoNegocio();
+
+            unDescuento.CodigoDescuento = Convert.ToInt32(tboxCodigoDescuento.Text);
+            unDescuento.Nombre = tboxNombre.Text;
+            unDescuento.Porcentaje = Convert.ToDecimal(tboxPorcentaje.Text);
+            unDescuentoNegocio.AgregarDescuento(unDescuento);
         }
     }
 }

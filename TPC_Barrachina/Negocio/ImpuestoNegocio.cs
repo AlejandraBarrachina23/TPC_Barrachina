@@ -36,11 +36,20 @@ namespace Negocio
 
         }
 
-        public void AgregarImpuesto(Impuesto unImpuesto, int CodigoProveedor)
+        public void AgregarImpuestoXProveedor(Impuesto unImpuesto, int CodigoProveedor)
         {
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("INSERT INTO ProveedorXImpuesto(CodigoProveedor,CodigoImpuesto,Alicuota) VALUES ("
                 + CodigoProveedor + "," + unImpuesto.CodigoImpuesto + "," + unImpuesto.Alicuota + ")");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+
+        }
+
+        public void AgregarImpuesto(Impuesto unImpuesto)
+        {
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("INSERT INTO Impuestos(CodigoImpuesto,Nombre,Descripcion) VALUES ('"+ unImpuesto.CodigoImpuesto + "','" + unImpuesto.Nombre + "','" + unImpuesto.Descripcion + "')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
 
@@ -75,5 +84,6 @@ namespace Negocio
             AccederDatos.CerrarConexion();
 
         }
+
     }
 }
