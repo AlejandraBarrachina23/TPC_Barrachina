@@ -28,118 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblLocalidad = new System.Windows.Forms.Label();
+            this.lblProvincia = new System.Windows.Forms.Label();
+            this.lblCP = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblCelular = new System.Windows.Forms.Label();
+            this.lblMail = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblCodigoCliente = new System.Windows.Forms.Label();
+            this.lblSaldoCuentaCorriente = new System.Windows.Forms.Label();
+            this.lblDescuento = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre:";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(24, 67);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(54, 20);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "Nombre:";
             // 
-            // label2
+            // lblApellido
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Apellido:";
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.Location = new System.Drawing.Point(24, 97);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(54, 20);
+            this.lblApellido.TabIndex = 1;
+            this.lblApellido.Text = "Apellido:";
             // 
-            // label3
+            // lblDireccion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Dirección:";
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccion.Location = new System.Drawing.Point(19, 18);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(62, 20);
+            this.lblDireccion.TabIndex = 1;
+            this.lblDireccion.Text = "Dirección:";
             // 
-            // label4
+            // lblLocalidad
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Localidad:";
+            this.lblLocalidad.AutoSize = true;
+            this.lblLocalidad.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalidad.Location = new System.Drawing.Point(19, 44);
+            this.lblLocalidad.Name = "lblLocalidad";
+            this.lblLocalidad.Size = new System.Drawing.Size(62, 20);
+            this.lblLocalidad.TabIndex = 1;
+            this.lblLocalidad.Text = "Localidad:";
             // 
-            // label5
+            // lblProvincia
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 71);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Provincia:";
+            this.lblProvincia.AutoSize = true;
+            this.lblProvincia.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProvincia.Location = new System.Drawing.Point(19, 71);
+            this.lblProvincia.Name = "lblProvincia";
+            this.lblProvincia.Size = new System.Drawing.Size(61, 20);
+            this.lblProvincia.TabIndex = 1;
+            this.lblProvincia.Text = "Provincia:";
             // 
-            // label6
+            // lblCP
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 20);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "CP:";
+            this.lblCP.AutoSize = true;
+            this.lblCP.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCP.Location = new System.Drawing.Point(21, 96);
+            this.lblCP.Name = "lblCP";
+            this.lblCP.Size = new System.Drawing.Size(27, 20);
+            this.lblCP.TabIndex = 1;
+            this.lblCP.Text = "CP:";
             // 
-            // label7
+            // lblTelefono
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Teléfono:";
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(19, 26);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(56, 20);
+            this.lblTelefono.TabIndex = 1;
+            this.lblTelefono.Text = "Teléfono:";
             // 
-            // label8
+            // lblCelular
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 56);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Celular:";
+            this.lblCelular.AutoSize = true;
+            this.lblCelular.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelular.Location = new System.Drawing.Point(21, 54);
+            this.lblCelular.Name = "lblCelular";
+            this.lblCelular.Size = new System.Drawing.Size(50, 20);
+            this.lblCelular.TabIndex = 1;
+            this.lblCelular.Text = "Celular:";
             // 
-            // label9
+            // lblMail
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(20, 83);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 20);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "E-Mail:";
+            this.lblMail.AutoSize = true;
+            this.lblMail.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMail.Location = new System.Drawing.Point(21, 81);
+            this.lblMail.Name = "lblMail";
+            this.lblMail.Size = new System.Drawing.Size(45, 20);
+            this.lblMail.TabIndex = 1;
+            this.lblMail.Text = "E-Mail:";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.lblLocalidad);
+            this.groupBox1.Controls.Add(this.lblDireccion);
+            this.groupBox1.Controls.Add(this.lblProvincia);
+            this.groupBox1.Controls.Add(this.lblCP);
             this.groupBox1.Location = new System.Drawing.Point(15, 136);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(301, 133);
@@ -149,9 +151,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.lblTelefono);
+            this.groupBox2.Controls.Add(this.lblCelular);
+            this.groupBox2.Controls.Add(this.lblMail);
             this.groupBox2.Location = new System.Drawing.Point(15, 275);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(301, 118);
@@ -159,30 +161,53 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contacto";
             // 
-            // label10
+            // lblCodigoCliente
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(29, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Código Cliente:";
+            this.lblCodigoCliente.AutoSize = true;
+            this.lblCodigoCliente.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoCliente.Location = new System.Drawing.Point(24, 37);
+            this.lblCodigoCliente.Name = "lblCodigoCliente";
+            this.lblCodigoCliente.Size = new System.Drawing.Size(90, 20);
+            this.lblCodigoCliente.TabIndex = 1;
+            this.lblCodigoCliente.Text = "Código Cliente:";
+            // 
+            // lblSaldoCuentaCorriente
+            // 
+            this.lblSaldoCuentaCorriente.AutoSize = true;
+            this.lblSaldoCuentaCorriente.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaldoCuentaCorriente.Location = new System.Drawing.Point(34, 408);
+            this.lblSaldoCuentaCorriente.Name = "lblSaldoCuentaCorriente";
+            this.lblSaldoCuentaCorriente.Size = new System.Drawing.Size(41, 20);
+            this.lblSaldoCuentaCorriente.TabIndex = 1;
+            this.lblSaldoCuentaCorriente.Text = "Saldo:";
+            // 
+            // lblDescuento
+            // 
+            this.lblDescuento.AutoSize = true;
+            this.lblDescuento.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescuento.Location = new System.Drawing.Point(34, 438);
+            this.lblDescuento.Name = "lblDescuento";
+            this.lblDescuento.Size = new System.Drawing.Size(69, 20);
+            this.lblDescuento.TabIndex = 1;
+            this.lblDescuento.Text = "Descuento:";
             // 
             // DetalleCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 450);
+            this.ClientSize = new System.Drawing.Size(328, 486);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDescuento);
+            this.Controls.Add(this.lblApellido);
+            this.Controls.Add(this.lblCodigoCliente);
+            this.Controls.Add(this.lblSaldoCuentaCorriente);
+            this.Controls.Add(this.lblNombre);
             this.Location = new System.Drawing.Point(809, 0);
             this.Name = "DetalleCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Detalle";
+            this.Load += new System.EventHandler(this.DetalleCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -193,17 +218,19 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.Label lblLocalidad;
+        private System.Windows.Forms.Label lblProvincia;
+        private System.Windows.Forms.Label lblCP;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblCelular;
+        private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblCodigoCliente;
+        private System.Windows.Forms.Label lblSaldoCuentaCorriente;
+        private System.Windows.Forms.Label lblDescuento;
     }
 }

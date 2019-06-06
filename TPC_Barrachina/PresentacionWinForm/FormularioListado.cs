@@ -151,8 +151,9 @@ namespace PresentacionWinForm
                 else if (EntidadModificar.GetType().Equals(typeof(Cliente)))
                 {
 
-                    Clientes FormularioCliente = new Clientes((Cliente)EntidadModificar);
-                    FormularioCliente.Show();
+                    DetalleCliente FormularioDetalleCliente = new DetalleCliente((Cliente)EntidadModificar);
+                    FormularioDetalleCliente.MdiParent = this.MdiParent;
+                    FormularioDetalleCliente.Show();
 
                 }
 
