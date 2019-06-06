@@ -16,17 +16,37 @@ namespace Negocio
         public List<Rubro> ListarRubros() {
 
             List<Rubro> ListadoRubros = new List<Rubro>();
-            AccederDatos.LecturaBaseDatos("SELECT * FROM Rubros");
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT * FROM Rubros");
+            AccederDatos.EjecutarConsulta();
+
             while (AccederDatos.LectorDatos.Read()) {
 
                 Rubro unNuevoRubro = new Rubro();
-                unNuevoRubro.CodigoRubro = (int)AccederDatos.LectorDatos["CodigoRubro"];
-                unNuevoRubro.Nombre = AccederDatos.LectorDatos["NombreRubro"].ToString();
-                ListadoRubros.Add(unNuevoRubro);
+
+                if ((bool)AccederDatos.LectorDatos["Estado"]) {
+
+                    unNuevoRubro.CodigoRubro = (int)AccederDatos.LectorDatos["CodigoRubro"];
+                    unNuevoRubro.Nombre = AccederDatos.LectorDatos["NombreRubro"].ToString();
+                    ListadoRubros.Add(unNuevoRubro);
+                }
+                
+                
             }
+
+            AccederDatos.CerrarConexion();
             return ListadoRubros;
 
-        } 
+        }
+
+        public void EliminarRubro(Rubro unRubro) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Rubros SET Estado = 0 WHERE CodigoRubro ='" + unRubro.CodigoRubro + "'");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+
+        }
 
     }
 }

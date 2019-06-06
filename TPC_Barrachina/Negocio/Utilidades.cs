@@ -68,7 +68,6 @@ namespace Negocio
         public object DefinirTipoEliminacion(object Entidad)
         {
 
-
             if (Entidad.GetType().Equals(typeof(Cliente)))
             {
                 ClienteNegocio unClienteNegocio = new ClienteNegocio();
@@ -88,6 +87,29 @@ namespace Negocio
 
                 ProveedorNegocio unProveedor = new ProveedorNegocio();
                 unProveedor.EliminarProveedor((Proveedor)Entidad);
+
+            }
+
+            if (Entidad.GetType().Equals(typeof(Rubro))) {
+
+                RubroNegocio unRubro = new RubroNegocio();
+                unRubro.EliminarRubro((Rubro)Entidad);
+            }
+
+
+            if (Entidad.GetType().Equals(typeof(Impuesto)))
+            {
+
+                ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
+                unImpuesto.EliminarImpuesto((Impuesto)Entidad);
+            }
+
+
+            if (Entidad.GetType().Equals(typeof(Descuento)))
+            {
+
+                DescuentoNegocio unDescuento = new DescuentoNegocio();
+                unDescuento.EliminarDescuento((Descuento)Entidad);
 
             }
 
@@ -147,6 +169,7 @@ namespace Negocio
             return null;
 
         }
+
     }
 }
 

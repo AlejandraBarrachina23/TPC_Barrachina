@@ -20,11 +20,14 @@ namespace Negocio
             while (AccederDatos.LectorDatos.Read())
             {
                 Impuesto unNuevoImpuesto = new Impuesto();
-                unNuevoImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoImpuesto"];
-                unNuevoImpuesto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
-                unNuevoImpuesto.Descripcion = AccederDatos.LectorDatos["Descripcion"].ToString();
 
-                ListadoImpuestos.Add(unNuevoImpuesto);
+                if ((bool)AccederDatos.LectorDatos["Estado"]) { 
+                    unNuevoImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoImpuesto"];
+                    unNuevoImpuesto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                    unNuevoImpuesto.Descripcion = AccederDatos.LectorDatos["Descripcion"].ToString();
+                    ListadoImpuestos.Add(unNuevoImpuesto);
+                }
+               
             }
 
             AccederDatos.CerrarReader();
@@ -64,5 +67,13 @@ namespace Negocio
             return ListadoImpuestos;
         }
 
+        public void EliminarImpuesto(Impuesto unImpuesto) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Impuestos SET Estado=0 WHERE CodigoImpuesto = '" + unImpuesto.CodigoImpuesto + "'");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+
+        }
     }
 }

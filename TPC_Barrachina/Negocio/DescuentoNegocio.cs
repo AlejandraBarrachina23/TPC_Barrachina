@@ -22,13 +22,27 @@ namespace Negocio
 
                 Descuento unDescuento = new Descuento();
 
-                unDescuento.CodigoDescuento = (int)AccederDatos.LectorDatos["CodigoDescuento"];
-                unDescuento.Nombre = AccederDatos.LectorDatos["NombreDescuento"].ToString();
-                unDescuento.Porcentaje = (decimal)AccederDatos.LectorDatos["Porcentaje"];
+                if ((bool)AccederDatos.LectorDatos["Estado"]) {
 
-                ListadoDescuentos.Add(unDescuento);
+                    unDescuento.CodigoDescuento = (int)AccederDatos.LectorDatos["CodigoDescuento"];
+                    unDescuento.Nombre = AccederDatos.LectorDatos["NombreDescuento"].ToString();
+                    unDescuento.Porcentaje = (decimal)AccederDatos.LectorDatos["Porcentaje"];
+
+                    ListadoDescuentos.Add(unDescuento);
+
+                }
+                
             }
             return ListadoDescuentos;
+
+        }
+
+        public void EliminarDescuento(Descuento unDescuento) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Descuentos SET Estado = 0 WHERE CodigoDescuento ='" + unDescuento.CodigoDescuento + "'");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
 
         }
     }

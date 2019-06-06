@@ -80,5 +80,11 @@ namespace PresentacionWinForm
                 FormularioDescuento.Show();
             }
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            utilidades.DefinirTipoEliminacion(cboxListado.SelectedItem);
+            cboxListado.DataSource = utilidades.DefinirTipoBusqueda(NombreFormulario);
+        }
     }
 }
