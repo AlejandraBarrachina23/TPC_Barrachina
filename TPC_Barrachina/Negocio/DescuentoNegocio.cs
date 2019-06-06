@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Dominio;
 using AccesoDatos;
+
+
 namespace Negocio
+
 {
     public class DescuentoNegocio
 
@@ -54,6 +58,27 @@ namespace Negocio
             AccederDatos.CerrarConexion();
 
 
+        }
+
+        public Descuento CargarDescuento(TextBox tboxCodigoDescuento, TextBox tboxNombre, TextBox tboxPorcentaje)
+        {
+            Descuento unDescuento = new Descuento();
+            unDescuento.CodigoDescuento = Convert.ToInt32(tboxCodigoDescuento.Text);
+            unDescuento.Nombre = tboxNombre.Text;
+            unDescuento.Porcentaje = Convert.ToDecimal(tboxPorcentaje.Text);
+            return unDescuento;
+
+        }
+
+        public void ModificarDescuento(Descuento unDescuento) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Descuentos SET NombreDescuento = @NombreDescuento, Porcentaje =@Porcentaje WHERE CodigoDescuento ='" + unDescuento.CodigoDescuento + "'");
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@NombreDescuento", unDescuento.Nombre);
+            AccederDatos.Comando.Parameters.AddWithValue("@Porcentaje", unDescuento.Porcentaje);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
         }
     }
 }

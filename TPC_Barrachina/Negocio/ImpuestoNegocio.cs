@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
+using System.Windows.Forms;
 using AccesoDatos;
 
 namespace Negocio
@@ -80,6 +81,27 @@ namespace Negocio
 
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("UPDATE Impuestos SET Estado=0 WHERE CodigoImpuesto = '" + unImpuesto.CodigoImpuesto + "'");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+
+        }
+
+        public Impuesto CargarImpuesto(TextBox tboxCodigoImpuesto, TextBox tboxNombre, TextBox tboxDescripcion) {
+
+            Impuesto unImpuesto = new Impuesto();
+            unImpuesto.CodigoImpuesto = Convert.ToInt32(tboxCodigoImpuesto.Text);
+            unImpuesto.Nombre = tboxNombre.Text;
+            unImpuesto.Descripcion = tboxDescripcion.Text;
+            return unImpuesto;
+        }
+
+        public void ModificarImpuesto(Impuesto unImpuesto) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Impuestos SET Nombre=@Nombre, Descripcion=@Descripcion WHERE CodigoImpuesto ='" + unImpuesto.CodigoImpuesto + "'");
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@Nombre", unImpuesto.Nombre);
+            AccederDatos.Comando.Parameters.AddWithValue("@Descripcion", unImpuesto.Descripcion);
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
 

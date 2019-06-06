@@ -15,6 +15,7 @@ namespace PresentacionWinForm
     public partial class Descuentos : Form
     {
         private Descuento DescuentoModificar = null;
+        private DescuentoNegocio unDescuentoNegocio = new DescuentoNegocio();
         public Descuentos()
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace PresentacionWinForm
         {
             InitializeComponent();
             DescuentoModificar = unDescuento;
+            btnAceptar.Visible = false;
+            tboxCodigoDescuento.Enabled=false;
         }
 
         private void Descuentos_Load(object sender, EventArgs e)
@@ -38,13 +41,12 @@ namespace PresentacionWinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Descuento unDescuento = new Descuento();
-            DescuentoNegocio unDescuentoNegocio = new DescuentoNegocio();
+            unDescuentoNegocio.AgregarDescuento(unDescuentoNegocio.CargarDescuento(tboxCodigoDescuento, tboxNombre, tboxPorcentaje));
+        }
 
-            unDescuento.CodigoDescuento = Convert.ToInt32(tboxCodigoDescuento.Text);
-            unDescuento.Nombre = tboxNombre.Text;
-            unDescuento.Porcentaje = Convert.ToDecimal(tboxPorcentaje.Text);
-            unDescuentoNegocio.AgregarDescuento(unDescuento);
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            unDescuentoNegocio.ModificarDescuento(unDescuentoNegocio.CargarDescuento(tboxCodigoDescuento, tboxNombre, tboxPorcentaje));
         }
     }
 }

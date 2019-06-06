@@ -15,6 +15,7 @@ namespace PresentacionWinForm
     public partial class Rubros : Form
     {
         private Rubro RubroModificar = null;
+        RubroNegocio unRubroNegocio = new RubroNegocio();
         public Rubros()
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace PresentacionWinForm
         {
             InitializeComponent();
             RubroModificar = unRubro;
+            btnAceptar.Visible = false;
+            tboxCodigoRubro.Enabled = false;
 
         }
 
@@ -39,12 +42,12 @@ namespace PresentacionWinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Rubro unRubro = new Rubro();
-            RubroNegocio unRubroNegocio = new RubroNegocio();
+            unRubroNegocio.AgregarRubro(unRubroNegocio.CargarRubro(tboxCodigoRubro, tboxNombre));
+        }
 
-            unRubro.CodigoRubro = Convert.ToInt32(tboxCodigoRubro.Text);
-            unRubro.Nombre = tboxNombre.Text;
-            unRubroNegocio.AgregarRubro(unRubro);
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            unRubroNegocio.ModificarRubro(unRubroNegocio.CargarRubro(tboxCodigoRubro, tboxNombre));
         }
     }
 }

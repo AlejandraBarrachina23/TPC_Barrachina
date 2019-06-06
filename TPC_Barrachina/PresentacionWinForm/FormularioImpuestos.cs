@@ -15,6 +15,7 @@ namespace PresentacionWinForm
     public partial class FormularioImpuestos : Form
     {
         private Impuesto ImpuestoModificar = null;
+        private ImpuestoNegocio unNegocioImpuesto = new ImpuestoNegocio();
         public FormularioImpuestos()
         {
             InitializeComponent();
@@ -24,7 +25,8 @@ namespace PresentacionWinForm
         {
             InitializeComponent();
             ImpuestoModificar = unImpuesto;
-
+            btnAceptar.Visible = false;
+            tboxCodigoImpuesto.Enabled = false;
         }
 
         private void FormularioImpuestos_Load(object sender, EventArgs e)
@@ -39,13 +41,13 @@ namespace PresentacionWinForm
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
+        {         
+            unNegocioImpuesto.AgregarImpuesto(unNegocioImpuesto.CargarImpuesto(tboxCodigoImpuesto, tboxNombre, tboxDescripcion));   
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            Impuesto unImpuesto = new Impuesto();
-            ImpuestoNegocio unNegocioImpuesto = new ImpuestoNegocio();
-            unImpuesto.CodigoImpuesto = Convert.ToInt32(tboxCodigoImpuesto.Text);                
-            unImpuesto.Nombre = tboxNombre.Text;
-            unImpuesto.Descripcion = tboxDescripcion.Text;
-            unNegocioImpuesto.AgregarImpuesto(unImpuesto);
+            unNegocioImpuesto.ModificarImpuesto(unNegocioImpuesto.CargarImpuesto(tboxCodigoImpuesto, tboxNombre, tboxDescripcion));
         }
     }
 }

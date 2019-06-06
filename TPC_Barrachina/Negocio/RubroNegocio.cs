@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
+using System.Windows.Forms;
 using AccesoDatos;
+
 
 
 namespace Negocio
@@ -57,5 +59,21 @@ namespace Negocio
 
         }
 
+        public Rubro CargarRubro(TextBox tboxCodigoRubro, TextBox tboxNombre) {
+
+            Rubro unRubro = new Rubro();
+
+            unRubro.CodigoRubro = Convert.ToInt32(tboxCodigoRubro.Text);
+            unRubro.Nombre = tboxNombre.Text;
+            return unRubro;
+        }
+
+        public void ModificarRubro(Rubro unRubro) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE Rubros SET NombreRubro = '" + unRubro.Nombre + "' WHERE CodigoRubro = '" + unRubro.CodigoRubro + "'");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+        }
     }
 }
