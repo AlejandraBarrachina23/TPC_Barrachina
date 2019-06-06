@@ -160,8 +160,9 @@ namespace PresentacionWinForm
                 else if (EntidadModificar.GetType().Equals(typeof(Proveedor)))
                 {
 
-                    Proveedores FormularioProveedor = new Proveedores((Proveedor)EntidadModificar);
-                    FormularioProveedor.Show();
+                    DetalleProveedor FormularioDetalleProveedor = new DetalleProveedor((Proveedor)EntidadModificar);
+                    FormularioDetalleProveedor.MdiParent = this.MdiParent;
+                    FormularioDetalleProveedor.Show();
 
                 }
             }
