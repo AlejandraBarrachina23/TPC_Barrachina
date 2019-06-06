@@ -111,7 +111,6 @@ namespace PresentacionWinForm
                 tboxNombre.Text = ClienteModificar.Nombre;
                 tboxApellido.Text = ClienteModificar.Apellido;
                 //Direccion
-
                 tboxCalle.Text = ClienteModificar.Contacto.Direccion.Calle;
                 tboxNumero.Text = ClienteModificar.Contacto.Direccion.Numero.ToString();
                 tboxCP.Text = ClienteModificar.Contacto.Direccion.CodigoPostal.ToString();

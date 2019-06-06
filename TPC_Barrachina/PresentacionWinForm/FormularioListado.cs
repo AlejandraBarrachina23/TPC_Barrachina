@@ -21,9 +21,10 @@ namespace PresentacionWinForm
         {
             InitializeComponent();
             lblNombreFormulario.Text = utilidades.AsignarNombreFormulario(NombreFormulario);
-            
+
             if (NombreFormulario == "Clientes") { btnDescuento.Visible = true; pnlDescuento.Visible = true; }
             else if (NombreFormulario == "Productos") { btnRubro.Visible = true; pnlRubro.Visible = true; }
+            else if (NombreFormulario == "Proveedores") { btnImpuesto.Visible = true; pnlImpuesto.Visible = true; }
 
         }
 
@@ -115,17 +116,17 @@ namespace PresentacionWinForm
 
         private void btnRubro_Click(object sender, EventArgs e)
         {
-            Rubros FormularioRubro = new Rubros();
-            FormularioRubro.MdiParent = this.MdiParent;
-            FormularioRubro.Show();
+            BusquedaAuxiliar FormularioBusquedaAuxiliarRubro = new BusquedaAuxiliar("Rubros");
+            FormularioBusquedaAuxiliarRubro.MdiParent = this.MdiParent;
+            FormularioBusquedaAuxiliarRubro.Show();
                      
         }
 
         private void btnDescuento_Click(object sender, EventArgs e)
         {
-            Descuentos FormularioDescuentos = new Descuentos();
-            FormularioDescuentos.MdiParent = this.MdiParent;
-            FormularioDescuentos.Show();
+            BusquedaAuxiliar FormularioBusquedaAuxiliarDescuento = new BusquedaAuxiliar("Descuentos");
+            FormularioBusquedaAuxiliarDescuento.MdiParent = this.MdiParent;
+            FormularioBusquedaAuxiliarDescuento.Show();
         }
 
         private void tboxCodigo_TextChanged(object sender, EventArgs e)
@@ -172,6 +173,13 @@ namespace PresentacionWinForm
                 throw;
             }
             
+        }
+
+        private void btnImpuesto_Click(object sender, EventArgs e)
+        {
+            BusquedaAuxiliar FormularioBusquedaAuxiliarDescuento = new BusquedaAuxiliar("Impuestos");
+            FormularioBusquedaAuxiliarDescuento.MdiParent = this.MdiParent;
+            FormularioBusquedaAuxiliarDescuento.Show();
         }
     }
 }

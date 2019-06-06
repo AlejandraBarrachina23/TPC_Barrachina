@@ -14,61 +14,63 @@ namespace Negocio
         public string AsignarNombreFormulario(string Nombre)
         {
 
-            if (Nombre == "Clientes")
-            {
-                return "Listado Clientes";
-            }
-
-            else if (Nombre == "Productos")
+            switch (Nombre)
             {
 
-                return "Listado Productos";
+                case "Clientes":
+                    return "Listado Clientes";
+                case "Productos":
+                    return "Listado Productos";
+                case "Proveedores":
+                    return "Listado Proveedores";
+                case "Rubros":
+                    return "Rubros";
+                case "Descuentos":
+                    return "Descuentos";
+                case "Impuestos":
+                    return "Impuestos";
+                default:
+                    return "";
             }
 
-            else if (Nombre == "Proveedores") {
-
-                return "Listado Proveedores";
-
-            }
-
-            return null;
         }
 
         public object DefinirTipoBusqueda(string NombreFormulario)
         {
 
-            if (NombreFormulario == "Clientes")
-            {
-                ClienteNegocio unCliente = new ClienteNegocio();
-                return unCliente.ListarClientes();
-            }
-
-            if (NombreFormulario == "Productos")
+            switch (NombreFormulario)
             {
 
-                ProductoNegocio unProducto = new ProductoNegocio();
-                return unProducto.ListarProductos();
-
+                case "Clientes":
+                    ClienteNegocio unCliente = new ClienteNegocio();
+                    return unCliente.ListarClientes();
+                case "Productos":
+                    ProductoNegocio unProducto = new ProductoNegocio();
+                    return unProducto.ListarProductos();
+                case "Proveedores":
+                    ProveedorNegocio unProveedor = new ProveedorNegocio();
+                    return unProveedor.ListarProveedores();
+                case "Rubros":
+                    RubroNegocio unRubro = new RubroNegocio();
+                    return unRubro.ListarRubros();
+                case "Descuentos":
+                    DescuentoNegocio unDescuento = new DescuentoNegocio();
+                    return unDescuento.ListarDescuentos();
+                default:
+                    return null;
             }
 
-            if (NombreFormulario == "Proveedores") {
-
-                ProveedorNegocio unProveedor = new ProveedorNegocio();
-                return unProveedor.ListarProveedores();
-
-            }
-
-            return null;
         }
-
-        public object DefinirTipoEliminacion(object Entidad) {
+        
+        public object DefinirTipoEliminacion(object Entidad)
+        {
 
 
             if (Entidad.GetType().Equals(typeof(Cliente)))
             {
                 ClienteNegocio unClienteNegocio = new ClienteNegocio();
                 unClienteNegocio.EliminarCliente((Cliente)Entidad);
-                
+
             }
 
             if (Entidad.GetType().Equals(typeof(Producto)))
@@ -80,64 +82,70 @@ namespace Negocio
 
             if (Entidad.GetType().Equals(typeof(Proveedor)))
             {
-     
+
                 ProveedorNegocio unProveedor = new ProveedorNegocio();
                 unProveedor.EliminarProveedor((Proveedor)Entidad);
-                
+
             }
 
             return null;
 
         }
 
-        public DataGridView OcultarColumnasDataGridView(DataGridView Grilla, string NombreTabla) {
+        public DataGridView OcultarColumnasDataGridView(DataGridView Grilla, string NombreTabla)
+        {
 
-            
+
             if (NombreTabla == "Productos")
             {
 
-                //Grilla.Columns[1].Visible = false;
-                //Grilla.Columns[3].Visible = false;
-                //Grilla.Columns[5].Visible = false;
-                //Grilla.Columns[6].Visible = false;
-                //Grilla.Columns[7].Visible = false;
-                //Grilla.Columns[11].Visible = false;
-                //Grilla.Columns[12].Visible = false;
-                //Grilla.Columns[13].Visible = false;
+                Grilla.Columns[1].Visible = false;
+                Grilla.Columns[3].Visible = false;
+                Grilla.Columns[5].Visible = false;
+                Grilla.Columns[6].Visible = false;
+                Grilla.Columns[7].Visible = false;
+                Grilla.Columns[11].Visible = false;
+                Grilla.Columns[12].Visible = false;
+                Grilla.Columns[13].Visible = false;
 
                 return Grilla;
 
             }
 
-            if (NombreTabla == "Proveedores") {
+            if (NombreTabla == "Proveedores")
+            {
 
-                //Grilla.Columns[4].Visible = false;
-                //Grilla.Columns[5].Visible = false;
-                //Grilla.Columns[6].Visible = false;
-                //Grilla.Columns[7].Visible = false;
+                Grilla.Columns[4].Visible = false;
+                Grilla.Columns[5].Visible = false;
+                Grilla.Columns[6].Visible = false;
+                Grilla.Columns[7].Visible = false;
 
                 return Grilla;
 
             }
 
-            if (NombreTabla == "Impuestos") {
+            if (NombreTabla == "Impuestos")
+            {
 
-               
+
                 Grilla.Columns[2].Visible = false;
                 Grilla.Columns[4].Visible = false;
 
             }
 
-            if (NombreTabla == "Clientes") {
+            if (NombreTabla == "Clientes")
+            {
 
-                //Grilla.Columns[3].Visible = false;
-                //Grilla.Columns[6].Visible = false;
+                Grilla.Columns[3].Visible = false;
+                Grilla.Columns[6].Visible = false;
 
             }
 
             return null;
 
         }
+    }
+}
 
         //public void DefinirFormularioActivos(Form FormularioActual)
         //{
@@ -147,5 +155,4 @@ namespace Negocio
         //    }
 
         //}
-    }
-}
+

@@ -57,6 +57,12 @@
     <Compile Include="Avisos.Designer.cs">
       <DependentUpon>AvisoVentana.cs</DependentUpon>
     </Compile>
+    <Compile Include="BusquedaAuxiliar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusquedaAuxiliar.Designer.cs">
+      <DependentUpon>BusquedaAuxiliar.cs</DependentUpon>
+    </Compile>
     <Compile Include="DetalleCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AvisoVentana.resx">
       <DependentUpon>AvisoVentana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusquedaAuxiliar.resx">
+      <DependentUpon>BusquedaAuxiliar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetalleCliente.resx">
       <DependentUpon>DetalleCliente.cs</DependentUpon>

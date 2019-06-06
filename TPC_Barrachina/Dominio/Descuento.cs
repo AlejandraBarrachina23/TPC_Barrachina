@@ -15,7 +15,7 @@ namespace Dominio
 
         public override string ToString()
         {
-            return Porcentaje.ToString() + "%";
+            return Nombre + " - " + Porcentaje + "%";
         }
 
     }

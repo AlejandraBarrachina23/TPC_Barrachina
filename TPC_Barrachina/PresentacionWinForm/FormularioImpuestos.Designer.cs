@@ -46,7 +46,7 @@
             // 
             this.lblCodigoImpuesto.AutoSize = true;
             this.lblCodigoImpuesto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoImpuesto.Location = new System.Drawing.Point(38, 58);
+            this.lblCodigoImpuesto.Location = new System.Drawing.Point(25, 54);
             this.lblCodigoImpuesto.Name = "lblCodigoImpuesto";
             this.lblCodigoImpuesto.Size = new System.Drawing.Size(89, 17);
             this.lblCodigoImpuesto.TabIndex = 63;
@@ -55,7 +55,7 @@
             // tboxCodigoImpuesto
             // 
             this.tboxCodigoImpuesto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCodigoImpuesto.Location = new System.Drawing.Point(136, 55);
+            this.tboxCodigoImpuesto.Location = new System.Drawing.Point(123, 51);
             this.tboxCodigoImpuesto.Name = "tboxCodigoImpuesto";
             this.tboxCodigoImpuesto.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoImpuesto.TabIndex = 62;
@@ -64,7 +64,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(38, 115);
+            this.lblDescripcion.Location = new System.Drawing.Point(25, 111);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 17);
             this.lblDescripcion.TabIndex = 58;
@@ -74,7 +74,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(38, 86);
+            this.lblNombre.Location = new System.Drawing.Point(25, 82);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(45, 17);
             this.lblNombre.TabIndex = 59;
@@ -83,7 +83,7 @@
             // tboxDescripcion
             // 
             this.tboxDescripcion.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxDescripcion.Location = new System.Drawing.Point(136, 111);
+            this.tboxDescripcion.Location = new System.Drawing.Point(123, 107);
             this.tboxDescripcion.Multiline = true;
             this.tboxDescripcion.Name = "tboxDescripcion";
             this.tboxDescripcion.Size = new System.Drawing.Size(173, 40);
@@ -92,7 +92,7 @@
             // tboxNombre
             // 
             this.tboxNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNombre.Location = new System.Drawing.Point(136, 83);
+            this.tboxNombre.Location = new System.Drawing.Point(123, 79);
             this.tboxNombre.Name = "tboxNombre";
             this.tboxNombre.Size = new System.Drawing.Size(173, 25);
             this.tboxNombre.TabIndex = 57;
@@ -104,7 +104,7 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(389, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(330, 41);
             this.pnlBarraPrincipal.TabIndex = 55;
             // 
             // lblIMpuesto
@@ -152,11 +152,11 @@
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
             // 
-            // Impuesto
+            // FormularioImpuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 213);
+            this.ClientSize = new System.Drawing.Size(330, 220);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.lblCodigoImpuesto);
@@ -167,7 +167,9 @@
             this.Controls.Add(this.tboxNombre);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Impuesto";
+            this.Location = new System.Drawing.Point(800, 240);
+            this.Name = "FormularioImpuestos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "NuevoImpuesto";
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();

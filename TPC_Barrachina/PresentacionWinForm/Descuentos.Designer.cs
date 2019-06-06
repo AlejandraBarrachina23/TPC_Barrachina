@@ -39,7 +39,6 @@
             this.cboxTipoProducto = new System.Windows.Forms.ComboBox();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +46,7 @@
             // 
             this.lblCodigoDescuento.AutoSize = true;
             this.lblCodigoDescuento.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoDescuento.Location = new System.Drawing.Point(34, 57);
+            this.lblCodigoDescuento.Location = new System.Drawing.Point(22, 62);
             this.lblCodigoDescuento.Name = "lblCodigoDescuento";
             this.lblCodigoDescuento.Size = new System.Drawing.Size(94, 17);
             this.lblCodigoDescuento.TabIndex = 72;
@@ -57,7 +56,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(34, 85);
+            this.lblNombre.Location = new System.Drawing.Point(22, 90);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(45, 17);
             this.lblNombre.TabIndex = 68;
@@ -66,7 +65,7 @@
             // txtbNombre
             // 
             this.txtbNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbNombre.Location = new System.Drawing.Point(137, 82);
+            this.txtbNombre.Location = new System.Drawing.Point(125, 87);
             this.txtbNombre.Name = "txtbNombre";
             this.txtbNombre.Size = new System.Drawing.Size(173, 25);
             this.txtbNombre.TabIndex = 66;
@@ -78,7 +77,7 @@
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(354, 41);
+            this.pnlBarraPrincipal.Size = new System.Drawing.Size(330, 41);
             this.pnlBarraPrincipal.TabIndex = 64;
             // 
             // lblDescuento
@@ -95,7 +94,7 @@
             // tboxPorcentaje
             // 
             this.tboxPorcentaje.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPorcentaje.Location = new System.Drawing.Point(137, 112);
+            this.tboxPorcentaje.Location = new System.Drawing.Point(125, 117);
             this.tboxPorcentaje.Name = "tboxPorcentaje";
             this.tboxPorcentaje.Size = new System.Drawing.Size(61, 25);
             this.tboxPorcentaje.TabIndex = 73;
@@ -104,7 +103,7 @@
             // 
             this.lblPorcentaje.AutoSize = true;
             this.lblPorcentaje.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPorcentaje.Location = new System.Drawing.Point(34, 115);
+            this.lblPorcentaje.Location = new System.Drawing.Point(22, 120);
             this.lblPorcentaje.Name = "lblPorcentaje";
             this.lblPorcentaje.Size = new System.Drawing.Size(58, 17);
             this.lblPorcentaje.TabIndex = 68;
@@ -114,7 +113,7 @@
             // 
             this.cboxTipoProducto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxTipoProducto.FormattingEnabled = true;
-            this.cboxTipoProducto.Location = new System.Drawing.Point(137, 51);
+            this.cboxTipoProducto.Location = new System.Drawing.Point(125, 56);
             this.cboxTipoProducto.Name = "cboxTipoProducto";
             this.cboxTipoProducto.Size = new System.Drawing.Size(173, 25);
             this.cboxTipoProducto.TabIndex = 76;
@@ -128,7 +127,7 @@
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBorrar.Location = new System.Drawing.Point(257, 156);
+            this.btnBorrar.Location = new System.Drawing.Point(194, 159);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(85, 37);
             this.btnBorrar.TabIndex = 75;
@@ -145,7 +144,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(146, 156);
+            this.button1.Location = new System.Drawing.Point(83, 159);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 37);
             this.button1.TabIndex = 75;
@@ -153,20 +152,11 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(63, 170);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 23);
-            this.button2.TabIndex = 77;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // Descuentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 216);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(330, 220);
             this.Controls.Add(this.cboxTipoProducto);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBorrar);
@@ -177,7 +167,7 @@
             this.Controls.Add(this.txtbNombre);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(809, 0);
+            this.Location = new System.Drawing.Point(800, 240);
             this.Name = "Descuentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TipoDescuento";
@@ -200,6 +190,5 @@
         private System.Windows.Forms.ComboBox cboxTipoProducto;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }
