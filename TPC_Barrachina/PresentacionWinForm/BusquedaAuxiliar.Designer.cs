@@ -53,7 +53,7 @@
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(12, 86);
+            this.btnAgregar.Location = new System.Drawing.Point(22, 95);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(90, 35);
             this.btnAgregar.TabIndex = 60;
@@ -70,9 +70,9 @@
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBorrar.Location = new System.Drawing.Point(210, 86);
+            this.btnBorrar.Location = new System.Drawing.Point(220, 95);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(90, 35);
+            this.btnBorrar.Size = new System.Drawing.Size(78, 35);
             this.btnBorrar.TabIndex = 61;
             this.btnBorrar.Text = "       Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
@@ -86,13 +86,14 @@
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(108, 86);
+            this.btnModificar.Location = new System.Drawing.Point(118, 95);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(96, 35);
             this.btnModificar.TabIndex = 76;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // BusquedaAuxiliar
             // 

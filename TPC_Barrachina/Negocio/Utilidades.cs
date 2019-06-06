@@ -56,6 +56,9 @@ namespace Negocio
                 case "Descuentos":
                     DescuentoNegocio unDescuento = new DescuentoNegocio();
                     return unDescuento.ListarDescuentos();
+                case "Impuestos":
+                    ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
+                    return unImpuesto.ListarImpuestos();
                 default:
                     return null;
             }

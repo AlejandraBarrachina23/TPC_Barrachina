@@ -22,6 +22,7 @@ namespace Negocio
                 Impuesto unNuevoImpuesto = new Impuesto();
                 unNuevoImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoImpuesto"];
                 unNuevoImpuesto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unNuevoImpuesto.Descripcion = AccederDatos.LectorDatos["Descripcion"].ToString();
 
                 ListadoImpuestos.Add(unNuevoImpuesto);
             }

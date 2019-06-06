@@ -171,6 +171,7 @@
             this.Name = "FormularioImpuestos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "NuevoImpuesto";
+            this.Load += new System.EventHandler(this.FormularioImpuestos_Load);
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
             this.ResumeLayout(false);
