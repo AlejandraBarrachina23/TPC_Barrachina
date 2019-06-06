@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioListado));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pboxCodigo = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tboxCodigo = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
             this.pnlDetalle = new System.Windows.Forms.Panel();
             this.btnDescuento = new System.Windows.Forms.Button();
             this.btnRubro = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombre)).BeginInit();
@@ -107,14 +107,14 @@
             // dgvListadoBusqueda
             // 
             this.dgvListadoBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListadoBusqueda.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListadoBusqueda.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListadoBusqueda.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvListadoBusqueda.Location = new System.Drawing.Point(12, 88);
             this.dgvListadoBusqueda.Name = "dgvListadoBusqueda";
@@ -267,7 +267,7 @@
             this.panelContenedor.Controls.Add(this.pboxNombre);
             this.panelContenedor.Controls.Add(this.btnDescuento);
             this.panelContenedor.Controls.Add(this.btnRubro);
-            this.panelContenedor.Controls.Add(this.button1);
+            this.panelContenedor.Controls.Add(this.btnDetalle);
             this.panelContenedor.Controls.Add(this.btnModificar);
             this.panelContenedor.Controls.Add(this.lblNombre);
             this.panelContenedor.Controls.Add(this.btnBorrar);
@@ -342,23 +342,23 @@
             this.btnRubro.Visible = false;
             this.btnRubro.Click += new System.EventHandler(this.btnRubro_Click);
             // 
-            // button1
+            // btnDetalle
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(696, 209);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Detalle";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnDetalle.FlatAppearance.BorderSize = 0;
+            this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalle.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalle.ForeColor = System.Drawing.Color.White;
+            this.btnDetalle.Image = ((System.Drawing.Image)(resources.GetObject("btnDetalle.Image")));
+            this.btnDetalle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetalle.Location = new System.Drawing.Point(696, 209);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(90, 35);
+            this.btnDetalle.TabIndex = 0;
+            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDetalle.UseVisualStyleBackColor = false;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // FormularioListado
             // 
@@ -406,6 +406,6 @@
         private System.Windows.Forms.Button btnDescuento;
         private System.Windows.Forms.Button btnRubro;
         private System.Windows.Forms.Panel pnlDetalle;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDetalle;
     }
 }

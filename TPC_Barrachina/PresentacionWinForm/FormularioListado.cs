@@ -130,14 +130,46 @@ namespace PresentacionWinForm
 
         private void tboxCodigo_TextChanged(object sender, EventArgs e)
         {
-            if (tboxCodigo.Text == "")
+          
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            try
             {
-                dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text.Remove(0, 8));
+                validar.SeleccionItemDataGridView(dgvListadoBusqueda);
+                object EntidadModificar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
+
+                if (EntidadModificar.GetType().Equals(typeof(Producto)))
+                {
+                    DetalleProducto FormularioDetalleProducto = new DetalleProducto((Producto)EntidadModificar);
+                    FormularioDetalleProducto.MdiParent = this.MdiParent;
+                    FormularioDetalleProducto.Show();
+
+                }
+
+                else if (EntidadModificar.GetType().Equals(typeof(Cliente)))
+                {
+
+                    Clientes FormularioCliente = new Clientes((Cliente)EntidadModificar);
+                    FormularioCliente.Show();
+
+                }
+
+                else if (EntidadModificar.GetType().Equals(typeof(Proveedor)))
+                {
+
+                    Proveedores FormularioProveedor = new Proveedores((Proveedor)EntidadModificar);
+                    FormularioProveedor.Show();
+
+                }
             }
-            else
+            catch (Exception)
             {
 
+                throw;
             }
+            
         }
     }
 }
