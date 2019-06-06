@@ -78,30 +78,66 @@ namespace Negocio
             }
         }
 
-        public void FormularioProducto(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, TextBox tboxCantidadBulto, TextBox tboxStockCritico, ComboBox cboxTipoProducto, ComboBox cboxRubro, ComboBox cboxProveedor)
+        public void FormularioProducto(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, TextBox tboxCantidadBulto, TextBox tboxStockCritico, ComboBox cboxTipoProducto, ComboBox cboxRubro, ComboBox cboxProveedor,string TipoOperacion)
         {
-            ContenidoTextBoxVacio(tboxCodigoProducto, "Código Producto");
-            ExistenciaDeDatoDB("CodigoProducto", "Productos", tboxCodigoProducto.Text);
-            MinimoValor(tboxCodigoProducto, "Codigo Producto", 1);
-            ContenidoTextBoxVacio(tboxCodigoBulto, "Código Bulto");
-            ExistenciaDeDatoDB("CodigoBulto", "Productos", tboxCodigoBulto.Text);
-            MinimoValor(tboxCodigoBulto, "Codigo Bulto", 10);
+            if (TipoOperacion == "Agregar") {
+
+                ContenidoTextBoxVacio(tboxCodigoProducto, "Código Producto");
+                ExistenciaDeDatoDB("CodigoProducto", "Productos", tboxCodigoProducto.Text);
+                MinimoValor(tboxCodigoProducto, "Codigo Producto", 1);
+
+                ContenidoTextBoxVacio(tboxCodigoBulto, "Código Bulto");
+                ExistenciaDeDatoDB("CodigoBulto", "Productos", tboxCodigoBulto.Text);
+                MinimoValor(tboxCodigoBulto, "Codigo Bulto", 10);
+
+                ExistenciaDeDatoDB("Nombre", "Productos", tboxNombre.Text);
+               
+            }
+
             ContenidoTextBoxVacio(tboxNombre, "Nombre");
-            ExistenciaDeDatoDB("Nombre", "Productos", tboxNombre.Text);
-            MinimoValor(tboxCantidadBulto, "Cantidad por bulto" , 0);
+            ExistenciaRepetidaDeDatoDB("CodigoProducto", "Nombre", "Productos", "CodigoProducto", "Nombre", tboxNombre.Text, tboxCodigoProducto.Text);
+
+            MinimoValor(tboxCantidadBulto, "Cantidad por bulto", 0);
             MinimoValor(tboxStockCritico, "Stock Crítico", 0);
             Multiplo(tboxStockCritico, tboxCantidadBulto, "Stock Crítico", "Cantidad por Bulto");
+
             SeleccionComboBox(cboxTipoProducto, "Tipo Producto");
+
             SeleccionComboBox(cboxProveedor, "Proveedor");
+
             SeleccionComboBox(cboxRubro, "Rubro");
         }
 
-        
+
+        public void ExistenciaRepetidaDeDatoDB(string DatoBuscarUno, string DatoBuscarDos, string NombreTabla, string NombreColumnaUno, string NombreColumnaDos,string Parametro, string CodigoRevisar)
+        {
+            AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT " + DatoBuscarUno + "," + DatoBuscarDos + " FROM " + NombreTabla + " WHERE " + NombreColumnaDos + " = '" + Parametro + "'");
+            AccederDatos.EjecutarConsulta();           
+            
+            while (AccederDatos.LectorDatos.Read())
+            {
+                if (AccederDatos.LectorDatos[NombreColumnaUno].ToString() != CodigoRevisar) {
+
+                    if (AccederDatos.LectorDatos[NombreColumnaDos].ToString().ToUpper() == Parametro.ToUpper())
+                    {
+                        AccederDatos.CerrarConexion();
+                        AccederDatos.CerrarReader();
+                        throw new Exception("El " + DatoBuscarDos + " " + Parametro + " ya existe");
+                    }
+                }
+                    
+            }
+
+            AccederDatos.CerrarConexion();
+            AccederDatos.CerrarReader();
+        }
         //public void ItemRepetidoGrid(DataGridView Grilla, string valorAgregar) {
 
         //    //(Grilla.Rows.Cast<DataGridViewRow>().Any(x => x.Cells["Nombre"].Value.ToString() == item.ToString())) 
 
-           
+
         //    foreach (DataGridViewRow fila in Grilla.Rows) {
 
         //        string valorFila = fila.Cells["Nombre"].Value.ToString();
@@ -110,13 +146,13 @@ namespace Negocio
         //        if (valorAgregar == valorFila) {
 
         //            throw new Exception("Repetido");
-                    
+
         //        }
-                    
+
         //    }
 
         //    MessageBox.Show("paso");
-           
+
         //}
     }
     

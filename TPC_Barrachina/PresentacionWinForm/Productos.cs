@@ -83,6 +83,7 @@ namespace PresentacionWinForm
                 btnAceptar.Visible = false;
                 btnModificar.Visible = true;
                 tboxCodigoProducto.Enabled = false;
+                tboxCodigoBulto.Enabled = false;
 
                 tboxCodigoProducto.Text = ProductoModificar.CodigoProducto.ToString();
                 tboxCodigoBulto.Text = ProductoModificar.CodigoBulto.ToString();
@@ -110,7 +111,7 @@ namespace PresentacionWinForm
             try
             {
                 ProductoNegocio unProductoNegocio = new ProductoNegocio();
-                ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor);
+                ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor, "Agregar");
                 unProductoNegocio.AgregarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, cboxProveedor, cboxRubro));
                 Avisos FormularioAviso = new Avisos();
                 FormularioAviso.Show();
@@ -128,7 +129,7 @@ namespace PresentacionWinForm
             try
             {
                 ProductoNegocio unProductoNegocio = new ProductoNegocio();
-                ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor);
+                ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor, "Modificar");
                 unProductoNegocio.ModificarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, cboxProveedor, cboxRubro));
             }
             catch (Exception Excepcion)
