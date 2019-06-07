@@ -15,7 +15,7 @@ namespace PresentacionWinForm
     public partial class FormularioListado : Form
     {
         private Utilidades utilidades = new Utilidades();
-        private ValidadorDatos validar = new ValidadorDatos();
+        private ValidadorDatos Validar = new ValidadorDatos();
 
         public FormularioListado(string NombreFormulario)
         {
@@ -30,7 +30,7 @@ namespace PresentacionWinForm
 
         private void FormularioListado_Load(object sender, EventArgs e)
         {
-            dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text.Remove(0, 8));
+            dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(lblNombreFormulario.Text.Remove(0, 8));
             utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, lblNombreFormulario.Text.Remove(0, 8));
 
         }
@@ -68,11 +68,11 @@ namespace PresentacionWinForm
         {
             try
             {
-                validar.SeleccionItemDataGridView(dgvListadoBusqueda);
+                Validar.SeleccionItemDataGridView(dgvListadoBusqueda);
                 object EntidadEliminar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
-                utilidades.DefinirTipoEliminacion(EntidadEliminar);
+                utilidades.DefinirEntidadaEliminar(EntidadEliminar);
 
-                dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text.Remove(0, 8));
+                dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(lblNombreFormulario.Text.Remove(0, 8));
                 utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, lblNombreFormulario.Text.Remove(0, 8));
                 
    
@@ -87,7 +87,7 @@ namespace PresentacionWinForm
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            validar.SeleccionItemDataGridView(dgvListadoBusqueda);
+            Validar.SeleccionItemDataGridView(dgvListadoBusqueda);
             object EntidadModificar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
 
             if (EntidadModificar.GetType().Equals(typeof(Producto)))
@@ -138,7 +138,7 @@ namespace PresentacionWinForm
         {
             try
             {
-                validar.SeleccionItemDataGridView(dgvListadoBusqueda);
+                Validar.SeleccionItemDataGridView(dgvListadoBusqueda);
                 object EntidadModificar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
 
                 if (EntidadModificar.GetType().Equals(typeof(Producto)))

@@ -26,7 +26,7 @@ namespace PresentacionWinForm
         private void BusquedaAuxiliar_Load(object sender, EventArgs e)
         {
             this.Text= utilidades.AsignarNombreFormulario(NombreFormulario);
-            cboxListado.DataSource = utilidades.DefinirTipoBusqueda(NombreFormulario);
+            cboxListado.DataSource = utilidades.DefinirEntidadAlistar(NombreFormulario);
 
         }
 
@@ -83,8 +83,8 @@ namespace PresentacionWinForm
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            utilidades.DefinirTipoEliminacion(cboxListado.SelectedItem);
-            cboxListado.DataSource = utilidades.DefinirTipoBusqueda(NombreFormulario);
+            utilidades.DefinirEntidadaEliminar(cboxListado.SelectedItem);
+            cboxListado.DataSource = utilidades.DefinirEntidadAlistar(NombreFormulario);
         }
     }
 }

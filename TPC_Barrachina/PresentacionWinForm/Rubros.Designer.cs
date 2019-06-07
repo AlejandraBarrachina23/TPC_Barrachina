@@ -116,7 +116,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(70, 153);
+            this.btnAceptar.Location = new System.Drawing.Point(83, 153);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
             this.btnAceptar.TabIndex = 78;
@@ -150,6 +150,7 @@
             this.tboxCodigoRubro.Name = "tboxCodigoRubro";
             this.tboxCodigoRubro.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoRubro.TabIndex = 43;
+            this.tboxCodigoRubro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigoRubro_KeyPress);
             // 
             // Rubros
             // 

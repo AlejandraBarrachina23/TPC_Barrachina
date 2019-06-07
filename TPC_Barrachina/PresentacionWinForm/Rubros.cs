@@ -16,6 +16,8 @@ namespace PresentacionWinForm
     {
         private Rubro RubroModificar = null;
         RubroNegocio unRubroNegocio = new RubroNegocio();
+        ValidadorDatos Validar = new ValidadorDatos();
+
         public Rubros()
         {
             InitializeComponent();
@@ -36,18 +38,47 @@ namespace PresentacionWinForm
 
                 tboxCodigoRubro.Text = RubroModificar.CodigoRubro.ToString();
                 tboxNombre.Text = RubroModificar.Nombre;
-                tboxCodigoRubro.Enabled = false;
+                tboxCodigoRubro.Enabled = false;  
             }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            unRubroNegocio.AgregarRubro(unRubroNegocio.CargarRubro(tboxCodigoRubro, tboxNombre));
+            try
+            {
+                Validar.FormularioRubro(tboxCodigoRubro, tboxNombre, "Agregar");
+                unRubroNegocio.AgregarRubro(unRubroNegocio.CargarRubro(tboxCodigoRubro, tboxNombre));
+            }
+            catch (Exception Excepcion)
+            {
+
+                MessageBox.Show(Excepcion.Message);
+            }
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            unRubroNegocio.ModificarRubro(unRubroNegocio.CargarRubro(tboxCodigoRubro, tboxNombre));
+            try
+            {
+                Validar.FormularioRubro(tboxCodigoRubro, tboxNombre, "Modificar");
+                unRubroNegocio.ModificarRubro(unRubroNegocio.CargarRubro(tboxCodigoRubro, tboxNombre));
+
+            }
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+         
+        }
+
+        private void tboxCodigoRubro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
         }
     }
 }

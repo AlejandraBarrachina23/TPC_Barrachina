@@ -23,24 +23,10 @@ namespace PresentacionWinForm
         public Productos()
         {
             InitializeComponent();
-
-            void AsignarSoloNumeros(object sender, KeyPressEventArgs e)
-            {
-                TextBox Tbox = new TextBox();
-
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-
-                }
-            }
-
-            //Asigno el evento a cada uno de los tbox que necesiten validar que no se ingrese texto 
             tboxCodigoBulto.KeyPress += AsignarSoloNumeros;
             tboxCodigoProducto.KeyPress += AsignarSoloNumeros;
             tboxStockCritico.KeyPress += AsignarSoloNumeros;
-            tboxCantidadBulto.KeyPress += AsignarSoloNumeros;
-            
+            tboxCantidadBulto.KeyPress += AsignarSoloNumeros; 
         }
         
         //FORMULARIO MODIFICAR
@@ -49,17 +35,6 @@ namespace PresentacionWinForm
 
             InitializeComponent();
             ProductoModificar = unProductoModificar;
-
-            void AsignarSoloNumeros(object sender, KeyPressEventArgs e)
-            {
-                TextBox Tbox = new TextBox();
-
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-
-                }
-            }
             tboxCodigoBulto.KeyPress += AsignarSoloNumeros;
             tboxCodigoProducto.KeyPress += AsignarSoloNumeros;
             tboxStockCritico.KeyPress += AsignarSoloNumeros;
@@ -79,19 +54,19 @@ namespace PresentacionWinForm
             //PRECARGA PARA MODIFICAR
             if (ProductoModificar != null)
             {
-
+                //oculto e inhabilito botones y text box
                 btnAceptar.Visible = false;
                 btnModificar.Visible = true;
                 tboxCodigoProducto.Enabled = false;
                 tboxCodigoBulto.Enabled = false;
-
+                //pre-cargo los datos para la edición
                 tboxCodigoProducto.Text = ProductoModificar.CodigoProducto.ToString();
                 tboxCodigoBulto.Text = ProductoModificar.CodigoBulto.ToString();
                 tboxNombre.Text = ProductoModificar.Nombre;
                 cboxTipoProducto.SelectedItem = ProductoModificar.TipoProducto;
                 tboxCantidadBulto.Text = ProductoModificar.CantidadxBulto.ToString();
                 tboxStockCritico.Text = ProductoModificar.StockCritico.ToString();
-
+                //pre-cargo los combobox
                 cboxProveedor.SelectedIndex = cboxProveedor.FindString(ProductoModificar.Proveedor.NombreFantasia);
                 cboxTipoProducto.SelectedIndex = cboxTipoProducto.FindString(ProductoModificar.TipoProducto.Nombre);
                 cboxRubro.SelectedIndex = cboxRubro.FindString(ProductoModificar.Rubro.Nombre);
@@ -138,5 +113,27 @@ namespace PresentacionWinForm
             }
            
         }
+
+        private void AsignarSoloNumeros(object sender, KeyPressEventArgs e)
+        {
+         
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void AsignarSoloNumeroEnterosDecimales(object sender, KeyPressEventArgs e) {
+
+            if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+         
+        }
+
     }
+
+  
 }

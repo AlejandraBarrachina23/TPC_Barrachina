@@ -108,6 +108,19 @@ namespace Negocio
             SeleccionComboBox(cboxRubro, "Rubro");
         }
 
+        public void FormularioRubro(TextBox tboxCodigoRubro, TextBox tboxNombre, string TipoOperacion) {
+
+            if (TipoOperacion == "Agregar") {
+
+                ContenidoTextBoxVacio(tboxCodigoRubro, "Codigo Rubro");
+                ExistenciaDeDatoDB("CodigoRubro", "Rubros", tboxCodigoRubro.Text);
+                ContenidoTextBoxVacio(tboxNombre, "Nombre");
+                ExistenciaDeDatoDB("NombreRubro", "Rubros", tboxNombre.Text);
+            }
+            ContenidoTextBoxVacio(tboxNombre, "Nombre");
+            ExistenciaRepetidaDeDatoDB("CodigoRubro", "NombreRubro", "Rubros", "CodigoRubro", "NombreRubro", tboxNombre.Text, tboxCodigoRubro.Text);
+
+        }
 
         public void ExistenciaRepetidaDeDatoDB(string DatoBuscarUno, string DatoBuscarDos, string NombreTabla, string NombreColumnaUno, string NombreColumnaDos,string Parametro, string CodigoRevisar)
         {

@@ -35,7 +35,7 @@ namespace Negocio
 
         }
 
-        public object DefinirTipoBusqueda(string NombreFormulario)
+        public object DefinirEntidadAlistar(string NombreFormulario)
         {
 
             switch (NombreFormulario)
@@ -65,9 +65,9 @@ namespace Negocio
 
         }
         
-        public object DefinirTipoEliminacion(object Entidad)
+        public object DefinirEntidadaEliminar(object Entidad)
         {
-
+            
             if (Entidad.GetType().Equals(typeof(Cliente)))
             {
                 ClienteNegocio unClienteNegocio = new ClienteNegocio();
@@ -75,14 +75,14 @@ namespace Negocio
 
             }
 
-            if (Entidad.GetType().Equals(typeof(Producto)))
+            else if (Entidad.GetType().Equals(typeof(Producto)))
             {
                 ProductoNegocio unProducto = new ProductoNegocio();
                 unProducto.EliminarProducto((Producto)Entidad);
 
             }
 
-            if (Entidad.GetType().Equals(typeof(Proveedor)))
+            else if(Entidad.GetType().Equals(typeof(Proveedor)))
             {
 
                 ProveedorNegocio unProveedor = new ProveedorNegocio();
@@ -90,14 +90,14 @@ namespace Negocio
 
             }
 
-            if (Entidad.GetType().Equals(typeof(Rubro))) {
+            else if(Entidad.GetType().Equals(typeof(Rubro))) {
 
                 RubroNegocio unRubro = new RubroNegocio();
                 unRubro.EliminarRubro((Rubro)Entidad);
             }
 
 
-            if (Entidad.GetType().Equals(typeof(Impuesto)))
+            else if(Entidad.GetType().Equals(typeof(Impuesto)))
             {
 
                 ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
@@ -105,7 +105,7 @@ namespace Negocio
             }
 
 
-            if (Entidad.GetType().Equals(typeof(Descuento)))
+            else if(Entidad.GetType().Equals(typeof(Descuento)))
             {
 
                 DescuentoNegocio unDescuento = new DescuentoNegocio();
@@ -120,54 +120,43 @@ namespace Negocio
         public DataGridView OcultarColumnasDataGridView(DataGridView Grilla, string NombreTabla)
         {
 
+            switch (NombreTabla) {
 
-            if (NombreTabla == "Productos")
-            {
+                case "Prductos":
+                    Grilla.Columns[1].Visible = false;
+                    Grilla.Columns[3].Visible = false;
+                    Grilla.Columns[5].Visible = false;
+                    Grilla.Columns[6].Visible = false;
+                    Grilla.Columns[7].Visible = false;
+                    Grilla.Columns[11].Visible = false;
+                    Grilla.Columns[12].Visible = false;
+                    Grilla.Columns[13].Visible = false;
+                    return Grilla;
 
-                Grilla.Columns[1].Visible = false;
-                Grilla.Columns[3].Visible = false;
-                Grilla.Columns[5].Visible = false;
-                Grilla.Columns[6].Visible = false;
-                Grilla.Columns[7].Visible = false;
-                Grilla.Columns[11].Visible = false;
-                Grilla.Columns[12].Visible = false;
-                Grilla.Columns[13].Visible = false;
+                case "Proveedores":
+                       
+                    Grilla.Columns[4].Visible = false;
+                    Grilla.Columns[5].Visible = false;
+                    Grilla.Columns[6].Visible = false;
+                    Grilla.Columns[7].Visible = false;
+                    return Grilla;
 
-                return Grilla;
+                case "Impuestos":
 
+                    Grilla.Columns[2].Visible = false;
+                    Grilla.Columns[4].Visible = false;
+                    return Grilla;
+
+                case "Clientes":
+
+                    Grilla.Columns[3].Visible = false;
+                    Grilla.Columns[6].Visible = false;
+                    return Grilla;
+                default:
+                    return null;
             }
 
-            if (NombreTabla == "Proveedores")
-            {
-
-                Grilla.Columns[4].Visible = false;
-                Grilla.Columns[5].Visible = false;
-                Grilla.Columns[6].Visible = false;
-                Grilla.Columns[7].Visible = false;
-
-                return Grilla;
-
-            }
-
-            if (NombreTabla == "Impuestos")
-            {
-
-
-                Grilla.Columns[2].Visible = false;
-                Grilla.Columns[4].Visible = false;
-
-            }
-
-            if (NombreTabla == "Clientes")
-            {
-
-                Grilla.Columns[3].Visible = false;
-                Grilla.Columns[6].Visible = false;
-
-            }
-
-            return null;
-
+       
         }
 
     }
