@@ -12,10 +12,13 @@ namespace Negocio
     public class ProveedorNegocio
     {
         AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
+        DireccionNegocio unaDireccion = new DireccionNegocio();
+        ContactoNegocio unContacto = new ContactoNegocio();
 
         public void AgregarProveedor(Proveedor unNuevoProveedor) {
 
-            AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
+            unaDireccion.AgregarDireccion(unNuevoProveedor.Contacto.Direccion);
+            unContacto.AgregarContacto(unNuevoProveedor.Contacto);
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("INSERT INTO Proveedores(CodigoProveedor,RazonSocial,NumeroCUIT, NombreFantasia,CodigoCondicionIVA,CodigoContacto) VALUES ('"
                 + unNuevoProveedor.CodigoProveedor + "','" + unNuevoProveedor.RazonSocial + "','" + unNuevoProveedor.NumeroCUIT + "','" + unNuevoProveedor.NombreFantasia + "','" + unNuevoProveedor.CondicionIVA.CodigoCondicionIVA + "','" + unNuevoProveedor.Contacto.CodigoContacto+ "')");
@@ -94,6 +97,24 @@ namespace Negocio
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
         }
-        
+
+        public Proveedor CargarProveedor(TextBox tboxCodigoProveedor, TextBox tboxRazonSocial, TextBox tboxNumeroCUIT, TextBox tboxNombreFantasia, ComboBox cboxCondicionIVA, TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico, TextBox tboxProvincia, TextBox tboxLocalidad, TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, int CodigoDireccion) {
+
+            //direccion
+            Proveedor unProveedor = new Proveedor();
+            unProveedor.Contacto = new Contacto();
+            unProveedor.Contacto.Direccion = new Direccion();
+
+            unProveedor.CodigoProveedor = Convert.ToInt32(tboxCodigoProveedor.Text);
+            unProveedor.RazonSocial = tboxRazonSocial.Text;
+            unProveedor.NumeroCUIT = tboxNumeroCUIT.Text;
+            unProveedor.NombreFantasia = tboxNombreFantasia.Text;
+            unProveedor.CondicionIVA = (CondicionIVA)cboxCondicionIVA.SelectedItem;
+
+            unProveedor.Contacto = unContacto.CargarContacto(tboxTelefono, tboxCelular, tboxCorreoElectronico, CodigoDireccion);
+            unProveedor.Contacto.Direccion = unaDireccion.CargarDireccion(tboxCalle, tboxNumero, tboxCP, tboxLocalidad, tboxProvincia, CodigoDireccion);
+
+            return unProveedor;
+        }
     }
 }
