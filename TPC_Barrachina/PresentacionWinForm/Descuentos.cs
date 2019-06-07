@@ -16,6 +16,7 @@ namespace PresentacionWinForm
     {
         private Descuento DescuentoModificar = null;
         private DescuentoNegocio unDescuentoNegocio = new DescuentoNegocio();
+        private ValidadorDatos Validar = new ValidadorDatos();
         public Descuentos()
         {
             InitializeComponent();
@@ -41,12 +42,46 @@ namespace PresentacionWinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            unDescuentoNegocio.AgregarDescuento(unDescuentoNegocio.CargarDescuento(tboxCodigoDescuento, tboxNombre, tboxPorcentaje));
+            try
+            {
+                Validar.FormularioDescuento(tboxCodigoDescuento, tboxNombre, tboxPorcentaje, "Agregar");
+                unDescuentoNegocio.AgregarDescuento(unDescuentoNegocio.CargarDescuento(tboxCodigoDescuento, tboxNombre, tboxPorcentaje));
+            }
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            unDescuentoNegocio.ModificarDescuento(unDescuentoNegocio.CargarDescuento(tboxCodigoDescuento, tboxNombre, tboxPorcentaje));
+            try
+            {
+                Validar.FormularioDescuento(tboxCodigoDescuento, tboxNombre, tboxPorcentaje, "Modificar");
+                unDescuentoNegocio.ModificarDescuento(unDescuentoNegocio.CargarDescuento(tboxCodigoDescuento, tboxNombre, tboxPorcentaje));
+            }
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+  
+        }
+
+        private void tboxCodigoDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tboxPorcentaje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

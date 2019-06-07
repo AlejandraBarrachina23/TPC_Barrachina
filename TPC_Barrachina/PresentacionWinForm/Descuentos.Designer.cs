@@ -99,6 +99,7 @@
             this.tboxPorcentaje.Name = "tboxPorcentaje";
             this.tboxPorcentaje.Size = new System.Drawing.Size(61, 25);
             this.tboxPorcentaje.TabIndex = 73;
+            this.tboxPorcentaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxPorcentaje_KeyPress);
             // 
             // lblPorcentaje
             // 
@@ -170,6 +171,7 @@
             this.tboxCodigoDescuento.Name = "tboxCodigoDescuento";
             this.tboxCodigoDescuento.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoDescuento.TabIndex = 66;
+            this.tboxCodigoDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigoDescuento_KeyPress);
             // 
             // Descuentos
             // 

@@ -125,12 +125,11 @@ namespace PresentacionWinForm
         }
 
         private void AsignarSoloNumeroEnterosDecimales(object sender, KeyPressEventArgs e) {
-
-            if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == ',' || e.KeyChar == '.')
-            {
-                e.Handled = false;
-            }
-         
+            
+             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+             {
+                e.Handled = true;
+             }
         }
 
     }

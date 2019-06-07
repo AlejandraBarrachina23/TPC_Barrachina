@@ -122,6 +122,20 @@ namespace Negocio
 
         }
 
+        public void FormularioDescuento(TextBox tboxCodigoDescuento, TextBox tboxNombre, TextBox tboxPorcentaje, string TipoOperacion) {
+
+            if (TipoOperacion == "Agregar") {
+
+                ContenidoTextBoxVacio(tboxCodigoDescuento, "Codigo Descuento");
+                ExistenciaDeDatoDB("CodigoDescuento", "Descuentos", tboxCodigoDescuento.Text);
+                ExistenciaDeDatoDB("NombreDescuento", "Descuentos", tboxNombre.Text);
+            }
+
+            ExistenciaRepetidaDeDatoDB("CodigoDescuento", "NombreDescuento", "Descuentos", "CodigoDescuento", "NombreDescuento", tboxNombre.Text, tboxCodigoDescuento.Text);
+            ContenidoTextBoxVacio(tboxNombre, "Nombre");
+            ContenidoTextBoxVacio(tboxPorcentaje, "Porcentaje");
+        }
+
         public void ExistenciaRepetidaDeDatoDB(string DatoBuscarUno, string DatoBuscarDos, string NombreTabla, string NombreColumnaUno, string NombreColumnaDos,string Parametro, string CodigoRevisar)
         {
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
