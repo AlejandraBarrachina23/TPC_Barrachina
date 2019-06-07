@@ -100,11 +100,9 @@ namespace Negocio
 
         public Proveedor CargarProveedor(TextBox tboxCodigoProveedor, TextBox tboxRazonSocial, TextBox tboxNumeroCUIT, TextBox tboxNombreFantasia, ComboBox cboxCondicionIVA, TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico, TextBox tboxProvincia, TextBox tboxLocalidad, TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, int CodigoDireccion) {
 
-            //direccion
             Proveedor unProveedor = new Proveedor();
             unProveedor.Contacto = new Contacto();
             unProveedor.Contacto.Direccion = new Direccion();
-
             unProveedor.CodigoProveedor = Convert.ToInt32(tboxCodigoProveedor.Text);
             unProveedor.RazonSocial = tboxRazonSocial.Text;
             unProveedor.NumeroCUIT = tboxNumeroCUIT.Text;

@@ -58,13 +58,11 @@ namespace PresentacionWinForm
             ProveedorNegocio unProveedor = new ProveedorNegocio();
             int CodigoDireccion = unaDireccion.ContaFilasDireccion();
             unProveedor.AgregarProveedor(unProveedor.CargarProveedor(tboxCodigoProveedor, tboxRazonSocial, tboxNumeroCUIT, tboxNombreFantasia, cboxCondicionIVA, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxProvincia, tboxLocalidad, tboxCalle, tboxNumero, tboxCP, CodigoDireccion));
-
             ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
 
-            //impuestos
             foreach (Impuesto unNuevoImpuesto in ListadoImpuestos)
             {
-                unImpuesto.AgregarImpuestoXProveedor(unNuevoImpuesto, unNuevoProveedor.CodigoProveedor);
+                unImpuesto.AgregarImpuestoXProveedor(unNuevoImpuesto, Convert.ToInt32(tboxCodigoProveedor.Text));
             }
 
             Avisos FormularioAviso = new Avisos();
