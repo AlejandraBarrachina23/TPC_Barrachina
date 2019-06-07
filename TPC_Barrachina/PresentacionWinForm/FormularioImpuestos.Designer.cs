@@ -60,6 +60,7 @@
             this.tboxCodigoImpuesto.Name = "tboxCodigoImpuesto";
             this.tboxCodigoImpuesto.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoImpuesto.TabIndex = 62;
+            this.tboxCodigoImpuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigoImpuesto_KeyPress);
             // 
             // lblDescripcion
             // 

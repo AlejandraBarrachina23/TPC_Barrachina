@@ -16,19 +16,30 @@ namespace PresentacionWinForm
     public partial class Clientes : Form
     {
         Utilidades utilidades = new Utilidades();
+        ValidadorDatos Validar = new ValidadorDatos();
         Cliente ClienteModificar = null;
 
         public Clientes()
         {
             InitializeComponent();
+            tboxCodigo.KeyPress += AsignarSoloNumeros;
+            tboxTelefono.KeyPress += AsignarSoloNumeros;
+            tboxCelular.KeyPress += AsignarSoloNumeros;
+            tboxNumero.KeyPress += AsignarSoloNumeros;
+            tboxCP.KeyPress += AsignarSoloNumeros;
+            tboxLimitecuenta.KeyPress += AsignarSoloNumeros;
         }
 
         public Clientes(Cliente unClienteModificar) {
 
             InitializeComponent();
             ClienteModificar = unClienteModificar;
-
-
+            tboxCodigo.KeyPress += AsignarSoloNumeros;
+            tboxTelefono.KeyPress += AsignarSoloNumeros;
+            tboxCelular.KeyPress += AsignarSoloNumeros;
+            tboxNumero.KeyPress += AsignarSoloNumeros;
+            tboxCP.KeyPress += AsignarSoloNumeros;
+            tboxLimitecuenta.KeyPress += AsignarSoloNumeros;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -40,62 +51,20 @@ namespace PresentacionWinForm
         {
             try
             {
-                
-                //direccion
-                Direccion unaNuevaDireccion = new Direccion();
-                DireccionNegocio unaDireccion = new DireccionNegocio();
-                unaNuevaDireccion.Calle = tboxCalle.Text;
-                unaNuevaDireccion.Numero = Convert.ToInt32(tboxNumero.Text);
-                unaNuevaDireccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
-                unaNuevaDireccion.Localidad = tboxLocalidad.Text;
-                unaNuevaDireccion.Provincia = tboxProvincia.Text;
-                unaDireccion.AgregarDireccion(unaNuevaDireccion);
-                
-                
-                //contacto
-                Contacto unNuevoContacto = new Contacto();
-                ContactoNegocio unContacto = new ContactoNegocio();
-                unNuevoContacto.Direccion = new Direccion();
-                unNuevoContacto.CodigoContacto = unaDireccion.ContaFilasDireccion();
-                unNuevoContacto.Telefono = tboxTelefono.Text;
-                unNuevoContacto.Celular = tboxCelular.Text;
-                unNuevoContacto.Mail = tboxCorreoElectronico.Text;
-                unNuevoContacto.Direccion.CodigoDireccion = unNuevoContacto.CodigoContacto;
-                
-                unContacto.AgregarContacto(unNuevoContacto);
-                
-
-                //cuentaCorriente
-                CuentaCorriente unaNuevaCuentaCorriente = new CuentaCorriente();
-                unaNuevaCuentaCorriente.LimiteCuenta = Convert.ToUInt32(tboxLimitecuenta.Text);
-                CuentaCorrienteNegocio unaCuentaCorriente = new CuentaCorrienteNegocio();
-                unaCuentaCorriente.AgregarCuentaCorriente(unaNuevaCuentaCorriente);
-                unaNuevaCuentaCorriente.CodigoCuentaCorriente = unaCuentaCorriente.ContarFilasCuentaCorriente();
-
-
-                //cliente
-                Cliente unNuevoCliente = new Cliente();
+                Validar.FormularioCliente(tboxCodigo, tboxNombre, tboxApellido, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad, cboxDescuento, tboxLimitecuenta, "Agregar");
                 ClienteNegocio unCliente = new ClienteNegocio();
-                unNuevoCliente.CodigoCliente = Convert.ToInt32(tboxCodigo.Text);
-                unNuevoCliente.Nombre = tboxNombre.Text;
-                unNuevoCliente.Apellido = tboxApellido.Text;
-                unNuevoCliente.Descuento = (Descuento)cboxDescuento.SelectedItem;
-                unNuevoCliente.CuentaCorriente = unaNuevaCuentaCorriente;
-                unNuevoCliente.Contacto = unNuevoContacto;
-
-                unCliente.AgregarCliente(unNuevoCliente);
-
+                DireccionNegocio unaDireccion = new DireccionNegocio();
+                CuentaCorrienteNegocio unaCuentaCorriente = new CuentaCorrienteNegocio();
+                int CodigoDireccion = unaDireccion.ContaFilasDireccion();
+                int CodigoCuentaCorriente = unaCuentaCorriente.ContarFilasCuentaCorriente();
+                unCliente.AgregarCliente(unCliente.CargarCliente(tboxCodigo, tboxNombre, tboxApellido, cboxDescuento, tboxLimitecuenta, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxProvincia, tboxLocalidad, tboxCalle, tboxNumero, tboxCP, CodigoDireccion,CodigoCuentaCorriente));
                 Avisos FormularioAviso = new Avisos();
                 FormularioAviso.Show();
-
-                /*<-----------------------------------------------------------------------------------------------------------------VALIDAR INGRESO DE CAMPOS*/
-    
             }
 
-            catch (Exception)
+            catch (Exception Excepcion)
             {
-
-                throw;
+                MessageBox.Show(Excepcion.Message);
             }
         }
 
@@ -108,6 +77,9 @@ namespace PresentacionWinForm
 
                 btnAceptar.Visible = false;
                 btnModificar.Visible = true;
+                tboxCodigo.Enabled = false;
+
+                tboxCodigo.Text = ClienteModificar.CodigoCliente.ToString();
                 tboxNombre.Text = ClienteModificar.Nombre;
                 tboxApellido.Text = ClienteModificar.Apellido;
                 //Direccion
@@ -122,45 +94,38 @@ namespace PresentacionWinForm
                 tboxCelular.Text = ClienteModificar.Contacto.Celular;
                 tboxCorreoElectronico.Text = ClienteModificar.Contacto.Mail;
                 //Descuento
-                cboxDescuento.SelectedIndex = cboxDescuento.FindString(ClienteModificar.Descuento.Porcentaje+"%");
+                cboxDescuento.SelectedIndex = cboxDescuento.FindString(ClienteModificar.Descuento.Nombre + " - " + ClienteModificar.Descuento.Porcentaje+"%");
                 //Cuenta Corriente
                 tboxLimitecuenta.Text = ClienteModificar.CuentaCorriente.LimiteCuenta.ToString();
                 
-
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ClienteNegocio unClienteNegocio = new ClienteNegocio();
-            DireccionNegocio unaDireccionNegocio = new DireccionNegocio();
-            CuentaCorrienteNegocio unaCuentaCorriente = new CuentaCorrienteNegocio();
-            ContactoNegocio unContactoNegocio = new ContactoNegocio();
+            try
+            {
+                Validar.FormularioCliente(tboxCodigo, tboxNombre, tboxApellido, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad, cboxDescuento, tboxLimitecuenta, "Modificar");
+                ClienteNegocio unClienteNegocio = new ClienteNegocio();
+                unClienteNegocio.ModificarCliente(unClienteNegocio.CargarCliente(tboxCodigo, tboxNombre, tboxApellido, cboxDescuento, tboxLimitecuenta, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxProvincia, tboxLocalidad, tboxCalle, tboxNumero, tboxCP, ClienteModificar.Contacto.CodigoContacto, ClienteModificar.CuentaCorriente.CodigoCuentaCorriente));
+            }
+            catch (Exception Excepcion)
+            {
 
-            ClienteModificar.Nombre = tboxNombre.Text;
-            ClienteModificar.Apellido = tboxApellido.Text;
-            //direccion
-            ClienteModificar.Contacto.Direccion.CodigoDireccion = ClienteModificar.Contacto.CodigoContacto;
-            ClienteModificar.Contacto.Direccion.Calle = tboxCalle.Text;
-            ClienteModificar.Contacto.Direccion.Numero = Convert.ToInt32(tboxNumero.Text);
-            ClienteModificar.Contacto.Direccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
-            ClienteModificar.Contacto.Direccion.Localidad = tboxLocalidad.Text;
-            ClienteModificar.Contacto.Direccion.Localidad = tboxLocalidad.Text;
-            ClienteModificar.Contacto.Direccion.Provincia = tboxProvincia.Text;
-            //Contacto
-            ClienteModificar.Contacto.Telefono = tboxTelefono.Text;
-            ClienteModificar.Contacto.Celular = tboxCelular.Text;
-            ClienteModificar.Contacto.Mail = tboxCorreoElectronico.Text;
-            //Descuento
-            ClienteModificar.Descuento = (Descuento)cboxDescuento.SelectedItem;
-            //Cuenta Corriente
-            ClienteModificar.CuentaCorriente.LimiteCuenta = Convert.ToInt32(tboxLimitecuenta.Text);
+                MessageBox.Show(Excepcion.Message);
+            }
             
-            unClienteNegocio.ModificarCliente(ClienteModificar);
-            unaDireccionNegocio.ModificarDireccion(ClienteModificar.Contacto.Direccion);
-            unaCuentaCorriente.ModificarCuentaCorriente(ClienteModificar.CuentaCorriente);
-            unContactoNegocio.ModificarContacto(ClienteModificar.Contacto);
 
         }
+
+        private void AsignarSoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

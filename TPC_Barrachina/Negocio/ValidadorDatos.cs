@@ -149,6 +149,45 @@ namespace Negocio
                 ContenidoTextBoxVacio(tboxDescripcion, "Descripcion");
         }
 
+        public void FormularioCliente(TextBox tboxCodigo, TextBox tboxNombre, TextBox tboxApellido,TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico, TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, TextBox tboxProvincia, TextBox tboxLocalidad, ComboBox cboxDescuento, TextBox tboxLimitecuenta, string TipoOperacion) {
+
+            //cliente
+            if (TipoOperacion == "Agregar") {
+
+                ContenidoTextBoxVacio(tboxCodigo, "Codigo Cliente");
+                ExistenciaDeDatoDB("CodigoCliente", "Clientes", tboxCodigo.Text);
+             
+            }
+
+            ContenidoTextBoxVacio(tboxNombre, "Nombre");
+            ContenidoTextBoxVacio(tboxApellido, "Apellido");
+            //contacto
+            ValidarContacto(tboxTelefono, tboxCelular, tboxCorreoElectronico);
+            //direccion
+            ValidarDireccion(tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad);
+            //descuento
+            SeleccionComboBox(cboxDescuento, "Descuento");
+            //cuentaCorriente
+            ContenidoTextBoxVacio(tboxLimitecuenta, "Límite Cuenta Corriente");
+
+        }
+
+        public void ValidarDireccion(TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, TextBox tboxProvincia, TextBox tboxLocalidad) {
+
+            ContenidoTextBoxVacio(tboxCalle, "Calle");
+            ContenidoTextBoxVacio(tboxNumero, "Número");
+            ContenidoTextBoxVacio(tboxCP, "Código Postal");
+            ContenidoTextBoxVacio(tboxProvincia, "Provincia");
+            ContenidoTextBoxVacio(tboxLocalidad, "Localidad");
+        }
+
+        public void ValidarContacto(TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico) {
+
+            ContenidoTextBoxVacio(tboxTelefono, "Telefono");
+            ContenidoTextBoxVacio(tboxCelular, "Celular");
+            ContenidoTextBoxVacio(tboxCorreoElectronico, "Correo Electrónico");
+        }
+
         public void ExistenciaRepetidaDeDatoDB(string DatoBuscarUno, string DatoBuscarDos, string NombreTabla, string NombreColumnaUno, string NombreColumnaDos,string Parametro, string CodigoRevisar)
         {
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();

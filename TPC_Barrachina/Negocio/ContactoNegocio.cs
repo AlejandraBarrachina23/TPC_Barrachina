@@ -44,8 +44,7 @@ namespace Negocio
                  "VALUES ('"+ unContacto.Telefono + "','" + unContacto.Celular + "','" + unContacto.Mail + "','" + unContacto.Direccion.CodigoDireccion+"')");
  
             AccederDatos.AbrirConexion();
-            AccederDatos.EjecutarConsulta();
-            AccederDatos.CerrarReader();
+            AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
         }
 
@@ -67,6 +66,22 @@ namespace Negocio
             AccederDatos.Comando.Parameters.AddWithValue("@Mail", unContacto.Mail);
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
+        }
+
+        public Contacto CargarContacto(TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico, int CodigoDireccion) {
+
+            Contacto unNuevoContacto = new Contacto();
+            unNuevoContacto.Direccion = new Direccion();
+            DireccionNegocio unaDireccion = new DireccionNegocio();
+
+            unNuevoContacto.CodigoContacto = CodigoDireccion;
+            unNuevoContacto.Telefono = tboxTelefono.Text;
+            unNuevoContacto.Celular = tboxCelular.Text;
+            unNuevoContacto.Mail = tboxCorreoElectronico.Text;
+            unNuevoContacto.Direccion.CodigoDireccion = CodigoDireccion;
+
+            return unNuevoContacto;
+                        
         }
     }
 }

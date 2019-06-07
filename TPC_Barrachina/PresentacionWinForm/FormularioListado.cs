@@ -88,6 +88,7 @@ namespace PresentacionWinForm
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Validar.SeleccionItemDataGridView(dgvListadoBusqueda);
+            //validar data grid vacio
             object EntidadModificar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
 
             if (EntidadModificar.GetType().Equals(typeof(Producto)))

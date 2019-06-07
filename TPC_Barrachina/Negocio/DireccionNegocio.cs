@@ -40,23 +40,21 @@ namespace Negocio
 
         public void AgregarDireccion(Direccion unaDireccion)
         {
-
+            AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando(("INSERT INTO Direcciones (Calle,Numero,CodigoPostal,Localidad,Provincia)" +
                  "VALUES ('" + unaDireccion.Calle + "','" + unaDireccion.Numero+ "','" + unaDireccion.CodigoPostal + "','" + unaDireccion.Localidad + "','" + unaDireccion.Provincia + "')"));
-                AccederDatos.AbrirConexion();
-                AccederDatos.EjecutarConsulta();
-                AccederDatos.CerrarReader();
+            
+                AccederDatos.EjecutarAccion();
                 AccederDatos.CerrarConexion();
         }
 
         public int ContaFilasDireccion() {
 
-            int total;
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("SELECT COUNT (CodigoDireccion) FROM Direcciones");
-            total = AccederDatos.ejecutarAccionReturn();
+            int total = AccederDatos.ejecutarAccionReturn();
             AccederDatos.CerrarConexion();
-            return total;
+            return total+1;
         
         }
 
@@ -81,6 +79,18 @@ namespace Negocio
             AccederDatos.Comando.Parameters.AddWithValue("@Provincia", unaDireccion.Provincia);
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
+        }
+
+        public Direccion CargarDireccion(TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, TextBox tboxLocalidad, TextBox tboxProvincia, int CodigoDireccion) {
+
+            Direccion unaNuevaDireccion = new Direccion();
+            unaNuevaDireccion.CodigoDireccion = CodigoDireccion;
+            unaNuevaDireccion.Calle = tboxCalle.Text;
+            unaNuevaDireccion.Numero = Convert.ToInt32(tboxNumero.Text);
+            unaNuevaDireccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
+            unaNuevaDireccion.Localidad = tboxLocalidad.Text;
+            unaNuevaDireccion.Provincia = tboxProvincia.Text;
+            return unaNuevaDireccion;
         }
     }
 }

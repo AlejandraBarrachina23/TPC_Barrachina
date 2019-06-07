@@ -10,8 +10,12 @@ using System.Windows.Forms;
 namespace Negocio
 {
     public class ClienteNegocio
+
     {
         AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
+        private CuentaCorrienteNegocio unaCuentaCorriente = new CuentaCorrienteNegocio();
+        private ContactoNegocio unContacto = new ContactoNegocio();
+        private DireccionNegocio unaDireccion = new DireccionNegocio();
         //public List<Cliente> BusquedaCliente(string ParametroBusqueda, string NombreColumna) {
 
         //    //ParametroBusqueda.ToUpper();
@@ -50,12 +54,15 @@ namespace Negocio
 
         public void AgregarCliente(Cliente unNuevoCliente) {
 
-         
+            unaDireccion.AgregarDireccion(unNuevoCliente.Contacto.Direccion);
+            unContacto.AgregarContacto(unNuevoCliente.Contacto);
+            unaCuentaCorriente.AgregarCuentaCorriente(unNuevoCliente.CuentaCorriente);
+
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("INSERT INTO Clientes (CodigoCliente,Nombre,Apellido,CodigoDescuento,CodigoCuentaCorriente,CodigoContacto) VALUES ('" + unNuevoCliente.CodigoCliente + "','" + unNuevoCliente.Nombre + "','" + unNuevoCliente.Apellido + "','" + unNuevoCliente.Descuento.CodigoDescuento + "','" + unNuevoCliente.CuentaCorriente.CodigoCuentaCorriente + "','" + unNuevoCliente.Contacto.CodigoContacto+ "')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
-
+            
         }
 
         public List<Cliente> ListarClientes() {
@@ -82,6 +89,7 @@ namespace Negocio
                     unCliente.Contacto.Telefono = AccederDatos.LectorDatos["Telefono"].ToString();
                     unCliente.Contacto.Celular = AccederDatos.LectorDatos["Celular"].ToString();
                     unCliente.Contacto.Mail = AccederDatos.LectorDatos["Mail"].ToString();
+                    unCliente.Contacto.Direccion.CodigoDireccion = (int)AccederDatos.LectorDatos["CodigoDireccion"];
                     unCliente.Contacto.Direccion.Calle = AccederDatos.LectorDatos["Calle"].ToString();
                     unCliente.Contacto.Direccion.Numero = (int)AccederDatos.LectorDatos["Numero"];
                     unCliente.Contacto.Direccion.CodigoPostal = (int)AccederDatos.LectorDatos["CodigoPostal"];
@@ -103,33 +111,27 @@ namespace Negocio
 
         public void EliminarCliente(Cliente unCliente) {
 
-            DireccionNegocio unaDireccion = new DireccionNegocio();
-            ContactoNegocio unContacto = new ContactoNegocio();
-            CuentaCorrienteNegocio unaCuentaCorriente = new CuentaCorrienteNegocio();
-            Direccion DireccionEliminar = new Direccion();
-
-            DireccionEliminar.CodigoDireccion = unCliente.Contacto.CodigoContacto;
-            
+                        
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("UPDATE Clientes SET Estado = 0 WHERE CodigoCliente =" + unCliente.CodigoCliente);
             AccederDatos.EjecutarConsulta();
             AccederDatos.CerrarConexion();
        
-            unaDireccion.EliminarDireccion(DireccionEliminar);
+            unaDireccion.EliminarDireccion(unCliente.Contacto.Direccion);
             unContacto.EliminarContacto(unCliente.Contacto);
+            unaCuentaCorriente.EliminarCuentaCorriente(unCliente.CuentaCorriente);
 
-
-            unCliente.CuentaCorriente = new CuentaCorriente();
-            unCliente.CuentaCorriente = unaCuentaCorriente.BusquedaCuentaCorriente("CodigoCuentaCorriente", unCliente.Contacto.CodigoContacto.ToString());
-            MessageBox.Show(unCliente.CuentaCorriente.CodigoCuentaCorriente.ToString());
-            unaCuentaCorriente.EliminarCuentaCorriente(unCliente.CuentaCorriente.CodigoCuentaCorriente);
-            
-            
         }
 
         public void ModificarCliente(Cliente unCliente) {
 
-            MessageBox.Show(unCliente.CodigoCliente.ToString());
+            DireccionNegocio unaDireccionNegocio = new DireccionNegocio();
+            CuentaCorrienteNegocio unaCuentaCorriente = new CuentaCorrienteNegocio();
+            ContactoNegocio unContactoNegocio = new ContactoNegocio();
+            unaDireccionNegocio.ModificarDireccion(unCliente.Contacto.Direccion);
+            unaCuentaCorriente.ModificarCuentaCorriente(unCliente.CuentaCorriente);
+            unContactoNegocio.ModificarContacto(unCliente.Contacto);
+
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("UPDATE Clientes Set Nombre=@Nombre, Apellido=@Apellido, CodigoDescuento=@CodigoDescuento WHERE CodigoCliente = " + unCliente.CodigoCliente);
             AccederDatos.Comando.Parameters.Clear();
@@ -140,5 +142,20 @@ namespace Negocio
             AccederDatos.CerrarConexion();
 
         }
+
+        public Cliente CargarCliente(TextBox tboxCodigo, TextBox tboxNombre, TextBox tboxApellido, ComboBox cboxDescuento, TextBox tboxLimitecuenta, TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico,TextBox tboxProvincia, TextBox tboxLocalidad, TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, int CodigoDireccion, int CodigoCuentaCorriente) {
+
+            Cliente unNuevoCliente = new Cliente();
+            unNuevoCliente.CodigoCliente = Convert.ToInt32(tboxCodigo.Text);
+            unNuevoCliente.Nombre = tboxNombre.Text;
+            unNuevoCliente.Apellido = tboxApellido.Text;
+            unNuevoCliente.Descuento = (Descuento)cboxDescuento.SelectedItem;
+
+            unNuevoCliente.CuentaCorriente = unaCuentaCorriente.CargarCuentaCorriente(tboxLimitecuenta, CodigoCuentaCorriente);
+            unNuevoCliente.Contacto = unContacto.CargarContacto(tboxTelefono, tboxCelular, tboxCorreoElectronico, CodigoDireccion);
+            unNuevoCliente.Contacto.Direccion = unaDireccion.CargarDireccion(tboxCalle, tboxNumero, tboxCP, tboxLocalidad, tboxProvincia, CodigoDireccion);
+            return unNuevoCliente;
+        }
+
     }
 }

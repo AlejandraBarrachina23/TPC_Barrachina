@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Dominio;
 using AccesoDatos;
 
@@ -15,12 +16,9 @@ namespace Negocio
         private AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
         public void AgregarCuentaCorriente(CuentaCorriente unaCuentaCorriente)
         {
-
-            AccederDatos.DefinirTipoComando(("INSERT INTO CuentaCorrientes(Saldo)" +
-                 "VALUES ('" +unaCuentaCorriente.Saldo+ "')"));
             AccederDatos.AbrirConexion();
-            AccederDatos.EjecutarConsulta();
-            AccederDatos.CerrarReader();
+            AccederDatos.DefinirTipoComando(("INSERT INTO CuentaCorrientes(Saldo) VALUES ('" +unaCuentaCorriente.Saldo+ "')"));
+            AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
         }
 
@@ -28,16 +26,19 @@ namespace Negocio
 
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("SELECT COUNT (CodigoCuentaCorriente) FROM CuentaCorrientes");
-            return AccederDatos.ejecutarAccionReturn();
+            int total = AccederDatos.ejecutarAccionReturn();
+            AccederDatos.CerrarConexion();
+            return total+1;
+
         }
 
 
 
-        public void EliminarCuentaCorriente(int CodigoCuentaCorriente)
+        public void EliminarCuentaCorriente(CuentaCorriente unaCuentaCorriente)
         {
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("UPDATE CuentaCorrientes SET Estado = 0 WHERE CodigoCuentaCorriente =" + CodigoCuentaCorriente);
-            AccederDatos.EjecutarConsulta();
+            AccederDatos.DefinirTipoComando("UPDATE CuentaCorrientes SET Estado = 0 WHERE CodigoCuentaCorriente =" + unaCuentaCorriente.CodigoCuentaCorriente);
+            AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
 
         }
@@ -72,6 +73,14 @@ namespace Negocio
             AccederDatos.Comando.Parameters.AddWithValue("@LimiteCuenta", unaCuentaCorriente.LimiteCuenta);
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
+        }
+
+        public CuentaCorriente CargarCuentaCorriente(TextBox tboxLimitecuenta, int CodigoCuentaCorriente) {
+
+            CuentaCorriente unaNuevaCuenteCorriente = new CuentaCorriente();
+            unaNuevaCuenteCorriente.CodigoCuentaCorriente = CodigoCuentaCorriente;
+            unaNuevaCuenteCorriente.LimiteCuenta = Convert.ToUInt32(tboxLimitecuenta.Text);
+            return unaNuevaCuenteCorriente;
         }
     }
 }
