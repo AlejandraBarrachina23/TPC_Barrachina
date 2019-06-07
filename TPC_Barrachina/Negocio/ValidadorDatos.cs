@@ -136,6 +136,19 @@ namespace Negocio
             ContenidoTextBoxVacio(tboxPorcentaje, "Porcentaje");
         }
 
+        public void FormularioImpuesto(TextBox tboxCodigoImpuesto, TextBox tboxNombre, TextBox tboxDescripcion, string TipoOperacion) {
+
+            if (TipoOperacion == "Agregar") {
+
+                ContenidoTextBoxVacio(tboxCodigoImpuesto, "Codigo Impuesto");
+                ExistenciaDeDatoDB("CodigoImpuesto", "Impuestos", tboxCodigoImpuesto.Text);
+                ContenidoTextBoxVacio(tboxNombre, "Nombre");
+                ExistenciaDeDatoDB("Nombre", "Impuestos", tboxNombre.Text);
+            }
+                ExistenciaRepetidaDeDatoDB("CodigoImpuesto", "Nombre", "Impuestos", "CodigoImpuesto", "Nombre", tboxNombre.Text, tboxCodigoImpuesto.Text);
+                ContenidoTextBoxVacio(tboxDescripcion, "Descripcion");
+        }
+
         public void ExistenciaRepetidaDeDatoDB(string DatoBuscarUno, string DatoBuscarDos, string NombreTabla, string NombreColumnaUno, string NombreColumnaDos,string Parametro, string CodigoRevisar)
         {
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();

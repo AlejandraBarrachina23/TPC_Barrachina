@@ -16,6 +16,8 @@ namespace PresentacionWinForm
     {
         private Impuesto ImpuestoModificar = null;
         private ImpuestoNegocio unNegocioImpuesto = new ImpuestoNegocio();
+        private ValidadorDatos Validar = new ValidadorDatos();
+
         public FormularioImpuestos()
         {
             InitializeComponent();
@@ -41,13 +43,31 @@ namespace PresentacionWinForm
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
-        {         
-            unNegocioImpuesto.AgregarImpuesto(unNegocioImpuesto.CargarImpuesto(tboxCodigoImpuesto, tboxNombre, tboxDescripcion));   
+        {
+            try
+            {
+                Validar.FormularioImpuesto(tboxCodigoImpuesto, tboxNombre, tboxDescripcion, "Agregar");
+                unNegocioImpuesto.AgregarImpuesto(unNegocioImpuesto.CargarImpuesto(tboxCodigoImpuesto, tboxNombre, tboxDescripcion));   
+            }
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            unNegocioImpuesto.ModificarImpuesto(unNegocioImpuesto.CargarImpuesto(tboxCodigoImpuesto, tboxNombre, tboxDescripcion));
+            try
+            {
+                Validar.FormularioImpuesto(tboxCodigoImpuesto, tboxNombre, tboxDescripcion, "Modificar");
+                unNegocioImpuesto.ModificarImpuesto(unNegocioImpuesto.CargarImpuesto(tboxCodigoImpuesto, tboxNombre, tboxDescripcion));
+            }
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+            
         }
     }
 }
