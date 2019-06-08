@@ -161,15 +161,30 @@ namespace Negocio
 
             ContenidoTextBoxVacio(tboxNombre, "Nombre");
             ContenidoTextBoxVacio(tboxApellido, "Apellido");
-            //contacto
             ValidarContacto(tboxTelefono, tboxCelular, tboxCorreoElectronico);
-            //direccion
             ValidarDireccion(tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad);
-            //descuento
             SeleccionComboBox(cboxDescuento, "Descuento");
-            //cuentaCorriente
             ContenidoTextBoxVacio(tboxLimitecuenta, "Límite Cuenta Corriente");
 
+        }
+
+        public void FormularioProveedor(TextBox tboxCodigoProveedor, TextBox tboxRazonSocial, TextBox tboxNumeroCUIT, TextBox tboxNombreFantasia, ComboBox cboxCondicionIVA,  TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico, TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, TextBox tboxProvincia, TextBox tboxLocalidad, string TipoOperacion) {
+
+            if (TipoOperacion == "Agregar") {
+
+                ContenidoTextBoxVacio(tboxCodigoProveedor, "Codigo Proveedor");
+                ExistenciaDeDatoDB("CodigoProveedor", "Proveedores", tboxCodigoProveedor.Text);
+                ContenidoTextBoxVacio(tboxRazonSocial, "Razon social");
+                ContenidoTextBoxVacio(tboxNumeroCUIT, "Numero CUIT");
+                ExistenciaDeDatoDB("NumeroCUIT", "Proveedores", tboxNumeroCUIT.Text);
+                ContenidoTextBoxVacio(tboxNombreFantasia, "Nombre Fantasía");
+                SeleccionComboBox(cboxCondicionIVA, "Condición IVA");
+
+            }
+
+            ExistenciaRepetidaDeDatoDB("CodigoProveedor", "NumeroCUIT", "Proveedores", "CodigoProveedor", "NumeroCUIT", tboxNumeroCUIT.Text, tboxCodigoProveedor.Text);
+            ValidarContacto(tboxTelefono, tboxCelular, tboxCorreoElectronico);
+            ValidarDireccion(tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad);
         }
 
         public void ValidarDireccion(TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, TextBox tboxProvincia, TextBox tboxLocalidad) {

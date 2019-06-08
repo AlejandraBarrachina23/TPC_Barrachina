@@ -14,8 +14,8 @@ namespace PresentacionWinForm
 {
     public partial class Proveedores : Form
     {
-        ValidadorDatos validar = new ValidadorDatos();
-        Utilidades utilidades = new Utilidades();
+        ValidadorDatos Validar = new ValidadorDatos();
+        Utilidades Utilidades = new Utilidades();
         List<Impuesto> ListadoImpuestos = new List<Impuesto>();
         private BindingList<Impuesto> listaBindeable;
         private Proveedor ProveedorModificar = null;
@@ -23,19 +23,9 @@ namespace PresentacionWinForm
         public Proveedores()
         {
             InitializeComponent();
-
-            void AsignarSoloNumeros(object sender, KeyPressEventArgs e)
-            {
-                TextBox Tbox = new TextBox();
-
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-
-                }
-            }
-            
+                        
             tboxCodigoProveedor.KeyPress += AsignarSoloNumeros;
+            tboxCP.KeyPress += AsignarSoloNumeros;
             tboxNumeroCUIT.KeyPress += AsignarSoloNumeros;
             tboxNumero.KeyPress += AsignarSoloNumeros;
             tboxPorcentaje.KeyPress += AsignarSoloNumeros;
@@ -48,27 +38,33 @@ namespace PresentacionWinForm
 
             InitializeComponent();
             ProveedorModificar = unProveedorModificar;
-
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
-            DireccionNegocio unaDireccion = new DireccionNegocio();
-            ProveedorNegocio unProveedor = new ProveedorNegocio();
-            int CodigoDireccion = unaDireccion.ContaFilasDireccion();
-            unProveedor.AgregarProveedor(unProveedor.CargarProveedor(tboxCodigoProveedor, tboxRazonSocial, tboxNumeroCUIT, tboxNombreFantasia, cboxCondicionIVA, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxProvincia, tboxLocalidad, tboxCalle, tboxNumero, tboxCP, CodigoDireccion));
-            ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
-
-            foreach (Impuesto unNuevoImpuesto in ListadoImpuestos)
+            try
             {
-                unImpuesto.AgregarImpuestoXProveedor(unNuevoImpuesto, Convert.ToInt32(tboxCodigoProveedor.Text));
+                Validar.FormularioProveedor(tboxCodigoProveedor, tboxRazonSocial, tboxNumeroCUIT, tboxNombreFantasia, cboxCondicionIVA, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad, "Agregar");
+                DireccionNegocio unaDireccion = new DireccionNegocio();
+                ProveedorNegocio unProveedor = new ProveedorNegocio();
+                int CodigoDireccion = unaDireccion.ContaFilasDireccion();
+                unProveedor.AgregarProveedor(unProveedor.CargarProveedor(tboxCodigoProveedor, tboxRazonSocial, tboxNumeroCUIT, tboxNombreFantasia, cboxCondicionIVA, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxProvincia, tboxLocalidad, tboxCalle, tboxNumero, tboxCP, CodigoDireccion));
+                ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
+
+                foreach (Impuesto unNuevoImpuesto in ListadoImpuestos)
+                {
+                    unImpuesto.AgregarImpuestoXProveedor(unNuevoImpuesto, Convert.ToInt32(tboxCodigoProveedor.Text));
+                }
+
+                Avisos FormularioAviso = new Avisos();
+                FormularioAviso.Show();
             }
+            catch (Exception Excepcion)
+            {
 
-            Avisos FormularioAviso = new Avisos();
-            FormularioAviso.Show();
-
-            /*<-----------------------------------------------------------------------------------------------------------------VALIDAR INGRESO DE CAMPOS*/
+                MessageBox.Show(Excepcion.Message);
+            }
+      
         }
 
         private void Proveedores_Load(object sender, EventArgs e)
@@ -80,6 +76,8 @@ namespace PresentacionWinForm
 
             if (ProveedorModificar != null) {
 
+                tboxCodigoProveedor.Enabled = false;
+                tboxCodigoProveedor.Text = ProveedorModificar.CodigoProveedor.ToString();
                 tboxRazonSocial.Text = ProveedorModificar.RazonSocial;
                 tboxNumeroCUIT.Text = ProveedorModificar.NumeroCUIT;
                 tboxNombreFantasia.Text = ProveedorModificar.NombreFantasia;
@@ -94,7 +92,7 @@ namespace PresentacionWinForm
                 tboxCorreoElectronico.Text = ProveedorModificar.Contacto.Mail;
                 ListadoImpuestos = unImpuesto.ListarImpuestosxProveedor(ProveedorModificar.CodigoProveedor);
                 dgvImpuestos.DataSource = ListadoImpuestos;
-                utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
+                Utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
                 btnModificar.Visible = true;
 
             }
@@ -106,7 +104,7 @@ namespace PresentacionWinForm
             this.Close();
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnAgregarImpuesto_Click(object sender, EventArgs e)
         {
           
             try
@@ -120,7 +118,7 @@ namespace PresentacionWinForm
                 dgvImpuestos.DataSource = listaBindeable;
                 ListadoImpuestos.Add(unNuevoImpuesto);
                 listaBindeable.ResetBindings();
-                utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
+                Utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
 
             }
             catch (Exception ex)
@@ -131,36 +129,59 @@ namespace PresentacionWinForm
      
         }
 
+        private void btnBorrarImpuesto_Click(object sender, EventArgs e)
+        {
+            ListadoImpuestos.RemoveAt(dgvImpuestos.CurrentRow.Index);
+            dgvImpuestos.DataSource = ListadoImpuestos;
+        }
+
+        private void btnModificarImpuesto_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void dgvImpuestos_SelectionChanged(object sender, EventArgs e)
         {
-            Impuesto ImpuestoSeleccionado = (Impuesto)dgvImpuestos.CurrentRow.DataBoundItem;
-            cboxImpuesto.Text = ImpuestoSeleccionado.Nombre;
-            tboxPorcentaje.Text = ImpuestoSeleccionado.Alicuota.ToString();
+            try
+            {
+                Impuesto ImpuestoSeleccionado = (Impuesto)dgvImpuestos.CurrentRow.DataBoundItem;
+                cboxImpuesto.Text = ImpuestoSeleccionado.Nombre;
+                tboxPorcentaje.Text = ImpuestoSeleccionado.Alicuota.ToString();
+            }
+            catch (Exception Excepcion)
+            {
+
+                MessageBox.Show(Excepcion.Message);
+            }
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            ProveedorNegocio unProveedor = new ProveedorNegocio();
-            ContactoNegocio unContacto = new ContactoNegocio();
-            DireccionNegocio unaDireccion = new DireccionNegocio();
-            ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
-
-            ProveedorModificar.RazonSocial = tboxRazonSocial.Text;
-            ProveedorModificar.NumeroCUIT = tboxNumeroCUIT.Text;
-            ProveedorModificar.NombreFantasia = tboxNombreFantasia.Text;
-            ProveedorModificar.CondicionIVA =(CondicionIVA)cboxCondicionIVA.SelectedItem;
-            ProveedorModificar.Contacto.Direccion.Calle = tboxCalle.Text;
-            ProveedorModificar.Contacto.Direccion.Numero = Convert.ToInt32(tboxNumero.Text);
-            ProveedorModificar.Contacto.Direccion.CodigoPostal = Convert.ToInt32(tboxCP.Text);
-            ProveedorModificar.Contacto.Direccion.Localidad = tboxLocalidad.Text;
-            ProveedorModificar.Contacto.Direccion.Provincia = tboxProvincia.Text;
-            ProveedorModificar.Contacto.Celular = tboxCelular.Text;
-            ProveedorModificar.Contacto.Telefono = tboxTelefono.Text;
-            ProveedorModificar.Contacto.Mail = tboxCorreoElectronico.Text;
-            unProveedor.ModificarProveedor(ProveedorModificar);
-            unContacto.ModificarContacto(ProveedorModificar.Contacto);
-            unaDireccion.ModificarDireccion(ProveedorModificar.Contacto.Direccion);
-
+            try
+            {
+                Validar.FormularioProveedor(tboxCodigoProveedor, tboxRazonSocial, tboxNumeroCUIT, tboxNombreFantasia, cboxCondicionIVA, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad, "Modificar");
+                ProveedorNegocio unProveedor = new ProveedorNegocio();
+                unProveedor.ModificarProveedor(unProveedor.CargarProveedor(tboxCodigoProveedor, tboxRazonSocial, tboxNumeroCUIT, tboxNombreFantasia, cboxCondicionIVA, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxProvincia, tboxLocalidad, tboxCalle, tboxNumero, tboxCP, ProveedorModificar.Contacto.CodigoContacto));
+            }
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+            
         }
+
+        void AsignarSoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            TextBox Tbox = new TextBox();
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+        }
+
+       
     }
 }

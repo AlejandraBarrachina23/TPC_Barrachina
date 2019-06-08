@@ -107,10 +107,5 @@ namespace Negocio
 
         }
 
-        public void CargarImpuesto(List<Impuesto> ListadoImpuestos, Proveedor unProveedor) {
-
-            
-        }
-
     }
 }

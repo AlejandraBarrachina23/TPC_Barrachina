@@ -61,9 +61,9 @@
             this.cboxCondicionIVA = new System.Windows.Forms.ComboBox();
             this.gboxImpuesto = new System.Windows.Forms.GroupBox();
             this.cboxImpuesto = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnModificarImpuesto = new System.Windows.Forms.Button();
+            this.btnBorrarImpuesto = new System.Windows.Forms.Button();
+            this.btnAgregarImpuesto = new System.Windows.Forms.Button();
             this.dgvImpuestos = new System.Windows.Forms.DataGridView();
             this.lblCodigoProveedor = new System.Windows.Forms.Label();
             this.tboxCodigoProveedor = new System.Windows.Forms.TextBox();
@@ -356,9 +356,9 @@
             // gboxImpuesto
             // 
             this.gboxImpuesto.Controls.Add(this.cboxImpuesto);
-            this.gboxImpuesto.Controls.Add(this.button2);
-            this.gboxImpuesto.Controls.Add(this.button1);
-            this.gboxImpuesto.Controls.Add(this.btnAgregar);
+            this.gboxImpuesto.Controls.Add(this.btnModificarImpuesto);
+            this.gboxImpuesto.Controls.Add(this.btnBorrarImpuesto);
+            this.gboxImpuesto.Controls.Add(this.btnAgregarImpuesto);
             this.gboxImpuesto.Controls.Add(this.tboxPorcentaje);
             this.gboxImpuesto.Controls.Add(this.dgvImpuestos);
             this.gboxImpuesto.Controls.Add(this.lblImpuestos);
@@ -380,33 +380,35 @@
             this.cboxImpuesto.Size = new System.Drawing.Size(124, 25);
             this.cboxImpuesto.TabIndex = 31;
             // 
-            // button2
+            // btnModificarImpuesto
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(393, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 27);
-            this.button2.TabIndex = 30;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModificarImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarImpuesto.Image")));
+            this.btnModificarImpuesto.Location = new System.Drawing.Point(393, 23);
+            this.btnModificarImpuesto.Name = "btnModificarImpuesto";
+            this.btnModificarImpuesto.Size = new System.Drawing.Size(30, 27);
+            this.btnModificarImpuesto.TabIndex = 30;
+            this.btnModificarImpuesto.UseVisualStyleBackColor = true;
+            this.btnModificarImpuesto.Click += new System.EventHandler(this.btnModificarImpuesto_Click);
             // 
-            // button1
+            // btnBorrarImpuesto
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(359, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 27);
-            this.button1.TabIndex = 30;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBorrarImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrarImpuesto.Image")));
+            this.btnBorrarImpuesto.Location = new System.Drawing.Point(359, 23);
+            this.btnBorrarImpuesto.Name = "btnBorrarImpuesto";
+            this.btnBorrarImpuesto.Size = new System.Drawing.Size(30, 27);
+            this.btnBorrarImpuesto.TabIndex = 30;
+            this.btnBorrarImpuesto.UseVisualStyleBackColor = true;
+            this.btnBorrarImpuesto.Click += new System.EventHandler(this.btnBorrarImpuesto_Click);
             // 
-            // btnAgregar
+            // btnAgregarImpuesto
             // 
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(326, 23);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(30, 27);
-            this.btnAgregar.TabIndex = 30;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAgregarImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarImpuesto.Image")));
+            this.btnAgregarImpuesto.Location = new System.Drawing.Point(326, 23);
+            this.btnAgregarImpuesto.Name = "btnAgregarImpuesto";
+            this.btnAgregarImpuesto.Size = new System.Drawing.Size(30, 27);
+            this.btnAgregarImpuesto.TabIndex = 30;
+            this.btnAgregarImpuesto.UseVisualStyleBackColor = true;
+            this.btnAgregarImpuesto.Click += new System.EventHandler(this.btnAgregarImpuesto_Click);
             // 
             // dgvImpuestos
             // 
@@ -578,13 +580,13 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblNombreFormulario;
         private System.Windows.Forms.DataGridView dgvImpuestos;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnAgregarImpuesto;
         private System.Windows.Forms.ComboBox cboxImpuesto;
         private System.Windows.Forms.Label lblCondicionIVA;
         private System.Windows.Forms.TextBox tboxCP;
         private System.Windows.Forms.Label lblCP;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBorrarImpuesto;
+        private System.Windows.Forms.Button btnModificarImpuesto;
     }
 }
