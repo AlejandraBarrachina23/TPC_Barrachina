@@ -140,6 +140,7 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -194,7 +195,7 @@
             this.ClientSize = new System.Drawing.Size(631, 225);
             this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.pnlBarraPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MetodoPago";
             this.Text = "MetodoPago";
             this.pnlBarraPrincipal.ResumeLayout(false);

@@ -13,7 +13,7 @@ using Dominio;
 
 namespace PresentacionWinForm
 {
-    public partial class FormularioVenta : Form
+    public partial class FormularioVenta : Form, ICambiarMetodoPago
     {
 
         public FormularioVenta()
@@ -26,6 +26,11 @@ namespace PresentacionWinForm
         private decimal subtotal = 0;
         ValidadorDatos Validar = new ValidadorDatos();
 
+        public void CambiarTexto(string Texto) {
+
+            lblMetodoPago.Text = Texto;
+        }
+
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
             FormularioBusqueda BusquedaCliente = new FormularioBusqueda("Cliente", "Formulario Venta");
@@ -35,7 +40,13 @@ namespace PresentacionWinForm
         private void btnMetodoPago_Click(object sender, EventArgs e)
         {
             MetodoPago FormularioMetodoPago = new MetodoPago();
+            FormularioMetodoPago.SeleccionarMetodoPago += new MetodoPago.ElegirMetodoPago(CambiarMetodoPago);
             FormularioMetodoPago.Show();
+        }
+
+        private void CambiarMetodoPago(string Nombre) {
+
+            lblMetodoPago.Text = "METODO PAGO: " + Nombre;
         }
 
         private void btnDevolucion_Click(object sender, EventArgs e)
@@ -85,15 +96,16 @@ namespace PresentacionWinForm
             {
                 try
                 {
-                    dgvDetalleVenta.DataSource = null;
+                    
                     DetalleVenta unDetalleVenta = new DetalleVenta();
                     ProductoNegocio unProductoVendido = new ProductoNegocio();
                     Producto unProducto = unProductoVendido.BusquedaProducto(tboxCodigoBarra.Text);
+                    dgvDetalleVenta.DataSource = null;
                     unDetalleVenta.Linea = CuentaLineas;
                     unDetalleVenta.Producto = unProducto;
                     unDetalleVenta.Cantidad = Convert.ToInt32(tboxCantidad.Text);
-                    unDetalleVenta.Bultos = Convert.ToInt32(tboxCantidad.Text) / unProducto.CantidadxBulto;
-                    unDetalleVenta.Unidades = Convert.ToInt32(tboxCantidad.Text) % unProducto.CantidadxBulto;
+                    unDetalleVenta.Bultos = Convert.ToInt32(unDetalleVenta.Cantidad) / unProducto.CantidadxBulto;
+                    unDetalleVenta.Unidades = Convert.ToInt32(unDetalleVenta.Cantidad) % unProducto.CantidadxBulto;
                     unDetalleVenta.PrecioMayorista = unProducto.PrecioVentaMayorista;
                     unDetalleVenta.PrecioMinorista = unProducto.PrecioVentaMinorista;
                     tboxCodigoBarra.Clear();
@@ -110,15 +122,21 @@ namespace PresentacionWinForm
                 {
                     MessageBox.Show(Excepcion.Message);
                 }
-                
+
 
             }
         }
 
         private void FormularioVenta_Load(object sender, EventArgs e)
         {
-            
-           
+            HoraActual.Enabled = true;
+            lblCliente.Text = "CLIENTE: Consumidor Final";
+        }
+
+        private void HoraActual_Tick(object sender, EventArgs e)
+        {
+            lblFecha.Text = "FECHA: " + DateTime.Now.ToShortDateString();
+            lblHora.Text = "HORA: " + DateTime.Now.ToLongTimeString();
         }
     }
 }

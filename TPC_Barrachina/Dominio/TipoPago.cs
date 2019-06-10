@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class CabeceraVenta:CabeceraDocumento
+    public class TipoPago
     {
-        public Cliente Cliente { get; set; }
-        public TipoPago MetodoPago { get; set; }
-        
+        int CodigoTipoPago { get; set; }
+        string Nombre { get; set; }
+        bool Estado { get; set; }
     }
 }
