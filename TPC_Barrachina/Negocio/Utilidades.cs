@@ -152,12 +152,28 @@ namespace Negocio
                     Grilla.Columns[3].Visible = false;
                     Grilla.Columns[6].Visible = false;
                     return Grilla;
+
+                case "Detalle Venta":
+                    Grilla.Columns[2].Visible = false;
+                    Grilla.Columns[3].Visible = false;
+                    return Grilla;
                 default:
                     return null;
             }
 
        
         }
+
+        public void AjustarOrdenGridView(DataGridView Grilla)
+        {
+            Grilla.Columns["Linea"].DisplayIndex = 0;
+            Grilla.Columns["Producto"].DisplayIndex = 1;
+            Grilla.Columns["Cantidad"].DisplayIndex = 2;
+            Grilla.Columns["Bultos"].DisplayIndex = 3;
+            Grilla.Columns["Unidades"].DisplayIndex = 4;
+            Grilla.Columns["PrecioMinorista"].DisplayIndex = 5;
+            Grilla.Columns["PrecioMayorista"].DisplayIndex = 6;
+    }
 
     }
 }

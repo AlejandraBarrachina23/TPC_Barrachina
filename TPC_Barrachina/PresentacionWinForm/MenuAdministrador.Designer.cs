@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdministrador));
-            this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnProveedor = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
@@ -46,33 +44,8 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.pnlBarraPrincipal.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlBarraPrincipal
-            // 
-            this.pnlBarraPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.pnlBarraPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnlBarraPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlBarraPrincipal.Controls.Add(this.lbNombrePrograma);
-            this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBarraPrincipal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
-            this.pnlBarraPrincipal.Size = new System.Drawing.Size(1278, 41);
-            this.pnlBarraPrincipal.TabIndex = 2;
-            // 
-            // lbNombrePrograma
-            // 
-            this.lbNombrePrograma.AutoSize = true;
-            this.lbNombrePrograma.Font = new System.Drawing.Font("Bebas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombrePrograma.ForeColor = System.Drawing.Color.White;
-            this.lbNombrePrograma.Location = new System.Drawing.Point(555, 4);
-            this.lbNombrePrograma.Name = "lbNombrePrograma";
-            this.lbNombrePrograma.Size = new System.Drawing.Size(165, 25);
-            this.lbNombrePrograma.TabIndex = 9;
-            this.lbNombrePrograma.Text = "NOMBRE PROGRAMA";
             // 
             // btnVentas
             // 
@@ -253,25 +226,22 @@
             this.panelMenu.Controls.Add(this.btnVentas);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelMenu.Location = new System.Drawing.Point(0, 41);
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(105, 556);
+            this.panelMenu.Size = new System.Drawing.Size(105, 597);
             this.panelMenu.TabIndex = 3;
             // 
             // MenuAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
             this.ClientSize = new System.Drawing.Size(1278, 597);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.pnlBarraPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.Name = "MenuAdministrador";
-            this.Text = "Reportes";
-            this.pnlBarraPrincipal.ResumeLayout(false);
-            this.pnlBarraPrincipal.PerformLayout();
+            this.Text = "Menú Administrador";
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.ResumeLayout(false);
@@ -279,8 +249,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlBarraPrincipal;
-        private System.Windows.Forms.Label lbNombrePrograma;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnProveedor;
         private System.Windows.Forms.Button btnClientes;

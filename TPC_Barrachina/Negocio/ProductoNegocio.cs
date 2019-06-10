@@ -136,5 +136,35 @@ namespace Negocio
 
             return unProducto;
         }
+
+        public Producto BusquedaProducto(string CodigoProducto) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT * FROM Productos WHERE CodigoProducto = '" + CodigoProducto + "'OR CodigoBulto = " + CodigoProducto);
+            AccederDatos.EjecutarConsulta();
+            while (AccederDatos.LectorDatos.Read()) {
+
+                Producto unProducto = new Producto();
+                unProducto.CodigoProducto = AccederDatos.LectorDatos["CodigoProducto"].ToString();
+                unProducto.CodigoBulto = AccederDatos.LectorDatos["CodigoBulto"].ToString();
+                unProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
+                unProducto.StockCritico = (int)AccederDatos.LectorDatos["StockCritico"];
+                unProducto.CantidadxBulto = (int)AccederDatos.LectorDatos["CantidadxBulto"];
+                unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
+                unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
+                unProducto.PrecioCosto = (decimal)AccederDatos.LectorDatos["PrecioCosto"];
+                unProducto.PrecioCostoLista = (decimal)AccederDatos.LectorDatos["PrecioCostoLista"];
+
+                AccederDatos.CerrarReader();
+                AccederDatos.CerrarConexion();
+                return unProducto;
+
+            }
+            AccederDatos.CerrarReader();
+            AccederDatos.CerrarConexion();
+            throw new Exception("El código ingresado no existe");
+
+        }
     }
 }

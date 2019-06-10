@@ -22,11 +22,6 @@ namespace PresentacionWinForm
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnVentas_Click(object sender, EventArgs e)
         {
             try

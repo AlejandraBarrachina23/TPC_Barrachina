@@ -23,5 +23,12 @@ namespace Dominio
         public Rubro Rubro { get; set; }
         public bool Estado { get; set; }
 
+        public override string ToString()
+        {
+            return Nombre;
+        }
+
     }
+    
+    
 }

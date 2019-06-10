@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class DetalleVenta
+    public class DetalleVenta:DetalleDocumento
     {
+        public decimal Bultos { get; set; }
+        public decimal Unidades { get;set; }
+        public decimal PrecioCosto { get; set; }
+        public decimal PrecioCostoLista { get; set; }
+        public decimal PrecioMinorista { get; set; }
+        public decimal PrecioMayorista { get; set; }
+        public decimal Subtotal { get; set; }
 
     }
 }

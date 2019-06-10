@@ -8,9 +8,8 @@ namespace Dominio
 {
     public class DetalleDocumento
     {
-        public int NumeroLinea { get; set; }
+        public int Linea { get; set; }
         public Producto Producto { get; set; }
         public int Cantidad { get; set; }
-
     }
 }
