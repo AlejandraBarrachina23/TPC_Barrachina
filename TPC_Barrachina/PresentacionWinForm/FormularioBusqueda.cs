@@ -32,8 +32,10 @@ namespace PresentacionWinForm
 
         }
 
-        public delegate void ElegirCliente(string Nombre);
+        public delegate void ElegirCliente(Cliente unCliente);
         public event ElegirCliente SeleccionarCliente;
+        public delegate void ElegirProducto(Producto unProducto);
+        public event ElegirProducto SeleccionarProducto;
         
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -76,14 +78,16 @@ namespace PresentacionWinForm
                 
                 Producto unProducto = new Producto();
                 unProducto = (Producto)dgvListadoBusqueda.CurrentRow.DataBoundItem;
-                //SeleccionarProducto(unProducto);
+                SeleccionarProducto(unProducto);
+                this.Dispose();
             }
 
             else if((lblNombreFormulario.Text.Remove(0, 8)) == "Clientes") {
 
                 Cliente unCliente = new Cliente();
                 unCliente = (Cliente)dgvListadoBusqueda.CurrentRow.DataBoundItem;
-                SeleccionarCliente(unCliente.Nombre);
+                SeleccionarCliente(unCliente);
+                this.Dispose();
 
             }
         }

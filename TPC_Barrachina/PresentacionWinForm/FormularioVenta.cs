@@ -34,7 +34,9 @@ namespace PresentacionWinForm
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
             FormularioBusqueda FormularioBusquedaCliente = new FormularioBusqueda("Clientes", "Formulario Venta");
+         
             FormularioBusquedaCliente.SeleccionarCliente += new FormularioBusqueda.ElegirCliente(CambiarCliente);
+
             FormularioBusquedaCliente.Show();
         }
 
@@ -50,9 +52,25 @@ namespace PresentacionWinForm
             lblMetodoPago.Text = "METODO PAGO: " + Nombre;
         }
 
-        private void CambiarCliente(string Nombre) {
+        private void SeleccionarProducto(Producto unProducto) {
 
-            lblCliente.Text = "CLIENTE: " + Nombre;
+            DetalleVenta unDetalleVenta = new DetalleVenta();
+            unDetalleVenta.Linea = CuentaLineas;
+            unDetalleVenta.Producto = unProducto;
+            unDetalleVenta.Cantidad = Convert.ToInt32(tboxCantidad.Text);
+            unDetalleVenta.Bultos = Convert.ToInt32(unDetalleVenta.Cantidad) / unProducto.CantidadxBulto;
+            unDetalleVenta.Unidades = Convert.ToInt32(unDetalleVenta.Cantidad) % unProducto.CantidadxBulto;
+            unDetalleVenta.PrecioMayorista = unProducto.PrecioVentaMayorista;
+            unDetalleVenta.PrecioMinorista = unProducto.PrecioVentaMinorista;
+            tboxCodigoBarra.Clear();
+            Detalles.Add(unDetalleVenta);
+            dgvDetalleVenta.DataSource = Detalles;
+        }
+
+        private void CambiarCliente(Cliente unCliente) {
+
+            lblCliente.Text = "CLIENTE: " + unCliente.Nombre;
+            lblSaldo.Text = "SALDO: " + unCliente.CuentaCorriente.Saldo;
         }
 
         private void btnDevolucion_Click(object sender, EventArgs e)
@@ -82,6 +100,7 @@ namespace PresentacionWinForm
         private void btnBusqueda_Click(object sender, EventArgs e)
         {
             FormularioBusqueda BusquedaProducto = new FormularioBusqueda("Productos", "Formulario Venta");
+            BusquedaProducto.SeleccionarProducto += new FormularioBusqueda.ElegirProducto(SeleccionarProducto);
             BusquedaProducto.MdiParent = this.MdiParent;
             BusquedaProducto.Show();
 
