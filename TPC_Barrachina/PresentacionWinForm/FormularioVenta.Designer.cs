@@ -48,6 +48,7 @@
             this.btnDevolucion = new System.Windows.Forms.Button();
             this.btnMetodoPago = new System.Windows.Forms.Button();
             this.pnlDetalleVenta = new System.Windows.Forms.Panel();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblDescuentoNumerico = new System.Windows.Forms.Label();
@@ -59,9 +60,10 @@
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.tboxCantidad = new System.Windows.Forms.TextBox();
             this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.tboxCodigoBarra = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.HoraActual = new System.Windows.Forms.Timer(this.components);
             this.pnlCabecera.SuspendLayout();
             this.pnlDetalleVenta.SuspendLayout();
@@ -146,9 +148,9 @@
             this.lblSaldo.Font = new System.Drawing.Font("Oswald Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaldo.Location = new System.Drawing.Point(14, 252);
             this.lblSaldo.Name = "lblSaldo";
-            this.lblSaldo.Size = new System.Drawing.Size(43, 21);
+            this.lblSaldo.Size = new System.Drawing.Size(89, 21);
             this.lblSaldo.TabIndex = 8;
-            this.lblSaldo.Text = "Saldo";
+            this.lblSaldo.Text = "Saldo : $0.00";
             // 
             // lblUsuario
             // 
@@ -208,7 +210,7 @@
             this.btnCierreCaja.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCierreCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCierreCaja.Image")));
             this.btnCierreCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCierreCaja.Location = new System.Drawing.Point(734, 423);
+            this.btnCierreCaja.Location = new System.Drawing.Point(736, 410);
             this.btnCierreCaja.Name = "btnCierreCaja";
             this.btnCierreCaja.Size = new System.Drawing.Size(119, 50);
             this.btnCierreCaja.TabIndex = 13;
@@ -225,7 +227,7 @@
             this.btnRetiroDinero.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetiroDinero.Image = ((System.Drawing.Image)(resources.GetObject("btnRetiroDinero.Image")));
             this.btnRetiroDinero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRetiroDinero.Location = new System.Drawing.Point(734, 367);
+            this.btnRetiroDinero.Location = new System.Drawing.Point(736, 354);
             this.btnRetiroDinero.Name = "btnRetiroDinero";
             this.btnRetiroDinero.Size = new System.Drawing.Size(119, 50);
             this.btnRetiroDinero.TabIndex = 12;
@@ -242,7 +244,7 @@
             this.btnUltimasActualizaciones.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUltimasActualizaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnUltimasActualizaciones.Image")));
             this.btnUltimasActualizaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUltimasActualizaciones.Location = new System.Drawing.Point(734, 255);
+            this.btnUltimasActualizaciones.Location = new System.Drawing.Point(736, 242);
             this.btnUltimasActualizaciones.Name = "btnUltimasActualizaciones";
             this.btnUltimasActualizaciones.Size = new System.Drawing.Size(119, 50);
             this.btnUltimasActualizaciones.TabIndex = 9;
@@ -260,7 +262,7 @@
             this.btnAgregarCliente.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
             this.btnAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(734, 199);
+            this.btnAgregarCliente.Location = new System.Drawing.Point(736, 186);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(119, 50);
             this.btnAgregarCliente.TabIndex = 9;
@@ -277,7 +279,7 @@
             this.btnDevolucion.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevolucion.Image = ((System.Drawing.Image)(resources.GetObject("btnDevolucion.Image")));
             this.btnDevolucion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDevolucion.Location = new System.Drawing.Point(734, 311);
+            this.btnDevolucion.Location = new System.Drawing.Point(736, 298);
             this.btnDevolucion.Name = "btnDevolucion";
             this.btnDevolucion.Size = new System.Drawing.Size(119, 50);
             this.btnDevolucion.TabIndex = 9;
@@ -295,7 +297,7 @@
             this.btnMetodoPago.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMetodoPago.Image = ((System.Drawing.Image)(resources.GetObject("btnMetodoPago.Image")));
             this.btnMetodoPago.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMetodoPago.Location = new System.Drawing.Point(734, 143);
+            this.btnMetodoPago.Location = new System.Drawing.Point(736, 130);
             this.btnMetodoPago.Name = "btnMetodoPago";
             this.btnMetodoPago.Size = new System.Drawing.Size(119, 50);
             this.btnMetodoPago.TabIndex = 9;
@@ -307,13 +309,15 @@
             // pnlDetalleVenta
             // 
             this.pnlDetalleVenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlDetalleVenta.Controls.Add(this.btnAgregar);
             this.pnlDetalleVenta.Controls.Add(this.panel7);
             this.pnlDetalleVenta.Controls.Add(this.tboxCantidad);
             this.pnlDetalleVenta.Controls.Add(this.dgvDetalleVenta);
             this.pnlDetalleVenta.Controls.Add(this.btnCierreCaja);
-            this.pnlDetalleVenta.Controls.Add(this.btnAgregar);
             this.pnlDetalleVenta.Controls.Add(this.btnBusqueda);
             this.pnlDetalleVenta.Controls.Add(this.tboxCodigoBarra);
+            this.pnlDetalleVenta.Controls.Add(this.label3);
+            this.pnlDetalleVenta.Controls.Add(this.label1);
             this.pnlDetalleVenta.Controls.Add(this.btnMetodoPago);
             this.pnlDetalleVenta.Controls.Add(this.btnRetiroDinero);
             this.pnlDetalleVenta.Controls.Add(this.btnAgregarCliente);
@@ -323,6 +327,23 @@
             this.pnlDetalleVenta.Name = "pnlDetalleVenta";
             this.pnlDetalleVenta.Size = new System.Drawing.Size(871, 495);
             this.pnlDetalleVenta.TabIndex = 2;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(683, 30);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(44, 38);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // panel7
             // 
@@ -337,7 +358,7 @@
             this.panel7.Controls.Add(this.lblSubtotal);
             this.panel7.Location = new System.Drawing.Point(16, 410);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(698, 78);
+            this.panel7.Size = new System.Drawing.Size(711, 78);
             this.panel7.TabIndex = 3;
             // 
             // label2
@@ -423,9 +444,9 @@
             // tboxCantidad
             // 
             this.tboxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCantidad.Location = new System.Drawing.Point(659, 21);
+            this.tboxCantidad.Location = new System.Drawing.Point(605, 30);
             this.tboxCantidad.Name = "tboxCantidad";
-            this.tboxCantidad.Size = new System.Drawing.Size(55, 38);
+            this.tboxCantidad.Size = new System.Drawing.Size(62, 38);
             this.tboxCantidad.TabIndex = 1;
             this.tboxCantidad.Text = "1";
             this.tboxCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -436,26 +457,8 @@
             this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleVenta.Location = new System.Drawing.Point(16, 74);
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
-            this.dgvDetalleVenta.Size = new System.Drawing.Size(698, 330);
+            this.dgvDetalleVenta.Size = new System.Drawing.Size(711, 330);
             this.dgvDetalleVenta.TabIndex = 16;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.Silver;
-            this.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(733, 31);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(120, 50);
-            this.btnAgregar.TabIndex = 3;
-            this.btnAgregar.Text = "AGREGAR";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnBusqueda_Click);
             // 
             // btnBusqueda
             // 
@@ -466,10 +469,10 @@
             this.btnBusqueda.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBusqueda.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqueda.Image")));
             this.btnBusqueda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusqueda.Location = new System.Drawing.Point(733, 87);
+            this.btnBusqueda.Location = new System.Drawing.Point(735, 74);
             this.btnBusqueda.Name = "btnBusqueda";
             this.btnBusqueda.Size = new System.Drawing.Size(120, 50);
-            this.btnBusqueda.TabIndex = 1;
+            this.btnBusqueda.TabIndex = 4;
             this.btnBusqueda.Text = "BUSQUEDA";
             this.btnBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBusqueda.UseVisualStyleBackColor = false;
@@ -478,11 +481,30 @@
             // tboxCodigoBarra
             // 
             this.tboxCodigoBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCodigoBarra.Location = new System.Drawing.Point(16, 21);
+            this.tboxCodigoBarra.Location = new System.Drawing.Point(16, 30);
             this.tboxCodigoBarra.Name = "tboxCodigoBarra";
-            this.tboxCodigoBarra.Size = new System.Drawing.Size(611, 38);
+            this.tboxCodigoBarra.Size = new System.Drawing.Size(579, 38);
             this.tboxCodigoBarra.TabIndex = 0;
-            this.tboxCodigoBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigoBarra_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(606, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Cantidad";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Código Producto";
             // 
             // HoraActual
             // 
@@ -541,10 +563,12 @@
         private System.Windows.Forms.Button btnRetiroDinero;
         private System.Windows.Forms.DataGridView dgvDetalleVenta;
         private System.Windows.Forms.TextBox tboxCantidad;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Timer HoraActual;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblInteres;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
 

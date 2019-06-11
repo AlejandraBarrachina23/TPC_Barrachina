@@ -33,26 +33,26 @@ namespace PresentacionWinForm
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //try
-            ////{
-            ////    //BUSQUEDA UNIVERSAL DE ENTIDADES
-            ////    TextBox TextBoxSeleccionado = panelContenedor.Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != ""); //Tomo el primer valor del textbox que no este vacío, la busqueda se permite a través de Codigo o Nombre
-            ////    string NombreTextBox = TextBoxSeleccionado.Name.Remove(0,4); //Defino el nombre del parametro para hacer la busqueda, lo extraigo del Name borrando el "tbox" -> tboxCodigo -> Codigo
-            ////    string NombreFormulario = lblNombreFormulario.Text.Remove(0, 9); // Defino el nombre del Formulario a través del text del label borrando el "busqueda" -> busquedaCliente -> Cliente
-            ////    dgvListadoBusqueda.DataSource = utilidades.DefinirTipoBusqueda(lblNombreFormulario.Text, TextBoxSeleccionado.Text, NombreTextBox); //Defino la busqueda según la entidad
-            ////    dgvListadoBusqueda = utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, NombreFormulario);//Defino las columnas que van a ser visibles según la entidad que deseo mostrar
-            //}
+            try
+            {
+                dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadaFiltrar(panelContenedor, lblNombreFormulario);
 
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
-           
+                //string NombreFormulario = lblNombreFormulario.Text.Remove(0, 8);
+                //MessageBox.Show(NombreFormulario,NombreTextBox);
+                //dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(NombreTextBox); 
+                //dgvListadoBusqueda = utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, NombreFormulario);
+            }
+
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+
         }
 
         private void Busqueda_Load(object sender, EventArgs e)
         {
-            
+            dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(lblNombreFormulario.Text.Remove(0, 8));
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -63,27 +63,11 @@ namespace PresentacionWinForm
         private void tboxCodigo_Click(object sender, EventArgs e)
         {
             tboxNombre.Clear();
-
-        }
-
-        private void tboxCodigo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-            {
-                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-            }
-        }
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void tboxNombre_Click(object sender, EventArgs e)
         {
             tboxCodigo.Clear();
-                     
         }
     }
 }

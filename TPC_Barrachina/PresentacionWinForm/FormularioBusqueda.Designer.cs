@@ -37,12 +37,12 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvListadoBusqueda = new System.Windows.Forms.DataGridView();
             this.tboxNombre = new System.Windows.Forms.TextBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.tboxCodigo = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pboxCodigoCliente = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombreCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
@@ -127,24 +127,6 @@
             this.tboxNombre.TabIndex = 5;
             this.tboxNombre.Click += new System.EventHandler(this.tboxNombre_Click);
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
-            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(251, 250);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(94, 37);
-            this.btnAceptar.TabIndex = 11;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // tboxCodigo
             // 
             this.tboxCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,7 +135,6 @@
             this.tboxCodigo.Size = new System.Drawing.Size(155, 31);
             this.tboxCodigo.TabIndex = 5;
             this.tboxCodigo.Click += new System.EventHandler(this.tboxCodigo_Click);
-            this.tboxCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigo_KeyPress);
             // 
             // btnCancelar
             // 
@@ -220,7 +201,24 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Visible = false;
             // 
-            // Busqueda
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAceptar.Location = new System.Drawing.Point(251, 250);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(94, 37);
+            this.btnAceptar.TabIndex = 11;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            // 
+            // FormularioBusqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -228,7 +226,7 @@
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Busqueda";
+            this.Name = "FormularioBusqueda";
             this.Text = "BusquedaCliente";
             this.Load += new System.EventHandler(this.Busqueda_Load);
             this.pnlBarraPrincipal.ResumeLayout(false);
@@ -252,11 +250,11 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvListadoBusqueda;
         private System.Windows.Forms.TextBox tboxNombre;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.TextBox tboxCodigo;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.PictureBox pboxCodigoCliente;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnAceptar;
     }
 }

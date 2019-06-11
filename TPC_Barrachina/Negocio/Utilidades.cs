@@ -173,8 +173,40 @@ namespace Negocio
             Grilla.Columns["Unidades"].DisplayIndex = 4;
             Grilla.Columns["PrecioMinorista"].DisplayIndex = 5;
             Grilla.Columns["PrecioMayorista"].DisplayIndex = 6;
-    }
+        }
 
+        public object DefinirEntidadaFiltrar(Panel panelContenedor, Label lblNombreFormulario) {
+
+            TextBox TextBoxSeleccionado = panelContenedor.Controls.OfType<TextBox>().FirstOrDefault(x => x.Text != "");
+            string NombreTextBox = TextBoxSeleccionado.Name.Remove(0, 4);
+
+            if (lblNombreFormulario.Text.Remove(0, 8) == "Productos")
+            {
+                ProductoNegocio unProducto = new ProductoNegocio();
+                NombreTextBox += "Producto";
+                List<Producto>ListadoProductosFiltrados = unProducto.FiltroProducto(TextBoxSeleccionado.Text, NombreTextBox);
+                return ListadoProductosFiltrados;
+            }
+
+            else if (lblNombreFormulario.Text.Remove(0, 8) == "Clientes") {
+
+                ClienteNegocio unCliente = new ClienteNegocio();
+                NombreTextBox += "Cliente";
+                List<Cliente>ListadoClientesFiltrados = unCliente.FiltrarCliente(TextBoxSeleccionado.Text, NombreTextBox);
+                return ListadoClientesFiltrados;
+            }
+
+            else if (lblNombreFormulario.Text.Remove(0, 8) == "Proveedores")
+            {
+                ProveedorNegocio unProveedor = new ProveedorNegocio();
+                NombreTextBox += "Proveedor";
+                if (NombreTextBox == "NombreProveedor") NombreTextBox = "NombreFantasia";
+                List<Proveedor> ListadoProveedoresFiltrados = unProveedor.FiltrarProveedor(TextBoxSeleccionado.Text, NombreTextBox);
+                return ListadoProveedoresFiltrados;
+            }
+
+            throw new Exception("El " + NombreTextBox + " ingresado no existe");
+        }
     }
 }
 

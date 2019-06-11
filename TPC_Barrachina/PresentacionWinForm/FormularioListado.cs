@@ -182,5 +182,10 @@ namespace PresentacionWinForm
             FormularioBusquedaAuxiliarDescuento.MdiParent = this.MdiParent;
             FormularioBusquedaAuxiliarDescuento.Show();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadaFiltrar(panelContenedor, lblNombreFormulario);
+        }
     }
 }

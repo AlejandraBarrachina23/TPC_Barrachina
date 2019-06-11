@@ -59,7 +59,7 @@ namespace Negocio
             unaCuentaCorriente.AgregarCuentaCorriente(unNuevoCliente.CuentaCorriente);
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("INSERT INTO Clientes (CodigoCliente,Nombre,Apellido,CodigoDescuento,CodigoCuentaCorriente,CodigoContacto) VALUES ('" + unNuevoCliente.CodigoCliente + "','" + unNuevoCliente.Nombre + "','" + unNuevoCliente.Apellido + "','" + unNuevoCliente.Descuento.CodigoDescuento + "','" + unNuevoCliente.CuentaCorriente.CodigoCuentaCorriente + "','" + unNuevoCliente.Contacto.CodigoContacto+ "')");
+            AccederDatos.DefinirTipoComando("INSERT INTO Clientes (CodigoCliente,NombreCliente,Apellido,CodigoDescuento,CodigoCuentaCorriente,CodigoContacto) VALUES ('" + unNuevoCliente.CodigoCliente + "','" + unNuevoCliente.Nombre + "','" + unNuevoCliente.Apellido + "','" + unNuevoCliente.Descuento.CodigoDescuento + "','" + unNuevoCliente.CuentaCorriente.CodigoCuentaCorriente + "','" + unNuevoCliente.Contacto.CodigoContacto+ "')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
             
@@ -83,7 +83,7 @@ namespace Negocio
                     unCliente.CuentaCorriente = new CuentaCorriente();
                     unCliente.Descuento = new Descuento();
                     unCliente.CodigoCliente = (int)AccederDatos.LectorDatos["CodigoCliente"];
-                    unCliente.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                    unCliente.Nombre = AccederDatos.LectorDatos["NombreCliente"].ToString();
                     unCliente.Apellido = AccederDatos.LectorDatos["Apellido"].ToString();
                     unCliente.Contacto.CodigoContacto = (int)AccederDatos.LectorDatos["CodigoContacto"];
                     unCliente.Contacto.Telefono = AccederDatos.LectorDatos["Telefono"].ToString();
@@ -133,7 +133,7 @@ namespace Negocio
             unContactoNegocio.ModificarContacto(unCliente.Contacto);
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("UPDATE Clientes Set Nombre=@Nombre, Apellido=@Apellido, CodigoDescuento=@CodigoDescuento WHERE CodigoCliente = " + unCliente.CodigoCliente);
+            AccederDatos.DefinirTipoComando("UPDATE Clientes Set NombreCliente=@Nombre, Apellido=@Apellido, CodigoDescuento=@CodigoDescuento WHERE CodigoCliente = " + unCliente.CodigoCliente);
             AccederDatos.Comando.Parameters.Clear();
             AccederDatos.Comando.Parameters.AddWithValue("@Nombre", unCliente.Nombre);
             AccederDatos.Comando.Parameters.AddWithValue("@Apellido", unCliente.Apellido);
@@ -157,5 +157,50 @@ namespace Negocio
             return unNuevoCliente;
         }
 
+        public List<Cliente> FiltrarCliente(string ParametroBusqueda, string NombreColumna) {
+
+            List<Cliente> ListadoClientes = new List<Cliente>();
+
+            AccederDatos.LecturaBaseDatos("select * from Clientes inner join Contactos on Contactos.CodigoContacto = Clientes.CodigoContacto " +
+                "inner join Direcciones on Direcciones.CodigoDireccion = Contactos.CodigoDireccion inner join CuentaCorrientes on " +
+                "CuentaCorrientes.CodigoCuentaCorriente = Clientes.CodigoCuentaCorriente inner join Descuentos on Descuentos.CodigoDescuento = Clientes.CodigoDescuento WHERE + " + NombreColumna + " LIKE '" + ParametroBusqueda + "%'");
+
+            while (AccederDatos.LectorDatos.Read())
+            {
+
+                if ((bool)AccederDatos.LectorDatos["Estado"])
+                {
+
+                    Cliente unCliente = new Cliente();
+                    unCliente.Contacto = new Contacto();
+                    unCliente.Contacto.Direccion = new Direccion();
+                    unCliente.CuentaCorriente = new CuentaCorriente();
+                    unCliente.Descuento = new Descuento();
+                    unCliente.CodigoCliente = (int)AccederDatos.LectorDatos["CodigoCliente"];
+                    unCliente.Nombre = AccederDatos.LectorDatos["NombreCliente"].ToString();
+                    unCliente.Apellido = AccederDatos.LectorDatos["Apellido"].ToString();
+                    unCliente.Contacto.CodigoContacto = (int)AccederDatos.LectorDatos["CodigoContacto"];
+                    unCliente.Contacto.Telefono = AccederDatos.LectorDatos["Telefono"].ToString();
+                    unCliente.Contacto.Celular = AccederDatos.LectorDatos["Celular"].ToString();
+                    unCliente.Contacto.Mail = AccederDatos.LectorDatos["Mail"].ToString();
+                    unCliente.Contacto.Direccion.CodigoDireccion = (int)AccederDatos.LectorDatos["CodigoDireccion"];
+                    unCliente.Contacto.Direccion.Calle = AccederDatos.LectorDatos["Calle"].ToString();
+                    unCliente.Contacto.Direccion.Numero = (int)AccederDatos.LectorDatos["Numero"];
+                    unCliente.Contacto.Direccion.CodigoPostal = (int)AccederDatos.LectorDatos["CodigoPostal"];
+                    unCliente.Contacto.Direccion.Provincia = AccederDatos.LectorDatos["Provincia"].ToString();
+                    unCliente.Contacto.Direccion.Localidad = AccederDatos.LectorDatos["Localidad"].ToString();
+                    unCliente.CuentaCorriente.CodigoCuentaCorriente = (int)AccederDatos.LectorDatos["CodigoCuentaCorriente"];
+                    unCliente.CuentaCorriente.Saldo = (decimal)AccederDatos.LectorDatos["Saldo"];
+                    unCliente.CuentaCorriente.LimiteCuenta = (decimal)AccederDatos.LectorDatos["LimiteCuenta"];
+                    unCliente.Descuento.CodigoDescuento = (int)AccederDatos.LectorDatos["CodigoDescuento"];
+                    unCliente.Descuento.Nombre = AccederDatos.LectorDatos["NombreDescuento"].ToString();
+                    unCliente.Descuento.Porcentaje = (decimal)AccederDatos.LectorDatos["Porcentaje"];
+
+                    ListadoClientes.Add(unCliente);
+                }
+            }
+
+            return ListadoClientes;
+        }
     }
 }

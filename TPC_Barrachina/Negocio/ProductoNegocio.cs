@@ -13,7 +13,7 @@ namespace Negocio
     {
         private AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
 
-        public List<Producto> BusquedaProducto(string ParametroBusqueda, string NombreColumna)
+        public List<Producto> FiltroProducto(string ParametroBusqueda, string NombreColumna)
         {
             ParametroBusqueda.ToUpper();
             List<Producto> ListadoProductos = new List<Producto>();
@@ -30,7 +30,7 @@ namespace Negocio
                 if ((bool)AccederDatos.LectorDatos["Estado"]) {
 
                 unNuevoProducto.CodigoProducto = AccederDatos.LectorDatos["CodigoProducto"].ToString();
-                unNuevoProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unNuevoProducto.Nombre = AccederDatos.LectorDatos["NombreProducto"].ToString();
                 unNuevoProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
                 unNuevoProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
                 unNuevoProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
@@ -72,7 +72,7 @@ namespace Negocio
                     unProducto.TipoProducto = new TipoProducto();
                     unProducto.CodigoProducto = AccederDatos.LectorDatos["CodigoProducto"].ToString();
                     unProducto.CodigoBulto = AccederDatos.LectorDatos["CodigoBulto"].ToString();
-                    unProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                    unProducto.Nombre = AccederDatos.LectorDatos["NombreProducto"].ToString();
                     unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
                     unProducto.StockCritico = (int)AccederDatos.LectorDatos["StockCritico"];
                     unProducto.CantidadxBulto = (int)AccederDatos.LectorDatos["CantidadxBulto"];
@@ -106,7 +106,7 @@ namespace Negocio
         public void ModificarProducto(Producto unProducto) {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("UPDATE Productos Set CodigoBulto=@CodigoBulto, Nombre=@Nombre, CodigoTipoProducto=@CodigoTipoProducto, CantidadxBulto=@CantidadxBulto, StockCritico=@StockCritico, " +
+            AccederDatos.DefinirTipoComando("UPDATE Productos Set CodigoBulto=@CodigoBulto, Nombre=@NombreProducto, CodigoTipoProducto=@CodigoTipoProducto, CantidadxBulto=@CantidadxBulto, StockCritico=@StockCritico, " +
             "CodigoProveedor=@CodigoProveedor, CodigoRubro=@CodigoRubro WHERE CodigoProducto = '" + unProducto.CodigoProducto + "'");
             AccederDatos.Comando.Parameters.Clear();
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoBulto", unProducto.CodigoBulto);
@@ -147,7 +147,7 @@ namespace Negocio
                 Producto unProducto = new Producto();
                 unProducto.CodigoProducto = AccederDatos.LectorDatos["CodigoProducto"].ToString();
                 unProducto.CodigoBulto = AccederDatos.LectorDatos["CodigoBulto"].ToString();
-                unProducto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unProducto.Nombre = AccederDatos.LectorDatos["NombreProducto"].ToString();
                 unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
                 unProducto.StockCritico = (int)AccederDatos.LectorDatos["StockCritico"];
                 unProducto.CantidadxBulto = (int)AccederDatos.LectorDatos["CantidadxBulto"];
@@ -166,5 +166,7 @@ namespace Negocio
             throw new Exception("El código ingresado no existe");
 
         }
+
+
     }
 }

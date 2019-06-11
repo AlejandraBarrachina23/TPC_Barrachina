@@ -47,16 +47,17 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.pnlImpuesto = new System.Windows.Forms.Panel();
             this.pnlDescuento = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlRubro = new System.Windows.Forms.Panel();
             this.pnlDetalle = new System.Windows.Forms.Panel();
+            this.btnImpuesto = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnDescuento = new System.Windows.Forms.Button();
             this.btnRubro = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnImpuesto = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlImpuesto = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombre)).BeginInit();
@@ -103,7 +104,7 @@
             // tboxNombre
             // 
             this.tboxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNombre.Location = new System.Drawing.Point(433, 32);
+            this.tboxNombre.Location = new System.Drawing.Point(376, 33);
             this.tboxNombre.Name = "tboxNombre";
             this.tboxNombre.Size = new System.Drawing.Size(155, 31);
             this.tboxNombre.TabIndex = 15;
@@ -130,7 +131,7 @@
             // pboxNombre
             // 
             this.pboxNombre.Image = ((System.Drawing.Image)(resources.GetObject("pboxNombre.Image")));
-            this.pboxNombre.Location = new System.Drawing.Point(398, 32);
+            this.pboxNombre.Location = new System.Drawing.Point(341, 33);
             this.pboxNombre.Name = "pboxNombre";
             this.pboxNombre.Size = new System.Drawing.Size(31, 31);
             this.pboxNombre.TabIndex = 17;
@@ -150,7 +151,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(351, 40);
+            this.lblNombre.Location = new System.Drawing.Point(294, 41);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(45, 17);
             this.lblNombre.TabIndex = 19;
@@ -257,6 +258,7 @@
             // panelContenedor
             // 
             this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelContenedor.Controls.Add(this.btnBuscar);
             this.panelContenedor.Controls.Add(this.lblCodigo);
             this.panelContenedor.Controls.Add(this.dgvListadoBusqueda);
             this.panelContenedor.Controls.Add(this.pboxCodigo);
@@ -286,6 +288,15 @@
             this.panelContenedor.Size = new System.Drawing.Size(772, 506);
             this.panelContenedor.TabIndex = 23;
             // 
+            // pnlImpuesto
+            // 
+            this.pnlImpuesto.BackColor = System.Drawing.Color.CadetBlue;
+            this.pnlImpuesto.Location = new System.Drawing.Point(657, 250);
+            this.pnlImpuesto.Name = "pnlImpuesto";
+            this.pnlImpuesto.Size = new System.Drawing.Size(5, 35);
+            this.pnlImpuesto.TabIndex = 11;
+            this.pnlImpuesto.Visible = false;
+            // 
             // pnlDescuento
             // 
             this.pnlDescuento.BackColor = System.Drawing.Color.OrangeRed;
@@ -294,6 +305,15 @@
             this.pnlDescuento.Size = new System.Drawing.Size(5, 35);
             this.pnlDescuento.TabIndex = 11;
             this.pnlDescuento.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gold;
+            this.panel1.Location = new System.Drawing.Point(657, 250);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 35);
+            this.panel1.TabIndex = 11;
+            this.panel1.Visible = false;
             // 
             // pnlRubro
             // 
@@ -311,6 +331,44 @@
             this.pnlDetalle.Name = "pnlDetalle";
             this.pnlDetalle.Size = new System.Drawing.Size(5, 35);
             this.pnlDetalle.TabIndex = 11;
+            // 
+            // btnImpuesto
+            // 
+            this.btnImpuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnImpuesto.FlatAppearance.BorderSize = 0;
+            this.btnImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImpuesto.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImpuesto.ForeColor = System.Drawing.Color.White;
+            this.btnImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuesto.Image")));
+            this.btnImpuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImpuesto.Location = new System.Drawing.Point(662, 250);
+            this.btnImpuesto.Name = "btnImpuesto";
+            this.btnImpuesto.Size = new System.Drawing.Size(90, 35);
+            this.btnImpuesto.TabIndex = 0;
+            this.btnImpuesto.Text = "Impuestos";
+            this.btnImpuesto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImpuesto.UseVisualStyleBackColor = false;
+            this.btnImpuesto.Visible = false;
+            this.btnImpuesto.Click += new System.EventHandler(this.btnImpuesto_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(662, 250);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 35);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "RUBRO";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            this.button1.Click += new System.EventHandler(this.btnRubro_Click);
             // 
             // btnDescuento
             // 
@@ -368,61 +426,15 @@
             this.btnDetalle.UseVisualStyleBackColor = false;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(662, 250);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "RUBRO";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.btnRubro_Click);
-            // 
-            // btnImpuesto
-            // 
-            this.btnImpuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.btnImpuesto.FlatAppearance.BorderSize = 0;
-            this.btnImpuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImpuesto.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImpuesto.ForeColor = System.Drawing.Color.White;
-            this.btnImpuesto.Image = ((System.Drawing.Image)(resources.GetObject("btnImpuesto.Image")));
-            this.btnImpuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImpuesto.Location = new System.Drawing.Point(662, 250);
-            this.btnImpuesto.Name = "btnImpuesto";
-            this.btnImpuesto.Size = new System.Drawing.Size(90, 35);
-            this.btnImpuesto.TabIndex = 0;
-            this.btnImpuesto.Text = "Impuestos";
-            this.btnImpuesto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImpuesto.UseVisualStyleBackColor = false;
-            this.btnImpuesto.Visible = false;
-            this.btnImpuesto.Click += new System.EventHandler(this.btnImpuesto_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Gold;
-            this.panel1.Location = new System.Drawing.Point(657, 250);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 35);
-            this.panel1.TabIndex = 11;
-            this.panel1.Visible = false;
-            // 
-            // pnlImpuesto
-            // 
-            this.pnlImpuesto.BackColor = System.Drawing.Color.CadetBlue;
-            this.pnlImpuesto.Location = new System.Drawing.Point(657, 250);
-            this.pnlImpuesto.Name = "pnlImpuesto";
-            this.pnlImpuesto.Size = new System.Drawing.Size(5, 35);
-            this.pnlImpuesto.TabIndex = 11;
-            this.pnlImpuesto.Visible = false;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(549, 29);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(47, 42);
+            this.btnBuscar.TabIndex = 24;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FormularioListado
             // 
@@ -475,5 +487,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnImpuesto;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
