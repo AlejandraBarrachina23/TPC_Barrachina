@@ -29,18 +29,17 @@ namespace PresentacionWinForm
             lblNombreFormulario.Text = utilidades.AsignarNombreFormulario(NombreFormulario);
             btnAceptar.Visible = false;
             btnAgregar.Visible = true;
+
         }
 
+        public delegate void ElegirCliente(string Nombre);
+        public event ElegirCliente SeleccionarCliente;
+        
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             try
             {
                 dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadaFiltrar(panelContenedor, lblNombreFormulario);
-
-                //string NombreFormulario = lblNombreFormulario.Text.Remove(0, 8);
-                //MessageBox.Show(NombreFormulario,NombreTextBox);
-                //dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(NombreTextBox); 
-                //dgvListadoBusqueda = utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, NombreFormulario);
             }
 
             catch (Exception Excepcion)
@@ -68,6 +67,25 @@ namespace PresentacionWinForm
         private void tboxNombre_Click(object sender, EventArgs e)
         {
             tboxCodigo.Clear();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if ((lblNombreFormulario.Text.Remove(0, 8)) == "Productos")
+            {
+                
+                Producto unProducto = new Producto();
+                unProducto = (Producto)dgvListadoBusqueda.CurrentRow.DataBoundItem;
+                //SeleccionarProducto(unProducto);
+            }
+
+            else if((lblNombreFormulario.Text.Remove(0, 8)) == "Clientes") {
+
+                Cliente unCliente = new Cliente();
+                unCliente = (Cliente)dgvListadoBusqueda.CurrentRow.DataBoundItem;
+                SeleccionarCliente(unCliente.Nombre);
+
+            }
         }
     }
 }

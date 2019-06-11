@@ -32,7 +32,6 @@ namespace PresentacionWinForm
         {
             dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(lblNombreFormulario.Text.Remove(0, 8));
             utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, lblNombreFormulario.Text.Remove(0, 8));
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -46,14 +45,12 @@ namespace PresentacionWinForm
 
             else if (lblNombreFormulario.Text.Remove(0, 8) == "Productos")
             {
-
                 Productos FormularioProducto = new Productos();
                 FormularioProducto.Show();
-
             }
 
-            else if (lblNombreFormulario.Text.Remove(0, 8) == "Proveedores") {
-
+            else if (lblNombreFormulario.Text.Remove(0, 8) == "Proveedores")
+            {
                 Proveedores FormularioProveedor = new Proveedores();
                 FormularioProveedor.Show();
             }
@@ -61,7 +58,7 @@ namespace PresentacionWinForm
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -71,15 +68,12 @@ namespace PresentacionWinForm
                 Validar.SeleccionItemDataGridView(dgvListadoBusqueda);
                 object EntidadEliminar = dgvListadoBusqueda.CurrentRow.DataBoundItem;
                 utilidades.DefinirEntidadaEliminar(EntidadEliminar);
-
                 dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(lblNombreFormulario.Text.Remove(0, 8));
                 utilidades.OcultarColumnasDataGridView(dgvListadoBusqueda, lblNombreFormulario.Text.Remove(0, 8));
-                
-   
+                   
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
    
@@ -130,11 +124,6 @@ namespace PresentacionWinForm
             FormularioBusquedaAuxiliarDescuento.Show();
         }
 
-        private void tboxCodigo_TextChanged(object sender, EventArgs e)
-        {
-          
-        }
-
         private void btnDetalle_Click(object sender, EventArgs e)
         {
             try
@@ -152,7 +141,6 @@ namespace PresentacionWinForm
 
                 else if (EntidadModificar.GetType().Equals(typeof(Cliente)))
                 {
-
                     DetalleCliente FormularioDetalleCliente = new DetalleCliente((Cliente)EntidadModificar);
                     FormularioDetalleCliente.MdiParent = this.MdiParent;
                     FormularioDetalleCliente.Show();
@@ -185,7 +173,25 @@ namespace PresentacionWinForm
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadaFiltrar(panelContenedor, lblNombreFormulario);
+            try
+            {
+                dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadaFiltrar(panelContenedor, lblNombreFormulario);
+            }
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+            
+        }
+
+        private void tboxNombre_Click(object sender, EventArgs e)
+        {
+            tboxCodigo.Clear();
+        }
+
+        private void tboxCodigo_Click(object sender, EventArgs e)
+        {
+            tboxNombre.Clear();
         }
     }
 }

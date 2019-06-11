@@ -33,8 +33,9 @@ namespace PresentacionWinForm
 
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
-            FormularioBusqueda BusquedaCliente = new FormularioBusqueda("Clientes", "Formulario Venta");
-            BusquedaCliente.Show();
+            FormularioBusqueda FormularioBusquedaCliente = new FormularioBusqueda("Clientes", "Formulario Venta");
+            FormularioBusquedaCliente.SeleccionarCliente += new FormularioBusqueda.ElegirCliente(CambiarCliente);
+            FormularioBusquedaCliente.Show();
         }
 
         private void btnMetodoPago_Click(object sender, EventArgs e)
@@ -47,6 +48,11 @@ namespace PresentacionWinForm
         private void CambiarMetodoPago(string Nombre) {
 
             lblMetodoPago.Text = "METODO PAGO: " + Nombre;
+        }
+
+        private void CambiarCliente(string Nombre) {
+
+            lblCliente.Text = "CLIENTE: " + Nombre;
         }
 
         private void btnDevolucion_Click(object sender, EventArgs e)
@@ -78,6 +84,7 @@ namespace PresentacionWinForm
             FormularioBusqueda BusquedaProducto = new FormularioBusqueda("Productos", "Formulario Venta");
             BusquedaProducto.MdiParent = this.MdiParent;
             BusquedaProducto.Show();
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

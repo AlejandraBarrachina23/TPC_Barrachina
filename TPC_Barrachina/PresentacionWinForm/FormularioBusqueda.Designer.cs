@@ -115,6 +115,7 @@
             this.dgvListadoBusqueda.Location = new System.Drawing.Point(21, 56);
             this.dgvListadoBusqueda.Name = "dgvListadoBusqueda";
             this.dgvListadoBusqueda.ReadOnly = true;
+            this.dgvListadoBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListadoBusqueda.Size = new System.Drawing.Size(656, 186);
             this.dgvListadoBusqueda.TabIndex = 8;
             // 
@@ -200,6 +201,7 @@
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Visible = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnAceptar
             // 
