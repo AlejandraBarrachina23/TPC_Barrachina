@@ -118,6 +118,7 @@
             this.dgvListadoBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListadoBusqueda.Size = new System.Drawing.Size(656, 186);
             this.dgvListadoBusqueda.TabIndex = 8;
+            this.dgvListadoBusqueda.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListadoBusqueda_CellFormatting);
             // 
             // tboxNombre
             // 

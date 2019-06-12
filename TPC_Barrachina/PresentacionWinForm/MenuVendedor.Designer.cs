@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuVendedor));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
-            this.btnUsuario = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.lbNombrePrograma = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -39,8 +36,6 @@
             // pnlBarraPrincipal
             // 
             this.pnlBarraPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.pnlBarraPrincipal.Controls.Add(this.btnUsuario);
-            this.pnlBarraPrincipal.Controls.Add(this.btnLogout);
             this.pnlBarraPrincipal.Controls.Add(this.lbNombrePrograma);
             this.pnlBarraPrincipal.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlBarraPrincipal.Location = new System.Drawing.Point(0, 0);
@@ -48,29 +43,6 @@
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(1195, 41);
             this.pnlBarraPrincipal.TabIndex = 2;
             this.pnlBarraPrincipal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBarraPrincipal_MouseDown);
-            // 
-            // btnUsuario
-            // 
-            this.btnUsuario.FlatAppearance.BorderSize = 0;
-            this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnUsuario.Image")));
-            this.btnUsuario.Location = new System.Drawing.Point(0, 0);
-            this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(50, 40);
-            this.btnUsuario.TabIndex = 1;
-            this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUsuario.UseVisualStyleBackColor = true;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.Location = new System.Drawing.Point(59, 3);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(50, 40);
-            this.btnLogout.TabIndex = 0;
-            this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // lbNombrePrograma
             // 
@@ -103,8 +75,6 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlBarraPrincipal;
-        private System.Windows.Forms.Button btnUsuario;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label lbNombrePrograma;
     }
 }

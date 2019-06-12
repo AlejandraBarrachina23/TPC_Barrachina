@@ -43,11 +43,16 @@
             this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.btnCierreCaja = new System.Windows.Forms.Button();
             this.btnRetiroDinero = new System.Windows.Forms.Button();
-            this.btnUltimasActualizaciones = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnDevolucion = new System.Windows.Forms.Button();
             this.btnMetodoPago = new System.Windows.Forms.Button();
             this.pnlDetalleVenta = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -209,13 +214,13 @@
             this.btnCierreCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCierreCaja.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCierreCaja.Image = ((System.Drawing.Image)(resources.GetObject("btnCierreCaja.Image")));
-            this.btnCierreCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCierreCaja.Location = new System.Drawing.Point(736, 410);
+            this.btnCierreCaja.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCierreCaja.Location = new System.Drawing.Point(752, 425);
             this.btnCierreCaja.Name = "btnCierreCaja";
-            this.btnCierreCaja.Size = new System.Drawing.Size(119, 50);
+            this.btnCierreCaja.Size = new System.Drawing.Size(100, 60);
             this.btnCierreCaja.TabIndex = 13;
             this.btnCierreCaja.Text = "CIERRE CAJA";
-            this.btnCierreCaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCierreCaja.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCierreCaja.UseVisualStyleBackColor = false;
             this.btnCierreCaja.Click += new System.EventHandler(this.btnCierreCaja_Click);
             // 
@@ -226,32 +231,15 @@
             this.btnRetiroDinero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRetiroDinero.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetiroDinero.Image = ((System.Drawing.Image)(resources.GetObject("btnRetiroDinero.Image")));
-            this.btnRetiroDinero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRetiroDinero.Location = new System.Drawing.Point(736, 354);
+            this.btnRetiroDinero.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRetiroDinero.Location = new System.Drawing.Point(752, 359);
             this.btnRetiroDinero.Name = "btnRetiroDinero";
-            this.btnRetiroDinero.Size = new System.Drawing.Size(119, 50);
+            this.btnRetiroDinero.Size = new System.Drawing.Size(100, 60);
             this.btnRetiroDinero.TabIndex = 12;
             this.btnRetiroDinero.Text = "RETIRO DINERO";
-            this.btnRetiroDinero.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRetiroDinero.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRetiroDinero.UseVisualStyleBackColor = false;
             this.btnRetiroDinero.Click += new System.EventHandler(this.btnRetiroDinero_Click);
-            // 
-            // btnUltimasActualizaciones
-            // 
-            this.btnUltimasActualizaciones.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnUltimasActualizaciones.FlatAppearance.BorderSize = 0;
-            this.btnUltimasActualizaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUltimasActualizaciones.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUltimasActualizaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnUltimasActualizaciones.Image")));
-            this.btnUltimasActualizaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUltimasActualizaciones.Location = new System.Drawing.Point(736, 242);
-            this.btnUltimasActualizaciones.Name = "btnUltimasActualizaciones";
-            this.btnUltimasActualizaciones.Size = new System.Drawing.Size(119, 50);
-            this.btnUltimasActualizaciones.TabIndex = 9;
-            this.btnUltimasActualizaciones.Text = "ETIQUETAS";
-            this.btnUltimasActualizaciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUltimasActualizaciones.UseVisualStyleBackColor = false;
-            this.btnUltimasActualizaciones.Click += new System.EventHandler(this.btnUltimasActualizaciones_Click);
             // 
             // btnAgregarCliente
             // 
@@ -261,13 +249,13 @@
             this.btnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCliente.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCliente.Image")));
-            this.btnAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarCliente.Location = new System.Drawing.Point(736, 186);
+            this.btnAgregarCliente.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregarCliente.Location = new System.Drawing.Point(752, 227);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
-            this.btnAgregarCliente.Size = new System.Drawing.Size(119, 50);
+            this.btnAgregarCliente.Size = new System.Drawing.Size(100, 60);
             this.btnAgregarCliente.TabIndex = 9;
             this.btnAgregarCliente.Text = "CLIENTES";
-            this.btnAgregarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarCliente.UseVisualStyleBackColor = false;
             this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
@@ -278,13 +266,13 @@
             this.btnDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDevolucion.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDevolucion.Image = ((System.Drawing.Image)(resources.GetObject("btnDevolucion.Image")));
-            this.btnDevolucion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDevolucion.Location = new System.Drawing.Point(736, 298);
+            this.btnDevolucion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDevolucion.Location = new System.Drawing.Point(752, 293);
             this.btnDevolucion.Name = "btnDevolucion";
-            this.btnDevolucion.Size = new System.Drawing.Size(119, 50);
+            this.btnDevolucion.Size = new System.Drawing.Size(100, 60);
             this.btnDevolucion.TabIndex = 9;
             this.btnDevolucion.Text = "DEVOLUCION";
-            this.btnDevolucion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDevolucion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDevolucion.UseVisualStyleBackColor = false;
             this.btnDevolucion.Click += new System.EventHandler(this.btnDevolucion_Click);
             // 
@@ -296,19 +284,25 @@
             this.btnMetodoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMetodoPago.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMetodoPago.Image = ((System.Drawing.Image)(resources.GetObject("btnMetodoPago.Image")));
-            this.btnMetodoPago.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMetodoPago.Location = new System.Drawing.Point(736, 130);
+            this.btnMetodoPago.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMetodoPago.Location = new System.Drawing.Point(752, 161);
             this.btnMetodoPago.Name = "btnMetodoPago";
-            this.btnMetodoPago.Size = new System.Drawing.Size(119, 50);
+            this.btnMetodoPago.Size = new System.Drawing.Size(100, 60);
             this.btnMetodoPago.TabIndex = 9;
             this.btnMetodoPago.Text = "METODO PAGO";
-            this.btnMetodoPago.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMetodoPago.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMetodoPago.UseVisualStyleBackColor = false;
             this.btnMetodoPago.Click += new System.EventHandler(this.btnMetodoPago_Click);
             // 
             // pnlDetalleVenta
             // 
             this.pnlDetalleVenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlDetalleVenta.Controls.Add(this.panel6);
+            this.pnlDetalleVenta.Controls.Add(this.panel5);
+            this.pnlDetalleVenta.Controls.Add(this.panel4);
+            this.pnlDetalleVenta.Controls.Add(this.panel3);
+            this.pnlDetalleVenta.Controls.Add(this.panel2);
+            this.pnlDetalleVenta.Controls.Add(this.panel1);
             this.pnlDetalleVenta.Controls.Add(this.btnAgregar);
             this.pnlDetalleVenta.Controls.Add(this.panel7);
             this.pnlDetalleVenta.Controls.Add(this.tboxCantidad);
@@ -321,12 +315,59 @@
             this.pnlDetalleVenta.Controls.Add(this.btnMetodoPago);
             this.pnlDetalleVenta.Controls.Add(this.btnRetiroDinero);
             this.pnlDetalleVenta.Controls.Add(this.btnAgregarCliente);
-            this.pnlDetalleVenta.Controls.Add(this.btnUltimasActualizaciones);
             this.pnlDetalleVenta.Controls.Add(this.btnDevolucion);
             this.pnlDetalleVenta.Location = new System.Drawing.Point(5, 12);
             this.pnlDetalleVenta.Name = "pnlDetalleVenta";
             this.pnlDetalleVenta.Size = new System.Drawing.Size(871, 495);
             this.pnlDetalleVenta.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(220)))), ((int)(((byte)(70)))));
+            this.panel6.Location = new System.Drawing.Point(752, 425);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(5, 60);
+            this.panel6.TabIndex = 18;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(220)))), ((int)(((byte)(70)))));
+            this.panel5.Location = new System.Drawing.Point(752, 359);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 60);
+            this.panel5.TabIndex = 18;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(220)))), ((int)(((byte)(70)))));
+            this.panel4.Location = new System.Drawing.Point(752, 293);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 60);
+            this.panel4.TabIndex = 18;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(220)))), ((int)(((byte)(70)))));
+            this.panel3.Location = new System.Drawing.Point(752, 227);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 60);
+            this.panel3.TabIndex = 18;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(220)))), ((int)(((byte)(70)))));
+            this.panel2.Location = new System.Drawing.Point(752, 161);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 60);
+            this.panel2.TabIndex = 18;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(220)))), ((int)(((byte)(70)))));
+            this.panel1.Location = new System.Drawing.Point(752, 95);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 60);
+            this.panel1.TabIndex = 18;
             // 
             // btnAgregar
             // 
@@ -337,7 +378,7 @@
             this.btnAgregar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(683, 30);
+            this.btnAgregar.Location = new System.Drawing.Point(785, 30);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(44, 38);
             this.btnAgregar.TabIndex = 2;
@@ -444,9 +485,9 @@
             // tboxCantidad
             // 
             this.tboxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCantidad.Location = new System.Drawing.Point(605, 30);
+            this.tboxCantidad.Location = new System.Drawing.Point(655, 30);
             this.tboxCantidad.Name = "tboxCantidad";
-            this.tboxCantidad.Size = new System.Drawing.Size(62, 38);
+            this.tboxCantidad.Size = new System.Drawing.Size(72, 38);
             this.tboxCantidad.TabIndex = 1;
             this.tboxCantidad.Text = "1";
             this.tboxCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -468,13 +509,13 @@
             this.btnBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBusqueda.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBusqueda.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqueda.Image")));
-            this.btnBusqueda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusqueda.Location = new System.Drawing.Point(735, 74);
+            this.btnBusqueda.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBusqueda.Location = new System.Drawing.Point(752, 94);
             this.btnBusqueda.Name = "btnBusqueda";
-            this.btnBusqueda.Size = new System.Drawing.Size(120, 50);
+            this.btnBusqueda.Size = new System.Drawing.Size(100, 60);
             this.btnBusqueda.TabIndex = 4;
-            this.btnBusqueda.Text = "BUSQUEDA";
-            this.btnBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBusqueda.Text = "busqueda";
+            this.btnBusqueda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBusqueda.UseVisualStyleBackColor = false;
             this.btnBusqueda.Click += new System.EventHandler(this.btnBusqueda_Click);
             // 
@@ -483,14 +524,15 @@
             this.tboxCodigoBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tboxCodigoBarra.Location = new System.Drawing.Point(16, 30);
             this.tboxCodigoBarra.Name = "tboxCodigoBarra";
-            this.tboxCodigoBarra.Size = new System.Drawing.Size(579, 38);
+            this.tboxCodigoBarra.Size = new System.Drawing.Size(633, 38);
             this.tboxCodigoBarra.TabIndex = 0;
+            this.tboxCodigoBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigoBarra_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(606, 10);
+            this.label3.Location = new System.Drawing.Point(656, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 17);
             this.label3.TabIndex = 10;
@@ -520,6 +562,7 @@
             this.Controls.Add(this.pnlCabecera);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Detalle:";
             this.Load += new System.EventHandler(this.FormularioVenta_Load);
             this.pnlCabecera.ResumeLayout(false);
@@ -558,7 +601,6 @@
         private System.Windows.Forms.Button btnMetodoPago;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Button btnUltimasActualizaciones;
         private System.Windows.Forms.Button btnCierreCaja;
         private System.Windows.Forms.Button btnRetiroDinero;
         private System.Windows.Forms.DataGridView dgvDetalleVenta;
@@ -569,6 +611,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
     }
 }
 

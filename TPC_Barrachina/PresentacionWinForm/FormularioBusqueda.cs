@@ -21,6 +21,7 @@ namespace PresentacionWinForm
         {
             InitializeComponent();
             lblNombreFormulario.Text = utilidades.AsignarNombreFormulario(NombreFormulario);
+            
         }
 
         public FormularioBusqueda(string NombreFormulario, string NombreFormularioQueLlamo) {
@@ -74,12 +75,19 @@ namespace PresentacionWinForm
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if ((lblNombreFormulario.Text.Remove(0, 8)) == "Productos")
-            {
-                
+            {   
                 Producto unProducto = new Producto();
                 unProducto = (Producto)dgvListadoBusqueda.CurrentRow.DataBoundItem;
-                SeleccionarProducto(unProducto);
-                this.Dispose();
+                if (unProducto.Stock>0)
+                {
+                    SeleccionarProducto(unProducto);
+                    this.Dispose();
+                }
+
+                else {
+                    MessageBox.Show("Sin stock");
+                }
+                
             }
 
             else if((lblNombreFormulario.Text.Remove(0, 8)) == "Clientes") {
@@ -88,6 +96,20 @@ namespace PresentacionWinForm
                 unCliente = (Cliente)dgvListadoBusqueda.CurrentRow.DataBoundItem;
                 SeleccionarCliente(unCliente);
                 this.Dispose();
+
+            }
+        }
+
+        private void dgvListadoBusqueda_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvListadoBusqueda.Columns[e.ColumnIndex].Name == "Stock")
+            {
+                int valor = Convert.ToInt32(e.Value);
+
+                if (valor == 0)
+                {
+                    dgvListadoBusqueda.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                }
 
             }
         }

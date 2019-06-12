@@ -23,7 +23,7 @@ namespace PresentacionWinForm
 
         private List<DetalleVenta> Detalles = new List<DetalleVenta>();
         private int CuentaLineas = 1;
-        private decimal subtotal = 0;
+        private decimal Subtotal = 0;
         ValidadorDatos Validar = new ValidadorDatos();
 
         public void CambiarTexto(string Texto) {
@@ -34,9 +34,7 @@ namespace PresentacionWinForm
         private void btnAgregarCliente_Click(object sender, EventArgs e)
         {
             FormularioBusqueda FormularioBusquedaCliente = new FormularioBusqueda("Clientes", "Formulario Venta");
-         
             FormularioBusquedaCliente.SeleccionarCliente += new FormularioBusqueda.ElegirCliente(CambiarCliente);
-
             FormularioBusquedaCliente.Show();
         }
 
@@ -54,17 +52,7 @@ namespace PresentacionWinForm
 
         private void SeleccionarProducto(Producto unProducto) {
 
-            DetalleVenta unDetalleVenta = new DetalleVenta();
-            unDetalleVenta.Linea = CuentaLineas;
-            unDetalleVenta.Producto = unProducto;
-            unDetalleVenta.Cantidad = Convert.ToInt32(tboxCantidad.Text);
-            unDetalleVenta.Bultos = Convert.ToInt32(unDetalleVenta.Cantidad) / unProducto.CantidadxBulto;
-            unDetalleVenta.Unidades = Convert.ToInt32(unDetalleVenta.Cantidad) % unProducto.CantidadxBulto;
-            unDetalleVenta.PrecioMayorista = unProducto.PrecioVentaMayorista;
-            unDetalleVenta.PrecioMinorista = unProducto.PrecioVentaMinorista;
-            tboxCodigoBarra.Clear();
-            Detalles.Add(unDetalleVenta);
-            dgvDetalleVenta.DataSource = Detalles;
+            tboxCodigoBarra.Text = unProducto.CodigoProducto;
         }
 
         private void CambiarCliente(Cliente unCliente) {
@@ -103,7 +91,6 @@ namespace PresentacionWinForm
             BusquedaProducto.SeleccionarProducto += new FormularioBusqueda.ElegirProducto(SeleccionarProducto);
             BusquedaProducto.MdiParent = this.MdiParent;
             BusquedaProducto.Show();
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -127,9 +114,15 @@ namespace PresentacionWinForm
         {
             try
             {
+                Validar.ContenidoTextBoxVacio(tboxCodigoBarra, "Código Producto");
                 DetalleVenta unDetalleVenta = new DetalleVenta();
+                DetalleVentaNegocio unDetalleVentaNegocio = new DetalleVentaNegocio();
                 ProductoNegocio unProductoVendido = new ProductoNegocio();
                 Producto unProducto = unProductoVendido.BusquedaProducto(tboxCodigoBarra.Text);
+                unDetalleVentaNegocio.ControlStock(Detalles, unProducto, Convert.ToInt32(tboxCantidad.Text));
+                
+                Validar.MaximoValor(unProducto.Stock, "Stock", Convert.ToInt32(tboxCantidad.Text));
+
                 dgvDetalleVenta.DataSource = null;
                 unDetalleVenta.Linea = CuentaLineas;
                 unDetalleVenta.Producto = unProducto;
@@ -138,23 +131,36 @@ namespace PresentacionWinForm
                 unDetalleVenta.Unidades = Convert.ToInt32(unDetalleVenta.Cantidad) % unProducto.CantidadxBulto;
                 unDetalleVenta.PrecioMayorista = unProducto.PrecioVentaMayorista;
                 unDetalleVenta.PrecioMinorista = unProducto.PrecioVentaMinorista;
+                unDetalleVenta.Subtotal = (unDetalleVenta.Unidades * unDetalleVenta.PrecioMinorista) + ((unDetalleVenta.Bultos * unProducto.CantidadxBulto) * unDetalleVenta.PrecioMayorista);
+
                 tboxCodigoBarra.Clear();
                 Detalles.Add(unDetalleVenta);
+
                 dgvDetalleVenta.DataSource = Detalles;
                 Utilidades Utilidades = new Utilidades();
                 Utilidades.AjustarOrdenGridView(dgvDetalleVenta);
                 dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
-                unDetalleVenta.Subtotal = (unDetalleVenta.Unidades * unDetalleVenta.PrecioMinorista) + ((unDetalleVenta.Bultos * unProducto.CantidadxBulto) * unDetalleVenta.PrecioMayorista);
-                lblSubtotalNumerico.Text = (subtotal += unDetalleVenta.Subtotal).ToString();
+                
+                lblSubtotalNumerico.Text = (Subtotal += unDetalleVenta.Subtotal).ToString();
                 lblTotalFactura.Text = (Convert.ToDouble(lblSubtotalNumerico.Text) * 0.9).ToString();
+
                 tboxCantidad.Text = 1.ToString();
                 tboxCodigoBarra.Focus();
+                CuentaLineas++;
             }
             catch (Exception Excepcion)
             {
                 MessageBox.Show(Excepcion.Message);
             }
 
+        }
+
+        private void tboxCodigoBarra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

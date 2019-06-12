@@ -11,7 +11,7 @@ namespace Negocio
 {
     public class ValidadorDatos
     {
-        public void ExistenciaDeDatoDB(string NombreColumna , string NombreTabla, string Parametro) {
+        public void ExistenciaDeDatoDB(string NombreColumna, string NombreTabla, string Parametro) {
 
             string Consulta = "SELECT " + NombreColumna + " FROM " + NombreTabla + " WHERE " + NombreColumna + " = '" + Parametro + "'";
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
@@ -22,7 +22,7 @@ namespace Negocio
                 {
                     AccederDatos.CerrarConexion();
                     AccederDatos.CerrarReader();
-                    throw new Exception("El " + NombreColumna +" " + Parametro +" ya existe");
+                    throw new Exception("El " + NombreColumna + " " + Parametro + " ya existe");
                 }
 
             }
@@ -36,7 +36,7 @@ namespace Negocio
             {
                 throw new Exception("El campo " + NombreCampo + " esta vacío");
             }
-                        
+
         }
 
         public void SeleccionComboBox(ComboBox opciones, string NombreCampo)
@@ -46,7 +46,7 @@ namespace Negocio
             {
                 throw new Exception("Seleccione una opción en " + NombreCampo);
             }
-           
+
         }
 
         public void SeleccionItemDataGridView(DataGridView grilla) {
@@ -67,7 +67,15 @@ namespace Negocio
 
                 throw new Exception("El campo" + NombreCampo + " acepta valores a partir del " + valor.ToString());
             }
-         
+
+        }
+
+        public void MaximoValor(int ValorMaximo, string NombreCampo, int ValorIngresado) {
+
+            if (ValorIngresado > ValorMaximo) {
+
+                throw new Exception("El " + NombreCampo + "es mayor a que se tiene disponible");
+            }
         }
 
         public void Multiplo(TextBox textoUno, TextBox textoDos, string NombreCampoUno, string NombreCampoDos) {
@@ -78,7 +86,7 @@ namespace Negocio
             }
         }
 
-        public void FormularioProducto(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, TextBox tboxCantidadBulto, TextBox tboxStockCritico, ComboBox cboxTipoProducto, ComboBox cboxRubro, ComboBox cboxProveedor,string TipoOperacion)
+        public void FormularioProducto(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, TextBox tboxCantidadBulto, TextBox tboxStockCritico, ComboBox cboxTipoProducto, ComboBox cboxRubro, ComboBox cboxProveedor, string TipoOperacion)
         {
             if (TipoOperacion == "Agregar") {
 
@@ -91,7 +99,7 @@ namespace Negocio
                 MinimoValor(tboxCodigoBulto, "Codigo Bulto", 10);
 
                 ExistenciaDeDatoDB("Nombre", "Productos", tboxNombre.Text);
-               
+
             }
 
             ContenidoTextBoxVacio(tboxNombre, "Nombre");
@@ -145,18 +153,18 @@ namespace Negocio
                 ContenidoTextBoxVacio(tboxNombre, "Nombre");
                 ExistenciaDeDatoDB("Nombre", "Impuestos", tboxNombre.Text);
             }
-                ExistenciaRepetidaDeDatoDB("CodigoImpuesto", "Nombre", "Impuestos", "CodigoImpuesto", "Nombre", tboxNombre.Text, tboxCodigoImpuesto.Text);
-                ContenidoTextBoxVacio(tboxDescripcion, "Descripcion");
+            ExistenciaRepetidaDeDatoDB("CodigoImpuesto", "Nombre", "Impuestos", "CodigoImpuesto", "Nombre", tboxNombre.Text, tboxCodigoImpuesto.Text);
+            ContenidoTextBoxVacio(tboxDescripcion, "Descripcion");
         }
 
-        public void FormularioCliente(TextBox tboxCodigo, TextBox tboxNombre, TextBox tboxApellido,TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico, TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, TextBox tboxProvincia, TextBox tboxLocalidad, ComboBox cboxDescuento, TextBox tboxLimitecuenta, string TipoOperacion) {
+        public void FormularioCliente(TextBox tboxCodigo, TextBox tboxNombre, TextBox tboxApellido, TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico, TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, TextBox tboxProvincia, TextBox tboxLocalidad, ComboBox cboxDescuento, TextBox tboxLimitecuenta, string TipoOperacion) {
 
             //cliente
             if (TipoOperacion == "Agregar") {
 
                 ContenidoTextBoxVacio(tboxCodigo, "Codigo Cliente");
                 ExistenciaDeDatoDB("CodigoCliente", "Clientes", tboxCodigo.Text);
-             
+
             }
 
             ContenidoTextBoxVacio(tboxNombre, "Nombre");
@@ -168,7 +176,7 @@ namespace Negocio
 
         }
 
-        public void FormularioProveedor(TextBox tboxCodigoProveedor, TextBox tboxRazonSocial, TextBox tboxNumeroCUIT, TextBox tboxNombreFantasia, ComboBox cboxCondicionIVA,  TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico, TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, TextBox tboxProvincia, TextBox tboxLocalidad, string TipoOperacion) {
+        public void FormularioProveedor(TextBox tboxCodigoProveedor, TextBox tboxRazonSocial, TextBox tboxNumeroCUIT, TextBox tboxNombreFantasia, ComboBox cboxCondicionIVA, TextBox tboxTelefono, TextBox tboxCelular, TextBox tboxCorreoElectronico, TextBox tboxCalle, TextBox tboxNumero, TextBox tboxCP, TextBox tboxProvincia, TextBox tboxLocalidad, string TipoOperacion) {
 
             if (TipoOperacion == "Agregar") {
 
@@ -203,13 +211,13 @@ namespace Negocio
             ContenidoTextBoxVacio(tboxCorreoElectronico, "Correo Electrónico");
         }
 
-        public void ExistenciaRepetidaDeDatoDB(string DatoBuscarUno, string DatoBuscarDos, string NombreTabla, string NombreColumnaUno, string NombreColumnaDos,string Parametro, string CodigoRevisar)
+        public void ExistenciaRepetidaDeDatoDB(string DatoBuscarUno, string DatoBuscarDos, string NombreTabla, string NombreColumnaUno, string NombreColumnaDos, string Parametro, string CodigoRevisar)
         {
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("SELECT " + DatoBuscarUno + "," + DatoBuscarDos + " FROM " + NombreTabla + " WHERE " + NombreColumnaDos + " = '" + Parametro + "'");
-            AccederDatos.EjecutarConsulta();           
-            
+            AccederDatos.EjecutarConsulta();
+
             while (AccederDatos.LectorDatos.Read())
             {
                 if (AccederDatos.LectorDatos[NombreColumnaUno].ToString() != CodigoRevisar) {
@@ -221,12 +229,16 @@ namespace Negocio
                         throw new Exception("El " + DatoBuscarDos + " " + Parametro + " ya existe");
                     }
                 }
-                    
+
             }
 
             AccederDatos.CerrarConexion();
             AccederDatos.CerrarReader();
         }
+
+    }
+}
+
         //public void ItemRepetidoGrid(DataGridView Grilla, string valorAgregar) {
 
         //    //(Grilla.Rows.Cast<DataGridViewRow>().Any(x => x.Cells["Nombre"].Value.ToString() == item.ToString())) 
@@ -248,6 +260,3 @@ namespace Negocio
         //    MessageBox.Show("paso");
 
         //}
-    }
-    
-}

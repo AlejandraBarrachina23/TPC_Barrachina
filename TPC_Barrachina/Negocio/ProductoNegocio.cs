@@ -144,22 +144,29 @@ namespace Negocio
             AccederDatos.EjecutarConsulta();
             while (AccederDatos.LectorDatos.Read()) {
 
-                Producto unProducto = new Producto();
-                unProducto.CodigoProducto = AccederDatos.LectorDatos["CodigoProducto"].ToString();
-                unProducto.CodigoBulto = AccederDatos.LectorDatos["CodigoBulto"].ToString();
-                unProducto.Nombre = AccederDatos.LectorDatos["NombreProducto"].ToString();
-                unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
-                unProducto.StockCritico = (int)AccederDatos.LectorDatos["StockCritico"];
-                unProducto.CantidadxBulto = (int)AccederDatos.LectorDatos["CantidadxBulto"];
-                unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
-                unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
-                unProducto.PrecioCosto = (decimal)AccederDatos.LectorDatos["PrecioCosto"];
-                unProducto.PrecioCostoLista = (decimal)AccederDatos.LectorDatos["PrecioCostoLista"];
+                if ((bool)AccederDatos.LectorDatos["Estado"]) {
 
-                AccederDatos.CerrarReader();
-                AccederDatos.CerrarConexion();
-                return unProducto;
+                    if ((int)AccederDatos.LectorDatos["Stock"] > 0) {
 
+                        Producto unProducto = new Producto();
+                        unProducto.CodigoProducto = AccederDatos.LectorDatos["CodigoProducto"].ToString();
+                        unProducto.CodigoBulto = AccederDatos.LectorDatos["CodigoBulto"].ToString();
+                        unProducto.Nombre = AccederDatos.LectorDatos["NombreProducto"].ToString();
+                        unProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
+                        unProducto.StockCritico = (int)AccederDatos.LectorDatos["StockCritico"];
+                        unProducto.CantidadxBulto = (int)AccederDatos.LectorDatos["CantidadxBulto"];
+                        unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
+                        unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
+                        unProducto.PrecioCosto = (decimal)AccederDatos.LectorDatos["PrecioCosto"];
+                        unProducto.PrecioCostoLista = (decimal)AccederDatos.LectorDatos["PrecioCostoLista"];
+
+                        AccederDatos.CerrarReader();
+                        AccederDatos.CerrarConexion();
+                        return unProducto;
+
+                    }
+                    throw new Exception("No hay stock de ese producto");
+                }
             }
             AccederDatos.CerrarReader();
             AccederDatos.CerrarConexion();
