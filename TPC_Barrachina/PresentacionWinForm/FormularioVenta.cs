@@ -25,6 +25,7 @@ namespace PresentacionWinForm
         private int CuentaLineas = 1;
         private decimal Subtotal = 0;
         ValidadorDatos Validar = new ValidadorDatos();
+        Cliente unCliente = null;
 
         public void CambiarTexto(string Texto) {
 
@@ -55,10 +56,13 @@ namespace PresentacionWinForm
             tboxCodigoBarra.Text = unProducto.CodigoProducto;
         }
 
-        private void CambiarCliente(Cliente unCliente) {
+        private void CambiarCliente(Cliente unClienteSeleccionado) {
 
-            lblCliente.Text = "CLIENTE: " + unCliente.Nombre;
-            lblSaldo.Text = "SALDO: " + unCliente.CuentaCorriente.Saldo;
+            lblCliente.Text = "CLIENTE: " + unClienteSeleccionado.Nombre;
+            lblSaldo.Text = "SALDO: " + unClienteSeleccionado.CuentaCorriente.Saldo;
+            lblDescuento.Text = "DESCUENTO: " + unClienteSeleccionado.Descuento.Porcentaje + "%";
+            unCliente = unClienteSeleccionado;
+            
         }
 
         private void btnDevolucion_Click(object sender, EventArgs e)
@@ -142,7 +146,12 @@ namespace PresentacionWinForm
                 dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
                 
                 lblSubtotalNumerico.Text = (Subtotal += unDetalleVenta.Subtotal).ToString();
-                lblTotalFactura.Text = (Convert.ToDouble(lblSubtotalNumerico.Text) * 0.9).ToString();
+                if (unCliente != null) {
+
+                    decimal resultado = Convert.ToInt32(lblSubtotalNumerico.Text) - (Convert.ToInt32(lblSubtotalNumerico.Text) * Convert.ToDecimal(unCliente.Descuento.Porcentaje) / 100);
+                    lblTotalFactura.Text = resultado.ToString();
+                }
+                
 
                 tboxCantidad.Text = 1.ToString();
                 tboxCodigoBarra.Focus();
