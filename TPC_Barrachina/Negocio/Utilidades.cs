@@ -207,6 +207,11 @@ namespace Negocio
 
             throw new Exception("El " + NombreTextBox + " ingresado no existe");
         }
+
+        public decimal CalcularDescuento(int Subtotal,decimal Descuento) {
+
+            return Subtotal - (Subtotal * Descuento / 100);
+        }
     }
 }
 

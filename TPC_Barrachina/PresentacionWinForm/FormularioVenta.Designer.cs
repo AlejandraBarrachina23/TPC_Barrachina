@@ -136,6 +136,7 @@
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // lblMetodoPago
             // 

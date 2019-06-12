@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
+using AccesoDatos;
 
 namespace Negocio
 {
     public class DetalleVentaNegocio
     {
         ValidadorDatos Validar = new ValidadorDatos();
+        AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
 
         public void ControlStock(List<DetalleVenta> Detalles, Producto unProducto, int CantidadIngresada)
         {
@@ -28,5 +30,15 @@ namespace Negocio
             }
 
         }
+
+        public void AgregarDetalleVenta(DetalleVenta unDetallVenta)
+        {
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("INSERT INTO DetalleVentas (NumeroLinea,CodigoProducto,Cantidad, PrecioCosto,PrecioCostoLista,PrecioVentaMinorista, PrecioVentaMayorista) VALUES ('" + unDetallVenta.Linea + "','" + unDetallVenta.Producto.CodigoProducto + "','" + unDetallVenta.Cantidad +
+                "','" + unDetallVenta.PrecioCosto + "','" + unDetallVenta.PrecioCostoLista + "','" + unDetallVenta.PrecioMinorista + "','" + unDetallVenta.PrecioMayorista + "')");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+        }
     }
+
 }

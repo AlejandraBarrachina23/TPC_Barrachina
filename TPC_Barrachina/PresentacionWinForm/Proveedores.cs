@@ -132,6 +132,7 @@ namespace PresentacionWinForm
         private void btnBorrarImpuesto_Click(object sender, EventArgs e)
         {
             ListadoImpuestos.RemoveAt(dgvImpuestos.CurrentRow.Index);
+            dgvImpuestos.DataSource = null;
             dgvImpuestos.DataSource = ListadoImpuestos;
         }
 

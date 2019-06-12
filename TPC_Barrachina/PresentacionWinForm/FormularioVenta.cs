@@ -24,7 +24,10 @@ namespace PresentacionWinForm
         private List<DetalleVenta> Detalles = new List<DetalleVenta>();
         private int CuentaLineas = 1;
         private decimal Subtotal = 0;
+        private decimal Descuento = 0;
         ValidadorDatos Validar = new ValidadorDatos();
+        Utilidades Utilidades = new Utilidades();
+        CabeceraVenta unaCabeceraVenta = new CabeceraVenta();
         Cliente unCliente = null;
 
         public void CambiarTexto(string Texto) {
@@ -62,7 +65,8 @@ namespace PresentacionWinForm
             lblSaldo.Text = "SALDO: " + unClienteSeleccionado.CuentaCorriente.Saldo;
             lblDescuento.Text = "DESCUENTO: " + unClienteSeleccionado.Descuento.Porcentaje + "%";
             unCliente = unClienteSeleccionado;
-            
+            lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToInt32(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
+
         }
 
         private void btnDevolucion_Click(object sender, EventArgs e)
@@ -124,7 +128,6 @@ namespace PresentacionWinForm
                 ProductoNegocio unProductoVendido = new ProductoNegocio();
                 Producto unProducto = unProductoVendido.BusquedaProducto(tboxCodigoBarra.Text);
                 unDetalleVentaNegocio.ControlStock(Detalles, unProducto, Convert.ToInt32(tboxCantidad.Text));
-                
                 Validar.MaximoValor(unProducto.Stock, "Stock", Convert.ToInt32(tboxCantidad.Text));
 
                 dgvDetalleVenta.DataSource = null;
@@ -141,18 +144,17 @@ namespace PresentacionWinForm
                 Detalles.Add(unDetalleVenta);
 
                 dgvDetalleVenta.DataSource = Detalles;
-                Utilidades Utilidades = new Utilidades();
                 Utilidades.AjustarOrdenGridView(dgvDetalleVenta);
                 dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
                 
                 lblSubtotalNumerico.Text = (Subtotal += unDetalleVenta.Subtotal).ToString();
+                lblTotalFactura.Text = Subtotal.ToString();
+
                 if (unCliente != null) {
 
-                    decimal resultado = Convert.ToInt32(lblSubtotalNumerico.Text) - (Convert.ToInt32(lblSubtotalNumerico.Text) * Convert.ToDecimal(unCliente.Descuento.Porcentaje) / 100);
-                    lblTotalFactura.Text = resultado.ToString();
+                    lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToInt32(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
                 }
                 
-
                 tboxCantidad.Text = 1.ToString();
                 tboxCodigoBarra.Focus();
                 CuentaLineas++;
@@ -170,6 +172,33 @@ namespace PresentacionWinForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            unaCabeceraVenta.Usuario = new Usuario();
+            unaCabeceraVenta.Cliente = new Cliente();
+            CabeceraVentaNegocio unaCabeceraVentaNegocio = new CabeceraVentaNegocio();
+            DetalleVentaNegocio unDetallVentaNegocio = new DetalleVentaNegocio();
+            unaCabeceraVenta.Usuario.CodigoUsuario = 1;
+
+            if (unCliente != null) {
+
+                unaCabeceraVenta.Cliente.CodigoCliente = unCliente.CodigoCliente;
+            }
+
+            unaCabeceraVenta.Total = Convert.ToDouble(lblTotalFactura.Text);
+            unaCabeceraVentaNegocio.AgregarCabeceraVenta(unaCabeceraVenta);
+            
+            foreach (DetalleVenta unDetalleVenta in Detalles)
+            {
+                unDetallVentaNegocio.AgregarDetalleVenta(unDetalleVenta);
+            }
+            
+            CuentaLineas = 1;
+            Subtotal = Descuento = 0;
+            dgvDetalleVenta.DataSource = null;
+            Detalles.Clear();
         }
     }
 }
