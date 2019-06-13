@@ -140,7 +140,7 @@ namespace Negocio
         public Producto BusquedaProducto(string CodigoProducto) {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("SELECT * FROM Productos WHERE CodigoProducto = '" + CodigoProducto + "'OR CodigoBulto = " + CodigoProducto);
+            AccederDatos.DefinirTipoComando("SELECT * FROM Productos WHERE CodigoProducto = '" + CodigoProducto + "'");
             AccederDatos.EjecutarConsulta();
             while (AccederDatos.LectorDatos.Read()) {
 

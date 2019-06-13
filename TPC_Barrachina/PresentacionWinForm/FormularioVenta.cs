@@ -63,14 +63,12 @@ namespace PresentacionWinForm
         private void CambiarCliente(Cliente unClienteSeleccionado) {
 
             tboxClientes.Text = unClienteSeleccionado.Nombre;
-            tboxSaldo.Text = unClienteSeleccionado.CuentaCorriente.Saldo.ToString();
-            lblDescuento.Text = "DESCUENTO: " + unClienteSeleccionado.Descuento.Porcentaje + "%";
+            tboxSaldo.Text = unClienteSeleccionado.CuentaCorriente.Saldo.ToString("N2");
+            lblDescuentoNumerico.Text = unClienteSeleccionado.Descuento.Porcentaje + "%";
             unCliente = unClienteSeleccionado;
-            if (Detalles != null) {
+            if (dgvDetalleVenta.DataSource != null) {
                 lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToInt32(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
             }
-            
-            
         }
 
         private void btnDevolucion_Click(object sender, EventArgs e)
@@ -116,7 +114,16 @@ namespace PresentacionWinForm
             HoraActual.Enabled = true;
             tboxClientes.Text = "Consumidor Final";
             tboxNumeroOperacion.Text = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta().ToString();
-            tboxSaldo.Text = 0.00.ToString();
+            tboxMetodoPago.Text = "Efectivo";
+            tboxSaldo.Text = 0.ToString("N2");
+            tboxNumeroOperacion.Enabled = false;
+            tboxFechaEmision.Enabled = false;
+            tboxHora.Enabled = false;
+            tboxMetodoPago.Enabled = false;
+            tboxClientes.Enabled = false;
+            tboxSaldo.Enabled = false;
+            tboxUsuario.Enabled = false;
+
         }
 
         private void HoraActual_Tick(object sender, EventArgs e)
@@ -155,7 +162,7 @@ namespace PresentacionWinForm
                 dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
                 
                 lblSubtotalNumerico.Text = (Subtotal += unDetalleVenta.Subtotal).ToString();
-                lblTotalFactura.Text = Subtotal.ToString();
+                lblTotalFactura.Text = Subtotal.ToString("N2");
 
                 if (unCliente != null) {
 
@@ -195,8 +202,7 @@ namespace PresentacionWinForm
             }
 
             unaCabeceraVenta.Total = Convert.ToDouble(lblTotalFactura.Text);
-            string nuevo = lblMetodoPago.Text;
-            unaCabeceraVenta.MetodoPago = nuevo.Remove(0,13);
+            unaCabeceraVenta.MetodoPago = tboxMetodoPago.Text;
                 
             unaCabeceraVentaNegocio.AgregarCabeceraVenta(unaCabeceraVenta);
 

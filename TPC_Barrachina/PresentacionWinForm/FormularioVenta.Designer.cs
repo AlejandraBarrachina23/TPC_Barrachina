@@ -29,13 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVenta));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVenta));
             this.pnlCabecera = new System.Windows.Forms.Panel();
+            this.tboxCantidad = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tboxSaldo = new System.Windows.Forms.TextBox();
+            this.tboxClientes = new System.Windows.Forms.TextBox();
+            this.tboxMetodoPago = new System.Windows.Forms.TextBox();
+            this.tboxUsuario = new System.Windows.Forms.TextBox();
+            this.tboxHora = new System.Windows.Forms.TextBox();
+            this.tboxFechaEmision = new System.Windows.Forms.TextBox();
             this.tboxNumeroOperacion = new System.Windows.Forms.TextBox();
             this.lblDatosOperacion = new System.Windows.Forms.Label();
             this.lblMetodoPago = new System.Windows.Forms.Label();
@@ -80,14 +88,7 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCompras = new System.Windows.Forms.Label();
-            this.tboxMetodoPago = new System.Windows.Forms.TextBox();
-            this.tboxClientes = new System.Windows.Forms.TextBox();
-            this.tboxSaldo = new System.Windows.Forms.TextBox();
-            this.tboxFechaEmision = new System.Windows.Forms.TextBox();
-            this.tboxHora = new System.Windows.Forms.TextBox();
-            this.tboxUsuario = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tboxCantidad = new System.Windows.Forms.TextBox();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.pnlCabecera.SuspendLayout();
             this.pnlDetalleVenta.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -110,6 +111,7 @@
             this.pnlCabecera.Controls.Add(this.tboxNumeroOperacion);
             this.pnlCabecera.Controls.Add(this.lblDatosOperacion);
             this.pnlCabecera.Controls.Add(this.lblMetodoPago);
+            this.pnlCabecera.Controls.Add(this.btnBorrar);
             this.pnlCabecera.Controls.Add(this.btnAgregar);
             this.pnlCabecera.Controls.Add(this.lblSaldo);
             this.pnlCabecera.Controls.Add(this.lblUsuario);
@@ -125,6 +127,22 @@
             this.pnlCabecera.Size = new System.Drawing.Size(1056, 204);
             this.pnlCabecera.TabIndex = 0;
             // 
+            // tboxCantidad
+            // 
+            this.tboxCantidad.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxCantidad.Location = new System.Drawing.Point(714, 151);
+            this.tboxCantidad.Name = "tboxCantidad";
+            this.tboxCantidad.Size = new System.Drawing.Size(93, 36);
+            this.tboxCantidad.TabIndex = 17;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(3, 130);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1050, 2);
+            this.panel3.TabIndex = 21;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
@@ -132,6 +150,54 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1050, 2);
             this.panel2.TabIndex = 21;
+            // 
+            // tboxSaldo
+            // 
+            this.tboxSaldo.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxSaldo.Location = new System.Drawing.Point(594, 94);
+            this.tboxSaldo.Name = "tboxSaldo";
+            this.tboxSaldo.Size = new System.Drawing.Size(157, 25);
+            this.tboxSaldo.TabIndex = 11;
+            // 
+            // tboxClientes
+            // 
+            this.tboxClientes.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxClientes.Location = new System.Drawing.Point(365, 96);
+            this.tboxClientes.Name = "tboxClientes";
+            this.tboxClientes.Size = new System.Drawing.Size(157, 25);
+            this.tboxClientes.TabIndex = 11;
+            // 
+            // tboxMetodoPago
+            // 
+            this.tboxMetodoPago.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxMetodoPago.Location = new System.Drawing.Point(140, 96);
+            this.tboxMetodoPago.Name = "tboxMetodoPago";
+            this.tboxMetodoPago.Size = new System.Drawing.Size(157, 25);
+            this.tboxMetodoPago.TabIndex = 11;
+            // 
+            // tboxUsuario
+            // 
+            this.tboxUsuario.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxUsuario.Location = new System.Drawing.Point(838, 54);
+            this.tboxUsuario.Name = "tboxUsuario";
+            this.tboxUsuario.Size = new System.Drawing.Size(157, 25);
+            this.tboxUsuario.TabIndex = 11;
+            // 
+            // tboxHora
+            // 
+            this.tboxHora.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxHora.Location = new System.Drawing.Point(594, 54);
+            this.tboxHora.Name = "tboxHora";
+            this.tboxHora.Size = new System.Drawing.Size(157, 25);
+            this.tboxHora.TabIndex = 11;
+            // 
+            // tboxFechaEmision
+            // 
+            this.tboxFechaEmision.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxFechaEmision.Location = new System.Drawing.Point(365, 54);
+            this.tboxFechaEmision.Name = "tboxFechaEmision";
+            this.tboxFechaEmision.Size = new System.Drawing.Size(157, 25);
+            this.tboxFechaEmision.TabIndex = 11;
             // 
             // tboxNumeroOperacion
             // 
@@ -170,7 +236,7 @@
             this.btnAgregar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(838, 143);
+            this.btnAgregar.Location = new System.Drawing.Point(835, 149);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(44, 38);
             this.btnAgregar.TabIndex = 2;
@@ -221,7 +287,7 @@
             // tboxCodigoBarra
             // 
             this.tboxCodigoBarra.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCodigoBarra.Location = new System.Drawing.Point(284, 145);
+            this.tboxCodigoBarra.Location = new System.Drawing.Point(281, 151);
             this.tboxCodigoBarra.Name = "tboxCodigoBarra";
             this.tboxCodigoBarra.Size = new System.Drawing.Size(360, 36);
             this.tboxCodigoBarra.TabIndex = 0;
@@ -241,7 +307,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(660, 157);
+            this.label3.Location = new System.Drawing.Point(657, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 17);
             this.label3.TabIndex = 10;
@@ -261,7 +327,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(183, 155);
+            this.label1.Location = new System.Drawing.Point(180, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 10;
@@ -425,20 +491,20 @@
             // lblDescuentoNumerico
             // 
             this.lblDescuentoNumerico.AutoSize = true;
-            this.lblDescuentoNumerico.Font = new System.Drawing.Font("Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescuentoNumerico.Location = new System.Drawing.Point(175, 39);
+            this.lblDescuentoNumerico.Font = new System.Drawing.Font("Bebas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescuentoNumerico.Location = new System.Drawing.Point(175, 43);
             this.lblDescuentoNumerico.Name = "lblDescuentoNumerico";
-            this.lblDescuentoNumerico.Size = new System.Drawing.Size(34, 19);
+            this.lblDescuentoNumerico.Size = new System.Drawing.Size(44, 25);
             this.lblDescuentoNumerico.TabIndex = 11;
             this.lblDescuentoNumerico.Text = "0.00";
             // 
             // lblSubtotalNumerico
             // 
             this.lblSubtotalNumerico.AutoSize = true;
-            this.lblSubtotalNumerico.Font = new System.Drawing.Font("Bebas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtotalNumerico.Font = new System.Drawing.Font("Bebas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtotalNumerico.Location = new System.Drawing.Point(175, 15);
             this.lblSubtotalNumerico.Name = "lblSubtotalNumerico";
-            this.lblSubtotalNumerico.Size = new System.Drawing.Size(34, 19);
+            this.lblSubtotalNumerico.Size = new System.Drawing.Size(44, 25);
             this.lblSubtotalNumerico.TabIndex = 11;
             this.lblSubtotalNumerico.Text = "0.00";
             // 
@@ -466,7 +532,7 @@
             // 
             this.lblDescuento.AutoSize = true;
             this.lblDescuento.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescuento.Location = new System.Drawing.Point(28, 37);
+            this.lblDescuento.Location = new System.Drawing.Point(30, 46);
             this.lblDescuento.Name = "lblDescuento";
             this.lblDescuento.Size = new System.Drawing.Size(79, 21);
             this.lblDescuento.TabIndex = 10;
@@ -686,69 +752,22 @@
             this.lblCompras.TabIndex = 1;
             this.lblCompras.Text = "CAJA";
             // 
-            // tboxMetodoPago
+            // btnBorrar
             // 
-            this.tboxMetodoPago.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxMetodoPago.Location = new System.Drawing.Point(140, 96);
-            this.tboxMetodoPago.Name = "tboxMetodoPago";
-            this.tboxMetodoPago.Size = new System.Drawing.Size(157, 25);
-            this.tboxMetodoPago.TabIndex = 11;
-            // 
-            // tboxClientes
-            // 
-            this.tboxClientes.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxClientes.Location = new System.Drawing.Point(365, 96);
-            this.tboxClientes.Name = "tboxClientes";
-            this.tboxClientes.Size = new System.Drawing.Size(157, 25);
-            this.tboxClientes.TabIndex = 11;
-            // 
-            // tboxSaldo
-            // 
-            this.tboxSaldo.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxSaldo.Location = new System.Drawing.Point(594, 94);
-            this.tboxSaldo.Name = "tboxSaldo";
-            this.tboxSaldo.Size = new System.Drawing.Size(157, 25);
-            this.tboxSaldo.TabIndex = 11;
-            // 
-            // tboxFechaEmision
-            // 
-            this.tboxFechaEmision.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxFechaEmision.Location = new System.Drawing.Point(365, 54);
-            this.tboxFechaEmision.Name = "tboxFechaEmision";
-            this.tboxFechaEmision.Size = new System.Drawing.Size(157, 25);
-            this.tboxFechaEmision.TabIndex = 11;
-            // 
-            // tboxHora
-            // 
-            this.tboxHora.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxHora.Location = new System.Drawing.Point(594, 54);
-            this.tboxHora.Name = "tboxHora";
-            this.tboxHora.Size = new System.Drawing.Size(157, 25);
-            this.tboxHora.TabIndex = 11;
-            // 
-            // tboxUsuario
-            // 
-            this.tboxUsuario.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxUsuario.Location = new System.Drawing.Point(838, 54);
-            this.tboxUsuario.Name = "tboxUsuario";
-            this.tboxUsuario.Size = new System.Drawing.Size(157, 25);
-            this.tboxUsuario.TabIndex = 11;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(3, 130);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1050, 2);
-            this.panel3.TabIndex = 21;
-            // 
-            // tboxCantidad
-            // 
-            this.tboxCantidad.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCantidad.Location = new System.Drawing.Point(717, 145);
-            this.tboxCantidad.Name = "tboxCantidad";
-            this.tboxCantidad.Size = new System.Drawing.Size(93, 36);
-            this.tboxCantidad.TabIndex = 17;
+            this.btnBorrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnBorrar.FlatAppearance.BorderSize = 0;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
+            this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBorrar.Location = new System.Drawing.Point(898, 149);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(44, 38);
+            this.btnBorrar.TabIndex = 2;
+            this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // FormularioVenta
             // 
@@ -830,6 +849,7 @@
         private System.Windows.Forms.TextBox tboxFechaEmision;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox tboxCantidad;
+        private System.Windows.Forms.Button btnBorrar;
     }
 }
 
