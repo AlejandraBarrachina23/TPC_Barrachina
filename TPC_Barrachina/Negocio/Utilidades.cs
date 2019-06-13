@@ -212,6 +212,23 @@ namespace Negocio
 
             return Subtotal - (Subtotal * Descuento / 100);
         }
+
+        public decimal CalcularBaseImponible(decimal PrecioUnitario, decimal Descuento) {
+
+            return PrecioUnitario = PrecioUnitario - (PrecioUnitario * Descuento / 100);
+
+        }
+
+        public decimal CalcularPrecioBruto(List<Impuesto> ListadoImpuestos, decimal PrecioNeto) {
+
+            ImpuestoNegocio unImpuestoNegocio = new ImpuestoNegocio();
+            foreach (Impuesto unImpuesto in ListadoImpuestos)
+            {
+                PrecioNeto += unImpuestoNegocio.CalcularPorcentaje(PrecioNeto, unImpuesto);
+            }
+
+            return PrecioNeto;
+        }
     }
 }
 

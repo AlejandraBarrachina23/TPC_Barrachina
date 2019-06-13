@@ -107,5 +107,10 @@ namespace Negocio
 
         }
 
+        public decimal CalcularPorcentaje(decimal Precio, Impuesto unImpuesto) {
+
+            return Precio * unImpuesto.Alicuota / 100;
+        }
+
     }
 }

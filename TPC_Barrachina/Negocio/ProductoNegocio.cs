@@ -34,6 +34,7 @@ namespace Negocio
                 unNuevoProducto.Stock = (int)AccederDatos.LectorDatos["Stock"];
                 unNuevoProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
                 unNuevoProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
+
                 ListadoProductos.Add(unNuevoProducto);
                 }
             }
@@ -78,6 +79,7 @@ namespace Negocio
                     unProducto.CantidadxBulto = (int)AccederDatos.LectorDatos["CantidadxBulto"];
                     unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
                     unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
+                    unProducto.Rentabilidad = (decimal)AccederDatos.LectorDatos["Rentabilidad"];
                     unProducto.Proveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["CodigoProveedor"];
                     unProducto.Proveedor.NombreFantasia = AccederDatos.LectorDatos["NombreFantasia"].ToString();
                     unProducto.Rubro.CodigoRubro = (int)AccederDatos.LectorDatos["CodigoRubro"];
@@ -157,6 +159,7 @@ namespace Negocio
                         unProducto.CantidadxBulto = (int)AccederDatos.LectorDatos["CantidadxBulto"];
                         unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
                         unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
+                        unProducto.Rentabilidad = (decimal)AccederDatos.LectorDatos["Rentabilidad"];
                         unProducto.PrecioCosto = (decimal)AccederDatos.LectorDatos["PrecioCosto"];
                         unProducto.PrecioCostoLista = (decimal)AccederDatos.LectorDatos["PrecioCostoLista"];
 
@@ -174,6 +177,6 @@ namespace Negocio
 
         }
 
-
+        
     }
 }
