@@ -31,10 +31,10 @@ namespace Negocio
 
         }
 
-        public void AgregarDetalleVenta(DetalleVenta unDetallVenta)
+        public void AgregarDetalleVenta(DetalleVenta unDetallVenta, int NumeroFactura)
         {
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("INSERT INTO DetalleVentas (NumeroLinea,CodigoProducto,Cantidad, PrecioCosto,PrecioCostoLista,PrecioVentaMinorista, PrecioVentaMayorista) VALUES ('" + unDetallVenta.Linea + "','" + unDetallVenta.Producto.CodigoProducto + "','" + unDetallVenta.Cantidad +
+            AccederDatos.DefinirTipoComando("INSERT INTO DetalleVentas (NumeroFactura,NumeroLinea,CodigoProducto,Cantidad, PrecioCosto,PrecioCostoLista,PrecioVentaMinorista, PrecioVentaMayorista) VALUES ('"+NumeroFactura +"','"+ unDetallVenta.Linea + "','" + unDetallVenta.Producto.CodigoProducto + "','" + unDetallVenta.Cantidad +
                 "','" + unDetallVenta.PrecioCosto + "','" + unDetallVenta.PrecioCostoLista + "','" + unDetallVenta.PrecioMinorista + "','" + unDetallVenta.PrecioMayorista + "')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();

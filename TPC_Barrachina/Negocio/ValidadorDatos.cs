@@ -236,6 +236,16 @@ namespace Negocio
             AccederDatos.CerrarReader();
         }
 
+        public bool ListaVacia(List<object> UnaLista) {
+
+            if (UnaLista == null) {
+
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }
 

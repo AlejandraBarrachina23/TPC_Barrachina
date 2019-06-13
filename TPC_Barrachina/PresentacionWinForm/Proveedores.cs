@@ -92,7 +92,7 @@ namespace PresentacionWinForm
                 tboxCorreoElectronico.Text = ProveedorModificar.Contacto.Mail;
                 ListadoImpuestos = unImpuesto.ListarImpuestosxProveedor(ProveedorModificar.CodigoProveedor);
                 dgvImpuestos.DataSource = ListadoImpuestos;
-                Utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
+                dgvImpuestos= Utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
                 btnModificar.Visible = true;
 
             }
@@ -118,7 +118,7 @@ namespace PresentacionWinForm
                 dgvImpuestos.DataSource = listaBindeable;
                 ListadoImpuestos.Add(unNuevoImpuesto);
                 listaBindeable.ResetBindings();
-                Utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
+                dgvImpuestos= Utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
 
             }
             catch (Exception ex)

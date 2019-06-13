@@ -28,6 +28,7 @@ namespace PresentacionWinForm
         ValidadorDatos Validar = new ValidadorDatos();
         Utilidades Utilidades = new Utilidades();
         CabeceraVenta unaCabeceraVenta = new CabeceraVenta();
+        CabeceraVentaNegocio unaCabeceraVentaNegocio = new CabeceraVentaNegocio();
         Cliente unCliente = null;
 
         public void CambiarTexto(string Texto) {
@@ -51,7 +52,7 @@ namespace PresentacionWinForm
 
         private void CambiarMetodoPago(string Nombre) {
 
-            lblMetodoPago.Text = "METODO PAGO: " + Nombre;
+            tboxMetodoPago.Text = Nombre;
         }
 
         private void SeleccionarProducto(Producto unProducto) {
@@ -61,12 +62,15 @@ namespace PresentacionWinForm
 
         private void CambiarCliente(Cliente unClienteSeleccionado) {
 
-            lblCliente.Text = "CLIENTE: " + unClienteSeleccionado.Nombre;
-            lblSaldo.Text = "SALDO: " + unClienteSeleccionado.CuentaCorriente.Saldo;
+            tboxClientes.Text = unClienteSeleccionado.Nombre;
+            tboxSaldo.Text = unClienteSeleccionado.CuentaCorriente.Saldo.ToString();
             lblDescuento.Text = "DESCUENTO: " + unClienteSeleccionado.Descuento.Porcentaje + "%";
             unCliente = unClienteSeleccionado;
-            lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToInt32(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
-
+            if (Detalles != null) {
+                lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToInt32(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
+            }
+            
+            
         }
 
         private void btnDevolucion_Click(object sender, EventArgs e)
@@ -108,14 +112,17 @@ namespace PresentacionWinForm
 
         private void FormularioVenta_Load(object sender, EventArgs e)
         {
+           
             HoraActual.Enabled = true;
-            lblCliente.Text = "CLIENTE: Consumidor Final";
+            tboxClientes.Text = "Consumidor Final";
+            tboxNumeroOperacion.Text = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta().ToString();
+            tboxSaldo.Text = 0.00.ToString();
         }
 
         private void HoraActual_Tick(object sender, EventArgs e)
         {
-            lblFecha.Text = "FECHA: " + DateTime.Now.ToShortDateString();
-            lblHora.Text = "HORA: " + DateTime.Now.ToLongTimeString();
+            tboxFechaEmision.Text = DateTime.Now.ToShortDateString();
+            tboxHora.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -188,17 +195,23 @@ namespace PresentacionWinForm
             }
 
             unaCabeceraVenta.Total = Convert.ToDouble(lblTotalFactura.Text);
+            string nuevo = lblMetodoPago.Text;
+            unaCabeceraVenta.MetodoPago = nuevo.Remove(0,13);
+                
             unaCabeceraVentaNegocio.AgregarCabeceraVenta(unaCabeceraVenta);
+
             
             foreach (DetalleVenta unDetalleVenta in Detalles)
             {
-                unDetallVentaNegocio.AgregarDetalleVenta(unDetalleVenta);
+                unDetallVentaNegocio.AgregarDetalleVenta(unDetalleVenta,unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta());
             }
-            
+ 
             CuentaLineas = 1;
             Subtotal = Descuento = 0;
             dgvDetalleVenta.DataSource = null;
             Detalles.Clear();
+            
+            tboxNumeroOperacion.Text = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta().ToString();
         }
     }
 }

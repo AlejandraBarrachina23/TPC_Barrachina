@@ -15,10 +15,19 @@ namespace Negocio
         public void AgregarCabeceraVenta(CabeceraVenta unaNuevaCabeceraVenta) {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("INSERT INTO Ventas (Usuario,Cliente,Total) VALUES ('" + unaNuevaCabeceraVenta.Usuario.Nombre + "','" + unaNuevaCabeceraVenta.Cliente.CodigoCliente + "','" +
-                unaNuevaCabeceraVenta.Total + "')");
+            AccederDatos.DefinirTipoComando("INSERT INTO Ventas (Usuario,Cliente,Total,MetodoPago) VALUES ('" + unaNuevaCabeceraVenta.Usuario.Nombre + "','" + unaNuevaCabeceraVenta.Cliente.CodigoCliente + "','" +
+                unaNuevaCabeceraVenta.Total + "','"+ unaNuevaCabeceraVenta.MetodoPago+ "')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
+        }
+
+        public int CuentaFilasCabeceraVenta() {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT COUNT (NumeroVenta) FROM Ventas");
+            int NumeroVenta = AccederDatos.ejecutarAccionReturn();
+            AccederDatos.CerrarConexion();
+            return NumeroVenta;
         }
     }
 }

@@ -143,8 +143,8 @@ namespace Negocio
 
                 case "Impuestos":
 
-                    Grilla.Columns[2].Visible = false;
-                    Grilla.Columns[4].Visible = false;
+                    //Grilla.Columns[2].Visible = false;
+                    //Grilla.Columns[4].Visible = false;
                     return Grilla;
 
                 case "Clientes":

@@ -9,7 +9,7 @@ namespace Dominio
     public class CabeceraVenta:CabeceraDocumento
     {
         public Cliente Cliente { get; set; }
-        public TipoPago MetodoPago { get; set; }
+        public string MetodoPago { get; set; }
         public double Total { get; set; }
     }
 }

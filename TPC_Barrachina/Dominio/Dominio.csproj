@@ -65,7 +65,6 @@
     <Compile Include="Rubro.cs" />
     <Compile Include="Sector.cs" />
     <Compile Include="Descuento.cs" />
-    <Compile Include="TipoPago.cs" />
     <Compile Include="TipoProducto.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
