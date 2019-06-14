@@ -28,6 +28,10 @@ namespace PresentacionWinForm
 
             InitializeComponent();
             lblNombreFormulario.Text = utilidades.AsignarNombreFormulario(NombreFormulario);
+            if (NombreFormulario == "Clientes") {
+
+                btnSaldar.Visible = true;
+            }
             btnAceptar.Visible = false;
             btnAgregar.Visible = true;
 
@@ -112,6 +116,15 @@ namespace PresentacionWinForm
                 }
 
             }
+        }
+
+        private void btnSaldar_Click(object sender, EventArgs e)
+        {
+            Cliente ClienteDeudor = new Cliente();
+            ClienteDeudor = (Cliente)dgvListadoBusqueda.CurrentRow.DataBoundItem;
+            Saldo FormularioSaldo = new Saldo(ClienteDeudor);
+            FormularioSaldo.MdiParent = this.MdiParent;
+            FormularioSaldo.Show();
         }
     }
 }

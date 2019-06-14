@@ -191,6 +191,12 @@
     <Compile Include="Descuentos.Designer.cs">
       <DependentUpon>Descuentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Saldo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Saldo.Designer.cs">
+      <DependentUpon>Saldo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UltimasActualizaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Descuentos.resx">
       <DependentUpon>Descuentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Saldo.resx">
+      <DependentUpon>Saldo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UltimasActualizaciones.resx">
       <DependentUpon>UltimasActualizaciones.cs</DependentUpon>

@@ -43,6 +43,7 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnSaldar = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombreCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
@@ -147,7 +148,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(362, 250);
+            this.btnCancelar.Location = new System.Drawing.Point(323, 251);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 37);
             this.btnCancelar.TabIndex = 10;
@@ -168,6 +169,7 @@
             // panelContenedor
             // 
             this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelContenedor.Controls.Add(this.btnSaldar);
             this.panelContenedor.Controls.Add(this.btnAgregar);
             this.panelContenedor.Controls.Add(this.pboxCodigoCliente);
             this.panelContenedor.Controls.Add(this.btnCancelar);
@@ -194,7 +196,7 @@
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(251, 250);
+            this.btnAgregar.Location = new System.Drawing.Point(212, 251);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(94, 37);
             this.btnAgregar.TabIndex = 12;
@@ -213,13 +215,32 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(251, 250);
+            this.btnAceptar.Location = new System.Drawing.Point(212, 251);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
             this.btnAceptar.TabIndex = 11;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
+            // 
+            // btnSaldar
+            // 
+            this.btnSaldar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnSaldar.FlatAppearance.BorderSize = 0;
+            this.btnSaldar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaldar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaldar.ForeColor = System.Drawing.Color.White;
+            this.btnSaldar.Image = ((System.Drawing.Image)(resources.GetObject("btnSaldar.Image")));
+            this.btnSaldar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaldar.Location = new System.Drawing.Point(431, 251);
+            this.btnSaldar.Name = "btnSaldar";
+            this.btnSaldar.Size = new System.Drawing.Size(94, 37);
+            this.btnSaldar.TabIndex = 12;
+            this.btnSaldar.Text = "SALDAR";
+            this.btnSaldar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaldar.UseVisualStyleBackColor = false;
+            this.btnSaldar.Visible = false;
+            this.btnSaldar.Click += new System.EventHandler(this.btnSaldar_Click);
             // 
             // FormularioBusqueda
             // 
@@ -259,5 +280,6 @@
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnSaldar;
     }
 }

@@ -202,5 +202,13 @@ namespace Negocio
 
             return ListadoClientes;
         }
+
+        public void SaldarDeuda(Cliente unCliente) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("UPDATE CuentaCorrientes SET Saldo = " + unCliente.CuentaCorriente.Saldo +" WHERE CodigoCuentaCorriente = '" + unCliente.CuentaCorriente.CodigoCuentaCorriente+ "'");
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+        }
     }
 }
