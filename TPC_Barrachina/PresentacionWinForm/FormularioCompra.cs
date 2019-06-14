@@ -111,8 +111,7 @@ namespace PresentacionWinForm
 
         private void dgvImpuestos_SelectionChanged(object sender, EventArgs e)
         {
-  
-            
+                        
         }
 
         private void HoraActual_Tick(object sender, EventArgs e)
