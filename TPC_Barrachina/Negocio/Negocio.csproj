@@ -41,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CabeceraCompraNegocio.cs" />
     <Compile Include="CabeceraVentaNegocio.cs" />
     <Compile Include="ClienteNegocio.cs" />
     <Compile Include="CondicionIVANegocio.cs" />
     <Compile Include="ContactoNegocio.cs" />
     <Compile Include="CuentaCorrienteNegocio.cs" />
     <Compile Include="DescuentoNegocio.cs" />
+    <Compile Include="DetalleCompraNegocio.cs" />
     <Compile Include="DetalleVentaNegocio.cs" />
     <Compile Include="DireccionNegocio.cs" />
     <Compile Include="ImpuestoNegocio.cs" />

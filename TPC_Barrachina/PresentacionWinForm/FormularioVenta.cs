@@ -158,7 +158,7 @@ namespace PresentacionWinForm
                 Detalles.Add(unDetalleVenta);
 
                 dgvDetalleVenta.DataSource = Detalles;
-                Utilidades.AjustarOrdenGridView(dgvDetalleVenta);
+                Utilidades.AjustarOrdenGridViewVentas(dgvDetalleVenta);
                 dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
                 
                 lblSubtotalNumerico.Text = (Subtotal += unDetalleVenta.Subtotal).ToString();

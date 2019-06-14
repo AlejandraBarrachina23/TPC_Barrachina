@@ -23,7 +23,6 @@ namespace PresentacionWinForm
         private Impuesto unImpuesto = new Impuesto();
         private List<Impuesto> ListadoImpuestos = new List<Impuesto>();
         private Utilidades Utilidades = new Utilidades();
-
         private int CuentaLinea = 1;
 
         public FormularioCompra()
@@ -42,11 +41,12 @@ namespace PresentacionWinForm
         {
             try
             {
-                cboxProveedor.ValueMember = "CodigoImpuesto";
-                cboxProveedor.DisplayMember = "Nombre";
                 cboxProveedor.DataSource = unProveedorNegocio.ListarProveedores();
-                cboxImpuesto.DataSource = unImpuestoNegocio.ListarImpuestos();
-
+                tboxNumeroOperacion.Enabled = false;
+                tboxFechaEmision.Enabled = false;
+                tboxHora.Enabled = false;
+                tboxUsuario.Enabled = false;
+                
             }
             catch (Exception Excepcion)
             {
@@ -60,6 +60,7 @@ namespace PresentacionWinForm
         {
             try
             {
+                dgvDetalleCompra.DataSource = null;
                 unProductoComprado = unProductoNegocio.BusquedaProducto(tboxCodigoBarra.Text);
                 unDetalleCompra.Linea = CuentaLinea;
                 unDetalleCompra.Producto = unProductoComprado;
@@ -68,22 +69,12 @@ namespace PresentacionWinForm
                 unDetalleCompra.Descuento = Convert.ToDecimal(tboxDescuento.Text);
                 unDetalleCompra.PrecioNeto = Utilidades.CalcularBaseImponible(Convert.ToDecimal(tboxPrecioUnitario.Text), Convert.ToDecimal(tboxDescuento.Text));
                 unDetalleCompra.PrecioBruto = Utilidades.CalcularPrecioBruto(ListadoImpuestos,unDetalleCompra.PrecioNeto);
-                unDetalleCompra.PrecioPonderado = ((unProductoComprado.PrecioCosto * unProductoComprado.Stock) + (unDetalleCompra.PrecioBruto * unDetalleCompra.Cantidad)) / (unDetalleCompra.Cantidad + unProductoComprado.Stock);
+                unDetalleCompra.PrecioPonderado = Utilidades.CalcularPrecioPonderado(unProductoComprado,unDetalleCompra);
                 unDetalleCompra.Rentabilidad = unProductoComprado.Rentabilidad;
-                unDetalleCompra.PrecioVenta = Convert.ToInt16(unDetalleCompra.PrecioBruto + (unDetalleCompra.PrecioBruto * unDetalleCompra.Rentabilidad / 100));
-
-                //int ultimoDigito = (int)unDetalleCompra.PrecioVenta % 10;
-                //int precioVenta = (int)unDetalleCompra.PrecioVenta;
-
-                //if (ultimoDigito > 5)  precioVenta += (10 - ultimoDigito);
-                ////else if(ultimoDigito <5 && ultimoDigito!=0 )  unDetalleCompra.PrecioVenta += (5 - ultimoDigito);
-                
-
-                //MessageBox.Show(ultimoDigito.ToString());
-                //MessageBox.Show(precioVenta.ToString());
-
+                unDetalleCompra.PrecioVenta = Utilidades.CalcularPrecioVenta(unDetalleCompra.PrecioBruto, (int)unProductoComprado.Rentabilidad);
                 ListadoDetalleCompra.Add(unDetalleCompra);
                 dgvDetalleCompra.DataSource = ListadoDetalleCompra;
+                Utilidades.AjustarOrdenGridViewCompras(dgvDetalleCompra);
             }
             catch (Exception Excepcion)
             {
@@ -94,17 +85,31 @@ namespace PresentacionWinForm
 
         private void cboxProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Proveedor ProveedorSeleccionado = (Proveedor)cboxProveedor.SelectedItem;
-            ListadoImpuestos = unImpuestoNegocio.ListarImpuestosxProveedor(ProveedorSeleccionado.CodigoProveedor);
-            dgvImpuestos.DataSource = ListadoImpuestos;
+            //Proveedor ProveedorSeleccionado = (Proveedor)cboxProveedor.SelectedItem;
+            //ListadoImpuestos = unImpuestoNegocio.ListarImpuestosxProveedor(ProveedorSeleccionado.CodigoProveedor);
+            //dgvImpuestos.DataSource = ListadoImpuestos;
         }
 
         private void dgvImpuestos_SelectionChanged(object sender, EventArgs e)
         {
-            unImpuesto = (Impuesto)dgvImpuestos.CurrentRow.DataBoundItem;
-            cboxImpuesto.SelectedIndex = cboxImpuesto.FindString(unImpuesto.Nombre);
-            tboxPorcentaje.Text = unImpuesto.Alicuota.ToString();
+  
             
+        }
+
+        private void HoraActual_Tick(object sender, EventArgs e)
+        {
+            tboxFechaEmision.Text = DateTime.Now.ToShortDateString();
+            tboxHora.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            DetalleCompraNegocio unDetalleCompraNegocio = new DetalleCompraNegocio();
+
+            foreach (DetalleCompra unDetalleCompra in ListadoDetalleCompra)
+            {
+                unDetalleCompraNegocio.AgregarDetalleCompra(unDetalleCompra);
+            }
         }
     }
 }

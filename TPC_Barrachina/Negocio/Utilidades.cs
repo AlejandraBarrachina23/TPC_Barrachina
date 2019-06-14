@@ -164,7 +164,22 @@ namespace Negocio
        
         }
 
-        public void AjustarOrdenGridView(DataGridView Grilla)
+        public void AjustarOrdenGridViewCompras(DataGridView Grilla)
+        {
+            Grilla.Columns["Linea"].DisplayIndex = 0;
+            Grilla.Columns["Producto"].DisplayIndex = 1;
+            Grilla.Columns["Cantidad"].DisplayIndex = 2;
+            Grilla.Columns["PrecioUnitario"].DisplayIndex = 3;
+            Grilla.Columns["Descuento"].DisplayIndex = 4;
+            Grilla.Columns["PrecioNeto"].DisplayIndex = 5;
+            Grilla.Columns["PrecioBruto"].DisplayIndex = 6;
+            Grilla.Columns["PrecioPonderado"].DisplayIndex = 7;
+            Grilla.Columns["Rentabilidad"].DisplayIndex = 8;
+            Grilla.Columns["PrecioVenta"].DisplayIndex = 9;
+
+        }
+
+        public void AjustarOrdenGridViewVentas(DataGridView Grilla)
         {
             Grilla.Columns["Linea"].DisplayIndex = 0;
             Grilla.Columns["Producto"].DisplayIndex = 1;
@@ -174,6 +189,7 @@ namespace Negocio
             Grilla.Columns["PrecioMinorista"].DisplayIndex = 5;
             Grilla.Columns["PrecioMayorista"].DisplayIndex = 6;
         }
+
 
         public object DefinirEntidadaFiltrar(Panel panelContenedor, Label lblNombreFormulario) {
 
@@ -228,6 +244,33 @@ namespace Negocio
             }
 
             return PrecioNeto;
+        }
+
+        public decimal CalcularPrecioPonderado(Producto unProductoComprado, DetalleCompra unDetalleCompra) {
+
+            return ((unProductoComprado.PrecioCosto * unProductoComprado.Stock) + (unDetalleCompra.PrecioBruto * unDetalleCompra.Cantidad)) / (unDetalleCompra.Cantidad + unProductoComprado.Stock);
+        }
+
+        public decimal CalcularPrecioVenta(decimal PrecioBruto, int Rentabilidad) {
+
+            return RedondeoPrecioVenta(Convert.ToInt16(PrecioBruto + (PrecioBruto * Rentabilidad / 100)));
+
+        }
+
+        public decimal RedondeoPrecioVenta(decimal PrecioVenta) {
+
+            int ultimoDigito = (int)PrecioVenta % 10;
+            
+            if (ultimoDigito > 5)
+            {
+                return PrecioVenta += (10 - ultimoDigito);
+            }
+            else if (ultimoDigito < 5 && ultimoDigito != 0) {
+
+                return PrecioVenta += (5 - ultimoDigito);
+            }
+
+            return PrecioVenta;
         }
     }
 }

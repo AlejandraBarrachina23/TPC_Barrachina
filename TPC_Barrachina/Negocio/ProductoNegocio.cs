@@ -168,6 +168,8 @@ namespace Negocio
                         return unProducto;
 
                     }
+                    AccederDatos.CerrarConexion();
+                    AccederDatos.CerrarReader();
                     throw new Exception("No hay stock de ese producto");
                 }
             }

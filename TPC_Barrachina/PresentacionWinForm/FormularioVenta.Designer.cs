@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVenta));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVenta));
             this.pnlCabecera = new System.Windows.Forms.Panel();
-            this.tboxCantidad = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tboxSaldo = new System.Windows.Forms.TextBox();
             this.tboxClientes = new System.Windows.Forms.TextBox();
@@ -47,15 +45,16 @@
             this.tboxNumeroOperacion = new System.Windows.Forms.TextBox();
             this.lblDatosOperacion = new System.Windows.Forms.Label();
             this.lblMetodoPago = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
-            this.tboxCodigoBarra = new System.Windows.Forms.TextBox();
             this.lblFechaEmision = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblNumeroOperacion = new System.Windows.Forms.Label();
+            this.tboxCantidad = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tboxCodigoBarra = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -65,6 +64,9 @@
             this.btnDevolucion = new System.Windows.Forms.Button();
             this.btnMetodoPago = new System.Windows.Forms.Button();
             this.pnlDetalleVenta = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblDescuentoNumerico = new System.Windows.Forms.Label();
             this.lblSubtotalNumerico = new System.Windows.Forms.Label();
@@ -88,9 +90,9 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCompras = new System.Windows.Forms.Label();
-            this.btnBorrar = new System.Windows.Forms.Button();
             this.pnlCabecera.SuspendLayout();
             this.pnlDetalleVenta.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -98,9 +100,7 @@
             // 
             // pnlCabecera
             // 
-            this.pnlCabecera.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pnlCabecera.Controls.Add(this.tboxCantidad);
-            this.pnlCabecera.Controls.Add(this.panel3);
+            this.pnlCabecera.BackColor = System.Drawing.Color.OldLace;
             this.pnlCabecera.Controls.Add(this.panel2);
             this.pnlCabecera.Controls.Add(this.tboxSaldo);
             this.pnlCabecera.Controls.Add(this.tboxClientes);
@@ -111,42 +111,21 @@
             this.pnlCabecera.Controls.Add(this.tboxNumeroOperacion);
             this.pnlCabecera.Controls.Add(this.lblDatosOperacion);
             this.pnlCabecera.Controls.Add(this.lblMetodoPago);
-            this.pnlCabecera.Controls.Add(this.btnBorrar);
-            this.pnlCabecera.Controls.Add(this.btnAgregar);
             this.pnlCabecera.Controls.Add(this.lblSaldo);
             this.pnlCabecera.Controls.Add(this.lblUsuario);
             this.pnlCabecera.Controls.Add(this.lblCliente);
             this.pnlCabecera.Controls.Add(this.lblHora);
-            this.pnlCabecera.Controls.Add(this.tboxCodigoBarra);
             this.pnlCabecera.Controls.Add(this.lblFechaEmision);
-            this.pnlCabecera.Controls.Add(this.label3);
             this.pnlCabecera.Controls.Add(this.lblNumeroOperacion);
-            this.pnlCabecera.Controls.Add(this.label1);
             this.pnlCabecera.Location = new System.Drawing.Point(0, 0);
             this.pnlCabecera.Name = "pnlCabecera";
-            this.pnlCabecera.Size = new System.Drawing.Size(1056, 204);
+            this.pnlCabecera.Size = new System.Drawing.Size(1056, 134);
             this.pnlCabecera.TabIndex = 0;
-            // 
-            // tboxCantidad
-            // 
-            this.tboxCantidad.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCantidad.Location = new System.Drawing.Point(714, 151);
-            this.tboxCantidad.Name = "tboxCantidad";
-            this.tboxCantidad.Size = new System.Drawing.Size(93, 36);
-            this.tboxCantidad.TabIndex = 17;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(3, 130);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1050, 2);
-            this.panel3.TabIndex = 21;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(0, 34);
+            this.panel2.Location = new System.Drawing.Point(0, 39);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1050, 2);
             this.panel2.TabIndex = 21;
@@ -211,7 +190,7 @@
             // 
             this.lblDatosOperacion.AutoSize = true;
             this.lblDatosOperacion.Font = new System.Drawing.Font("Oswald", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosOperacion.Location = new System.Drawing.Point(4, -2);
+            this.lblDatosOperacion.Location = new System.Drawing.Point(5, 1);
             this.lblDatosOperacion.Name = "lblDatosOperacion";
             this.lblDatosOperacion.Size = new System.Drawing.Size(146, 36);
             this.lblDatosOperacion.TabIndex = 9;
@@ -226,23 +205,6 @@
             this.lblMetodoPago.Size = new System.Drawing.Size(79, 17);
             this.lblMetodoPago.TabIndex = 8;
             this.lblMetodoPago.Text = "Método pago:";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
-            this.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(835, 149);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(44, 38);
-            this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblSaldo
             // 
@@ -284,15 +246,6 @@
             this.lblHora.TabIndex = 8;
             this.lblHora.Text = "Hora:";
             // 
-            // tboxCodigoBarra
-            // 
-            this.tboxCodigoBarra.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCodigoBarra.Location = new System.Drawing.Point(281, 151);
-            this.tboxCodigoBarra.Name = "tboxCodigoBarra";
-            this.tboxCodigoBarra.Size = new System.Drawing.Size(360, 36);
-            this.tboxCodigoBarra.TabIndex = 0;
-            this.tboxCodigoBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigoBarra_KeyPress);
-            // 
             // lblFechaEmision
             // 
             this.lblFechaEmision.AutoSize = true;
@@ -302,16 +255,6 @@
             this.lblFechaEmision.Size = new System.Drawing.Size(43, 17);
             this.lblFechaEmision.TabIndex = 8;
             this.lblFechaEmision.Text = "Fecha:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(657, 163);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Cantidad";
             // 
             // lblNumeroOperacion
             // 
@@ -323,11 +266,48 @@
             this.lblNumeroOperacion.TabIndex = 8;
             this.lblNumeroOperacion.Text = "Número Operación:";
             // 
+            // tboxCantidad
+            // 
+            this.tboxCantidad.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxCantidad.Location = new System.Drawing.Point(613, 26);
+            this.tboxCantidad.Name = "tboxCantidad";
+            this.tboxCantidad.Size = new System.Drawing.Size(93, 36);
+            this.tboxCantidad.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(1, -8);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1058, 10);
+            this.panel3.TabIndex = 21;
+            // 
+            // tboxCodigoBarra
+            // 
+            this.tboxCodigoBarra.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxCodigoBarra.Location = new System.Drawing.Point(180, 26);
+            this.tboxCodigoBarra.Name = "tboxCodigoBarra";
+            this.tboxCodigoBarra.Size = new System.Drawing.Size(360, 36);
+            this.tboxCodigoBarra.TabIndex = 0;
+            this.tboxCodigoBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCodigoBarra_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(556, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Cantidad";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(180, 161);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(79, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 17);
             this.label1.TabIndex = 10;
@@ -342,10 +322,10 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancelar.Location = new System.Drawing.Point(905, 8);
+            this.btnCancelar.Location = new System.Drawing.Point(923, 18);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 60);
-            this.btnCancelar.TabIndex = 11;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -360,10 +340,10 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAceptar.Location = new System.Drawing.Point(799, 8);
+            this.btnAceptar.Location = new System.Drawing.Point(817, 18);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 60);
-            this.btnAceptar.TabIndex = 10;
+            this.btnAceptar.TabIndex = 11;
             this.btnAceptar.Text = "ACEPTAR";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -381,7 +361,7 @@
             this.btnCierreCaja.Location = new System.Drawing.Point(1, 272);
             this.btnCierreCaja.Name = "btnCierreCaja";
             this.btnCierreCaja.Size = new System.Drawing.Size(100, 60);
-            this.btnCierreCaja.TabIndex = 13;
+            this.btnCierreCaja.TabIndex = 7;
             this.btnCierreCaja.Text = "CIERRE CAJA";
             this.btnCierreCaja.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCierreCaja.UseVisualStyleBackColor = false;
@@ -399,7 +379,7 @@
             this.btnRetiroDinero.Location = new System.Drawing.Point(3, 207);
             this.btnRetiroDinero.Name = "btnRetiroDinero";
             this.btnRetiroDinero.Size = new System.Drawing.Size(100, 60);
-            this.btnRetiroDinero.TabIndex = 12;
+            this.btnRetiroDinero.TabIndex = 6;
             this.btnRetiroDinero.Text = "RETIRO DINERO";
             this.btnRetiroDinero.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRetiroDinero.UseVisualStyleBackColor = false;
@@ -418,7 +398,7 @@
             this.btnAgregarCliente.Location = new System.Drawing.Point(1, 107);
             this.btnAgregarCliente.Name = "btnAgregarCliente";
             this.btnAgregarCliente.Size = new System.Drawing.Size(100, 60);
-            this.btnAgregarCliente.TabIndex = 9;
+            this.btnAgregarCliente.TabIndex = 5;
             this.btnAgregarCliente.Text = "CLIENTES";
             this.btnAgregarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarCliente.UseVisualStyleBackColor = false;
@@ -455,7 +435,7 @@
             this.btnMetodoPago.Location = new System.Drawing.Point(3, 339);
             this.btnMetodoPago.Name = "btnMetodoPago";
             this.btnMetodoPago.Size = new System.Drawing.Size(100, 60);
-            this.btnMetodoPago.TabIndex = 9;
+            this.btnMetodoPago.TabIndex = 8;
             this.btnMetodoPago.Text = "METODO PAGO";
             this.btnMetodoPago.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMetodoPago.UseVisualStyleBackColor = false;
@@ -464,6 +444,7 @@
             // pnlDetalleVenta
             // 
             this.pnlDetalleVenta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlDetalleVenta.Controls.Add(this.panel4);
             this.pnlDetalleVenta.Controls.Add(this.pnlCabecera);
             this.pnlDetalleVenta.Controls.Add(this.panel7);
             this.pnlDetalleVenta.Controls.Add(this.dgvDetalleVenta);
@@ -472,9 +453,61 @@
             this.pnlDetalleVenta.Size = new System.Drawing.Size(1050, 593);
             this.pnlDetalleVenta.TabIndex = 2;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.panel4.Controls.Add(this.btnBorrar);
+            this.panel4.Controls.Add(this.btnAgregar);
+            this.panel4.Controls.Add(this.panel3);
+            this.panel4.Controls.Add(this.tboxCantidad);
+            this.panel4.Controls.Add(this.tboxCodigoBarra);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Location = new System.Drawing.Point(0, 133);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1056, 87);
+            this.panel4.TabIndex = 18;
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnBorrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBorrar.FlatAppearance.BorderSize = 0;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrar.ForeColor = System.Drawing.Color.White;
+            this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
+            this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBorrar.Location = new System.Drawing.Point(836, 11);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(60, 60);
+            this.btnBorrar.TabIndex = 3;
+            this.btnBorrar.Text = "borrar";
+            this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregar.Location = new System.Drawing.Point(770, 11);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(60, 60);
+            this.btnAgregar.TabIndex = 2;
+            this.btnAgregar.Text = "agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
             this.panel7.Controls.Add(this.btnCancelar);
             this.panel7.Controls.Add(this.lblDescuentoNumerico);
             this.panel7.Controls.Add(this.btnAceptar);
@@ -483,16 +516,17 @@
             this.panel7.Controls.Add(this.lblTotalFactura);
             this.panel7.Controls.Add(this.lblDescuento);
             this.panel7.Controls.Add(this.lblSubtotal);
-            this.panel7.Location = new System.Drawing.Point(18, 503);
+            this.panel7.Location = new System.Drawing.Point(0, 503);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1018, 78);
+            this.panel7.Size = new System.Drawing.Size(1050, 90);
             this.panel7.TabIndex = 3;
             // 
             // lblDescuentoNumerico
             // 
             this.lblDescuentoNumerico.AutoSize = true;
             this.lblDescuentoNumerico.Font = new System.Drawing.Font("Bebas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescuentoNumerico.Location = new System.Drawing.Point(175, 43);
+            this.lblDescuentoNumerico.ForeColor = System.Drawing.Color.White;
+            this.lblDescuentoNumerico.Location = new System.Drawing.Point(193, 46);
             this.lblDescuentoNumerico.Name = "lblDescuentoNumerico";
             this.lblDescuentoNumerico.Size = new System.Drawing.Size(44, 25);
             this.lblDescuentoNumerico.TabIndex = 11;
@@ -502,7 +536,8 @@
             // 
             this.lblSubtotalNumerico.AutoSize = true;
             this.lblSubtotalNumerico.Font = new System.Drawing.Font("Bebas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtotalNumerico.Location = new System.Drawing.Point(175, 15);
+            this.lblSubtotalNumerico.ForeColor = System.Drawing.Color.White;
+            this.lblSubtotalNumerico.Location = new System.Drawing.Point(193, 18);
             this.lblSubtotalNumerico.Name = "lblSubtotalNumerico";
             this.lblSubtotalNumerico.Size = new System.Drawing.Size(44, 25);
             this.lblSubtotalNumerico.TabIndex = 11;
@@ -512,7 +547,8 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Bebas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(668, 8);
+            this.label38.ForeColor = System.Drawing.Color.White;
+            this.label38.Location = new System.Drawing.Point(686, 18);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(46, 19);
             this.label38.TabIndex = 10;
@@ -522,7 +558,8 @@
             // 
             this.lblTotalFactura.AutoSize = true;
             this.lblTotalFactura.Font = new System.Drawing.Font("Bebas", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalFactura.Location = new System.Drawing.Point(642, 25);
+            this.lblTotalFactura.ForeColor = System.Drawing.Color.White;
+            this.lblTotalFactura.Location = new System.Drawing.Point(660, 35);
             this.lblTotalFactura.Name = "lblTotalFactura";
             this.lblTotalFactura.Size = new System.Drawing.Size(91, 42);
             this.lblTotalFactura.TabIndex = 10;
@@ -531,26 +568,29 @@
             // lblDescuento
             // 
             this.lblDescuento.AutoSize = true;
-            this.lblDescuento.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescuento.Location = new System.Drawing.Point(30, 46);
+            this.lblDescuento.Font = new System.Drawing.Font("Oswald", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescuento.ForeColor = System.Drawing.Color.White;
+            this.lblDescuento.Location = new System.Drawing.Point(48, 49);
             this.lblDescuento.Name = "lblDescuento";
-            this.lblDescuento.Size = new System.Drawing.Size(79, 21);
+            this.lblDescuento.Size = new System.Drawing.Size(84, 21);
             this.lblDescuento.TabIndex = 10;
-            this.lblDescuento.Text = "Descuento";
+            this.lblDescuento.Text = "DESCUENTO";
             // 
             // lblSubtotal
             // 
             this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Font = new System.Drawing.Font("Oswald", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtotal.Location = new System.Drawing.Point(30, 15);
+            this.lblSubtotal.Font = new System.Drawing.Font("Oswald", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtotal.ForeColor = System.Drawing.Color.White;
+            this.lblSubtotal.Location = new System.Drawing.Point(48, 18);
             this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(66, 21);
+            this.lblSubtotal.Size = new System.Drawing.Size(75, 21);
             this.lblSubtotal.TabIndex = 10;
-            this.lblSubtotal.Text = "Subtotal";
+            this.lblSubtotal.Text = "SUBTOTAL";
             // 
             // dgvDetalleVenta
             // 
             this.dgvDetalleVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDetalleVenta.BackgroundColor = System.Drawing.Color.OldLace;
             this.dgvDetalleVenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -571,7 +611,8 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDetalleVenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetalleVenta.EnableHeadersVisualStyles = false;
-            this.dgvDetalleVenta.Location = new System.Drawing.Point(16, 210);
+            this.dgvDetalleVenta.GridColor = System.Drawing.Color.OldLace;
+            this.dgvDetalleVenta.Location = new System.Drawing.Point(0, 213);
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -586,7 +627,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
             this.dgvDetalleVenta.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetalleVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleVenta.Size = new System.Drawing.Size(1018, 287);
+            this.dgvDetalleVenta.Size = new System.Drawing.Size(1053, 292);
             this.dgvDetalleVenta.TabIndex = 16;
             // 
             // panel5
@@ -669,7 +710,7 @@
             this.button1.Location = new System.Drawing.Point(3, 487);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 60);
-            this.button1.TabIndex = 19;
+            this.button1.TabIndex = 10;
             this.button1.Text = "LOG OUT";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
@@ -752,23 +793,6 @@
             this.lblCompras.TabIndex = 1;
             this.lblCompras.Text = "CAJA";
             // 
-            // btnBorrar
-            // 
-            this.btnBorrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnBorrar.FlatAppearance.BorderSize = 0;
-            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
-            this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBorrar.Location = new System.Drawing.Point(898, 149);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(44, 38);
-            this.btnBorrar.TabIndex = 2;
-            this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBorrar.UseVisualStyleBackColor = false;
-            this.btnBorrar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // FormularioVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -785,6 +809,8 @@
             this.pnlCabecera.ResumeLayout(false);
             this.pnlCabecera.PerformLayout();
             this.pnlDetalleVenta.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).EndInit();
@@ -825,7 +851,6 @@
         private System.Windows.Forms.Timer HoraActual;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panel9;
@@ -849,6 +874,8 @@
         private System.Windows.Forms.TextBox tboxFechaEmision;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox tboxCantidad;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBorrar;
     }
 }
