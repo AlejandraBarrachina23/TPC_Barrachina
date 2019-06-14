@@ -39,6 +39,13 @@ namespace AccesoDatos
             comandoSQL.CommandText = consulta;
         }
 
+        public void DefinirProcedimientoAlmacenado(string procedimeintoAlmacenado)
+        {
+            comandoSQL = new SqlCommand();
+            comandoSQL.CommandType = System.Data.CommandType.StoredProcedure;
+            comandoSQL.CommandText = procedimeintoAlmacenado;
+        }
+
         public void AbrirConexion()
         {
 

@@ -21,7 +21,7 @@ namespace PresentacionWinForm
             InitializeComponent();
         }
 
-        private List<DetalleVenta> Detalles = new List<DetalleVenta>();
+        private List<DetalleVenta> ListadoDetalle = new List<DetalleVenta>();
         private int CuentaLineas = 1;
         private decimal Subtotal = 0;
         private decimal Descuento = 0;
@@ -141,7 +141,7 @@ namespace PresentacionWinForm
                 DetalleVentaNegocio unDetalleVentaNegocio = new DetalleVentaNegocio();
                 ProductoNegocio unProductoVendido = new ProductoNegocio();
                 Producto unProducto = unProductoVendido.BusquedaProducto(tboxCodigoBarra.Text);
-                unDetalleVentaNegocio.ControlStock(Detalles, unProducto, Convert.ToInt32(tboxCantidad.Text));
+                unDetalleVentaNegocio.ControlStock(ListadoDetalle, unProducto, Convert.ToInt32(tboxCantidad.Text));
                 Validar.MaximoValor(unProducto.Stock, "Stock", Convert.ToInt32(tboxCantidad.Text));
 
                 dgvDetalleVenta.DataSource = null;
@@ -155,9 +155,9 @@ namespace PresentacionWinForm
                 unDetalleVenta.Subtotal = (unDetalleVenta.Unidades * unDetalleVenta.PrecioMinorista) + ((unDetalleVenta.Bultos * unProducto.CantidadxBulto) * unDetalleVenta.PrecioMayorista);
 
                 tboxCodigoBarra.Clear();
-                Detalles.Add(unDetalleVenta);
+                ListadoDetalle.Add(unDetalleVenta);
 
-                dgvDetalleVenta.DataSource = Detalles;
+                dgvDetalleVenta.DataSource = ListadoDetalle;
                 Utilidades.AjustarOrdenGridViewVentas(dgvDetalleVenta);
                 dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
                 
@@ -201,13 +201,14 @@ namespace PresentacionWinForm
                 unaCabeceraVenta.Cliente.CodigoCliente = unCliente.CodigoCliente;
             }
 
+          
             unaCabeceraVenta.Total = Convert.ToDouble(lblTotalFactura.Text);
             unaCabeceraVenta.MetodoPago = tboxMetodoPago.Text;
                 
             unaCabeceraVentaNegocio.AgregarCabeceraVenta(unaCabeceraVenta);
 
             
-            foreach (DetalleVenta unDetalleVenta in Detalles)
+            foreach (DetalleVenta unDetalleVenta in ListadoDetalle)
             {
                 unDetallVentaNegocio.AgregarDetalleVenta(unDetalleVenta,unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta());
             }
@@ -215,9 +216,19 @@ namespace PresentacionWinForm
             CuentaLineas = 1;
             Subtotal = Descuento = 0;
             dgvDetalleVenta.DataSource = null;
-            Detalles.Clear();
+            ListadoDetalle.Clear();
             
             tboxNumeroOperacion.Text = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta().ToString();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            int unDetalleSeleccionado = dgvDetalleVenta.CurrentRow.Index;
+            ListadoDetalle.RemoveAt(unDetalleSeleccionado);
+            dgvDetalleVenta.DataSource = null;
+            dgvDetalleVenta.DataSource = ListadoDetalle;
+            dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
+            Utilidades.AjustarOrdenGridViewVentas(dgvDetalleVenta);
         }
     }
 }

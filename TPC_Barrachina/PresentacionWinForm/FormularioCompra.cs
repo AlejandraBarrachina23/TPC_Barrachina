@@ -60,8 +60,9 @@ namespace PresentacionWinForm
         {
             try
             {
-                dgvDetalleCompra.DataSource = null;
+                
                 unProductoComprado = unProductoNegocio.BusquedaProducto(tboxCodigoBarra.Text);
+                dgvDetalleCompra.DataSource = null;
                 unDetalleCompra.Linea = CuentaLinea;
                 unDetalleCompra.Producto = unProductoComprado;
                 unDetalleCompra.Cantidad = Convert.ToInt32(tboxCantidad.Text);
