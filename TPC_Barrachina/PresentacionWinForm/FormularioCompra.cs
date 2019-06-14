@@ -91,6 +91,7 @@ namespace PresentacionWinForm
                 tboxCodigoBarra.Clear();
                 tboxCantidad.Clear();
                 tboxPrecioUnitario.Clear();
+                CuentaLinea++;
             }
             catch (Exception Excepcion)
             {
@@ -103,6 +104,8 @@ namespace PresentacionWinForm
         {
             Proveedor ProveedorSeleccionado = (Proveedor)cboxProveedor.SelectedItem;
             ListadoImpuestos = unImpuestoNegocio.ListarImpuestosxProveedor(ProveedorSeleccionado.CodigoProveedor);
+            dgvDetalleCompra.DataSource = null;
+            ListadoDetalleCompra.Clear();
             //dgvImpuestos.DataSource = ListadoImpuestos;
         }
 
@@ -123,11 +126,24 @@ namespace PresentacionWinForm
             try
             {
                 DetalleCompraNegocio unDetalleCompraNegocio = new DetalleCompraNegocio();
-
+                CabeceraCompraNegocio unaCabeceraCompraNegocio = new CabeceraCompraNegocio();
+                Proveedor ProveedorSeleccionado = new Proveedor();
+                ProveedorSeleccionado = (Proveedor)cboxProveedor.SelectedItem;
+                CabeceraCompra unaCabeceraCompra = new CabeceraCompra();
+                unaCabeceraCompra.Proveedor = ProveedorSeleccionado;
+                unaCabeceraCompraNegocio.AgregarCabeceraCompra(unaCabeceraCompra);
                 foreach (DetalleCompra unDetalleCompra in ListadoDetalleCompra)
                 {
-                    unDetalleCompraNegocio.AgregarDetalleCompra(unDetalleCompra);
+                    unDetalleCompraNegocio.AgregarDetalleCompra(unDetalleCompra, unaCabeceraCompraNegocio.CuentaFilasCabeceraCompra());
                 }
+
+                CuentaLinea = 1;
+                ListadoDetalleCompra.Clear();
+                dgvDetalleCompra.DataSource = null;
+                tboxCodigoBarra.Clear();
+                tboxCantidad.Clear();
+                tboxPrecioUnitario.Clear();
+                tboxNumeroOperacion.Text = (unaCabeceraCompraNegocio.CuentaFilasCabeceraCompra()+1).ToString();
 
             }
             catch (Exception Excepcion)
@@ -136,6 +152,12 @@ namespace PresentacionWinForm
                 MessageBox.Show(Excepcion.Message);
             }
             
+        }
+
+        private void SeleccionarProducto(Producto unProducto)
+        {
+
+            tboxCodigoBarra.Text = unProducto.CodigoProducto;
         }
 
         void AsignarSoloNumeros(object sender, KeyPressEventArgs e)
@@ -156,6 +178,14 @@ namespace PresentacionWinForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnBusqueda_Click_1(object sender, EventArgs e)
+        {
+            FormularioBusqueda BusquedaProducto = new FormularioBusqueda("Productos", "Formulario Venta");
+            BusquedaProducto.SeleccionarProducto += new FormularioBusqueda.ElegirProducto(SeleccionarProducto);
+            BusquedaProducto.MdiParent = this.MdiParent;
+            BusquedaProducto.Show();
         }
     }
 }

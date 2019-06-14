@@ -16,7 +16,7 @@ namespace Negocio
 
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("INSERT INTO Ventas (Usuario,Cliente,Total,MetodoPago) VALUES ('" + unaNuevaCabeceraVenta.Usuario.Nombre + "','" + unaNuevaCabeceraVenta.Cliente.CodigoCliente + "','" +
-                unaNuevaCabeceraVenta.Total + "','"+ unaNuevaCabeceraVenta.MetodoPago+ "')");
+            unaNuevaCabeceraVenta.Total + "','"+ unaNuevaCabeceraVenta.MetodoPago+ "')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
         }

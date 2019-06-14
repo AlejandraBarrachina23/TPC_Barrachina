@@ -16,7 +16,7 @@ namespace Negocio
         {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("INSERT INTO Compras (Usuario,Proveedor) VALUES ('" + 0 + "','" + unaNuevaCabeceraCompra.Proveedor.CodigoProveedor + "','" + "')");
+            AccederDatos.DefinirTipoComando("INSERT INTO Compras (Usuario,Proveedor) VALUES ('" + 0 + "','" + unaNuevaCabeceraCompra.Proveedor.CodigoProveedor +"')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
         }

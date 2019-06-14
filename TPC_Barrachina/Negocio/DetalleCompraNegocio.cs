@@ -12,13 +12,22 @@ namespace Negocio
     {
         AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
 
-        public void AgregarDetalleCompra(DetalleCompra unDetalleCompra) {
+        public void AgregarDetalleCompra(DetalleCompra unDetalleCompra, int NumeroFactura)
+        {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("INSERT INTO DetalleCompras (NumeroLinea,CodigoProducto,Cantidad,PrecioCosto,PrecioVenta,Rentabilidad) VALUES ('" + unDetalleCompra.Linea + "','" + unDetalleCompra.Producto.CodigoProducto + "','" + unDetalleCompra.Cantidad +
-                "','" + unDetalleCompra.PrecioBruto + "','" + unDetalleCompra.PrecioVenta + "','" + unDetalleCompra.Rentabilidad+"')");
+            AccederDatos.DefinirProcedimientoAlmacenado("SP_CargarDetallaCompra");
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@NumeroFactura", NumeroFactura);
+            AccederDatos.Comando.Parameters.AddWithValue("@NumeroLinea", unDetalleCompra.Linea);
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoProducto", unDetalleCompra.Producto.CodigoProducto);
+            AccederDatos.Comando.Parameters.AddWithValue("@Cantidad", unDetalleCompra.Cantidad);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioCosto", unDetalleCompra.PrecioBruto);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioVenta", unDetalleCompra.PrecioVenta);
+            AccederDatos.Comando.Parameters.AddWithValue("@Rentabilidad", unDetalleCompra.Rentabilidad);
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
+
         }
     }
 }

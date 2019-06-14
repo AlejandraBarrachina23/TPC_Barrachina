@@ -195,6 +195,7 @@ namespace PresentacionWinForm
             unaCabeceraVenta.Cliente = new Cliente();
             CabeceraVentaNegocio unaCabeceraVentaNegocio = new CabeceraVentaNegocio();
             DetalleVentaNegocio unDetallVentaNegocio = new DetalleVentaNegocio();
+
             unaCabeceraVenta.Usuario.CodigoUsuario = 1;
 
             if (unCliente != null) {

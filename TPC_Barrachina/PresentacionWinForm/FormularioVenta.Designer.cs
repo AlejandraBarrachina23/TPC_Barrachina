@@ -478,7 +478,7 @@
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBorrar.Location = new System.Drawing.Point(836, 11);
+            this.btnBorrar.Location = new System.Drawing.Point(835, 14);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(60, 60);
             this.btnBorrar.TabIndex = 3;
@@ -497,7 +497,7 @@
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(770, 11);
+            this.btnAgregar.Location = new System.Drawing.Point(769, 14);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(60, 60);
             this.btnAgregar.TabIndex = 2;
