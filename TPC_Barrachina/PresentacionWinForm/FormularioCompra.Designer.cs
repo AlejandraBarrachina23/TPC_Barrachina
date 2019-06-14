@@ -30,11 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlFooter = new System.Windows.Forms.Panel();
+            this.label38 = new System.Windows.Forms.Label();
+            this.lblTotalFactura = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblTotalBruto = new System.Windows.Forms.Label();
@@ -43,23 +45,6 @@
             this.cboxProveedor = new System.Windows.Forms.ComboBox();
             this.dgvDetalleCompra = new System.Windows.Forms.DataGridView();
             this.pnlDetalleCompra = new System.Windows.Forms.Panel();
-            this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tboxUsuario = new System.Windows.Forms.TextBox();
-            this.tboxHora = new System.Windows.Forms.TextBox();
-            this.tboxFechaEmision = new System.Windows.Forms.TextBox();
-            this.tboxNumeroOperacion = new System.Windows.Forms.TextBox();
-            this.lblDescuento = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.tboxDescuento = new System.Windows.Forms.TextBox();
-            this.lblDatosOperacion = new System.Windows.Forms.Label();
-            this.lblProveedor = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblHora = new System.Windows.Forms.Label();
-            this.tboxPrecioUnitario = new System.Windows.Forms.TextBox();
-            this.lblFechaEmision = new System.Windows.Forms.Label();
-            this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -69,14 +54,29 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnBusqueda = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.tboxCantidad = new System.Windows.Forms.TextBox();
             this.tboxCodigoBarra = new System.Windows.Forms.TextBox();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblCodigoProducto = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.lblTotalFactura = new System.Windows.Forms.Label();
+            this.tboxPrecioUnitario = new System.Windows.Forms.TextBox();
+            this.lblDescuento = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.tboxDescuento = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tboxUsuario = new System.Windows.Forms.TextBox();
+            this.tboxHora = new System.Windows.Forms.TextBox();
+            this.tboxFechaEmision = new System.Windows.Forms.TextBox();
+            this.tboxNumeroOperacion = new System.Windows.Forms.TextBox();
+            this.lblDatosOperacion = new System.Windows.Forms.Label();
+            this.lblProveedor = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblFechaEmision = new System.Windows.Forms.Label();
+            this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.HoraActual = new System.Windows.Forms.Timer(this.components);
             this.pnlFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleCompra)).BeginInit();
@@ -99,6 +99,28 @@
             this.pnlFooter.Name = "pnlFooter";
             this.pnlFooter.Size = new System.Drawing.Size(1054, 98);
             this.pnlFooter.TabIndex = 13;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Bebas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.ForeColor = System.Drawing.Color.White;
+            this.label38.Location = new System.Drawing.Point(719, 20);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(46, 19);
+            this.label38.TabIndex = 14;
+            this.label38.Text = "TOTAL";
+            // 
+            // lblTotalFactura
+            // 
+            this.lblTotalFactura.AutoSize = true;
+            this.lblTotalFactura.Font = new System.Drawing.Font("Bebas", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFactura.ForeColor = System.Drawing.Color.White;
+            this.lblTotalFactura.Location = new System.Drawing.Point(693, 37);
+            this.lblTotalFactura.Name = "lblTotalFactura";
+            this.lblTotalFactura.Size = new System.Drawing.Size(91, 42);
+            this.lblTotalFactura.TabIndex = 15;
+            this.lblTotalFactura.Text = "$0.00";
             // 
             // btnCancelar
             // 
@@ -181,39 +203,40 @@
             this.dgvDetalleCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDetalleCompra.BackgroundColor = System.Drawing.Color.OldLace;
             this.dgvDetalleCompra.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvDetalleCompra.ColumnHeadersHeight = 35;
             this.dgvDetalleCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Oswald Regular", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleCompra.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Oswald Regular", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleCompra.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvDetalleCompra.EnableHeadersVisualStyles = false;
             this.dgvDetalleCompra.Location = new System.Drawing.Point(0, 188);
             this.dgvDetalleCompra.Name = "dgvDetalleCompra";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleCompra.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvDetalleCompra.ReadOnly = true;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleCompra.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvDetalleCompra.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.dgvDetalleCompra.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.dgvDetalleCompra.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDetalleCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleCompra.Size = new System.Drawing.Size(1054, 309);
             this.dgvDetalleCompra.TabIndex = 24;
@@ -221,6 +244,7 @@
             // pnlDetalleCompra
             // 
             this.pnlDetalleCompra.BackColor = System.Drawing.Color.OldLace;
+            this.pnlDetalleCompra.Controls.Add(this.dgvDetalleCompra);
             this.pnlDetalleCompra.Controls.Add(this.pnlFooter);
             this.pnlDetalleCompra.Controls.Add(this.panelMenu);
             this.pnlDetalleCompra.Controls.Add(this.panel3);
@@ -237,186 +261,10 @@
             this.pnlDetalleCompra.Controls.Add(this.lblHora);
             this.pnlDetalleCompra.Controls.Add(this.lblFechaEmision);
             this.pnlDetalleCompra.Controls.Add(this.lblNumeroOperacion);
-            this.pnlDetalleCompra.Controls.Add(this.dgvDetalleCompra);
             this.pnlDetalleCompra.Location = new System.Drawing.Point(0, 1);
             this.pnlDetalleCompra.Name = "pnlDetalleCompra";
             this.pnlDetalleCompra.Size = new System.Drawing.Size(1161, 593);
             this.pnlDetalleCompra.TabIndex = 12;
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.btnBorrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBorrar.FlatAppearance.BorderSize = 0;
-            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.ForeColor = System.Drawing.Color.White;
-            this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
-            this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBorrar.Location = new System.Drawing.Point(962, 10);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(60, 60);
-            this.btnBorrar.TabIndex = 42;
-            this.btnBorrar.Text = "borrar";
-            this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBorrar.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAgregar.Location = new System.Drawing.Point(892, 10);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(60, 60);
-            this.btnAgregar.TabIndex = 41;
-            this.btnAgregar.Text = "agregar";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(2, 42);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1154, 2);
-            this.panel2.TabIndex = 40;
-            // 
-            // tboxUsuario
-            // 
-            this.tboxUsuario.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxUsuario.Location = new System.Drawing.Point(689, 64);
-            this.tboxUsuario.Name = "tboxUsuario";
-            this.tboxUsuario.Size = new System.Drawing.Size(130, 25);
-            this.tboxUsuario.TabIndex = 36;
-            // 
-            // tboxHora
-            // 
-            this.tboxHora.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxHora.Location = new System.Drawing.Point(491, 64);
-            this.tboxHora.Name = "tboxHora";
-            this.tboxHora.Size = new System.Drawing.Size(130, 25);
-            this.tboxHora.TabIndex = 37;
-            // 
-            // tboxFechaEmision
-            // 
-            this.tboxFechaEmision.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxFechaEmision.Location = new System.Drawing.Point(308, 64);
-            this.tboxFechaEmision.Name = "tboxFechaEmision";
-            this.tboxFechaEmision.Size = new System.Drawing.Size(130, 25);
-            this.tboxFechaEmision.TabIndex = 38;
-            // 
-            // tboxNumeroOperacion
-            // 
-            this.tboxNumeroOperacion.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNumeroOperacion.Location = new System.Drawing.Point(126, 64);
-            this.tboxNumeroOperacion.Name = "tboxNumeroOperacion";
-            this.tboxNumeroOperacion.Size = new System.Drawing.Size(130, 25);
-            this.tboxNumeroOperacion.TabIndex = 39;
-            // 
-            // lblDescuento
-            // 
-            this.lblDescuento.AutoSize = true;
-            this.lblDescuento.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescuento.ForeColor = System.Drawing.Color.White;
-            this.lblDescuento.Location = new System.Drawing.Point(715, 30);
-            this.lblDescuento.Name = "lblDescuento";
-            this.lblDescuento.Size = new System.Drawing.Size(68, 17);
-            this.lblDescuento.TabIndex = 21;
-            this.lblDescuento.Text = "Descuento:";
-            // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.ForeColor = System.Drawing.Color.White;
-            this.lblPrecio.Location = new System.Drawing.Point(506, 30);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(87, 17);
-            this.lblPrecio.TabIndex = 21;
-            this.lblPrecio.Text = "Precio Unitario";
-            // 
-            // tboxDescuento
-            // 
-            this.tboxDescuento.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxDescuento.Location = new System.Drawing.Point(789, 18);
-            this.tboxDescuento.Name = "tboxDescuento";
-            this.tboxDescuento.Size = new System.Drawing.Size(86, 36);
-            this.tboxDescuento.TabIndex = 23;
-            // 
-            // lblDatosOperacion
-            // 
-            this.lblDatosOperacion.AutoSize = true;
-            this.lblDatosOperacion.Font = new System.Drawing.Font("Oswald", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosOperacion.Location = new System.Drawing.Point(1, 3);
-            this.lblDatosOperacion.Name = "lblDatosOperacion";
-            this.lblDatosOperacion.Size = new System.Drawing.Size(168, 36);
-            this.lblDatosOperacion.TabIndex = 32;
-            this.lblDatosOperacion.Text = "Datos Compra";
-            // 
-            // lblProveedor
-            // 
-            this.lblProveedor.AutoSize = true;
-            this.lblProveedor.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedor.Location = new System.Drawing.Point(825, 67);
-            this.lblProveedor.Name = "lblProveedor";
-            this.lblProveedor.Size = new System.Drawing.Size(65, 17);
-            this.lblProveedor.TabIndex = 25;
-            this.lblProveedor.Text = "Proveedor:";
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(630, 68);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(52, 17);
-            this.lblUsuario.TabIndex = 27;
-            this.lblUsuario.Text = "Usuario:";
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(447, 68);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(37, 17);
-            this.lblHora.TabIndex = 29;
-            this.lblHora.Text = "Hora:";
-            // 
-            // tboxPrecioUnitario
-            // 
-            this.tboxPrecioUnitario.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPrecioUnitario.Location = new System.Drawing.Point(599, 18);
-            this.tboxPrecioUnitario.Name = "tboxPrecioUnitario";
-            this.tboxPrecioUnitario.Size = new System.Drawing.Size(108, 36);
-            this.tboxPrecioUnitario.TabIndex = 23;
-            // 
-            // lblFechaEmision
-            // 
-            this.lblFechaEmision.AutoSize = true;
-            this.lblFechaEmision.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEmision.Location = new System.Drawing.Point(262, 68);
-            this.lblFechaEmision.Name = "lblFechaEmision";
-            this.lblFechaEmision.Size = new System.Drawing.Size(43, 17);
-            this.lblFechaEmision.TabIndex = 30;
-            this.lblFechaEmision.Text = "Fecha:";
-            // 
-            // lblNumeroOperacion
-            // 
-            this.lblNumeroOperacion.AutoSize = true;
-            this.lblNumeroOperacion.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroOperacion.Location = new System.Drawing.Point(17, 68);
-            this.lblNumeroOperacion.Name = "lblNumeroOperacion";
-            this.lblNumeroOperacion.Size = new System.Drawing.Size(110, 17);
-            this.lblNumeroOperacion.TabIndex = 31;
-            this.lblNumeroOperacion.Text = "Número Operación:";
             // 
             // panelMenu
             // 
@@ -532,6 +380,14 @@
             this.btnAgregarCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAgregarCliente.UseVisualStyleBackColor = false;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(1, 113);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1053, 2);
+            this.panel3.TabIndex = 21;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
@@ -550,13 +406,42 @@
             this.panel4.Size = new System.Drawing.Size(1053, 73);
             this.panel4.TabIndex = 44;
             // 
-            // panel3
+            // btnAgregar
             // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(1, 113);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1053, 2);
-            this.panel3.TabIndex = 21;
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAgregar.Location = new System.Drawing.Point(892, 10);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(60, 60);
+            this.btnAgregar.TabIndex = 41;
+            this.btnAgregar.Text = "agregar";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnBorrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBorrar.FlatAppearance.BorderSize = 0;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrar.ForeColor = System.Drawing.Color.White;
+            this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
+            this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBorrar.Location = new System.Drawing.Point(962, 10);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(60, 60);
+            this.btnBorrar.TabIndex = 42;
+            this.btnBorrar.Text = "borrar";
+            this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBorrar.UseVisualStyleBackColor = false;
             // 
             // tboxCantidad
             // 
@@ -596,27 +481,144 @@
             this.lblCodigoProducto.TabIndex = 10;
             this.lblCodigoProducto.Text = "Código Producto";
             // 
-            // label38
+            // tboxPrecioUnitario
             // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Bebas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.ForeColor = System.Drawing.Color.White;
-            this.label38.Location = new System.Drawing.Point(719, 20);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(46, 19);
-            this.label38.TabIndex = 14;
-            this.label38.Text = "TOTAL";
+            this.tboxPrecioUnitario.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxPrecioUnitario.Location = new System.Drawing.Point(599, 18);
+            this.tboxPrecioUnitario.Name = "tboxPrecioUnitario";
+            this.tboxPrecioUnitario.Size = new System.Drawing.Size(108, 36);
+            this.tboxPrecioUnitario.TabIndex = 23;
             // 
-            // lblTotalFactura
+            // lblDescuento
             // 
-            this.lblTotalFactura.AutoSize = true;
-            this.lblTotalFactura.Font = new System.Drawing.Font("Bebas", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalFactura.ForeColor = System.Drawing.Color.White;
-            this.lblTotalFactura.Location = new System.Drawing.Point(693, 37);
-            this.lblTotalFactura.Name = "lblTotalFactura";
-            this.lblTotalFactura.Size = new System.Drawing.Size(91, 42);
-            this.lblTotalFactura.TabIndex = 15;
-            this.lblTotalFactura.Text = "$0.00";
+            this.lblDescuento.AutoSize = true;
+            this.lblDescuento.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescuento.ForeColor = System.Drawing.Color.White;
+            this.lblDescuento.Location = new System.Drawing.Point(715, 30);
+            this.lblDescuento.Name = "lblDescuento";
+            this.lblDescuento.Size = new System.Drawing.Size(68, 17);
+            this.lblDescuento.TabIndex = 21;
+            this.lblDescuento.Text = "Descuento:";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.ForeColor = System.Drawing.Color.White;
+            this.lblPrecio.Location = new System.Drawing.Point(506, 30);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(87, 17);
+            this.lblPrecio.TabIndex = 21;
+            this.lblPrecio.Text = "Precio Unitario";
+            // 
+            // tboxDescuento
+            // 
+            this.tboxDescuento.Font = new System.Drawing.Font("Oswald", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxDescuento.Location = new System.Drawing.Point(789, 18);
+            this.tboxDescuento.Name = "tboxDescuento";
+            this.tboxDescuento.Size = new System.Drawing.Size(86, 36);
+            this.tboxDescuento.TabIndex = 23;
+            this.tboxDescuento.Text = "0";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(2, 42);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1154, 2);
+            this.panel2.TabIndex = 40;
+            // 
+            // tboxUsuario
+            // 
+            this.tboxUsuario.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxUsuario.Location = new System.Drawing.Point(689, 64);
+            this.tboxUsuario.Name = "tboxUsuario";
+            this.tboxUsuario.Size = new System.Drawing.Size(130, 25);
+            this.tboxUsuario.TabIndex = 36;
+            // 
+            // tboxHora
+            // 
+            this.tboxHora.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxHora.Location = new System.Drawing.Point(491, 64);
+            this.tboxHora.Name = "tboxHora";
+            this.tboxHora.Size = new System.Drawing.Size(130, 25);
+            this.tboxHora.TabIndex = 37;
+            // 
+            // tboxFechaEmision
+            // 
+            this.tboxFechaEmision.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxFechaEmision.Location = new System.Drawing.Point(308, 64);
+            this.tboxFechaEmision.Name = "tboxFechaEmision";
+            this.tboxFechaEmision.Size = new System.Drawing.Size(130, 25);
+            this.tboxFechaEmision.TabIndex = 38;
+            // 
+            // tboxNumeroOperacion
+            // 
+            this.tboxNumeroOperacion.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxNumeroOperacion.Location = new System.Drawing.Point(126, 64);
+            this.tboxNumeroOperacion.Name = "tboxNumeroOperacion";
+            this.tboxNumeroOperacion.Size = new System.Drawing.Size(130, 25);
+            this.tboxNumeroOperacion.TabIndex = 39;
+            // 
+            // lblDatosOperacion
+            // 
+            this.lblDatosOperacion.AutoSize = true;
+            this.lblDatosOperacion.Font = new System.Drawing.Font("Oswald", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatosOperacion.Location = new System.Drawing.Point(1, 3);
+            this.lblDatosOperacion.Name = "lblDatosOperacion";
+            this.lblDatosOperacion.Size = new System.Drawing.Size(168, 36);
+            this.lblDatosOperacion.TabIndex = 32;
+            this.lblDatosOperacion.Text = "Datos Compra";
+            // 
+            // lblProveedor
+            // 
+            this.lblProveedor.AutoSize = true;
+            this.lblProveedor.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProveedor.Location = new System.Drawing.Point(825, 67);
+            this.lblProveedor.Name = "lblProveedor";
+            this.lblProveedor.Size = new System.Drawing.Size(65, 17);
+            this.lblProveedor.TabIndex = 25;
+            this.lblProveedor.Text = "Proveedor:";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(630, 68);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(52, 17);
+            this.lblUsuario.TabIndex = 27;
+            this.lblUsuario.Text = "Usuario:";
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(447, 68);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(37, 17);
+            this.lblHora.TabIndex = 29;
+            this.lblHora.Text = "Hora:";
+            // 
+            // lblFechaEmision
+            // 
+            this.lblFechaEmision.AutoSize = true;
+            this.lblFechaEmision.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaEmision.Location = new System.Drawing.Point(262, 68);
+            this.lblFechaEmision.Name = "lblFechaEmision";
+            this.lblFechaEmision.Size = new System.Drawing.Size(43, 17);
+            this.lblFechaEmision.TabIndex = 30;
+            this.lblFechaEmision.Text = "Fecha:";
+            // 
+            // lblNumeroOperacion
+            // 
+            this.lblNumeroOperacion.AutoSize = true;
+            this.lblNumeroOperacion.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroOperacion.Location = new System.Drawing.Point(17, 68);
+            this.lblNumeroOperacion.Name = "lblNumeroOperacion";
+            this.lblNumeroOperacion.Size = new System.Drawing.Size(110, 17);
+            this.lblNumeroOperacion.TabIndex = 31;
+            this.lblNumeroOperacion.Text = "Número Operación:";
             // 
             // HoraActual
             // 

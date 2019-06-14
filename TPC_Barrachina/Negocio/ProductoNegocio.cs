@@ -148,9 +148,8 @@ namespace Negocio
 
                 if ((bool)AccederDatos.LectorDatos["Estado"]) {
 
-                    if ((int)AccederDatos.LectorDatos["Stock"] > 0) {
-
                         Producto unProducto = new Producto();
+                        unProducto.Proveedor = new Proveedor();
                         unProducto.CodigoProducto = AccederDatos.LectorDatos["CodigoProducto"].ToString();
                         unProducto.CodigoBulto = AccederDatos.LectorDatos["CodigoBulto"].ToString();
                         unProducto.Nombre = AccederDatos.LectorDatos["NombreProducto"].ToString();
@@ -162,15 +161,12 @@ namespace Negocio
                         unProducto.Rentabilidad = (decimal)AccederDatos.LectorDatos["Rentabilidad"];
                         unProducto.PrecioCosto = (decimal)AccederDatos.LectorDatos["PrecioCosto"];
                         unProducto.PrecioCostoLista = (decimal)AccederDatos.LectorDatos["PrecioCostoLista"];
+                        unProducto.Proveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["CodigoProveedor"];
+                       // unProducto.Proveedor.NombreFantasia = AccederDatos.LectorDatos["NombreFantasia"].ToString();
 
-                        AccederDatos.CerrarReader();
-                        AccederDatos.CerrarConexion();
-                        return unProducto;
-
-                    }
-                    AccederDatos.CerrarConexion();
                     AccederDatos.CerrarReader();
-                    throw new Exception("No hay stock de ese producto");
+                        AccederDatos.CerrarConexion();
+                        return unProducto;                    
                 }
             }
             AccederDatos.CerrarReader();
@@ -180,5 +176,6 @@ namespace Negocio
         }
 
         
+         
     }
 }

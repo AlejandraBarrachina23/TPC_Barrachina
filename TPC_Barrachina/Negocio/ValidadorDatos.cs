@@ -246,6 +246,22 @@ namespace Negocio
             return true;
         }
 
+        public void Stock(int Stock) {
+
+            if (Stock == 0) {
+                throw new Exception("El stock del producto seleccionado es 0");
+            }
+        }
+
+        public void ProductoPertenecienteProveedor(int CodigoProveedorCompra, int CodigoProveedorProductoCargado) {
+
+            if (CodigoProveedorCompra != CodigoProveedorProductoCargado) {
+
+                throw new Exception("El producto ingresado no pertenece al proveedor");
+            }
+
+        }
+
     }
 }
 

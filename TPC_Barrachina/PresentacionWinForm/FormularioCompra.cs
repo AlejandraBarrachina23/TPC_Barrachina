@@ -23,11 +23,16 @@ namespace PresentacionWinForm
         private Impuesto unImpuesto = new Impuesto();
         private List<Impuesto> ListadoImpuestos = new List<Impuesto>();
         private Utilidades Utilidades = new Utilidades();
+        private CabeceraCompraNegocio unaCabeceraCompraNegocio = new CabeceraCompraNegocio();
         private int CuentaLinea = 1;
 
         public FormularioCompra()
         {
             InitializeComponent();
+            tboxCodigoBarra.KeyPress += AsignarSoloNumeros;
+            tboxCantidad.KeyPress += AsignarSoloNumeros;
+            tboxPrecioUnitario.KeyPress += AsignarSoloNumeroEnterosDecimales;
+            tboxDescuento.KeyPress += AsignarSoloNumeroEnterosDecimales;
         }
 
         private void btnBusqueda_Click(object sender, EventArgs e)
@@ -42,6 +47,7 @@ namespace PresentacionWinForm
             try
             {
                 cboxProveedor.DataSource = unProveedorNegocio.ListarProveedores();
+                tboxNumeroOperacion.Text = (unaCabeceraCompraNegocio.CuentaFilasCabeceraCompra() + 1).ToString();
                 tboxNumeroOperacion.Enabled = false;
                 tboxFechaEmision.Enabled = false;
                 tboxHora.Enabled = false;
@@ -60,11 +66,17 @@ namespace PresentacionWinForm
         {
             try
             {
-                
+                ValidadorDatos Validar = new ValidadorDatos();
+                DetalleCompra unDetalleCompra = new DetalleCompra();
+                Validar.ContenidoTextBoxVacio(tboxCodigoBarra, "Codigo");
                 unProductoComprado = unProductoNegocio.BusquedaProducto(tboxCodigoBarra.Text);
-                dgvDetalleCompra.DataSource = null;
                 unDetalleCompra.Linea = CuentaLinea;
                 unDetalleCompra.Producto = unProductoComprado;
+                Proveedor ProveedorSeleccionado = (Proveedor)cboxProveedor.SelectedItem;
+                Validar.ProductoPertenecienteProveedor(ProveedorSeleccionado.CodigoProveedor, unProductoComprado.Proveedor.CodigoProveedor);
+                Validar.ContenidoTextBoxVacio(tboxCantidad, "Cantidad");
+                Validar.ContenidoTextBoxVacio(tboxPrecioUnitario, "Precio Unitario");
+                dgvDetalleCompra.DataSource = null;
                 unDetalleCompra.Cantidad = Convert.ToInt32(tboxCantidad.Text);
                 unDetalleCompra.PrecioUnitario = Convert.ToDecimal(tboxPrecioUnitario.Text);
                 unDetalleCompra.Descuento = Convert.ToDecimal(tboxDescuento.Text);
@@ -76,6 +88,9 @@ namespace PresentacionWinForm
                 ListadoDetalleCompra.Add(unDetalleCompra);
                 dgvDetalleCompra.DataSource = ListadoDetalleCompra;
                 Utilidades.AjustarOrdenGridViewCompras(dgvDetalleCompra);
+                tboxCodigoBarra.Clear();
+                tboxCantidad.Clear();
+                tboxPrecioUnitario.Clear();
             }
             catch (Exception Excepcion)
             {
@@ -86,8 +101,8 @@ namespace PresentacionWinForm
 
         private void cboxProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Proveedor ProveedorSeleccionado = (Proveedor)cboxProveedor.SelectedItem;
-            //ListadoImpuestos = unImpuestoNegocio.ListarImpuestosxProveedor(ProveedorSeleccionado.CodigoProveedor);
+            Proveedor ProveedorSeleccionado = (Proveedor)cboxProveedor.SelectedItem;
+            ListadoImpuestos = unImpuestoNegocio.ListarImpuestosxProveedor(ProveedorSeleccionado.CodigoProveedor);
             //dgvImpuestos.DataSource = ListadoImpuestos;
         }
 
@@ -105,11 +120,41 @@ namespace PresentacionWinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            DetalleCompraNegocio unDetalleCompraNegocio = new DetalleCompraNegocio();
-
-            foreach (DetalleCompra unDetalleCompra in ListadoDetalleCompra)
+            try
             {
-                unDetalleCompraNegocio.AgregarDetalleCompra(unDetalleCompra);
+                DetalleCompraNegocio unDetalleCompraNegocio = new DetalleCompraNegocio();
+
+                foreach (DetalleCompra unDetalleCompra in ListadoDetalleCompra)
+                {
+                    unDetalleCompraNegocio.AgregarDetalleCompra(unDetalleCompra);
+                }
+
+            }
+            catch (Exception Excepcion)
+            {
+
+                MessageBox.Show(Excepcion.Message);
+            }
+            
+        }
+
+        void AsignarSoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            TextBox Tbox = new TextBox();
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+
+            }
+        }
+
+        private void AsignarSoloNumeroEnterosDecimales(object sender, KeyPressEventArgs e)
+        {
+
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            {
+                e.Handled = true;
             }
         }
     }

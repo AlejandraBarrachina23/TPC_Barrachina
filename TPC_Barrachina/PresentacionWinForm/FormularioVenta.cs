@@ -141,6 +141,7 @@ namespace PresentacionWinForm
                 DetalleVentaNegocio unDetalleVentaNegocio = new DetalleVentaNegocio();
                 ProductoNegocio unProductoVendido = new ProductoNegocio();
                 Producto unProducto = unProductoVendido.BusquedaProducto(tboxCodigoBarra.Text);
+                Validar.Stock(unProducto.Stock);
                 unDetalleVentaNegocio.ControlStock(ListadoDetalle, unProducto, Convert.ToInt32(tboxCantidad.Text));
                 Validar.MaximoValor(unProducto.Stock, "Stock", Convert.ToInt32(tboxCantidad.Text));
 
@@ -223,8 +224,10 @@ namespace PresentacionWinForm
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            int unDetalleSeleccionado = dgvDetalleVenta.CurrentRow.Index;
-            ListadoDetalle.RemoveAt(unDetalleSeleccionado);
+            DetalleVenta unDetalleSeleccionado = (DetalleVenta)dgvDetalleVenta.CurrentRow.DataBoundItem;
+            lblSubtotalNumerico.Text = (Subtotal -= unDetalleSeleccionado.Subtotal).ToString();
+            lblTotalFactura.Text = Subtotal.ToString("N2");
+            ListadoDetalle.Remove(unDetalleSeleccionado);
             dgvDetalleVenta.DataSource = null;
             dgvDetalleVenta.DataSource = ListadoDetalle;
             dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
