@@ -63,7 +63,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />
     <Compile Include="Rubro.cs" />
-    <Compile Include="Sector.cs" />
     <Compile Include="Descuento.cs" />
     <Compile Include="TipoProducto.cs" />
     <Compile Include="Usuario.cs" />
