@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using Dominio;
 
 namespace PresentacionWinForm
 {
@@ -16,10 +17,12 @@ namespace PresentacionWinForm
     {
         private string OpcionSeleccionada;
         private Utilidades Utilidades = new Utilidades();
+        private Usuario UsuarioActivo;
 
-        public MenuAdministrador()
+        public MenuAdministrador(Usuario UnUsuario)
         {
             InitializeComponent();
+            UsuarioActivo = UnUsuario;
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
@@ -27,7 +30,7 @@ namespace PresentacionWinForm
             try
             {
                 OpcionSeleccionada = "Ventas";
-                FormularioVenta FormularioVenta = new FormularioVenta();
+                FormularioVenta FormularioVenta = new FormularioVenta(UsuarioActivo);
                 FormularioVenta.MdiParent = this;
                 FormularioVenta.Show();
             }
@@ -51,7 +54,7 @@ namespace PresentacionWinForm
         private void btnCompras_Click(object sender, EventArgs e)
         {
             OpcionSeleccionada = "Compras";
-            FormularioCompra FormularioCompras = new FormularioCompra();
+            FormularioCompra FormularioCompras = new FormularioCompra(UsuarioActivo);
             FormularioCompras.MdiParent = this;
             FormularioCompras.Show();
         }

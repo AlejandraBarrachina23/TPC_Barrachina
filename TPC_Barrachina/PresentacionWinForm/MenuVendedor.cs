@@ -8,15 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Dominio;
 
 
 namespace PresentacionWinForm
 {
     public partial class MenuVendedor : Form
     {
-        public MenuVendedor()
+        private Usuario UsuarioActivo = new Usuario();
+
+        public MenuVendedor(Usuario unUsuarioActivo)
         {
             InitializeComponent();
+            UsuarioActivo = unUsuarioActivo;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -26,7 +30,7 @@ namespace PresentacionWinForm
         
         private void MenuVendedor_Load(object sender, EventArgs e)
         {
-            Form FormularioVentas = new FormularioVenta();
+            Form FormularioVentas = new FormularioVenta(UsuarioActivo);
             FormularioVentas.MdiParent = this;
             FormularioVentas.Show();
         }

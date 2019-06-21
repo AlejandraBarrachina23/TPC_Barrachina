@@ -25,14 +25,17 @@ namespace PresentacionWinForm
         private Utilidades Utilidades = new Utilidades();
         private CabeceraCompraNegocio unaCabeceraCompraNegocio = new CabeceraCompraNegocio();
         private int CuentaLinea = 1;
+        private Usuario UsuarioActivo;
 
-        public FormularioCompra()
+        public FormularioCompra(Usuario UnUsuario)
         {
             InitializeComponent();
             tboxCodigoBarra.KeyPress += AsignarSoloNumeros;
             tboxCantidad.KeyPress += AsignarSoloNumeros;
             tboxPrecioUnitario.KeyPress += AsignarSoloNumeroEnterosDecimales;
             tboxDescuento.KeyPress += AsignarSoloNumeroEnterosDecimales;
+            UsuarioActivo = UnUsuario;
+
         }
 
         private void btnBusqueda_Click(object sender, EventArgs e)
@@ -48,6 +51,7 @@ namespace PresentacionWinForm
             {
                 cboxProveedor.DataSource = unProveedorNegocio.ListarProveedores();
                 tboxNumeroOperacion.Text = (unaCabeceraCompraNegocio.CuentaFilasCabeceraCompra() + 1).ToString();
+                tboxUsuario.Text = UsuarioActivo.Nombre;
                 tboxNumeroOperacion.Enabled = false;
                 tboxFechaEmision.Enabled = false;
                 tboxHora.Enabled = false;
@@ -57,7 +61,6 @@ namespace PresentacionWinForm
             catch (Exception Excepcion)
             {
                 MessageBox.Show(Excepcion.Message);
-
             }
           
         }
@@ -130,6 +133,7 @@ namespace PresentacionWinForm
                 ProveedorSeleccionado = (Proveedor)cboxProveedor.SelectedItem;
                 CabeceraCompra unaCabeceraCompra = new CabeceraCompra();
                 unaCabeceraCompra.Proveedor = ProveedorSeleccionado;
+                unaCabeceraCompra.Usuario = UsuarioActivo;
                 unaCabeceraCompraNegocio.AgregarCabeceraCompra(unaCabeceraCompra);
                 foreach (DetalleCompra unDetalleCompra in ListadoDetalleCompra)
                 {

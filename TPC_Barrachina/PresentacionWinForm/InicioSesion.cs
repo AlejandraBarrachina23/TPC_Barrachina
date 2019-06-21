@@ -32,15 +32,16 @@ namespace PresentacionWinForm
             {
                 if (unUsuarioIngresado.SectorDesignado == "Administracion")
                 {
-
-                    MenuAdministrador menuAdministador = new MenuAdministrador();
-                    menuAdministador.Show();
+                    MenuAdministrador menuAdministador = new MenuAdministrador(unUsuarioIngresado);
+                    menuAdministador.ShowDialog();
+                    this.Close();
                 }
 
                 else {
 
-                    MenuVendedor menuVendedor = new MenuVendedor();
-                    menuVendedor.Show();
+                    MenuVendedor menuVendedor = new MenuVendedor(unUsuarioIngresado);
+                    menuVendedor.ShowDialog();
+                    this.Close();
                 }
                 
             }
@@ -50,12 +51,6 @@ namespace PresentacionWinForm
                 lblAdvertencia.Visible = true;
             }
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MenuAdministrador menuAdministrador = new MenuAdministrador();
-            menuAdministrador.Show();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

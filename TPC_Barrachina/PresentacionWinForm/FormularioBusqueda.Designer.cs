@@ -41,9 +41,9 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pboxCodigoCliente = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnSaldar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnSaldar = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombreCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
@@ -187,6 +187,25 @@
             this.panelContenedor.Size = new System.Drawing.Size(730, 299);
             this.panelContenedor.TabIndex = 12;
             // 
+            // btnSaldar
+            // 
+            this.btnSaldar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnSaldar.FlatAppearance.BorderSize = 0;
+            this.btnSaldar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaldar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaldar.ForeColor = System.Drawing.Color.White;
+            this.btnSaldar.Image = ((System.Drawing.Image)(resources.GetObject("btnSaldar.Image")));
+            this.btnSaldar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaldar.Location = new System.Drawing.Point(431, 251);
+            this.btnSaldar.Name = "btnSaldar";
+            this.btnSaldar.Size = new System.Drawing.Size(94, 37);
+            this.btnSaldar.TabIndex = 12;
+            this.btnSaldar.Text = "SALDAR";
+            this.btnSaldar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaldar.UseVisualStyleBackColor = false;
+            this.btnSaldar.Visible = false;
+            this.btnSaldar.Click += new System.EventHandler(this.btnSaldar_Click);
+            // 
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
@@ -223,25 +242,6 @@
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
             // 
-            // btnSaldar
-            // 
-            this.btnSaldar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.btnSaldar.FlatAppearance.BorderSize = 0;
-            this.btnSaldar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaldar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaldar.ForeColor = System.Drawing.Color.White;
-            this.btnSaldar.Image = ((System.Drawing.Image)(resources.GetObject("btnSaldar.Image")));
-            this.btnSaldar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaldar.Location = new System.Drawing.Point(431, 251);
-            this.btnSaldar.Name = "btnSaldar";
-            this.btnSaldar.Size = new System.Drawing.Size(94, 37);
-            this.btnSaldar.TabIndex = 12;
-            this.btnSaldar.Text = "SALDAR";
-            this.btnSaldar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSaldar.UseVisualStyleBackColor = false;
-            this.btnSaldar.Visible = false;
-            this.btnSaldar.Click += new System.EventHandler(this.btnSaldar_Click);
-            // 
             // FormularioBusqueda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,9 +249,8 @@
             this.ClientSize = new System.Drawing.Size(730, 340);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.pnlBarraPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormularioBusqueda";
-            this.Text = "BusquedaCliente";
             this.Load += new System.EventHandler(this.Busqueda_Load);
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();

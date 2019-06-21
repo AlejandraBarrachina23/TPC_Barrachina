@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RetiroDinero));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
+            this.lblRetiroDinero = new System.Windows.Forms.Label();
             this.tboxImporteRetirar = new System.Windows.Forms.TextBox();
             this.lblImporteRetirar = new System.Windows.Forms.Label();
             this.rbtnArqueoCaja = new System.Windows.Forms.RadioButton();
@@ -38,7 +39,6 @@
             this.gboxConcepto = new System.Windows.Forms.GroupBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.tboxObservaciones = new System.Windows.Forms.TextBox();
-            this.lblRetiroDinero = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.pnlBarraPrincipal.SuspendLayout();
@@ -54,6 +54,17 @@
             this.pnlBarraPrincipal.Name = "pnlBarraPrincipal";
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(381, 41);
             this.pnlBarraPrincipal.TabIndex = 5;
+            // 
+            // lblRetiroDinero
+            // 
+            this.lblRetiroDinero.AutoSize = true;
+            this.lblRetiroDinero.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRetiroDinero.ForeColor = System.Drawing.Color.White;
+            this.lblRetiroDinero.Location = new System.Drawing.Point(128, 9);
+            this.lblRetiroDinero.Name = "lblRetiroDinero";
+            this.lblRetiroDinero.Size = new System.Drawing.Size(135, 23);
+            this.lblRetiroDinero.TabIndex = 9;
+            this.lblRetiroDinero.Text = "Retiro de dinero";
             // 
             // tboxImporteRetirar
             // 
@@ -76,6 +87,7 @@
             // rbtnArqueoCaja
             // 
             this.rbtnArqueoCaja.AutoSize = true;
+            this.rbtnArqueoCaja.Checked = true;
             this.rbtnArqueoCaja.Location = new System.Drawing.Point(33, 21);
             this.rbtnArqueoCaja.Name = "rbtnArqueoCaja";
             this.rbtnArqueoCaja.Size = new System.Drawing.Size(98, 21);
@@ -91,7 +103,6 @@
             this.rbtnPagoProveedor.Name = "rbtnPagoProveedor";
             this.rbtnPagoProveedor.Size = new System.Drawing.Size(109, 21);
             this.rbtnPagoProveedor.TabIndex = 10;
-            this.rbtnPagoProveedor.TabStop = true;
             this.rbtnPagoProveedor.Text = "Pago a Proveedor";
             this.rbtnPagoProveedor.UseVisualStyleBackColor = true;
             // 
@@ -102,7 +113,6 @@
             this.rbtnOtros.Name = "rbtnOtros";
             this.rbtnOtros.Size = new System.Drawing.Size(52, 21);
             this.rbtnOtros.TabIndex = 10;
-            this.rbtnOtros.TabStop = true;
             this.rbtnOtros.Text = "Otros";
             this.rbtnOtros.UseVisualStyleBackColor = true;
             // 
@@ -137,17 +147,6 @@
             this.tboxObservaciones.Name = "tboxObservaciones";
             this.tboxObservaciones.Size = new System.Drawing.Size(356, 67);
             this.tboxObservaciones.TabIndex = 12;
-            // 
-            // lblRetiroDinero
-            // 
-            this.lblRetiroDinero.AutoSize = true;
-            this.lblRetiroDinero.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetiroDinero.ForeColor = System.Drawing.Color.White;
-            this.lblRetiroDinero.Location = new System.Drawing.Point(128, 9);
-            this.lblRetiroDinero.Name = "lblRetiroDinero";
-            this.lblRetiroDinero.Size = new System.Drawing.Size(135, 23);
-            this.lblRetiroDinero.TabIndex = 9;
-            this.lblRetiroDinero.Text = "Retiro de dinero";
             // 
             // btnCancelar
             // 

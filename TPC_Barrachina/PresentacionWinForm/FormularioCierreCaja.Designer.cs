@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioCierreCaja));
             this.pnlBarraPrincipal = new System.Windows.Forms.Panel();
+            this.lblCierreCaja = new System.Windows.Forms.Label();
             this.lblSaldoInicial = new System.Windows.Forms.Label();
             this.tboxSaldoInicial = new System.Windows.Forms.TextBox();
             this.lblEfectivo = new System.Windows.Forms.Label();
@@ -60,8 +61,8 @@
             this.lblDenominacionBilletes = new System.Windows.Forms.Label();
             this.lblCantidadBilletes = new System.Windows.Forms.Label();
             this.tboxTotalTodosBilletes = new System.Windows.Forms.TextBox();
-            this.tboxTotalDiez = new System.Windows.Forms.TextBox();
-            this.tboxCantidadDiez = new System.Windows.Forms.TextBox();
+            this.tboxTotalVeinte = new System.Windows.Forms.TextBox();
+            this.tboxCantidadVeinte = new System.Windows.Forms.TextBox();
             this.tboxTotalCincuenta = new System.Windows.Forms.TextBox();
             this.tboxCantidadCincuenta = new System.Windows.Forms.TextBox();
             this.tboxTotalCien = new System.Windows.Forms.TextBox();
@@ -84,18 +85,18 @@
             this.lblDenominacionMonedas = new System.Windows.Forms.Label();
             this.lblCantidadMonedas = new System.Windows.Forms.Label();
             this.tboxTotalTodasMonedas = new System.Windows.Forms.TextBox();
-            this.tboxTotalVeintiCinco = new System.Windows.Forms.TextBox();
-            this.tboxTotalCincuentaCentavos = new System.Windows.Forms.TextBox();
-            this.tboxTotalUno = new System.Windows.Forms.TextBox();
-            this.tboxTotalDos = new System.Windows.Forms.TextBox();
+            this.tboxTotalMonedasVeintiCinco = new System.Windows.Forms.TextBox();
+            this.tboxTotalMonedasCincuentaCentavos = new System.Windows.Forms.TextBox();
+            this.tboxTotalMonedasUno = new System.Windows.Forms.TextBox();
+            this.tboxTotalMonedaDos = new System.Windows.Forms.TextBox();
             this.tboxTotalCincoMonedas = new System.Windows.Forms.TextBox();
             this.tboxCantidadVeintiCinco = new System.Windows.Forms.TextBox();
-            this.lblCantidadCincuentaCentavos = new System.Windows.Forms.TextBox();
+            this.tboxCantidadCincuentaCentavos = new System.Windows.Forms.TextBox();
             this.tboxCantidadUno = new System.Windows.Forms.TextBox();
             this.tboxCantidadDos = new System.Windows.Forms.TextBox();
             this.tboxCantidadCincoMonedas = new System.Windows.Forms.TextBox();
             this.tboxTotalDiezMonedas = new System.Windows.Forms.TextBox();
-            this.tboxCantidadDiezBillete = new System.Windows.Forms.TextBox();
+            this.tboxCantidadDiezMoneda = new System.Windows.Forms.TextBox();
             this.lblVentiCincoCentavos = new System.Windows.Forms.Label();
             this.lblCincuentaCentavos = new System.Windows.Forms.Label();
             this.lblUno = new System.Windows.Forms.Label();
@@ -124,7 +125,6 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.gboxDatosCaja = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.lblCierreCaja = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal.SuspendLayout();
             this.gboxTipoVenta.SuspendLayout();
             this.gboxBilletes.SuspendLayout();
@@ -143,6 +143,17 @@
             this.pnlBarraPrincipal.Size = new System.Drawing.Size(908, 41);
             this.pnlBarraPrincipal.TabIndex = 3;
             // 
+            // lblCierreCaja
+            // 
+            this.lblCierreCaja.AutoSize = true;
+            this.lblCierreCaja.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCierreCaja.ForeColor = System.Drawing.Color.White;
+            this.lblCierreCaja.Location = new System.Drawing.Point(385, 9);
+            this.lblCierreCaja.Name = "lblCierreCaja";
+            this.lblCierreCaja.Size = new System.Drawing.Size(119, 23);
+            this.lblCierreCaja.TabIndex = 14;
+            this.lblCierreCaja.Text = "Cierre de Caja";
+            // 
             // lblSaldoInicial
             // 
             this.lblSaldoInicial.AutoSize = true;
@@ -159,7 +170,7 @@
             this.tboxSaldoInicial.Location = new System.Drawing.Point(710, 21);
             this.tboxSaldoInicial.Name = "tboxSaldoInicial";
             this.tboxSaldoInicial.Size = new System.Drawing.Size(103, 22);
-            this.tboxSaldoInicial.TabIndex = 5;
+            this.tboxSaldoInicial.TabIndex = 2;
             // 
             // lblEfectivo
             // 
@@ -256,6 +267,7 @@
             // 
             // tboxCantidadCreditoUnaCuota
             // 
+            this.tboxCantidadCreditoUnaCuota.Enabled = false;
             this.tboxCantidadCreditoUnaCuota.Location = new System.Drawing.Point(132, 133);
             this.tboxCantidadCreditoUnaCuota.Name = "tboxCantidadCreditoUnaCuota";
             this.tboxCantidadCreditoUnaCuota.Size = new System.Drawing.Size(48, 25);
@@ -263,6 +275,7 @@
             // 
             // tboxCantidadCuentaCorriente
             // 
+            this.tboxCantidadCuentaCorriente.Enabled = false;
             this.tboxCantidadCuentaCorriente.Location = new System.Drawing.Point(132, 192);
             this.tboxCantidadCuentaCorriente.Name = "tboxCantidadCuentaCorriente";
             this.tboxCantidadCuentaCorriente.Size = new System.Drawing.Size(48, 25);
@@ -278,6 +291,7 @@
             // 
             // tboxCantidadCreditoTresCuotas
             // 
+            this.tboxCantidadCreditoTresCuotas.Enabled = false;
             this.tboxCantidadCreditoTresCuotas.Location = new System.Drawing.Point(132, 162);
             this.tboxCantidadCreditoTresCuotas.Name = "tboxCantidadCreditoTresCuotas";
             this.tboxCantidadCreditoTresCuotas.Size = new System.Drawing.Size(48, 25);
@@ -285,6 +299,7 @@
             // 
             // tboxCantidadDebito
             // 
+            this.tboxCantidadDebito.Enabled = false;
             this.tboxCantidadDebito.Location = new System.Drawing.Point(132, 104);
             this.tboxCantidadDebito.Name = "tboxCantidadDebito";
             this.tboxCantidadDebito.Size = new System.Drawing.Size(48, 25);
@@ -292,6 +307,7 @@
             // 
             // tboxCantidadMercadoPago
             // 
+            this.tboxCantidadMercadoPago.Enabled = false;
             this.tboxCantidadMercadoPago.Location = new System.Drawing.Point(132, 76);
             this.tboxCantidadMercadoPago.Name = "tboxCantidadMercadoPago";
             this.tboxCantidadMercadoPago.Size = new System.Drawing.Size(48, 25);
@@ -299,6 +315,7 @@
             // 
             // tboxCantidadEfectivo
             // 
+            this.tboxCantidadEfectivo.Enabled = false;
             this.tboxCantidadEfectivo.Location = new System.Drawing.Point(132, 46);
             this.tboxCantidadEfectivo.Name = "tboxCantidadEfectivo";
             this.tboxCantidadEfectivo.Size = new System.Drawing.Size(48, 25);
@@ -394,8 +411,8 @@
             this.gboxBilletes.Controls.Add(this.lblDenominacionBilletes);
             this.gboxBilletes.Controls.Add(this.lblCantidadBilletes);
             this.gboxBilletes.Controls.Add(this.tboxTotalTodosBilletes);
-            this.gboxBilletes.Controls.Add(this.tboxTotalDiez);
-            this.gboxBilletes.Controls.Add(this.tboxCantidadDiez);
+            this.gboxBilletes.Controls.Add(this.tboxTotalVeinte);
+            this.gboxBilletes.Controls.Add(this.tboxCantidadVeinte);
             this.gboxBilletes.Controls.Add(this.tboxTotalCincuenta);
             this.gboxBilletes.Controls.Add(this.tboxCantidadCincuenta);
             this.gboxBilletes.Controls.Add(this.tboxTotalCien);
@@ -459,22 +476,26 @@
             this.tboxTotalTodosBilletes.Name = "tboxTotalTodosBilletes";
             this.tboxTotalTodosBilletes.Size = new System.Drawing.Size(95, 25);
             this.tboxTotalTodosBilletes.TabIndex = 8;
+            this.tboxTotalTodosBilletes.Text = "0";
             // 
-            // tboxTotalDiez
+            // tboxTotalVeinte
             // 
-            this.tboxTotalDiez.Enabled = false;
-            this.tboxTotalDiez.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxTotalDiez.Location = new System.Drawing.Point(170, 203);
-            this.tboxTotalDiez.Name = "tboxTotalDiez";
-            this.tboxTotalDiez.Size = new System.Drawing.Size(50, 25);
-            this.tboxTotalDiez.TabIndex = 8;
+            this.tboxTotalVeinte.Enabled = false;
+            this.tboxTotalVeinte.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxTotalVeinte.Location = new System.Drawing.Point(170, 203);
+            this.tboxTotalVeinte.Name = "tboxTotalVeinte";
+            this.tboxTotalVeinte.Size = new System.Drawing.Size(50, 25);
+            this.tboxTotalVeinte.TabIndex = 8;
+            this.tboxTotalVeinte.Text = "0";
             // 
-            // tboxCantidadDiez
+            // tboxCantidadVeinte
             // 
-            this.tboxCantidadDiez.Location = new System.Drawing.Point(102, 203);
-            this.tboxCantidadDiez.Name = "tboxCantidadDiez";
-            this.tboxCantidadDiez.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadDiez.TabIndex = 8;
+            this.tboxCantidadVeinte.Location = new System.Drawing.Point(102, 203);
+            this.tboxCantidadVeinte.Name = "tboxCantidadVeinte";
+            this.tboxCantidadVeinte.Size = new System.Drawing.Size(50, 25);
+            this.tboxCantidadVeinte.TabIndex = 8;
+            this.tboxCantidadVeinte.Text = "0";
+            this.tboxCantidadVeinte.TextChanged += new System.EventHandler(this.tboxCantidadVeinte_TextChanged);
             // 
             // tboxTotalCincuenta
             // 
@@ -484,6 +505,7 @@
             this.tboxTotalCincuenta.Name = "tboxTotalCincuenta";
             this.tboxTotalCincuenta.Size = new System.Drawing.Size(50, 25);
             this.tboxTotalCincuenta.TabIndex = 8;
+            this.tboxTotalCincuenta.Text = "0";
             // 
             // tboxCantidadCincuenta
             // 
@@ -491,7 +513,9 @@
             this.tboxCantidadCincuenta.Location = new System.Drawing.Point(102, 172);
             this.tboxCantidadCincuenta.Name = "tboxCantidadCincuenta";
             this.tboxCantidadCincuenta.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadCincuenta.TabIndex = 8;
+            this.tboxCantidadCincuenta.TabIndex = 7;
+            this.tboxCantidadCincuenta.Text = "0";
+            this.tboxCantidadCincuenta.TextChanged += new System.EventHandler(this.tboxCantidadCincuenta_TextChanged);
             // 
             // tboxTotalCien
             // 
@@ -501,6 +525,7 @@
             this.tboxTotalCien.Name = "tboxTotalCien";
             this.tboxTotalCien.Size = new System.Drawing.Size(50, 25);
             this.tboxTotalCien.TabIndex = 8;
+            this.tboxTotalCien.Text = "0";
             // 
             // tboxCantidadCien
             // 
@@ -508,7 +533,9 @@
             this.tboxCantidadCien.Location = new System.Drawing.Point(102, 141);
             this.tboxCantidadCien.Name = "tboxCantidadCien";
             this.tboxCantidadCien.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadCien.TabIndex = 8;
+            this.tboxCantidadCien.TabIndex = 6;
+            this.tboxCantidadCien.Text = "0";
+            this.tboxCantidadCien.TextChanged += new System.EventHandler(this.tboxCantidadCien_TextChanged);
             // 
             // tboxTotalDoscientos
             // 
@@ -518,6 +545,7 @@
             this.tboxTotalDoscientos.Name = "tboxTotalDoscientos";
             this.tboxTotalDoscientos.Size = new System.Drawing.Size(50, 25);
             this.tboxTotalDoscientos.TabIndex = 8;
+            this.tboxTotalDoscientos.Text = "0";
             // 
             // tboxCantidadDoscientos
             // 
@@ -525,7 +553,9 @@
             this.tboxCantidadDoscientos.Location = new System.Drawing.Point(102, 110);
             this.tboxCantidadDoscientos.Name = "tboxCantidadDoscientos";
             this.tboxCantidadDoscientos.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadDoscientos.TabIndex = 8;
+            this.tboxCantidadDoscientos.TabIndex = 5;
+            this.tboxCantidadDoscientos.Text = "0";
+            this.tboxCantidadDoscientos.TextChanged += new System.EventHandler(this.tboxCantidadDoscientos_TextChanged);
             // 
             // tboxTotalQuinientos
             // 
@@ -535,6 +565,7 @@
             this.tboxTotalQuinientos.Name = "tboxTotalQuinientos";
             this.tboxTotalQuinientos.Size = new System.Drawing.Size(50, 25);
             this.tboxTotalQuinientos.TabIndex = 8;
+            this.tboxTotalQuinientos.Text = "0";
             // 
             // tboxCantidadQuinientos
             // 
@@ -542,7 +573,9 @@
             this.tboxCantidadQuinientos.Location = new System.Drawing.Point(102, 79);
             this.tboxCantidadQuinientos.Name = "tboxCantidadQuinientos";
             this.tboxCantidadQuinientos.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadQuinientos.TabIndex = 8;
+            this.tboxCantidadQuinientos.TabIndex = 4;
+            this.tboxCantidadQuinientos.Text = "0";
+            this.tboxCantidadQuinientos.TextChanged += new System.EventHandler(this.tboxCantidadQuinientos_TextChanged);
             // 
             // tboxTotalMil
             // 
@@ -552,6 +585,7 @@
             this.tboxTotalMil.Name = "tboxTotalMil";
             this.tboxTotalMil.Size = new System.Drawing.Size(50, 25);
             this.tboxTotalMil.TabIndex = 8;
+            this.tboxTotalMil.Text = "0";
             // 
             // tboxCantidadMil
             // 
@@ -559,7 +593,9 @@
             this.tboxCantidadMil.Location = new System.Drawing.Point(102, 49);
             this.tboxCantidadMil.Name = "tboxCantidadMil";
             this.tboxCantidadMil.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadMil.TabIndex = 8;
+            this.tboxCantidadMil.TabIndex = 3;
+            this.tboxCantidadMil.Text = "0";
+            this.tboxCantidadMil.TextChanged += new System.EventHandler(this.tboxCantidadMil_TextChanged);
             // 
             // lblVeinte
             // 
@@ -637,18 +673,18 @@
             this.gboxMonedas.Controls.Add(this.lblDenominacionMonedas);
             this.gboxMonedas.Controls.Add(this.lblCantidadMonedas);
             this.gboxMonedas.Controls.Add(this.tboxTotalTodasMonedas);
-            this.gboxMonedas.Controls.Add(this.tboxTotalVeintiCinco);
-            this.gboxMonedas.Controls.Add(this.tboxTotalCincuentaCentavos);
-            this.gboxMonedas.Controls.Add(this.tboxTotalUno);
-            this.gboxMonedas.Controls.Add(this.tboxTotalDos);
+            this.gboxMonedas.Controls.Add(this.tboxTotalMonedasVeintiCinco);
+            this.gboxMonedas.Controls.Add(this.tboxTotalMonedasCincuentaCentavos);
+            this.gboxMonedas.Controls.Add(this.tboxTotalMonedasUno);
+            this.gboxMonedas.Controls.Add(this.tboxTotalMonedaDos);
             this.gboxMonedas.Controls.Add(this.tboxTotalCincoMonedas);
             this.gboxMonedas.Controls.Add(this.tboxCantidadVeintiCinco);
-            this.gboxMonedas.Controls.Add(this.lblCantidadCincuentaCentavos);
+            this.gboxMonedas.Controls.Add(this.tboxCantidadCincuentaCentavos);
             this.gboxMonedas.Controls.Add(this.tboxCantidadUno);
             this.gboxMonedas.Controls.Add(this.tboxCantidadDos);
             this.gboxMonedas.Controls.Add(this.tboxCantidadCincoMonedas);
             this.gboxMonedas.Controls.Add(this.tboxTotalDiezMonedas);
-            this.gboxMonedas.Controls.Add(this.tboxCantidadDiezBillete);
+            this.gboxMonedas.Controls.Add(this.tboxCantidadDiezMoneda);
             this.gboxMonedas.Controls.Add(this.lblVentiCincoCentavos);
             this.gboxMonedas.Controls.Add(this.lblCincuentaCentavos);
             this.gboxMonedas.Controls.Add(this.lblUno);
@@ -702,42 +738,47 @@
             this.tboxTotalTodasMonedas.Name = "tboxTotalTodasMonedas";
             this.tboxTotalTodasMonedas.Size = new System.Drawing.Size(52, 25);
             this.tboxTotalTodasMonedas.TabIndex = 8;
+            this.tboxTotalTodasMonedas.Text = "0";
             // 
-            // tboxTotalVeintiCinco
+            // tboxTotalMonedasVeintiCinco
             // 
-            this.tboxTotalVeintiCinco.Enabled = false;
-            this.tboxTotalVeintiCinco.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxTotalVeintiCinco.Location = new System.Drawing.Point(174, 190);
-            this.tboxTotalVeintiCinco.Name = "tboxTotalVeintiCinco";
-            this.tboxTotalVeintiCinco.Size = new System.Drawing.Size(50, 25);
-            this.tboxTotalVeintiCinco.TabIndex = 8;
+            this.tboxTotalMonedasVeintiCinco.Enabled = false;
+            this.tboxTotalMonedasVeintiCinco.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxTotalMonedasVeintiCinco.Location = new System.Drawing.Point(174, 190);
+            this.tboxTotalMonedasVeintiCinco.Name = "tboxTotalMonedasVeintiCinco";
+            this.tboxTotalMonedasVeintiCinco.Size = new System.Drawing.Size(50, 25);
+            this.tboxTotalMonedasVeintiCinco.TabIndex = 8;
+            this.tboxTotalMonedasVeintiCinco.Text = "0";
             // 
-            // tboxTotalCincuentaCentavos
+            // tboxTotalMonedasCincuentaCentavos
             // 
-            this.tboxTotalCincuentaCentavos.Enabled = false;
-            this.tboxTotalCincuentaCentavos.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxTotalCincuentaCentavos.Location = new System.Drawing.Point(174, 160);
-            this.tboxTotalCincuentaCentavos.Name = "tboxTotalCincuentaCentavos";
-            this.tboxTotalCincuentaCentavos.Size = new System.Drawing.Size(50, 25);
-            this.tboxTotalCincuentaCentavos.TabIndex = 8;
+            this.tboxTotalMonedasCincuentaCentavos.Enabled = false;
+            this.tboxTotalMonedasCincuentaCentavos.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxTotalMonedasCincuentaCentavos.Location = new System.Drawing.Point(174, 160);
+            this.tboxTotalMonedasCincuentaCentavos.Name = "tboxTotalMonedasCincuentaCentavos";
+            this.tboxTotalMonedasCincuentaCentavos.Size = new System.Drawing.Size(50, 25);
+            this.tboxTotalMonedasCincuentaCentavos.TabIndex = 8;
+            this.tboxTotalMonedasCincuentaCentavos.Text = "0";
             // 
-            // tboxTotalUno
+            // tboxTotalMonedasUno
             // 
-            this.tboxTotalUno.Enabled = false;
-            this.tboxTotalUno.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxTotalUno.Location = new System.Drawing.Point(174, 132);
-            this.tboxTotalUno.Name = "tboxTotalUno";
-            this.tboxTotalUno.Size = new System.Drawing.Size(50, 25);
-            this.tboxTotalUno.TabIndex = 8;
+            this.tboxTotalMonedasUno.Enabled = false;
+            this.tboxTotalMonedasUno.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxTotalMonedasUno.Location = new System.Drawing.Point(174, 132);
+            this.tboxTotalMonedasUno.Name = "tboxTotalMonedasUno";
+            this.tboxTotalMonedasUno.Size = new System.Drawing.Size(50, 25);
+            this.tboxTotalMonedasUno.TabIndex = 8;
+            this.tboxTotalMonedasUno.Text = "0";
             // 
-            // tboxTotalDos
+            // tboxTotalMonedaDos
             // 
-            this.tboxTotalDos.Enabled = false;
-            this.tboxTotalDos.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxTotalDos.Location = new System.Drawing.Point(174, 104);
-            this.tboxTotalDos.Name = "tboxTotalDos";
-            this.tboxTotalDos.Size = new System.Drawing.Size(50, 25);
-            this.tboxTotalDos.TabIndex = 8;
+            this.tboxTotalMonedaDos.Enabled = false;
+            this.tboxTotalMonedaDos.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxTotalMonedaDos.Location = new System.Drawing.Point(174, 104);
+            this.tboxTotalMonedaDos.Name = "tboxTotalMonedaDos";
+            this.tboxTotalMonedaDos.Size = new System.Drawing.Size(50, 25);
+            this.tboxTotalMonedaDos.TabIndex = 8;
+            this.tboxTotalMonedaDos.Text = "0";
             // 
             // tboxTotalCincoMonedas
             // 
@@ -747,41 +788,52 @@
             this.tboxTotalCincoMonedas.Name = "tboxTotalCincoMonedas";
             this.tboxTotalCincoMonedas.Size = new System.Drawing.Size(50, 25);
             this.tboxTotalCincoMonedas.TabIndex = 8;
+            this.tboxTotalCincoMonedas.Text = "0";
             // 
             // tboxCantidadVeintiCinco
             // 
             this.tboxCantidadVeintiCinco.Location = new System.Drawing.Point(106, 191);
             this.tboxCantidadVeintiCinco.Name = "tboxCantidadVeintiCinco";
             this.tboxCantidadVeintiCinco.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadVeintiCinco.TabIndex = 8;
+            this.tboxCantidadVeintiCinco.TabIndex = 14;
+            this.tboxCantidadVeintiCinco.Text = "0";
+            this.tboxCantidadVeintiCinco.TextChanged += new System.EventHandler(this.tboxCantidadVeintiCinco_TextChanged);
             // 
-            // lblCantidadCincuentaCentavos
+            // tboxCantidadCincuentaCentavos
             // 
-            this.lblCantidadCincuentaCentavos.Location = new System.Drawing.Point(106, 161);
-            this.lblCantidadCincuentaCentavos.Name = "lblCantidadCincuentaCentavos";
-            this.lblCantidadCincuentaCentavos.Size = new System.Drawing.Size(50, 25);
-            this.lblCantidadCincuentaCentavos.TabIndex = 8;
+            this.tboxCantidadCincuentaCentavos.Location = new System.Drawing.Point(106, 161);
+            this.tboxCantidadCincuentaCentavos.Name = "tboxCantidadCincuentaCentavos";
+            this.tboxCantidadCincuentaCentavos.Size = new System.Drawing.Size(50, 25);
+            this.tboxCantidadCincuentaCentavos.TabIndex = 13;
+            this.tboxCantidadCincuentaCentavos.Text = "0";
+            this.tboxCantidadCincuentaCentavos.TextChanged += new System.EventHandler(this.tboxCantidadCincuentaCentavos_TextChanged);
             // 
             // tboxCantidadUno
             // 
             this.tboxCantidadUno.Location = new System.Drawing.Point(106, 133);
             this.tboxCantidadUno.Name = "tboxCantidadUno";
             this.tboxCantidadUno.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadUno.TabIndex = 8;
+            this.tboxCantidadUno.TabIndex = 12;
+            this.tboxCantidadUno.Text = "0";
+            this.tboxCantidadUno.TextChanged += new System.EventHandler(this.tboxCantidadUno_TextChanged);
             // 
             // tboxCantidadDos
             // 
             this.tboxCantidadDos.Location = new System.Drawing.Point(106, 105);
             this.tboxCantidadDos.Name = "tboxCantidadDos";
             this.tboxCantidadDos.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadDos.TabIndex = 8;
+            this.tboxCantidadDos.TabIndex = 11;
+            this.tboxCantidadDos.Text = "0";
+            this.tboxCantidadDos.TextChanged += new System.EventHandler(this.tboxCantidadDos_TextChanged);
             // 
             // tboxCantidadCincoMonedas
             // 
             this.tboxCantidadCincoMonedas.Location = new System.Drawing.Point(106, 76);
             this.tboxCantidadCincoMonedas.Name = "tboxCantidadCincoMonedas";
             this.tboxCantidadCincoMonedas.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadCincoMonedas.TabIndex = 8;
+            this.tboxCantidadCincoMonedas.TabIndex = 10;
+            this.tboxCantidadCincoMonedas.Text = "0";
+            this.tboxCantidadCincoMonedas.TextChanged += new System.EventHandler(this.tboxCantidadCincoMonedas_TextChanged);
             // 
             // tboxTotalDiezMonedas
             // 
@@ -791,19 +843,22 @@
             this.tboxTotalDiezMonedas.Name = "tboxTotalDiezMonedas";
             this.tboxTotalDiezMonedas.Size = new System.Drawing.Size(50, 25);
             this.tboxTotalDiezMonedas.TabIndex = 8;
+            this.tboxTotalDiezMonedas.Text = "0";
             // 
-            // tboxCantidadDiezBillete
+            // tboxCantidadDiezMoneda
             // 
-            this.tboxCantidadDiezBillete.Location = new System.Drawing.Point(106, 47);
-            this.tboxCantidadDiezBillete.Name = "tboxCantidadDiezBillete";
-            this.tboxCantidadDiezBillete.Size = new System.Drawing.Size(50, 25);
-            this.tboxCantidadDiezBillete.TabIndex = 8;
+            this.tboxCantidadDiezMoneda.Location = new System.Drawing.Point(106, 47);
+            this.tboxCantidadDiezMoneda.Name = "tboxCantidadDiezMoneda";
+            this.tboxCantidadDiezMoneda.Size = new System.Drawing.Size(50, 25);
+            this.tboxCantidadDiezMoneda.TabIndex = 9;
+            this.tboxCantidadDiezMoneda.Text = "0";
+            this.tboxCantidadDiezMoneda.TextChanged += new System.EventHandler(this.tboxCantidadDiezBillete_TextChanged);
             // 
             // lblVentiCincoCentavos
             // 
             this.lblVentiCincoCentavos.AutoSize = true;
             this.lblVentiCincoCentavos.Font = new System.Drawing.Font("Oswald Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVentiCincoCentavos.Location = new System.Drawing.Point(38, 188);
+            this.lblVentiCincoCentavos.Location = new System.Drawing.Point(38, 196);
             this.lblVentiCincoCentavos.Name = "lblVentiCincoCentavos";
             this.lblVentiCincoCentavos.Size = new System.Drawing.Size(34, 16);
             this.lblVentiCincoCentavos.TabIndex = 6;
@@ -813,7 +868,7 @@
             // 
             this.lblCincuentaCentavos.AutoSize = true;
             this.lblCincuentaCentavos.Font = new System.Drawing.Font("Oswald Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCincuentaCentavos.Location = new System.Drawing.Point(38, 161);
+            this.lblCincuentaCentavos.Location = new System.Drawing.Point(38, 167);
             this.lblCincuentaCentavos.Name = "lblCincuentaCentavos";
             this.lblCincuentaCentavos.Size = new System.Drawing.Size(34, 16);
             this.lblCincuentaCentavos.TabIndex = 6;
@@ -927,7 +982,7 @@
             this.tboxNumeroCaja.Location = new System.Drawing.Point(477, 22);
             this.tboxNumeroCaja.Name = "tboxNumeroCaja";
             this.tboxNumeroCaja.Size = new System.Drawing.Size(103, 22);
-            this.tboxNumeroCaja.TabIndex = 5;
+            this.tboxNumeroCaja.TabIndex = 1;
             // 
             // lblNumeroCaja
             // 
@@ -1119,18 +1174,7 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lblCierreCaja
-            // 
-            this.lblCierreCaja.AutoSize = true;
-            this.lblCierreCaja.Font = new System.Drawing.Font("Bebas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCierreCaja.ForeColor = System.Drawing.Color.White;
-            this.lblCierreCaja.Location = new System.Drawing.Point(385, 9);
-            this.lblCierreCaja.Name = "lblCierreCaja";
-            this.lblCierreCaja.Size = new System.Drawing.Size(119, 23);
-            this.lblCierreCaja.TabIndex = 14;
-            this.lblCierreCaja.Text = "Cierre de Caja";
-            // 
-            // CierreCaja
+            // FormularioCierreCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1146,7 +1190,7 @@
             this.Controls.Add(this.gboxTipoVenta);
             this.Controls.Add(this.pnlBarraPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CierreCaja";
+            this.Name = "FormularioCierreCaja";
             this.Text = "Total Billetes:";
             this.pnlBarraPrincipal.ResumeLayout(false);
             this.pnlBarraPrincipal.PerformLayout();
@@ -1184,8 +1228,8 @@
         private System.Windows.Forms.GroupBox gboxBilletes;
         private System.Windows.Forms.Label lblDenominacionBilletes;
         private System.Windows.Forms.Label lblCantidadBilletes;
-        private System.Windows.Forms.TextBox tboxTotalDiez;
-        private System.Windows.Forms.TextBox tboxCantidadDiez;
+        private System.Windows.Forms.TextBox tboxTotalVeinte;
+        private System.Windows.Forms.TextBox tboxCantidadVeinte;
         private System.Windows.Forms.TextBox tboxTotalCincuenta;
         private System.Windows.Forms.TextBox tboxCantidadCincuenta;
         private System.Windows.Forms.TextBox tboxTotalCien;
@@ -1206,18 +1250,18 @@
         private System.Windows.Forms.GroupBox gboxMonedas;
         private System.Windows.Forms.Label lblDenominacionMonedas;
         private System.Windows.Forms.Label lblCantidadMonedas;
-        private System.Windows.Forms.TextBox tboxTotalVeintiCinco;
-        private System.Windows.Forms.TextBox tboxTotalCincuentaCentavos;
-        private System.Windows.Forms.TextBox tboxTotalUno;
-        private System.Windows.Forms.TextBox tboxTotalDos;
+        private System.Windows.Forms.TextBox tboxTotalMonedasVeintiCinco;
+        private System.Windows.Forms.TextBox tboxTotalMonedasCincuentaCentavos;
+        private System.Windows.Forms.TextBox tboxTotalMonedasUno;
+        private System.Windows.Forms.TextBox tboxTotalMonedaDos;
         private System.Windows.Forms.TextBox tboxTotalCincoMonedas;
         private System.Windows.Forms.TextBox tboxCantidadVeintiCinco;
-        private System.Windows.Forms.TextBox lblCantidadCincuentaCentavos;
+        private System.Windows.Forms.TextBox tboxCantidadCincuentaCentavos;
         private System.Windows.Forms.TextBox tboxCantidadUno;
         private System.Windows.Forms.TextBox tboxCantidadDos;
         private System.Windows.Forms.TextBox tboxCantidadCincoMonedas;
         private System.Windows.Forms.TextBox tboxTotalDiezMonedas;
-        private System.Windows.Forms.TextBox tboxCantidadDiezBillete;
+        private System.Windows.Forms.TextBox tboxCantidadDiezMoneda;
         private System.Windows.Forms.Label lblVentiCincoCentavos;
         private System.Windows.Forms.Label lblCincuentaCentavos;
         private System.Windows.Forms.Label lblUno;

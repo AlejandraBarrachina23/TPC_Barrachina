@@ -15,7 +15,7 @@ namespace Negocio
         public void AgregarCabeceraVenta(CabeceraVenta unaNuevaCabeceraVenta) {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("INSERT INTO Ventas (Usuario,Cliente,Total,MetodoPago) VALUES ('" + unaNuevaCabeceraVenta.Usuario.Nombre + "','" + unaNuevaCabeceraVenta.Cliente.CodigoCliente + "','" +
+            AccederDatos.DefinirTipoComando("INSERT INTO Ventas (Usuario,Cliente,Total,MetodoPago) VALUES ('" + unaNuevaCabeceraVenta.Usuario.CodigoUsuario + "','" + unaNuevaCabeceraVenta.Cliente.CodigoCliente + "','" +
             unaNuevaCabeceraVenta.Total + "','"+ unaNuevaCabeceraVenta.MetodoPago+ "')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
@@ -29,5 +29,7 @@ namespace Negocio
             AccederDatos.CerrarConexion();
             return NumeroVenta;
         }
+
+        
     }
 }

@@ -15,10 +15,11 @@ namespace PresentacionWinForm
 {
     public partial class FormularioVenta : Form
     {
-
-        public FormularioVenta()
+        private Usuario UsuarioActivo;
+        public FormularioVenta(Usuario unUsuario)
         {
             InitializeComponent();
+            UsuarioActivo = unUsuario;
         }
 
         private List<DetalleVenta> ListadoDetalle = new List<DetalleVenta>();
@@ -116,6 +117,7 @@ namespace PresentacionWinForm
             tboxNumeroOperacion.Text = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta().ToString();
             tboxMetodoPago.Text = "Efectivo";
             tboxSaldo.Text = 0.ToString("N2");
+            tboxUsuario.Text = UsuarioActivo.Nombre;
             tboxNumeroOperacion.Enabled = false;
             tboxFechaEmision.Enabled = false;
             tboxHora.Enabled = false;
@@ -196,7 +198,7 @@ namespace PresentacionWinForm
             CabeceraVentaNegocio unaCabeceraVentaNegocio = new CabeceraVentaNegocio();
             DetalleVentaNegocio unDetallVentaNegocio = new DetalleVentaNegocio();
 
-            unaCabeceraVenta.Usuario.CodigoUsuario = 1;
+            unaCabeceraVenta.Usuario = UsuarioActivo; 
 
             if (unCliente != null) {
 
