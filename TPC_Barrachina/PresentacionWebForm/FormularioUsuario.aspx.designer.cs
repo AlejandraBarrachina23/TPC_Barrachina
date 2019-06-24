@@ -22,6 +22,15 @@ namespace PresentacionWebForm {
         protected global::System.Web.UI.WebControls.TextBox tboxCodigo;
         
         /// <summary>
+        /// Control lblCodigo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCodigo;
+        
+        /// <summary>
         /// Control tboxNombre.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace PresentacionWebForm {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox tboxNombre;
+        
+        /// <summary>
+        /// Control tboxConstrasenia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tboxConstrasenia;
         
         /// <summary>
         /// Control DdlSectores.

@@ -102,6 +102,7 @@ namespace Negocio
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("UPDATE Productos SET Estado = 0 WHERE CodigoProducto ='" + unProducto.CodigoProducto+"'");
             AccederDatos.EjecutarConsulta();
+            AccederDatos.CerrarConexion();
 
         }
 
@@ -119,6 +120,7 @@ namespace Negocio
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoProveedor", unProducto.Proveedor.CodigoProveedor);
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoRubro", unProducto.Rubro.CodigoRubro);
             AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
 
         }
 
@@ -174,8 +176,6 @@ namespace Negocio
             throw new Exception("El código ingresado no existe");
 
         }
-
-        
          
     }
 }

@@ -1,5 +1,11 @@
 ﻿function Advertencia() {
 
-    document.getElementById("prueba").innerHTML = 'hola';
-    return false;
+   alert("hola")
 }
+
+function Ocultar() {
+
+    var AgregarUsuario = document.getElementById('AgregarUsuario');
+    AgregarUsuario.style.display('hidden');
+}
+

@@ -14,17 +14,22 @@
     <h1>Agregar Usuario</h1>
     <div class ="FormularioUsuario">
         <label>Codigo:</label>
-        <asp:TextBox ID="tboxCodigo" runat="server"></asp:TextBox>
-        <br />
-                     
+        <asp:TextBox ID="tboxCodigo" runat="server" AutoPostBack="true" OnTextChanged="tboxCodigo_TextChanged"></asp:TextBox>
+        <asp:Label ID="lblCodigo" runat="server" ForeColor="Red" Visible="False" />
+        <br />   
         <label>Nombre Usuario:</label>
         <asp:TextBox ID="tboxNombre" runat="server"></asp:TextBox>
         
         <label id="prueba">Contraseña Usuario:</label>
-        <input type="Text" name="name" value="" /><br />
+        <asp:TextBox ID="tboxConstrasenia" runat="server"></asp:TextBox>
 
         <label>Sector:</label>
-        <asp:DropDownList ID="DdlSectores" runat="server"></asp:DropDownList><br />
+        <asp:DropDownList ID="DdlSectores" runat="server">
+            <asp:ListItem>Compras</asp:ListItem>
+            <asp:ListItem>Ventas</asp:ListItem>
+            <asp:ListItem>Administración</asp:ListItem>
+            <asp:ListItem>Depósito</asp:ListItem>
+        </asp:DropDownList><br />
         
         <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClientClick="if(!Advertencia()){return false;};"/>
     </div>
