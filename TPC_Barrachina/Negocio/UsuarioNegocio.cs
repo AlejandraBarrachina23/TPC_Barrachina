@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dominio;
 using AccesoDatos;
+using System.Windows.Forms;
 
 namespace Negocio
 {
@@ -84,7 +85,7 @@ namespace Negocio
 
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("select * from Usuarios where Nombre = '" + CodigoIngresado + "'");
+            AccederDatos.DefinirTipoComando("select * from Usuarios where CodigoUsuario = '" + CodigoIngresado + "'");
             AccederDatos.EjecutarConsulta();
 
             while (AccederDatos.LectorDatos.Read())
@@ -120,6 +121,16 @@ namespace Negocio
             AccederDatos.Comando.Parameters.AddWithValue("@Sector", unUsuario.SectorDesignado);
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
+        }
+
+        public Usuario CargarUsuario(int tboxCodigo, string tboxNombre, string tboxContrasenia, string DdlSectores) {
+
+            Usuario unUsuarioSeleccionado = new Usuario();
+            unUsuarioSeleccionado.CodigoUsuario = tboxCodigo;
+            unUsuarioSeleccionado.Nombre = tboxNombre;
+            unUsuarioSeleccionado.Constrasenia = tboxContrasenia;
+            unUsuarioSeleccionado.SectorDesignado = DdlSectores;
+            return unUsuarioSeleccionado;
         }
     }
 }

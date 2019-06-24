@@ -23,6 +23,7 @@ namespace PresentacionWebForm
         protected void dgvUsuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
             // unUsuarioSeleccionado = (Usuario)dgvUsuarios.SelectedRow.DataItem;
+
             GridViewRow FilaSeleccionada = dgvUsuarios.SelectedRow;
             unUsuarioSeleccionado.CodigoUsuario = (Convert.ToInt32(dgvUsuarios.DataKeys[FilaSeleccionada.RowIndex].Values["CodigoUsuario"]));
             unUsuarioSeleccionado.Nombre = (dgvUsuarios.DataKeys[FilaSeleccionada.RowIndex].Values["Nombre"]).ToString();
@@ -44,11 +45,11 @@ namespace PresentacionWebForm
 
         protected void dgvUsuarios_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-      
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+         
                 pnlAgregarUsuario.Visible = true;
                 tboxCodigo.Enabled = true;
                 lblTitulo.Text = "Agregar Usuario";
@@ -57,6 +58,7 @@ namespace PresentacionWebForm
                 tboxContrasenia.Text = "";
                 DdlSectores.SelectedIndex = 1;
                 Session["TipoOperacion"] = "Agregar";
+            
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
@@ -106,25 +108,28 @@ namespace PresentacionWebForm
         {
             if (Session["TipoOperacion"].ToString() == "Agregar")
             {
-                unUsuarioSeleccionado.CodigoUsuario = Convert.ToInt32(tboxCodigo.Text);
-                unUsuarioSeleccionado.Nombre = tboxNombre.Text;
-                unUsuarioSeleccionado.Constrasenia = tboxContrasenia.Text;
-                unUsuarioSeleccionado.SectorDesignado = DdlSectores.SelectedValue;
+                unUsuarioSeleccionado = UsuarioNegocio.CargarUsuario(Convert.ToInt32(tboxCodigo.Text), tboxNombre.Text, tboxContrasenia.Text, DdlSectores.SelectedValue);
                 UsuarioNegocio.AgregarUsuario(unUsuarioSeleccionado);
             }
 
             else {
 
-                unUsuarioSeleccionado.CodigoUsuario = Convert.ToInt32(tboxCodigo.Text);
-                unUsuarioSeleccionado.Nombre = tboxNombre.Text;
-                unUsuarioSeleccionado.Constrasenia = tboxContrasenia.Text;
-                unUsuarioSeleccionado.SectorDesignado = DdlSectores.SelectedValue;
+                unUsuarioSeleccionado = UsuarioNegocio.CargarUsuario(Convert.ToInt32(tboxCodigo.Text), tboxNombre.Text, tboxContrasenia.Text, DdlSectores.SelectedValue);
                 UsuarioNegocio.ModificarUsuario(unUsuarioSeleccionado);
             }
 
             pnlAgregarUsuario.Visible = false;
             dgvUsuarios.DataSource = UsuarioNegocio.ListadoUsuarios();
             dgvUsuarios.DataBind();
+        }
+
+        protected void tboxCodigo_TextChanged(object sender, EventArgs e)
+        {
+
+            if (UsuarioNegocio.ValidarExistenciaCodigo(Convert.ToInt32(tboxCodigo.Text)))
+            {
+                lblAdvertencia.Text = "Usuario Repetido";
+            }
         }
     }
 }

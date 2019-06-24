@@ -134,7 +134,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FormularioUsuario.aspx" />
+    <Content Include="img\checked.png" />
     <Content Include="img\click.png" />
+    <Content Include="img\select %281%29.png" />
+    <Content Include="img\selection.png" />
     <Content Include="ListadoUsuarios.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
