@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
+using Dominio;
 
 namespace PresentacionWebsForm
 {
@@ -11,7 +13,10 @@ namespace PresentacionWebsForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            CabeceraVentaNegocio unaCabeceraVenta = new CabeceraVentaNegocio();
+            lblRedaudacionNumerico.Text = "$ " + unaCabeceraVenta.TotalVentasPorFecha().ToString();
+            lblCantidadVentas.Text = unaCabeceraVenta.CantidadVentasPorFecha().ToString();
+            lblGananciaNumerica.Text = unaCabeceraVenta.GananciaDelDia().ToString();
         }
     }
 }

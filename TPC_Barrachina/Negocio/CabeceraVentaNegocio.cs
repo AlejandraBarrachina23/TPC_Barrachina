@@ -30,6 +30,31 @@ namespace Negocio
             return NumeroVenta;
         }
 
-        
+        public decimal TotalVentasPorFecha() {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT SUM(total) from Ventas where Fecha = '2019-06-18'");
+            decimal TotalVentas = AccederDatos.ejecutarAccionReturnDouble();
+            AccederDatos.CerrarConexion();
+            return TotalVentas;
+        }
+
+        public int CantidadVentasPorFecha()
+        {
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT count(total) from Ventas where Fecha = '2019-06-18'");
+            int CantidadVentas = AccederDatos.ejecutarAccionReturn();
+            AccederDatos.CerrarConexion();
+            return CantidadVentas;
+        }
+
+        public decimal GananciaDelDia() {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("select SUM((PrecioVentaMinorista+PrecioVentaMayorista)-(PrecioCostoLista-PrecioCosto))from DetalleVentas inner join Ventas on Ventas.NumeroVenta = DetalleVentas.NumeroFactura where Fecha = '2019-06-18'");
+            decimal TotalGanancia = AccederDatos.ejecutarAccionReturnDouble();
+            AccederDatos.CerrarConexion();
+            return TotalGanancia;
+        }
     }
 }

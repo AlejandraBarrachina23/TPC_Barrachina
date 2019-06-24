@@ -91,6 +91,20 @@ namespace AccesoDatos
             }
         }
 
+        public decimal ejecutarAccionReturnDouble()
+        {
+            try
+            {
+                comandoSQL.Connection = conexionSQL;
+                return (decimal)comandoSQL.ExecuteScalar();
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void LecturaBaseDatos(string Consulta) {
 
             AbrirConexion();

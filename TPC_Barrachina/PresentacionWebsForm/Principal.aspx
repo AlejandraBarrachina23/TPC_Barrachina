@@ -17,7 +17,7 @@
         <div id="panel1"></div>
          <asp:Label class="box-main-title" Text="TOTAL VENTAS" runat="server" />
          <img src="img/credit-card.png" alt="Alternate Text" />
-        <asp:Label Text="$20000" runat="server" />
+        <asp:Label ID="lblCantidadVentas" Text="$20000" runat="server" />
     </div>
     <div class="box-report">
         <asp:Label class="box-main-title" Text="TOTAL GANANCIA" runat="server" /><br /> 
