@@ -32,8 +32,6 @@ namespace Negocio
 
         }
 
-
-
         public void EliminarCuentaCorriente(CuentaCorriente unaCuentaCorriente)
         {
             AccederDatos.AbrirConexion();
@@ -82,5 +80,7 @@ namespace Negocio
             unaNuevaCuenteCorriente.LimiteCuenta = Convert.ToUInt32(tboxLimitecuenta.Text);
             return unaNuevaCuenteCorriente;
         }
+
+        
     }
 }

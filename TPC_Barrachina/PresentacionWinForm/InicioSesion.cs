@@ -30,7 +30,7 @@ namespace PresentacionWinForm
 
             if (unUsuarioIngresado != null)
             {
-                if (unUsuarioIngresado.SectorDesignado == "Administracion")
+                if (unUsuarioIngresado.SectorDesignado == "Administración")
                 {
                     MenuAdministrador menuAdministador = new MenuAdministrador(unUsuarioIngresado);
                     menuAdministador.ShowDialog();
@@ -41,7 +41,7 @@ namespace PresentacionWinForm
 
                     MenuVendedor menuVendedor = new MenuVendedor(unUsuarioIngresado);
                     menuVendedor.ShowDialog();
-                    this.Close();
+                    this.Dispose();
                 }
                 
             }

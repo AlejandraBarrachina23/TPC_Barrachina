@@ -17,6 +17,9 @@ namespace PresentacionWebsForm
             lblRedaudacionNumerico.Text = "$ " + unaCabeceraVenta.TotalVentasDelDia().ToString();
             lblCantidadVentas.Text = unaCabeceraVenta.CantidadVentasDelDia().ToString();
             lblGananciaNumerica.Text = "$" + unaCabeceraVenta.GananciaDelDia().ToString();
+            lblRecaudacionCigarillos.Text = "$" + unaCabeceraVenta.RecaudacionPorTipoProducto(3).ToString(); //3-> cigarillos
+            lblRecaudacionVarios.Text = "$" + unaCabeceraVenta.RecaudacionVarios().ToString();
+            lblRecaudacionTarjetas.Text = "$" + unaCabeceraVenta.RecaudacionPorTipoProducto(7).ToString(); // 7 -> tarjetas telefonicas
         }
     }
 }

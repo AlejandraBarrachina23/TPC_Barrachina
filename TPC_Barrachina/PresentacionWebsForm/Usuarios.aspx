@@ -8,8 +8,14 @@
                 CssClass="grid-content" HeaderStyle-CssClass="grid-header" RowStyle-CssClass="rows" EditRowStyle-CssClass ="select-row">
                 
                 <Columns>
-                    <asp:CommandField ButtonType="Image" SelectImageUrl="~/img/click.png" ShowSelectButton="True" HeaderText="Selección" />
+                    <asp:CommandField ButtonType="Image" SelectImageUrl="~/img/arrow.png" ShowSelectButton="True" HeaderText="Selección" />
                 </Columns>
+
+<EditRowStyle CssClass="select-row"></EditRowStyle>
+
+<HeaderStyle CssClass="grid-header"></HeaderStyle>
+
+<RowStyle CssClass="rows"></RowStyle>
             </asp:GridView>
 
         <asp:Label ID="lblAdvertencia" Text="" runat="server" />

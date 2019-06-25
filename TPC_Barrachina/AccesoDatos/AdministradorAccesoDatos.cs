@@ -96,7 +96,14 @@ namespace AccesoDatos
             try
             {
                 comandoSQL.Connection = conexionSQL;
-                return (decimal)comandoSQL.ExecuteScalar();
+                var resultado = comandoSQL.ExecuteScalar();
+
+                if (resultado == DBNull.Value)
+                {
+                    return 0;
+                }
+
+                return (decimal)resultado;
                 
             }
             catch (Exception ex)

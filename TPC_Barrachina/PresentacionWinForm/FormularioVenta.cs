@@ -25,7 +25,6 @@ namespace PresentacionWinForm
         private List<DetalleVenta> ListadoDetalle = new List<DetalleVenta>();
         private int CuentaLineas = 1;
         private decimal Subtotal = 0;
-        private decimal Descuento = 0;
         ValidadorDatos Validar = new ValidadorDatos();
         Utilidades Utilidades = new Utilidades();
         CabeceraVenta unaCabeceraVenta = new CabeceraVenta();
@@ -63,12 +62,15 @@ namespace PresentacionWinForm
 
         private void CambiarCliente(Cliente unClienteSeleccionado) {
 
+            
             tboxClientes.Text = unClienteSeleccionado.Nombre;
             tboxSaldo.Text = unClienteSeleccionado.CuentaCorriente.Saldo.ToString("N2");
             lblDescuentoNumerico.Text = unClienteSeleccionado.Descuento.Porcentaje + "%";
             unCliente = unClienteSeleccionado;
+
             if (dgvDetalleVenta.DataSource != null) {
-                lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToInt32(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
+
+                lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToDecimal(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
             }
         }
 
@@ -125,6 +127,7 @@ namespace PresentacionWinForm
             tboxClientes.Enabled = false;
             tboxSaldo.Enabled = false;
             tboxUsuario.Enabled = false;
+            tboxCantidad.Text = 1.ToString();
 
         }
 
@@ -171,7 +174,7 @@ namespace PresentacionWinForm
 
                 if (unCliente != null) {
 
-                    lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToInt32(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
+                    lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToDecimal(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
                 }
                 
                 tboxCantidad.Text = 1.ToString();
@@ -187,48 +190,75 @@ namespace PresentacionWinForm
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            unaCabeceraVenta.Usuario = new Usuario();
-            unaCabeceraVenta.Cliente = new Cliente();
-            CabeceraVentaNegocio unaCabeceraVentaNegocio = new CabeceraVentaNegocio();
-            DetalleVentaNegocio unDetallVentaNegocio = new DetalleVentaNegocio();
-
-            unaCabeceraVenta.Usuario = UsuarioActivo; 
-
-            if (unCliente != null) {
-
-                unaCabeceraVenta.Cliente.CodigoCliente = unCliente.CodigoCliente;
-            }
-
-            unaCabeceraVenta.FechaEmision = tboxFechaEmision.Text;
-            unaCabeceraVenta.Total = Convert.ToDouble(lblTotalFactura.Text);
-            unaCabeceraVenta.MetodoPago = tboxMetodoPago.Text;
-                
-            unaCabeceraVentaNegocio.AgregarCabeceraVenta(unaCabeceraVenta);
-
-            
-            foreach (DetalleVenta unDetalleVenta in ListadoDetalle)
+            try
             {
-                unDetallVentaNegocio.AgregarDetalleVenta(unDetalleVenta,unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta());
+                Validar.GrillaVacia(dgvDetalleVenta);
+                unaCabeceraVenta.Usuario = new Usuario();
+                unaCabeceraVenta.Cliente = new Cliente();
+                CabeceraVentaNegocio unaCabeceraVentaNegocio = new CabeceraVentaNegocio();
+                DetalleVentaNegocio unDetallVentaNegocio = new DetalleVentaNegocio();
+                ClienteNegocio unClienteNegocio = new ClienteNegocio();
+                unaCabeceraVenta.Usuario = UsuarioActivo;
+
+                if (unCliente != null)
+                {
+                    if (tboxMetodoPago.Text == "CtaCorriente") {
+
+                        unClienteNegocio.VerificarValorAnotar(unClienteNegocio.VerificarLimiteDisponible(unCliente), Convert.ToDecimal(lblTotalFactura.Text));
+                        unCliente.CuentaCorriente.Saldo = unCliente.CuentaCorriente.Saldo + Convert.ToDecimal(lblTotalFactura.Text);
+                        unaCabeceraVenta.Cliente.CodigoCliente = unCliente.CodigoCliente;
+                    }
+
+
+                    unClienteNegocio.ActualizarSaldo(unCliente);
+                   
+                }
+
+                unaCabeceraVenta.FechaEmision = tboxFechaEmision.Text;
+                unaCabeceraVenta.Total = Convert.ToDouble(lblTotalFactura.Text);
+                unaCabeceraVenta.MetodoPago = tboxMetodoPago.Text;
+                unaCabeceraVentaNegocio.AgregarCabeceraVenta(unaCabeceraVenta);
+
+                foreach (DetalleVenta unDetalleVenta in ListadoDetalle)
+                {
+                    unDetallVentaNegocio.AgregarDetalleVenta(unDetalleVenta, unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta());
+                }
+
+                CuentaLineas = 1; Subtotal = 0;
+                dgvDetalleVenta.DataSource = null;
+                ListadoDetalle.Clear();
+                tboxNumeroOperacion.Text = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta().ToString();
+                lblSubtotalNumerico.Text = 0.00.ToString();
+
             }
- 
-            CuentaLineas = 1;
-            Subtotal = Descuento = 0;
-            dgvDetalleVenta.DataSource = null;
-            ListadoDetalle.Clear();
-            
-            tboxNumeroOperacion.Text = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta().ToString();
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+          
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            DetalleVenta unDetalleSeleccionado = (DetalleVenta)dgvDetalleVenta.CurrentRow.DataBoundItem;
-            lblSubtotalNumerico.Text = (Subtotal -= unDetalleSeleccionado.Subtotal).ToString();
-            lblTotalFactura.Text = Subtotal.ToString("N2");
-            ListadoDetalle.Remove(unDetalleSeleccionado);
-            dgvDetalleVenta.DataSource = null;
-            dgvDetalleVenta.DataSource = ListadoDetalle;
-            dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
-            Utilidades.AjustarOrdenGridViewVentas(dgvDetalleVenta);
+
+            try
+            {
+                Validar.GrillaVacia(dgvDetalleVenta);
+                DetalleVenta unDetalleSeleccionado = (DetalleVenta)dgvDetalleVenta.CurrentRow.DataBoundItem;
+                lblSubtotalNumerico.Text = (Subtotal -= unDetalleSeleccionado.Subtotal).ToString();
+                lblTotalFactura.Text = Subtotal.ToString("N2");
+                ListadoDetalle.Remove(unDetalleSeleccionado);
+                dgvDetalleVenta.DataSource = null;
+                dgvDetalleVenta.DataSource = ListadoDetalle;
+                dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
+                Utilidades.AjustarOrdenGridViewVentas(dgvDetalleVenta);
+            }
+            catch (Exception Excepcion)
+            {
+
+                MessageBox.Show(Excepcion.Message);
+            }
+            
         }
 
         private void tboxCodigoBarra_KeyPress(object sender, KeyPressEventArgs e)

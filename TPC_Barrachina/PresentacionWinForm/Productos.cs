@@ -86,8 +86,8 @@ namespace PresentacionWinForm
             try
             {
                 ProductoNegocio unProductoNegocio = new ProductoNegocio();
-                ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor, "Agregar");
-                unProductoNegocio.AgregarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, cboxProveedor, cboxRubro));
+                ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, tboxRentabilidad, cboxTipoProducto, cboxRubro, cboxProveedor, "Agregar");
+                unProductoNegocio.AgregarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, tboxRentabilidad, cboxProveedor, cboxRubro));
                 Avisos FormularioAviso = new Avisos();
                 FormularioAviso.Show();
             }
@@ -104,8 +104,8 @@ namespace PresentacionWinForm
             try
             {
                 ProductoNegocio unProductoNegocio = new ProductoNegocio();
-                ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, cboxTipoProducto, cboxRubro, cboxProveedor, "Modificar");
-                unProductoNegocio.ModificarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, cboxProveedor, cboxRubro));
+                ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, tboxRentabilidad, cboxTipoProducto, cboxRubro, cboxProveedor, "Modificar");
+                unProductoNegocio.ModificarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, tboxRentabilidad,cboxProveedor, cboxRubro));
             }
             catch (Exception Excepcion)
             {

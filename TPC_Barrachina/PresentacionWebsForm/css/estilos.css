@@ -172,12 +172,6 @@ footer {
     font-size: 30px;
 }
 
-#lblAdvertencia {
-    font-family: 'Oswald', sans-serif;
-    color: red;
-    font-size: medium;
-}
-
 .grid-content {
     width: 50%;
     min-width: 80%;
@@ -222,4 +216,9 @@ footer {
 .main-title {
     
     font-size: 30px;
+}
+#lblAdvertencia {
+    font-family: 'Oswald', sans-serif;
+    color: red;
+    font-size: medium;
 }

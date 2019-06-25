@@ -60,6 +60,14 @@ namespace Negocio
             }
         }
 
+        public void GrillaVacia(DataGridView grilla) {
+
+            if (grilla.Rows.Count == 0) {
+
+                throw new Exception("La grilla esta vacía");
+            }
+        }
+
         public void MinimoValor(TextBox texto, string NombreCampo, int valor) {
 
             ContenidoTextBoxVacio(texto, NombreCampo);
@@ -89,7 +97,7 @@ namespace Negocio
             }
         }
 
-        public void FormularioProducto(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, TextBox tboxCantidadBulto, TextBox tboxStockCritico, ComboBox cboxTipoProducto, ComboBox cboxRubro, ComboBox cboxProveedor, string TipoOperacion)
+        public void FormularioProducto(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, TextBox tboxCantidadBulto, TextBox tboxStockCritico, TextBox tboxRentabilidad, ComboBox cboxTipoProducto, ComboBox cboxRubro, ComboBox cboxProveedor, string TipoOperacion)
         {
             if (TipoOperacion == "Agregar") {
 
@@ -101,16 +109,18 @@ namespace Negocio
                 ExistenciaDeDatoDB("CodigoBulto", "Productos", tboxCodigoBulto.Text);
                 MinimoValor(tboxCodigoBulto, "Codigo Bulto", 10);
 
-                ExistenciaDeDatoDB("Nombre", "Productos", tboxNombre.Text);
+                ExistenciaDeDatoDB("NombreProducto", "Productos", tboxNombre.Text);
 
             }
 
             ContenidoTextBoxVacio(tboxNombre, "Nombre");
-            ExistenciaRepetidaDeDatoDB("CodigoProducto", "Nombre", "Productos", "CodigoProducto", "Nombre", tboxNombre.Text, tboxCodigoProducto.Text);
+            ExistenciaRepetidaDeDatoDB("CodigoProducto", "NombreProducto", "Productos", "CodigoProducto", "NombreProducto", tboxNombre.Text, tboxCodigoProducto.Text);
 
             MinimoValor(tboxCantidadBulto, "Cantidad por bulto", 0);
             MinimoValor(tboxStockCritico, "Stock Crítico", 0);
             Multiplo(tboxStockCritico, tboxCantidadBulto, "Stock Crítico", "Cantidad por Bulto");
+
+            MinimoValor(tboxRentabilidad, "Cantidad por bulto", 0);
 
             SeleccionComboBox(cboxTipoProducto, "Tipo Producto");
 

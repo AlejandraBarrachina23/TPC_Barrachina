@@ -46,12 +46,11 @@ namespace Negocio
 
         public void AgregarProducto(Producto unProducto) {
 
-            AccederDatos.DefinirTipoComando(("INSERT INTO Productos (CodigoProducto,CodigoBulto,Nombre,CodigoTipoProducto,CantidadxBulto,StockCritico,CodigoProveedor,CodigoRubro)" +
+            AccederDatos.DefinirTipoComando("INSERT INTO Productos (CodigoProducto,CodigoBulto,NombreProducto,CodigoTipoProducto,CantidadxBulto,StockCritico,CodigoProveedor,CodigoRubro,Rentabilidad)" +
             "VALUES ('" + unProducto.CodigoProducto + "','" + unProducto.CodigoBulto + "','" + unProducto.Nombre.ToString() + "','" + unProducto.TipoProducto.CodigoTipoProducto.ToString() + "','" + unProducto.CantidadxBulto + "','" + unProducto.StockCritico + "','" + unProducto.Proveedor.CodigoProveedor + "','" +
-            unProducto.Rubro.CodigoRubro + "')"));
+            unProducto.Rubro.CodigoRubro + "','" + unProducto.Rentabilidad + "')");
             AccederDatos.AbrirConexion();
             AccederDatos.EjecutarConsulta();
-            AccederDatos.CerrarReader();
             AccederDatos.CerrarConexion();
         }
 
@@ -112,7 +111,7 @@ namespace Negocio
 
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("UPDATE Productos Set CodigoBulto=@CodigoBulto, Nombre=@NombreProducto, CodigoTipoProducto=@CodigoTipoProducto, CantidadxBulto=@CantidadxBulto, StockCritico=@StockCritico, " +
-            "CodigoProveedor=@CodigoProveedor, CodigoRubro=@CodigoRubro WHERE CodigoProducto = '" + unProducto.CodigoProducto + "'");
+            "CodigoProveedor=@CodigoProveedor, CodigoRubro=@CodigoRubro, Rentabilidad=@Rentabilidad WHERE CodigoProducto = '" + unProducto.CodigoProducto + "'");
             AccederDatos.Comando.Parameters.Clear();
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoBulto", unProducto.CodigoBulto);
             AccederDatos.Comando.Parameters.AddWithValue("@Nombre", unProducto.Nombre);
@@ -121,12 +120,13 @@ namespace Negocio
             AccederDatos.Comando.Parameters.AddWithValue("@StockCritico", unProducto.StockCritico);
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoProveedor", unProducto.Proveedor.CodigoProveedor);
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoRubro", unProducto.Rubro.CodigoRubro);
+            AccederDatos.Comando.Parameters.AddWithValue("@Rentabilidad", unProducto.Rentabilidad);
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
 
         }
 
-        public Producto CargarProducto(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, ComboBox cboxTipoProducto, TextBox tboxCantidadBulto, TextBox tboxStockCritico, ComboBox cboxProveedor, ComboBox cboxRubro) {
+        public Producto CargarProducto(TextBox tboxCodigoProducto, TextBox tboxCodigoBulto, TextBox tboxNombre, ComboBox cboxTipoProducto, TextBox tboxCantidadBulto, TextBox tboxStockCritico, TextBox tboxRentabilidad, ComboBox cboxProveedor, ComboBox cboxRubro) {
 
             
             Producto unProducto = new Producto();
@@ -134,6 +134,7 @@ namespace Negocio
             unProducto.CodigoProducto = tboxCodigoProducto.Text;
             unProducto.CodigoBulto = tboxCodigoBulto.Text;
             unProducto.Nombre = tboxNombre.Text;
+            unProducto.Rentabilidad = Convert.ToDecimal(tboxRentabilidad.Text);
             unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
             unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);
             unProducto.StockCritico = Convert.ToInt32(tboxStockCritico.Text);

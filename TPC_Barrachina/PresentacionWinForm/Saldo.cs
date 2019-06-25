@@ -47,7 +47,7 @@ namespace PresentacionWinForm
                 unCliente.CuentaCorriente.Saldo = unCliente.CuentaCorriente.Saldo - Convert.ToDecimal(tboxRecibido.Text);
                 
                 ClienteNegocio unClienteNegocio = new ClienteNegocio();
-                unClienteNegocio.SaldarDeuda(unCliente);
+                unClienteNegocio.ActualizarSaldo(unCliente);
             }
             catch (Exception Excepcion)
             {

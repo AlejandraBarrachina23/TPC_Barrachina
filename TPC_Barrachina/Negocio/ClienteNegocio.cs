@@ -207,12 +207,34 @@ namespace Negocio
             return ListadoClientes;
         }
 
-        public void SaldarDeuda(Cliente unCliente) {
+        public void ActualizarSaldo(Cliente unCliente) {
 
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("UPDATE CuentaCorrientes SET Saldo = " + unCliente.CuentaCorriente.Saldo +" WHERE CodigoCuentaCorriente = '" + unCliente.CuentaCorriente.CodigoCuentaCorriente+ "'");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
         }
+
+        public decimal VerificarLimiteDisponible(Cliente unCliente) {
+
+            decimal SaldoDisponible = unCliente.CuentaCorriente.LimiteCuenta - unCliente.CuentaCorriente.Saldo;
+
+            if (SaldoDisponible <= 0) {
+
+                throw new Exception("El cliente alcanzo el límite de Saldo");
+            }
+
+            return SaldoDisponible;
+        }
+
+        public void VerificarValorAnotar(decimal SaldoDisponible, decimal SaldoAnotar) {
+
+            if (SaldoAnotar > SaldoDisponible) {
+
+                throw new Exception("La operación supera el saldo disponible por el cliente");
+            }
+
+        }
+        
     }
 }
