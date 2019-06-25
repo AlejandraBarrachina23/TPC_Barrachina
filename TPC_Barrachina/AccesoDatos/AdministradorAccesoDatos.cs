@@ -105,13 +105,6 @@ namespace AccesoDatos
             }
         }
 
-        public void LecturaBaseDatos(string Consulta) {
-
-            AbrirConexion();
-            DefinirTipoComando(Consulta);
-            EjecutarAccion();
-            EjecutarConsulta();
-        }
     }
 }
 

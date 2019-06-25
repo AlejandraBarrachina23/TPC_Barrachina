@@ -17,7 +17,9 @@ namespace Negocio
         {
 
             List<Direccion> ListadoDirecciones = new List<Direccion>();
-            AccederDatos.LecturaBaseDatos("Select * from Direcciones");
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("Select * from Direcciones");
+            AccederDatos.EjecutarConsulta();
 
             while (AccederDatos.LectorDatos.Read())
             {

@@ -151,11 +151,12 @@ namespace PresentacionWinForm
                 unDetalleVenta.Linea = CuentaLineas;
                 unDetalleVenta.Producto = unProducto;
                 unDetalleVenta.CantidadxBulto = unProducto.CantidadxBulto;
-                unDetalleVenta.Cantidad = Convert.ToInt32(tboxCantidad.Text);//revisar cantidadxbulto
+                unDetalleVenta.Cantidad = Convert.ToInt32(tboxCantidad.Text);
                 unDetalleVenta.Bultos = Convert.ToInt32(unDetalleVenta.Cantidad) / unProducto.CantidadxBulto;
                 unDetalleVenta.Unidades = Convert.ToInt32(unDetalleVenta.Cantidad) % unProducto.CantidadxBulto;
                 unDetalleVenta.PrecioMayorista = unProducto.PrecioVentaMayorista;
                 unDetalleVenta.PrecioMinorista = unProducto.PrecioVentaMinorista;
+                unDetalleVenta.PrecioCosto = unProducto.PrecioCosto;
                 unDetalleVenta.Subtotal = (unDetalleVenta.Unidades * unDetalleVenta.PrecioMinorista) + ((unDetalleVenta.Bultos * unProducto.CantidadxBulto) * unDetalleVenta.PrecioMayorista);
 
                 tboxCodigoBarra.Clear();
@@ -182,14 +183,6 @@ namespace PresentacionWinForm
                 MessageBox.Show(Excepcion.Message);
             }
 
-        }
-
-        private void tboxCodigoBarra_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -236,6 +229,14 @@ namespace PresentacionWinForm
             dgvDetalleVenta.DataSource = ListadoDetalle;
             dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
             Utilidades.AjustarOrdenGridViewVentas(dgvDetalleVenta);
+        }
+
+        private void tboxCodigoBarra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

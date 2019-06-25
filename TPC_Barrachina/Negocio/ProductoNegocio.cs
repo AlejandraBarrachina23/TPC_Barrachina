@@ -59,9 +59,11 @@ namespace Negocio
         {
 
             List<Producto> ListaProductos = new List<Producto>();
-            AccederDatos.LecturaBaseDatos("SELECT * FROM Productos INNER JOIN Proveedores on Proveedores.CodigoProveedor = Productos.CodigoProveedor INNER JOIN Rubros ON Rubros.CodigoRubro = Productos.CodigoRubro" +
-                " inner join TipoProductos ON Productos.CodigoTipoProducto = TipoProductos.CodigoTipoProducto");
-
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT * FROM Productos INNER JOIN Proveedores on Proveedores.CodigoProveedor = Productos.CodigoProveedor INNER JOIN Rubros ON Rubros.CodigoRubro = Productos.CodigoRubro" +
+            " inner join TipoProductos ON Productos.CodigoTipoProducto = TipoProductos.CodigoTipoProducto");
+            AccederDatos.EjecutarConsulta();
+            
             while (AccederDatos.LectorDatos.Read())
             {
 

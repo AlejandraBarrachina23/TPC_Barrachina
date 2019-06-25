@@ -33,21 +33,21 @@ namespace Negocio
 
         public void AgregarDetalleVenta(DetalleVenta unDetallVenta, int NumeroFactura)
         {
+
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirProcedimientoAlmacenado("SP_CargarDetallaVenta");
+            AccederDatos.DefinirProcedimientoAlmacenado("SP_CargarDetalleVenta");
             AccederDatos.Comando.Parameters.Clear();
-            AccederDatos.Comando.Parameters.AddWithValue("@NumeroFactura", NumeroFactura );
+            AccederDatos.Comando.Parameters.AddWithValue("@NumeroFactura", NumeroFactura);
             AccederDatos.Comando.Parameters.AddWithValue("@NumeroLinea", unDetallVenta.Linea);
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoProducto", unDetallVenta.Producto.CodigoProducto);
-            AccederDatos.Comando.Parameters.AddWithValue("@Cantidad", unDetallVenta.Cantidad);
-            AccederDatos.Comando.Parameters.AddWithValue("@Bulto", unDetallVenta.Bultos);
+            AccederDatos.Comando.Parameters.AddWithValue("@Unidad", unDetallVenta.Unidades);
             AccederDatos.Comando.Parameters.AddWithValue("@PrecioCosto", unDetallVenta.PrecioCosto);
-            AccederDatos.Comando.Parameters.AddWithValue("@CantidadxBulto", unDetallVenta.CantidadxBulto);
             AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMinorista", unDetallVenta.PrecioMinorista);
             AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMayorista", unDetallVenta.PrecioMayorista);
+            AccederDatos.Comando.Parameters.AddWithValue("@CantidadxBulto", unDetallVenta.CantidadxBulto);
+            AccederDatos.Comando.Parameters.AddWithValue("@Bulto", unDetallVenta.Bultos);
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
-
         }
     }
 

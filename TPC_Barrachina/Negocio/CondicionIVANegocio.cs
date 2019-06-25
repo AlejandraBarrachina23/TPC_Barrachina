@@ -17,7 +17,9 @@ namespace Negocio
             {
 
                 List<CondicionIVA> ListadoCondicionIVA = new List<CondicionIVA>();
-                AccederDatos.LecturaBaseDatos("SELECT * FROM CondicionesIVA");
+                AccederDatos.AbrirConexion();
+                AccederDatos.DefinirTipoComando("SELECT * FROM CondicionesIVA");
+                AccederDatos.EjecutarConsulta();
                 while (AccederDatos.LectorDatos.Read())
                 {
 

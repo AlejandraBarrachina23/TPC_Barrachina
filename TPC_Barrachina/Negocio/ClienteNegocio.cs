@@ -69,9 +69,11 @@ namespace Negocio
 
             List<Cliente> ListadoClientes = new List<Cliente>();
 
-            AccederDatos.LecturaBaseDatos("select * from Clientes inner join Contactos on Contactos.CodigoContacto = Clientes.CodigoContacto " +
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("select * from Clientes inner join Contactos on Contactos.CodigoContacto = Clientes.CodigoContacto " +
                 "inner join Direcciones on Direcciones.CodigoDireccion = Contactos.CodigoDireccion inner join CuentaCorrientes on " +
                 "CuentaCorrientes.CodigoCuentaCorriente = Clientes.CodigoCuentaCorriente inner join Descuentos on Descuentos.CodigoDescuento = Clientes.CodigoDescuento");
+            AccederDatos.EjecutarConsulta();
 
             while (AccederDatos.LectorDatos.Read()) {
 
@@ -161,9 +163,11 @@ namespace Negocio
 
             List<Cliente> ListadoClientes = new List<Cliente>();
 
-            AccederDatos.LecturaBaseDatos("select * from Clientes inner join Contactos on Contactos.CodigoContacto = Clientes.CodigoContacto " +
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("select * from Clientes inner join Contactos on Contactos.CodigoContacto = Clientes.CodigoContacto " +
                 "inner join Direcciones on Direcciones.CodigoDireccion = Contactos.CodigoDireccion inner join CuentaCorrientes on " +
                 "CuentaCorrientes.CodigoCuentaCorriente = Clientes.CodigoCuentaCorriente inner join Descuentos on Descuentos.CodigoDescuento = Clientes.CodigoDescuento WHERE + " + NombreColumna + " LIKE '" + ParametroBusqueda + "%'");
+            AccederDatos.EjecutarConsulta();
 
             while (AccederDatos.LectorDatos.Read())
             {

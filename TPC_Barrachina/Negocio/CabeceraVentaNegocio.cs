@@ -51,7 +51,7 @@ namespace Negocio
         public decimal GananciaDelDia() {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("select SUM((PrecioVentaMinorista+PrecioVentaMayorista)-(PrecioCostoLista-PrecioCosto))from DetalleVentas inner join Ventas on Ventas.NumeroVenta = DetalleVentas.NumeroFactura where Fecha ='" + DateTime.Now.ToShortDateString() + "'");
+            AccederDatos.DefinirTipoComando("Select SUM((PrecioVentaMinorista*Unidad + PrecioVentaMayorista*Bulto*CantidadxBulto)-(PrecioCosto*(Unidad+Bulto*CantidadxBulto)))from DetalleVentas inner join Ventas on Ventas.NumeroVenta = DetalleVentas.NumeroFactura where Fecha ='"+ DateTime.Now.ToShortDateString() + "'");
             decimal TotalGanancia = AccederDatos.ejecutarAccionReturnDouble();
             AccederDatos.CerrarConexion();
             return TotalGanancia;

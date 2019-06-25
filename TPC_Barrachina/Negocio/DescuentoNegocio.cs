@@ -20,7 +20,10 @@ namespace Negocio
         {
 
             List<Descuento> ListadoDescuentos = new List<Descuento>();
-            AccederDatos.LecturaBaseDatos("SELECT * FROM Descuentos");
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT * FROM Descuentos");
+            AccederDatos.EjecutarConsulta();
+            
             while (AccederDatos.LectorDatos.Read())
             {
 

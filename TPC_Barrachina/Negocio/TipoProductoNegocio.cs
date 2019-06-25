@@ -18,14 +18,16 @@ namespace Negocio
         public List<TipoProducto> ListarTipoProducto() {
 
             List <TipoProducto> ListaTipoProducto = new List<TipoProducto>();
-            AccederDatos.LecturaBaseDatos("SELECT * FROM TipoProductos");
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT * FROM TipoProductos");
+            AccederDatos.EjecutarConsulta();
+
             while (AccederDatos.LectorDatos.Read()) {
 
                 TipoProducto unTipoProducto = new TipoProducto();
                 unTipoProducto.CodigoTipoProducto = (int)AccederDatos.LectorDatos["CodigoTipoProducto"];
                 unTipoProducto.Nombre = AccederDatos.LectorDatos["NombreTipoProducto"].ToString();
                 ListaTipoProducto.Add(unTipoProducto);
-                
             }
 
             AccederDatos.CerrarReader();

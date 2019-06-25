@@ -17,7 +17,9 @@ namespace Negocio
         public List<Contacto> ListaContactos() {  
             
         List<Contacto> ListadoContacto = new List<Contacto>();
-        AccederDatos.LecturaBaseDatos("Select * from Contactos");
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("Select * from Contactos");
+            AccederDatos.EjecutarConsulta();
 
             while (AccederDatos.LectorDatos.Read())
             {

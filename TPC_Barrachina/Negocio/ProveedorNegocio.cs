@@ -31,8 +31,10 @@ namespace Negocio
         {
 
             List<Proveedor> ListadoProveedores = new List<Proveedor>();
-            AccederDatos.LecturaBaseDatos("select * from Proveedores INNER JOIN CondicionesIVA ON CondicionesIVA.CodigoCondicionIVA = Proveedores.CodigoCondicionIVA INNER JOIN Contactos ON Contactos.CodigoContacto = " +
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("select * from Proveedores INNER JOIN CondicionesIVA ON CondicionesIVA.CodigoCondicionIVA = Proveedores.CodigoCondicionIVA INNER JOIN Contactos ON Contactos.CodigoContacto = " +
             "Proveedores.CodigoContacto INNER JOIN Direcciones ON Direcciones.CodigoDireccion = Contactos.CodigoContacto");
+            AccederDatos.EjecutarConsulta();
 
             while (AccederDatos.LectorDatos.Read())
             {
@@ -123,8 +125,10 @@ namespace Negocio
         public List<Proveedor> FiltrarProveedor(string ParametroBusqueda, string NombreColumna) {
 
              List<Proveedor> ListadoProveedores = new List<Proveedor>();
-            AccederDatos.LecturaBaseDatos("select * from Proveedores INNER JOIN CondicionesIVA ON CondicionesIVA.CodigoCondicionIVA = Proveedores.CodigoCondicionIVA INNER JOIN Contactos ON Contactos.CodigoContacto = " +
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("select * from Proveedores INNER JOIN CondicionesIVA ON CondicionesIVA.CodigoCondicionIVA = Proveedores.CodigoCondicionIVA INNER JOIN Contactos ON Contactos.CodigoContacto = " +
             "Proveedores.CodigoContacto INNER JOIN Direcciones ON Direcciones.CodigoDireccion = Contactos.CodigoContacto where " + NombreColumna + " LIKE " + "'" + ParametroBusqueda + "%'");
+            AccederDatos.EjecutarConsulta();
 
             while (AccederDatos.LectorDatos.Read())
             {

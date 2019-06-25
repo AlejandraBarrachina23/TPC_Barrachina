@@ -15,7 +15,10 @@ namespace Negocio
 
             string Consulta = "SELECT " + NombreColumna + " FROM " + NombreTabla + " WHERE " + NombreColumna + " = '" + Parametro + "'";
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
-            AccederDatos.LecturaBaseDatos(Consulta);
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando(Consulta);
+            AccederDatos.EjecutarConsulta();
+
             while (AccederDatos.LectorDatos.Read()) {
 
                 if (AccederDatos.LectorDatos[NombreColumna].ToString().ToUpper() == Parametro.ToUpper())

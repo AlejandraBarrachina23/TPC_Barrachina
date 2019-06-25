@@ -17,7 +17,9 @@ namespace Negocio
         {
             List<Impuesto> ListadoImpuestos = new List<Impuesto>();
 
-            AccederDatos.LecturaBaseDatos("SELECT * FROM Impuestos");
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("SELECT * FROM Impuestos");
+            AccederDatos.EjecutarConsulta();
             while (AccederDatos.LectorDatos.Read())
             {
                 Impuesto unNuevoImpuesto = new Impuesto();
