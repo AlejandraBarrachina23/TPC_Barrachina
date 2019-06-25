@@ -150,7 +150,8 @@ namespace PresentacionWinForm
                 dgvDetalleVenta.DataSource = null;
                 unDetalleVenta.Linea = CuentaLineas;
                 unDetalleVenta.Producto = unProducto;
-                unDetalleVenta.Cantidad = Convert.ToInt32(tboxCantidad.Text);
+                unDetalleVenta.CantidadxBulto = unProducto.CantidadxBulto;
+                unDetalleVenta.Cantidad = Convert.ToInt32(tboxCantidad.Text);//revisar cantidadxbulto
                 unDetalleVenta.Bultos = Convert.ToInt32(unDetalleVenta.Cantidad) / unProducto.CantidadxBulto;
                 unDetalleVenta.Unidades = Convert.ToInt32(unDetalleVenta.Cantidad) % unProducto.CantidadxBulto;
                 unDetalleVenta.PrecioMayorista = unProducto.PrecioVentaMayorista;
@@ -205,7 +206,7 @@ namespace PresentacionWinForm
                 unaCabeceraVenta.Cliente.CodigoCliente = unCliente.CodigoCliente;
             }
 
-          
+            unaCabeceraVenta.FechaEmision = tboxFechaEmision.Text;
             unaCabeceraVenta.Total = Convert.ToDouble(lblTotalFactura.Text);
             unaCabeceraVenta.MetodoPago = tboxMetodoPago.Text;
                 

@@ -14,9 +14,9 @@ namespace PresentacionWebsForm
         protected void Page_Load(object sender, EventArgs e)
         {
             CabeceraVentaNegocio unaCabeceraVenta = new CabeceraVentaNegocio();
-            lblRedaudacionNumerico.Text = "$ " + unaCabeceraVenta.TotalVentasPorFecha().ToString();
-            lblCantidadVentas.Text = unaCabeceraVenta.CantidadVentasPorFecha().ToString();
-            lblGananciaNumerica.Text = unaCabeceraVenta.GananciaDelDia().ToString();
+            lblRedaudacionNumerico.Text = "$ " + unaCabeceraVenta.TotalVentasDelDia().ToString();
+            lblCantidadVentas.Text = unaCabeceraVenta.CantidadVentasDelDia().ToString();
+            lblGananciaNumerica.Text = "$" + unaCabeceraVenta.GananciaDelDia().ToString();
         }
     }
 }

@@ -201,7 +201,7 @@ footer {
     text-align: center;
 }
 
-    .rows:hover {
+.rows:hover {
         background-color: #1B7395;
         color: #fff;
         text-align: center;
@@ -217,4 +217,9 @@ footer {
 
 .select-row td {
     background-color: green;
+}
+
+.main-title {
+    
+    font-size: 30px;
 }

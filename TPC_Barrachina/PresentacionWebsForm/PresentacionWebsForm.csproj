@@ -134,6 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\arrow.png" />
+    <Content Include="img\candy-jar.png" />
+    <Content Include="img\smoking.png" />
+    <Content Include="img\transfer.png" />
     <Content Include="Reportes.aspx" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Content\bootstrap-theme.css" />

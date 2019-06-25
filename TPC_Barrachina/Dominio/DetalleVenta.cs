@@ -10,8 +10,8 @@ namespace Dominio
     {
         public decimal Bultos { get; set; }
         public decimal Unidades { get;set; }
+        public int CantidadxBulto { get; set; }
         public decimal PrecioCosto { get; set; }
-        public decimal PrecioCostoLista { get; set; }
         public decimal PrecioMinorista { get; set; }
         public decimal PrecioMayorista { get; set; }
         public decimal Subtotal { get; set; }

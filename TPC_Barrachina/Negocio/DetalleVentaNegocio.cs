@@ -33,7 +33,6 @@ namespace Negocio
 
         public void AgregarDetalleVenta(DetalleVenta unDetallVenta, int NumeroFactura)
         {
-
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirProcedimientoAlmacenado("SP_CargarDetallaVenta");
             AccederDatos.Comando.Parameters.Clear();
@@ -41,8 +40,9 @@ namespace Negocio
             AccederDatos.Comando.Parameters.AddWithValue("@NumeroLinea", unDetallVenta.Linea);
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoProducto", unDetallVenta.Producto.CodigoProducto);
             AccederDatos.Comando.Parameters.AddWithValue("@Cantidad", unDetallVenta.Cantidad);
+            AccederDatos.Comando.Parameters.AddWithValue("@Bulto", unDetallVenta.Bultos);
             AccederDatos.Comando.Parameters.AddWithValue("@PrecioCosto", unDetallVenta.PrecioCosto);
-            AccederDatos.Comando.Parameters.AddWithValue("@PrecioCostoLista", unDetallVenta.PrecioCostoLista);
+            AccederDatos.Comando.Parameters.AddWithValue("@CantidadxBulto", unDetallVenta.CantidadxBulto);
             AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMinorista", unDetallVenta.PrecioMinorista);
             AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMayorista", unDetallVenta.PrecioMayorista);
             AccederDatos.EjecutarAccion();

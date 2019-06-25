@@ -10,7 +10,7 @@ namespace Dominio
     {
         public int NumeroDocumento { get; set; }
         public Usuario Usuario { get; set; }
-        public DateTime FechaEmision { get; set; }
+        public string FechaEmision { get; set; }
         public List<DetalleDocumento> DetalleDocumento { get; set; }
     }
 }

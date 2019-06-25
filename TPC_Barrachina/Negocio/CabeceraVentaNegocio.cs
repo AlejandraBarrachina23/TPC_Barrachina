@@ -15,8 +15,8 @@ namespace Negocio
         public void AgregarCabeceraVenta(CabeceraVenta unaNuevaCabeceraVenta) {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("INSERT INTO Ventas (Usuario,Cliente,Total,MetodoPago) VALUES ('" + unaNuevaCabeceraVenta.Usuario.CodigoUsuario + "','" + unaNuevaCabeceraVenta.Cliente.CodigoCliente + "','" +
-            unaNuevaCabeceraVenta.Total + "','"+ unaNuevaCabeceraVenta.MetodoPago+ "')");
+            AccederDatos.DefinirTipoComando("INSERT INTO Ventas (Usuario,Cliente,Total,MetodoPago,Fecha) VALUES ('" + unaNuevaCabeceraVenta.Usuario.CodigoUsuario + "','" + unaNuevaCabeceraVenta.Cliente.CodigoCliente + "','" +
+            unaNuevaCabeceraVenta.Total + "','"+ unaNuevaCabeceraVenta.MetodoPago+ "','" + unaNuevaCabeceraVenta.FechaEmision + "')");
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
         }
@@ -30,19 +30,19 @@ namespace Negocio
             return NumeroVenta;
         }
 
-        public decimal TotalVentasPorFecha() {
+        public decimal TotalVentasDelDia() {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("SELECT SUM(total) from Ventas where Fecha = '2019-06-18'");
+            AccederDatos.DefinirTipoComando("SELECT SUM(total) from Ventas where Fecha ='" + DateTime.Now.ToShortDateString()+"'");
             decimal TotalVentas = AccederDatos.ejecutarAccionReturnDouble();
             AccederDatos.CerrarConexion();
             return TotalVentas;
         }
 
-        public int CantidadVentasPorFecha()
+        public int CantidadVentasDelDia()
         {
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("SELECT count(total) from Ventas where Fecha = '2019-06-18'");
+            AccederDatos.DefinirTipoComando("SELECT count(total) from Ventas where Fecha ='" + DateTime.Now.ToShortDateString() + "'");
             int CantidadVentas = AccederDatos.ejecutarAccionReturn();
             AccederDatos.CerrarConexion();
             return CantidadVentas;
@@ -51,7 +51,7 @@ namespace Negocio
         public decimal GananciaDelDia() {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("select SUM((PrecioVentaMinorista+PrecioVentaMayorista)-(PrecioCostoLista-PrecioCosto))from DetalleVentas inner join Ventas on Ventas.NumeroVenta = DetalleVentas.NumeroFactura where Fecha = '2019-06-18'");
+            AccederDatos.DefinirTipoComando("select SUM((PrecioVentaMinorista+PrecioVentaMayorista)-(PrecioCostoLista-PrecioCosto))from DetalleVentas inner join Ventas on Ventas.NumeroVenta = DetalleVentas.NumeroFactura where Fecha ='" + DateTime.Now.ToShortDateString() + "'");
             decimal TotalGanancia = AccederDatos.ejecutarAccionReturnDouble();
             AccederDatos.CerrarConexion();
             return TotalGanancia;
