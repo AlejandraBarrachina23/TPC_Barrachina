@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVenta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlCabecera = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tboxSaldo = new System.Windows.Forms.TextBox();
@@ -90,6 +90,8 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCompras = new System.Windows.Forms.Label();
+            this.lblMotivoDevolucion = new System.Windows.Forms.Label();
+            this.cboxMotivoDevolucion = new System.Windows.Forms.ComboBox();
             this.pnlCabecera.SuspendLayout();
             this.pnlDetalleVenta.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -101,6 +103,7 @@
             // pnlCabecera
             // 
             this.pnlCabecera.BackColor = System.Drawing.Color.OldLace;
+            this.pnlCabecera.Controls.Add(this.cboxMotivoDevolucion);
             this.pnlCabecera.Controls.Add(this.panel2);
             this.pnlCabecera.Controls.Add(this.tboxSaldo);
             this.pnlCabecera.Controls.Add(this.tboxClientes);
@@ -110,6 +113,7 @@
             this.pnlCabecera.Controls.Add(this.tboxFechaEmision);
             this.pnlCabecera.Controls.Add(this.tboxNumeroOperacion);
             this.pnlCabecera.Controls.Add(this.lblDatosOperacion);
+            this.pnlCabecera.Controls.Add(this.lblMotivoDevolucion);
             this.pnlCabecera.Controls.Add(this.lblMetodoPago);
             this.pnlCabecera.Controls.Add(this.lblSaldo);
             this.pnlCabecera.Controls.Add(this.lblUsuario);
@@ -157,7 +161,7 @@
             // tboxUsuario
             // 
             this.tboxUsuario.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxUsuario.Location = new System.Drawing.Point(838, 54);
+            this.tboxUsuario.Location = new System.Drawing.Point(842, 54);
             this.tboxUsuario.Name = "tboxUsuario";
             this.tboxUsuario.Size = new System.Drawing.Size(157, 25);
             this.tboxUsuario.TabIndex = 11;
@@ -220,7 +224,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(777, 58);
+            this.lblUsuario.Location = new System.Drawing.Point(784, 58);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(52, 17);
             this.lblUsuario.TabIndex = 8;
@@ -593,41 +597,41 @@
             this.dgvDetalleVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDetalleVenta.BackgroundColor = System.Drawing.Color.OldLace;
             this.dgvDetalleVenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetalleVenta.ColumnHeadersHeight = 35;
             this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Oswald Regular", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleVenta.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Oswald Regular", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleVenta.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDetalleVenta.EnableHeadersVisualStyles = false;
             this.dgvDetalleVenta.GridColor = System.Drawing.Color.OldLace;
             this.dgvDetalleVenta.Location = new System.Drawing.Point(0, 213);
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
             this.dgvDetalleVenta.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDetalleVenta.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.dgvDetalleVenta.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.dgvDetalleVenta.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDetalleVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleVenta.Size = new System.Drawing.Size(1053, 292);
             this.dgvDetalleVenta.TabIndex = 16;
@@ -795,6 +799,34 @@
             this.lblCompras.TabIndex = 1;
             this.lblCompras.Text = "CAJA";
             // 
+            // lblMotivoDevolucion
+            // 
+            this.lblMotivoDevolucion.AutoSize = true;
+            this.lblMotivoDevolucion.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMotivoDevolucion.Location = new System.Drawing.Point(766, 99);
+            this.lblMotivoDevolucion.Name = "lblMotivoDevolucion";
+            this.lblMotivoDevolucion.Size = new System.Drawing.Size(70, 17);
+            this.lblMotivoDevolucion.TabIndex = 8;
+            this.lblMotivoDevolucion.Text = "Devolución:";
+            this.lblMotivoDevolucion.Visible = false;
+            // 
+            // cboxMotivoDevolucion
+            // 
+            this.cboxMotivoDevolucion.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxMotivoDevolucion.FormattingEnabled = true;
+            this.cboxMotivoDevolucion.Items.AddRange(new object[] {
+            "Mercaderia vencida",
+            "Mercadería en mal estado",
+            "Equivocación Cliente",
+            "Equivocación Usuario",
+            "Disconformidad con precio",
+            "Otros"});
+            this.cboxMotivoDevolucion.Location = new System.Drawing.Point(842, 94);
+            this.cboxMotivoDevolucion.Name = "cboxMotivoDevolucion";
+            this.cboxMotivoDevolucion.Size = new System.Drawing.Size(157, 25);
+            this.cboxMotivoDevolucion.TabIndex = 22;
+            this.cboxMotivoDevolucion.Visible = false;
+            // 
             // FormularioVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -879,6 +911,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Label lblMotivoDevolucion;
+        private System.Windows.Forms.ComboBox cboxMotivoDevolucion;
     }
 }
 

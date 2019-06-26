@@ -272,6 +272,22 @@ namespace Negocio
 
             return PrecioVenta;
         }
+
+        public int DefinirTipoOperacion(string TipoOperacion) {
+
+            if (TipoOperacion == "Venta")
+            {
+
+                CabeceraVentaNegocio unaCabeceraVentaNegocio = new CabeceraVentaNegocio();
+                return unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta();
+            }
+
+            else {
+
+                CabeceraNotaCreditoNegocio unaCabeceraNotaCredito = new CabeceraNotaCreditoNegocio();
+                return unaCabeceraNotaCredito.CuentaFilasCabeceraNotaCredito();
+            }
+        }
     }
 }
 

@@ -8,7 +8,12 @@ namespace Dominio
 {
     public class DetalleNotaCredito
     {
-        
-        MotivoDevolucion MotivoDevolucion { get; set; }
+        public decimal Bultos { get; set; }
+        public decimal Unidades { get; set; }
+        public int CantidadxBulto { get; set; }
+        public decimal PrecioCosto { get; set; }
+        public decimal PrecioMinorista { get; set; }
+        public decimal PrecioMayorista { get; set; }
+        public decimal Subtotal { get; set; }
     }
 }

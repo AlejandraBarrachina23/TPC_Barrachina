@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CabeceraCompraNegocio.cs" />
+    <Compile Include="CabeceraNotaCreditoNegocio.cs" />
     <Compile Include="CabeceraVentaNegocio.cs" />
     <Compile Include="ClienteNegocio.cs" />
     <Compile Include="CondicionIVANegocio.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="CuentaCorrienteNegocio.cs" />
     <Compile Include="DescuentoNegocio.cs" />
     <Compile Include="DetalleCompraNegocio.cs" />
+    <Compile Include="DetalleNotaCreditoNegocio.cs" />
     <Compile Include="DetalleVentaNegocio.cs" />
     <Compile Include="DireccionNegocio.cs" />
     <Compile Include="ImpuestoNegocio.cs" />
