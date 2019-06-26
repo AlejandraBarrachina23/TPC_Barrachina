@@ -175,7 +175,8 @@ namespace Negocio
             Grilla.Columns["PrecioBruto"].DisplayIndex = 6;
             Grilla.Columns["PrecioPonderado"].DisplayIndex = 7;
             Grilla.Columns["Rentabilidad"].DisplayIndex = 8;
-            Grilla.Columns["PrecioVenta"].DisplayIndex = 9;
+            Grilla.Columns["PrecioVentaMinorista"].DisplayIndex = 9;
+            Grilla.Columns["PrecioVentaMayorista"].DisplayIndex = 10;
 
         }
 
@@ -248,7 +249,7 @@ namespace Negocio
 
         public decimal CalcularPrecioPonderado(Producto unProductoComprado, DetalleCompra unDetalleCompra) {
 
-            return ((unProductoComprado.PrecioCosto * unProductoComprado.Stock) + (unDetalleCompra.PrecioBruto * unDetalleCompra.Cantidad)) / (unDetalleCompra.Cantidad + unProductoComprado.Stock);
+            return Math.Round(((unProductoComprado.PrecioCosto * unProductoComprado.Stock) + (unDetalleCompra.PrecioBruto * unDetalleCompra.Cantidad)) / (unDetalleCompra.Cantidad + unProductoComprado.Stock),2);
         }
 
         public decimal CalcularPrecioVenta(decimal PrecioBruto, int Rentabilidad) {

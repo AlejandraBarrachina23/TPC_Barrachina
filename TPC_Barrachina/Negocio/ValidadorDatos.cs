@@ -71,6 +71,16 @@ namespace Negocio
             }
         }
 
+        public void OperacionesPendientes(DataGridView grilla) {
+
+            if (grilla.Rows.Count > 0)
+            {
+
+                throw new Exception("Aún tiene Operaciones pendientes.");
+            }
+
+        }
+
         public void MinimoValor(TextBox texto, string NombreCampo, int valor) {
 
             ContenidoTextBoxVacio(texto, NombreCampo);

@@ -23,7 +23,8 @@ namespace Negocio
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoProducto", unDetalleCompra.Producto.CodigoProducto);
             AccederDatos.Comando.Parameters.AddWithValue("@Cantidad", unDetalleCompra.Cantidad);
             AccederDatos.Comando.Parameters.AddWithValue("@PrecioCosto", unDetalleCompra.PrecioBruto);
-            AccederDatos.Comando.Parameters.AddWithValue("@PrecioVenta", unDetalleCompra.PrecioVenta);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMinorista", unDetalleCompra.PrecioVentaMinorista);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMayorista" ,unDetalleCompra.PrecioVentaMayorista);
             AccederDatos.Comando.Parameters.AddWithValue("@Rentabilidad", unDetalleCompra.Rentabilidad);
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();

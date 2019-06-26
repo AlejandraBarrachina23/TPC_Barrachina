@@ -21,7 +21,7 @@
               <label>Usuario</label><br />
               <asp:TextBox ID="tboxNombre" runat="server"></asp:TextBox><br />
               <label>Constraseña</label><br />
-              <asp:TextBox ID="tboxContrasenia" runat="server"></asp:TextBox><br />
+              <asp:TextBox ID="tboxContrasenia" runat="server" TextMode="Password"></asp:TextBox><br />
               <asp:Button ID="btnAceptar" CssClass="btn" runat="server" Text="INICIAR" OnClick="btnAceptar_Click" />
           </div> 
     </form>

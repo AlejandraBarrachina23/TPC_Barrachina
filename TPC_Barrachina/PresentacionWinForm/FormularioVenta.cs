@@ -72,6 +72,8 @@ namespace PresentacionWinForm
 
                 lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToDecimal(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
             }
+
+
         }
 
         private void btnDevolucion_Click(object sender, EventArgs e)
@@ -272,6 +274,27 @@ namespace PresentacionWinForm
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Validar.OperacionesPendientes(dgvDetalleVenta);
+                Application.Exit();
+            }
+            catch (Exception Excepcion)
+            {
+                MessageBox.Show(Excepcion.Message);
+            }
+            
+        }
+
+        private void btnResetear_Click(object sender, EventArgs e)
+        {
+            unCliente = null;
+            tboxClientes.Text = "Consumidor Final";
+            lblDescuentoNumerico.Text = lblTotalFactura.Text = lblSubtotalNumerico.Text = 0.00.ToString();
         }
     }
 }

@@ -23,17 +23,17 @@
             <asp:Label ID="lblGananciaNumerica" Text="$20000" runat="server" />
         </div>
          <div class="box-report">
-            <asp:Label class="box-main-title" Text="TOTAL CIGARRILLOS" runat="server" /><br /> 
+            <asp:Label class="box-main-title" Text="TOTAL GANANCIA CIGARRILLOS" runat="server" /><br /> 
             <img src="img/smoking.png" alt="Alternate Text" />
             <asp:Label ID="lblRecaudacionCigarillos" Text="$20000" runat="server" />
         </div>
          <div class="box-report">
-            <asp:Label class="box-main-title" Text="TOTAL VARIOS" runat="server" /><br /> 
+            <asp:Label class="box-main-title" Text="TOTAL GANANCIA VARIOS" runat="server" /><br /> 
             <img src="img/candy-jar.png" alt="Alternate Text" />
             <asp:Label ID="lblRecaudacionVarios" Text="$20000" runat="server" />
         </div>
          <div class="box-report">
-            <asp:Label class="box-main-title" Text="TOTAL RECARGAS" runat="server" /><br /> 
+            <asp:Label class="box-main-title" Text="TOTAL GANANCIA RECARGAS" runat="server" /><br /> 
             <img src="img/transfer.png" alt="Alternate Text" />
             <asp:Label ID="lblRecaudacionTarjetas" Text="$20000" runat="server" />
         </div>

@@ -77,5 +77,9 @@ namespace PresentacionWinForm
 
         }
 
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            ValidadorDatos Validar = new ValidadorDatos();
+        }
     }
 }

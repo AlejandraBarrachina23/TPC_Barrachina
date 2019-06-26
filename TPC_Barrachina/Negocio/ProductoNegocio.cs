@@ -204,17 +204,29 @@ namespace Negocio
             AccederDatos.CerrarConexion();
         }
 
-        public void ActualizarPrecios(Producto unProducto) {
+        public void ActualizarPrecios(decimal PrecioCosto, decimal PrecioCostoLista, decimal PrecioVentaMayorista, decimal PrecioVentaMinorista, Producto unProducto) {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirProcedimientoAlmacenado("SP_ModificarPrecioProducto");
+            AccederDatos.DefinirProcedimientoAlmacenado("SP_ActualizarPrecio");
             AccederDatos.Comando.Parameters.Clear();
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoProducto", unProducto.CodigoProducto);
-            AccederDatos.Comando.Parameters.AddWithValue("@PrecioCosto", unProducto.PrecioCosto);
-            AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMinorista", unProducto.PrecioVentaMinorista);
-            AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMayorista", unProducto.PrecioVentaMinorista);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioCosto", PrecioCosto);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMinorista", PrecioVentaMinorista);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMayorista", PrecioVentaMayorista);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioCostoLista", PrecioCostoLista);
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
+        }
+
+        public decimal CalcularPrecioVentaMayorista(decimal precioVenta) {
+
+            return precioVenta * Convert.ToDecimal(0.90);
+            
+        }
+
+        public decimal CalcularPrecioCostoLista(decimal precioCosto) {
+
+            return precioCosto * Convert.ToDecimal(0.90);
         }
     }
 }

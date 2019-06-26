@@ -85,9 +85,10 @@ namespace PresentacionWinForm
                 unDetalleCompra.Descuento = Convert.ToDecimal(tboxDescuento.Text);
                 unDetalleCompra.PrecioNeto = Utilidades.CalcularBaseImponible(Convert.ToDecimal(tboxPrecioUnitario.Text), Convert.ToDecimal(tboxDescuento.Text));
                 unDetalleCompra.PrecioBruto = Utilidades.CalcularPrecioBruto(ListadoImpuestos,unDetalleCompra.PrecioNeto);
-                unDetalleCompra.PrecioPonderado = Utilidades.CalcularPrecioPonderado(unProductoComprado,unDetalleCompra);
+                unDetalleCompra.PrecioPonderado = Utilidades.CalcularPrecioPonderado(unProductoComprado, unDetalleCompra);
                 unDetalleCompra.Rentabilidad = unProductoComprado.Rentabilidad;
-                unDetalleCompra.PrecioVenta = Utilidades.CalcularPrecioVenta(unDetalleCompra.PrecioBruto, (int)unProductoComprado.Rentabilidad);
+                unDetalleCompra.PrecioVentaMinorista = Utilidades.CalcularPrecioVenta(unDetalleCompra.PrecioBruto, (int)unProductoComprado.Rentabilidad);
+                unDetalleCompra.PrecioVentaMayorista = unProductoNegocio.CalcularPrecioVentaMayorista(unDetalleCompra.PrecioVentaMinorista);
                 ListadoDetalleCompra.Add(unDetalleCompra);
                 dgvDetalleCompra.DataSource = ListadoDetalleCompra;
                 Utilidades.AjustarOrdenGridViewCompras(dgvDetalleCompra);
@@ -130,6 +131,7 @@ namespace PresentacionWinForm
                 DetalleCompraNegocio unDetalleCompraNegocio = new DetalleCompraNegocio();
                 CabeceraCompraNegocio unaCabeceraCompraNegocio = new CabeceraCompraNegocio();
                 Proveedor ProveedorSeleccionado = new Proveedor();
+                ProductoNegocio unProductoNegocio = new ProductoNegocio();
                 ProveedorSeleccionado = (Proveedor)cboxProveedor.SelectedItem;
                 CabeceraCompra unaCabeceraCompra = new CabeceraCompra();
                 unaCabeceraCompra.Proveedor = ProveedorSeleccionado;
@@ -139,10 +141,9 @@ namespace PresentacionWinForm
                 {
                     unDetalleCompraNegocio.AgregarDetalleCompra(unDetalleCompra, unaCabeceraCompraNegocio.CuentaFilasCabeceraCompra());
                     unProductoNegocio.SumarStock(unDetalleCompra.Producto, unDetalleCompra.Cantidad);
+                    unProductoNegocio.ActualizarPrecios(unDetalleCompra.PrecioBruto,unProductoNegocio.CalcularPrecioCostoLista(unDetalleCompra.PrecioBruto),unDetalleCompra.PrecioVentaMayorista,unDetalleCompra.PrecioVentaMinorista, unProductoComprado);
                 }
                 
-                //unProductoNegocio.ActualizarPrecio();
-
                 CuentaLinea = 1;
                 ListadoDetalleCompra.Clear();
                 dgvDetalleCompra.DataSource = null;
@@ -154,7 +155,6 @@ namespace PresentacionWinForm
             }
             catch (Exception Excepcion)
             {
-
                 MessageBox.Show(Excepcion.Message);
             }
             
@@ -192,6 +192,25 @@ namespace PresentacionWinForm
             BusquedaProducto.SeleccionarProducto += new FormularioBusqueda.ElegirProducto(SeleccionarProducto);
             BusquedaProducto.MdiParent = this.MdiParent;
             BusquedaProducto.Show();
+        }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            Proveedor unProveedorSeleccionado = (Proveedor)cboxProveedor.SelectedItem;
+            ImpuestosxProveedor FormularioListadoImpuestoSegundProveedor = new ImpuestosxProveedor(unProveedorSeleccionado.CodigoProveedor);
+            FormularioListadoImpuestoSegundProveedor.Show();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            ValidadorDatos Validar = new ValidadorDatos();
+            Validar.OperacionesPendientes(dgvDetalleCompra);
+            Application.Exit();
         }
     }
 }
