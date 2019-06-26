@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AccesoDatos;
+using Dominio;
 
 
 namespace Negocio
@@ -274,6 +275,21 @@ namespace Negocio
             }
 
         }
+
+        public void StockSegunTipoOperacion(string TipoOperacion, Producto unProducto, List<DetalleVenta>ListadoDetalle, int Cantidad ) {
+
+            ValidadorDatos Validar = new ValidadorDatos();
+            DetalleVentaNegocio unDetalleVentaNegocio = new DetalleVentaNegocio();
+
+            if (TipoOperacion == "Ventas")
+            {
+                Validar.Stock(unProducto.Stock);
+                unDetalleVentaNegocio.ControlStock(ListadoDetalle, unProducto, Cantidad);
+                Validar.MaximoValor(unProducto.Stock, "Stock", Cantidad);
+            }
+
+        }
+
 
     }
 }

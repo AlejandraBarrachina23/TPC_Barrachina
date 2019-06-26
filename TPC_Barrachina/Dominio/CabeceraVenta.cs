@@ -10,6 +10,6 @@ namespace Dominio
     {
         public Cliente Cliente { get; set; }
         public string MetodoPago { get; set; }
-        public double Total { get; set; }
+        public decimal Total { get; set; }
     }
 }

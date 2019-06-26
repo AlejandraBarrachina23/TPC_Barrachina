@@ -9,6 +9,8 @@ namespace Dominio
     public class CabeceraNotaCredito:CabeceraDocumento
     {
         public Cliente Cliente { get; set; }
-        public MotivoDevolucion MotivoDevolucio { get; set; }
+        public string MotivoDevolucion { get; set; }
+        public string MetodoPago { get; set; }
+        public decimal Total { get; set; }
     }
 }

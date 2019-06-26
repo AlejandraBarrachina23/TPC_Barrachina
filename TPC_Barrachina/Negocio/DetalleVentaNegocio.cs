@@ -49,6 +49,24 @@ namespace Negocio
             AccederDatos.EjecutarAccion();
             AccederDatos.CerrarConexion();
         }
+
+        public DetalleVenta CargarDetalleVenta(int CuentaLineas, Producto unProducto, int Cantidad) {
+
+            DetalleVenta unNuevoDetalleVenta = new DetalleVenta();
+
+            unNuevoDetalleVenta.Linea = CuentaLineas;
+            unNuevoDetalleVenta.Producto = unProducto;
+            unNuevoDetalleVenta.CantidadxBulto = unProducto.CantidadxBulto;
+            unNuevoDetalleVenta.Cantidad = Cantidad;
+            unNuevoDetalleVenta.Bultos = Convert.ToInt32(unNuevoDetalleVenta.Cantidad) / unProducto.CantidadxBulto;
+            unNuevoDetalleVenta.Unidades = Convert.ToInt32(unNuevoDetalleVenta.Cantidad) % unProducto.CantidadxBulto;
+            unNuevoDetalleVenta.PrecioMayorista = unProducto.PrecioVentaMayorista;
+            unNuevoDetalleVenta.PrecioMinorista = unProducto.PrecioVentaMinorista;
+            unNuevoDetalleVenta.PrecioCosto = unProducto.PrecioCosto;
+            unNuevoDetalleVenta.Subtotal = (unNuevoDetalleVenta.Unidades * unNuevoDetalleVenta.PrecioMinorista) + ((unNuevoDetalleVenta.Bultos * unProducto.CantidadxBulto) * unNuevoDetalleVenta.PrecioMayorista);
+
+            return unNuevoDetalleVenta;
+        }
     }
 
 }

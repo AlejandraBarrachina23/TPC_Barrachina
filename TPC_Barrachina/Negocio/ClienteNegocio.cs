@@ -235,6 +235,25 @@ namespace Negocio
             }
 
         }
+
+        public Cliente CargaCuentaCorriente(string TipoPago,string MetodoPago,Cliente unCliente, decimal TotalFactura, string TipoOperacion) {
+
+            if (MetodoPago == TipoPago && TipoOperacion == "Venta")
+            {
+                VerificarValorAnotar(VerificarLimiteDisponible(unCliente), TotalFactura);
+                unCliente.CuentaCorriente.Saldo = unCliente.CuentaCorriente.Saldo + TotalFactura;
+
+            }
+
+            else if (MetodoPago == TipoPago && TipoOperacion == "Devolucion") {
+
+                unCliente.CuentaCorriente.Saldo = unCliente.CuentaCorriente.Saldo - TotalFactura;
+            }
+
+            ActualizarSaldo(unCliente);
+
+            return unCliente;
+        }
         
     }
 }

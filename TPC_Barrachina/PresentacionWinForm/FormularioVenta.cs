@@ -22,7 +22,7 @@ namespace PresentacionWinForm
             UsuarioActivo = unUsuario;
         }
 
-        string TipoOperacion = "Venta";
+        string TipoOperacion = "Ventas";
         private List<DetalleVenta> ListadoDetalle = new List<DetalleVenta>();
         private int CuentaLineas = 1;
         private decimal Subtotal = 0;
@@ -76,7 +76,8 @@ namespace PresentacionWinForm
 
         private void btnDevolucion_Click(object sender, EventArgs e)
         {
-            TipoOperacion="Devolucion";
+            
+            TipoOperacion ="Devolucion";
             lblDatosOperacion.Text = "Datos devolución";
             btnDevolucion.Enabled = false;
             lblMotivoDevolucion.Visible = true;
@@ -133,7 +134,7 @@ namespace PresentacionWinForm
             tboxUsuario.Enabled = false;
             tboxCantidad.Text = 1.ToString();
             tboxNumeroOperacion.Text = Utilidades.DefinirTipoOperacion(TipoOperacion).ToString();
-
+     
         }
 
         private void HoraActual_Tick(object sender, EventArgs e)
@@ -151,43 +152,18 @@ namespace PresentacionWinForm
                 DetalleVentaNegocio unDetalleVentaNegocio = new DetalleVentaNegocio();
                 ProductoNegocio unProductoVendido = new ProductoNegocio();
                 Producto unProducto = unProductoVendido.BusquedaProducto(tboxCodigoBarra.Text);
-
-                if (TipoOperacion == "Venta")
-                {
-                    Validar.Stock(unProducto.Stock);
-                    unDetalleVentaNegocio.ControlStock(ListadoDetalle, unProducto, Convert.ToInt32(tboxCantidad.Text));
-                    Validar.MaximoValor(unProducto.Stock, "Stock", Convert.ToInt32(tboxCantidad.Text));
-                }
-
-                else {
-
-                    Validar.SeleccionComboBox(cboxMotivoDevolucion, "Motivo Devolución");
-                }
-
-                dgvDetalleVenta.DataSource = null;
-                unDetalleVenta.Linea = CuentaLineas;
-                unDetalleVenta.Producto = unProducto;
-                unDetalleVenta.CantidadxBulto = unProducto.CantidadxBulto;
-                unDetalleVenta.Cantidad = Convert.ToInt32(tboxCantidad.Text);
-                unDetalleVenta.Bultos = Convert.ToInt32(unDetalleVenta.Cantidad) / unProducto.CantidadxBulto;
-                unDetalleVenta.Unidades = Convert.ToInt32(unDetalleVenta.Cantidad) % unProducto.CantidadxBulto;
-                unDetalleVenta.PrecioMayorista = unProducto.PrecioVentaMayorista;
-                unDetalleVenta.PrecioMinorista = unProducto.PrecioVentaMinorista;
-                unDetalleVenta.PrecioCosto = unProducto.PrecioCosto;
-                unDetalleVenta.Subtotal = (unDetalleVenta.Unidades * unDetalleVenta.PrecioMinorista) + ((unDetalleVenta.Bultos * unProducto.CantidadxBulto) * unDetalleVenta.PrecioMayorista);
-
-                tboxCodigoBarra.Clear();
+                Validar.StockSegunTipoOperacion(TipoOperacion, unProducto, ListadoDetalle, Convert.ToInt32(tboxCantidad.Text));
+                unDetalleVenta = (unDetalleVentaNegocio.CargarDetalleVenta(CuentaLineas, unProducto, Convert.ToInt32(tboxCantidad.Text)));
                 ListadoDetalle.Add(unDetalleVenta);
-
+                dgvDetalleVenta.DataSource = null;
+                tboxCodigoBarra.Clear();
                 dgvDetalleVenta.DataSource = ListadoDetalle;
                 Utilidades.AjustarOrdenGridViewVentas(dgvDetalleVenta);
                 dgvDetalleVenta = Utilidades.OcultarColumnasDataGridView(dgvDetalleVenta, "Detalle Venta");
-                
                 lblSubtotalNumerico.Text = (Subtotal += unDetalleVenta.Subtotal).ToString();
                 lblTotalFactura.Text = Subtotal.ToString("N2");
 
                 if (unCliente != null) {
-
                     lblTotalFactura.Text = Utilidades.CalcularDescuento(Convert.ToDecimal(lblSubtotalNumerico.Text), Convert.ToDecimal(unCliente.Descuento.Porcentaje)).ToString();
                 }
                 
@@ -199,7 +175,6 @@ namespace PresentacionWinForm
             {
                 MessageBox.Show(Excepcion.Message);
             }
-
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -207,48 +182,47 @@ namespace PresentacionWinForm
             try
             {
                 Validar.GrillaVacia(dgvDetalleVenta);
-                unaCabeceraVenta.Usuario = new Usuario();
-                unaCabeceraVenta.Cliente = new Cliente();
-                CabeceraVentaNegocio unaCabeceraVentaNegocio = new CabeceraVentaNegocio();
-                DetalleVentaNegocio unDetallVentaNegocio = new DetalleVentaNegocio();
-                ClienteNegocio unClienteNegocio = new ClienteNegocio();
-                unaCabeceraVenta.Usuario = UsuarioActivo;
 
-                if (unCliente != null)
+                if (TipoOperacion == "Ventas")
                 {
-                    if (tboxMetodoPago.Text == "CtaCorriente" && TipoOperacion == "Venta")
+                    DetalleVentaNegocio unDetallVentaNegocio = new DetalleVentaNegocio();
+                    unaCabeceraVentaNegocio.AgregarCabeceraVenta(unaCabeceraVentaNegocio.CargarCabeceraVenta(UsuarioActivo, unCliente, tboxFechaEmision.Text, Convert.ToDecimal(lblTotalFactura.Text), tboxMetodoPago.Text));
+                    int NumeroFactura = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta();
+
+                    foreach (DetalleVenta unDetalleVenta in ListadoDetalle)
                     {
-
-                        unClienteNegocio.VerificarValorAnotar(unClienteNegocio.VerificarLimiteDisponible(unCliente), Convert.ToDecimal(lblTotalFactura.Text));
-                        unCliente.CuentaCorriente.Saldo = unCliente.CuentaCorriente.Saldo + Convert.ToDecimal(lblTotalFactura.Text);
+                        unDetallVentaNegocio.AgregarDetalleVenta(unDetalleVenta, NumeroFactura);
                     }
-
-                    else if (tboxMetodoPago.Text == "CtaCorriente" && TipoOperacion == "Devolucion") {
-
-                        unCliente.CuentaCorriente.Saldo = unCliente.CuentaCorriente.Saldo - Convert.ToDecimal(lblTotalFactura.Text);
-                        //definir funcion aparte
-                        //agregar tipodevolucion
-                    }
-
-                    unaCabeceraVenta.Cliente.CodigoCliente = unCliente.CodigoCliente;
-                    unClienteNegocio.ActualizarSaldo(unCliente);
                 }
 
-                unaCabeceraVenta.FechaEmision = tboxFechaEmision.Text;
-                unaCabeceraVenta.Total = Convert.ToDouble(lblTotalFactura.Text);
-                unaCabeceraVenta.MetodoPago = tboxMetodoPago.Text;
-                unaCabeceraVentaNegocio.AgregarCabeceraVenta(unaCabeceraVenta);
+                else {
 
-                foreach (DetalleVenta unDetalleVenta in ListadoDetalle)
-                {
-                    unDetallVentaNegocio.AgregarDetalleVenta(unDetalleVenta, unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta());
+                    DetalleNotaCreditoNegocio unDetalleNotaDevolucionNegocio = new DetalleNotaCreditoNegocio();
+                    CabeceraNotaCreditoNegocio unaCabeceraDevolucionNegocio = new CabeceraNotaCreditoNegocio();
+                    Validar.SeleccionComboBox(cboxMotivoDevolucion, "Motivo devolución");
+                    unaCabeceraDevolucionNegocio.AgregarCabeceraNotaDevolucion(unaCabeceraDevolucionNegocio.CargarCabeceraDevolucion(UsuarioActivo, unCliente, tboxFechaEmision.Text, Convert.ToDecimal(lblTotalFactura.Text), tboxMetodoPago.Text, cboxMotivoDevolucion.SelectedItem.ToString(), TipoOperacion));
+                    int NumeroFactura = unaCabeceraDevolucionNegocio.CuentaFilasCabeceraNotaCredito();
+
+                    foreach (DetalleVenta unDetalleVenta in ListadoDetalle)
+                    {
+                        unDetalleNotaDevolucionNegocio.AgregarDetalleNotaDevolucion(unDetalleNotaDevolucionNegocio.CargarDetalleDevolucion(unDetalleVenta), NumeroFactura);
+                    }
                 }
 
+                //restaurar valores formulario
                 CuentaLineas = 1; Subtotal = 0;
                 dgvDetalleVenta.DataSource = null;
                 ListadoDetalle.Clear();
                 tboxNumeroOperacion.Text = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta().ToString();
                 lblSubtotalNumerico.Text = 0.00.ToString();
+                lblMotivoDevolucion.Visible = false;
+                cboxMotivoDevolucion.Visible = false;
+                lblTotalFactura.Text = 0.ToString("N2");
+                lblDatosOperacion.Text = "Datos Venta";
+                btnDevolucion.Enabled = true;
+                TipoOperacion = "Ventas";
+                tboxNumeroOperacion.Text = Utilidades.DefinirTipoOperacion(TipoOperacion).ToString();
+                
 
             }
             catch (Exception Excepcion)

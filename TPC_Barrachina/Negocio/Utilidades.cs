@@ -275,9 +275,8 @@ namespace Negocio
 
         public int DefinirTipoOperacion(string TipoOperacion) {
 
-            if (TipoOperacion == "Venta")
+            if (TipoOperacion == "Ventas")
             {
-
                 CabeceraVentaNegocio unaCabeceraVentaNegocio = new CabeceraVentaNegocio();
                 return unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta();
             }

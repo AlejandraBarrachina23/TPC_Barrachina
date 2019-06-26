@@ -77,5 +77,28 @@ namespace Negocio
             return TotalRedaudacionCigarrillos;
 
         }
+
+        public CabeceraVenta CargarCabeceraVenta(Usuario UsuarioActivo,Cliente unCliente,string FechaEmision, decimal TotalFactura, string MetodoPago) {
+
+            CabeceraVenta unaCabeceraVenta = new CabeceraVenta();
+            ClienteNegocio unClienteNegocio = new ClienteNegocio();
+            unaCabeceraVenta.Usuario = new Usuario();
+            unaCabeceraVenta.Cliente = new Cliente();
+            
+            unaCabeceraVenta.Usuario = UsuarioActivo;
+            unaCabeceraVenta.FechaEmision = FechaEmision;
+            unaCabeceraVenta.Total = TotalFactura;
+            unaCabeceraVenta.MetodoPago = MetodoPago;
+
+            if (unCliente != null)
+            {
+                unCliente = unClienteNegocio.CargaCuentaCorriente("CtaCorriente", MetodoPago, unCliente, TotalFactura, "Venta");
+                unaCabeceraVenta.Cliente.CodigoCliente = unCliente.CodigoCliente;
+           
+            }
+
+            return unaCabeceraVenta;
+
+        }
     }
 }
