@@ -34,6 +34,8 @@ namespace Negocio
             AccederDatos.CerrarReader();
         }
 
+
+
         public void ContenidoTextBoxVacio(TextBox texto, string NombreCampo)
         {
             if (texto.Text.Trim() == "")
@@ -250,14 +252,13 @@ namespace Negocio
             AccederDatos.CerrarReader();
         }
 
-        public bool ListaVacia(List<object> UnaLista) {
+        public void ImpuestoRepetido(List<Impuesto> UnaLista, Impuesto unImpuestoCorroborar) {
 
-            if (UnaLista == null) {
-
-                return false;
+            if (UnaLista.Any(unImpuesto => unImpuesto.CodigoImpuesto == unImpuestoCorroborar.CodigoImpuesto))
+            {
+                throw new Exception("El impuesto esta repetido");
             }
-
-            return true;
+              
         }
 
         public void Stock(int Stock) {
