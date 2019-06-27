@@ -122,7 +122,7 @@ namespace Negocio
 
             switch (NombreTabla) {
 
-                case "Prductos":
+                case "Productos":
                     Grilla.Columns[1].Visible = false;
                     Grilla.Columns[3].Visible = false;
                     Grilla.Columns[5].Visible = false;

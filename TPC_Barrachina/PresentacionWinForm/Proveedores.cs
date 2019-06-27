@@ -27,9 +27,9 @@ namespace PresentacionWinForm
             tboxCP.KeyPress += AsignarSoloNumeros;
             tboxNumeroCUIT.KeyPress += AsignarSoloNumeros;
             tboxNumero.KeyPress += AsignarSoloNumeros;
-            tboxPorcentaje.KeyPress += AsignarSoloNumeros;
             tboxTelefono.KeyPress += AsignarSoloNumeros;
             tboxCelular.KeyPress += AsignarSoloNumeros;
+            tboxPorcentaje.KeyPress += AsignarSoloNumeroEnterosDecimales;
 
         }
 
@@ -43,6 +43,7 @@ namespace PresentacionWinForm
         {
             try
             {
+
                 Validar.FormularioProveedor(tboxCodigoProveedor, tboxRazonSocial, tboxNumeroCUIT, tboxNombreFantasia, cboxCondicionIVA, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad, "Agregar");
                 DireccionNegocio unaDireccion = new DireccionNegocio();
                 ProveedorNegocio unProveedor = new ProveedorNegocio();
@@ -58,6 +59,7 @@ namespace PresentacionWinForm
                 Avisos FormularioAviso = new Avisos();
                 FormularioAviso.Show();
             }
+
             catch (Exception Excepcion)
             {
 
@@ -71,7 +73,12 @@ namespace PresentacionWinForm
             CondicionIVANegocio unaCondicionIVA = new CondicionIVANegocio();
             ImpuestoNegocio unImpuesto = new ImpuestoNegocio();
             cboxCondicionIVA.DataSource = unaCondicionIVA.ListarCondicionIVA();
-            cboxImpuesto.DataSource = unImpuesto.ListarImpuestos();          
+            cboxImpuesto.DataSource = unImpuesto.ListarImpuestos();
+
+            if (ProveedorModificar != null) {
+                dgvImpuestos.DataSource = unImpuesto.ListarImpuestosxProveedor(ProveedorModificar.CodigoProveedor);
+            }
+            
 
             if (ProveedorModificar != null) {
 
@@ -109,20 +116,18 @@ namespace PresentacionWinForm
             try
             {
                 Validar.ContenidoTextBoxVacio(tboxPorcentaje, "Porcentaje");
-                Validar.GrillaVacia(dgvImpuestos);
-                Impuesto unNuevoImpuesto = new Impuesto();
-                unNuevoImpuesto = (Impuesto)cboxImpuesto.SelectedItem;
-                unNuevoImpuesto.Alicuota = Convert.ToDecimal(tboxPorcentaje.Text);
-                Validar.ImpuestoRepetido(ListadoImpuestos, unNuevoImpuesto);
+                Impuesto unNuevoImpuestoAgregar = new Impuesto();
+                unNuevoImpuestoAgregar = (Impuesto)cboxImpuesto.SelectedItem;
+                unNuevoImpuestoAgregar.Alicuota = Convert.ToDecimal(tboxPorcentaje.Text);
+                Validar.ImpuestoRepetido(ListadoImpuestos, unNuevoImpuestoAgregar);
                 dgvImpuestos.DataSource = null;
-                ListadoImpuestos.Add(unNuevoImpuesto);
+                ListadoImpuestos.Add(unNuevoImpuestoAgregar);
                 dgvImpuestos.DataSource = ListadoImpuestos;
                 dgvImpuestos = Utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
 
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
      
@@ -143,6 +148,7 @@ namespace PresentacionWinForm
                 dgvImpuestos.DataSource = null;
                 dgvImpuestos.DataSource = ListadoImpuestos;
             }
+
             catch (Exception Excepcion)
             {
                 MessageBox.Show(Excepcion.Message);
@@ -196,7 +202,14 @@ namespace PresentacionWinForm
             {
                 Validar.FormularioProveedor(tboxCodigoProveedor, tboxRazonSocial, tboxNumeroCUIT, tboxNombreFantasia, cboxCondicionIVA, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad, "Modificar");
                 ProveedorNegocio unProveedor = new ProveedorNegocio();
+                ImpuestoNegocio unImpuestoNegocio = new ImpuestoNegocio();
                 unProveedor.ModificarProveedor(unProveedor.CargarProveedor(tboxCodigoProveedor, tboxRazonSocial, tboxNumeroCUIT, tboxNombreFantasia, cboxCondicionIVA, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxProvincia, tboxLocalidad, tboxCalle, tboxNumero, tboxCP, ProveedorModificar.Contacto.CodigoContacto));
+                unImpuestoNegocio.RestaurarEstadosImpuestosXProveedor(ProveedorModificar.CodigoProveedor);
+                foreach (Impuesto unImpuesto in ListadoImpuestos)
+                {
+                    unImpuestoNegocio.ModificarImpuestoxProveedor(unImpuesto, ProveedorModificar.CodigoProveedor);
+                }
+           
             }
             catch (Exception Excepcion)
             {
@@ -216,6 +229,13 @@ namespace PresentacionWinForm
             }
         }
 
-       
+        private void AsignarSoloNumeroEnterosDecimales(object sender, KeyPressEventArgs e)
+        {
+
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

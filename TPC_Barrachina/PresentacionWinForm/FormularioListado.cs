@@ -175,7 +175,13 @@ namespace PresentacionWinForm
         {
             try
             {
+                if (tboxCodigo.Text == "" && tboxNombre.Text == "")
+                {
+                    dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(lblNombreFormulario.Text.Remove(0, 8));
+                }
+                else { 
                 dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadaFiltrar(panelContenedor, lblNombreFormulario);
+                }
             }
             catch (Exception Excepcion)
             {

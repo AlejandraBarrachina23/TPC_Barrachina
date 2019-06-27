@@ -25,6 +25,7 @@ namespace Negocio
                 Impuesto unNuevoImpuesto = new Impuesto();
 
                 if ((bool)AccederDatos.LectorDatos["Estado"]) { 
+
                     unNuevoImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoImpuesto"];
                     unNuevoImpuesto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
                     unNuevoImpuesto.Descripcion = AccederDatos.LectorDatos["Descripcion"].ToString();
@@ -49,6 +50,30 @@ namespace Negocio
 
         }
 
+        public void RestaurarEstadosImpuestosXProveedor(int CodigoProveedor) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirProcedimientoAlmacenado("SP_BajaImpuestosXProveedor");
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoProveedor", CodigoProveedor);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+
+        }
+
+        public void ModificarImpuestoxProveedor(Impuesto unImpuesto, int CodigoProveedor) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirProcedimientoAlmacenado("SP_ModificarImpuestoXProveedor");
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoProveedor", CodigoProveedor);
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoImpuesto", unImpuesto.CodigoImpuesto);
+            AccederDatos.Comando.Parameters.AddWithValue("@Alicuota", unImpuesto.Alicuota);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+
+        }
+
         public void AgregarImpuesto(Impuesto unImpuesto)
         {
             AccederDatos.AbrirConexion();
@@ -62,17 +87,21 @@ namespace Negocio
 
             List<Impuesto> ListadoImpuestos = new List<Impuesto>();
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("SELECT ProveedorXImpuesto.CodigoImpuesto, ProveedorXImpuesto.CodigoProveedor, ProveedorXImpuesto.Alicuota, Impuestos.Nombre, Descripcion FROM ProveedorXImpuesto INNER JOIN " +
+            AccederDatos.DefinirTipoComando("SELECT ProveedorXImpuesto.CodigoImpuesto, ProveedorXImpuesto.CodigoProveedor, ProveedorXImpuesto.Alicuota, ProveedorXImpuesto.Estado, Impuestos.Nombre, Descripcion FROM ProveedorXImpuesto INNER JOIN " +
             "Impuestos ON ProveedorXImpuesto.CodigoImpuesto = Impuestos.CodigoImpuesto WHERE ProveedorXImpuesto.CodigoProveedor = '" + CodigoProveedor + "'");
             AccederDatos.EjecutarConsulta();
             while (AccederDatos.LectorDatos.Read()) {
 
-                Impuesto unImpuesto = new Impuesto();
-                unImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoImpuesto"];
-                unImpuesto.Alicuota = (decimal)AccederDatos.LectorDatos["Alicuota"];
-                unImpuesto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
-                unImpuesto.Descripcion = AccederDatos.LectorDatos["Descripcion"].ToString();
-                ListadoImpuestos.Add(unImpuesto);
+                if ((bool)AccederDatos.LectorDatos["Estado"]) {
+
+                    Impuesto unImpuesto = new Impuesto();
+                    unImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoImpuesto"];
+                    unImpuesto.Alicuota = (decimal)AccederDatos.LectorDatos["Alicuota"];
+                    unImpuesto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                    unImpuesto.Descripcion = AccederDatos.LectorDatos["Descripcion"].ToString();
+                    ListadoImpuestos.Add(unImpuesto);
+                }
+                
             }
 
             AccederDatos.CerrarReader();
