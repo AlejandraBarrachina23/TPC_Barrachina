@@ -47,7 +47,6 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.pnlImpuesto = new System.Windows.Forms.Panel();
             this.pnlDescuento = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -58,6 +57,8 @@
             this.btnDescuento = new System.Windows.Forms.Button();
             this.btnRubro = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCodigo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoBusqueda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxNombre)).BeginInit();
@@ -104,7 +105,7 @@
             // tboxNombre
             // 
             this.tboxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNombre.Location = new System.Drawing.Point(376, 33);
+            this.tboxNombre.Location = new System.Drawing.Point(357, 32);
             this.tboxNombre.Name = "tboxNombre";
             this.tboxNombre.Size = new System.Drawing.Size(155, 31);
             this.tboxNombre.TabIndex = 15;
@@ -132,7 +133,7 @@
             // pboxNombre
             // 
             this.pboxNombre.Image = ((System.Drawing.Image)(resources.GetObject("pboxNombre.Image")));
-            this.pboxNombre.Location = new System.Drawing.Point(341, 33);
+            this.pboxNombre.Location = new System.Drawing.Point(322, 32);
             this.pboxNombre.Name = "pboxNombre";
             this.pboxNombre.Size = new System.Drawing.Size(31, 31);
             this.pboxNombre.TabIndex = 17;
@@ -152,7 +153,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(294, 41);
+            this.lblNombre.Location = new System.Drawing.Point(275, 40);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(45, 17);
             this.lblNombre.TabIndex = 19;
@@ -259,6 +260,7 @@
             // panelContenedor
             // 
             this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelContenedor.Controls.Add(this.panel2);
             this.panelContenedor.Controls.Add(this.btnBuscar);
             this.panelContenedor.Controls.Add(this.lblCodigo);
             this.panelContenedor.Controls.Add(this.dgvListadoBusqueda);
@@ -288,16 +290,6 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(772, 506);
             this.panelContenedor.TabIndex = 23;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(549, 29);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(47, 42);
-            this.btnBuscar.TabIndex = 24;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // pnlImpuesto
             // 
@@ -437,6 +429,32 @@
             this.btnDetalle.UseVisualStyleBackColor = false;
             this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(536, 30);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(95, 35);
+            this.btnBuscar.TabIndex = 25;
+            this.btnBuscar.Text = "BUSQUEDA";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(91)))), ((int)(((byte)(104)))));
+            this.panel2.Location = new System.Drawing.Point(531, 30);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 35);
+            this.panel2.TabIndex = 12;
+            // 
             // FormularioListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,5 +507,6 @@
         private System.Windows.Forms.Button btnImpuesto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Panel panel2;
     }
 }

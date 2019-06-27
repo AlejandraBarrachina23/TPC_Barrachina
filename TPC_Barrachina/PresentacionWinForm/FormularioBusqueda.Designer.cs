@@ -76,25 +76,27 @@
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(336, 22);
+            this.lblNombreCliente.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCliente.Location = new System.Drawing.Point(293, 23);
             this.lblNombreCliente.Name = "lblNombreCliente";
-            this.lblNombreCliente.Size = new System.Drawing.Size(44, 13);
+            this.lblNombreCliente.Size = new System.Drawing.Size(45, 17);
             this.lblNombreCliente.TabIndex = 7;
             this.lblNombreCliente.Text = "Nombre";
             // 
             // lblCodigoCliente
             // 
             this.lblCodigoCliente.AutoSize = true;
-            this.lblCodigoCliente.Location = new System.Drawing.Point(90, 22);
+            this.lblCodigoCliente.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoCliente.Location = new System.Drawing.Point(47, 24);
             this.lblCodigoCliente.Name = "lblCodigoCliente";
-            this.lblCodigoCliente.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigoCliente.Size = new System.Drawing.Size(42, 17);
             this.lblCodigoCliente.TabIndex = 7;
             this.lblCodigoCliente.Text = "Codigo";
             // 
             // pboxNombreCliente
             // 
             this.pboxNombreCliente.Image = ((System.Drawing.Image)(resources.GetObject("pboxNombreCliente.Image")));
-            this.pboxNombreCliente.Location = new System.Drawing.Point(383, 14);
+            this.pboxNombreCliente.Location = new System.Drawing.Point(340, 18);
             this.pboxNombreCliente.Name = "pboxNombreCliente";
             this.pboxNombreCliente.Size = new System.Drawing.Size(31, 31);
             this.pboxNombreCliente.TabIndex = 6;
@@ -102,12 +104,20 @@
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Bebas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(579, 7);
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(545, 14);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(47, 42);
+            this.btnBuscar.Size = new System.Drawing.Size(97, 35);
             this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Text = "BUSQUEDA";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // dgvListadoBusqueda
@@ -123,19 +133,19 @@
             // 
             // tboxNombre
             // 
-            this.tboxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxNombre.Location = new System.Drawing.Point(418, 14);
+            this.tboxNombre.Font = new System.Drawing.Font("Oswald Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxNombre.Location = new System.Drawing.Point(375, 18);
             this.tboxNombre.Name = "tboxNombre";
-            this.tboxNombre.Size = new System.Drawing.Size(155, 31);
+            this.tboxNombre.Size = new System.Drawing.Size(155, 29);
             this.tboxNombre.TabIndex = 5;
             this.tboxNombre.Click += new System.EventHandler(this.tboxNombre_Click);
             // 
             // tboxCodigo
             // 
-            this.tboxCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxCodigo.Location = new System.Drawing.Point(168, 14);
+            this.tboxCodigo.Font = new System.Drawing.Font("Oswald Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxCodigo.Location = new System.Drawing.Point(125, 18);
             this.tboxCodigo.Name = "tboxCodigo";
-            this.tboxCodigo.Size = new System.Drawing.Size(155, 31);
+            this.tboxCodigo.Size = new System.Drawing.Size(155, 29);
             this.tboxCodigo.TabIndex = 5;
             this.tboxCodigo.Click += new System.EventHandler(this.tboxCodigo_Click);
             // 
@@ -160,7 +170,7 @@
             // pboxCodigoCliente
             // 
             this.pboxCodigoCliente.Image = ((System.Drawing.Image)(resources.GetObject("pboxCodigoCliente.Image")));
-            this.pboxCodigoCliente.Location = new System.Drawing.Point(134, 14);
+            this.pboxCodigoCliente.Location = new System.Drawing.Point(91, 18);
             this.pboxCodigoCliente.Name = "pboxCodigoCliente";
             this.pboxCodigoCliente.Size = new System.Drawing.Size(31, 31);
             this.pboxCodigoCliente.TabIndex = 6;
@@ -196,7 +206,7 @@
             this.btnSaldar.ForeColor = System.Drawing.Color.White;
             this.btnSaldar.Image = ((System.Drawing.Image)(resources.GetObject("btnSaldar.Image")));
             this.btnSaldar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaldar.Location = new System.Drawing.Point(431, 251);
+            this.btnSaldar.Location = new System.Drawing.Point(423, 251);
             this.btnSaldar.Name = "btnSaldar";
             this.btnSaldar.Size = new System.Drawing.Size(94, 37);
             this.btnSaldar.TabIndex = 12;
@@ -215,7 +225,7 @@
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(212, 251);
+            this.btnAgregar.Location = new System.Drawing.Point(223, 251);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(94, 37);
             this.btnAgregar.TabIndex = 12;
@@ -234,7 +244,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(212, 251);
+            this.btnAceptar.Location = new System.Drawing.Point(222, 251);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
             this.btnAceptar.TabIndex = 11;

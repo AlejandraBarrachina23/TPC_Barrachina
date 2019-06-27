@@ -160,7 +160,6 @@ namespace Negocio
             AccederDatos.CerrarConexion();
             AccederDatos.CerrarReader();
             return ListadoProveedores;
-
         }
     }
 }

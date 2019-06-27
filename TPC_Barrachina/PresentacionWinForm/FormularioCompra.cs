@@ -185,7 +185,7 @@ namespace PresentacionWinForm
 
         private void btnBusqueda_Click_1(object sender, EventArgs e)
         {
-            FormularioBusqueda BusquedaProducto = new FormularioBusqueda("Productos", "Formulario Venta");
+            FormularioBusqueda BusquedaProducto = new FormularioBusqueda("Productos", "Formulario Compra");
             BusquedaProducto.SeleccionarProducto += new FormularioBusqueda.ElegirProducto(SeleccionarProducto);
             BusquedaProducto.MdiParent = this.MdiParent;
             BusquedaProducto.Show();

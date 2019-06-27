@@ -179,6 +179,30 @@ namespace Negocio
             throw new Exception("El código ingresado no existe");
 
         }
-         
+
+        public void RestarStock(Producto unProducto, int CantidadARestar) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirProcedimientoAlmacenado("SP_BajaStock");
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoProducto", unProducto.CodigoProducto);
+            AccederDatos.Comando.Parameters.AddWithValue("@Cantidad", CantidadARestar);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+        }
+
+
+        public void SumarStock(Producto unProducto, int CantidadASumar)
+        {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirProcedimientoAlmacenado("SP_AltaStock");
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoProducto", unProducto.CodigoProducto);
+            AccederDatos.Comando.Parameters.AddWithValue("@Cantidad", CantidadASumar);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+        }
+
     }
 }

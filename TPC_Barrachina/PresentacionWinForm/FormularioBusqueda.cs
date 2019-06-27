@@ -17,6 +17,7 @@ namespace PresentacionWinForm
 
     {
         private Utilidades utilidades = new Utilidades();
+        private int CodigoProveedor;
         public FormularioBusqueda(string NombreFormulario)
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace PresentacionWinForm
 
                 btnSaldar.Visible = true;
             }
+
             btnAceptar.Visible = false;
             btnAgregar.Visible = true;
 
@@ -46,7 +48,17 @@ namespace PresentacionWinForm
         {
             try
             {
-                dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadaFiltrar(panelContenedor, lblNombreFormulario);
+                if (tboxCodigo.Text == "" && tboxNombre.Text == "")
+                {
+                    dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(lblNombreFormulario.Text.Remove(0, 8));
+                }
+                else {
+                    dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadaFiltrar(panelContenedor, lblNombreFormulario);
+                }
+
+                tboxNombre.Text = "";
+                tboxCodigo.Text = "";
+                
             }
 
             catch (Exception Excepcion)
@@ -58,6 +70,7 @@ namespace PresentacionWinForm
 
         private void Busqueda_Load(object sender, EventArgs e)
         {
+            
             dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(lblNombreFormulario.Text.Remove(0, 8));
         }
 

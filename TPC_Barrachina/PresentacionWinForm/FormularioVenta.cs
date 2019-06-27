@@ -181,18 +181,23 @@ namespace PresentacionWinForm
         {
             try
             {
+                ProductoNegocio unProductoNegocio = new ProductoNegocio();
                 Validar.GrillaVacia(dgvDetalleVenta);
 
                 if (TipoOperacion == "Ventas")
                 {
                     DetalleVentaNegocio unDetallVentaNegocio = new DetalleVentaNegocio();
+
                     unaCabeceraVentaNegocio.AgregarCabeceraVenta(unaCabeceraVentaNegocio.CargarCabeceraVenta(UsuarioActivo, unCliente, tboxFechaEmision.Text, Convert.ToDecimal(lblTotalFactura.Text), tboxMetodoPago.Text));
                     int NumeroFactura = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta();
 
                     foreach (DetalleVenta unDetalleVenta in ListadoDetalle)
                     {
                         unDetallVentaNegocio.AgregarDetalleVenta(unDetalleVenta, NumeroFactura);
+                        unProductoNegocio.RestarStock(unDetalleVenta.Producto,unDetalleVenta.Cantidad);
                     }
+
+
                 }
 
                 else {
