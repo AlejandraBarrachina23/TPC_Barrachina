@@ -57,7 +57,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Bebas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(112, 3);
+            this.lblTitulo.Location = new System.Drawing.Point(100, 4);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(128, 29);
             this.lblTitulo.TabIndex = 10;
@@ -66,18 +66,18 @@
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Font = new System.Drawing.Font("Oswald Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.Color.Black;
-            this.lblMensaje.Location = new System.Drawing.Point(131, 32);
+            this.lblMensaje.Location = new System.Drawing.Point(134, 32);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(124, 27);
+            this.lblMensaje.Size = new System.Drawing.Size(128, 26);
             this.lblMensaje.TabIndex = 10;
             this.lblMensaje.Text = "¿DESEA SALIR?";
             // 
             // pboxIcono
             // 
             this.pboxIcono.Image = ((System.Drawing.Image)(resources.GetObject("pboxIcono.Image")));
-            this.pboxIcono.Location = new System.Drawing.Point(60, 11);
+            this.pboxIcono.Location = new System.Drawing.Point(59, 13);
             this.pboxIcono.Name = "pboxIcono";
             this.pboxIcono.Size = new System.Drawing.Size(65, 70);
             this.pboxIcono.TabIndex = 55;
@@ -105,7 +105,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(161, 88);
+            this.btnCancelar.Location = new System.Drawing.Point(168, 89);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 37);
             this.btnCancelar.TabIndex = 57;
@@ -123,7 +123,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(48, 88);
+            this.btnAceptar.Location = new System.Drawing.Point(59, 89);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
             this.btnAceptar.TabIndex = 56;

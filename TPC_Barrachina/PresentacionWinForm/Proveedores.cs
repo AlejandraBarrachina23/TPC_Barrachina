@@ -17,7 +17,6 @@ namespace PresentacionWinForm
         ValidadorDatos Validar = new ValidadorDatos();
         Utilidades Utilidades = new Utilidades();
         List<Impuesto> ListadoImpuestos = new List<Impuesto>();
-        private BindingList<Impuesto> listaBindeable;
         private Proveedor ProveedorModificar = null;
 
         public Proveedores()
@@ -109,16 +108,14 @@ namespace PresentacionWinForm
           
             try
             {
-               
+
                 Impuesto unNuevoImpuesto = new Impuesto();
-                unNuevoImpuesto.Nombre = cboxImpuesto.SelectedItem.ToString();
-                unNuevoImpuesto.CodigoImpuesto = cboxImpuesto.FindString(unNuevoImpuesto.Nombre) + 1;
+                unNuevoImpuesto = (Impuesto)cboxImpuesto.SelectedItem;
                 unNuevoImpuesto.Alicuota = Convert.ToDecimal(tboxPorcentaje.Text);
-                listaBindeable = new BindingList<Impuesto>(ListadoImpuestos);
-                dgvImpuestos.DataSource = listaBindeable;
+                dgvImpuestos.DataSource = null;
                 ListadoImpuestos.Add(unNuevoImpuesto);
-                listaBindeable.ResetBindings();
-                dgvImpuestos= Utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
+                dgvImpuestos.DataSource = ListadoImpuestos;
+                dgvImpuestos = Utilidades.OcultarColumnasDataGridView(dgvImpuestos, "Impuestos");
 
             }
             catch (Exception ex)
@@ -131,9 +128,28 @@ namespace PresentacionWinForm
 
         private void btnBorrarImpuesto_Click(object sender, EventArgs e)
         {
-            ListadoImpuestos.RemoveAt(dgvImpuestos.CurrentRow.Index);
+            Impuesto ImpuestoEliminar = (Impuesto)dgvImpuestos.CurrentRow.DataBoundItem;
+
+            if (ListadoImpuestos.Contains(ImpuestoEliminar)) {
+
+                ListadoImpuestos.Remove(ImpuestoEliminar);
+            }
+
             dgvImpuestos.DataSource = null;
-            dgvImpuestos.DataSource = ListadoImpuestos;
+
+
+            if (!ListadoImpuestos.Any())
+            {
+                MessageBox.Show("Vacia");
+               
+            }
+
+            else {
+                
+                dgvImpuestos.DataSource = ListadoImpuestos;
+            }
+
+
         }
 
         private void btnModificarImpuesto_Click(object sender, EventArgs e)
@@ -145,9 +161,15 @@ namespace PresentacionWinForm
         {
             try
             {
-                Impuesto ImpuestoSeleccionado = (Impuesto)dgvImpuestos.CurrentRow.DataBoundItem;
-                cboxImpuesto.Text = ImpuestoSeleccionado.Nombre;
-                tboxPorcentaje.Text = ImpuestoSeleccionado.Alicuota.ToString();
+                if (ListadoImpuestos.Any())
+                {
+                    Impuesto ImpuestoSeleccionado = (Impuesto)dgvImpuestos.CurrentRow.DataBoundItem;
+                    cboxImpuesto.SelectedItem = ImpuestoSeleccionado.Nombre;
+                    tboxPorcentaje.Text = ImpuestoSeleccionado.Alicuota.ToString();
+                }
+
+
+
             }
             catch (Exception Excepcion)
             {

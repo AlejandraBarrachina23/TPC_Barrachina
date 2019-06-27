@@ -87,11 +87,11 @@
             // lblMensaje
             // 
             this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Font = new System.Drawing.Font("Oswald Stencil", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.Font = new System.Drawing.Font("Oswald", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.Color.Black;
-            this.lblMensaje.Location = new System.Drawing.Point(116, 34);
+            this.lblMensaje.Location = new System.Drawing.Point(110, 35);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(167, 27);
+            this.lblMensaje.Size = new System.Drawing.Size(173, 26);
             this.lblMensaje.TabIndex = 10;
             this.lblMensaje.Text = "CARGADO CON EXITO";
             // 

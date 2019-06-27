@@ -64,13 +64,13 @@
             this.btnModificarImpuesto = new System.Windows.Forms.Button();
             this.btnBorrarImpuesto = new System.Windows.Forms.Button();
             this.btnAgregarImpuesto = new System.Windows.Forms.Button();
-            this.dgvImpuestos = new System.Windows.Forms.DataGridView();
             this.lblCodigoProveedor = new System.Windows.Forms.Label();
             this.tboxCodigoProveedor = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblCondicionIVA = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.dgvImpuestos = new System.Windows.Forms.DataGridView();
             this.gboxContacto.SuspendLayout();
             this.gboxDireccion.SuspendLayout();
             this.pnlBarraPrincipal.SuspendLayout();
@@ -355,12 +355,12 @@
             // 
             // gboxImpuesto
             // 
+            this.gboxImpuesto.Controls.Add(this.dgvImpuestos);
             this.gboxImpuesto.Controls.Add(this.cboxImpuesto);
             this.gboxImpuesto.Controls.Add(this.btnModificarImpuesto);
             this.gboxImpuesto.Controls.Add(this.btnBorrarImpuesto);
             this.gboxImpuesto.Controls.Add(this.btnAgregarImpuesto);
             this.gboxImpuesto.Controls.Add(this.tboxPorcentaje);
-            this.gboxImpuesto.Controls.Add(this.dgvImpuestos);
             this.gboxImpuesto.Controls.Add(this.lblImpuestos);
             this.gboxImpuesto.Controls.Add(this.lblPorcentaje);
             this.gboxImpuesto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -409,17 +409,6 @@
             this.btnAgregarImpuesto.TabIndex = 30;
             this.btnAgregarImpuesto.UseVisualStyleBackColor = true;
             this.btnAgregarImpuesto.Click += new System.EventHandler(this.btnAgregarImpuesto_Click);
-            // 
-            // dgvImpuestos
-            // 
-            this.dgvImpuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvImpuestos.Location = new System.Drawing.Point(10, 66);
-            this.dgvImpuestos.Name = "dgvImpuestos";
-            this.dgvImpuestos.ReadOnly = true;
-            this.dgvImpuestos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImpuestos.Size = new System.Drawing.Size(423, 96);
-            this.dgvImpuestos.TabIndex = 0;
-            this.dgvImpuestos.SelectionChanged += new System.EventHandler(this.dgvImpuestos_SelectionChanged);
             // 
             // lblCodigoProveedor
             // 
@@ -504,6 +493,17 @@
             this.btnModificar.Visible = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // dgvImpuestos
+            // 
+            this.dgvImpuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvImpuestos.Location = new System.Drawing.Point(8, 68);
+            this.dgvImpuestos.Name = "dgvImpuestos";
+            this.dgvImpuestos.ReadOnly = true;
+            this.dgvImpuestos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvImpuestos.Size = new System.Drawing.Size(431, 87);
+            this.dgvImpuestos.TabIndex = 32;
+            this.dgvImpuestos.SelectionChanged += new System.EventHandler(this.dgvImpuestos_SelectionChanged);
+            // 
             // Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,7 +579,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Label lblNombreFormulario;
-        private System.Windows.Forms.DataGridView dgvImpuestos;
         private System.Windows.Forms.Button btnAgregarImpuesto;
         private System.Windows.Forms.ComboBox cboxImpuesto;
         private System.Windows.Forms.Label lblCondicionIVA;
@@ -588,5 +587,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBorrarImpuesto;
         private System.Windows.Forms.Button btnModificarImpuesto;
+        private System.Windows.Forms.DataGridView dgvImpuestos;
     }
 }

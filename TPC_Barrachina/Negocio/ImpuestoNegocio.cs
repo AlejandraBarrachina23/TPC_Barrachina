@@ -62,7 +62,7 @@ namespace Negocio
 
             List<Impuesto> ListadoImpuestos = new List<Impuesto>();
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("SELECT ProveedorXImpuesto.CodigoImpuesto, ProveedorXImpuesto.CodigoProveedor, ProveedorXImpuesto.Alicuota, Impuestos.Nombre FROM ProveedorXImpuesto INNER JOIN " +
+            AccederDatos.DefinirTipoComando("SELECT ProveedorXImpuesto.CodigoImpuesto, ProveedorXImpuesto.CodigoProveedor, ProveedorXImpuesto.Alicuota, Impuestos.Nombre, Descripcion FROM ProveedorXImpuesto INNER JOIN " +
             "Impuestos ON ProveedorXImpuesto.CodigoImpuesto = Impuestos.CodigoImpuesto WHERE ProveedorXImpuesto.CodigoProveedor = '" + CodigoProveedor + "'");
             AccederDatos.EjecutarConsulta();
             while (AccederDatos.LectorDatos.Read()) {
@@ -71,6 +71,7 @@ namespace Negocio
                 unImpuesto.CodigoImpuesto = (int)AccederDatos.LectorDatos["CodigoImpuesto"];
                 unImpuesto.Alicuota = (decimal)AccederDatos.LectorDatos["Alicuota"];
                 unImpuesto.Nombre = AccederDatos.LectorDatos["Nombre"].ToString();
+                unImpuesto.Descripcion = AccederDatos.LectorDatos["Descripcion"].ToString();
                 ListadoImpuestos.Add(unImpuesto);
             }
 

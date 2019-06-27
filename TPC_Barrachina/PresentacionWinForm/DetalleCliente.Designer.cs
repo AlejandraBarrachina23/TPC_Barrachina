@@ -165,7 +165,7 @@
             // 
             this.lblCodigoCliente.AutoSize = true;
             this.lblCodigoCliente.Font = new System.Drawing.Font("Oswald Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoCliente.Location = new System.Drawing.Point(24, 37);
+            this.lblCodigoCliente.Location = new System.Drawing.Point(24, 38);
             this.lblCodigoCliente.Name = "lblCodigoCliente";
             this.lblCodigoCliente.Size = new System.Drawing.Size(90, 20);
             this.lblCodigoCliente.TabIndex = 1;
