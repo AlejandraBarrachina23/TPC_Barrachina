@@ -138,7 +138,10 @@ namespace PresentacionWinForm
                 foreach (DetalleCompra unDetalleCompra in ListadoDetalleCompra)
                 {
                     unDetalleCompraNegocio.AgregarDetalleCompra(unDetalleCompra, unaCabeceraCompraNegocio.CuentaFilasCabeceraCompra());
+                    unProductoNegocio.SumarStock(unDetalleCompra.Producto, unDetalleCompra.Cantidad);
                 }
+                
+                //unProductoNegocio.ActualizarPrecio();
 
                 CuentaLinea = 1;
                 ListadoDetalleCompra.Clear();

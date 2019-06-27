@@ -204,5 +204,17 @@ namespace Negocio
             AccederDatos.CerrarConexion();
         }
 
+        public void ActualizarPrecios(Producto unProducto) {
+
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirProcedimientoAlmacenado("SP_ModificarPrecioProducto");
+            AccederDatos.Comando.Parameters.Clear();
+            AccederDatos.Comando.Parameters.AddWithValue("@CodigoProducto", unProducto.CodigoProducto);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioCosto", unProducto.PrecioCosto);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMinorista", unProducto.PrecioVentaMinorista);
+            AccederDatos.Comando.Parameters.AddWithValue("@PrecioVentaMayorista", unProducto.PrecioVentaMinorista);
+            AccederDatos.EjecutarAccion();
+            AccederDatos.CerrarConexion();
+        }
     }
 }
