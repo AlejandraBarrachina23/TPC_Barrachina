@@ -56,8 +56,8 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigoProducto = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tboxRentabilidad = new System.Windows.Forms.TextBox();
             this.lblRentabilidad = new System.Windows.Forms.Label();
+            this.tboxRentabilidad = new System.Windows.Forms.TextBox();
             this.pnlBarraPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -109,7 +109,7 @@
             this.cboxProveedor.Location = new System.Drawing.Point(121, 182);
             this.cboxProveedor.Name = "cboxProveedor";
             this.cboxProveedor.Size = new System.Drawing.Size(173, 25);
-            this.cboxProveedor.TabIndex = 7;
+            this.cboxProveedor.TabIndex = 8;
             // 
             // cboxRubro
             // 
@@ -118,7 +118,7 @@
             this.cboxRubro.Location = new System.Drawing.Point(415, 139);
             this.cboxRubro.Name = "cboxRubro";
             this.cboxRubro.Size = new System.Drawing.Size(173, 25);
-            this.cboxRubro.TabIndex = 8;
+            this.cboxRubro.TabIndex = 7;
             // 
             // cboxTipoProducto
             // 
@@ -127,7 +127,7 @@
             this.cboxTipoProducto.Location = new System.Drawing.Point(121, 139);
             this.cboxTipoProducto.Name = "cboxTipoProducto";
             this.cboxTipoProducto.Size = new System.Drawing.Size(173, 25);
-            this.cboxTipoProducto.TabIndex = 4;
+            this.cboxTipoProducto.TabIndex = 6;
             // 
             // btnCancelar
             // 
@@ -154,6 +154,7 @@
             this.tboxCodigoProducto.Name = "tboxCodigoProducto";
             this.tboxCodigoProducto.Size = new System.Drawing.Size(173, 25);
             this.tboxCodigoProducto.TabIndex = 1;
+            this.tboxCodigoProducto.TextChanged += new System.EventHandler(this.tboxCodigoProducto_TextChanged);
             // 
             // btnAceptar
             // 
@@ -179,7 +180,7 @@
             this.tboxCantidadBulto.Location = new System.Drawing.Point(121, 94);
             this.tboxCantidadBulto.Name = "tboxCantidadBulto";
             this.tboxCantidadBulto.Size = new System.Drawing.Size(173, 25);
-            this.tboxCantidadBulto.TabIndex = 5;
+            this.tboxCantidadBulto.TabIndex = 4;
             // 
             // tboxStockCritico
             // 
@@ -187,7 +188,7 @@
             this.tboxStockCritico.Location = new System.Drawing.Point(415, 94);
             this.tboxStockCritico.Name = "tboxStockCritico";
             this.tboxStockCritico.Size = new System.Drawing.Size(173, 25);
-            this.tboxStockCritico.TabIndex = 6;
+            this.tboxStockCritico.TabIndex = 5;
             // 
             // tboxNombre
             // 
@@ -195,7 +196,7 @@
             this.tboxNombre.Location = new System.Drawing.Point(121, 51);
             this.tboxNombre.Name = "tboxNombre";
             this.tboxNombre.Size = new System.Drawing.Size(173, 25);
-            this.tboxNombre.TabIndex = 3;
+            this.tboxNombre.TabIndex = 2;
             // 
             // tboxCodigoBulto
             // 
@@ -364,14 +365,6 @@
             this.panel1.Size = new System.Drawing.Size(654, 297);
             this.panel1.TabIndex = 58;
             // 
-            // tboxRentabilidad
-            // 
-            this.tboxRentabilidad.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxRentabilidad.Location = new System.Drawing.Point(415, 54);
-            this.tboxRentabilidad.Name = "tboxRentabilidad";
-            this.tboxRentabilidad.Size = new System.Drawing.Size(173, 25);
-            this.tboxRentabilidad.TabIndex = 3;
-            // 
             // lblRentabilidad
             // 
             this.lblRentabilidad.AutoSize = true;
@@ -381,6 +374,14 @@
             this.lblRentabilidad.Size = new System.Drawing.Size(69, 17);
             this.lblRentabilidad.TabIndex = 43;
             this.lblRentabilidad.Text = "Rentabilidad";
+            // 
+            // tboxRentabilidad
+            // 
+            this.tboxRentabilidad.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tboxRentabilidad.Location = new System.Drawing.Point(415, 54);
+            this.tboxRentabilidad.Name = "tboxRentabilidad";
+            this.tboxRentabilidad.Size = new System.Drawing.Size(173, 25);
+            this.tboxRentabilidad.TabIndex = 3;
             // 
             // Productos
             // 

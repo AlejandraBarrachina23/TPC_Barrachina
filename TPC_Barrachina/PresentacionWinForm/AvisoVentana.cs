@@ -12,10 +12,13 @@ namespace PresentacionWinForm
 {
     public partial class Avisos : Form
     {
+        public string FormularioACerrar;
+        private Form FormularioActivo;
 
-        public Avisos()
+        public Avisos(string FormularioQuellamo)
         {
             InitializeComponent();
+            FormularioACerrar = FormularioQuellamo;
          
         }
 
@@ -26,12 +29,21 @@ namespace PresentacionWinForm
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Form FormularioActivo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Productos);
+            if (FormularioACerrar == "Productos") { 
+                FormularioActivo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Productos);
+            }
+
+            else if (FormularioACerrar == "Proveedores") {
+                FormularioActivo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Proveedores);
+
+            }
+
             if (FormularioActivo != null)
             {
                 FormularioActivo.Close();
                 this.Close();
             }
+
             this.Close();
         }
     }

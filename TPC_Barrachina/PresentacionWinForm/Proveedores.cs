@@ -56,7 +56,7 @@ namespace PresentacionWinForm
                     unImpuesto.AgregarImpuestoXProveedor(unNuevoImpuesto, Convert.ToInt32(tboxCodigoProveedor.Text));
                 }
 
-                Avisos FormularioAviso = new Avisos();
+                Avisos FormularioAviso = new Avisos("Proveedores");
                 FormularioAviso.Show();
             }
 
@@ -200,6 +200,7 @@ namespace PresentacionWinForm
         {
             try
             {
+
                 Validar.FormularioProveedor(tboxCodigoProveedor, tboxRazonSocial, tboxNumeroCUIT, tboxNombreFantasia, cboxCondicionIVA, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad, "Modificar");
                 ProveedorNegocio unProveedor = new ProveedorNegocio();
                 ImpuestoNegocio unImpuestoNegocio = new ImpuestoNegocio();
@@ -209,7 +210,10 @@ namespace PresentacionWinForm
                 {
                     unImpuestoNegocio.ModificarImpuestoxProveedor(unImpuesto, ProveedorModificar.CodigoProveedor);
                 }
-           
+
+                Avisos FormularioAviso = new Avisos("Proveedores");
+                FormularioAviso.Show();
+
             }
             catch (Exception Excepcion)
             {
@@ -237,5 +241,6 @@ namespace PresentacionWinForm
                 e.Handled = true;
             }
         }
+
     }
 }

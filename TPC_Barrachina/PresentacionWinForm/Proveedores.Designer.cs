@@ -60,6 +60,7 @@
             this.lblImpuestos = new System.Windows.Forms.Label();
             this.cboxCondicionIVA = new System.Windows.Forms.ComboBox();
             this.gboxImpuesto = new System.Windows.Forms.GroupBox();
+            this.dgvImpuestos = new System.Windows.Forms.DataGridView();
             this.cboxImpuesto = new System.Windows.Forms.ComboBox();
             this.btnModificarImpuesto = new System.Windows.Forms.Button();
             this.btnBorrarImpuesto = new System.Windows.Forms.Button();
@@ -70,7 +71,6 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblCondicionIVA = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.dgvImpuestos = new System.Windows.Forms.DataGridView();
             this.gboxContacto.SuspendLayout();
             this.gboxDireccion.SuspendLayout();
             this.pnlBarraPrincipal.SuspendLayout();
@@ -167,7 +167,7 @@
             this.tboxCP.Location = new System.Drawing.Point(372, 23);
             this.tboxCP.Name = "tboxCP";
             this.tboxCP.Size = new System.Drawing.Size(43, 25);
-            this.tboxCP.TabIndex = 7;
+            this.tboxCP.TabIndex = 8;
             // 
             // tboxNumero
             // 
@@ -178,17 +178,17 @@
             // 
             // tboxLocalidad
             // 
-            this.tboxLocalidad.Location = new System.Drawing.Point(262, 60);
+            this.tboxLocalidad.Location = new System.Drawing.Point(77, 62);
             this.tboxLocalidad.Name = "tboxLocalidad";
             this.tboxLocalidad.Size = new System.Drawing.Size(143, 25);
-            this.tboxLocalidad.TabIndex = 10;
+            this.tboxLocalidad.TabIndex = 9;
             // 
             // tboxProvincia
             // 
-            this.tboxProvincia.Location = new System.Drawing.Point(68, 60);
+            this.tboxProvincia.Location = new System.Drawing.Point(291, 62);
             this.tboxProvincia.Name = "tboxProvincia";
             this.tboxProvincia.Size = new System.Drawing.Size(124, 25);
-            this.tboxProvincia.TabIndex = 9;
+            this.tboxProvincia.TabIndex = 10;
             // 
             // tboxCalle
             // 
@@ -200,7 +200,7 @@
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
-            this.lblLocalidad.Location = new System.Drawing.Point(206, 63);
+            this.lblLocalidad.Location = new System.Drawing.Point(21, 65);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(54, 17);
             this.lblLocalidad.TabIndex = 19;
@@ -209,7 +209,7 @@
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(11, 63);
+            this.lblProvincia.Location = new System.Drawing.Point(234, 65);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(52, 17);
             this.lblProvincia.TabIndex = 19;
@@ -247,7 +247,7 @@
             this.tboxPorcentaje.Location = new System.Drawing.Point(270, 24);
             this.tboxPorcentaje.Name = "tboxPorcentaje";
             this.tboxPorcentaje.Size = new System.Drawing.Size(50, 25);
-            this.tboxPorcentaje.TabIndex = 8;
+            this.tboxPorcentaje.TabIndex = 15;
             // 
             // lblPorcentaje
             // 
@@ -371,6 +371,17 @@
             this.gboxImpuesto.TabStop = false;
             this.gboxImpuesto.Text = "Impuesto";
             // 
+            // dgvImpuestos
+            // 
+            this.dgvImpuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvImpuestos.Location = new System.Drawing.Point(8, 68);
+            this.dgvImpuestos.Name = "dgvImpuestos";
+            this.dgvImpuestos.ReadOnly = true;
+            this.dgvImpuestos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvImpuestos.Size = new System.Drawing.Size(431, 87);
+            this.dgvImpuestos.TabIndex = 32;
+            this.dgvImpuestos.SelectionChanged += new System.EventHandler(this.dgvImpuestos_SelectionChanged);
+            // 
             // cboxImpuesto
             // 
             this.cboxImpuesto.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -378,7 +389,7 @@
             this.cboxImpuesto.Location = new System.Drawing.Point(71, 23);
             this.cboxImpuesto.Name = "cboxImpuesto";
             this.cboxImpuesto.Size = new System.Drawing.Size(124, 25);
-            this.cboxImpuesto.TabIndex = 31;
+            this.cboxImpuesto.TabIndex = 14;
             // 
             // btnModificarImpuesto
             // 
@@ -386,7 +397,7 @@
             this.btnModificarImpuesto.Location = new System.Drawing.Point(393, 23);
             this.btnModificarImpuesto.Name = "btnModificarImpuesto";
             this.btnModificarImpuesto.Size = new System.Drawing.Size(30, 27);
-            this.btnModificarImpuesto.TabIndex = 30;
+            this.btnModificarImpuesto.TabIndex = 18;
             this.btnModificarImpuesto.UseVisualStyleBackColor = true;
             this.btnModificarImpuesto.Click += new System.EventHandler(this.btnModificarImpuesto_Click);
             // 
@@ -396,7 +407,7 @@
             this.btnBorrarImpuesto.Location = new System.Drawing.Point(359, 23);
             this.btnBorrarImpuesto.Name = "btnBorrarImpuesto";
             this.btnBorrarImpuesto.Size = new System.Drawing.Size(30, 27);
-            this.btnBorrarImpuesto.TabIndex = 30;
+            this.btnBorrarImpuesto.TabIndex = 17;
             this.btnBorrarImpuesto.UseVisualStyleBackColor = true;
             this.btnBorrarImpuesto.Click += new System.EventHandler(this.btnBorrarImpuesto_Click);
             // 
@@ -406,7 +417,7 @@
             this.btnAgregarImpuesto.Location = new System.Drawing.Point(326, 23);
             this.btnAgregarImpuesto.Name = "btnAgregarImpuesto";
             this.btnAgregarImpuesto.Size = new System.Drawing.Size(30, 27);
-            this.btnAgregarImpuesto.TabIndex = 30;
+            this.btnAgregarImpuesto.TabIndex = 16;
             this.btnAgregarImpuesto.UseVisualStyleBackColor = true;
             this.btnAgregarImpuesto.Click += new System.EventHandler(this.btnAgregarImpuesto_Click);
             // 
@@ -440,7 +451,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(253, 605);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(94, 37);
-            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -458,7 +469,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(151, 605);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(94, 37);
-            this.btnAceptar.TabIndex = 18;
+            this.btnAceptar.TabIndex = 19;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -483,26 +494,15 @@
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(151, 605);
+            this.btnModificar.Location = new System.Drawing.Point(140, 605);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(94, 37);
-            this.btnModificar.TabIndex = 60;
+            this.btnModificar.TabIndex = 19;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Visible = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // dgvImpuestos
-            // 
-            this.dgvImpuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvImpuestos.Location = new System.Drawing.Point(8, 68);
-            this.dgvImpuestos.Name = "dgvImpuestos";
-            this.dgvImpuestos.ReadOnly = true;
-            this.dgvImpuestos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImpuestos.Size = new System.Drawing.Size(431, 87);
-            this.dgvImpuestos.TabIndex = 32;
-            this.dgvImpuestos.SelectionChanged += new System.EventHandler(this.dgvImpuestos_SelectionChanged);
             // 
             // Proveedores
             // 
@@ -526,7 +526,7 @@
             this.Controls.Add(this.tboxNumeroCUIT);
             this.Controls.Add(this.tboxRazonSocial);
             this.Controls.Add(this.pnlBarraPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Proveedores";
             this.Text = "NuevoProveedor";
             this.Load += new System.EventHandler(this.Proveedores_Load);

@@ -58,7 +58,7 @@ namespace PresentacionWinForm
                 int CodigoDireccion = unaDireccion.ContaFilasDireccion();
                 int CodigoCuentaCorriente = unaCuentaCorriente.ContarFilasCuentaCorriente();
                 unCliente.AgregarCliente(unCliente.CargarCliente(tboxCodigo, tboxNombre, tboxApellido, cboxDescuento, tboxLimitecuenta, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxProvincia, tboxLocalidad, tboxCalle, tboxNumero, tboxCP, CodigoDireccion,CodigoCuentaCorriente));
-                Avisos FormularioAviso = new Avisos();
+                Avisos FormularioAviso = new Avisos("Clientes");
                 FormularioAviso.Show();
             }
 

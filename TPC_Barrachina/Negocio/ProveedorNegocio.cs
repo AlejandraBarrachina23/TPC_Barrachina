@@ -38,29 +38,33 @@ namespace Negocio
 
             while (AccederDatos.LectorDatos.Read())
             {
-                Proveedor unProveedor = new Proveedor();
-                unProveedor.Contacto = new Contacto();
-                unProveedor.Contacto.Direccion = new Direccion();
-                unProveedor.CondicionIVA = new CondicionIVA();
+                if ((bool)AccederDatos.LectorDatos["Estado"]) {
 
-                unProveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["CodigoProveedor"];
-                unProveedor.NombreFantasia = AccederDatos.LectorDatos["NombreFantasia"].ToString();
-                unProveedor.NumeroCUIT = AccederDatos.LectorDatos["NumeroCUIT"].ToString();
-                unProveedor.RazonSocial = AccederDatos.LectorDatos["RazonSocial"].ToString();
-                unProveedor.Contacto.CodigoContacto = (int)AccederDatos.LectorDatos["CodigoContacto"];
-                unProveedor.Contacto.Telefono = AccederDatos.LectorDatos["Telefono"].ToString();
-                unProveedor.Contacto.Celular = AccederDatos.LectorDatos["Celular"].ToString();
-                unProveedor.Contacto.Mail = AccederDatos.LectorDatos["Mail"].ToString();
-                unProveedor.Contacto.Direccion.CodigoDireccion = (int)AccederDatos.LectorDatos["CodigoDireccion"];
-                unProveedor.Contacto.Direccion.Calle = AccederDatos.LectorDatos["Calle"].ToString();
-                unProveedor.Contacto.Direccion.Numero = (int)AccederDatos.LectorDatos["Numero"];
-                unProveedor.Contacto.Direccion.CodigoPostal = (int)AccederDatos.LectorDatos["CodigoPostal"];
-                unProveedor.Contacto.Direccion.Provincia = AccederDatos.LectorDatos["Provincia"].ToString();
-                unProveedor.Contacto.Direccion.Localidad = AccederDatos.LectorDatos["Localidad"].ToString();
-                unProveedor.CondicionIVA.CodigoCondicionIVA = (int)AccederDatos.LectorDatos["CodigoCondicionIVA"];
-                unProveedor.CondicionIVA.Nombre = AccederDatos.LectorDatos["NombreCondicionIVA"].ToString();
-                
-                ListadoProveedores.Add(unProveedor);
+                    Proveedor unProveedor = new Proveedor();
+                    unProveedor.Contacto = new Contacto();
+                    unProveedor.Contacto.Direccion = new Direccion();
+                    unProveedor.CondicionIVA = new CondicionIVA();
+
+                    unProveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["CodigoProveedor"];
+                    unProveedor.NombreFantasia = AccederDatos.LectorDatos["NombreFantasia"].ToString();
+                    unProveedor.NumeroCUIT = AccederDatos.LectorDatos["NumeroCUIT"].ToString();
+                    unProveedor.RazonSocial = AccederDatos.LectorDatos["RazonSocial"].ToString();
+                    unProveedor.Contacto.CodigoContacto = (int)AccederDatos.LectorDatos["CodigoContacto"];
+                    unProveedor.Contacto.Telefono = AccederDatos.LectorDatos["Telefono"].ToString();
+                    unProveedor.Contacto.Celular = AccederDatos.LectorDatos["Celular"].ToString();
+                    unProveedor.Contacto.Mail = AccederDatos.LectorDatos["Mail"].ToString();
+                    unProveedor.Contacto.Direccion.CodigoDireccion = (int)AccederDatos.LectorDatos["CodigoDireccion"];
+                    unProveedor.Contacto.Direccion.Calle = AccederDatos.LectorDatos["Calle"].ToString();
+                    unProveedor.Contacto.Direccion.Numero = (int)AccederDatos.LectorDatos["Numero"];
+                    unProveedor.Contacto.Direccion.CodigoPostal = (int)AccederDatos.LectorDatos["CodigoPostal"];
+                    unProveedor.Contacto.Direccion.Provincia = AccederDatos.LectorDatos["Provincia"].ToString();
+                    unProveedor.Contacto.Direccion.Localidad = AccederDatos.LectorDatos["Localidad"].ToString();
+                    unProveedor.CondicionIVA.CodigoCondicionIVA = (int)AccederDatos.LectorDatos["CodigoCondicionIVA"];
+                    unProveedor.CondicionIVA.Nombre = AccederDatos.LectorDatos["NombreCondicionIVA"].ToString();
+
+                    ListadoProveedores.Add(unProveedor);
+                }
+              
             }
 
             AccederDatos.CerrarConexion();
@@ -74,6 +78,7 @@ namespace Negocio
             DireccionNegocio unaDireccion = new DireccionNegocio();
             ContactoNegocio unContacto = new ContactoNegocio();
             Direccion DireccionEliminar = new Direccion();
+            ImpuestoNegocio Impuestos = new ImpuestoNegocio();
             DireccionEliminar.CodigoDireccion = unProveedor.Contacto.CodigoContacto;
 
             AccederDatos.AbrirConexion();
@@ -83,6 +88,7 @@ namespace Negocio
 
             unaDireccion.EliminarDireccion(DireccionEliminar);
             unContacto.EliminarContacto(unProveedor.Contacto);
+            Impuestos.RestaurarEstadosImpuestosXProveedor(unProveedor.CodigoProveedor);
 
         }
 

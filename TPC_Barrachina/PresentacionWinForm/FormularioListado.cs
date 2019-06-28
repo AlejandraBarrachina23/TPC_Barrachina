@@ -40,20 +40,24 @@ namespace PresentacionWinForm
             if (lblNombreFormulario.Text.Remove(0, 8) == "Clientes")
             {
                 Clientes FormularioCliente = new Clientes();
+                FormularioCliente.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioCliente.Show();
             }
 
             else if (lblNombreFormulario.Text.Remove(0, 8) == "Productos")
             {
                 Productos FormularioProducto = new Productos();
+                FormularioProducto.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioProducto.Show();
             }
 
             else if (lblNombreFormulario.Text.Remove(0, 8) == "Proveedores")
             {
                 Proveedores FormularioProveedor = new Proveedores();
+                FormularioProveedor.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioProveedor.Show();
             }
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -88,6 +92,7 @@ namespace PresentacionWinForm
             if (EntidadModificar.GetType().Equals(typeof(Producto)))
             {
                 Productos FormularioProducto = new Productos((Producto)EntidadModificar);
+                FormularioProducto.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioProducto.Show();
                 
             }
@@ -96,6 +101,7 @@ namespace PresentacionWinForm
             {
 
                 Clientes FormularioCliente = new Clientes((Cliente)EntidadModificar);
+                FormularioCliente.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioCliente.Show();
 
             }
@@ -103,6 +109,7 @@ namespace PresentacionWinForm
             else if (EntidadModificar.GetType().Equals(typeof(Proveedor))) {
 
                 Proveedores FormularioProveedor = new Proveedores((Proveedor)EntidadModificar);
+                FormularioProveedor.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioProveedor.Show();
 
             }
@@ -198,6 +205,11 @@ namespace PresentacionWinForm
         private void tboxCodigo_Click(object sender, EventArgs e)
         {
             tboxNombre.Clear();
+        }
+
+        private void FormularioAgregarModificar_FormClosed( object sender, FormClosedEventArgs e ) {
+
+            dgvListadoBusqueda.DataSource = utilidades.DefinirEntidadAlistar(lblNombreFormulario.Text.Remove(0, 8));
         }
     }
 }

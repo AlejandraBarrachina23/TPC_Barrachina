@@ -32,7 +32,6 @@ namespace PresentacionWinForm
         //FORMULARIO MODIFICAR
         public Productos(Producto unProductoModificar)
         {
-
             InitializeComponent();
             ProductoModificar = unProductoModificar;
             tboxCodigoBulto.KeyPress += AsignarSoloNumeros;
@@ -50,6 +49,7 @@ namespace PresentacionWinForm
             cboxTipoProducto.DataSource = unTipoProducto.ListarTipoProducto();
             cboxRubro.DataSource = unRubro.ListarRubros();
             cboxProveedor.DataSource = unProveedor.ListarProveedores();
+            tboxCodigoBulto.Enabled = false;
 
             //PRECARGA PARA MODIFICAR
             if (ProductoModificar != null)
@@ -88,7 +88,7 @@ namespace PresentacionWinForm
                 ProductoNegocio unProductoNegocio = new ProductoNegocio();
                 ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, tboxRentabilidad, cboxTipoProducto, cboxRubro, cboxProveedor, "Agregar");
                 unProductoNegocio.AgregarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, tboxRentabilidad, cboxProveedor, cboxRubro));
-                Avisos FormularioAviso = new Avisos();
+                Avisos FormularioAviso = new Avisos("Productos");
                 FormularioAviso.Show();
             }
             catch (Exception Excepcion)
@@ -132,6 +132,10 @@ namespace PresentacionWinForm
              }
         }
 
+        private void tboxCodigoProducto_TextChanged(object sender, EventArgs e)
+        {
+            tboxCodigoBulto.Text = "B" + tboxCodigoProducto.Text;
+        }
     }
 
   
