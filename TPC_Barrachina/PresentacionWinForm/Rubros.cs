@@ -48,6 +48,7 @@ namespace PresentacionWinForm
             {
                 Validar.FormularioRubro(tboxCodigoRubro, tboxNombre, "Agregar");
                 unRubroNegocio.AgregarRubro(unRubroNegocio.CargarRubro(tboxCodigoRubro, tboxNombre));
+                this.Dispose();
             }
             catch (Exception Excepcion)
             {
@@ -63,7 +64,7 @@ namespace PresentacionWinForm
             {
                 Validar.FormularioRubro(tboxCodigoRubro, tboxNombre, "Modificar");
                 unRubroNegocio.ModificarRubro(unRubroNegocio.CargarRubro(tboxCodigoRubro, tboxNombre));
-
+                this.Dispose();
             }
             catch (Exception Excepcion)
             {

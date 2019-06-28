@@ -64,6 +64,7 @@
             this.lblCuentaCorriente = new System.Windows.Forms.Label();
             this.lblDescuento = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.lblAdvertenciaDescuento = new System.Windows.Forms.Label();
             this.pnlBarraPrincipal.SuspendLayout();
             this.gboxDireccion.SuspendLayout();
             this.gboxContacto.SuspendLayout();
@@ -319,7 +320,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(155, 499);
+            this.btnAceptar.Location = new System.Drawing.Point(137, 499);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(98, 37);
             this.btnAceptar.TabIndex = 14;
@@ -367,6 +368,7 @@
             // 
             // gboxCuentaCorriente
             // 
+            this.gboxCuentaCorriente.Controls.Add(this.lblAdvertenciaDescuento);
             this.gboxCuentaCorriente.Controls.Add(this.cboxDescuento);
             this.gboxCuentaCorriente.Controls.Add(this.tboxLimitecuenta);
             this.gboxCuentaCorriente.Controls.Add(this.lblCuentaCorriente);
@@ -374,7 +376,7 @@
             this.gboxCuentaCorriente.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxCuentaCorriente.Location = new System.Drawing.Point(55, 368);
             this.gboxCuentaCorriente.Name = "gboxCuentaCorriente";
-            this.gboxCuentaCorriente.Size = new System.Drawing.Size(410, 110);
+            this.gboxCuentaCorriente.Size = new System.Drawing.Size(410, 125);
             this.gboxCuentaCorriente.TabIndex = 16;
             this.gboxCuentaCorriente.TabStop = false;
             this.gboxCuentaCorriente.Text = "CuentaCorriente";
@@ -383,14 +385,14 @@
             // 
             this.cboxDescuento.FormattingEnabled = true;
             this.cboxDescuento.ItemHeight = 17;
-            this.cboxDescuento.Location = new System.Drawing.Point(137, 32);
+            this.cboxDescuento.Location = new System.Drawing.Point(137, 28);
             this.cboxDescuento.Name = "cboxDescuento";
             this.cboxDescuento.Size = new System.Drawing.Size(195, 25);
             this.cboxDescuento.TabIndex = 20;
             // 
             // tboxLimitecuenta
             // 
-            this.tboxLimitecuenta.Location = new System.Drawing.Point(212, 67);
+            this.tboxLimitecuenta.Location = new System.Drawing.Point(219, 78);
             this.tboxLimitecuenta.Name = "tboxLimitecuenta";
             this.tboxLimitecuenta.Size = new System.Drawing.Size(64, 25);
             this.tboxLimitecuenta.TabIndex = 13;
@@ -398,7 +400,7 @@
             // lblCuentaCorriente
             // 
             this.lblCuentaCorriente.AutoSize = true;
-            this.lblCuentaCorriente.Location = new System.Drawing.Point(82, 75);
+            this.lblCuentaCorriente.Location = new System.Drawing.Point(89, 86);
             this.lblCuentaCorriente.Name = "lblCuentaCorriente";
             this.lblCuentaCorriente.Size = new System.Drawing.Size(117, 17);
             this.lblCuentaCorriente.TabIndex = 19;
@@ -407,7 +409,7 @@
             // lblDescuento
             // 
             this.lblDescuento.AutoSize = true;
-            this.lblDescuento.Location = new System.Drawing.Point(74, 35);
+            this.lblDescuento.Location = new System.Drawing.Point(74, 31);
             this.lblDescuento.Name = "lblDescuento";
             this.lblDescuento.Size = new System.Drawing.Size(57, 17);
             this.lblDescuento.TabIndex = 19;
@@ -431,6 +433,18 @@
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // lblAdvertenciaDescuento
+            // 
+            this.lblAdvertenciaDescuento.AutoSize = true;
+            this.lblAdvertenciaDescuento.Font = new System.Drawing.Font("Oswald", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdvertenciaDescuento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblAdvertenciaDescuento.Location = new System.Drawing.Point(94, 56);
+            this.lblAdvertenciaDescuento.Name = "lblAdvertenciaDescuento";
+            this.lblAdvertenciaDescuento.Size = new System.Drawing.Size(261, 17);
+            this.lblAdvertenciaDescuento.TabIndex = 60;
+            this.lblAdvertenciaDescuento.Text = "El Descuento ha sido borrado, asigne uno nuevo.";
+            this.lblAdvertenciaDescuento.Visible = false;
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,7 +452,7 @@
             this.ClientSize = new System.Drawing.Size(510, 613);
             this.Controls.Add(this.pnlContenedor);
             this.Controls.Add(this.pnlBarraPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Clientes";
             this.Text = "NuevoCliente";
             this.Load += new System.EventHandler(this.Clientes_Load);
@@ -493,5 +507,6 @@
         private System.Windows.Forms.Label lblCuentaCorriente;
         private System.Windows.Forms.Label lblDescuento;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label lblAdvertenciaDescuento;
     }
 }

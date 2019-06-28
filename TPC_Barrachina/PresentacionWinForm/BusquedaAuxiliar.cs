@@ -37,6 +37,7 @@ namespace PresentacionWinForm
 
                 Rubros FormularioRubro = new Rubros();
                 FormularioRubro.MdiParent = this.MdiParent;
+                FormularioRubro.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioRubro.Show();
             }
 
@@ -44,6 +45,7 @@ namespace PresentacionWinForm
             {
                 FormularioImpuestos FormularioImpuesto = new FormularioImpuestos();
                 FormularioImpuesto.MdiParent = this.MdiParent;
+                FormularioImpuesto.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioImpuesto.Show();
             }
 
@@ -52,6 +54,7 @@ namespace PresentacionWinForm
 
                 Descuentos FormularioDescuento = new Descuentos();
                 FormularioDescuento.MdiParent = this.MdiParent;
+                FormularioDescuento.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioDescuento.Show();
             }
         }
@@ -62,6 +65,7 @@ namespace PresentacionWinForm
             {
 
                 Rubros FormularioRubro = new Rubros((Rubro)cboxListado.SelectedItem);
+                FormularioRubro.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioRubro.MdiParent = this.MdiParent;
                 FormularioRubro.Show();
             }
@@ -69,6 +73,7 @@ namespace PresentacionWinForm
             else if (this.Text == "Impuestos")
             {
                 FormularioImpuestos FormularioImpuesto = new FormularioImpuestos((Impuesto)cboxListado.SelectedItem);
+                FormularioImpuesto.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioImpuesto.MdiParent = this.MdiParent;
                 FormularioImpuesto.Show();
             }
@@ -76,6 +81,7 @@ namespace PresentacionWinForm
             else if (this.Text == "Descuentos")
             {
                 Descuentos FormularioDescuento = new Descuentos((Descuento)cboxListado.SelectedItem);
+                FormularioDescuento.FormClosed += new System.Windows.Forms.FormClosedEventHandler(FormularioAgregarModificar_FormClosed);
                 FormularioDescuento.MdiParent = this.MdiParent;
                 FormularioDescuento.Show();
             }
@@ -86,5 +92,13 @@ namespace PresentacionWinForm
             utilidades.DefinirEntidadaEliminar(cboxListado.SelectedItem);
             cboxListado.DataSource = utilidades.DefinirEntidadAlistar(NombreFormulario);
         }
+
+
+        private void FormularioAgregarModificar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cboxListado.DataSource = utilidades.DefinirEntidadAlistar(NombreFormulario);
+        }
+
+
     }
 }

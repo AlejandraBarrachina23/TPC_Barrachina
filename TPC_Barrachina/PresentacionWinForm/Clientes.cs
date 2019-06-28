@@ -44,7 +44,8 @@ namespace PresentacionWinForm
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            AvisoConOpcion FormularioAvisoConOpcion = new AvisoConOpcion("Clientes");
+            FormularioAvisoConOpcion.Show(this);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -95,6 +96,7 @@ namespace PresentacionWinForm
                 tboxCorreoElectronico.Text = ClienteModificar.Contacto.Mail;
                 //Descuento
                 cboxDescuento.SelectedIndex = cboxDescuento.FindString(ClienteModificar.Descuento.Nombre + " - " + ClienteModificar.Descuento.Porcentaje+"%");
+                if (cboxDescuento.SelectedIndex < 0) { lblAdvertenciaDescuento.Visible = true; }
                 //Cuenta Corriente
                 tboxLimitecuenta.Text = ClienteModificar.CuentaCorriente.LimiteCuenta.ToString();
                 
@@ -108,6 +110,8 @@ namespace PresentacionWinForm
                 Validar.FormularioCliente(tboxCodigo, tboxNombre, tboxApellido, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxCalle, tboxNumero, tboxCP, tboxProvincia, tboxLocalidad, cboxDescuento, tboxLimitecuenta, "Modificar");
                 ClienteNegocio unClienteNegocio = new ClienteNegocio();
                 unClienteNegocio.ModificarCliente(unClienteNegocio.CargarCliente(tboxCodigo, tboxNombre, tboxApellido, cboxDescuento, tboxLimitecuenta, tboxTelefono, tboxCelular, tboxCorreoElectronico, tboxProvincia, tboxLocalidad, tboxCalle, tboxNumero, tboxCP, ClienteModificar.Contacto.CodigoContacto, ClienteModificar.CuentaCorriente.CodigoCuentaCorriente));
+                Avisos FormularioAviso = new Avisos("Clientes");
+                FormularioAviso.Show();
             }
             catch (Exception Excepcion)
             {

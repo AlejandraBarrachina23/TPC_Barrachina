@@ -34,6 +34,12 @@ namespace PresentacionWinForm
 
             }
 
+            else if (FormularioACerrar == "Clientes")
+            {
+                FormularioActivo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Clientes);
+
+            }
+
             if (FormularioActivo != null)
             {
                 FormularioActivo.Close();

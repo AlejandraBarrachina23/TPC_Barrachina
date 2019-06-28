@@ -77,7 +77,7 @@ namespace Negocio
 
             CuentaCorriente unaNuevaCuenteCorriente = new CuentaCorriente();
             unaNuevaCuenteCorriente.CodigoCuentaCorriente = CodigoCuentaCorriente;
-            unaNuevaCuenteCorriente.LimiteCuenta = Convert.ToUInt32(tboxLimitecuenta.Text);
+            unaNuevaCuenteCorriente.LimiteCuenta = Convert.ToDecimal(tboxLimitecuenta.Text);
             return unaNuevaCuenteCorriente;
         }
 
