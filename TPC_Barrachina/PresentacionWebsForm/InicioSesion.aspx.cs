@@ -14,15 +14,15 @@ namespace PresentacionWebsForm
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblAdvertencia.Visible = false;
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
             Usuario UsuarioIngresado = new Usuario();
             UsuarioNegocio UsuarioNegocio = new UsuarioNegocio();
-            UsuarioIngresado.Nombre = tboxNombre.Text;
-            UsuarioIngresado.Constrasenia = tboxContrasenia.Text;
+            UsuarioIngresado.Nombre = tboxNombreUsuario.Text;
+            UsuarioIngresado.Constrasenia = tboxContraseniaUsuario.Text;
             UsuarioIngresado = UsuarioNegocio.ValidarExistencia(UsuarioIngresado);
             if (UsuarioIngresado != null)
             {
@@ -31,8 +31,10 @@ namespace PresentacionWebsForm
             }
             else
             {
-                tboxNombre.Text = "";
-                tboxContrasenia.Text = "";
+                tboxNombreUsuario.Text = "";
+                tboxContraseniaUsuario.Text = "";
+                lblAdvertencia.Text = "Usuario/Contraseña Incorrecto";
+                lblAdvertencia.Visible = true;
 
             }
         }

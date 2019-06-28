@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\arrow.png" />
+    <Content Include="img\background.jpg" />
     <Content Include="img\candy-jar.png" />
     <Content Include="img\smoking.png" />
     <Content Include="img\transfer.png" />

@@ -118,6 +118,7 @@ namespace PresentacionWebsForm
             if (UsuarioNegocio.ValidarExistenciaCodigo(Convert.ToInt32(tboxCodigo.Text)))
             {
                 lblAdvertencia.Text = "Usuario Repetido";
+                tboxCodigo.Text = "";
             }
         }
     }

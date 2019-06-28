@@ -55,11 +55,10 @@ footer {
     color: white;
 }
 
-#tboxNombre, #tboxContrasenia {
-
+#tboxNombreUsuario, #tboxContraseniaUsuario {
+   
     font-family: 'Oswald', sans-serif;
-    font-size: medium;
-    width: 150px;
+    width: 300px;
     margin: 5px;
     text-align: center;
 }
@@ -219,6 +218,6 @@ footer {
 }
 #lblAdvertencia {
     font-family: 'Oswald', sans-serif;
-    color: red;
+    color: blue;
     font-size: medium;
 }

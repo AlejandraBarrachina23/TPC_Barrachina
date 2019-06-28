@@ -22,22 +22,22 @@ namespace PresentacionWebsForm {
         protected global::System.Web.UI.HtmlControls.HtmlForm formLogin;
         
         /// <summary>
-        /// Control tboxNombre.
+        /// Control tboxNombreUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tboxNombre;
+        protected global::System.Web.UI.WebControls.TextBox tboxNombreUsuario;
         
         /// <summary>
-        /// Control tboxContrasenia.
+        /// Control tboxContraseniaUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tboxContrasenia;
+        protected global::System.Web.UI.WebControls.TextBox tboxContraseniaUsuario;
         
         /// <summary>
         /// Control btnAceptar.
@@ -47,5 +47,14 @@ namespace PresentacionWebsForm {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAceptar;
+        
+        /// <summary>
+        /// Control lblAdvertencia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAdvertencia;
     }
 }
