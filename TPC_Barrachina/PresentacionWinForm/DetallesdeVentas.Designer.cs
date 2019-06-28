@@ -100,6 +100,7 @@
             this.Controls.Add(this.dgvDetalleVenta);
             this.Name = "DetallesdeVentas";
             this.Text = "DetallesdeVentas";
+            this.Load += new System.EventHandler(this.DetallesdeVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

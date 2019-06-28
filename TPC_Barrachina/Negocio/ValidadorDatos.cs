@@ -94,7 +94,7 @@ namespace Negocio
 
         }
 
-        public void MaximoValor(int ValorMaximo, string NombreCampo, int ValorIngresado) {
+        public void MaximoValor(decimal ValorMaximo, string NombreCampo, decimal ValorIngresado) {
 
             if (ValorIngresado > ValorMaximo) {
 

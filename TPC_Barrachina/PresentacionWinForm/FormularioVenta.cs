@@ -96,8 +96,8 @@ namespace PresentacionWinForm
 
         private void btnRetiroDinero_Click(object sender, EventArgs e)
         {
-            RetiroDinero FormularioRetiroDinero = new RetiroDinero();
-            FormularioRetiroDinero.Show();
+            DetallesdeVentas DetallesVentas = new DetallesdeVentas();
+            DetallesVentas.Show();
         }
 
         private void btnCierreCaja_Click(object sender, EventArgs e)
@@ -214,6 +214,7 @@ namespace PresentacionWinForm
                     foreach (DetalleVenta unDetalleVenta in ListadoDetalle)
                     {
                         unDetalleNotaDevolucionNegocio.AgregarDetalleNotaDevolucion(unDetalleNotaDevolucionNegocio.CargarDetalleDevolucion(unDetalleVenta), NumeroFactura);
+                        unProductoNegocio.SumarStock(unDetalleVenta.Producto, unDetalleVenta.Cantidad);
                     }
                 }
 

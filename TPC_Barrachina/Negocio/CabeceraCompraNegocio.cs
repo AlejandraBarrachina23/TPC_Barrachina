@@ -29,5 +29,7 @@ namespace Negocio
             AccederDatos.CerrarConexion();
             return NumeroCompra;
         }
+
+        
     }
 }

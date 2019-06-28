@@ -100,5 +100,30 @@ namespace Negocio
             return unaCabeceraVenta;
 
         }
+
+        public List<CabeceraVenta> ListarVentas() {
+
+            List<CabeceraVenta> ListadoVentas = new List<CabeceraVenta>();
+            AccederDatos.AbrirConexion();
+            AccederDatos.DefinirTipoComando("Select * from Ventas INNER JOIN Usuarios ON Usuarios.CodigoUsuario = Ventas.Usuario INNER JOIN Clientes ON Ventas.Cliente = Clientes.CodigoCliente");
+            AccederDatos.EjecutarConsulta();
+            while (AccederDatos.LectorDatos.Read()) {
+
+                CabeceraVenta unaCabeceraVenta = new CabeceraVenta();
+                unaCabeceraVenta.Usuario = new Usuario();
+                unaCabeceraVenta.Cliente = new Cliente();
+                unaCabeceraVenta.NumeroDocumento = (int)AccederDatos.LectorDatos["NumeroVenta"];
+                unaCabeceraVenta.Usuario.CodigoUsuario = (int)AccederDatos.LectorDatos["CodigoUsuario"];
+                unaCabeceraVenta.Usuario.Nombre = (string)AccederDatos.LectorDatos["Nombre"];
+                unaCabeceraVenta.Cliente.CodigoCliente = (int)AccederDatos.LectorDatos["CodigoCliente"];
+                unaCabeceraVenta.Cliente.Nombre = (string)AccederDatos.LectorDatos["NombreCliente"];
+                unaCabeceraVenta.FechaEmision = (string)AccederDatos.LectorDatos["Fecha"];
+                unaCabeceraVenta.Total = (decimal)AccederDatos.LectorDatos["Total"];
+                unaCabeceraVenta.MetodoPago = AccederDatos.LectorDatos["Metodopago"].ToString();
+                ListadoVentas.Add(unaCabeceraVenta);
+            }
+
+            return ListadoVentas;
+        }
     }
 }

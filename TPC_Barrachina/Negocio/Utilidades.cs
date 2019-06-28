@@ -191,6 +191,17 @@ namespace Negocio
             Grilla.Columns["PrecioMayorista"].DisplayIndex = 6;
         }
 
+        public void AjustarOrdenGridViewCabeceraVenta(DataGridView Grilla) {
+
+            Grilla.Columns["NumeroDocumento"].DisplayIndex = 0;
+            Grilla.Columns["FechaEmision"].DisplayIndex = 1;
+            Grilla.Columns["Usuario"].DisplayIndex = 2;
+            Grilla.Columns["Cliente"].DisplayIndex = 3;
+            Grilla.Columns["MetodoPago"].DisplayIndex = 4;
+            Grilla.Columns["Total"].DisplayIndex = 5;
+                
+        }
+
 
         public object DefinirEntidadaFiltrar(Panel panelContenedor, Label lblNombreFormulario) {
 

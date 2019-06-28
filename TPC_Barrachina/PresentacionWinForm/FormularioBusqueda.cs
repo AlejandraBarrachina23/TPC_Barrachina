@@ -95,16 +95,12 @@ namespace PresentacionWinForm
             {   
                 Producto unProducto = new Producto();
                 unProducto = (Producto)dgvListadoBusqueda.CurrentRow.DataBoundItem;
-                if (unProducto.Stock>0)
-                {
+               
+               
                     SeleccionarProducto(unProducto);
                     this.Dispose();
-                }
 
-                else {
-
-                    MessageBox.Show("Sin stock");
-                }
+                if (unProducto.Stock < 0) { MessageBox.Show("Sin Stock"); }
                 
             }
 

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
+using Dominio;
 
 namespace PresentacionWinForm
 {
@@ -15,6 +17,14 @@ namespace PresentacionWinForm
         public DetallesdeVentas()
         {
             InitializeComponent();
+        }
+
+        private void DetallesdeVentas_Load(object sender, EventArgs e)
+        {
+            CabeceraVentaNegocio unDetalleVenta = new CabeceraVentaNegocio();
+            Utilidades Utilidades = new Utilidades();
+            dgvDetalleVenta.DataSource = unDetalleVenta.ListarVentas();
+            Utilidades.AjustarOrdenGridViewCabeceraVenta(dgvDetalleVenta);
         }
     }
 }

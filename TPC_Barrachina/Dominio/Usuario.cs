@@ -13,5 +13,10 @@ namespace Dominio
         public string Constrasenia { get; set; }
         public string SectorDesignado { get; set; }
         public bool Estado { get; set; }
+
+        public override string ToString()
+        {
+            return Nombre.ToString(); 
+        }
     }
 }

@@ -1,6 +1,6 @@
 USE [BARRACHINA_DB]
 GO
-/****** Object:  Table [dbo].[Ventas]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Ventas]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -23,20 +23,11 @@ GO
 SET ANSI_PADDING OFF
 GO
 SET IDENTITY_INSERT [dbo].[Ventas] ON
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (1, 1, 0, N'26/06/2019', CAST(60.00 AS Decimal(18, 2)), N'Efectivo')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (2, 1, 2, N'26/06/2019', CAST(15.40 AS Decimal(18, 2)), N'CtaCorriente')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (3, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (4, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (5, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (6, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (7, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (8, 1, 0, N'26/06/2019', CAST(100.00 AS Decimal(18, 2)), N'Efectivo')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (9, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (10, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (11, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo')
-INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (12, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo')
+INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (1, 1, 0, N'28/06/2019', CAST(245.00 AS Decimal(18, 2)), N'Efectivo')
+INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (2, 1, 0, N'28/06/2019', CAST(495.00 AS Decimal(18, 2)), N'Efectivo')
+INSERT [dbo].[Ventas] ([NumeroVenta], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago]) VALUES (3, 1, 3, N'28/06/2019', CAST(225.00 AS Decimal(18, 2)), N'CtaCorriente')
 SET IDENTITY_INSERT [dbo].[Ventas] OFF
-/****** Object:  Table [dbo].[Usuarios]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Usuarios]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -64,7 +55,7 @@ INSERT [dbo].[Usuarios] ([CodigoUsuario], [Nombre], [Sector], [Contrasenia], [Es
 INSERT [dbo].[Usuarios] ([CodigoUsuario], [Nombre], [Sector], [Contrasenia], [Estado]) VALUES (10, N'aaa', N'Ventas', N'bbb', 1)
 INSERT [dbo].[Usuarios] ([CodigoUsuario], [Nombre], [Sector], [Contrasenia], [Estado]) VALUES (99, N'99', N'Compra', N'99', 0)
 INSERT [dbo].[Usuarios] ([CodigoUsuario], [Nombre], [Sector], [Contrasenia], [Estado]) VALUES (45646, N'45646', N'Depósito', N'56465', 1)
-/****** Object:  Table [dbo].[TipoProductos]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[TipoProductos]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -91,7 +82,7 @@ INSERT [dbo].[TipoProductos] ([CodigoTipoProducto], [NombreTipoProducto], [Estad
 INSERT [dbo].[TipoProductos] ([CodigoTipoProducto], [NombreTipoProducto], [Estado]) VALUES (6, N'Chocolates', 1)
 INSERT [dbo].[TipoProductos] ([CodigoTipoProducto], [NombreTipoProducto], [Estado]) VALUES (7, N'Carga Virtual', 1)
 INSERT [dbo].[TipoProductos] ([CodigoTipoProducto], [NombreTipoProducto], [Estado]) VALUES (8, N'Bebidas s/alcohol', 1)
-/****** Object:  Table [dbo].[Rubros]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Rubros]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -119,7 +110,7 @@ INSERT [dbo].[Rubros] ([CodigoRubro], [NombreRubro], [Estado]) VALUES (6, N'Cybe
 INSERT [dbo].[Rubros] ([CodigoRubro], [NombreRubro], [Estado]) VALUES (7, N'Almacen', 1)
 INSERT [dbo].[Rubros] ([CodigoRubro], [NombreRubro], [Estado]) VALUES (88, N'99', 0)
 INSERT [dbo].[Rubros] ([CodigoRubro], [NombreRubro], [Estado]) VALUES (90, N'9000', 0)
-/****** Object:  Table [dbo].[Direcciones]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Direcciones]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -156,7 +147,7 @@ INSERT [dbo].[Direcciones] ([CodigoDireccion], [Calle], [Numero], [CodigoPostal]
 INSERT [dbo].[Direcciones] ([CodigoDireccion], [Calle], [Numero], [CodigoPostal], [Localidad], [Provincia], [Estado]) VALUES (14, N'Maipu', 2045, 1646, N'San Fernando', N'Buenos Aires', 1)
 INSERT [dbo].[Direcciones] ([CodigoDireccion], [Calle], [Numero], [CodigoPostal], [Localidad], [Provincia], [Estado]) VALUES (12, N'Guido115', 15, 1642, N'San Isidro', N'Buenos aires', 1)
 SET IDENTITY_INSERT [dbo].[Direcciones] OFF
-/****** Object:  Table [dbo].[DetalleVentas]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[DetalleVentas]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -182,21 +173,15 @@ CREATE TABLE [dbo].[DetalleVentas](
 GO
 SET ANSI_PADDING OFF
 GO
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (1, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (1, 2, N'2', 1, 0, CAST(0.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (1, 3, N'3', 1, 0, CAST(0.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (2, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (3, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (4, 1, N'2', 1, 0, CAST(0.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (5, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (6, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (7, 1, N'2', 1, 0, CAST(0.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (8, 1, N'1', 5, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (9, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (10, 1, N'2', 1, 0, CAST(0.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (11, 1, N'3', 1, 0, CAST(0.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (12, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-/****** Object:  Table [dbo].[DetalleNotaDevolucion]    Script Date: 06/28/2019 15:27:21 ******/
+INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (1, 1, N'1', 1, 0, CAST(99.22 AS Decimal(18, 2)), 10, CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (1, 2, N'2', 1, 0, CAST(93.02 AS Decimal(18, 2)), 10, CAST(120.00 AS Decimal(18, 2)), CAST(108.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (2, 1, N'1', 1, 0, CAST(99.22 AS Decimal(18, 2)), 10, CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (2, 2, N'2', 1, 0, CAST(93.02 AS Decimal(18, 2)), 10, CAST(120.00 AS Decimal(18, 2)), CAST(108.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (2, 3, N'1', 1, 0, CAST(99.22 AS Decimal(18, 2)), 10, CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (2, 4, N'3', 1, 0, CAST(99.22 AS Decimal(18, 2)), 10, CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (3, 2, N'3', 1, 0, CAST(99.22 AS Decimal(18, 2)), 10, CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleVentas] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (3, 3, N'3', 1, 0, CAST(99.22 AS Decimal(18, 2)), 10, CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)))
+/****** Object:  Table [dbo].[DetalleNotaDevolucion]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -217,15 +202,14 @@ CREATE TABLE [dbo].[DetalleNotaDevolucion](
 GO
 SET ANSI_PADDING OFF
 GO
-INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (3, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (3, 2, N'5', 1, 0, CAST(0.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (4, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (5, 1, N'3', 1, 0, CAST(0.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (6, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (7, 1, N'1', 1, 0, CAST(5.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (8, 4, N'1', 1, 0, CAST(1.20 AS Decimal(18, 2)), 20, CAST(5.00 AS Decimal(18, 2)), CAST(4.50 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (8, 5, N'2', 1, 0, CAST(0.00 AS Decimal(18, 2)), 20, CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)))
-/****** Object:  Table [dbo].[DetalleCompras]    Script Date: 06/28/2019 15:27:21 ******/
+INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (3, 2, N'1', 2, 0, CAST(99.22 AS Decimal(18, 2)), 10, CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (3, 3, N'2', 1, 0, CAST(93.02 AS Decimal(18, 2)), 10, CAST(120.00 AS Decimal(18, 2)), CAST(108.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (4, 1, N'1', 2, 0, CAST(99.22 AS Decimal(18, 2)), 10, CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (4, 2, N'2', 1, 0, CAST(93.02 AS Decimal(18, 2)), 10, CAST(120.00 AS Decimal(18, 2)), CAST(108.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (2, 1, N'1', 1, 0, CAST(99.22 AS Decimal(18, 2)), 10, CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (5, 1, N'1', 4, 0, CAST(99.22 AS Decimal(18, 2)), 10, CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleNotaDevolucion] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Unidad], [Bulto], [PrecioCosto], [CantidadxBulto], [PrecioVentaMinorista], [PrecioVentaMayorista]) VALUES (5, 2, N'2', 2, 0, CAST(93.02 AS Decimal(18, 2)), 10, CAST(120.00 AS Decimal(18, 2)), CAST(108.00 AS Decimal(18, 2)))
+/****** Object:  Table [dbo].[DetalleCompras]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -245,25 +229,18 @@ CREATE TABLE [dbo].[DetalleCompras](
 GO
 SET ANSI_PADDING OFF
 GO
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (1, 1, N'5', 5, CAST(6.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)), CAST(10.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (1, 2, N'7', 7, CAST(9.00 AS Decimal(18, 2)), CAST(20.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (2, 1, N'1', 1, CAST(1.00 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(10.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (2, 2, N'2', 1, CAST(1.00 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(10.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (2, 3, N'4', 1, CAST(3.00 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(10.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (3, 1, N'1', 1, CAST(1.00 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(10.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (3, 2, N'2', 1, CAST(1.00 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(10.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (3, 3, N'3', 1, CAST(6.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)), CAST(10.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (4, 1, N'1', 10, CAST(17.00 AS Decimal(18, 2)), CAST(35.00 AS Decimal(18, 2)), CAST(30.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (4, 2, N'2', 10, CAST(6.00 AS Decimal(18, 2)), CAST(15.00 AS Decimal(18, 2)), CAST(10.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (4, 3, N'3', 10, CAST(1.00 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(10.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (7, 1, N'5', 1, CAST(1.28 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(4.50 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (8, 1, N'5', 1, CAST(1.28 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(4.50 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (9, 1, N'6', 1, CAST(1.28 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(4.50 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (12, 1, N'6', 1, CAST(1.28 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(4.50 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (13, 1, N'1', 1, CAST(1.20 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(4.50 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (10, 1, N'6', 1, CAST(1.28 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(4.50 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (11, 1, N'6', 1, CAST(1.28 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(4.50 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)))
-/****** Object:  Table [dbo].[Descuentos]    Script Date: 06/28/2019 15:27:21 ******/
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (2, 1, N'1', 200, CAST(99.22 AS Decimal(18, 2)), CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (2, 2, N'2', 20, CAST(93.02 AS Decimal(18, 2)), CAST(120.00 AS Decimal(18, 2)), CAST(108.00 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (3, 1, N'5', 200, CAST(1.28 AS Decimal(18, 2)), CAST(5.00 AS Decimal(18, 2)), CAST(4.50 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (3, 2, N'6', 200, CAST(89.36 AS Decimal(18, 2)), CAST(115.00 AS Decimal(18, 2)), CAST(103.50 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (4, 1, N'1', 200, CAST(99.22 AS Decimal(18, 2)), CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (4, 2, N'2', 200, CAST(93.02 AS Decimal(18, 2)), CAST(120.00 AS Decimal(18, 2)), CAST(108.00 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (4, 3, N'3', 200, CAST(99.22 AS Decimal(18, 2)), CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (1, 1, N'1', 200, CAST(99.22 AS Decimal(18, 2)), CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (1, 2, N'2', 200, CAST(93.02 AS Decimal(18, 2)), CAST(120.00 AS Decimal(18, 2)), CAST(108.00 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (1, 3, N'3', 200, CAST(93.02 AS Decimal(18, 2)), CAST(120.00 AS Decimal(18, 2)), CAST(108.00 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+INSERT [dbo].[DetalleCompras] ([NumeroFactura], [NumeroLinea], [CodigoProducto], [Cantidad], [PrecioCosto], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad]) VALUES (1, 4, N'4', 200, CAST(86.82 AS Decimal(18, 2)), CAST(110.00 AS Decimal(18, 2)), CAST(99.00 AS Decimal(18, 2)), CAST(25.00 AS Decimal(18, 2)))
+/****** Object:  Table [dbo].[Descuentos]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -287,7 +264,7 @@ INSERT [dbo].[Descuentos] ([CodigoDescuento], [NombreDescuento], [Porcentaje], [
 INSERT [dbo].[Descuentos] ([CodigoDescuento], [NombreDescuento], [Porcentaje], [Estado]) VALUES (1, N'ClienteBasico', CAST(7.00 AS Decimal(18, 2)), 1)
 INSERT [dbo].[Descuentos] ([CodigoDescuento], [NombreDescuento], [Porcentaje], [Estado]) VALUES (2, N'ClientePremium', CAST(10.00 AS Decimal(18, 2)), 0)
 INSERT [dbo].[Descuentos] ([CodigoDescuento], [NombreDescuento], [Porcentaje], [Estado]) VALUES (3, N'ClienteDistribuidora', CAST(15.00 AS Decimal(18, 2)), 1)
-/****** Object:  Table [dbo].[CuentaCorrientes]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[CuentaCorrientes]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -302,11 +279,11 @@ GO
 SET IDENTITY_INSERT [dbo].[CuentaCorrientes] ON
 INSERT [dbo].[CuentaCorrientes] ([CodigoCuentaCorriente], [Saldo], [LimiteCuenta], [Estado]) VALUES (1, CAST(0.00 AS Decimal(18, 2)), CAST(5000.00 AS Decimal(18, 2)), 1)
 INSERT [dbo].[CuentaCorrientes] ([CodigoCuentaCorriente], [Saldo], [LimiteCuenta], [Estado]) VALUES (2, CAST(0.00 AS Decimal(18, 2)), CAST(2000.00 AS Decimal(18, 2)), 1)
-INSERT [dbo].[CuentaCorrientes] ([CodigoCuentaCorriente], [Saldo], [LimiteCuenta], [Estado]) VALUES (3, CAST(0.00 AS Decimal(18, 2)), CAST(2000.00 AS Decimal(18, 2)), 1)
+INSERT [dbo].[CuentaCorrientes] ([CodigoCuentaCorriente], [Saldo], [LimiteCuenta], [Estado]) VALUES (3, CAST(24.00 AS Decimal(18, 2)), CAST(2000.00 AS Decimal(18, 2)), 1)
 INSERT [dbo].[CuentaCorrientes] ([CodigoCuentaCorriente], [Saldo], [LimiteCuenta], [Estado]) VALUES (4, CAST(0.00 AS Decimal(18, 2)), CAST(2000.00 AS Decimal(18, 2)), 1)
 INSERT [dbo].[CuentaCorrientes] ([CodigoCuentaCorriente], [Saldo], [LimiteCuenta], [Estado]) VALUES (5, CAST(0.00 AS Decimal(18, 2)), CAST(2000.00 AS Decimal(18, 2)), 0)
 SET IDENTITY_INSERT [dbo].[CuentaCorrientes] OFF
-/****** Object:  Table [dbo].[Contactos]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Contactos]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -342,7 +319,7 @@ INSERT [dbo].[Contactos] ([CodigoContacto], [Telefono], [Celular], [Mail], [Codi
 INSERT [dbo].[Contactos] ([CodigoContacto], [Telefono], [Celular], [Mail], [CodigoDireccion], [Estado]) VALUES (16, N'111', N'11', N'111', 16, 0)
 INSERT [dbo].[Contactos] ([CodigoContacto], [Telefono], [Celular], [Mail], [CodigoDireccion], [Estado]) VALUES (14, N'114743241', N'1123584697', N'martinabarrachina@gmail.com', 14, 1)
 SET IDENTITY_INSERT [dbo].[Contactos] OFF
-/****** Object:  Table [dbo].[CondicionesIVA]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[CondicionesIVA]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -364,7 +341,7 @@ INSERT [dbo].[CondicionesIVA] ([CodigoCondicionIVA], [NombreCondicionIVA], [Esta
 INSERT [dbo].[CondicionesIVA] ([CodigoCondicionIVA], [NombreCondicionIVA], [Estado]) VALUES (4, N'Monotributista', 1)
 INSERT [dbo].[CondicionesIVA] ([CodigoCondicionIVA], [NombreCondicionIVA], [Estado]) VALUES (5, N'No Categorizado', 1)
 SET IDENTITY_INSERT [dbo].[CondicionesIVA] OFF
-/****** Object:  Table [dbo].[Compras]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Compras]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -382,21 +359,12 @@ CREATE TABLE [dbo].[Compras](
 ) ON [PRIMARY]
 GO
 SET IDENTITY_INSERT [dbo].[Compras] ON
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (1, 0, 200, CAST(0xC73F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (2, 0, 100, CAST(0xCB3F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (3, 1, 100, CAST(0xD43F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (4, 1, 100, CAST(0xD43F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (5, 1, 200, CAST(0xD53F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (6, 1, 200, CAST(0xD53F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (7, 1, 200, CAST(0xD53F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (8, 1, 200, CAST(0xD53F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (9, 1, 200, CAST(0xD53F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (10, 1, 200, CAST(0xD53F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (11, 1, 200, CAST(0xD53F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (12, 1, 200, CAST(0xD53F0B00 AS Date), NULL)
-INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (13, 1, 100, CAST(0xD53F0B00 AS Date), NULL)
+INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (1, 1, 100, CAST(0xD53F0B00 AS Date), NULL)
+INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (2, 1, 100, CAST(0xD53F0B00 AS Date), NULL)
+INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (3, 1, 200, CAST(0xD53F0B00 AS Date), NULL)
+INSERT [dbo].[Compras] ([NumeroCompra], [Usuario], [Proveedor], [Fecha], [Total]) VALUES (4, 1, 100, CAST(0xD53F0B00 AS Date), NULL)
 SET IDENTITY_INSERT [dbo].[Compras] OFF
-/****** Object:  Table [dbo].[NotaDevolucion]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[NotaDevolucion]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -416,16 +384,12 @@ GO
 SET ANSI_PADDING OFF
 GO
 SET IDENTITY_INSERT [dbo].[NotaDevolucion] ON
-INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (1, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo', N'Disconformidad con precio')
-INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (2, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo', N'Disconformidad con precio')
-INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (3, 1, 0, N'26/06/2019', CAST(40.00 AS Decimal(18, 2)), N'Efectivo', N'Equivocación Cliente')
-INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (4, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo', N'Equivocación Usuario')
-INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (5, 1, 0, N'26/06/2019', CAST(20.00 AS Decimal(18, 2)), N'Efectivo', N'Equivocación Usuario')
-INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (6, 1, 2, N'26/06/2019', CAST(15.40 AS Decimal(18, 2)), N'Efectivo', N'Mercaderia vencida')
-INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (7, 1, 2, N'26/06/2019', CAST(15.40 AS Decimal(18, 2)), N'CtaCorriente', N'Equivocación Usuario')
-INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (8, 1, 0, N'28/06/2019', CAST(25.00 AS Decimal(18, 2)), N'Efectivo', N'Equivocación Cliente')
+INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (1, 1, 0, N'28/06/2019', CAST(125.00 AS Decimal(18, 2)), N'Efectivo', N'Equivocación Cliente')
+INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (2, 1, 0, N'28/06/2019', CAST(370.00 AS Decimal(18, 2)), N'Efectivo', N'Equivocación Cliente')
+INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (3, 1, 0, N'28/06/2019', CAST(370.00 AS Decimal(18, 2)), N'Efectivo', N'Mercadería en mal estado')
+INSERT [dbo].[NotaDevolucion] ([NumeroNotaCredito], [Usuario], [Cliente], [Fecha], [Total], [MetodoPago], [MotivoDevolucion]) VALUES (4, 1, 0, N'28/06/2019', CAST(740.00 AS Decimal(18, 2)), N'Efectivo', N'Equivocación Usuario')
 SET IDENTITY_INSERT [dbo].[NotaDevolucion] OFF
-/****** Object:  Table [dbo].[MovimientosDinero]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[MovimientosDinero]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -444,7 +408,7 @@ CREATE TABLE [dbo].[MovimientosDinero](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[MotivosDevolucion]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[MotivosDevolucion]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -464,7 +428,7 @@ INSERT [dbo].[MotivosDevolucion] ([CodigoMotivoDevolucion], [Nombre]) VALUES (3,
 INSERT [dbo].[MotivosDevolucion] ([CodigoMotivoDevolucion], [Nombre]) VALUES (4, N'Equivocación Usuario')
 INSERT [dbo].[MotivosDevolucion] ([CodigoMotivoDevolucion], [Nombre]) VALUES (5, N'Disconformidad con precio')
 INSERT [dbo].[MotivosDevolucion] ([CodigoMotivoDevolucion], [Nombre]) VALUES (6, N'Otros')
-/****** Object:  Table [dbo].[Impuestos]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Impuestos]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -488,7 +452,7 @@ INSERT [dbo].[Impuestos] ([CodigoImpuesto], [Nombre], [Descripcion], [Estado]) V
 INSERT [dbo].[Impuestos] ([CodigoImpuesto], [Nombre], [Descripcion], [Estado]) VALUES (2, N'IB', N'Ingresos Brutos', 1)
 INSERT [dbo].[Impuestos] ([CodigoImpuesto], [Nombre], [Descripcion], [Estado]) VALUES (3, N'IVA RES 3337', N'Agentes de Retención IVA', 1)
 INSERT [dbo].[Impuestos] ([CodigoImpuesto], [Nombre], [Descripcion], [Estado]) VALUES (4, N'II', N'Impuesto Interno', 1)
-/****** Object:  Table [dbo].[FormasPago]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[FormasPago]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -513,7 +477,7 @@ INSERT [dbo].[FormasPago] ([CodigoFormaPago], [Nombre], [Porcentaje], [Estado]) 
 INSERT [dbo].[FormasPago] ([CodigoFormaPago], [Nombre], [Porcentaje], [Estado]) VALUES (3, N'Credito1', CAST(15 AS Decimal(18, 0)), 1)
 INSERT [dbo].[FormasPago] ([CodigoFormaPago], [Nombre], [Porcentaje], [Estado]) VALUES (4, N'Credito', CAST(30 AS Decimal(18, 0)), 1)
 INSERT [dbo].[FormasPago] ([CodigoFormaPago], [Nombre], [Porcentaje], [Estado]) VALUES (5, N'MercadoPago', CAST(0 AS Decimal(18, 0)), 1)
-/****** Object:  Table [dbo].[Proveedores]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Proveedores]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -543,7 +507,7 @@ INSERT [dbo].[Proveedores] ([CodigoProveedor], [RazonSocial], [NumeroCUIT], [Nom
 INSERT [dbo].[Proveedores] ([CodigoProveedor], [RazonSocial], [NumeroCUIT], [NombreFantasia], [CodigoCondicionIVA], [CodigoContacto], [Estado]) VALUES (1111, N'1111', N'1111', N'111', 2, 9, 0)
 INSERT [dbo].[Proveedores] ([CodigoProveedor], [RazonSocial], [NumeroCUIT], [NombreFantasia], [CodigoCondicionIVA], [CodigoContacto], [Estado]) VALUES (222, N'222', N'222', N'222', 2, 10, 0)
 INSERT [dbo].[Proveedores] ([CodigoProveedor], [RazonSocial], [NumeroCUIT], [NombreFantasia], [CodigoCondicionIVA], [CodigoContacto], [Estado]) VALUES (333, N'333', N'333', N'33', 1, 11, 0)
-/****** Object:  Table [dbo].[Productos]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Productos]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -574,7 +538,7 @@ CREATE TABLE [dbo].[Productos](
 GO
 SET ANSI_PADDING OFF
 GO
-INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'1', N'B1', N'Marlboro Box', 3, 0, 10, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 25, 10, 100, 1, 1)
+INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'1', N'B1', N'Marlboro Box', 3, 200, 100, CAST(99.22 AS Decimal(18, 2)), CAST(89.30 AS Decimal(18, 2)), CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)), 25, 10, 100, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'10', N'B10', N'Sprite x 600 ml', 8, 0, 24, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 12, 300, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'11', N'B11', N'Coca Cola x 1.5 L', 8, 0, 16, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 8, 300, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'111', N'B111', N'11', 1, 0, 111, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 11, 111, 300, 5, 0)
@@ -586,7 +550,7 @@ INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [Co
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'17', N'B17', N'Cofler x 25grs Leche', 6, 0, 30, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 10, 500, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'18', N'B18', N'Rocklets x 20grs', 6, 0, 32, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 16, 500, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'19', N'B19', N'Aguila Minitorta Alfajor', 2, 0, 42, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 21, 500, 1, 1)
-INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'2', N'B2', N'Marlboro KS', 3, 0, 100, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 25, 10, 100, 1, 1)
+INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'2', N'B2', N'Marlboro KS', 3, 200, 100, CAST(93.02 AS Decimal(18, 2)), CAST(83.72 AS Decimal(18, 2)), CAST(120.00 AS Decimal(18, 2)), CAST(108.00 AS Decimal(18, 2)), 25, 10, 100, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'20', N'B20', N'Block Alfajor', 2, 0, 21, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 21, 500, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'21', N'B21', N'Topline 7 menta', 4, 0, 80, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 20, 500, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'22', N'B22', N'Topline 7 Mandarina', 4, 0, 60, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 20, 500, 1, 1)
@@ -595,14 +559,14 @@ INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [Co
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'25', N'B25', N'Menthoplus Menta', 5, 0, 12, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 12, 500, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'26', N'B26', N'Menthoplus Cherry', 5, 0, 12, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 12, 500, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'27', N'B27', N'Milka Leger x 25 grs Leche', 6, 0, 24, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 80, 12, 600, 1, 1)
-INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'3', N'B3', N'Philip Morris Box', 3, 0, 100, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 25, 10, 100, 1, 1)
+INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'3', N'B3', N'Philip Morris Box', 3, 197, 100, CAST(99.22 AS Decimal(18, 2)), CAST(89.30 AS Decimal(18, 2)), CAST(125.00 AS Decimal(18, 2)), CAST(112.50 AS Decimal(18, 2)), 25, 10, 100, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'4', N'B4', N'Philip Morris KS', 3, 0, 100, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 25, 10, 100, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'5', N'B5', N'Lucky Strike Box', 3, 0, 50, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 25, 10, 200, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'6', N'B6', N'Lucky Strike KS', 3, 0, 30, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 25, 10, 200, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'7', N'B7', N'Camel Box', 3, 0, 20, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 25, 10, 200, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'8', N'B8', N'Camel KS', 3, 0, 20, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 25, 10, 200, 1, 1)
 INSERT [dbo].[Productos] ([CodigoProducto], [CodigoBulto], [NombreProducto], [CodigoTipoProducto], [Stock], [StockCritico], [PrecioCosto], [PrecioCostoLista], [PrecioVentaMinorista], [PrecioVentaMayorista], [Rentabilidad], [CantidadxBulto], [CodigoProveedor], [CodigoRubro], [Estado]) VALUES (N'9', N'B9', N'Coca Cola x 600 ml', 8, 0, 48, CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), 100, 12, 300, 1, 1)
-/****** Object:  Table [dbo].[Empleados]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Empleados]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -626,7 +590,7 @@ SET ANSI_PADDING OFF
 GO
 INSERT [dbo].[Empleados] ([CodigoEmpleado], [Nombre], [Apellido], [Cargo], [CodigoUsuario], [Estado]) VALUES (1, NULL, NULL, N'Vendedor', 2, 1)
 INSERT [dbo].[Empleados] ([CodigoEmpleado], [Nombre], [Apellido], [Cargo], [CodigoUsuario], [Estado]) VALUES (2, NULL, NULL, N'Administrador', 1, 1)
-/****** Object:  Table [dbo].[Clientes]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[Clientes]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -655,7 +619,7 @@ INSERT [dbo].[Clientes] ([CodigoCliente], [NombreCliente], [Apellido], [CodigoCu
 INSERT [dbo].[Clientes] ([CodigoCliente], [NombreCliente], [Apellido], [CodigoCuentaCorriente], [CodigoDescuento], [CodigoContacto], [Estado]) VALUES (3, N'Martina', N'Barrachina', 3, 2, 14, 1)
 INSERT [dbo].[Clientes] ([CodigoCliente], [NombreCliente], [Apellido], [CodigoCuentaCorriente], [CodigoDescuento], [CodigoContacto], [Estado]) VALUES (4, N'Marina', N'Mansilla', 4, 1, 15, 1)
 INSERT [dbo].[Clientes] ([CodigoCliente], [NombreCliente], [Apellido], [CodigoCuentaCorriente], [CodigoDescuento], [CodigoContacto], [Estado]) VALUES (1111, N'111', N'111', 5, 3, 16, 0)
-/****** Object:  Table [dbo].[ProveedorXImpuesto]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Table [dbo].[ProveedorXImpuesto]    Script Date: 06/28/2019 18:26:32 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -696,7 +660,7 @@ INSERT [dbo].[ProveedorXImpuesto] ([CodigoImpuesto], [CodigoProveedor], [Alicuot
 INSERT [dbo].[ProveedorXImpuesto] ([CodigoImpuesto], [CodigoProveedor], [Alicuota], [Estado]) VALUES (4, 400, CAST(2.00 AS Decimal(18, 2)), 1)
 INSERT [dbo].[ProveedorXImpuesto] ([CodigoImpuesto], [CodigoProveedor], [Alicuota], [Estado]) VALUES (4, 600, CAST(8.00 AS Decimal(18, 2)), 0)
 INSERT [dbo].[ProveedorXImpuesto] ([CodigoImpuesto], [CodigoProveedor], [Alicuota], [Estado]) VALUES (4, 1111, CAST(6.00 AS Decimal(18, 2)), 0)
-/****** Object:  StoredProcedure [dbo].[SP_CargarDetalleVenta]    Script Date: 06/28/2019 15:27:20 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CargarDetalleVenta]    Script Date: 06/28/2019 18:26:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -717,7 +681,7 @@ INSERT INTO DetalleVentas(NumeroFactura,NumeroLinea,CodigoProducto,Unidad,Precio
 SELECT @NumeroFactura, @NumeroLinea, @CodigoProducto, @Unidad, @PrecioCosto, @PrecioVentaMinorista, @PrecioVentaMayorista, @CantidadxBulto, @Bulto 
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CargarDetalleNotaDevolucion]    Script Date: 06/28/2019 15:27:20 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CargarDetalleNotaDevolucion]    Script Date: 06/28/2019 18:26:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -737,7 +701,7 @@ BEGIN
 INSERT INTO DetalleNotaDevolucion(NumeroFactura,NumeroLinea,CodigoProducto,Unidad,PrecioCosto,PrecioVentaMinorista,PrecioVentaMayorista,CantidadxBulto,Bulto)  
 SELECT @NumeroFactura,@NumeroLinea,@CodigoProducto,@Unidad,@PrecioCosto,@PrecioVentaMinorista,@PrecioVentaMayorista n,@CantidadxBulto,@Bulto END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_CargarDetallaCompra]    Script Date: 06/28/2019 15:27:20 ******/
+/****** Object:  StoredProcedure [dbo].[SP_CargarDetallaCompra]    Script Date: 06/28/2019 18:26:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -756,7 +720,7 @@ CREATE PROCEDURE [dbo].[SP_CargarDetallaCompra]
 AS  BEGIN  INSERT INTO DetalleCompras (NumeroFactura,NumeroLinea,CodigoProducto,Cantidad,PrecioCosto,PrecioVentaMayorista,PrecioVentaMinorista,Rentabilidad)  
 SELECT @NumeroFactura,@NumeroLinea,@CodigoProducto,@Cantidad,@PrecioCosto,@PrecioVentaMayorista, @PrecioVentaMinorista,@Rentabilidad END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ModificarImpuestoXProveedor]    Script Date: 06/28/2019 15:27:20 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ModificarImpuestoXProveedor]    Script Date: 06/28/2019 18:26:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -773,7 +737,19 @@ Alicuota = @Alicuota
 WHERE CodigoImpuesto=@CodigoImpuesto AND CodigoProveedor=@CodigoProveedor
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_FiltrarProductoxProveedor]    Script Date: 06/28/2019 15:27:20 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ListarVentas]    Script Date: 06/28/2019 18:26:31 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[SP_ListarVentas]
+as
+begin
+Select NumeroVenta,Usuarios.Nombre,Clientes.NombreCliente,Fecha, Total, MetodoPago from Ventas INNER JOIN Usuarios ON Usuarios.CodigoUsuario = Ventas.Usuario INNER JOIN
+Clientes ON Ventas.Cliente = Clientes.CodigoCliente
+end
+GO
+/****** Object:  StoredProcedure [dbo].[SP_FiltrarProductoxProveedor]    Script Date: 06/28/2019 18:26:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -785,7 +761,7 @@ BEGIN
 SELECT * from Productos where CodigoProveedor = @CodigoProveedor
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_EliminarProducto]    Script Date: 06/28/2019 15:27:20 ******/
+/****** Object:  StoredProcedure [dbo].[SP_EliminarProducto]    Script Date: 06/28/2019 18:26:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -796,7 +772,7 @@ begin
 update Productos set Estado = 0 where CodigoProducto= @CodigoProducto
 end
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BajaStock]    Script Date: 06/28/2019 15:27:20 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BajaStock]    Script Date: 06/28/2019 18:26:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -809,7 +785,7 @@ BEGIN
 UPDATE Productos SET Stock = (select SUM(Productos.Stock- @Cantidad)from Productos WHERE CodigoProducto = @CodigoProducto) where CodigoProducto=@CodigoProducto
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_BajaImpuestosXProveedor]    Script Date: 06/28/2019 15:27:20 ******/
+/****** Object:  StoredProcedure [dbo].[SP_BajaImpuestosXProveedor]    Script Date: 06/28/2019 18:26:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -820,7 +796,7 @@ AS
 BEGIN  
 UPDATE ProveedorXImpuesto SET Estado= 0 WHERE CodigoProveedor=@CodigoProveedor END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_AltaStock]    Script Date: 06/28/2019 15:27:20 ******/
+/****** Object:  StoredProcedure [dbo].[SP_AltaStock]    Script Date: 06/28/2019 18:26:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -833,7 +809,7 @@ BEGIN
 UPDATE Productos SET Stock = (select SUM(Productos.Stock+ @Cantidad)from Productos WHERE CodigoProducto = @CodigoProducto) where CodigoProducto=@CodigoProducto
 END
 GO
-/****** Object:  StoredProcedure [dbo].[SP_ActualizarPrecio]    Script Date: 06/28/2019 15:27:20 ******/
+/****** Object:  StoredProcedure [dbo].[SP_ActualizarPrecio]    Script Date: 06/28/2019 18:26:31 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -854,106 +830,106 @@ PrecioCosto = @PrecioCosto
 WHERE CodigoProducto = @CodigoProducto
 END
 GO
-/****** Object:  Default [DF__Clientes__Estado__1ED998B2]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Clientes__Estado__1ED998B2]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Clientes] ADD  CONSTRAINT [DF__Clientes__Estado__1ED998B2]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF_Compras_Fecha]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF_Compras_Fecha]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Compras] ADD  CONSTRAINT [DF_Compras_Fecha]  DEFAULT (getdate()) FOR [Fecha]
 GO
-/****** Object:  Default [DF__Condicion__Estad__49C3F6B7]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Condicion__Estad__49C3F6B7]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[CondicionesIVA] ADD  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF_Contactos_Estado]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF_Contactos_Estado]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Contactos] ADD  CONSTRAINT [DF_Contactos_Estado]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF__CuentaCor__Saldo__1920BF5C]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__CuentaCor__Saldo__1920BF5C]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[CuentaCorrientes] ADD  CONSTRAINT [DF__CuentaCor__Saldo__1920BF5C]  DEFAULT ((0)) FOR [Saldo]
 GO
-/****** Object:  Default [DF__CuentaCor__Limit__1A14E395]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__CuentaCor__Limit__1A14E395]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[CuentaCorrientes] ADD  CONSTRAINT [DF__CuentaCor__Limit__1A14E395]  DEFAULT ((2000)) FOR [LimiteCuenta]
 GO
-/****** Object:  Default [DF_CuentaCorrientes_Estado]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF_CuentaCorrientes_Estado]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[CuentaCorrientes] ADD  CONSTRAINT [DF_CuentaCorrientes_Estado]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF__Descuento__Estad__0425A276]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Descuento__Estad__0425A276]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Descuentos] ADD  CONSTRAINT [DF__Descuento__Estad__0425A276]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF_Direcciones_Estado]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF_Direcciones_Estado]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Direcciones] ADD  CONSTRAINT [DF_Direcciones_Estado]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF__Empleados__Estad__145C0A3F]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Empleados__Estad__145C0A3F]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Empleados] ADD  CONSTRAINT [DF__Empleados__Estad__145C0A3F]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF__FormasPag__Estad__1273C1CD]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__FormasPag__Estad__1273C1CD]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[FormasPago] ADD  CONSTRAINT [DF__FormasPag__Estad__1273C1CD]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF__Impuestos__Estad__108B795B]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Impuestos__Estad__108B795B]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Impuestos] ADD  CONSTRAINT [DF__Impuestos__Estad__108B795B]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF__Productos__Stock__24927208]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Productos__Stock__24927208]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Productos] ADD  CONSTRAINT [DF__Productos__Stock__24927208]  DEFAULT ((0)) FOR [Stock]
 GO
-/****** Object:  Default [DF__Productos__Preci__25869641]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Productos__Preci__25869641]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Productos] ADD  CONSTRAINT [DF__Productos__Preci__25869641]  DEFAULT ((0)) FOR [PrecioCosto]
 GO
-/****** Object:  Default [DF__Productos__Preci__267ABA7A]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Productos__Preci__267ABA7A]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Productos] ADD  CONSTRAINT [DF__Productos__Preci__267ABA7A]  DEFAULT ((0)) FOR [PrecioCostoLista]
 GO
-/****** Object:  Default [DF__Productos__Preci__276EDEB3]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Productos__Preci__276EDEB3]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Productos] ADD  CONSTRAINT [DF__Productos__Preci__276EDEB3]  DEFAULT ((0)) FOR [PrecioVentaMinorista]
 GO
-/****** Object:  Default [DF__Productos__Preci__286302EC]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Productos__Preci__286302EC]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Productos] ADD  CONSTRAINT [DF__Productos__Preci__286302EC]  DEFAULT ((0)) FOR [PrecioVentaMayorista]
 GO
-/****** Object:  Default [DF__Productos__Estad__29572725]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Productos__Estad__29572725]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Productos] ADD  CONSTRAINT [DF__Productos__Estad__29572725]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF__Proveedor__Estad__0BC6C43E]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Proveedor__Estad__0BC6C43E]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Proveedores] ADD  CONSTRAINT [DF__Proveedor__Estad__0BC6C43E]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF_ProveedorXImpuesto_Estado]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF_ProveedorXImpuesto_Estado]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[ProveedorXImpuesto] ADD  CONSTRAINT [DF_ProveedorXImpuesto_Estado]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF__Rubros__Estado__09DE7BCC]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Rubros__Estado__09DE7BCC]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Rubros] ADD  CONSTRAINT [DF__Rubros__Estado__09DE7BCC]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF__TipoProdu__Estad__023D5A04]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__TipoProdu__Estad__023D5A04]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[TipoProductos] ADD  CONSTRAINT [DF__TipoProdu__Estad__023D5A04]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF__Usuarios__Estado__00551192]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF__Usuarios__Estado__00551192]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Usuarios] ADD  CONSTRAINT [DF__Usuarios__Estado__00551192]  DEFAULT ((1)) FOR [Estado]
 GO
-/****** Object:  Default [DF_Ventas_Usuario]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF_Ventas_Usuario]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Ventas] ADD  CONSTRAINT [DF_Ventas_Usuario]  DEFAULT ((0)) FOR [Usuario]
 GO
-/****** Object:  Default [DF_Ventas_Fecha]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  Default [DF_Ventas_Fecha]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Ventas] ADD  CONSTRAINT [DF_Ventas_Fecha]  DEFAULT (getdate()) FOR [Fecha]
 GO
-/****** Object:  ForeignKey [FK_Clientes_Descuentos]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  ForeignKey [FK_Clientes_Descuentos]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Clientes]  WITH CHECK ADD  CONSTRAINT [FK_Clientes_Descuentos] FOREIGN KEY([CodigoDescuento])
 REFERENCES [dbo].[Descuentos] ([CodigoDescuento])
 GO
 ALTER TABLE [dbo].[Clientes] CHECK CONSTRAINT [FK_Clientes_Descuentos]
 GO
-/****** Object:  ForeignKey [FK_Empleados_Usuarios]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  ForeignKey [FK_Empleados_Usuarios]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Empleados]  WITH CHECK ADD  CONSTRAINT [FK_Empleados_Usuarios] FOREIGN KEY([CodigoUsuario])
 REFERENCES [dbo].[Usuarios] ([CodigoUsuario])
 GO
 ALTER TABLE [dbo].[Empleados] CHECK CONSTRAINT [FK_Empleados_Usuarios]
 GO
-/****** Object:  ForeignKey [FK_Productos_Rubros]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  ForeignKey [FK_Productos_Rubros]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Productos]  WITH CHECK ADD  CONSTRAINT [FK_Productos_Rubros] FOREIGN KEY([CodigoRubro])
 REFERENCES [dbo].[Rubros] ([CodigoRubro])
 GO
 ALTER TABLE [dbo].[Productos] CHECK CONSTRAINT [FK_Productos_Rubros]
 GO
-/****** Object:  ForeignKey [FK_Productos_TipoProductos]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  ForeignKey [FK_Productos_TipoProductos]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[Productos]  WITH CHECK ADD  CONSTRAINT [FK_Productos_TipoProductos] FOREIGN KEY([CodigoTipoProducto])
 REFERENCES [dbo].[TipoProductos] ([CodigoTipoProducto])
 GO
 ALTER TABLE [dbo].[Productos] CHECK CONSTRAINT [FK_Productos_TipoProductos]
 GO
-/****** Object:  ForeignKey [FK_ProveedorXImpuesto_Impuestos]    Script Date: 06/28/2019 15:27:21 ******/
+/****** Object:  ForeignKey [FK_ProveedorXImpuesto_Impuestos]    Script Date: 06/28/2019 18:26:32 ******/
 ALTER TABLE [dbo].[ProveedorXImpuesto]  WITH CHECK ADD  CONSTRAINT [FK_ProveedorXImpuesto_Impuestos] FOREIGN KEY([CodigoImpuesto])
 REFERENCES [dbo].[Impuestos] ([CodigoImpuesto])
 GO

@@ -43,11 +43,12 @@ namespace PresentacionWinForm
             try
             {
                 Validar.ContenidoTextBoxVacio(tboxRecibido, "Recibido");
-                Validar.MaximoValor(Convert.ToInt32(tboxSaldo.Text), "Recibido", Convert.ToInt32(tboxRecibido.Text));
+                Validar.MaximoValor(Convert.ToDecimal(tboxSaldo.Text), "Recibido", Convert.ToDecimal(tboxRecibido.Text));
                 unCliente.CuentaCorriente.Saldo = unCliente.CuentaCorriente.Saldo - Convert.ToDecimal(tboxRecibido.Text);
                 
                 ClienteNegocio unClienteNegocio = new ClienteNegocio();
                 unClienteNegocio.ActualizarSaldo(unCliente);
+                this.Dispose();
             }
             catch (Exception Excepcion)
             {

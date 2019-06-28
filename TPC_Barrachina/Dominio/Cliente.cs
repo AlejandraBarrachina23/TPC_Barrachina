@@ -16,5 +16,12 @@ namespace Dominio
         public CuentaCorriente CuentaCorriente { get; set; }
         public Descuento Descuento { get; set; }
         public bool Estado { get; set; }
+
+        public override string ToString()
+        {
+            return Nombre.ToString();
+        }
     }
+
+
 }
