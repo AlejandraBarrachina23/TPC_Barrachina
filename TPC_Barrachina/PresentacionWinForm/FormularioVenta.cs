@@ -192,7 +192,7 @@ namespace PresentacionWinForm
                     DetalleVentaNegocio unDetallVentaNegocio = new DetalleVentaNegocio();
 
                     unaCabeceraVentaNegocio.AgregarCabeceraVenta(unaCabeceraVentaNegocio.CargarCabeceraVenta(UsuarioActivo, unCliente, tboxFechaEmision.Text, Convert.ToDecimal(lblTotalFactura.Text), tboxMetodoPago.Text));
-                    int NumeroFactura = unaCabeceraVentaNegocio.CuentaFilasCabeceraVenta();
+                    int NumeroFactura = Convert.ToInt32(tboxNumeroOperacion.Text);
 
                     foreach (DetalleVenta unDetalleVenta in ListadoDetalle)
                     {

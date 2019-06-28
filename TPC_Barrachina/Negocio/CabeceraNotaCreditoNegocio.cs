@@ -15,7 +15,7 @@ namespace Negocio
             AdministradorAccesoDatos AccederDatos = new AdministradorAccesoDatos();
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("SELECT COUNT (NumeroNotaCredito) FROM NotaDevolucion");
-            int NumeroNotaDevolucion = AccederDatos.ejecutarAccionReturn();
+            int NumeroNotaDevolucion = AccederDatos.ejecutarAccionReturn()+1;
             AccederDatos.CerrarConexion();
             return NumeroNotaDevolucion;
         }

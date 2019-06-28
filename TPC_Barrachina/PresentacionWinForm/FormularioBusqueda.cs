@@ -102,6 +102,7 @@ namespace PresentacionWinForm
                 }
 
                 else {
+
                     MessageBox.Show("Sin stock");
                 }
                 

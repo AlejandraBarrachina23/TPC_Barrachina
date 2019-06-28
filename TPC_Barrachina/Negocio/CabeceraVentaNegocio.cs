@@ -25,7 +25,7 @@ namespace Negocio
 
             AccederDatos.AbrirConexion();
             AccederDatos.DefinirTipoComando("SELECT COUNT (NumeroVenta) FROM Ventas");
-            int NumeroVenta = AccederDatos.ejecutarAccionReturn();
+            int NumeroVenta = AccederDatos.ejecutarAccionReturn() + 1;
             AccederDatos.CerrarConexion();
             return NumeroVenta;
         }

@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVenta));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioVenta));
             this.pnlCabecera = new System.Windows.Forms.Panel();
+            this.btnResetear = new System.Windows.Forms.Button();
             this.cboxMotivoDevolucion = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tboxSaldo = new System.Windows.Forms.TextBox();
@@ -61,7 +62,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCierreCaja = new System.Windows.Forms.Button();
-            this.btnRetiroDinero = new System.Windows.Forms.Button();
             this.btnAgregarCliente = new System.Windows.Forms.Button();
             this.btnDevolucion = new System.Windows.Forms.Button();
             this.btnMetodoPago = new System.Windows.Forms.Button();
@@ -92,7 +92,7 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCompras = new System.Windows.Forms.Label();
-            this.btnResetear = new System.Windows.Forms.Button();
+            this.btnRetiroDinero = new System.Windows.Forms.Button();
             this.pnlCabecera.SuspendLayout();
             this.pnlDetalleVenta.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -127,6 +127,18 @@
             this.pnlCabecera.Name = "pnlCabecera";
             this.pnlCabecera.Size = new System.Drawing.Size(1056, 134);
             this.pnlCabecera.TabIndex = 0;
+            // 
+            // btnResetear
+            // 
+            this.btnResetear.FlatAppearance.BorderSize = 0;
+            this.btnResetear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetear.Image = ((System.Drawing.Image)(resources.GetObject("btnResetear.Image")));
+            this.btnResetear.Location = new System.Drawing.Point(528, 95);
+            this.btnResetear.Name = "btnResetear";
+            this.btnResetear.Size = new System.Drawing.Size(25, 24);
+            this.btnResetear.TabIndex = 19;
+            this.btnResetear.UseVisualStyleBackColor = true;
+            this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
             // 
             // cboxMotivoDevolucion
             // 
@@ -400,24 +412,6 @@
             this.btnCierreCaja.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCierreCaja.UseVisualStyleBackColor = false;
             this.btnCierreCaja.Click += new System.EventHandler(this.btnCierreCaja_Click);
-            // 
-            // btnRetiroDinero
-            // 
-            this.btnRetiroDinero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.btnRetiroDinero.FlatAppearance.BorderSize = 0;
-            this.btnRetiroDinero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRetiroDinero.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetiroDinero.ForeColor = System.Drawing.Color.White;
-            this.btnRetiroDinero.Image = ((System.Drawing.Image)(resources.GetObject("btnRetiroDinero.Image")));
-            this.btnRetiroDinero.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRetiroDinero.Location = new System.Drawing.Point(3, 207);
-            this.btnRetiroDinero.Name = "btnRetiroDinero";
-            this.btnRetiroDinero.Size = new System.Drawing.Size(100, 60);
-            this.btnRetiroDinero.TabIndex = 6;
-            this.btnRetiroDinero.Text = "RETIRO DINERO";
-            this.btnRetiroDinero.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRetiroDinero.UseVisualStyleBackColor = false;
-            this.btnRetiroDinero.Click += new System.EventHandler(this.btnRetiroDinero_Click);
             // 
             // btnAgregarCliente
             // 
@@ -830,17 +824,23 @@
             this.lblCompras.TabIndex = 1;
             this.lblCompras.Text = "CAJA";
             // 
-            // btnResetear
+            // btnRetiroDinero
             // 
-            this.btnResetear.FlatAppearance.BorderSize = 0;
-            this.btnResetear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetear.Image = ((System.Drawing.Image)(resources.GetObject("btnResetear.Image")));
-            this.btnResetear.Location = new System.Drawing.Point(528, 95);
-            this.btnResetear.Name = "btnResetear";
-            this.btnResetear.Size = new System.Drawing.Size(25, 24);
-            this.btnResetear.TabIndex = 19;
-            this.btnResetear.UseVisualStyleBackColor = true;
-            this.btnResetear.Click += new System.EventHandler(this.btnResetear_Click);
+            this.btnRetiroDinero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnRetiroDinero.FlatAppearance.BorderSize = 0;
+            this.btnRetiroDinero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRetiroDinero.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRetiroDinero.ForeColor = System.Drawing.Color.White;
+            this.btnRetiroDinero.Image = ((System.Drawing.Image)(resources.GetObject("btnRetiroDinero.Image")));
+            this.btnRetiroDinero.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRetiroDinero.Location = new System.Drawing.Point(3, 207);
+            this.btnRetiroDinero.Name = "btnRetiroDinero";
+            this.btnRetiroDinero.Size = new System.Drawing.Size(100, 60);
+            this.btnRetiroDinero.TabIndex = 6;
+            this.btnRetiroDinero.Text = "CONSULTA VENTA";
+            this.btnRetiroDinero.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRetiroDinero.UseVisualStyleBackColor = false;
+            this.btnRetiroDinero.Click += new System.EventHandler(this.btnRetiroDinero_Click);
             // 
             // FormularioVenta
             // 
@@ -895,7 +895,6 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblFechaEmision;
         private System.Windows.Forms.Button btnCierreCaja;
-        private System.Windows.Forms.Button btnRetiroDinero;
         private System.Windows.Forms.DataGridView dgvDetalleVenta;
         private System.Windows.Forms.Timer HoraActual;
         private System.Windows.Forms.Label label3;
@@ -929,6 +928,7 @@
         private System.Windows.Forms.Label lblMotivoDevolucion;
         private System.Windows.Forms.ComboBox cboxMotivoDevolucion;
         private System.Windows.Forms.Button btnResetear;
+        private System.Windows.Forms.Button btnRetiroDinero;
     }
 }
 

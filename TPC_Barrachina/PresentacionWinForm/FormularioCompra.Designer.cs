@@ -30,22 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.label38 = new System.Windows.Forms.Label();
             this.lblTotalFactura = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.lblTotalBruto = new System.Windows.Forms.Label();
-            this.lblTotalIVA = new System.Windows.Forms.Label();
             this.lblTotalImporteNeto = new System.Windows.Forms.Label();
             this.cboxProveedor = new System.Windows.Forms.ComboBox();
             this.dgvDetalleCompra = new System.Windows.Forms.DataGridView();
             this.pnlDetalleCompra = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -76,8 +77,6 @@
             this.lblFechaEmision = new System.Windows.Forms.Label();
             this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.HoraActual = new System.Windows.Forms.Timer(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleCompra)).BeginInit();
             this.pnlDetalleCompra.SuspendLayout();
@@ -93,7 +92,6 @@
             this.pnlFooter.Controls.Add(this.btnCancelar);
             this.pnlFooter.Controls.Add(this.btnAceptar);
             this.pnlFooter.Controls.Add(this.lblTotalBruto);
-            this.pnlFooter.Controls.Add(this.lblTotalIVA);
             this.pnlFooter.Controls.Add(this.lblTotalImporteNeto);
             this.pnlFooter.Location = new System.Drawing.Point(0, 499);
             this.pnlFooter.Name = "pnlFooter";
@@ -161,29 +159,18 @@
             this.lblTotalBruto.AutoSize = true;
             this.lblTotalBruto.Font = new System.Drawing.Font("Oswald", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBruto.ForeColor = System.Drawing.Color.White;
-            this.lblTotalBruto.Location = new System.Drawing.Point(36, 61);
+            this.lblTotalBruto.Location = new System.Drawing.Point(36, 44);
             this.lblTotalBruto.Name = "lblTotalBruto";
             this.lblTotalBruto.Size = new System.Drawing.Size(169, 21);
             this.lblTotalBruto.TabIndex = 10;
             this.lblTotalBruto.Text = "SUBTOTAL BRUTO  $0.00";
-            // 
-            // lblTotalIVA
-            // 
-            this.lblTotalIVA.AutoSize = true;
-            this.lblTotalIVA.Font = new System.Drawing.Font("Oswald", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalIVA.ForeColor = System.Drawing.Color.White;
-            this.lblTotalIVA.Location = new System.Drawing.Point(39, 37);
-            this.lblTotalIVA.Name = "lblTotalIVA";
-            this.lblTotalIVA.Size = new System.Drawing.Size(83, 21);
-            this.lblTotalIVA.TabIndex = 10;
-            this.lblTotalIVA.Text = "IVA:  $0.00";
             // 
             // lblTotalImporteNeto
             // 
             this.lblTotalImporteNeto.AutoSize = true;
             this.lblTotalImporteNeto.Font = new System.Drawing.Font("Oswald", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalImporteNeto.ForeColor = System.Drawing.Color.White;
-            this.lblTotalImporteNeto.Location = new System.Drawing.Point(39, 14);
+            this.lblTotalImporteNeto.Location = new System.Drawing.Point(36, 20);
             this.lblTotalImporteNeto.Name = "lblTotalImporteNeto";
             this.lblTotalImporteNeto.Size = new System.Drawing.Size(154, 21);
             this.lblTotalImporteNeto.TabIndex = 10;
@@ -204,40 +191,40 @@
             this.dgvDetalleCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDetalleCompra.BackgroundColor = System.Drawing.Color.OldLace;
             this.dgvDetalleCompra.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetalleCompra.ColumnHeadersHeight = 35;
             this.dgvDetalleCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Oswald Regular", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleCompra.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Oswald Regular", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleCompra.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDetalleCompra.EnableHeadersVisualStyles = false;
             this.dgvDetalleCompra.Location = new System.Drawing.Point(0, 188);
             this.dgvDetalleCompra.Name = "dgvDetalleCompra";
             this.dgvDetalleCompra.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleCompra.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Oswald", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleCompra.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDetalleCompra.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.dgvDetalleCompra.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Oswald Regular", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.dgvDetalleCompra.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDetalleCompra.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleCompra.Size = new System.Drawing.Size(1054, 309);
             this.dgvDetalleCompra.TabIndex = 24;
@@ -284,6 +271,32 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(105, 600);
             this.panelMenu.TabIndex = 43;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(220)))), ((int)(((byte)(70)))));
+            this.panel1.Location = new System.Drawing.Point(98, 273);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 60);
+            this.panel1.TabIndex = 20;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLogout.Location = new System.Drawing.Point(-2, 273);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(100, 60);
+            this.btnLogout.TabIndex = 10;
+            this.btnLogout.Text = "LOG OUT";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panel9
             // 
@@ -420,6 +433,7 @@
             this.btnBorrar.Text = "borrar";
             this.btnBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // tboxCantidad
             // 
@@ -603,32 +617,6 @@
             this.HoraActual.Enabled = true;
             this.HoraActual.Tick += new System.EventHandler(this.HoraActual_Tick);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(220)))), ((int)(((byte)(70)))));
-            this.panel1.Location = new System.Drawing.Point(98, 273);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 60);
-            this.panel1.TabIndex = 20;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(115)))), ((int)(((byte)(149)))));
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Bebas", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLogout.Location = new System.Drawing.Point(-2, 273);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(100, 60);
-            this.btnLogout.TabIndex = 10;
-            this.btnLogout.Text = "LOG OUT";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // FormularioCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -656,7 +644,6 @@
         #endregion
         private System.Windows.Forms.Panel pnlFooter;
         private System.Windows.Forms.Label lblTotalImporteNeto;
-        private System.Windows.Forms.Label lblTotalIVA;
         private System.Windows.Forms.Label lblTotalBruto;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;

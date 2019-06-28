@@ -110,6 +110,7 @@ namespace PresentacionWinForm
             ListadoImpuestos = unImpuestoNegocio.ListarImpuestosxProveedor(ProveedorSeleccionado.CodigoProveedor);
             dgvDetalleCompra.DataSource = null;
             ListadoDetalleCompra.Clear();
+            CuentaLinea = 1;
             //dgvImpuestos.DataSource = ListadoImpuestos;
         }
 
@@ -141,7 +142,7 @@ namespace PresentacionWinForm
                 {
                     unDetalleCompraNegocio.AgregarDetalleCompra(unDetalleCompra, unaCabeceraCompraNegocio.CuentaFilasCabeceraCompra());
                     unProductoNegocio.SumarStock(unDetalleCompra.Producto, unDetalleCompra.Cantidad);
-                    unProductoNegocio.ActualizarPrecios(unDetalleCompra.PrecioBruto,unProductoNegocio.CalcularPrecioCostoLista(unDetalleCompra.PrecioBruto),unDetalleCompra.PrecioVentaMayorista,unDetalleCompra.PrecioVentaMinorista, unProductoComprado);
+                    unProductoNegocio.ActualizarPrecios(unDetalleCompra.PrecioBruto,unProductoNegocio.CalcularPrecioCostoLista(unDetalleCompra.PrecioBruto),unDetalleCompra.PrecioVentaMayorista,unDetalleCompra.PrecioVentaMinorista, unDetalleCompra.Producto);
                 }
                 
                 CuentaLinea = 1;
@@ -211,6 +212,20 @@ namespace PresentacionWinForm
             ValidadorDatos Validar = new ValidadorDatos();
             Validar.OperacionesPendientes(dgvDetalleCompra);
             Application.Exit();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            ValidadorDatos Validar = new ValidadorDatos();
+            Validar.GrillaVacia(dgvDetalleCompra);
+            DetalleCompra unDetalleSeleccionado = (DetalleCompra)dgvDetalleCompra.CurrentRow.DataBoundItem;
+            //lblSubtotalNumerico.Text = (Subtotal -= unDetalleSeleccionado.Subtotal).ToString();
+            //lblTotalFactura.Text = Subtotal.ToString("N2");
+            CuentaLinea = 1;
+            ListadoDetalleCompra.Remove(unDetalleSeleccionado);
+            dgvDetalleCompra.DataSource = null;
+            dgvDetalleCompra.DataSource = ListadoDetalleCompra;
+             
         }
     }
 }
