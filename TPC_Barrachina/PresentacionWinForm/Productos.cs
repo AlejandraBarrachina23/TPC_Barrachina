@@ -38,6 +38,7 @@ namespace PresentacionWinForm
             tboxCodigoProducto.KeyPress += AsignarSoloNumeros;
             tboxStockCritico.KeyPress += AsignarSoloNumeros;
             tboxCantidadBulto.KeyPress += AsignarSoloNumeros;
+            tboxRentabilidad.KeyPress += AsignarSoloNumeros;
         }
 
         private void Productos_Load(object sender, EventArgs e)
@@ -66,18 +67,20 @@ namespace PresentacionWinForm
                 cboxTipoProducto.SelectedItem = ProductoModificar.TipoProducto;
                 tboxCantidadBulto.Text = ProductoModificar.CantidadxBulto.ToString();
                 tboxStockCritico.Text = ProductoModificar.StockCritico.ToString();
+                tboxRentabilidad.Text = ProductoModificar.Rentabilidad.ToString();
                 //pre-cargo los combobox
                 cboxProveedor.SelectedIndex = cboxProveedor.FindString(ProductoModificar.Proveedor.NombreFantasia);
+                if (cboxProveedor.SelectedIndex < 0) { lblAdvertenciaProveedor.Visible = true; }
                 cboxTipoProducto.SelectedIndex = cboxTipoProducto.FindString(ProductoModificar.TipoProducto.Nombre);
                 cboxRubro.SelectedIndex = cboxRubro.FindString(ProductoModificar.Rubro.Nombre);
-                
+                if (cboxRubro.SelectedIndex < 0) { lblAdvertenciaRubro.Visible = true; }
             }
                         
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            AvisoConOpcion FormularioAvisoConOpcion = new AvisoConOpcion();
+            AvisoConOpcion FormularioAvisoConOpcion = new AvisoConOpcion("Productos");
             FormularioAvisoConOpcion.Show(this);
         }
               
@@ -106,6 +109,8 @@ namespace PresentacionWinForm
                 ProductoNegocio unProductoNegocio = new ProductoNegocio();
                 ValidarDatos.FormularioProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, tboxCantidadBulto, tboxStockCritico, tboxRentabilidad, cboxTipoProducto, cboxRubro, cboxProveedor, "Modificar");
                 unProductoNegocio.ModificarProducto(unProductoNegocio.CargarProducto(tboxCodigoProducto, tboxCodigoBulto, tboxNombre, cboxTipoProducto, tboxCantidadBulto, tboxStockCritico, tboxRentabilidad,cboxProveedor, cboxRubro));
+                Avisos FormularioAviso = new Avisos("Productos");
+                FormularioAviso.Show();
             }
             catch (Exception Excepcion)
             {

@@ -87,7 +87,7 @@ namespace Negocio
 
             long Minimo = Convert.ToInt64(texto.Text);
 
-            if (Minimo <= valor) {
+            if (Minimo < valor) {
 
                 throw new Exception("El campo" + NombreCampo + " acepta valores a partir del " + valor.ToString());
             }
@@ -117,11 +117,6 @@ namespace Negocio
                 ContenidoTextBoxVacio(tboxCodigoProducto, "Código Producto");
                 ExistenciaDeDatoDB("CodigoProducto", "Productos", tboxCodigoProducto.Text);
                 MinimoValor(tboxCodigoProducto, "Codigo Producto", 1);
-
-                ContenidoTextBoxVacio(tboxCodigoBulto, "Código Bulto");
-                ExistenciaDeDatoDB("CodigoBulto", "Productos", tboxCodigoBulto.Text);
-                MinimoValor(tboxCodigoBulto, "Codigo Bulto", 10);
-
                 ExistenciaDeDatoDB("NombreProducto", "Productos", tboxNombre.Text);
 
             }
@@ -129,11 +124,11 @@ namespace Negocio
             ContenidoTextBoxVacio(tboxNombre, "Nombre");
             ExistenciaRepetidaDeDatoDB("CodigoProducto", "NombreProducto", "Productos", "CodigoProducto", "NombreProducto", tboxNombre.Text, tboxCodigoProducto.Text);
 
-            MinimoValor(tboxCantidadBulto, "Cantidad por bulto", 0);
-            MinimoValor(tboxStockCritico, "Stock Crítico", 0);
+            MinimoValor(tboxCantidadBulto, "Cantidad por bulto", 1);
+            MinimoValor(tboxStockCritico, "Stock Crítico", 1);
             Multiplo(tboxStockCritico, tboxCantidadBulto, "Stock Crítico", "Cantidad por Bulto");
 
-            MinimoValor(tboxRentabilidad, "Cantidad por bulto", 0);
+            MinimoValor(tboxRentabilidad, "Cantidad por bulto", 1);
 
             SeleccionComboBox(cboxTipoProducto, "Tipo Producto");
 

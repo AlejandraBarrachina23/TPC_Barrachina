@@ -107,7 +107,8 @@ namespace PresentacionWinForm
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            AvisoConOpcion FormularioAvisoConOpcion = new AvisoConOpcion("Proveedores");
+            FormularioAvisoConOpcion.Show(this);
         }
 
         private void btnAgregarImpuesto_Click(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace Dominio
         public decimal PrecioNeto { get; set; }
         public decimal PrecioBruto { get; set; }
         public decimal PrecioPonderado { get; set; }
-        public decimal Rentabilidad { get; set; }
+        public int Rentabilidad { get; set; }
         public decimal PrecioVentaMinorista { get; set; }
         public decimal PrecioVentaMayorista { get; set; }
     }

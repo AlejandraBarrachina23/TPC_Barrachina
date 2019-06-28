@@ -80,7 +80,7 @@ namespace Negocio
                     unProducto.CantidadxBulto = (int)AccederDatos.LectorDatos["CantidadxBulto"];
                     unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
                     unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
-                    unProducto.Rentabilidad = (decimal)AccederDatos.LectorDatos["Rentabilidad"];
+                    unProducto.Rentabilidad = (int)AccederDatos.LectorDatos["Rentabilidad"];
                     unProducto.Proveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["CodigoProveedor"];
                     unProducto.Proveedor.NombreFantasia = AccederDatos.LectorDatos["NombreFantasia"].ToString();
                     unProducto.Rubro.CodigoRubro = (int)AccederDatos.LectorDatos["CodigoRubro"];
@@ -110,11 +110,11 @@ namespace Negocio
         public void ModificarProducto(Producto unProducto) {
 
             AccederDatos.AbrirConexion();
-            AccederDatos.DefinirTipoComando("UPDATE Productos Set CodigoBulto=@CodigoBulto, Nombre=@NombreProducto, CodigoTipoProducto=@CodigoTipoProducto, CantidadxBulto=@CantidadxBulto, StockCritico=@StockCritico, " +
+            AccederDatos.DefinirTipoComando("UPDATE Productos Set CodigoBulto=@CodigoBulto, NombreProducto=@NombreProducto, CodigoTipoProducto=@CodigoTipoProducto, CantidadxBulto=@CantidadxBulto, StockCritico=@StockCritico, " +
             "CodigoProveedor=@CodigoProveedor, CodigoRubro=@CodigoRubro, Rentabilidad=@Rentabilidad WHERE CodigoProducto = '" + unProducto.CodigoProducto + "'");
             AccederDatos.Comando.Parameters.Clear();
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoBulto", unProducto.CodigoBulto);
-            AccederDatos.Comando.Parameters.AddWithValue("@Nombre", unProducto.Nombre);
+            AccederDatos.Comando.Parameters.AddWithValue("@NombreProducto", unProducto.Nombre);
             AccederDatos.Comando.Parameters.AddWithValue("@CodigoTipoProducto", unProducto.TipoProducto.CodigoTipoProducto);
             AccederDatos.Comando.Parameters.AddWithValue("@CantidadxBulto", unProducto.CantidadxBulto);
             AccederDatos.Comando.Parameters.AddWithValue("@StockCritico", unProducto.StockCritico);
@@ -134,7 +134,7 @@ namespace Negocio
             unProducto.CodigoProducto = tboxCodigoProducto.Text;
             unProducto.CodigoBulto = tboxCodigoBulto.Text;
             unProducto.Nombre = tboxNombre.Text;
-            unProducto.Rentabilidad = Convert.ToDecimal(tboxRentabilidad.Text);
+            unProducto.Rentabilidad = Convert.ToInt32(tboxRentabilidad.Text);
             unProducto.TipoProducto = (TipoProducto)cboxTipoProducto.SelectedItem;
             unProducto.CantidadxBulto = Convert.ToInt32(tboxCantidadBulto.Text);
             unProducto.StockCritico = Convert.ToInt32(tboxStockCritico.Text);
@@ -163,7 +163,7 @@ namespace Negocio
                         unProducto.CantidadxBulto = (int)AccederDatos.LectorDatos["CantidadxBulto"];
                         unProducto.PrecioVentaMinorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMinorista"];
                         unProducto.PrecioVentaMayorista = (decimal)AccederDatos.LectorDatos["PrecioVentaMayorista"];
-                        unProducto.Rentabilidad = (decimal)AccederDatos.LectorDatos["Rentabilidad"];
+                        unProducto.Rentabilidad = (int)AccederDatos.LectorDatos["Rentabilidad"];
                         unProducto.PrecioCosto = (decimal)AccederDatos.LectorDatos["PrecioCosto"];
                         unProducto.PrecioCostoLista = (decimal)AccederDatos.LectorDatos["PrecioCostoLista"];
                         unProducto.Proveedor.CodigoProveedor = (int)AccederDatos.LectorDatos["CodigoProveedor"];

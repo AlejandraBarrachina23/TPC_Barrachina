@@ -19,7 +19,7 @@ namespace Dominio
         public decimal PrecioVentaMinorista { get; set; }
         public decimal PrecioVentaMayorista { get; set; }
         public int CantidadxBulto { get; set; }
-        public decimal Rentabilidad { get; set; }
+        public int Rentabilidad { get; set; }
         public Proveedor Proveedor { get; set; }
         public Rubro Rubro { get; set; }
         public bool Estado { get; set; }

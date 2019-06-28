@@ -12,25 +12,40 @@ namespace PresentacionWinForm
 {
     public partial class AvisoConOpcion : Form
     {
-        public AvisoConOpcion()
+        public string FormularioACerrar;
+        private Form FormularioActivo;
+
+        public AvisoConOpcion(string FormularioQueLlamo)
         {
             InitializeComponent();
+            FormularioACerrar = FormularioQueLlamo;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Form FormularioActivo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Productos);
+            if (FormularioACerrar == "Productos")
+            {
+                FormularioActivo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Productos);
+            }
+
+            else if (FormularioACerrar == "Proveedores")
+            {
+                FormularioActivo = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is Proveedores);
+
+            }
+
             if (FormularioActivo != null)
             {
                 FormularioActivo.Close();
                 this.Close();
             }
+
             this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
     }
 }
